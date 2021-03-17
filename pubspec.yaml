@@ -9,23 +9,25 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
+  flutter:
+    sdk: flutter
   another_flushbar: ^1.10.15
   dartz: ^0.10.0-nullsafety.1
   dio: ^4.0.0-beta6
-  flutter:
-    sdk: flutter
   flutter_bloc: ^7.0.0-nullsafety.3
   flutter_hooks: ^0.16.0
   flutter_secure_storage: ^4.0.0
   freezed_annotation: ^0.14.0
   get_it: ^6.0.0
   hooks_riverpod: ^0.13.1
+  image_cropper: ^1.4.0
+  image_picker: ^0.7.2+1
   injectable: ^1.2.0
 
 dev_dependencies:
-  build_runner: null
   flutter_test:
     sdk: flutter
+  build_runner: null
   freezed: ^0.14.0
   injectable_generator: ^1.2.0
   lint: ^1.5.2

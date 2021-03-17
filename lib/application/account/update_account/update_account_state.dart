@@ -5,6 +5,7 @@ class UpdateAccountState with _$UpdateAccountState {
   const factory UpdateAccountState({
     required Username username,
     required EmailAddress emailAddress,
+    @Default(null) File? image,
     required bool showErrorMessages,
     required bool isSaving,
     required Option<Either<AccountFailure, Account>> saveFailureOrSuccessOption,
@@ -14,6 +15,7 @@ class UpdateAccountState with _$UpdateAccountState {
         username: Username(''),
         emailAddress: EmailAddress(''),
         showErrorMessages: false,
+        image: null,
         isSaving: false,
         saveFailureOrSuccessOption: none(),
       );

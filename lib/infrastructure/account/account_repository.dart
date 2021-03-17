@@ -41,12 +41,22 @@ class AccountRepository extends IAccountRepository {
   Future<Either<AccountFailure, Account>> updateAccount({
     required EmailAddress emailAddress,
     required Username username,
+    File? image,
   }) async {
     try {
-      final response = await _dio.put('/account', data: {
+      final formData = FormData.fromMap({
         "username": username.getOrCrash(),
         "email": emailAddress.getOrCrash(),
       });
+
+      if (image != null) {
+        formData.files.add(MapEntry(
+          "image",
+          await MultipartFile.fromFile(image.path),
+        ));
+      }
+
+      final response = await _dio.put('/account', data: formData);
 
       if (response.statusCode == 200) {
         final results = jsonDecode(response.data);

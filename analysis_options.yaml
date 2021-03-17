@@ -8,6 +8,7 @@ analyzer:
     sort_unnamed_constructors_first: ignore
     argument_type_not_assignable: ignore
     avoid_print: ignore
+    sort_pub_dependencies: ignore
   exclude:
     - "**/*.g.dart"
     - "**/*.freezed.dart"

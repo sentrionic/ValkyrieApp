@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:valkyrie_app/presentation/auth/screens/login_screen.dart';
-import 'package:valkyrie_app/presentation/auth/screens/register_screen.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 
 class StartUpScreen extends StatelessWidget {
@@ -55,12 +53,7 @@ class StartUpScreen extends StatelessWidget {
                             primary: ThemeColors.themeBlue,
                           ),
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                builder: (context) => RegisterScreen(),
-                              ),
-                            );
+                            Navigator.of(context).pushNamed('/register');
                           },
                           child: Container(
                             padding: const EdgeInsets.symmetric(vertical: 15),
@@ -83,15 +76,10 @@ class StartUpScreen extends StatelessWidget {
                       Expanded(
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary: const Color(0xff4f535c),
+                            primary: ThemeColors.buttonGray,
                           ),
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                builder: (context) => LoginScreen(),
-                              ),
-                            );
+                            Navigator.of(context).pushNamed('/login');
                           },
                           child: Container(
                             padding: const EdgeInsets.symmetric(vertical: 15),

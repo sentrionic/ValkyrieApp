@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -77,10 +76,13 @@ class AuthFacade implements IAuthFacade {
         return left(const AuthFailure.serverError());
       }
     } on DioError catch (err) {
-      final errors = getErrors(err.response!);
-      if (errors.isNotEmpty) {
-        return left(AuthFailure.badRequest(errors[0].message));
+      if (err.response != null) {
+        final errors = FieldError.getErrors(err.response!);
+        if (errors.isNotEmpty) {
+          return left(AuthFailure.badRequest(errors[0].message));
+        }
       }
+
       return left(const AuthFailure.serverError());
     } on SocketException catch (err) {
       print(err);
@@ -155,12 +157,6 @@ class AuthFacade implements IAuthFacade {
     } on SocketException catch (_) {
       return left(const AuthFailure.serverError());
     }
-  }
-
-  List<FieldError> getErrors(Response<dynamic> response) {
-    final results = List<Map<String, dynamic>>.from(
-        jsonDecode(response.toString())['errors']);
-    return results.map((e) => FieldError.fromMap(e)).toList();
   }
 
   Future<void> _setCookie(List<String> cookies) async {

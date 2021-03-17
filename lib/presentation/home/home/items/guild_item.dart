@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:valkyrie_app/domain/guilds/guild.dart';
+import 'package:valkyrie_app/presentation/core/colors.dart';
 
 class GuildItem extends StatelessWidget {
   final Guild guild;
@@ -17,8 +18,8 @@ class GuildItem extends StatelessWidget {
         CircleAvatar(
           backgroundImage:
               guild.icon != null ? NetworkImage(guild.icon.toString()) : null,
-          radius: 30,
-          backgroundColor: const Color(0xff36393f),
+          radius: 26,
+          backgroundColor: ThemeColors.guildBackground,
           child: guild.icon == null
               ? Text(
                   guild.name.getOrCrash()[0],

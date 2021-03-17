@@ -28,6 +28,12 @@ class _$UpdateAccountEventTearOff {
     );
   }
 
+  _ImageChanged imageChanged(File image) {
+    return _ImageChanged(
+      image,
+    );
+  }
+
   _Saved saved() {
     return const _Saved();
   }
@@ -42,6 +48,7 @@ mixin _$UpdateAccountEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String email) emailChanged,
     required TResult Function(String username) usernameChanged,
+    required TResult Function(File image) imageChanged,
     required TResult Function() saved,
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +56,7 @@ mixin _$UpdateAccountEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailChanged,
     TResult Function(String username)? usernameChanged,
+    TResult Function(File image)? imageChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) =>
@@ -57,6 +65,7 @@ mixin _$UpdateAccountEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_ImageChanged value) imageChanged,
     required TResult Function(_Saved value) saved,
   }) =>
       throw _privateConstructorUsedError;
@@ -64,6 +73,7 @@ mixin _$UpdateAccountEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) =>
@@ -150,6 +160,7 @@ class _$_EmailChanged implements _EmailChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String email) emailChanged,
     required TResult Function(String username) usernameChanged,
+    required TResult Function(File image) imageChanged,
     required TResult Function() saved,
   }) {
     return emailChanged(email);
@@ -160,6 +171,7 @@ class _$_EmailChanged implements _EmailChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailChanged,
     TResult Function(String username)? usernameChanged,
+    TResult Function(File image)? imageChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -174,6 +186,7 @@ class _$_EmailChanged implements _EmailChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_ImageChanged value) imageChanged,
     required TResult Function(_Saved value) saved,
   }) {
     return emailChanged(this);
@@ -184,6 +197,7 @@ class _$_EmailChanged implements _EmailChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -267,6 +281,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String email) emailChanged,
     required TResult Function(String username) usernameChanged,
+    required TResult Function(File image) imageChanged,
     required TResult Function() saved,
   }) {
     return usernameChanged(username);
@@ -277,6 +292,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailChanged,
     TResult Function(String username)? usernameChanged,
+    TResult Function(File image)? imageChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -291,6 +307,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_ImageChanged value) imageChanged,
     required TResult Function(_Saved value) saved,
   }) {
     return usernameChanged(this);
@@ -301,6 +318,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -317,6 +335,126 @@ abstract class _UsernameChanged implements UpdateAccountEvent {
   String get username => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$UsernameChangedCopyWith<_UsernameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ImageChangedCopyWith<$Res> {
+  factory _$ImageChangedCopyWith(
+          _ImageChanged value, $Res Function(_ImageChanged) then) =
+      __$ImageChangedCopyWithImpl<$Res>;
+  $Res call({File image});
+}
+
+/// @nodoc
+class __$ImageChangedCopyWithImpl<$Res>
+    extends _$UpdateAccountEventCopyWithImpl<$Res>
+    implements _$ImageChangedCopyWith<$Res> {
+  __$ImageChangedCopyWithImpl(
+      _ImageChanged _value, $Res Function(_ImageChanged) _then)
+      : super(_value, (v) => _then(v as _ImageChanged));
+
+  @override
+  _ImageChanged get _value => super._value as _ImageChanged;
+
+  @override
+  $Res call({
+    Object? image = freezed,
+  }) {
+    return _then(_ImageChanged(
+      image == freezed ? _value.image : image as File,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_ImageChanged implements _ImageChanged {
+  const _$_ImageChanged(this.image);
+
+  @override
+  final File image;
+
+  @override
+  String toString() {
+    return 'UpdateAccountEvent.imageChanged(image: $image)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ImageChanged &&
+            (identical(other.image, image) ||
+                const DeepCollectionEquality().equals(other.image, image)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(image);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
+      __$ImageChangedCopyWithImpl<_ImageChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailChanged,
+    required TResult Function(String username) usernameChanged,
+    required TResult Function(File image) imageChanged,
+    required TResult Function() saved,
+  }) {
+    return imageChanged(image);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
+    if (imageChanged != null) {
+      return imageChanged(image);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_ImageChanged value) imageChanged,
+    required TResult Function(_Saved value) saved,
+  }) {
+    return imageChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
+    if (imageChanged != null) {
+      return imageChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ImageChanged implements UpdateAccountEvent {
+  const factory _ImageChanged(File image) = _$_ImageChanged;
+
+  File get image => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -358,6 +496,7 @@ class _$_Saved implements _Saved {
   TResult when<TResult extends Object?>({
     required TResult Function(String email) emailChanged,
     required TResult Function(String username) usernameChanged,
+    required TResult Function(File image) imageChanged,
     required TResult Function() saved,
   }) {
     return saved();
@@ -368,6 +507,7 @@ class _$_Saved implements _Saved {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailChanged,
     TResult Function(String username)? usernameChanged,
+    TResult Function(File image)? imageChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -382,6 +522,7 @@ class _$_Saved implements _Saved {
   TResult map<TResult extends Object?>({
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_UsernameChanged value) usernameChanged,
+    required TResult Function(_ImageChanged value) imageChanged,
     required TResult Function(_Saved value) saved,
   }) {
     return saved(this);
@@ -392,6 +533,7 @@ class _$_Saved implements _Saved {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -413,6 +555,7 @@ class _$UpdateAccountStateTearOff {
   _UpdateAccountState call(
       {required Username username,
       required EmailAddress emailAddress,
+      File? image = null,
       required bool showErrorMessages,
       required bool isSaving,
       required Option<Either<AccountFailure, Account>>
@@ -420,6 +563,7 @@ class _$UpdateAccountStateTearOff {
     return _UpdateAccountState(
       username: username,
       emailAddress: emailAddress,
+      image: image,
       showErrorMessages: showErrorMessages,
       isSaving: isSaving,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption,
@@ -434,6 +578,7 @@ const $UpdateAccountState = _$UpdateAccountStateTearOff();
 mixin _$UpdateAccountState {
   Username get username => throw _privateConstructorUsedError;
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  File? get image => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
   Option<Either<AccountFailure, Account>> get saveFailureOrSuccessOption =>
@@ -452,6 +597,7 @@ abstract class $UpdateAccountStateCopyWith<$Res> {
   $Res call(
       {Username username,
       EmailAddress emailAddress,
+      File? image,
       bool showErrorMessages,
       bool isSaving,
       Option<Either<AccountFailure, Account>> saveFailureOrSuccessOption});
@@ -470,6 +616,7 @@ class _$UpdateAccountStateCopyWithImpl<$Res>
   $Res call({
     Object? username = freezed,
     Object? emailAddress = freezed,
+    Object? image = freezed,
     Object? showErrorMessages = freezed,
     Object? isSaving = freezed,
     Object? saveFailureOrSuccessOption = freezed,
@@ -479,6 +626,7 @@ class _$UpdateAccountStateCopyWithImpl<$Res>
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
+      image: image == freezed ? _value.image : image as File?,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -501,6 +649,7 @@ abstract class _$UpdateAccountStateCopyWith<$Res>
   $Res call(
       {Username username,
       EmailAddress emailAddress,
+      File? image,
       bool showErrorMessages,
       bool isSaving,
       Option<Either<AccountFailure, Account>> saveFailureOrSuccessOption});
@@ -521,6 +670,7 @@ class __$UpdateAccountStateCopyWithImpl<$Res>
   $Res call({
     Object? username = freezed,
     Object? emailAddress = freezed,
+    Object? image = freezed,
     Object? showErrorMessages = freezed,
     Object? isSaving = freezed,
     Object? saveFailureOrSuccessOption = freezed,
@@ -530,6 +680,7 @@ class __$UpdateAccountStateCopyWithImpl<$Res>
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
+      image: image == freezed ? _value.image : image as File?,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -547,6 +698,7 @@ class _$_UpdateAccountState implements _UpdateAccountState {
   const _$_UpdateAccountState(
       {required this.username,
       required this.emailAddress,
+      this.image = null,
       required this.showErrorMessages,
       required this.isSaving,
       required this.saveFailureOrSuccessOption});
@@ -555,6 +707,9 @@ class _$_UpdateAccountState implements _UpdateAccountState {
   final Username username;
   @override
   final EmailAddress emailAddress;
+  @JsonKey(defaultValue: null)
+  @override
+  final File? image;
   @override
   final bool showErrorMessages;
   @override
@@ -564,7 +719,7 @@ class _$_UpdateAccountState implements _UpdateAccountState {
 
   @override
   String toString() {
-    return 'UpdateAccountState(username: $username, emailAddress: $emailAddress, showErrorMessages: $showErrorMessages, isSaving: $isSaving, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'UpdateAccountState(username: $username, emailAddress: $emailAddress, image: $image, showErrorMessages: $showErrorMessages, isSaving: $isSaving, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
   }
 
   @override
@@ -577,6 +732,8 @@ class _$_UpdateAccountState implements _UpdateAccountState {
             (identical(other.emailAddress, emailAddress) ||
                 const DeepCollectionEquality()
                     .equals(other.emailAddress, emailAddress)) &&
+            (identical(other.image, image) ||
+                const DeepCollectionEquality().equals(other.image, image)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
                     .equals(other.showErrorMessages, showErrorMessages)) &&
@@ -595,6 +752,7 @@ class _$_UpdateAccountState implements _UpdateAccountState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(username) ^
       const DeepCollectionEquality().hash(emailAddress) ^
+      const DeepCollectionEquality().hash(image) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSaving) ^
       const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
@@ -609,6 +767,7 @@ abstract class _UpdateAccountState implements UpdateAccountState {
   const factory _UpdateAccountState(
       {required Username username,
       required EmailAddress emailAddress,
+      File? image,
       required bool showErrorMessages,
       required bool isSaving,
       required Option<Either<AccountFailure, Account>>
@@ -618,6 +777,8 @@ abstract class _UpdateAccountState implements UpdateAccountState {
   Username get username => throw _privateConstructorUsedError;
   @override
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  @override
+  File? get image => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override

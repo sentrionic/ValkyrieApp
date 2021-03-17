@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -32,6 +34,12 @@ class UpdateAccountBloc extends Bloc<UpdateAccountEvent, UpdateAccountState> {
           saveFailureOrSuccessOption: none(),
         );
       },
+      imageChanged: (e) async* {
+        yield state.copyWith(
+          image: e.image,
+          saveFailureOrSuccessOption: none(),
+        );
+      },
       saved: (e) async* {
         Either<AccountFailure, Account>? failureOrSuccess;
 
@@ -46,6 +54,7 @@ class UpdateAccountBloc extends Bloc<UpdateAccountEvent, UpdateAccountState> {
           failureOrSuccess = await _repository.updateAccount(
             emailAddress: state.emailAddress,
             username: state.username,
+            image: state.image,
           );
         }
 

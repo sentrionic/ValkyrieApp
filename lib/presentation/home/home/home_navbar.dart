@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:valkyrie_app/presentation/core/colors.dart';
 
 class HomeNavigationBar extends StatelessWidget {
   const HomeNavigationBar({
@@ -12,9 +13,9 @@ class HomeNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      backgroundColor: Colors.black87,
+      backgroundColor: ThemeColors.navBarBackground,
       selectedItemColor: Colors.white,
-      unselectedItemColor: Colors.grey.shade900,
+      unselectedItemColor: const Color(0xff666A6B),
       showSelectedLabels: false,
       showUnselectedLabels: false,
       onTap: (index) => onSelectTab(index),

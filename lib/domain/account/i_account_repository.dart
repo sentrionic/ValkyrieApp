@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:valkyrie_app/domain/account/account.dart';
 import 'package:valkyrie_app/domain/account/account_failure.dart';
@@ -8,5 +10,6 @@ abstract class IAccountRepository {
   Future<Either<AccountFailure, Account>> updateAccount({
     required EmailAddress emailAddress,
     required Username username,
+    File? image,
   });
 }

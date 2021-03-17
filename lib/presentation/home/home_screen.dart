@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,26 +9,28 @@ import 'package:valkyrie_app/application/auth/auth_status/auth_status_bloc.dart'
 import 'package:valkyrie_app/application/dms/dm_list/dm_list_bloc.dart';
 import 'package:valkyrie_app/application/guilds/guild_list/guild_list_bloc.dart';
 import 'package:valkyrie_app/injection.dart';
-import 'package:valkyrie_app/presentation/auth/screens/start_up_screen.dart';
+import 'package:valkyrie_app/presentation/auth/start_up_screen.dart';
 import 'package:valkyrie_app/presentation/home/account/account_screen.dart';
-import 'package:valkyrie_app/presentation/home/widgets/home_body.dart';
-import 'package:valkyrie_app/presentation/home/widgets/home_navbar.dart';
+import 'package:valkyrie_app/presentation/home/account/friend_screen.dart';
+import 'package:valkyrie_app/presentation/home/home/widgets/home_body.dart';
+import 'package:valkyrie_app/presentation/home/home/home_navbar.dart';
 
 class HomeScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    final currentTab = useState(0);
+    final _currentTab = useState(0);
+    final _navigationQueue = useState(ListQueue<int>());
     final List<Widget> children = [
       HomeBody(),
-      Container(
-        color: Colors.black,
-      ),
+      FriendListScreen(),
       AccountScreen(),
     ];
 
     void _selectTab(int index) {
-      if (currentTab.value != index) {
-        currentTab.value = index;
+      if (_currentTab.value != index) {
+        _navigationQueue.value.removeWhere((element) => element == index);
+        _navigationQueue.value.addLast(index);
+        _currentTab.value = index;
       }
     }
 
@@ -57,11 +61,22 @@ class HomeScreen extends HookWidget {
             },
           ),
         ],
-        child: Scaffold(
-          body: children[currentTab.value],
-          bottomNavigationBar: HomeNavigationBar(
-            onSelectTab: _selectTab,
-            currentTab: currentTab.value,
+        child: WillPopScope(
+          onWillPop: () async {
+            if (_navigationQueue.value.isEmpty) return true;
+            _navigationQueue.value.removeLast();
+            _currentTab.value = _navigationQueue.value.isEmpty
+                ? 0
+                : _navigationQueue.value.last;
+
+            return false;
+          },
+          child: Scaffold(
+            body: children[_currentTab.value],
+            bottomNavigationBar: HomeNavigationBar(
+              onSelectTab: _selectTab,
+              currentTab: _currentTab.value,
+            ),
           ),
         ),
       ),

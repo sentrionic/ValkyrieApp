@@ -19,7 +19,10 @@ class SplashPage extends StatelessWidget {
       },
       child: const Scaffold(
         body: Center(
-          child: CircularProgressIndicator(),
+          child: Image(
+            height: 100,
+            image: AssetImage('assets/logo.png'),
+          ),
         ),
       ),
     );
