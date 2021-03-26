@@ -7,7 +7,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:valkyrie_app/application/account/get_account/account_cubit.dart';
 import 'package:valkyrie_app/application/auth/auth_status/auth_status_bloc.dart';
 import 'package:valkyrie_app/application/dms/dm_list/dm_list_bloc.dart';
-import 'package:valkyrie_app/application/guilds/guild_list/guild_list_bloc.dart';
 import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/auth/start_up_screen.dart';
 import 'package:valkyrie_app/presentation/home/account/account_screen.dart';
@@ -36,10 +35,6 @@ class HomeScreen extends HookWidget {
 
     return MultiBlocProvider(
       providers: [
-        BlocProvider<GuildListBloc>(
-          create: (context) =>
-              getIt<GuildListBloc>()..add(const GuildListEvent.getGuilds()),
-        ),
         BlocProvider<DMListBloc>(
           create: (context) =>
               getIt<DMListBloc>()..add(const DMListEvent.getUserDMs()),

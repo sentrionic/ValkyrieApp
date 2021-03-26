@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'guild_list_bloc.dart';
+part of 'guild_list_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -11,279 +11,6 @@ T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$GuildListEventTearOff {
-  const _$GuildListEventTearOff();
-
-  _GetGuilds getGuilds() {
-    return const _GetGuilds();
-  }
-
-  _GuildsReceived guildsReceived(
-      Either<GuildFailure, List<Guild>> failureOrGuilds) {
-    return _GuildsReceived(
-      failureOrGuilds,
-    );
-  }
-}
-
-/// @nodoc
-const $GuildListEvent = _$GuildListEventTearOff();
-
-/// @nodoc
-mixin _$GuildListEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getGuilds,
-    required TResult Function(Either<GuildFailure, List<Guild>> failureOrGuilds)
-        guildsReceived,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getGuilds,
-    TResult Function(Either<GuildFailure, List<Guild>> failureOrGuilds)?
-        guildsReceived,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetGuilds value) getGuilds,
-    required TResult Function(_GuildsReceived value) guildsReceived,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetGuilds value)? getGuilds,
-    TResult Function(_GuildsReceived value)? guildsReceived,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GuildListEventCopyWith<$Res> {
-  factory $GuildListEventCopyWith(
-          GuildListEvent value, $Res Function(GuildListEvent) then) =
-      _$GuildListEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$GuildListEventCopyWithImpl<$Res>
-    implements $GuildListEventCopyWith<$Res> {
-  _$GuildListEventCopyWithImpl(this._value, this._then);
-
-  final GuildListEvent _value;
-  // ignore: unused_field
-  final $Res Function(GuildListEvent) _then;
-}
-
-/// @nodoc
-abstract class _$GetGuildsCopyWith<$Res> {
-  factory _$GetGuildsCopyWith(
-          _GetGuilds value, $Res Function(_GetGuilds) then) =
-      __$GetGuildsCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$GetGuildsCopyWithImpl<$Res> extends _$GuildListEventCopyWithImpl<$Res>
-    implements _$GetGuildsCopyWith<$Res> {
-  __$GetGuildsCopyWithImpl(_GetGuilds _value, $Res Function(_GetGuilds) _then)
-      : super(_value, (v) => _then(v as _GetGuilds));
-
-  @override
-  _GetGuilds get _value => super._value as _GetGuilds;
-}
-
-/// @nodoc
-class _$_GetGuilds implements _GetGuilds {
-  const _$_GetGuilds();
-
-  @override
-  String toString() {
-    return 'GuildListEvent.getGuilds()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _GetGuilds);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getGuilds,
-    required TResult Function(Either<GuildFailure, List<Guild>> failureOrGuilds)
-        guildsReceived,
-  }) {
-    return getGuilds();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getGuilds,
-    TResult Function(Either<GuildFailure, List<Guild>> failureOrGuilds)?
-        guildsReceived,
-    required TResult orElse(),
-  }) {
-    if (getGuilds != null) {
-      return getGuilds();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetGuilds value) getGuilds,
-    required TResult Function(_GuildsReceived value) guildsReceived,
-  }) {
-    return getGuilds(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetGuilds value)? getGuilds,
-    TResult Function(_GuildsReceived value)? guildsReceived,
-    required TResult orElse(),
-  }) {
-    if (getGuilds != null) {
-      return getGuilds(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetGuilds implements GuildListEvent {
-  const factory _GetGuilds() = _$_GetGuilds;
-}
-
-/// @nodoc
-abstract class _$GuildsReceivedCopyWith<$Res> {
-  factory _$GuildsReceivedCopyWith(
-          _GuildsReceived value, $Res Function(_GuildsReceived) then) =
-      __$GuildsReceivedCopyWithImpl<$Res>;
-  $Res call({Either<GuildFailure, List<Guild>> failureOrGuilds});
-}
-
-/// @nodoc
-class __$GuildsReceivedCopyWithImpl<$Res>
-    extends _$GuildListEventCopyWithImpl<$Res>
-    implements _$GuildsReceivedCopyWith<$Res> {
-  __$GuildsReceivedCopyWithImpl(
-      _GuildsReceived _value, $Res Function(_GuildsReceived) _then)
-      : super(_value, (v) => _then(v as _GuildsReceived));
-
-  @override
-  _GuildsReceived get _value => super._value as _GuildsReceived;
-
-  @override
-  $Res call({
-    Object? failureOrGuilds = freezed,
-  }) {
-    return _then(_GuildsReceived(
-      failureOrGuilds == freezed
-          ? _value.failureOrGuilds
-          : failureOrGuilds as Either<GuildFailure, List<Guild>>,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_GuildsReceived implements _GuildsReceived {
-  const _$_GuildsReceived(this.failureOrGuilds);
-
-  @override
-  final Either<GuildFailure, List<Guild>> failureOrGuilds;
-
-  @override
-  String toString() {
-    return 'GuildListEvent.guildsReceived(failureOrGuilds: $failureOrGuilds)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _GuildsReceived &&
-            (identical(other.failureOrGuilds, failureOrGuilds) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrGuilds, failureOrGuilds)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failureOrGuilds);
-
-  @JsonKey(ignore: true)
-  @override
-  _$GuildsReceivedCopyWith<_GuildsReceived> get copyWith =>
-      __$GuildsReceivedCopyWithImpl<_GuildsReceived>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getGuilds,
-    required TResult Function(Either<GuildFailure, List<Guild>> failureOrGuilds)
-        guildsReceived,
-  }) {
-    return guildsReceived(failureOrGuilds);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getGuilds,
-    TResult Function(Either<GuildFailure, List<Guild>> failureOrGuilds)?
-        guildsReceived,
-    required TResult orElse(),
-  }) {
-    if (guildsReceived != null) {
-      return guildsReceived(failureOrGuilds);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetGuilds value) getGuilds,
-    required TResult Function(_GuildsReceived value) guildsReceived,
-  }) {
-    return guildsReceived(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetGuilds value)? getGuilds,
-    TResult Function(_GuildsReceived value)? guildsReceived,
-    required TResult orElse(),
-  }) {
-    if (guildsReceived != null) {
-      return guildsReceived(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GuildsReceived implements GuildListEvent {
-  const factory _GuildsReceived(
-      Either<GuildFailure, List<Guild>> failureOrGuilds) = _$_GuildsReceived;
-
-  Either<GuildFailure, List<Guild>> get failureOrGuilds =>
-      throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$GuildsReceivedCopyWith<_GuildsReceived> get copyWith =>
-      throw _privateConstructorUsedError;
-}
 
 /// @nodoc
 class _$GuildListStateTearOff {
@@ -575,7 +302,10 @@ class __$LoadSuccessCopyWithImpl<$Res>
     Object? guilds = freezed,
   }) {
     return _then(_LoadSuccess(
-      guilds == freezed ? _value.guilds : guilds as List<Guild>,
+      guilds == freezed
+          ? _value.guilds
+          : guilds // ignore: cast_nullable_to_non_nullable
+              as List<Guild>,
     ));
   }
 }
@@ -699,7 +429,8 @@ class __$LoadFailureCopyWithImpl<$Res>
     return _then(_LoadFailure(
       guildFailure == freezed
           ? _value.guildFailure
-          : guildFailure as GuildFailure,
+          : guildFailure // ignore: cast_nullable_to_non_nullable
+              as GuildFailure,
     ));
   }
 

@@ -121,7 +121,10 @@ class __$EmailChangedCopyWithImpl<$Res>
     Object? email = freezed,
   }) {
     return _then(_EmailChanged(
-      email == freezed ? _value.email : email as String,
+      email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -241,7 +244,10 @@ class __$UsernameChangedCopyWithImpl<$Res>
     Object? username = freezed,
   }) {
     return _then(_UsernameChanged(
-      username == freezed ? _value.username : username as String,
+      username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -362,7 +368,10 @@ class __$ImageChangedCopyWithImpl<$Res>
     Object? image = freezed,
   }) {
     return _then(_ImageChanged(
-      image == freezed ? _value.image : image as File,
+      image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as File,
     ));
   }
 }
@@ -622,18 +631,29 @@ class _$UpdateAccountStateCopyWithImpl<$Res>
     Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      username: username == freezed ? _value.username : username as Username,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as Username,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
-          : emailAddress as EmailAddress,
-      image: image == freezed ? _value.image : image as File?,
+          : emailAddress // ignore: cast_nullable_to_non_nullable
+              as EmailAddress,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as File?,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSaving: isSaving == freezed
+          ? _value.isSaving
+          : isSaving // ignore: cast_nullable_to_non_nullable
+              as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption
+          : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AccountFailure, Account>>,
     ));
   }
@@ -676,18 +696,29 @@ class __$UpdateAccountStateCopyWithImpl<$Res>
     Object? saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_UpdateAccountState(
-      username: username == freezed ? _value.username : username as Username,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as Username,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
-          : emailAddress as EmailAddress,
-      image: image == freezed ? _value.image : image as File?,
+          : emailAddress // ignore: cast_nullable_to_non_nullable
+              as EmailAddress,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as File?,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSaving: isSaving == freezed
+          ? _value.isSaving
+          : isSaving // ignore: cast_nullable_to_non_nullable
+              as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption
+          : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AccountFailure, Account>>,
     ));
   }

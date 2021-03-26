@@ -60,8 +60,14 @@ class _$DMChannelCopyWithImpl<$Res> implements $DMChannelCopyWith<$Res> {
     Object? user = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      user: user == freezed ? _value.user : user as User,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 
@@ -100,8 +106,14 @@ class __$DMChannelCopyWithImpl<$Res> extends _$DMChannelCopyWithImpl<$Res>
     Object? user = freezed,
   }) {
     return _then(_DMChannel(
-      id: id == freezed ? _value.id : id as String,
-      user: user == freezed ? _value.user : user as User,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 }
@@ -143,9 +155,9 @@ class _$_DMChannel extends _DMChannel {
 }
 
 abstract class _DMChannel extends DMChannel {
-  const _DMChannel._() : super._();
   const factory _DMChannel({required String id, required User user}) =
       _$_DMChannel;
+  const _DMChannel._() : super._();
 
   @override
   String get id => throw _privateConstructorUsedError;

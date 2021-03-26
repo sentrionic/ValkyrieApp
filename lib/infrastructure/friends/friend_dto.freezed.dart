@@ -68,10 +68,22 @@ class _$FriendDtoCopyWithImpl<$Res> implements $FriendDtoCopyWith<$Res> {
     Object? isOnline = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      username: username == freezed ? _value.username : username as String,
-      image: image == freezed ? _value.image : image as String,
-      isOnline: isOnline == freezed ? _value.isOnline : isOnline as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      isOnline: isOnline == freezed
+          ? _value.isOnline
+          : isOnline // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -102,10 +114,22 @@ class __$FriendDtoCopyWithImpl<$Res> extends _$FriendDtoCopyWithImpl<$Res>
     Object? isOnline = freezed,
   }) {
     return _then(_FriendDto(
-      id: id == freezed ? _value.id : id as String,
-      username: username == freezed ? _value.username : username as String,
-      image: image == freezed ? _value.image : image as String,
-      isOnline: isOnline == freezed ? _value.isOnline : isOnline as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      isOnline: isOnline == freezed
+          ? _value.isOnline
+          : isOnline // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -164,12 +188,12 @@ class _$_FriendDto extends _FriendDto {
 }
 
 abstract class _FriendDto extends FriendDto {
-  const _FriendDto._() : super._();
   const factory _FriendDto(
       {required String id,
       required String username,
       required String image,
       required bool isOnline}) = _$_FriendDto;
+  const _FriendDto._() : super._();
 
   @override
   String get id => throw _privateConstructorUsedError;

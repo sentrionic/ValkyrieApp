@@ -302,7 +302,10 @@ class __$LoadSuccessCopyWithImpl<$Res>
     Object? friends = freezed,
   }) {
     return _then(_LoadSuccess(
-      friends == freezed ? _value.friends : friends as List<Friend>,
+      friends == freezed
+          ? _value.friends
+          : friends // ignore: cast_nullable_to_non_nullable
+              as List<Friend>,
     ));
   }
 }
@@ -424,7 +427,10 @@ class __$LoadFailureCopyWithImpl<$Res>
     Object? failure = freezed,
   }) {
     return _then(_LoadFailure(
-      failure == freezed ? _value.failure : failure as FriendFailure,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as FriendFailure,
     ));
   }
 

@@ -68,12 +68,22 @@ class _$GuildDtoCopyWithImpl<$Res> implements $GuildDtoCopyWith<$Res> {
     Object? icon = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       defaultChannelId: defaultChannelId == freezed
           ? _value.defaultChannelId
-          : defaultChannelId as String,
-      icon: icon == freezed ? _value.icon : icon as String?,
+          : defaultChannelId // ignore: cast_nullable_to_non_nullable
+              as String,
+      icon: icon == freezed
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -103,12 +113,22 @@ class __$GuildDtoCopyWithImpl<$Res> extends _$GuildDtoCopyWithImpl<$Res>
     Object? icon = freezed,
   }) {
     return _then(_GuildDto(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       defaultChannelId: defaultChannelId == freezed
           ? _value.defaultChannelId
-          : defaultChannelId as String,
-      icon: icon == freezed ? _value.icon : icon as String?,
+          : defaultChannelId // ignore: cast_nullable_to_non_nullable
+              as String,
+      icon: icon == freezed
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -166,12 +186,12 @@ class _$_GuildDto extends _GuildDto {
 }
 
 abstract class _GuildDto extends GuildDto {
-  const _GuildDto._() : super._();
   const factory _GuildDto(
       {required String id,
       required String name,
       required String defaultChannelId,
       String? icon}) = _$_GuildDto;
+  const _GuildDto._() : super._();
 
   @override
   String get id => throw _privateConstructorUsedError;

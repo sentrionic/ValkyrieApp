@@ -27,15 +27,43 @@ class FriendListScreen extends StatelessWidget {
           builder: (context, state) {
             return state.maybeWhen(
               loadSuccess: (friends) {
-                return Container(
-                  color: ThemeColors.accountForm,
-                  child: ListView.builder(
-                    itemBuilder: (state, index) {
-                      final friend = friends[index];
-                      return FriendItem(friend: friend);
-                    },
-                    itemCount: friends.length,
-                  ),
+                final online =
+                    context.read<GetFriendsCubit>().getOnlineFriends();
+                final offline =
+                    context.read<GetFriendsCubit>().getOfflineFriendss();
+                return ListView(
+                  children: [
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 15.0),
+                      child: Text(
+                        "ONLINE — ${online.length}",
+                        style: const TextStyle(
+                          color: Colors.white24,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    for (var friend in online) FriendItem(friend: friend),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 15.0),
+                      child: Text(
+                        "OFFLINE — ${offline.length}",
+                        style: const TextStyle(
+                          color: Colors.white24,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    for (var friend in offline) FriendItem(friend: friend),
+                  ],
                 );
               },
               orElse: () => const Center(

@@ -67,12 +67,22 @@ class _$GuildCopyWithImpl<$Res> implements $GuildCopyWith<$Res> {
     Object? icon = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as GuildName,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as GuildName,
       defaultChannel: defaultChannel == freezed
           ? _value.defaultChannel
-          : defaultChannel as String,
-      icon: icon == freezed ? _value.icon : icon as String?,
+          : defaultChannel // ignore: cast_nullable_to_non_nullable
+              as String,
+      icon: icon == freezed
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -102,12 +112,22 @@ class __$GuildCopyWithImpl<$Res> extends _$GuildCopyWithImpl<$Res>
     Object? icon = freezed,
   }) {
     return _then(_Guild(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as GuildName,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as GuildName,
       defaultChannel: defaultChannel == freezed
           ? _value.defaultChannel
-          : defaultChannel as String,
-      icon: icon == freezed ? _value.icon : icon as String?,
+          : defaultChannel // ignore: cast_nullable_to_non_nullable
+              as String,
+      icon: icon == freezed
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -165,12 +185,12 @@ class _$_Guild extends _Guild {
 }
 
 abstract class _Guild extends Guild {
-  const _Guild._() : super._();
   const factory _Guild(
       {required String id,
       required GuildName name,
       required String defaultChannel,
       String? icon}) = _$_Guild;
+  const _Guild._() : super._();
 
   @override
   String get id => throw _privateConstructorUsedError;

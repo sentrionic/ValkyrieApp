@@ -302,7 +302,10 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$AccountStateCopyWithImpl<$Res>
     Object? account = freezed,
   }) {
     return _then(_LoadSuccess(
-      account == freezed ? _value.account : account as Account,
+      account == freezed
+          ? _value.account
+          : account // ignore: cast_nullable_to_non_nullable
+              as Account,
     ));
   }
 
@@ -430,7 +433,10 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$AccountStateCopyWithImpl<$Res>
     Object? failure = freezed,
   }) {
     return _then(_LoadFailure(
-      failure == freezed ? _value.failure : failure as AccountFailure,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as AccountFailure,
     ));
   }
 

@@ -663,7 +663,10 @@ class _$BadRequestCopyWithImpl<$Res> extends _$AccountFailureCopyWithImpl<$Res>
     Object? message = freezed,
   }) {
     return _then(BadRequest(
-      message == freezed ? _value.message : message as String,
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }

@@ -67,10 +67,22 @@ class _$AccountCopyWithImpl<$Res> implements $AccountCopyWith<$Res> {
     Object? image = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      username: username == freezed ? _value.username : username as Username,
-      email: email == freezed ? _value.email : email as EmailAddress,
-      image: image == freezed ? _value.image : image as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as Username,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as EmailAddress,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -100,10 +112,22 @@ class __$AccountCopyWithImpl<$Res> extends _$AccountCopyWithImpl<$Res>
     Object? image = freezed,
   }) {
     return _then(_Account(
-      id: id == freezed ? _value.id : id as String,
-      username: username == freezed ? _value.username : username as Username,
-      email: email == freezed ? _value.email : email as EmailAddress,
-      image: image == freezed ? _value.image : image as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as Username,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as EmailAddress,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -161,12 +185,12 @@ class _$_Account extends _Account {
 }
 
 abstract class _Account extends Account {
-  const _Account._() : super._();
   const factory _Account(
       {required String id,
       required Username username,
       required EmailAddress email,
       required String image}) = _$_Account;
+  const _Account._() : super._();
 
   @override
   String get id => throw _privateConstructorUsedError;

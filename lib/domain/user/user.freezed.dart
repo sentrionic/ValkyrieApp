@@ -61,9 +61,18 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object? image = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      username: username == freezed ? _value.username : username as String,
-      image: image == freezed ? _value.image : image as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -92,9 +101,18 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object? image = freezed,
   }) {
     return _then(_User(
-      id: id == freezed ? _value.id : id as String,
-      username: username == freezed ? _value.username : username as String,
-      image: image == freezed ? _value.image : image as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -143,11 +161,11 @@ class _$_User extends _User {
 }
 
 abstract class _User extends User {
-  const _User._() : super._();
   const factory _User(
       {required String id,
       required String username,
       required String image}) = _$_User;
+  const _User._() : super._();
 
   @override
   String get id => throw _privateConstructorUsedError;

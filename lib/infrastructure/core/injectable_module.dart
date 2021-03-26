@@ -16,12 +16,13 @@ abstract class InjectableModule {
       BaseOptions(baseUrl: url, responseType: ResponseType.plain),
     );
 
-    dio.interceptors.add(InterceptorsWrapper(onRequest: (options) async {
+    dio.interceptors
+        .add(InterceptorsWrapper(onRequest: (options, handler) async {
       dio.interceptors.requestLock.lock();
       final cookie = await storage.read(key: "cookie");
       if (cookie != null) options.headers["cookie"] = cookie;
       dio.interceptors.requestLock.unlock();
-      return options; // continue
+      return handler.next(options); // continue
     }));
 
     return dio;

@@ -4,7 +4,7 @@ import 'package:valkyrie_app/domain/user/user.dart';
 part 'dm_channel.freezed.dart';
 
 @freezed
-abstract class DMChannel implements _$DMChannel {
+class DMChannel with _$DMChannel {
   const DMChannel._();
 
   const factory DMChannel({

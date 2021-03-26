@@ -23,4 +23,18 @@ class GetFriendsCubit extends Cubit<GetFriendsState> {
       ),
     );
   }
+
+  List<Friend> getOnlineFriends() {
+    return state.maybeWhen(
+      loadSuccess: (friends) => friends.where((f) => f.isOnline).toList(),
+      orElse: () => [],
+    );
+  }
+
+  List<Friend> getOfflineFriendss() {
+    return state.maybeWhen(
+      loadSuccess: (friends) => friends.where((f) => !f.isOnline).toList(),
+      orElse: () => [],
+    );
+  }
 }

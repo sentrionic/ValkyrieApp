@@ -138,8 +138,9 @@ class AuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Either<AuthFailure, Unit>> forgotPassword(
-      {required EmailAddress emailAddress}) async {
+  Future<Either<AuthFailure, Unit>> forgotPassword({
+    required EmailAddress emailAddress,
+  }) async {
     final email = emailAddress.getOrCrash();
 
     try {

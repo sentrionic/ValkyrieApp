@@ -69,10 +69,22 @@ class _$AccountDtoCopyWithImpl<$Res> implements $AccountDtoCopyWith<$Res> {
     Object? image = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      username: username == freezed ? _value.username : username as String,
-      email: email == freezed ? _value.email : email as String,
-      image: image == freezed ? _value.image : image as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -104,10 +116,22 @@ class __$AccountDtoCopyWithImpl<$Res> extends _$AccountDtoCopyWithImpl<$Res>
     Object? image = freezed,
   }) {
     return _then(_AccountDto(
-      id: id == freezed ? _value.id : id as String,
-      username: username == freezed ? _value.username : username as String,
-      email: email == freezed ? _value.email : email as String,
-      image: image == freezed ? _value.image : image as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -165,12 +189,12 @@ class _$_AccountDto extends _AccountDto {
 }
 
 abstract class _AccountDto extends AccountDto {
-  const _AccountDto._() : super._();
   const factory _AccountDto(
       {required String id,
       required String username,
       required String email,
       required String image}) = _$_AccountDto;
+  const _AccountDto._() : super._();
 
   @override
   String get id => throw _privateConstructorUsedError;

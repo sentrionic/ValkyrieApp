@@ -144,8 +144,10 @@ class _$ValueFailureCopyWithImpl<T, $Res>
     Object? failedValue = freezed,
   }) {
     return _then(_value.copyWith(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
@@ -177,9 +179,14 @@ class _$ExceedingLengthCopyWithImpl<T, $Res>
     Object? max = freezed,
   }) {
     return _then(ExceedingLength<T>(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as T,
-      max: max == freezed ? _value.max : max as int,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+      max: max == freezed
+          ? _value.max
+          : max // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -321,8 +328,10 @@ class _$EmptyCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
     Object? failedValue = freezed,
   }) {
     return _then(Empty<T>(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
@@ -460,9 +469,14 @@ class _$TooManyGuildsCopyWithImpl<T, $Res>
     Object? max = freezed,
   }) {
     return _then(TooManyGuilds<T>(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as T,
-      max: max == freezed ? _value.max : max as int,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+      max: max == freezed
+          ? _value.max
+          : max // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -607,8 +621,10 @@ class _$InvalidEmailCopyWithImpl<T, $Res>
     Object? failedValue = freezed,
   }) {
     return _then(InvalidEmail<T>(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
@@ -745,8 +761,10 @@ class _$InvalidUsernameCopyWithImpl<T, $Res>
     Object? failedValue = freezed,
   }) {
     return _then(InvalidUsername<T>(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
@@ -884,8 +902,10 @@ class _$ShortPasswordCopyWithImpl<T, $Res>
     Object? failedValue = freezed,
   }) {
     return _then(ShortPassword<T>(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
@@ -1022,8 +1042,10 @@ class _$PasswordsDontMatchCopyWithImpl<T, $Res>
     Object? failedValue = freezed,
   }) {
     return _then(PasswordsDontMatch<T>(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }

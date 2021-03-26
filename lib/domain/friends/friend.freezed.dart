@@ -67,10 +67,22 @@ class _$FriendCopyWithImpl<$Res> implements $FriendCopyWith<$Res> {
     Object? isOnline = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      username: username == freezed ? _value.username : username as String,
-      image: image == freezed ? _value.image : image as String,
-      isOnline: isOnline == freezed ? _value.isOnline : isOnline as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      isOnline: isOnline == freezed
+          ? _value.isOnline
+          : isOnline // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -100,10 +112,22 @@ class __$FriendCopyWithImpl<$Res> extends _$FriendCopyWithImpl<$Res>
     Object? isOnline = freezed,
   }) {
     return _then(_Friend(
-      id: id == freezed ? _value.id : id as String,
-      username: username == freezed ? _value.username : username as String,
-      image: image == freezed ? _value.image : image as String,
-      isOnline: isOnline == freezed ? _value.isOnline : isOnline as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      isOnline: isOnline == freezed
+          ? _value.isOnline
+          : isOnline // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -162,12 +186,12 @@ class _$_Friend extends _Friend {
 }
 
 abstract class _Friend extends Friend {
-  const _Friend._() : super._();
   const factory _Friend(
       {required String id,
       required String username,
       required String image,
       required bool isOnline}) = _$_Friend;
+  const _Friend._() : super._();
 
   @override
   String get id => throw _privateConstructorUsedError;

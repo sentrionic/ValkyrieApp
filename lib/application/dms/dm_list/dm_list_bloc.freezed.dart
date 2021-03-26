@@ -195,7 +195,8 @@ class __$DMChannelsReceivedCopyWithImpl<$Res>
     return _then(_DMChannelsReceived(
       failureOrChannels == freezed
           ? _value.failureOrChannels
-          : failureOrChannels as Either<DMChannelFailure, List<DMChannel>>,
+          : failureOrChannels // ignore: cast_nullable_to_non_nullable
+              as Either<DMChannelFailure, List<DMChannel>>,
     ));
   }
 }
@@ -580,7 +581,10 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$DMListStateCopyWithImpl<$Res>
     Object? channels = freezed,
   }) {
     return _then(_LoadSuccess(
-      channels == freezed ? _value.channels : channels as List<DMChannel>,
+      channels == freezed
+          ? _value.channels
+          : channels // ignore: cast_nullable_to_non_nullable
+              as List<DMChannel>,
     ));
   }
 }
@@ -702,7 +706,10 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$DMListStateCopyWithImpl<$Res>
     Object? failure = freezed,
   }) {
     return _then(_LoadFailure(
-      failure == freezed ? _value.failure : failure as DMChannelFailure,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as DMChannelFailure,
     ));
   }
 

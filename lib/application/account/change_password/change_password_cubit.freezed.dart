@@ -85,21 +85,30 @@ class _$ChangePasswordStateCopyWithImpl<$Res>
     Object? authFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      oldPassword:
-          oldPassword == freezed ? _value.oldPassword : oldPassword as Password,
-      newPassword:
-          newPassword == freezed ? _value.newPassword : newPassword as Password,
+      oldPassword: oldPassword == freezed
+          ? _value.oldPassword
+          : oldPassword // ignore: cast_nullable_to_non_nullable
+              as Password,
+      newPassword: newPassword == freezed
+          ? _value.newPassword
+          : newPassword // ignore: cast_nullable_to_non_nullable
+              as Password,
       confirmNewPassword: confirmNewPassword == freezed
           ? _value.confirmNewPassword
-          : confirmNewPassword as Password,
+          : confirmNewPassword // ignore: cast_nullable_to_non_nullable
+              as Password,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
       authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
           ? _value.authFailureOrSuccessOption
-          : authFailureOrSuccessOption as Option<Either<AuthFailure, Unit>>,
+          : authFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<AuthFailure, Unit>>,
     ));
   }
 }
@@ -141,21 +150,30 @@ class __$ChangePasswordStateCopyWithImpl<$Res>
     Object? authFailureOrSuccessOption = freezed,
   }) {
     return _then(_ChangePasswordState(
-      oldPassword:
-          oldPassword == freezed ? _value.oldPassword : oldPassword as Password,
-      newPassword:
-          newPassword == freezed ? _value.newPassword : newPassword as Password,
+      oldPassword: oldPassword == freezed
+          ? _value.oldPassword
+          : oldPassword // ignore: cast_nullable_to_non_nullable
+              as Password,
+      newPassword: newPassword == freezed
+          ? _value.newPassword
+          : newPassword // ignore: cast_nullable_to_non_nullable
+              as Password,
       confirmNewPassword: confirmNewPassword == freezed
           ? _value.confirmNewPassword
-          : confirmNewPassword as Password,
+          : confirmNewPassword // ignore: cast_nullable_to_non_nullable
+              as Password,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: isSubmitting == freezed
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
       authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
           ? _value.authFailureOrSuccessOption
-          : authFailureOrSuccessOption as Option<Either<AuthFailure, Unit>>,
+          : authFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<AuthFailure, Unit>>,
     ));
   }
 }

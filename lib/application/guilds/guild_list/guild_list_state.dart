@@ -1,4 +1,4 @@
-part of 'guild_list_bloc.dart';
+part of 'guild_list_cubit.dart';
 
 @freezed
 class GuildListState with _$GuildListState {

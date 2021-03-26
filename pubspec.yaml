@@ -11,26 +11,26 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  another_flushbar: ^1.10.15
+  another_flushbar: ^1.10.17
+  calendar_time: ^2.0.0-nullsafety.0
   dartz: ^0.10.0-nullsafety.1
-  dio: ^4.0.0-beta6
-  flutter_bloc: ^7.0.0-nullsafety.3
+  dio: ^4.0.0-prev3
+  flutter_bloc: ^7.0.0
   flutter_hooks: ^0.16.0
-  flutter_secure_storage: ^4.0.0
-  freezed_annotation: ^0.14.0
+  flutter_secure_storage: ^4.1.0
+  freezed_annotation: ^0.14.1
   get_it: ^6.0.0
-  hooks_riverpod: ^0.13.1
   image_cropper: ^1.4.0
-  image_picker: ^0.7.2+1
-  injectable: ^1.2.0
+  image_picker: ^0.7.3
+  injectable: ^1.2.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: null
-  freezed: ^0.14.0
-  injectable_generator: ^1.2.0
-  lint: ^1.5.2
+  freezed: ^0.14.1
+  injectable_generator: ^1.2.2
+  lint: ^1.5.3
 
 flutter:
   uses-material-design: true

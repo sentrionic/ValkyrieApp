@@ -907,7 +907,10 @@ class _$BadRequestCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
     Object? error = freezed,
   }) {
     return _then(BadRequest(
-      error == freezed ? _value.error : error as String,
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }

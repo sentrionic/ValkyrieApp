@@ -59,8 +59,14 @@ class _$FieldErrorCopyWithImpl<$Res> implements $FieldErrorCopyWith<$Res> {
     Object? message = freezed,
   }) {
     return _then(_value.copyWith(
-      field: field == freezed ? _value.field : field as String,
-      message: message == freezed ? _value.message : message as String,
+      field: field == freezed
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as String,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -90,8 +96,14 @@ class __$FieldErrorCopyWithImpl<$Res> extends _$FieldErrorCopyWithImpl<$Res>
     Object? message = freezed,
   }) {
     return _then(_FieldError(
-      field: field == freezed ? _value.field : field as String,
-      message: message == freezed ? _value.message : message as String,
+      field: field == freezed
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as String,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -133,9 +145,9 @@ class _$_FieldError extends _FieldError {
 }
 
 abstract class _FieldError extends FieldError {
-  const _FieldError._() : super._();
   const factory _FieldError({required String field, required String message}) =
       _$_FieldError;
+  const _FieldError._() : super._();
 
   @override
   String get field => throw _privateConstructorUsedError;
