@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:calendar_time/calendar_time.dart';
+import 'package:flutter/material.dart';
 import 'package:valkyrie_app/domain/message/message.dart';
 
 class MessageItem extends StatelessWidget {

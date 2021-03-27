@@ -6,22 +6,16 @@ import 'package:valkyrie_app/application/channels/current/current_channel_cubit.
 import 'package:valkyrie_app/application/messages/create_message/create_message_cubit.dart';
 import 'package:valkyrie_app/application/messages/get_messages/messages_cubit.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
-import 'package:valkyrie_app/presentation/guild/guild_chat.dart';
-import 'package:valkyrie_app/presentation/guild/guild_drawer.dart';
-import 'package:valkyrie_app/presentation/guild/guild_header.dart';
-import 'package:valkyrie_app/presentation/guild/guild_member_list_drawer.dart';
+import 'package:valkyrie_app/presentation/core/colors.dart';
 
 import '../../injection.dart';
-
-class GuildScreenArguments {
-  final Guild guild;
-
-  GuildScreenArguments(this.guild);
-}
+import 'widgets/guild_channel_header.dart';
+import 'widgets/guild_chat.dart';
+import 'widgets/guild_drawer.dart';
+import 'widgets/guild_member_list_drawer.dart';
 
 class GuildScreen extends HookWidget {
   final Guild guild;
-
   const GuildScreen({Key? key, required this.guild}) : super(key: key);
 
   @override
@@ -42,14 +36,14 @@ class GuildScreen extends HookWidget {
       child: Scaffold(
         key: _drawerKey,
         appBar: AppBar(
-          backgroundColor: const Color(0xff2D3134),
+          backgroundColor: ThemeColors.appBackground,
           title: Row(
             children: [
               const Icon(
                 Icons.tag,
                 color: Colors.white38,
               ),
-              GuildHeader(),
+              GuildChannelHeader(),
             ],
           ),
           leading: IconButton(

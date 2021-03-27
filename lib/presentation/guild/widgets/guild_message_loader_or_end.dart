@@ -4,10 +4,11 @@ import 'package:valkyrie_app/application/channels/cubit/channel_cubit.dart';
 import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
 import 'package:valkyrie_app/application/messages/get_messages/messages_cubit.dart';
 
-class GuildChannelLoaderOrEndIndicator extends StatelessWidget {
+class GuildMessageLoaderOrEndIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final channelId = context.watch<CurrentChannelCubit>().state;
+    final channel = context.watch<ChannelCubit>().getCurrentChannel(channelId);
     return BlocBuilder<MessagesCubit, MessagesState>(
       builder: (context, state) => state.maybeWhen(
         loadSuccess: (_, hasMore) => Container(
@@ -29,7 +30,7 @@ class GuildChannelLoaderOrEndIndicator extends StatelessWidget {
                             height: 10,
                           ),
                           Text(
-                            "Welcome to #${context.watch<ChannelCubit>().getCurrentChannel(channelId)?.name.getOrCrash() ?? ""}!",
+                            "Welcome to #${channel?.name.getOrCrash() ?? ""}!",
                             style: const TextStyle(
                               fontSize: 26,
                               fontWeight: FontWeight.bold,
@@ -39,7 +40,7 @@ class GuildChannelLoaderOrEndIndicator extends StatelessWidget {
                             height: 10,
                           ),
                           Text(
-                            "This is the start of the #${context.watch<ChannelCubit>().getCurrentChannel(channelId)?.name.getOrCrash() ?? ""} channel.",
+                            "This is the start of the #${channel?.name.getOrCrash() ?? ""} channel.",
                             style: const TextStyle(
                               fontSize: 18,
                               color: Colors.white60,

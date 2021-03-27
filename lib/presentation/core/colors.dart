@@ -11,4 +11,6 @@ class ThemeColors {
   static const guildList = Color(0xff1D2223);
   static const navBarBackground = Color(0xff17191A);
   static const dmBackground = Color(0xff2D3134);
+  static const messageInput = Color(0xff272B2E);
+  static const inviteGrey = Color(0xff4E535B);
 }

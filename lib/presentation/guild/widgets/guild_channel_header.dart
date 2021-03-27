@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valkyrie_app/application/channels/cubit/channel_cubit.dart';
 import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
 
-class GuildHeader extends StatelessWidget {
+class GuildChannelHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final channelId = context.watch<CurrentChannelCubit>().state;

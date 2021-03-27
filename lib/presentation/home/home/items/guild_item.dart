@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
-
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
-import 'package:valkyrie_app/presentation/guild/guild_screen.dart';
+import 'package:valkyrie_app/presentation/core/screen_arguments/guild_screen_arguments.dart';
 
 class GuildItem extends StatelessWidget {
   final Guild guild;

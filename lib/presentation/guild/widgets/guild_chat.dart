@@ -3,10 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
 import 'package:valkyrie_app/application/messages/get_messages/messages_cubit.dart';
-import 'package:valkyrie_app/presentation/guild/guild_channel_loader_or_end.dart';
-import 'package:valkyrie_app/presentation/guild/guild_message_input.dart';
+import 'package:valkyrie_app/presentation/common/center_loading_indicator.dart';
+import 'package:valkyrie_app/presentation/guild/widgets/guild_message_loader_or_end.dart';
 
-import 'items/message_item.dart';
+import '../items/message_item.dart';
+import 'guild_message_input.dart';
 
 class GuildChat extends HookWidget {
   @override
@@ -34,7 +35,7 @@ class GuildChat extends HookWidget {
                     reverse: true,
                     itemBuilder: (context, index) {
                       return index >= state.messages.length
-                          ? GuildChannelLoaderOrEndIndicator()
+                          ? GuildMessageLoaderOrEndIndicator()
                           : MessageItem(message: state.messages[index]);
                     },
                     itemCount: state.messages.length + 1,
@@ -51,9 +52,7 @@ class GuildChat extends HookWidget {
               ],
             );
           },
-          orElse: () => const Center(
-            child: CircularProgressIndicator(),
-          ),
+          orElse: () => CenterLoadingIndicator(),
         );
       },
     );

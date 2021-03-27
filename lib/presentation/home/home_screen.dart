@@ -10,9 +10,10 @@ import 'package:valkyrie_app/application/dms/dm_list/dm_list_bloc.dart';
 import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/auth/start_up_screen.dart';
 import 'package:valkyrie_app/presentation/home/account/account_screen.dart';
-import 'package:valkyrie_app/presentation/home/account/friend_screen.dart';
-import 'package:valkyrie_app/presentation/home/home/widgets/home_body.dart';
 import 'package:valkyrie_app/presentation/home/home/home_navbar.dart';
+import 'package:valkyrie_app/presentation/home/home/widgets/home_body.dart';
+
+import 'file:///C:/Users/Christoph/Downloads/ValkyrieApp/lib/presentation/home/friends/friend_screen.dart';
 
 class HomeScreen extends HookWidget {
   @override

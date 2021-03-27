@@ -44,7 +44,7 @@ class GuildMessageInput extends HookWidget {
                 decoration: InputDecoration(
                   hintText:
                       'Message #${context.watch<ChannelCubit>().getCurrentChannel(channelId)?.name.getOrCrash() ?? ""}',
-                  fillColor: const Color(0xff272B2E),
+                  fillColor: ThemeColors.messageInput,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25.0),
                     borderSide: const BorderSide(

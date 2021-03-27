@@ -12,6 +12,10 @@ import 'package:valkyrie_app/presentation/home/account/change_password_screen.da
 import 'package:valkyrie_app/presentation/home/home_screen.dart';
 import 'package:valkyrie_app/presentation/splash/splash_page.dart';
 
+import 'screen_arguments/guild_screen_arguments.dart';
+import 'transitions/fade_transition_route.dart';
+import 'transitions/slide_transition_route.dart';
+
 class AppRouter {
   final _guildBloc = getIt<GuildListCubit>();
   final _currentChannelCubit = getIt<CurrentChannelCubit>();
@@ -19,11 +23,11 @@ class AppRouter {
   Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return FadeRoute(
+        return FadeTransitionRoute(
           page: SplashPage(),
         );
       case '/auth':
-        return FadeRoute(
+        return FadeTransitionRoute(
           page: StartUpScreen(),
         );
       case '/login':
@@ -35,7 +39,7 @@ class AppRouter {
           page: RegisterScreen(),
         );
       case '/home':
-        return FadeRoute(
+        return FadeTransitionRoute(
           page: MultiBlocProvider(
             providers: [
               BlocProvider.value(value: _currentChannelCubit),
@@ -57,7 +61,7 @@ class AppRouter {
       case '/guild':
         final GuildScreenArguments args =
             settings.arguments! as GuildScreenArguments;
-        return FadeRoute(
+        return FadeTransitionRoute(
           page: MultiBlocProvider(
             providers: [
               BlocProvider.value(value: _currentChannelCubit),
@@ -72,55 +76,4 @@ class AppRouter {
         );
     }
   }
-}
-
-class SlideTransitionRoute extends PageRouteBuilder {
-  final Widget page;
-  SlideTransitionRoute({required this.page})
-      : super(
-          transitionDuration: const Duration(milliseconds: 225),
-          pageBuilder: (
-            BuildContext context,
-            Animation<double> animation,
-            Animation<double> secondaryAnimation,
-          ) =>
-              page,
-          transitionsBuilder: (
-            BuildContext context,
-            Animation<double> animation,
-            Animation<double> secondaryAnimation,
-            Widget child,
-          ) =>
-              SlideTransition(
-            position: Tween<Offset>(
-              begin: const Offset(1, 0),
-              end: Offset.zero,
-            ).animate(animation),
-            child: child,
-          ),
-        );
-}
-
-class FadeRoute extends PageRouteBuilder {
-  final Widget page;
-  FadeRoute({required this.page})
-      : super(
-          transitionDuration: const Duration(milliseconds: 225),
-          pageBuilder: (
-            BuildContext context,
-            Animation<double> animation,
-            Animation<double> secondaryAnimation,
-          ) =>
-              page,
-          transitionsBuilder: (
-            BuildContext context,
-            Animation<double> animation,
-            Animation<double> secondaryAnimation,
-            Widget child,
-          ) =>
-              FadeTransition(
-            opacity: animation,
-            child: child,
-          ),
-        );
 }
