@@ -4,7 +4,7 @@ import 'package:valkyrie_app/domain/user/user.dart';
 part 'user_dto.freezed.dart';
 
 @freezed
-abstract class UserDto implements _$UserDto {
+class UserDto with _$UserDto {
   const UserDto._();
 
   const factory UserDto({

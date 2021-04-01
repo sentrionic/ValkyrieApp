@@ -5,7 +5,6 @@
 // **************************************************************************
 
 import 'package:dio/dio.dart' as _i6;
-import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i5;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -18,6 +17,8 @@ import 'application/auth/login_form/login_form_bloc.dart' as _i23;
 import 'application/auth/register_form/register_form_bloc.dart' as _i26;
 import 'application/channels/cubit/channel_cubit.dart' as _i31;
 import 'application/channels/current/current_channel_cubit.dart' as _i3;
+import 'application/channels/currently_typing/currently_typing_cubit.dart'
+    as _i5;
 import 'application/dms/dm_list/dm_list_bloc.dart' as _i33;
 import 'application/friends/get_friends/get_friends_cubit.dart' as _i35;
 import 'application/guilds/current/current_guild_cubit.dart' as _i4;
@@ -52,14 +53,13 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   final injectableModule = _$InjectableModule();
   gh.factory<_i3.CurrentChannelCubit>(() => _i3.CurrentChannelCubit());
   gh.factory<_i4.CurrentGuildCubit>(() => _i4.CurrentGuildCubit());
-  gh.lazySingleton<_i5.FlutterSecureStorage>(() => injectableModule.storage);
+  gh.factory<_i5.CurrentlyTypingCubit>(() => _i5.CurrentlyTypingCubit());
   gh.factory<String>(() => injectableModule.baseUrl, instanceName: 'BaseUrl');
   gh.lazySingleton<_i6.Dio>(
       () => injectableModule.dio(get<String>(instanceName: 'BaseUrl')));
   gh.lazySingleton<_i7.IAccountRepository>(
       () => _i8.AccountRepository(get<_i6.Dio>()));
-  gh.lazySingleton<_i9.IAuthFacade>(
-      () => _i10.AuthFacade(get<_i6.Dio>(), get<_i5.FlutterSecureStorage>()));
+  gh.lazySingleton<_i9.IAuthFacade>(() => _i10.AuthFacade(get<_i6.Dio>()));
   gh.lazySingleton<_i11.IChannelRepository>(
       () => _i12.ChannelRepository(get<_i6.Dio>()));
   gh.lazySingleton<_i13.IDMRepository>(() => _i14.DMRepository(get<_i6.Dio>()));

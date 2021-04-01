@@ -23,7 +23,7 @@ class _$MessageDtoTearOff {
       required String filetype,
       required String createdAt,
       required String updatedAt,
-      required UserDto user}) {
+      required MemberDto user}) {
     return _MessageDto(
       id: id,
       text: text,
@@ -47,7 +47,7 @@ mixin _$MessageDto {
   String get filetype => throw _privateConstructorUsedError;
   String get createdAt => throw _privateConstructorUsedError;
   String get updatedAt => throw _privateConstructorUsedError;
-  UserDto get user => throw _privateConstructorUsedError;
+  MemberDto get user => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MessageDtoCopyWith<MessageDto> get copyWith =>
@@ -66,9 +66,9 @@ abstract class $MessageDtoCopyWith<$Res> {
       String filetype,
       String createdAt,
       String updatedAt,
-      UserDto user});
+      MemberDto user});
 
-  $UserDtoCopyWith<$Res> get user;
+  $MemberDtoCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -117,13 +117,13 @@ class _$MessageDtoCopyWithImpl<$Res> implements $MessageDtoCopyWith<$Res> {
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserDto,
+              as MemberDto,
     ));
   }
 
   @override
-  $UserDtoCopyWith<$Res> get user {
-    return $UserDtoCopyWith<$Res>(_value.user, (value) {
+  $MemberDtoCopyWith<$Res> get user {
+    return $MemberDtoCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
     });
   }
@@ -142,10 +142,10 @@ abstract class _$MessageDtoCopyWith<$Res> implements $MessageDtoCopyWith<$Res> {
       String filetype,
       String createdAt,
       String updatedAt,
-      UserDto user});
+      MemberDto user});
 
   @override
-  $UserDtoCopyWith<$Res> get user;
+  $MemberDtoCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -196,7 +196,7 @@ class __$MessageDtoCopyWithImpl<$Res> extends _$MessageDtoCopyWithImpl<$Res>
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserDto,
+              as MemberDto,
     ));
   }
 }
@@ -226,7 +226,7 @@ class _$_MessageDto extends _MessageDto {
   @override
   final String updatedAt;
   @override
-  final UserDto user;
+  final MemberDto user;
 
   @override
   String toString() {
@@ -281,7 +281,7 @@ abstract class _MessageDto extends MessageDto {
       required String filetype,
       required String createdAt,
       required String updatedAt,
-      required UserDto user}) = _$_MessageDto;
+      required MemberDto user}) = _$_MessageDto;
   const _MessageDto._() : super._();
 
   @override
@@ -297,7 +297,7 @@ abstract class _MessageDto extends MessageDto {
   @override
   String get updatedAt => throw _privateConstructorUsedError;
   @override
-  UserDto get user => throw _privateConstructorUsedError;
+  MemberDto get user => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$MessageDtoCopyWith<_MessageDto> get copyWith =>

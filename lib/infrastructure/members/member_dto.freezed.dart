@@ -21,13 +21,17 @@ class _$MemberDtoTearOff {
       required String username,
       required String image,
       required bool isOnline,
-      required bool isFriend}) {
+      required bool isFriend,
+      String? nickname,
+      String? color}) {
     return _MemberDto(
       id: id,
       username: username,
       image: image,
       isOnline: isOnline,
       isFriend: isFriend,
+      nickname: nickname,
+      color: color,
     );
   }
 }
@@ -42,6 +46,8 @@ mixin _$MemberDto {
   String get image => throw _privateConstructorUsedError;
   bool get isOnline => throw _privateConstructorUsedError;
   bool get isFriend => throw _privateConstructorUsedError;
+  String? get nickname => throw _privateConstructorUsedError;
+  String? get color => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MemberDtoCopyWith<MemberDto> get copyWith =>
@@ -53,7 +59,13 @@ abstract class $MemberDtoCopyWith<$Res> {
   factory $MemberDtoCopyWith(MemberDto value, $Res Function(MemberDto) then) =
       _$MemberDtoCopyWithImpl<$Res>;
   $Res call(
-      {String id, String username, String image, bool isOnline, bool isFriend});
+      {String id,
+      String username,
+      String image,
+      bool isOnline,
+      bool isFriend,
+      String? nickname,
+      String? color});
 }
 
 /// @nodoc
@@ -71,6 +83,8 @@ class _$MemberDtoCopyWithImpl<$Res> implements $MemberDtoCopyWith<$Res> {
     Object? image = freezed,
     Object? isOnline = freezed,
     Object? isFriend = freezed,
+    Object? nickname = freezed,
+    Object? color = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -93,6 +107,14 @@ class _$MemberDtoCopyWithImpl<$Res> implements $MemberDtoCopyWith<$Res> {
           ? _value.isFriend
           : isFriend // ignore: cast_nullable_to_non_nullable
               as bool,
+      nickname: nickname == freezed
+          ? _value.nickname
+          : nickname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      color: color == freezed
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -104,7 +126,13 @@ abstract class _$MemberDtoCopyWith<$Res> implements $MemberDtoCopyWith<$Res> {
       __$MemberDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id, String username, String image, bool isOnline, bool isFriend});
+      {String id,
+      String username,
+      String image,
+      bool isOnline,
+      bool isFriend,
+      String? nickname,
+      String? color});
 }
 
 /// @nodoc
@@ -123,6 +151,8 @@ class __$MemberDtoCopyWithImpl<$Res> extends _$MemberDtoCopyWithImpl<$Res>
     Object? image = freezed,
     Object? isOnline = freezed,
     Object? isFriend = freezed,
+    Object? nickname = freezed,
+    Object? color = freezed,
   }) {
     return _then(_MemberDto(
       id: id == freezed
@@ -145,6 +175,14 @@ class __$MemberDtoCopyWithImpl<$Res> extends _$MemberDtoCopyWithImpl<$Res>
           ? _value.isFriend
           : isFriend // ignore: cast_nullable_to_non_nullable
               as bool,
+      nickname: nickname == freezed
+          ? _value.nickname
+          : nickname // ignore: cast_nullable_to_non_nullable
+              as String?,
+      color: color == freezed
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -156,7 +194,9 @@ class _$_MemberDto extends _MemberDto {
       required this.username,
       required this.image,
       required this.isOnline,
-      required this.isFriend})
+      required this.isFriend,
+      this.nickname,
+      this.color})
       : super._();
 
   @override
@@ -169,10 +209,14 @@ class _$_MemberDto extends _MemberDto {
   final bool isOnline;
   @override
   final bool isFriend;
+  @override
+  final String? nickname;
+  @override
+  final String? color;
 
   @override
   String toString() {
-    return 'MemberDto(id: $id, username: $username, image: $image, isOnline: $isOnline, isFriend: $isFriend)';
+    return 'MemberDto(id: $id, username: $username, image: $image, isOnline: $isOnline, isFriend: $isFriend, nickname: $nickname, color: $color)';
   }
 
   @override
@@ -191,7 +235,12 @@ class _$_MemberDto extends _MemberDto {
                     .equals(other.isOnline, isOnline)) &&
             (identical(other.isFriend, isFriend) ||
                 const DeepCollectionEquality()
-                    .equals(other.isFriend, isFriend)));
+                    .equals(other.isFriend, isFriend)) &&
+            (identical(other.nickname, nickname) ||
+                const DeepCollectionEquality()
+                    .equals(other.nickname, nickname)) &&
+            (identical(other.color, color) ||
+                const DeepCollectionEquality().equals(other.color, color)));
   }
 
   @override
@@ -201,7 +250,9 @@ class _$_MemberDto extends _MemberDto {
       const DeepCollectionEquality().hash(username) ^
       const DeepCollectionEquality().hash(image) ^
       const DeepCollectionEquality().hash(isOnline) ^
-      const DeepCollectionEquality().hash(isFriend);
+      const DeepCollectionEquality().hash(isFriend) ^
+      const DeepCollectionEquality().hash(nickname) ^
+      const DeepCollectionEquality().hash(color);
 
   @JsonKey(ignore: true)
   @override
@@ -215,7 +266,9 @@ abstract class _MemberDto extends MemberDto {
       required String username,
       required String image,
       required bool isOnline,
-      required bool isFriend}) = _$_MemberDto;
+      required bool isFriend,
+      String? nickname,
+      String? color}) = _$_MemberDto;
   const _MemberDto._() : super._();
 
   @override
@@ -228,6 +281,10 @@ abstract class _MemberDto extends MemberDto {
   bool get isOnline => throw _privateConstructorUsedError;
   @override
   bool get isFriend => throw _privateConstructorUsedError;
+  @override
+  String? get nickname => throw _privateConstructorUsedError;
+  @override
+  String? get color => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$MemberDtoCopyWith<_MemberDto> get copyWith =>

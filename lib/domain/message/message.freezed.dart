@@ -23,7 +23,7 @@ class _$MessageTearOff {
       required String filetype,
       required String createdAt,
       required String updatedAt,
-      required User user}) {
+      required Member user}) {
     return _Message(
       id: id,
       text: text,
@@ -47,7 +47,7 @@ mixin _$Message {
   String get filetype => throw _privateConstructorUsedError;
   String get createdAt => throw _privateConstructorUsedError;
   String get updatedAt => throw _privateConstructorUsedError;
-  User get user => throw _privateConstructorUsedError;
+  Member get user => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MessageCopyWith<Message> get copyWith => throw _privateConstructorUsedError;
@@ -64,9 +64,9 @@ abstract class $MessageCopyWith<$Res> {
       String filetype,
       String createdAt,
       String updatedAt,
-      User user});
+      Member user});
 
-  $UserCopyWith<$Res> get user;
+  $MemberCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -115,13 +115,13 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as Member,
     ));
   }
 
   @override
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
+  $MemberCopyWith<$Res> get user {
+    return $MemberCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
     });
   }
@@ -139,10 +139,10 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
       String filetype,
       String createdAt,
       String updatedAt,
-      User user});
+      Member user});
 
   @override
-  $UserCopyWith<$Res> get user;
+  $MemberCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -192,7 +192,7 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User,
+              as Member,
     ));
   }
 }
@@ -222,7 +222,7 @@ class _$_Message extends _Message {
   @override
   final String updatedAt;
   @override
-  final User user;
+  final Member user;
 
   @override
   String toString() {
@@ -277,7 +277,7 @@ abstract class _Message extends Message {
       required String filetype,
       required String createdAt,
       required String updatedAt,
-      required User user}) = _$_Message;
+      required Member user}) = _$_Message;
   const _Message._() : super._();
 
   @override
@@ -293,7 +293,7 @@ abstract class _Message extends Message {
   @override
   String get updatedAt => throw _privateConstructorUsedError;
   @override
-  User get user => throw _privateConstructorUsedError;
+  Member get user => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$MessageCopyWith<_Message> get copyWith =>

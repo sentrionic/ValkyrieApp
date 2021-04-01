@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:valkyrie_app/domain/user/user.dart';
+import 'package:valkyrie_app/domain/member/member.dart';
 
 import 'message_value_objects.dart';
 
@@ -16,6 +16,6 @@ class Message with _$Message {
     required String filetype,
     required String createdAt,
     required String updatedAt,
-    required User user,
+    required Member user,
   }) = _Message;
 }

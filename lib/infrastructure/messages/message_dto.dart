@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:valkyrie_app/domain/message/message.dart';
 import 'package:valkyrie_app/domain/message/message_value_objects.dart';
-import 'package:valkyrie_app/infrastructure/user/user_dto.dart';
+import 'package:valkyrie_app/infrastructure/members/member_dto.dart';
 
 part 'message_dto.freezed.dart';
 
@@ -16,7 +16,7 @@ class MessageDto with _$MessageDto {
     required String filetype,
     required String createdAt,
     required String updatedAt,
-    required UserDto user,
+    required MemberDto user,
   }) = _MessageDto;
 
   Message toDomain() {
@@ -39,7 +39,7 @@ class MessageDto with _$MessageDto {
       filetype: map['filetype'] ?? '',
       createdAt: map['createdAt'] ?? '',
       updatedAt: map['updatedAt'] ?? '',
-      user: UserDto.fromMap(map['user'] ?? ''),
+      user: MemberDto.fromMap(map['user'] ?? ''),
     );
   }
 }

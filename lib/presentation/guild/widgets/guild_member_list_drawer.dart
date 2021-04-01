@@ -31,12 +31,14 @@ class GuildMemberDrawer extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    OnlineStatusLabel(count: online.length, isOnline: true),
+                    if (online.isNotEmpty)
+                      OnlineStatusLabel(count: online.length, isOnline: true),
                     for (var member in online) MemberItem(member: member),
                     const SizedBox(
                       height: 5,
                     ),
-                    OnlineStatusLabel(count: online.length, isOnline: false),
+                    if (offline.isNotEmpty)
+                      OnlineStatusLabel(count: online.length, isOnline: false),
                     for (var member in offline) MemberItem(member: member),
                   ],
                 );

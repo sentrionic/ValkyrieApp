@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:valkyrie_app/application/channels/cubit/channel_cubit.dart';
 import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
+import 'package:valkyrie_app/application/channels/currently_typing/currently_typing_cubit.dart';
 import 'package:valkyrie_app/application/messages/create_message/create_message_cubit.dart';
 import 'package:valkyrie_app/application/messages/get_messages/messages_cubit.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
@@ -31,6 +32,9 @@ class GuildScreen extends HookWidget {
         ),
         BlocProvider(
           create: (context) => getIt<CreateMessageCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => getIt<CurrentlyTypingCubit>(),
         ),
       ],
       child: Scaffold(

@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/message/i_message_repository.dart';
 import 'package:valkyrie_app/domain/message/message.dart';
 import 'package:valkyrie_app/domain/message/message_failure.dart';
+import 'package:valkyrie_app/domain/message/message_value_objects.dart';
 
 part 'messages_state.dart';
 part 'messages_cubit.freezed.dart';
@@ -48,6 +49,43 @@ class MessagesCubit extends Cubit<MessagesState> {
             ),
           );
         }
+      },
+      orElse: () {},
+    );
+  }
+
+  void addNewMessage(Message message) {
+    state.maybeWhen(
+      loadSuccess: (messages, hasMore) async {
+        final data = [message, ...messages];
+        emit(MessagesState.loadSuccess(data, hasMore: hasMore));
+      },
+      orElse: () {},
+    );
+  }
+
+  void deleteMessage(Message message) {
+    state.maybeWhen(
+      loadSuccess: (messages, hasMore) async {
+        final data = messages.where((e) => e.id != message.id).toList();
+        emit(MessagesState.loadSuccess(data, hasMore: hasMore));
+      },
+      orElse: () {},
+    );
+  }
+
+  void updateMessage(Message message) {
+    state.maybeWhen(
+      loadSuccess: (messages, hasMore) async {
+        final data = messages.map((e) {
+          return e.id == message.id
+              ? e.copyWith(
+                  text: message.text,
+                  updatedAt: message.updatedAt,
+                )
+              : e;
+        }).toList();
+        emit(MessagesState.loadSuccess(data, hasMore: hasMore));
       },
       orElse: () {},
     );

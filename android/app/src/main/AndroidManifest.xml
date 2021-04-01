@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.valkyrie_app">
+
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="valkyrie_app"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

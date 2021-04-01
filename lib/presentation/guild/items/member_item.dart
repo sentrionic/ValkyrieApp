@@ -9,6 +9,9 @@ class MemberItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      visualDensity: const VisualDensity(
+        vertical: -2,
+      ),
       leading: Stack(
         children: [
           CircleAvatar(

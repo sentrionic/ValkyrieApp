@@ -13,6 +13,8 @@ class MemberDto with _$MemberDto {
     required String image,
     required bool isOnline,
     required bool isFriend,
+    String? nickname,
+    String? color,
   }) = _MemberDto;
 
   Member toDomain() {
@@ -22,6 +24,8 @@ class MemberDto with _$MemberDto {
       image: image,
       isOnline: isOnline,
       isFriend: isFriend,
+      nickname: nickname,
+      color: color,
     );
   }
 
@@ -32,6 +36,8 @@ class MemberDto with _$MemberDto {
       image: map['image'] ?? '',
       isOnline: map['isOnline'] ?? '',
       isFriend: map['isFriend'] ?? '',
+      nickname: map['nickname'],
+      color: map['color'],
     );
   }
 }

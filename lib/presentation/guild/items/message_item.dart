@@ -1,6 +1,7 @@
 import 'package:calendar_time/calendar_time.dart';
 import 'package:flutter/material.dart';
 import 'package:valkyrie_app/domain/message/message.dart';
+import 'package:valkyrie_app/presentation/common/hex_color.dart';
 
 class MessageItem extends StatelessWidget {
   final Message message;
@@ -11,7 +12,7 @@ class MessageItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       visualDensity: const VisualDensity(
-        vertical: -2,
+        vertical: -3,
       ),
       leading: CircleAvatar(
         backgroundImage: NetworkImage(
@@ -22,9 +23,12 @@ class MessageItem extends StatelessWidget {
       title: Row(
         children: [
           Text(
-            message.user.username,
-            style: const TextStyle(
+            message.user.nickname ?? message.user.username,
+            style: TextStyle(
               fontSize: 16,
+              color: message.user.color != null
+                  ? HexColor(message.user.color!)
+                  : null,
             ),
           ),
           const SizedBox(
@@ -43,7 +47,23 @@ class MessageItem extends StatelessWidget {
       ),
       subtitle: Padding(
         padding: const EdgeInsets.only(top: 5.0),
-        child: Text(message.text!.getOrCrash()),
+        child: Row(
+          children: [
+            Text(message.text!.getOrCrash()),
+            if (message.updatedAt != message.createdAt) ...[
+              const SizedBox(
+                width: 5,
+              ),
+              const Text(
+                "(edited)",
+                style: TextStyle(
+                  color: Colors.white38,
+                  fontSize: 10,
+                ),
+              ),
+            ],
+          ],
+        ),
       ),
     );
   }

@@ -24,6 +24,15 @@ class AccountDto with _$AccountDto {
     );
   }
 
+  factory AccountDto.fromDomain(Account account) {
+    return AccountDto(
+      id: account.id,
+      username: account.username.getOrCrash(),
+      email: account.email.getOrCrash(),
+      image: account.image,
+    );
+  }
+
   factory AccountDto.fromMap(Map<String, dynamic> map) {
     return AccountDto(
       id: map['id'].toString(),

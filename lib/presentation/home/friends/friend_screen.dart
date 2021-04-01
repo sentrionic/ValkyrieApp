@@ -3,9 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valkyrie_app/application/friends/get_friends/get_friends_cubit.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 
-import 'file:///C:/Users/Christoph/Downloads/ValkyrieApp/lib/presentation/home/friends/friend_item.dart';
-
 import '../../../injection.dart';
+import 'friend_item.dart';
 
 class FriendListScreen extends StatelessWidget {
   @override

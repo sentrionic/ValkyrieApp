@@ -1,20 +1,20 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/auth/auth_value_objects.dart';
 import 'package:valkyrie_app/domain/auth/auth_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:valkyrie_app/domain/auth/i_auth_facade.dart';
 import 'package:valkyrie_app/infrastructure/core/field_error.dart';
+import 'package:valkyrie_app/infrastructure/core/hive_box_names.dart';
 
 @LazySingleton(as: IAuthFacade)
 class AuthFacade implements IAuthFacade {
   final Dio _dio;
-  final FlutterSecureStorage _storage;
 
-  AuthFacade(this._dio, this._storage);
+  AuthFacade(this._dio);
 
   @override
   Future<Either<AuthFailure, Unit>> login({
@@ -92,7 +92,7 @@ class AuthFacade implements IAuthFacade {
 
   @override
   Future<bool> checkAuthenticated() async {
-    final cookie = await _storage.read(key: "cookie");
+    final cookie = Hive.box(BoxNames.settingsBox).get("cookie");
     return cookie != null;
   }
 
@@ -100,7 +100,7 @@ class AuthFacade implements IAuthFacade {
   Future<void> logout() async {
     try {
       await _dio.post("/account/logout");
-      await _storage.delete(key: "cookie");
+      await Hive.box(BoxNames.settingsBox).delete("cookie");
     } on DioError catch (e) {
       print(e);
     }
@@ -163,7 +163,7 @@ class AuthFacade implements IAuthFacade {
   Future<void> _setCookie(List<String> cookies) async {
     if (cookies.isNotEmpty) {
       final authToken = cookies[0].split(';')[0];
-      await _storage.write(key: "cookie", value: authToken);
+      await Hive.box(BoxNames.settingsBox).put("cookie", authToken);
     }
   }
 }
