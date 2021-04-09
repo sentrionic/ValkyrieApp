@@ -5,4 +5,5 @@ part 'message_failure.freezed.dart';
 @freezed
 class MessageFailure with _$MessageFailure {
   const factory MessageFailure.unexpected() = _Unexpected;
+  const factory MessageFailure.fileTooLarge() = _FileTooLarge;
 }

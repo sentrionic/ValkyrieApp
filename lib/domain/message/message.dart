@@ -13,7 +13,7 @@ class Message with _$Message {
     required String id,
     MessageText? text,
     String? url,
-    required String filetype,
+    String? filetype,
     required String createdAt,
     required String updatedAt,
     required Member user,

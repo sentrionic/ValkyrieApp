@@ -1,7 +1,7 @@
 part of 'change_password_cubit.dart';
 
 @freezed
-abstract class ChangePasswordState with _$ChangePasswordState {
+class ChangePasswordState with _$ChangePasswordState {
   const factory ChangePasswordState({
     required Password oldPassword,
     required Password newPassword,

@@ -1,7 +1,14 @@
 import 'package:calendar_time/calendar_time.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart';
+import 'package:valkyrie_app/application/guilds/guild_list/guild_list_cubit.dart';
 import 'package:valkyrie_app/domain/message/message.dart';
 import 'package:valkyrie_app/presentation/common/hex_color.dart';
+import 'package:valkyrie_app/presentation/guild/items/message_image_widget.dart';
+import 'package:valkyrie_app/presentation/guild/items/message_text_widget.dart';
+import 'package:valkyrie_app/presentation/guild/widgets/message_bottom_sheet.dart';
+import 'package:valkyrie_app/presentation/guild/widgets/profile_bottom_sheet.dart';
 
 class MessageItem extends StatelessWidget {
   final Message message;
@@ -10,15 +17,27 @@ class MessageItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final guildId = context.watch<CurrentGuildCubit>().state;
+    final guild = context.read<GuildListCubit>().getCurrentGuild(guildId);
     return ListTile(
       visualDensity: const VisualDensity(
         vertical: -3,
       ),
-      leading: CircleAvatar(
-        backgroundImage: NetworkImage(
-          message.user.image,
+      leading: GestureDetector(
+        onTap: () {
+          showModalBottomSheet(
+            isScrollControlled: true,
+            context: context,
+            builder: (_) =>
+                ProfileBottomSheet(guild: guild!, member: message.user),
+          );
+        },
+        child: CircleAvatar(
+          backgroundImage: NetworkImage(
+            message.user.image,
+          ),
+          radius: 22,
         ),
-        radius: 22,
       ),
       title: Row(
         children: [
@@ -47,24 +66,21 @@ class MessageItem extends StatelessWidget {
       ),
       subtitle: Padding(
         padding: const EdgeInsets.only(top: 5.0),
-        child: Row(
-          children: [
-            Text(message.text!.getOrCrash()),
-            if (message.updatedAt != message.createdAt) ...[
-              const SizedBox(
-                width: 5,
-              ),
-              const Text(
-                "(edited)",
-                style: TextStyle(
-                  color: Colors.white38,
-                  fontSize: 10,
-                ),
-              ),
-            ],
-          ],
-        ),
+        child: message.filetype != null
+            ? MessageImageWidget(message)
+            : MessageTextWidget(message),
       ),
+      onLongPress: () {
+        showModalBottomSheet(
+          context: context,
+          builder: (_) {
+            return MessageBottomSheet(
+              guild: guild!,
+              message: message,
+            );
+          },
+        );
+      },
     );
   }
 }

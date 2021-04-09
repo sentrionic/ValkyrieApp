@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
+import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart';
 import 'package:valkyrie_app/application/guilds/guild_list/guild_list_cubit.dart';
 import 'package:valkyrie_app/injection.dart';
+import 'package:valkyrie_app/presentation/auth/forgot_password_screen.dart';
 import 'package:valkyrie_app/presentation/auth/login_screen.dart';
 import 'package:valkyrie_app/presentation/auth/register_screen.dart';
 import 'package:valkyrie_app/presentation/auth/start_up_screen.dart';
+import 'package:valkyrie_app/presentation/core/screen_arguments/open_url_arguments.dart';
 import 'package:valkyrie_app/presentation/guild/guild_screen.dart';
+import 'package:valkyrie_app/presentation/guild/items/photo_view_screen.dart';
+import 'package:valkyrie_app/presentation/guild/items/web_view_screen.dart';
 import 'package:valkyrie_app/presentation/home/account/account_screen.dart';
 import 'package:valkyrie_app/presentation/home/account/change_password_screen.dart';
 import 'package:valkyrie_app/presentation/home/home_screen.dart';
@@ -19,6 +24,7 @@ import 'transitions/slide_transition_route.dart';
 class AppRouter {
   final _guildBloc = getIt<GuildListCubit>();
   final _currentChannelCubit = getIt<CurrentChannelCubit>();
+  final _currentGuildCubit = getIt<CurrentGuildCubit>();
 
   Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -38,6 +44,10 @@ class AppRouter {
         return SlideTransitionRoute(
           page: RegisterScreen(),
         );
+      case '/forgot-password':
+        return SlideTransitionRoute(
+          page: ForgotPasswordScreen(),
+        );
       case '/home':
         return FadeTransitionRoute(
           page: MultiBlocProvider(
@@ -46,6 +56,7 @@ class AppRouter {
               BlocProvider.value(
                 value: _guildBloc..getGuilds(),
               ),
+              BlocProvider.value(value: _currentGuildCubit),
             ],
             child: HomeScreen(),
           ),
@@ -66,9 +77,20 @@ class AppRouter {
             providers: [
               BlocProvider.value(value: _currentChannelCubit),
               BlocProvider.value(value: _guildBloc),
+              BlocProvider.value(value: _currentGuildCubit),
             ],
             child: GuildScreen(guild: args.guild),
           ),
+        );
+      case '/web':
+        final OpenUrlArguments args = settings.arguments! as OpenUrlArguments;
+        return SlideTransitionRoute(
+          page: WebViewScreen(url: args.url),
+        );
+      case '/photo':
+        final OpenUrlArguments args = settings.arguments! as OpenUrlArguments;
+        return SlideTransitionRoute(
+          page: PhotoViewScreen(url: args.url),
         );
       default:
         return MaterialPageRoute(

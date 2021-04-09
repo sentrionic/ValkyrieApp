@@ -4,7 +4,6 @@ import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/message/i_message_repository.dart';
 import 'package:valkyrie_app/domain/message/message.dart';
 import 'package:valkyrie_app/domain/message/message_failure.dart';
-import 'package:valkyrie_app/domain/message/message_value_objects.dart';
 
 part 'messages_state.dart';
 part 'messages_cubit.freezed.dart';

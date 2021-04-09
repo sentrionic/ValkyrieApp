@@ -1,12 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
-import 'package:valkyrie_app/infrastructure/core/hive_box_names.dart';
+import 'package:valkyrie_app/presentation/common/get_cookie.dart';
 
 @module
 abstract class InjectableModule {
   @Named("BaseUrl")
-  String get baseUrl => "http://192.168.2.148:4000";
+  String get baseUrl => "https://api.valkyrieapp.xyz";
 
   @lazySingleton
   Dio dio(@Named("BaseUrl") String url) {
@@ -17,8 +16,8 @@ abstract class InjectableModule {
     dio.interceptors
         .add(InterceptorsWrapper(onRequest: (options, handler) async {
       dio.interceptors.requestLock.lock();
-      final cookie = Hive.box(BoxNames.settingsBox).get('cookie');
-      if (cookie != null) options.headers["cookie"] = cookie.toString();
+      final cookie = getCookie();
+      if (cookie != "null") options.headers["cookie"] = cookie.toString();
       dio.interceptors.requestLock.unlock();
       return handler.next(options); // continue
     }));

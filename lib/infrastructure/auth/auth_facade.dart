@@ -1,14 +1,19 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
+import 'package:valkyrie_app/domain/account/account.dart';
 import 'package:valkyrie_app/domain/auth/auth_value_objects.dart';
 import 'package:valkyrie_app/domain/auth/auth_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:valkyrie_app/domain/auth/i_auth_facade.dart';
+import 'package:valkyrie_app/infrastructure/account/account_dto.dart';
+import 'package:valkyrie_app/infrastructure/account/account_entity.dart';
 import 'package:valkyrie_app/infrastructure/core/field_error.dart';
 import 'package:valkyrie_app/infrastructure/core/hive_box_names.dart';
+import 'package:valkyrie_app/presentation/common/get_cookie.dart';
 
 @LazySingleton(as: IAuthFacade)
 class AuthFacade implements IAuthFacade {
@@ -33,6 +38,9 @@ class AuthFacade implements IAuthFacade {
       if (response.statusCode == 201) {
         final cookies = response.headers['set-cookie'];
         _setCookie(cookies!);
+        final results = jsonDecode(response.data);
+        final account = AccountDto.fromMap(results).toDomain();
+        _setUserData(account);
         return right(unit);
       } else {
         return left(const AuthFailure.serverError());
@@ -71,6 +79,9 @@ class AuthFacade implements IAuthFacade {
       if (response.statusCode == 201) {
         final cookies = response.headers['set-cookie'];
         _setCookie(cookies!);
+        final results = jsonDecode(response.data);
+        final account = AccountDto.fromMap(results).toDomain();
+        _setUserData(account);
         return right(unit);
       } else {
         return left(const AuthFailure.serverError());
@@ -92,15 +103,16 @@ class AuthFacade implements IAuthFacade {
 
   @override
   Future<bool> checkAuthenticated() async {
-    final cookie = Hive.box(BoxNames.settingsBox).get("cookie");
-    return cookie != null;
+    final cookie = getCookie();
+    return cookie != "null";
   }
 
   @override
   Future<void> logout() async {
     try {
       await _dio.post("/account/logout");
-      await Hive.box(BoxNames.settingsBox).delete("cookie");
+      await Hive.box(BoxNames.settingsBox).clear();
+      await Hive.box<AccountEntity>(BoxNames.currentUser).clear();
     } on DioError catch (e) {
       print(e);
     }
@@ -163,7 +175,12 @@ class AuthFacade implements IAuthFacade {
   Future<void> _setCookie(List<String> cookies) async {
     if (cookies.isNotEmpty) {
       final authToken = cookies[0].split(';')[0];
-      await Hive.box(BoxNames.settingsBox).put("cookie", authToken);
+      await Hive.box(BoxNames.settingsBox).put(BoxKeys.cookieKey, authToken);
     }
+  }
+
+  void _setUserData(Account account) {
+    final box = Hive.box<AccountEntity>(BoxNames.currentUser);
+    box.put(BoxKeys.currentKey, AccountEntity.fromDomain(account));
   }
 }

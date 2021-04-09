@@ -26,10 +26,10 @@ class ChannelDto with _$ChannelDto {
 
   factory ChannelDto.fromMap(Map<String, dynamic> map) {
     return ChannelDto(
-      id: map['id'] ?? '',
-      name: map['name'] ?? '',
-      isPublic: map['isPublic'] ?? '',
-      hasNotification: map['hasNotification'] ?? '',
+      id: map['id'],
+      name: map['name'],
+      isPublic: map['isPublic'],
+      hasNotification: map['hasNotification'],
     );
   }
 }

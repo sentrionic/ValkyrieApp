@@ -5,7 +5,7 @@ import 'package:valkyrie_app/domain/auth/auth_value_objects.dart';
 part 'account_entity.g.dart';
 
 @HiveType(typeId: 0)
-class AccountEntity {
+class AccountEntity extends HiveObject {
   @HiveField(0)
   final String id;
   @HiveField(1)

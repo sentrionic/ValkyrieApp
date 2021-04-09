@@ -31,11 +31,11 @@ class MemberDto with _$MemberDto {
 
   factory MemberDto.fromMap(Map<String, dynamic> map) {
     return MemberDto(
-      id: map['id'] ?? '',
-      username: map['username'] ?? '',
-      image: map['image'] ?? '',
-      isOnline: map['isOnline'] ?? '',
-      isFriend: map['isFriend'] ?? '',
+      id: map['id'],
+      username: map['username'],
+      image: map['image'],
+      isOnline: map['isOnline'],
+      isFriend: map['isFriend'],
       nickname: map['nickname'],
       color: map['color'],
     );

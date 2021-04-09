@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:valkyrie_app/application/channels/cubit/channel_cubit.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:valkyrie_app/application/channels/channel_list/channel_cubit.dart';
 import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
 import 'package:valkyrie_app/application/messages/create_message/create_message_cubit.dart';
+import 'package:valkyrie_app/application/messages/upload_image/upload_image_cubit.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 
 class GuildMessageInput extends HookWidget {
@@ -26,20 +28,23 @@ class GuildMessageInput extends HookWidget {
       },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        height: 50.0,
+        constraints: BoxConstraints(
+          maxHeight: MediaQuery.of(context).size.height * 0.5,
+        ),
         child: Row(
-          children: <Widget>[
+          children: [
             IconButton(
               icon: const Icon(Icons.photo),
               iconSize: 25.0,
               color: Colors.white,
-              onPressed: () {},
+              onPressed: () => _selectImage(context, channelId),
             ),
             Expanded(
               child: TextField(
                 onChanged: (value) {
-                  context.read<CreateMessageCubit>().messageTextChaned(value);
+                  context.read<CreateMessageCubit>().messageTextChanged(value);
                 },
+                keyboardType: TextInputType.multiline,
                 controller: _controller,
                 decoration: InputDecoration(
                   hintText:
@@ -54,6 +59,7 @@ class GuildMessageInput extends HookWidget {
                   ),
                   filled: true,
                 ),
+                maxLines: null,
               ),
             ),
             const SizedBox(
@@ -75,5 +81,14 @@ class GuildMessageInput extends HookWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _selectImage(BuildContext context, String channelId) async {
+    final pickedFile = await ImagePicker().getImage(
+      source: ImageSource.gallery,
+    );
+    if (pickedFile != null) {
+      context.read<UploadImageCubit>().uploadImage(channelId, pickedFile);
+    }
   }
 }

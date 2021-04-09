@@ -13,7 +13,7 @@ class MessageDto with _$MessageDto {
     required String id,
     String? text,
     String? url,
-    required String filetype,
+    String? filetype,
     required String createdAt,
     required String updatedAt,
     required MemberDto user,
@@ -33,13 +33,13 @@ class MessageDto with _$MessageDto {
 
   factory MessageDto.fromMap(Map<String, dynamic> map) {
     return MessageDto(
-      id: map['id'] ?? '',
+      id: map['id'],
       text: map['text'],
-      url: map['id'],
-      filetype: map['filetype'] ?? '',
-      createdAt: map['createdAt'] ?? '',
-      updatedAt: map['updatedAt'] ?? '',
-      user: MemberDto.fromMap(map['user'] ?? ''),
+      url: map['url'],
+      filetype: map['filetype'],
+      createdAt: map['createdAt'],
+      updatedAt: map['updatedAt'],
+      user: MemberDto.fromMap(map['user']),
     );
   }
 }

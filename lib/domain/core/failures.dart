@@ -27,4 +27,8 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.passwordsDontMatch({
     required T failedValue,
   }) = PasswordsDontMatch<T>;
+  const factory ValueFailure.exceedingSize({
+    required T failedValue,
+    required int max,
+  }) = ExceedingSize<T>;
 }

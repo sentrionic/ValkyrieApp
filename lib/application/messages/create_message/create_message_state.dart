@@ -7,7 +7,7 @@ class CreateMessageState with _$CreateMessageState {
     required bool showErrorMessages,
     required bool isSubmitting,
     required Option<Either<MessageFailure, Unit>> messageFailureOrSuccessOption,
-  }) = _CreateMessageStatee;
+  }) = _CreateMessageState;
 
   factory CreateMessageState.initial() => CreateMessageState(
         text: MessageText(''),

@@ -14,7 +14,7 @@ class CreateMessageCubit extends Cubit<CreateMessageState> {
   final IMessageRepository _repository;
   CreateMessageCubit(this._repository) : super(CreateMessageState.initial());
 
-  Future<void> messageTextChaned(String text) async {
+  Future<void> messageTextChanged(String text) async {
     emit(state.copyWith(
       text: MessageText(text),
       messageFailureOrSuccessOption: none(),

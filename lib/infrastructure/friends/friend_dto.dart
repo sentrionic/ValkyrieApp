@@ -20,10 +20,10 @@ class FriendDto with _$FriendDto {
 
   factory FriendDto.fromMap(Map<String, dynamic> map) {
     return FriendDto(
-      id: map['id'] ?? '',
-      username: map['username'] ?? '',
-      image: map['image'] ?? '',
-      isOnline: map['isOnline'] ?? '',
+      id: map['id'],
+      username: map['username'],
+      image: map['image'],
+      isOnline: map['isOnline'],
     );
   }
 }

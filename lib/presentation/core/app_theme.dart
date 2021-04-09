@@ -22,4 +22,9 @@ final appTheme = ThemeData.dark().copyWith(
   textSelectionTheme: const TextSelectionThemeData(
     cursorColor: ThemeColors.themeBlue,
   ),
+  highlightColor: Colors.black12.withOpacity(.5),
+  splashColor: Colors.black12,
+  dialogTheme: const DialogTheme(
+    backgroundColor: Color(0xff35383E),
+  ),
 );

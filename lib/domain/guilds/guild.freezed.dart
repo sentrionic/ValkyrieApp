@@ -20,11 +20,15 @@ class _$GuildTearOff {
       {required String id,
       required GuildName name,
       required String defaultChannel,
+      required String ownerId,
+      required bool hasNotification,
       String? icon}) {
     return _Guild(
       id: id,
       name: name,
       defaultChannel: defaultChannel,
+      ownerId: ownerId,
+      hasNotification: hasNotification,
       icon: icon,
     );
   }
@@ -38,6 +42,8 @@ mixin _$Guild {
   String get id => throw _privateConstructorUsedError;
   GuildName get name => throw _privateConstructorUsedError;
   String get defaultChannel => throw _privateConstructorUsedError;
+  String get ownerId => throw _privateConstructorUsedError;
+  bool get hasNotification => throw _privateConstructorUsedError;
   String? get icon => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -48,7 +54,13 @@ mixin _$Guild {
 abstract class $GuildCopyWith<$Res> {
   factory $GuildCopyWith(Guild value, $Res Function(Guild) then) =
       _$GuildCopyWithImpl<$Res>;
-  $Res call({String id, GuildName name, String defaultChannel, String? icon});
+  $Res call(
+      {String id,
+      GuildName name,
+      String defaultChannel,
+      String ownerId,
+      bool hasNotification,
+      String? icon});
 }
 
 /// @nodoc
@@ -64,6 +76,8 @@ class _$GuildCopyWithImpl<$Res> implements $GuildCopyWith<$Res> {
     Object? id = freezed,
     Object? name = freezed,
     Object? defaultChannel = freezed,
+    Object? ownerId = freezed,
+    Object? hasNotification = freezed,
     Object? icon = freezed,
   }) {
     return _then(_value.copyWith(
@@ -79,6 +93,14 @@ class _$GuildCopyWithImpl<$Res> implements $GuildCopyWith<$Res> {
           ? _value.defaultChannel
           : defaultChannel // ignore: cast_nullable_to_non_nullable
               as String,
+      ownerId: ownerId == freezed
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      hasNotification: hasNotification == freezed
+          ? _value.hasNotification
+          : hasNotification // ignore: cast_nullable_to_non_nullable
+              as bool,
       icon: icon == freezed
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
@@ -92,7 +114,13 @@ abstract class _$GuildCopyWith<$Res> implements $GuildCopyWith<$Res> {
   factory _$GuildCopyWith(_Guild value, $Res Function(_Guild) then) =
       __$GuildCopyWithImpl<$Res>;
   @override
-  $Res call({String id, GuildName name, String defaultChannel, String? icon});
+  $Res call(
+      {String id,
+      GuildName name,
+      String defaultChannel,
+      String ownerId,
+      bool hasNotification,
+      String? icon});
 }
 
 /// @nodoc
@@ -109,6 +137,8 @@ class __$GuildCopyWithImpl<$Res> extends _$GuildCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? defaultChannel = freezed,
+    Object? ownerId = freezed,
+    Object? hasNotification = freezed,
     Object? icon = freezed,
   }) {
     return _then(_Guild(
@@ -124,6 +154,14 @@ class __$GuildCopyWithImpl<$Res> extends _$GuildCopyWithImpl<$Res>
           ? _value.defaultChannel
           : defaultChannel // ignore: cast_nullable_to_non_nullable
               as String,
+      ownerId: ownerId == freezed
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      hasNotification: hasNotification == freezed
+          ? _value.hasNotification
+          : hasNotification // ignore: cast_nullable_to_non_nullable
+              as bool,
       icon: icon == freezed
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
@@ -138,6 +176,8 @@ class _$_Guild extends _Guild {
       {required this.id,
       required this.name,
       required this.defaultChannel,
+      required this.ownerId,
+      required this.hasNotification,
       this.icon})
       : super._();
 
@@ -148,11 +188,15 @@ class _$_Guild extends _Guild {
   @override
   final String defaultChannel;
   @override
+  final String ownerId;
+  @override
+  final bool hasNotification;
+  @override
   final String? icon;
 
   @override
   String toString() {
-    return 'Guild(id: $id, name: $name, defaultChannel: $defaultChannel, icon: $icon)';
+    return 'Guild(id: $id, name: $name, defaultChannel: $defaultChannel, ownerId: $ownerId, hasNotification: $hasNotification, icon: $icon)';
   }
 
   @override
@@ -166,6 +210,12 @@ class _$_Guild extends _Guild {
             (identical(other.defaultChannel, defaultChannel) ||
                 const DeepCollectionEquality()
                     .equals(other.defaultChannel, defaultChannel)) &&
+            (identical(other.ownerId, ownerId) ||
+                const DeepCollectionEquality()
+                    .equals(other.ownerId, ownerId)) &&
+            (identical(other.hasNotification, hasNotification) ||
+                const DeepCollectionEquality()
+                    .equals(other.hasNotification, hasNotification)) &&
             (identical(other.icon, icon) ||
                 const DeepCollectionEquality().equals(other.icon, icon)));
   }
@@ -176,6 +226,8 @@ class _$_Guild extends _Guild {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(defaultChannel) ^
+      const DeepCollectionEquality().hash(ownerId) ^
+      const DeepCollectionEquality().hash(hasNotification) ^
       const DeepCollectionEquality().hash(icon);
 
   @JsonKey(ignore: true)
@@ -189,6 +241,8 @@ abstract class _Guild extends Guild {
       {required String id,
       required GuildName name,
       required String defaultChannel,
+      required String ownerId,
+      required bool hasNotification,
       String? icon}) = _$_Guild;
   const _Guild._() : super._();
 
@@ -198,6 +252,10 @@ abstract class _Guild extends Guild {
   GuildName get name => throw _privateConstructorUsedError;
   @override
   String get defaultChannel => throw _privateConstructorUsedError;
+  @override
+  String get ownerId => throw _privateConstructorUsedError;
+  @override
+  bool get hasNotification => throw _privateConstructorUsedError;
   @override
   String? get icon => throw _privateConstructorUsedError;
   @override

@@ -35,10 +35,10 @@ class AccountDto with _$AccountDto {
 
   factory AccountDto.fromMap(Map<String, dynamic> map) {
     return AccountDto(
-      id: map['id'].toString(),
-      username: map['username'].toString(),
-      email: map['email'].toString(),
-      image: map['image'].toString(),
+      id: map['id'],
+      username: map['username'],
+      email: map['email'],
+      image: map['image'],
     );
   }
 }

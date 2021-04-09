@@ -19,6 +19,10 @@ class _$MessageFailureTearOff {
   _Unexpected unexpected() {
     return const _Unexpected();
   }
+
+  _FileTooLarge fileTooLarge() {
+    return const _FileTooLarge();
+  }
 }
 
 /// @nodoc
@@ -29,22 +33,26 @@ mixin _$MessageFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
+    required TResult Function() fileTooLarge,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? fileTooLarge,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_FileTooLarge value) fileTooLarge,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_FileTooLarge value)? fileTooLarge,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -106,6 +114,7 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
+    required TResult Function() fileTooLarge,
   }) {
     return unexpected();
   }
@@ -114,6 +123,7 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? fileTooLarge,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -126,6 +136,7 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_FileTooLarge value) fileTooLarge,
   }) {
     return unexpected(this);
   }
@@ -134,6 +145,7 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_FileTooLarge value)? fileTooLarge,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -145,4 +157,89 @@ class _$_Unexpected implements _Unexpected {
 
 abstract class _Unexpected implements MessageFailure {
   const factory _Unexpected() = _$_Unexpected;
+}
+
+/// @nodoc
+abstract class _$FileTooLargeCopyWith<$Res> {
+  factory _$FileTooLargeCopyWith(
+          _FileTooLarge value, $Res Function(_FileTooLarge) then) =
+      __$FileTooLargeCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$FileTooLargeCopyWithImpl<$Res>
+    extends _$MessageFailureCopyWithImpl<$Res>
+    implements _$FileTooLargeCopyWith<$Res> {
+  __$FileTooLargeCopyWithImpl(
+      _FileTooLarge _value, $Res Function(_FileTooLarge) _then)
+      : super(_value, (v) => _then(v as _FileTooLarge));
+
+  @override
+  _FileTooLarge get _value => super._value as _FileTooLarge;
+}
+
+/// @nodoc
+class _$_FileTooLarge implements _FileTooLarge {
+  const _$_FileTooLarge();
+
+  @override
+  String toString() {
+    return 'MessageFailure.fileTooLarge()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _FileTooLarge);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() fileTooLarge,
+  }) {
+    return fileTooLarge();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? fileTooLarge,
+    required TResult orElse(),
+  }) {
+    if (fileTooLarge != null) {
+      return fileTooLarge();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_FileTooLarge value) fileTooLarge,
+  }) {
+    return fileTooLarge(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_FileTooLarge value)? fileTooLarge,
+    required TResult orElse(),
+  }) {
+    if (fileTooLarge != null) {
+      return fileTooLarge(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FileTooLarge implements MessageFailure {
+  const factory _FileTooLarge() = _$_FileTooLarge;
 }

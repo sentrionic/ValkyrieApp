@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valkyrie_app/application/auth/auth_status/auth_status_bloc.dart';
 import 'package:valkyrie_app/application/auth/login_form/login_form_bloc.dart';
-import 'package:valkyrie_app/presentation/auth/forgot_password_screen.dart';
 import 'package:valkyrie_app/presentation/auth/forms/widgets/form_wrapper.dart';
 import 'package:valkyrie_app/presentation/common/flushbar_creator.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
@@ -111,12 +109,7 @@ class LoginForm extends StatelessWidget {
                 elevation: 0,
               ),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                    builder: (context) => ForgotPasswordScreen(),
-                  ),
-                );
+                Navigator.of(context).pushNamed('/forgot-password');
               },
               child: const Text(
                 "Forgot your password?",
@@ -138,6 +131,7 @@ class LoginForm extends StatelessWidget {
                       primary: ThemeColors.themeBlue,
                     ),
                     onPressed: () {
+                      FocusScope.of(context).unfocus();
                       context
                           .read<LoginFormBloc>()
                           .add(const LoginFormEvent.loginPressed());

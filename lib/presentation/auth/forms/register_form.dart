@@ -154,6 +154,7 @@ class RegisterForm extends StatelessWidget {
                       primary: ThemeColors.themeBlue,
                     ),
                     onPressed: () {
+                      FocusScope.of(context).unfocus();
                       context
                           .read<RegisterFormBloc>()
                           .add(const RegisterFormEvent.registerPressed());

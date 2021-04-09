@@ -61,4 +61,63 @@ class MessageRepository extends IMessageRepository {
       return left(const MessageFailure.unexpected());
     }
   }
+
+  @override
+  Future<Either<MessageFailure, Unit>> uploadImage(
+    String channelId,
+    String path,
+  ) async {
+    try {
+      final formData = FormData();
+      formData.files.add(MapEntry(
+        "file",
+        await MultipartFile.fromFile(path),
+      ));
+      await _dio.post(
+        '/messages/$channelId',
+        data: formData,
+      );
+      return right(unit);
+    } on DioError catch (err) {
+      print(err.response);
+      return left(const MessageFailure.unexpected());
+    } on SocketException catch (err) {
+      print(err);
+      return left(const MessageFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Either<MessageFailure, Unit>> editMessage(
+    String messageId,
+    String text,
+  ) async {
+    try {
+      await _dio.put(
+        '/messages/$messageId',
+        data: {"text": text},
+      );
+      return right(unit);
+    } on DioError catch (err) {
+      print(err.response);
+      return left(const MessageFailure.unexpected());
+    } on SocketException catch (err) {
+      print(err);
+      return left(const MessageFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Either<MessageFailure, Unit>> deleteMessage(String messageId) async {
+    try {
+      await _dio.delete('/messages/$messageId');
+      return right(unit);
+    } on DioError catch (err) {
+      print(err);
+      return left(const MessageFailure.unexpected());
+    } on SocketException catch (err) {
+      print(err);
+      return left(const MessageFailure.unexpected());
+    }
+  }
 }

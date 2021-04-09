@@ -20,7 +20,7 @@ class _$MessageDtoTearOff {
       {required String id,
       String? text,
       String? url,
-      required String filetype,
+      String? filetype,
       required String createdAt,
       required String updatedAt,
       required MemberDto user}) {
@@ -44,7 +44,7 @@ mixin _$MessageDto {
   String get id => throw _privateConstructorUsedError;
   String? get text => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
-  String get filetype => throw _privateConstructorUsedError;
+  String? get filetype => throw _privateConstructorUsedError;
   String get createdAt => throw _privateConstructorUsedError;
   String get updatedAt => throw _privateConstructorUsedError;
   MemberDto get user => throw _privateConstructorUsedError;
@@ -63,7 +63,7 @@ abstract class $MessageDtoCopyWith<$Res> {
       {String id,
       String? text,
       String? url,
-      String filetype,
+      String? filetype,
       String createdAt,
       String updatedAt,
       MemberDto user});
@@ -105,7 +105,7 @@ class _$MessageDtoCopyWithImpl<$Res> implements $MessageDtoCopyWith<$Res> {
       filetype: filetype == freezed
           ? _value.filetype
           : filetype // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -139,7 +139,7 @@ abstract class _$MessageDtoCopyWith<$Res> implements $MessageDtoCopyWith<$Res> {
       {String id,
       String? text,
       String? url,
-      String filetype,
+      String? filetype,
       String createdAt,
       String updatedAt,
       MemberDto user});
@@ -184,7 +184,7 @@ class __$MessageDtoCopyWithImpl<$Res> extends _$MessageDtoCopyWithImpl<$Res>
       filetype: filetype == freezed
           ? _value.filetype
           : filetype // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -207,7 +207,7 @@ class _$_MessageDto extends _MessageDto {
       {required this.id,
       this.text,
       this.url,
-      required this.filetype,
+      this.filetype,
       required this.createdAt,
       required this.updatedAt,
       required this.user})
@@ -220,7 +220,7 @@ class _$_MessageDto extends _MessageDto {
   @override
   final String? url;
   @override
-  final String filetype;
+  final String? filetype;
   @override
   final String createdAt;
   @override
@@ -278,7 +278,7 @@ abstract class _MessageDto extends MessageDto {
       {required String id,
       String? text,
       String? url,
-      required String filetype,
+      String? filetype,
       required String createdAt,
       required String updatedAt,
       required MemberDto user}) = _$_MessageDto;
@@ -291,7 +291,7 @@ abstract class _MessageDto extends MessageDto {
   @override
   String? get url => throw _privateConstructorUsedError;
   @override
-  String get filetype => throw _privateConstructorUsedError;
+  String? get filetype => throw _privateConstructorUsedError;
   @override
   String get createdAt => throw _privateConstructorUsedError;
   @override

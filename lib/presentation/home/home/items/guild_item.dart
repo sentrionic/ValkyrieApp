@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
+import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/core/screen_arguments/guild_screen_arguments.dart';
@@ -18,6 +19,7 @@ class GuildItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         context.read<CurrentChannelCubit>().setChannelId(guild.defaultChannel);
+        context.read<CurrentGuildCubit>().setGuildlId(guild.id);
         Navigator.of(context).pushReplacementNamed(
           '/guild',
           arguments: GuildScreenArguments(guild),

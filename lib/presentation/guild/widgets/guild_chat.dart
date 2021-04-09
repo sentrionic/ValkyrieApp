@@ -6,8 +6,10 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
 import 'package:valkyrie_app/application/channels/currently_typing/currently_typing_cubit.dart';
 import 'package:valkyrie_app/application/messages/get_messages/messages_cubit.dart';
+import 'package:valkyrie_app/application/messages/upload_image/upload_image_cubit.dart';
 import 'package:valkyrie_app/domain/message/message.dart';
 import 'package:valkyrie_app/presentation/common/center_loading_indicator.dart';
+import 'package:valkyrie_app/presentation/guild/items/compact_message_item.dart';
 import 'package:valkyrie_app/presentation/guild/widgets/guild_date_divider.dart';
 import 'package:valkyrie_app/presentation/guild/widgets/guild_typing_container.dart';
 import 'package:valkyrie_app/presentation/guild/widgets/hooks/channel_scroller_hook.dart';
@@ -30,29 +32,45 @@ class GuildChat extends HookWidget {
       builder: (context, state) {
         return state.maybeMap(
           loadSuccess: (state) {
-            return Column(
-              children: [
-                Expanded(
-                  child: ListView.builder(
-                    reverse: true,
-                    itemBuilder: (context, index) {
-                      return index >= state.messages.length
-                          ? GuildMessageLoaderOrEndIndicator()
-                          : _getMessage(state.messages, index);
-                    },
-                    itemCount: state.messages.length + 1,
-                    controller: _controller,
+            return GestureDetector(
+              onTap: () {
+                final FocusScopeNode currentScope = FocusScope.of(context);
+                if (!currentScope.hasPrimaryFocus && currentScope.hasFocus) {
+                  FocusManager.instance.primaryFocus?.unfocus();
+                }
+              },
+              child: Column(
+                children: [
+                  Expanded(
+                    child: ListView.builder(
+                      reverse: true,
+                      itemBuilder: (context, index) {
+                        return index >= state.messages.length
+                            ? GuildMessageLoaderOrEndIndicator()
+                            : _getMessage(state.messages, index);
+                      },
+                      itemCount: state.messages.length + 1,
+                      controller: _controller,
+                    ),
                   ),
-                ),
-                if (context.watch<CurrentlyTypingCubit>().state.isNotEmpty)
-                  GuildTypingContainer()
-                else
-                  const SizedBox(height: 15),
-                GuildMessageInput(),
-                const SizedBox(
-                  height: 10,
-                ),
-              ],
+                  BlocBuilder<UploadImageCubit, UploadImageState>(
+                    buildWhen: (p, c) => p.isSubmitting != c.isSubmitting,
+                    builder: (context, state) {
+                      return state.isSubmitting
+                          ? const LinearProgressIndicator()
+                          : Container();
+                    },
+                  ),
+                  if (context.watch<CurrentlyTypingCubit>().state.isNotEmpty)
+                    GuildTypingContainer()
+                  else
+                    const SizedBox(height: 15),
+                  GuildMessageInput(),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                ],
+              ),
             );
           },
           orElse: () => CenterLoadingIndicator(),
@@ -73,34 +91,7 @@ class GuildChat extends HookWidget {
     final isSameDay = curDate.isSameDate(prevDate);
 
     if (difference < 10 && isSameAuthor && index != messages.length - 1) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 4),
-        child: Row(
-          children: [
-            const SizedBox(
-              width: 76,
-            ),
-            Text(
-              curMessage.text!.getOrCrash(),
-              style: const TextStyle(
-                color: Colors.white70,
-              ),
-            ),
-            if (curMessage.updatedAt != curMessage.createdAt) ...[
-              const SizedBox(
-                width: 5,
-              ),
-              const Text(
-                "(edited)",
-                style: TextStyle(
-                  color: Colors.white38,
-                  fontSize: 10,
-                ),
-              ),
-            ],
-          ],
-        ),
-      );
+      return CompactMessageItem(message: curMessage);
     } else {
       return Column(
         children: [

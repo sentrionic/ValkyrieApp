@@ -1,7 +1,7 @@
 part of 'register_form_bloc.dart';
 
 @freezed
-abstract class RegisterFormState with _$RegisterFormState {
+class RegisterFormState with _$RegisterFormState {
   const factory RegisterFormState({
     required EmailAddress emailAddress,
     required Username username,

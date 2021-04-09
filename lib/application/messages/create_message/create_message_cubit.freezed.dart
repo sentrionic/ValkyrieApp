@@ -16,13 +16,13 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CreateMessageStateTearOff {
   const _$CreateMessageStateTearOff();
 
-  _CreateMessageStatee call(
+  _CreateMessageState call(
       {required MessageText text,
       required bool showErrorMessages,
       required bool isSubmitting,
       required Option<Either<MessageFailure, Unit>>
           messageFailureOrSuccessOption}) {
-    return _CreateMessageStatee(
+    return _CreateMessageState(
       text: text,
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
@@ -97,11 +97,11 @@ class _$CreateMessageStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CreateMessageStateeCopyWith<$Res>
+abstract class _$CreateMessageStateCopyWith<$Res>
     implements $CreateMessageStateCopyWith<$Res> {
-  factory _$CreateMessageStateeCopyWith(_CreateMessageStatee value,
-          $Res Function(_CreateMessageStatee) then) =
-      __$CreateMessageStateeCopyWithImpl<$Res>;
+  factory _$CreateMessageStateCopyWith(
+          _CreateMessageState value, $Res Function(_CreateMessageState) then) =
+      __$CreateMessageStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {MessageText text,
@@ -111,15 +111,15 @@ abstract class _$CreateMessageStateeCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CreateMessageStateeCopyWithImpl<$Res>
+class __$CreateMessageStateCopyWithImpl<$Res>
     extends _$CreateMessageStateCopyWithImpl<$Res>
-    implements _$CreateMessageStateeCopyWith<$Res> {
-  __$CreateMessageStateeCopyWithImpl(
-      _CreateMessageStatee _value, $Res Function(_CreateMessageStatee) _then)
-      : super(_value, (v) => _then(v as _CreateMessageStatee));
+    implements _$CreateMessageStateCopyWith<$Res> {
+  __$CreateMessageStateCopyWithImpl(
+      _CreateMessageState _value, $Res Function(_CreateMessageState) _then)
+      : super(_value, (v) => _then(v as _CreateMessageState));
 
   @override
-  _CreateMessageStatee get _value => super._value as _CreateMessageStatee;
+  _CreateMessageState get _value => super._value as _CreateMessageState;
 
   @override
   $Res call({
@@ -128,7 +128,7 @@ class __$CreateMessageStateeCopyWithImpl<$Res>
     Object? isSubmitting = freezed,
     Object? messageFailureOrSuccessOption = freezed,
   }) {
-    return _then(_CreateMessageStatee(
+    return _then(_CreateMessageState(
       text: text == freezed
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -150,8 +150,8 @@ class __$CreateMessageStateeCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_CreateMessageStatee implements _CreateMessageStatee {
-  const _$_CreateMessageStatee(
+class _$_CreateMessageState implements _CreateMessageState {
+  const _$_CreateMessageState(
       {required this.text,
       required this.showErrorMessages,
       required this.isSubmitting,
@@ -174,7 +174,7 @@ class _$_CreateMessageStatee implements _CreateMessageStatee {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CreateMessageStatee &&
+        (other is _CreateMessageState &&
             (identical(other.text, text) ||
                 const DeepCollectionEquality().equals(other.text, text)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
@@ -200,18 +200,17 @@ class _$_CreateMessageStatee implements _CreateMessageStatee {
 
   @JsonKey(ignore: true)
   @override
-  _$CreateMessageStateeCopyWith<_CreateMessageStatee> get copyWith =>
-      __$CreateMessageStateeCopyWithImpl<_CreateMessageStatee>(
-          this, _$identity);
+  _$CreateMessageStateCopyWith<_CreateMessageState> get copyWith =>
+      __$CreateMessageStateCopyWithImpl<_CreateMessageState>(this, _$identity);
 }
 
-abstract class _CreateMessageStatee implements CreateMessageState {
-  const factory _CreateMessageStatee(
+abstract class _CreateMessageState implements CreateMessageState {
+  const factory _CreateMessageState(
       {required MessageText text,
       required bool showErrorMessages,
       required bool isSubmitting,
       required Option<Either<MessageFailure, Unit>>
-          messageFailureOrSuccessOption}) = _$_CreateMessageStatee;
+          messageFailureOrSuccessOption}) = _$_CreateMessageState;
 
   @override
   MessageText get text => throw _privateConstructorUsedError;
@@ -224,6 +223,6 @@ abstract class _CreateMessageStatee implements CreateMessageState {
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CreateMessageStateeCopyWith<_CreateMessageStatee> get copyWith =>
+  _$CreateMessageStateCopyWith<_CreateMessageState> get copyWith =>
       throw _privateConstructorUsedError;
 }

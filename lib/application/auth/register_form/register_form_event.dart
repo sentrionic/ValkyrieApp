@@ -1,7 +1,7 @@
 part of 'register_form_bloc.dart';
 
 @freezed
-abstract class RegisterFormEvent with _$RegisterFormEvent {
+class RegisterFormEvent with _$RegisterFormEvent {
   const factory RegisterFormEvent.emailChanged(String email) = EmailChanged;
   const factory RegisterFormEvent.passwordChanged(String password) =
       PasswordChanged;

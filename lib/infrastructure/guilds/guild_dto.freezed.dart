@@ -20,11 +20,15 @@ class _$GuildDtoTearOff {
       {required String id,
       required String name,
       required String defaultChannelId,
+      required String ownerId,
+      required bool hasNotification,
       String? icon}) {
     return _GuildDto(
       id: id,
       name: name,
       defaultChannelId: defaultChannelId,
+      ownerId: ownerId,
+      hasNotification: hasNotification,
       icon: icon,
     );
   }
@@ -38,6 +42,8 @@ mixin _$GuildDto {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get defaultChannelId => throw _privateConstructorUsedError;
+  String get ownerId => throw _privateConstructorUsedError;
+  bool get hasNotification => throw _privateConstructorUsedError;
   String? get icon => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -49,7 +55,13 @@ mixin _$GuildDto {
 abstract class $GuildDtoCopyWith<$Res> {
   factory $GuildDtoCopyWith(GuildDto value, $Res Function(GuildDto) then) =
       _$GuildDtoCopyWithImpl<$Res>;
-  $Res call({String id, String name, String defaultChannelId, String? icon});
+  $Res call(
+      {String id,
+      String name,
+      String defaultChannelId,
+      String ownerId,
+      bool hasNotification,
+      String? icon});
 }
 
 /// @nodoc
@@ -65,6 +77,8 @@ class _$GuildDtoCopyWithImpl<$Res> implements $GuildDtoCopyWith<$Res> {
     Object? id = freezed,
     Object? name = freezed,
     Object? defaultChannelId = freezed,
+    Object? ownerId = freezed,
+    Object? hasNotification = freezed,
     Object? icon = freezed,
   }) {
     return _then(_value.copyWith(
@@ -80,6 +94,14 @@ class _$GuildDtoCopyWithImpl<$Res> implements $GuildDtoCopyWith<$Res> {
           ? _value.defaultChannelId
           : defaultChannelId // ignore: cast_nullable_to_non_nullable
               as String,
+      ownerId: ownerId == freezed
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      hasNotification: hasNotification == freezed
+          ? _value.hasNotification
+          : hasNotification // ignore: cast_nullable_to_non_nullable
+              as bool,
       icon: icon == freezed
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
@@ -93,7 +115,13 @@ abstract class _$GuildDtoCopyWith<$Res> implements $GuildDtoCopyWith<$Res> {
   factory _$GuildDtoCopyWith(_GuildDto value, $Res Function(_GuildDto) then) =
       __$GuildDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String name, String defaultChannelId, String? icon});
+  $Res call(
+      {String id,
+      String name,
+      String defaultChannelId,
+      String ownerId,
+      bool hasNotification,
+      String? icon});
 }
 
 /// @nodoc
@@ -110,6 +138,8 @@ class __$GuildDtoCopyWithImpl<$Res> extends _$GuildDtoCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? defaultChannelId = freezed,
+    Object? ownerId = freezed,
+    Object? hasNotification = freezed,
     Object? icon = freezed,
   }) {
     return _then(_GuildDto(
@@ -125,6 +155,14 @@ class __$GuildDtoCopyWithImpl<$Res> extends _$GuildDtoCopyWithImpl<$Res>
           ? _value.defaultChannelId
           : defaultChannelId // ignore: cast_nullable_to_non_nullable
               as String,
+      ownerId: ownerId == freezed
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String,
+      hasNotification: hasNotification == freezed
+          ? _value.hasNotification
+          : hasNotification // ignore: cast_nullable_to_non_nullable
+              as bool,
       icon: icon == freezed
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
@@ -139,6 +177,8 @@ class _$_GuildDto extends _GuildDto {
       {required this.id,
       required this.name,
       required this.defaultChannelId,
+      required this.ownerId,
+      required this.hasNotification,
       this.icon})
       : super._();
 
@@ -149,11 +189,15 @@ class _$_GuildDto extends _GuildDto {
   @override
   final String defaultChannelId;
   @override
+  final String ownerId;
+  @override
+  final bool hasNotification;
+  @override
   final String? icon;
 
   @override
   String toString() {
-    return 'GuildDto(id: $id, name: $name, defaultChannelId: $defaultChannelId, icon: $icon)';
+    return 'GuildDto(id: $id, name: $name, defaultChannelId: $defaultChannelId, ownerId: $ownerId, hasNotification: $hasNotification, icon: $icon)';
   }
 
   @override
@@ -167,6 +211,12 @@ class _$_GuildDto extends _GuildDto {
             (identical(other.defaultChannelId, defaultChannelId) ||
                 const DeepCollectionEquality()
                     .equals(other.defaultChannelId, defaultChannelId)) &&
+            (identical(other.ownerId, ownerId) ||
+                const DeepCollectionEquality()
+                    .equals(other.ownerId, ownerId)) &&
+            (identical(other.hasNotification, hasNotification) ||
+                const DeepCollectionEquality()
+                    .equals(other.hasNotification, hasNotification)) &&
             (identical(other.icon, icon) ||
                 const DeepCollectionEquality().equals(other.icon, icon)));
   }
@@ -177,6 +227,8 @@ class _$_GuildDto extends _GuildDto {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(defaultChannelId) ^
+      const DeepCollectionEquality().hash(ownerId) ^
+      const DeepCollectionEquality().hash(hasNotification) ^
       const DeepCollectionEquality().hash(icon);
 
   @JsonKey(ignore: true)
@@ -190,6 +242,8 @@ abstract class _GuildDto extends GuildDto {
       {required String id,
       required String name,
       required String defaultChannelId,
+      required String ownerId,
+      required bool hasNotification,
       String? icon}) = _$_GuildDto;
   const _GuildDto._() : super._();
 
@@ -199,6 +253,10 @@ abstract class _GuildDto extends GuildDto {
   String get name => throw _privateConstructorUsedError;
   @override
   String get defaultChannelId => throw _privateConstructorUsedError;
+  @override
+  String get ownerId => throw _privateConstructorUsedError;
+  @override
+  bool get hasNotification => throw _privateConstructorUsedError;
   @override
   String? get icon => throw _privateConstructorUsedError;
   @override

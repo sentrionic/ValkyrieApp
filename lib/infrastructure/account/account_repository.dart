@@ -28,9 +28,7 @@ class AccountRepository extends IAccountRepository {
       if (response.statusCode == 200) {
         final results = jsonDecode(response.data);
         final account = AccountDto.fromMap(results).toDomain();
-        final box = await Hive.openBox<AccountEntity>(BoxNames.currentUser);
-        box.add(AccountEntity.fromDomain(account));
-        box.close();
+        _setUserData(account);
         return right(account);
       }
       return left(const AccountFailure.unexpected());
@@ -66,8 +64,9 @@ class AccountRepository extends IAccountRepository {
 
       if (response.statusCode == 200) {
         final results = jsonDecode(response.data);
-
-        return right(AccountDto.fromMap(results).toDomain());
+        final account = AccountDto.fromMap(results).toDomain();
+        _setUserData(account);
+        return right(account);
       }
       return left(const AccountFailure.unexpected());
     } on DioError catch (err) {
@@ -83,5 +82,10 @@ class AccountRepository extends IAccountRepository {
       print(err);
       return left(const AccountFailure.unexpected());
     }
+  }
+
+  void _setUserData(Account account) {
+    final box = Hive.box<AccountEntity>(BoxNames.currentUser);
+    box.put(BoxKeys.currentKey, AccountEntity.fromDomain(account));
   }
 }

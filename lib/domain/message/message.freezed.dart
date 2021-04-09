@@ -20,7 +20,7 @@ class _$MessageTearOff {
       {required String id,
       MessageText? text,
       String? url,
-      required String filetype,
+      String? filetype,
       required String createdAt,
       required String updatedAt,
       required Member user}) {
@@ -44,7 +44,7 @@ mixin _$Message {
   String get id => throw _privateConstructorUsedError;
   MessageText? get text => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
-  String get filetype => throw _privateConstructorUsedError;
+  String? get filetype => throw _privateConstructorUsedError;
   String get createdAt => throw _privateConstructorUsedError;
   String get updatedAt => throw _privateConstructorUsedError;
   Member get user => throw _privateConstructorUsedError;
@@ -61,7 +61,7 @@ abstract class $MessageCopyWith<$Res> {
       {String id,
       MessageText? text,
       String? url,
-      String filetype,
+      String? filetype,
       String createdAt,
       String updatedAt,
       Member user});
@@ -103,7 +103,7 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
       filetype: filetype == freezed
           ? _value.filetype
           : filetype // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -136,7 +136,7 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
       {String id,
       MessageText? text,
       String? url,
-      String filetype,
+      String? filetype,
       String createdAt,
       String updatedAt,
       Member user});
@@ -180,7 +180,7 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
       filetype: filetype == freezed
           ? _value.filetype
           : filetype // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -203,7 +203,7 @@ class _$_Message extends _Message {
       {required this.id,
       this.text,
       this.url,
-      required this.filetype,
+      this.filetype,
       required this.createdAt,
       required this.updatedAt,
       required this.user})
@@ -216,7 +216,7 @@ class _$_Message extends _Message {
   @override
   final String? url;
   @override
-  final String filetype;
+  final String? filetype;
   @override
   final String createdAt;
   @override
@@ -274,7 +274,7 @@ abstract class _Message extends Message {
       {required String id,
       MessageText? text,
       String? url,
-      required String filetype,
+      String? filetype,
       required String createdAt,
       required String updatedAt,
       required Member user}) = _$_Message;
@@ -287,7 +287,7 @@ abstract class _Message extends Message {
   @override
   String? get url => throw _privateConstructorUsedError;
   @override
-  String get filetype => throw _privateConstructorUsedError;
+  String? get filetype => throw _privateConstructorUsedError;
   @override
   String get createdAt => throw _privateConstructorUsedError;
   @override

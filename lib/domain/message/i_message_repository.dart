@@ -12,4 +12,18 @@ abstract class IMessageRepository {
     String channelId,
     String text,
   );
+
+  Future<Either<MessageFailure, Unit>> uploadImage(
+    String channelId,
+    String path,
+  );
+
+  Future<Either<MessageFailure, Unit>> editMessage(
+    String messageId,
+    String text,
+  );
+
+  Future<Either<MessageFailure, Unit>> deleteMessage(
+    String messageId,
+  );
 }

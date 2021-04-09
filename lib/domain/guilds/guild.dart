@@ -13,6 +13,8 @@ class Guild with _$Guild {
     required String id,
     required GuildName name,
     required String defaultChannel,
+    required String ownerId,
+    required bool hasNotification,
     String? icon,
   }) = _Guild;
 
@@ -20,6 +22,8 @@ class Guild with _$Guild {
         id: '',
         defaultChannel: '',
         name: GuildName(''),
+        ownerId: '',
+        hasNotification: false,
       );
 
   Option<ValueFailure<dynamic>> get failureOption {

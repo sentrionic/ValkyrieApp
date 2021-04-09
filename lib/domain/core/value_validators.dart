@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 
 import 'failures.dart';
@@ -59,6 +61,19 @@ Either<ValueFailure<String>, String> validateMaxStringLength(
   } else {
     return left(
       ValueFailure.exceedingLength(failedValue: input, max: maxLength),
+    );
+  }
+}
+
+Either<ValueFailure<File>, File> validateMaxFileSize(
+  File input,
+  int maxSize,
+) {
+  if (input.lengthSync() <= maxSize) {
+    return right(input);
+  } else {
+    return left(
+      ValueFailure.exceedingSize(failedValue: input, max: maxSize),
     );
   }
 }

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive/hive.dart';
 import 'package:socket_io_client/socket_io_client.dart' as io;
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:valkyrie_app/application/channels/currently_typing/currently_typing_cubit.dart';
+import 'package:valkyrie_app/application/messages/create_message/create_message_cubit.dart';
 import 'package:valkyrie_app/application/messages/get_messages/messages_cubit.dart';
-import 'package:valkyrie_app/domain/account/account.dart';
-import 'package:valkyrie_app/infrastructure/account/account_entity.dart';
-import 'package:valkyrie_app/infrastructure/core/hive_box_names.dart';
 import 'package:valkyrie_app/infrastructure/messages/message_dto.dart';
+import 'package:valkyrie_app/presentation/common/get_cookie.dart';
+import 'package:valkyrie_app/presentation/common/get_current_user.dart';
 
 import '../../../../injection.dart';
 
@@ -23,15 +22,14 @@ class MessageSocketHook extends Hook<void> {
 
 class _MessageSocketHookState extends HookState<void, MessageSocketHook> {
   late io.Socket socket;
-  late String userId;
   final baseUrl = getIt<String>(instanceName: "BaseUrl");
-  final cookie = Hive.box(BoxNames.settingsBox).get("cookie") as String;
-  final accountBox = Hive.box<AccountEntity>(BoxNames.currentUser);
+  final cookie = getCookie();
+  bool isCurrentlyTyping = false;
+  final current = getCurrentUser();
 
   @override
   Future<void> initHook() async {
     super.initHook();
-    final current = accountBox.get(0)!.toDomain();
 
     socket = io.io(
       "$baseUrl/ws",
@@ -91,7 +89,33 @@ class _MessageSocketHookState extends HookState<void, MessageSocketHook> {
   }
 
   @override
-  void build(BuildContext context) {}
+  void build(BuildContext context) {
+    final current = getCurrentUser();
+    final state = context.watch<CreateMessageCubit>().state;
+    final text = state.text.value.fold((l) => "", (r) => r);
+
+    if (text.trim().length == 1 && !isCurrentlyTyping) {
+      socket.emit(
+        'startTyping',
+        [hook.channelId, current.username.getOrCrash()],
+      );
+      isCurrentlyTyping = true;
+    } else if (text.isEmpty) {
+      socket.emit(
+        'stopTyping',
+        [hook.channelId, current.username.getOrCrash()],
+      );
+      isCurrentlyTyping = false;
+    }
+
+    if (state.isSubmitting) {
+      isCurrentlyTyping = false;
+      socket.emit(
+        'stopTyping',
+        [hook.channelId, current.username.getOrCrash()],
+      );
+    }
+  }
 
   @override
   void dispose() {

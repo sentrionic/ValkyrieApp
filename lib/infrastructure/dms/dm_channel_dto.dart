@@ -19,8 +19,8 @@ class DMChannelDto with _$DMChannelDto {
 
   factory DMChannelDto.fromMap(Map<String, dynamic> map) {
     return DMChannelDto(
-      id: map['id'] ?? '',
-      user: UserDto.fromMap(map['user'] ?? ''),
+      id: map['id'],
+      user: UserDto.fromMap(map['user']),
     );
   }
 }

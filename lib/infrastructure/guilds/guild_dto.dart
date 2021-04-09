@@ -12,6 +12,8 @@ class GuildDto with _$GuildDto {
     required String id,
     required String name,
     required String defaultChannelId,
+    required String ownerId,
+    required bool hasNotification,
     String? icon,
   }) = _GuildDto;
 
@@ -20,15 +22,19 @@ class GuildDto with _$GuildDto {
       id: id,
       name: GuildName(name),
       defaultChannel: defaultChannelId,
+      ownerId: ownerId,
+      hasNotification: hasNotification,
       icon: icon,
     );
   }
 
   factory GuildDto.fromMap(Map<String, dynamic> map) {
     return GuildDto(
-      id: map['id'] ?? '',
-      name: map['name'] ?? '',
-      defaultChannelId: map['default_channel_id'] ?? '',
+      id: map['id'],
+      name: map['name'],
+      defaultChannelId: map['default_channel_id'],
+      ownerId: map['ownerId'],
+      hasNotification: map['hasNotification'],
       icon: map['icon'],
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:valkyrie_app/application/channels/cubit/channel_cubit.dart';
+import 'package:valkyrie_app/application/channels/channel_list/channel_cubit.dart';
 import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
 
 class GuildChannelHeader extends StatelessWidget {
