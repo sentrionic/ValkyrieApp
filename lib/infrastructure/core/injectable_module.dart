@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:valkyrie_app/presentation/common/get_cookie.dart';
+import 'package:valkyrie_app/presentation/common/utils/get_cookie.dart';
 
 @module
 abstract class InjectableModule {

@@ -13,4 +13,7 @@ class ThemeColors {
   static const dmBackground = Color(0xff2D3134);
   static const messageInput = Color(0xff272B2E);
   static const inviteGrey = Color(0xff4E535B);
+  static const brandGreen = Color(0xff43b581);
+  static const sheetBackground = Color(0xff35383E);
+  static const brandRed = Color(0xffF14645);
 }

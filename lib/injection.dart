@@ -5,5 +5,4 @@ import 'package:valkyrie_app/injection.config.dart';
 final GetIt getIt = GetIt.instance;
 
 @injectableInit
-Future<void> configureInjection(String env) async =>
-    await $initGetIt(getIt, environment: env);
+void configureInjection(String env) => $initGetIt(getIt, environment: env);

@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:valkyrie_app/presentation/auth/login/login_screen.dart';
+import 'package:valkyrie_app/presentation/auth/register/register_screen.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 
 class StartUpScreen extends StatelessWidget {
+  static const routeName = '/auth';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +56,7 @@ class StartUpScreen extends StatelessWidget {
                             primary: ThemeColors.themeBlue,
                           ),
                           onPressed: () {
-                            Navigator.of(context).pushNamed('/register');
+                            Navigator.of(context).pushNamed(RegisterScreen.routeName);
                           },
                           child: Container(
                             padding: const EdgeInsets.symmetric(vertical: 15),
@@ -79,7 +82,7 @@ class StartUpScreen extends StatelessWidget {
                             primary: ThemeColors.buttonGray,
                           ),
                           onPressed: () {
-                            Navigator.of(context).pushNamed('/login');
+                            Navigator.of(context).pushNamed(LoginScreen.routeName);
                           },
                           child: Container(
                             padding: const EdgeInsets.symmetric(vertical: 15),

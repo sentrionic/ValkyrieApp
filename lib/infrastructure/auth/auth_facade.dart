@@ -13,7 +13,7 @@ import 'package:valkyrie_app/infrastructure/account/account_dto.dart';
 import 'package:valkyrie_app/infrastructure/account/account_entity.dart';
 import 'package:valkyrie_app/infrastructure/core/field_error.dart';
 import 'package:valkyrie_app/infrastructure/core/hive_box_names.dart';
-import 'package:valkyrie_app/presentation/common/get_cookie.dart';
+import 'package:valkyrie_app/presentation/common/utils/get_cookie.dart';
 
 @LazySingleton(as: IAuthFacade)
 class AuthFacade implements IAuthFacade {

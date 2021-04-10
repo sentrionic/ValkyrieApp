@@ -15,7 +15,6 @@ class UpdateAccountState with _$UpdateAccountState {
         username: Username(''),
         emailAddress: EmailAddress(''),
         showErrorMessages: false,
-        image: null,
         isSaving: false,
         saveFailureOrSuccessOption: none(),
       );
