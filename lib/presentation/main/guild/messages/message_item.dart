@@ -66,7 +66,7 @@ class MessageItem extends StatelessWidget {
       ),
       subtitle: Padding(
         padding: const EdgeInsets.only(top: 5.0),
-        child: message.filetype != null
+        child: message.attachment != null
             ? MessageFileWidget(message)
             : MessageTextWidget(message),
       ),

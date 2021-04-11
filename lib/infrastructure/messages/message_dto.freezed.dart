@@ -19,16 +19,14 @@ class _$MessageDtoTearOff {
   _MessageDto call(
       {required String id,
       String? text,
-      String? url,
-      String? filetype,
+      AttachmentDto? attachment,
       required String createdAt,
       required String updatedAt,
       required MemberDto user}) {
     return _MessageDto(
       id: id,
       text: text,
-      url: url,
-      filetype: filetype,
+      attachment: attachment,
       createdAt: createdAt,
       updatedAt: updatedAt,
       user: user,
@@ -43,8 +41,7 @@ const $MessageDto = _$MessageDtoTearOff();
 mixin _$MessageDto {
   String get id => throw _privateConstructorUsedError;
   String? get text => throw _privateConstructorUsedError;
-  String? get url => throw _privateConstructorUsedError;
-  String? get filetype => throw _privateConstructorUsedError;
+  AttachmentDto? get attachment => throw _privateConstructorUsedError;
   String get createdAt => throw _privateConstructorUsedError;
   String get updatedAt => throw _privateConstructorUsedError;
   MemberDto get user => throw _privateConstructorUsedError;
@@ -62,12 +59,12 @@ abstract class $MessageDtoCopyWith<$Res> {
   $Res call(
       {String id,
       String? text,
-      String? url,
-      String? filetype,
+      AttachmentDto? attachment,
       String createdAt,
       String updatedAt,
       MemberDto user});
 
+  $AttachmentDtoCopyWith<$Res>? get attachment;
   $MemberDtoCopyWith<$Res> get user;
 }
 
@@ -83,8 +80,7 @@ class _$MessageDtoCopyWithImpl<$Res> implements $MessageDtoCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? text = freezed,
-    Object? url = freezed,
-    Object? filetype = freezed,
+    Object? attachment = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
     Object? user = freezed,
@@ -98,14 +94,10 @@ class _$MessageDtoCopyWithImpl<$Res> implements $MessageDtoCopyWith<$Res> {
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      filetype: filetype == freezed
-          ? _value.filetype
-          : filetype // ignore: cast_nullable_to_non_nullable
-              as String?,
+      attachment: attachment == freezed
+          ? _value.attachment
+          : attachment // ignore: cast_nullable_to_non_nullable
+              as AttachmentDto?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -119,6 +111,17 @@ class _$MessageDtoCopyWithImpl<$Res> implements $MessageDtoCopyWith<$Res> {
           : user // ignore: cast_nullable_to_non_nullable
               as MemberDto,
     ));
+  }
+
+  @override
+  $AttachmentDtoCopyWith<$Res>? get attachment {
+    if (_value.attachment == null) {
+      return null;
+    }
+
+    return $AttachmentDtoCopyWith<$Res>(_value.attachment!, (value) {
+      return _then(_value.copyWith(attachment: value));
+    });
   }
 
   @override
@@ -138,12 +141,13 @@ abstract class _$MessageDtoCopyWith<$Res> implements $MessageDtoCopyWith<$Res> {
   $Res call(
       {String id,
       String? text,
-      String? url,
-      String? filetype,
+      AttachmentDto? attachment,
       String createdAt,
       String updatedAt,
       MemberDto user});
 
+  @override
+  $AttachmentDtoCopyWith<$Res>? get attachment;
   @override
   $MemberDtoCopyWith<$Res> get user;
 }
@@ -162,8 +166,7 @@ class __$MessageDtoCopyWithImpl<$Res> extends _$MessageDtoCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? text = freezed,
-    Object? url = freezed,
-    Object? filetype = freezed,
+    Object? attachment = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
     Object? user = freezed,
@@ -177,14 +180,10 @@ class __$MessageDtoCopyWithImpl<$Res> extends _$MessageDtoCopyWithImpl<$Res>
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      filetype: filetype == freezed
-          ? _value.filetype
-          : filetype // ignore: cast_nullable_to_non_nullable
-              as String?,
+      attachment: attachment == freezed
+          ? _value.attachment
+          : attachment // ignore: cast_nullable_to_non_nullable
+              as AttachmentDto?,
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -206,8 +205,7 @@ class _$_MessageDto extends _MessageDto {
   const _$_MessageDto(
       {required this.id,
       this.text,
-      this.url,
-      this.filetype,
+      this.attachment,
       required this.createdAt,
       required this.updatedAt,
       required this.user})
@@ -218,9 +216,7 @@ class _$_MessageDto extends _MessageDto {
   @override
   final String? text;
   @override
-  final String? url;
-  @override
-  final String? filetype;
+  final AttachmentDto? attachment;
   @override
   final String createdAt;
   @override
@@ -230,7 +226,7 @@ class _$_MessageDto extends _MessageDto {
 
   @override
   String toString() {
-    return 'MessageDto(id: $id, text: $text, url: $url, filetype: $filetype, createdAt: $createdAt, updatedAt: $updatedAt, user: $user)';
+    return 'MessageDto(id: $id, text: $text, attachment: $attachment, createdAt: $createdAt, updatedAt: $updatedAt, user: $user)';
   }
 
   @override
@@ -241,11 +237,9 @@ class _$_MessageDto extends _MessageDto {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.text, text) ||
                 const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)) &&
-            (identical(other.filetype, filetype) ||
+            (identical(other.attachment, attachment) ||
                 const DeepCollectionEquality()
-                    .equals(other.filetype, filetype)) &&
+                    .equals(other.attachment, attachment)) &&
             (identical(other.createdAt, createdAt) ||
                 const DeepCollectionEquality()
                     .equals(other.createdAt, createdAt)) &&
@@ -261,8 +255,7 @@ class _$_MessageDto extends _MessageDto {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(filetype) ^
+      const DeepCollectionEquality().hash(attachment) ^
       const DeepCollectionEquality().hash(createdAt) ^
       const DeepCollectionEquality().hash(updatedAt) ^
       const DeepCollectionEquality().hash(user);
@@ -277,8 +270,7 @@ abstract class _MessageDto extends MessageDto {
   const factory _MessageDto(
       {required String id,
       String? text,
-      String? url,
-      String? filetype,
+      AttachmentDto? attachment,
       required String createdAt,
       required String updatedAt,
       required MemberDto user}) = _$_MessageDto;
@@ -289,9 +281,7 @@ abstract class _MessageDto extends MessageDto {
   @override
   String? get text => throw _privateConstructorUsedError;
   @override
-  String? get url => throw _privateConstructorUsedError;
-  @override
-  String? get filetype => throw _privateConstructorUsedError;
+  AttachmentDto? get attachment => throw _privateConstructorUsedError;
   @override
   String get createdAt => throw _privateConstructorUsedError;
   @override
@@ -301,5 +291,183 @@ abstract class _MessageDto extends MessageDto {
   @override
   @JsonKey(ignore: true)
   _$MessageDtoCopyWith<_MessageDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$AttachmentDtoTearOff {
+  const _$AttachmentDtoTearOff();
+
+  _AttachmentDto call(
+      {required String filename,
+      required String url,
+      required String filetype}) {
+    return _AttachmentDto(
+      filename: filename,
+      url: url,
+      filetype: filetype,
+    );
+  }
+}
+
+/// @nodoc
+const $AttachmentDto = _$AttachmentDtoTearOff();
+
+/// @nodoc
+mixin _$AttachmentDto {
+  String get filename => throw _privateConstructorUsedError;
+  String get url => throw _privateConstructorUsedError;
+  String get filetype => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AttachmentDtoCopyWith<AttachmentDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AttachmentDtoCopyWith<$Res> {
+  factory $AttachmentDtoCopyWith(
+          AttachmentDto value, $Res Function(AttachmentDto) then) =
+      _$AttachmentDtoCopyWithImpl<$Res>;
+  $Res call({String filename, String url, String filetype});
+}
+
+/// @nodoc
+class _$AttachmentDtoCopyWithImpl<$Res>
+    implements $AttachmentDtoCopyWith<$Res> {
+  _$AttachmentDtoCopyWithImpl(this._value, this._then);
+
+  final AttachmentDto _value;
+  // ignore: unused_field
+  final $Res Function(AttachmentDto) _then;
+
+  @override
+  $Res call({
+    Object? filename = freezed,
+    Object? url = freezed,
+    Object? filetype = freezed,
+  }) {
+    return _then(_value.copyWith(
+      filename: filename == freezed
+          ? _value.filename
+          : filename // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      filetype: filetype == freezed
+          ? _value.filetype
+          : filetype // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$AttachmentDtoCopyWith<$Res>
+    implements $AttachmentDtoCopyWith<$Res> {
+  factory _$AttachmentDtoCopyWith(
+          _AttachmentDto value, $Res Function(_AttachmentDto) then) =
+      __$AttachmentDtoCopyWithImpl<$Res>;
+  @override
+  $Res call({String filename, String url, String filetype});
+}
+
+/// @nodoc
+class __$AttachmentDtoCopyWithImpl<$Res>
+    extends _$AttachmentDtoCopyWithImpl<$Res>
+    implements _$AttachmentDtoCopyWith<$Res> {
+  __$AttachmentDtoCopyWithImpl(
+      _AttachmentDto _value, $Res Function(_AttachmentDto) _then)
+      : super(_value, (v) => _then(v as _AttachmentDto));
+
+  @override
+  _AttachmentDto get _value => super._value as _AttachmentDto;
+
+  @override
+  $Res call({
+    Object? filename = freezed,
+    Object? url = freezed,
+    Object? filetype = freezed,
+  }) {
+    return _then(_AttachmentDto(
+      filename: filename == freezed
+          ? _value.filename
+          : filename // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      filetype: filetype == freezed
+          ? _value.filetype
+          : filetype // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_AttachmentDto extends _AttachmentDto {
+  const _$_AttachmentDto(
+      {required this.filename, required this.url, required this.filetype})
+      : super._();
+
+  @override
+  final String filename;
+  @override
+  final String url;
+  @override
+  final String filetype;
+
+  @override
+  String toString() {
+    return 'AttachmentDto(filename: $filename, url: $url, filetype: $filetype)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _AttachmentDto &&
+            (identical(other.filename, filename) ||
+                const DeepCollectionEquality()
+                    .equals(other.filename, filename)) &&
+            (identical(other.url, url) ||
+                const DeepCollectionEquality().equals(other.url, url)) &&
+            (identical(other.filetype, filetype) ||
+                const DeepCollectionEquality()
+                    .equals(other.filetype, filetype)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(filename) ^
+      const DeepCollectionEquality().hash(url) ^
+      const DeepCollectionEquality().hash(filetype);
+
+  @JsonKey(ignore: true)
+  @override
+  _$AttachmentDtoCopyWith<_AttachmentDto> get copyWith =>
+      __$AttachmentDtoCopyWithImpl<_AttachmentDto>(this, _$identity);
+}
+
+abstract class _AttachmentDto extends AttachmentDto {
+  const factory _AttachmentDto(
+      {required String filename,
+      required String url,
+      required String filetype}) = _$_AttachmentDto;
+  const _AttachmentDto._() : super._();
+
+  @override
+  String get filename => throw _privateConstructorUsedError;
+  @override
+  String get url => throw _privateConstructorUsedError;
+  @override
+  String get filetype => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$AttachmentDtoCopyWith<_AttachmentDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

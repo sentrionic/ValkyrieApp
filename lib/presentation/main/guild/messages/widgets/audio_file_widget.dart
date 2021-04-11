@@ -10,13 +10,15 @@ class AudioFileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final file = message.url!.substring(message.url!.lastIndexOf('/') + 1);
-    final fileName = file.substring(file.indexOf('-') + 1);
     return ElevatedButton(
       onPressed: () async {
+        final attachment = message.attachment!;
         Navigator.of(context).pushNamed(
           WebViewScreen.routeName,
-          arguments: OpenUrlArguments(message.url!),
+          arguments: OpenUrlArguments(
+            url: attachment.url!,
+            filename: attachment.filename!,
+          ),
         );
       },
       style: ElevatedButton.styleFrom(
@@ -31,7 +33,7 @@ class AudioFileWidget extends StatelessWidget {
           children: [
             const Icon(Icons.insert_drive_file_outlined),
             Text(
-              fileName,
+              message.attachment!.filename!,
               style: const TextStyle(
                 color: Color(0xff03ADEF),
               ),

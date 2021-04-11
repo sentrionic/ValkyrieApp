@@ -31,7 +31,7 @@ class CompactMessageItem extends StatelessWidget {
             },
           );
         },
-        child: message.filetype != null
+        child: message.attachment != null
             ? MessageFileWidget(
                 message,
                 isCompact: true,

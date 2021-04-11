@@ -13,14 +13,18 @@ class ImageFileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        final attachment = message.attachment!;
         Navigator.of(context).pushNamed(
           PhotoViewScreen.routeName,
-          arguments: OpenUrlArguments(message.url!),
+          arguments: OpenUrlArguments(
+            url: attachment.url!,
+            filename: attachment.filename!,
+          ),
         );
       },
       child: FadeInImage.memoryNetwork(
         placeholder: kTransparentImage,
-        image: message.url!,
+        image: message.attachment!.url!,
         fit: BoxFit.scaleDown,
       ),
     );

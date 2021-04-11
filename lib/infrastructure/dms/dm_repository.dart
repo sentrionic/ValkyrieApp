@@ -43,13 +43,9 @@ class DMRepository extends IDMRepository {
   ) async {
     try {
       final response = await _dio.post('/channels/$userId/dm');
-
-      if (response.statusCode == 200) {
-        final results = jsonDecode(response.data);
-        final channel = DMChannelDto.fromMap(results).toDomain();
-        return right(channel);
-      }
-      return left(const DMChannelFailure.unexpected());
+      final results = jsonDecode(response.data);
+      final channel = DMChannelDto.fromMap(results).toDomain();
+      return right(channel);
     } on DioError catch (err) {
       print(err);
       return left(const DMChannelFailure.unexpected());

@@ -80,12 +80,18 @@ class AppRouter {
       case WebViewScreen.routeName:
         final OpenUrlArguments args = settings.arguments! as OpenUrlArguments;
         return SlideTransitionRoute(
-          page: WebViewScreen(url: args.url),
+          page: WebViewScreen(
+            url: args.url,
+            filename: args.filename,
+          ),
         );
       case PhotoViewScreen.routeName:
         final OpenUrlArguments args = settings.arguments! as OpenUrlArguments;
         return SlideTransitionRoute(
-          page: PhotoViewScreen(url: args.url),
+          page: PhotoViewScreen(
+            url: args.url,
+            filename: args.filename,
+          ),
         );
       default:
         return FadeTransitionRoute(

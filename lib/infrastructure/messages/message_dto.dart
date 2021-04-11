@@ -12,8 +12,7 @@ class MessageDto with _$MessageDto {
   const factory MessageDto({
     required String id,
     String? text,
-    String? url,
-    String? filetype,
+    AttachmentDto? attachment,
     required String createdAt,
     required String updatedAt,
     required MemberDto user,
@@ -22,9 +21,8 @@ class MessageDto with _$MessageDto {
   Message toDomain() {
     return Message(
       id: id,
-      url: url,
       text: text != null ? MessageText(text!) : null,
-      filetype: filetype,
+      attachment: attachment?.toDomain(),
       createdAt: createdAt,
       updatedAt: updatedAt,
       user: user.toDomain(),
@@ -35,11 +33,39 @@ class MessageDto with _$MessageDto {
     return MessageDto(
       id: map['id'],
       text: map['text'],
-      url: map['url'],
-      filetype: map['filetype'],
+      attachment: map['attachment'] != null
+          ? AttachmentDto.fromMap(map['attachment'])
+          : null,
       createdAt: map['createdAt'],
       updatedAt: map['updatedAt'],
       user: MemberDto.fromMap(map['user']),
+    );
+  }
+}
+
+@freezed
+class AttachmentDto with _$AttachmentDto {
+  const AttachmentDto._();
+
+  const factory AttachmentDto({
+    required String filename,
+    required String url,
+    required String filetype,
+  }) = _AttachmentDto;
+
+  Attachment toDomain() {
+    return Attachment(
+      filename: filename,
+      url: url,
+      filetype: filetype,
+    );
+  }
+
+  factory AttachmentDto.fromMap(Map<String, dynamic> map) {
+    return AttachmentDto(
+      filename: map['filename'],
+      url: map['url'],
+      filetype: map['filetype'],
     );
   }
 }

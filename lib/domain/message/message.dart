@@ -12,10 +12,20 @@ class Message with _$Message {
   const factory Message({
     required String id,
     MessageText? text,
-    String? url,
-    String? filetype,
+    Attachment? attachment,
     required String createdAt,
     required String updatedAt,
     required Member user,
   }) = _Message;
+}
+
+@freezed
+class Attachment with _$Attachment {
+  const Attachment._();
+
+  const factory Attachment({
+    String? filename,
+    String? url,
+    String? filetype,
+  }) = _Attachment;
 }

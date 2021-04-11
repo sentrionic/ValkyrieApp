@@ -8,27 +8,38 @@ import 'package:valkyrie_app/presentation/common/utils/flushbar_creator.dart';
 class PhotoViewScreen extends StatelessWidget {
   static const routeName = '/photo';
   final String url;
+  final String filename;
 
-  const PhotoViewScreen({Key? key, required this.url}) : super(key: key);
+  const PhotoViewScreen({
+    Key? key,
+    required this.url,
+    required this.filename,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt<DownloadImageCubit>(),
-      child: _PhotoViewContent(url),
+      child: _PhotoViewContent(
+        url: url,
+        filename: filename,
+      ),
     );
   }
 }
 
 class _PhotoViewContent extends StatelessWidget {
   final String url;
+  final String filename;
 
-  const _PhotoViewContent(this.url, {Key? key}) : super(key: key);
+  const _PhotoViewContent({
+    Key? key,
+    required this.url,
+    required this.filename,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final file = url.substring(url.lastIndexOf('/') + 1);
-    final fileName = file.substring(file.indexOf('-') + 1);
     return BlocListener<DownloadImageCubit, DownloadImageState>(
       listener: (context, state) {
         state.downloadFailureOrSuccessOption.fold(
@@ -58,7 +69,7 @@ class _PhotoViewContent extends StatelessWidget {
                 style: TextStyle(color: Colors.white, fontSize: 16.0),
               ),
               Text(
-                fileName,
+                filename,
                 style: const TextStyle(color: Colors.white30, fontSize: 14.0),
               )
             ],

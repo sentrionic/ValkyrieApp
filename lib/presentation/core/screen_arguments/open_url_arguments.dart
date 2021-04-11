@@ -1,4 +1,8 @@
 class OpenUrlArguments {
   final String url;
-  OpenUrlArguments(this.url);
+  final String filename;
+  OpenUrlArguments({
+    required this.url,
+    required this.filename,
+  });
 }

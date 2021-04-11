@@ -27,7 +27,7 @@ class MessageFileWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.0),
             child: SizedBox(
               width: MediaQuery.of(context).size.width * 0.7,
-              child: message.filetype!.startsWith('image/')
+              child: message.attachment!.filetype!.startsWith('image/')
                   ? ImageFileWidget(message)
                   : AudioFileWidget(message),
             ),

@@ -51,7 +51,7 @@ class _MessageBottomSheetActions extends StatelessWidget {
   Widget build(BuildContext context) {
     final isAuthor = message.user.id == current.id;
     final isOwner = current.id == guild.ownerId;
-    final isFile = message.filetype != null;
+    final isFile = message.attachment != null;
 
     return BlocListener<EditMessageCubit, EditMessageState>(
       listener: (context, state) {
@@ -228,8 +228,8 @@ class _MessageBottomSheetActions extends StatelessWidget {
   }
 
   void copyToClipboard(BuildContext context) {
-    final isFile = message.filetype != null;
-    final data = isFile ? message.url! : message.text!.getOrCrash();
+    final isFile = message.attachment != null;
+    final data = isFile ? message.attachment!.url! : message.text!.getOrCrash();
     Clipboard.setData(
       ClipboardData(text: data),
     );
