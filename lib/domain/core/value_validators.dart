@@ -77,3 +77,14 @@ Either<ValueFailure<File>, File> validateMaxFileSize(
     );
   }
 }
+
+Either<ValueFailure<String>, String> validateHexColor(
+  String input,
+) {
+  const hexRegex = r"""/^#[0-9a-f]{3}(?:[0-9a-f]{3})?$/i""";
+  if (RegExp(hexRegex).hasMatch(input)) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidColor(failedValue: input));
+  }
+}

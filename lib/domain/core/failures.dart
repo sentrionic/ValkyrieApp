@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'failures.freezed.dart';
 
 @freezed
-abstract class ValueFailure<T> with _$ValueFailure<T> {
+class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.exceedingLength({
     required T failedValue,
     required int max,
@@ -31,4 +31,7 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
     required T failedValue,
     required int max,
   }) = ExceedingSize<T>;
+  const factory ValueFailure.invalidColor({
+    required T failedValue,
+  }) = InvalidColor<T>;
 }

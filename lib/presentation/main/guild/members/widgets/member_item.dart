@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart';
+import 'package:valkyrie_app/application/guilds/guild_list/guild_list_cubit.dart';
 import 'package:valkyrie_app/domain/member/member.dart';
+import 'package:valkyrie_app/presentation/common/extensions/hex_color_extension.dart';
+import 'package:valkyrie_app/presentation/main/guild/chat_screen/sheets/profile_bottom_sheet.dart';
 
 class MemberItem extends StatelessWidget {
   final Member member;
@@ -8,10 +13,19 @@ class MemberItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final guildId = context.watch<CurrentGuildCubit>().state;
+    final guild = context.read<GuildListCubit>().getCurrentGuild(guildId);
     return ListTile(
       visualDensity: const VisualDensity(
         vertical: -2,
       ),
+      onTap: () {
+        showModalBottomSheet(
+          isScrollControlled: true,
+          context: context,
+          builder: (_) => ProfileBottomSheet(guild: guild!, member: member),
+        );
+      },
       leading: Stack(
         children: [
           CircleAvatar(
@@ -36,13 +50,11 @@ class MemberItem extends StatelessWidget {
           )
         ],
       ),
-      title: Row(
-        children: [
-          Text(
-            member.username,
-            style: const TextStyle(fontSize: 16),
-          ),
-        ],
+      title: Text(
+        member.nickname ?? member.username,
+        style: TextStyle(
+          color: member.color != null ? HexColor(member.color!) : null,
+        ),
       ),
     );
   }

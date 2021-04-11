@@ -119,7 +119,7 @@ class ProfileBottomSheet extends StatelessWidget {
                                   children: const [
                                     Icon(
                                       Icons.person_add_alt_1,
-                                      color: Color(0xff41B480),
+                                      color: ThemeColors.brandGreen,
                                     ),
                                     SizedBox(
                                       height: 5,
@@ -127,7 +127,7 @@ class ProfileBottomSheet extends StatelessWidget {
                                     Text(
                                       "Add Friend",
                                       style: TextStyle(
-                                        color: Color(0xff41B480),
+                                        color: ThemeColors.brandGreen,
                                       ),
                                     ),
                                   ],
@@ -176,6 +176,11 @@ class ProfileBottomSheet extends StatelessWidget {
                 ),
               ),
             ),
+          if (isCurrent)
+            const Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Text("This is you!"),
+            )
         ],
       ),
     );

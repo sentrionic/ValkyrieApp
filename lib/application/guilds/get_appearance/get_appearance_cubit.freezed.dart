@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'member_cubit.dart';
+part of 'get_appearance_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,8 +13,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$MemberStateTearOff {
-  const _$MemberStateTearOff();
+class _$GetAppearanceStateTearOff {
+  const _$GetAppearanceStateTearOff();
 
   _Initial initial() {
     return const _Initial();
@@ -24,38 +24,38 @@ class _$MemberStateTearOff {
     return const _LoadInProgress();
   }
 
-  _LoadSuccess loadSuccess(List<Member> members) {
+  _LoadSuccess loadSuccess(GuildAppearance appearance) {
     return _LoadSuccess(
-      members,
+      appearance,
     );
   }
 
-  _LoadFailure loadFailure(MemberFailure memberFailure) {
+  _LoadFailure loadFailure(GuildFailure guildFailure) {
     return _LoadFailure(
-      memberFailure,
+      guildFailure,
     );
   }
 }
 
 /// @nodoc
-const $MemberState = _$MemberStateTearOff();
+const $GetAppearanceState = _$GetAppearanceStateTearOff();
 
 /// @nodoc
-mixin _$MemberState {
+mixin _$GetAppearanceState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Member> members) loadSuccess,
-    required TResult Function(MemberFailure memberFailure) loadFailure,
+    required TResult Function(GuildAppearance appearance) loadSuccess,
+    required TResult Function(GuildFailure guildFailure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Member> members)? loadSuccess,
-    TResult Function(MemberFailure memberFailure)? loadFailure,
+    TResult Function(GuildAppearance appearance)? loadSuccess,
+    TResult Function(GuildFailure guildFailure)? loadFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -79,19 +79,20 @@ mixin _$MemberState {
 }
 
 /// @nodoc
-abstract class $MemberStateCopyWith<$Res> {
-  factory $MemberStateCopyWith(
-          MemberState value, $Res Function(MemberState) then) =
-      _$MemberStateCopyWithImpl<$Res>;
+abstract class $GetAppearanceStateCopyWith<$Res> {
+  factory $GetAppearanceStateCopyWith(
+          GetAppearanceState value, $Res Function(GetAppearanceState) then) =
+      _$GetAppearanceStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MemberStateCopyWithImpl<$Res> implements $MemberStateCopyWith<$Res> {
-  _$MemberStateCopyWithImpl(this._value, this._then);
+class _$GetAppearanceStateCopyWithImpl<$Res>
+    implements $GetAppearanceStateCopyWith<$Res> {
+  _$GetAppearanceStateCopyWithImpl(this._value, this._then);
 
-  final MemberState _value;
+  final GetAppearanceState _value;
   // ignore: unused_field
-  final $Res Function(MemberState) _then;
+  final $Res Function(GetAppearanceState) _then;
 }
 
 /// @nodoc
@@ -101,7 +102,8 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$MemberStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res>
+    extends _$GetAppearanceStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -116,7 +118,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'MemberState.initial()';
+    return 'GetAppearanceState.initial()';
   }
 
   @override
@@ -132,8 +134,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Member> members) loadSuccess,
-    required TResult Function(MemberFailure memberFailure) loadFailure,
+    required TResult Function(GuildAppearance appearance) loadSuccess,
+    required TResult Function(GuildFailure guildFailure) loadFailure,
   }) {
     return initial();
   }
@@ -143,8 +145,8 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Member> members)? loadSuccess,
-    TResult Function(MemberFailure memberFailure)? loadFailure,
+    TResult Function(GuildAppearance appearance)? loadSuccess,
+    TResult Function(GuildFailure guildFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -180,7 +182,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements MemberState {
+abstract class _Initial implements GetAppearanceState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -193,7 +195,7 @@ abstract class _$LoadInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$LoadInProgressCopyWithImpl<$Res>
-    extends _$MemberStateCopyWithImpl<$Res>
+    extends _$GetAppearanceStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
   __$LoadInProgressCopyWithImpl(
       _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
@@ -209,7 +211,7 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   String toString() {
-    return 'MemberState.loadInProgress()';
+    return 'GetAppearanceState.loadInProgress()';
   }
 
   @override
@@ -225,8 +227,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Member> members) loadSuccess,
-    required TResult Function(MemberFailure memberFailure) loadFailure,
+    required TResult Function(GuildAppearance appearance) loadSuccess,
+    required TResult Function(GuildFailure guildFailure) loadFailure,
   }) {
     return loadInProgress();
   }
@@ -236,8 +238,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Member> members)? loadSuccess,
-    TResult Function(MemberFailure memberFailure)? loadFailure,
+    TResult Function(GuildAppearance appearance)? loadSuccess,
+    TResult Function(GuildFailure guildFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -273,7 +275,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   }
 }
 
-abstract class _LoadInProgress implements MemberState {
+abstract class _LoadInProgress implements GetAppearanceState {
   const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
@@ -282,11 +284,14 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({List<Member> members});
+  $Res call({GuildAppearance appearance});
+
+  $GuildAppearanceCopyWith<$Res> get appearance;
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$MemberStateCopyWithImpl<$Res>
+class __$LoadSuccessCopyWithImpl<$Res>
+    extends _$GetAppearanceStateCopyWithImpl<$Res>
     implements _$LoadSuccessCopyWith<$Res> {
   __$LoadSuccessCopyWithImpl(
       _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
@@ -297,40 +302,48 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$MemberStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? members = freezed,
+    Object? appearance = freezed,
   }) {
     return _then(_LoadSuccess(
-      members == freezed
-          ? _value.members
-          : members // ignore: cast_nullable_to_non_nullable
-              as List<Member>,
+      appearance == freezed
+          ? _value.appearance
+          : appearance // ignore: cast_nullable_to_non_nullable
+              as GuildAppearance,
     ));
+  }
+
+  @override
+  $GuildAppearanceCopyWith<$Res> get appearance {
+    return $GuildAppearanceCopyWith<$Res>(_value.appearance, (value) {
+      return _then(_value.copyWith(appearance: value));
+    });
   }
 }
 
 /// @nodoc
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.members);
+  const _$_LoadSuccess(this.appearance);
 
   @override
-  final List<Member> members;
+  final GuildAppearance appearance;
 
   @override
   String toString() {
-    return 'MemberState.loadSuccess(members: $members)';
+    return 'GetAppearanceState.loadSuccess(appearance: $appearance)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoadSuccess &&
-            (identical(other.members, members) ||
-                const DeepCollectionEquality().equals(other.members, members)));
+            (identical(other.appearance, appearance) ||
+                const DeepCollectionEquality()
+                    .equals(other.appearance, appearance)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(members);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(appearance);
 
   @JsonKey(ignore: true)
   @override
@@ -342,10 +355,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Member> members) loadSuccess,
-    required TResult Function(MemberFailure memberFailure) loadFailure,
+    required TResult Function(GuildAppearance appearance) loadSuccess,
+    required TResult Function(GuildFailure guildFailure) loadFailure,
   }) {
-    return loadSuccess(members);
+    return loadSuccess(appearance);
   }
 
   @override
@@ -353,12 +366,12 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Member> members)? loadSuccess,
-    TResult Function(MemberFailure memberFailure)? loadFailure,
+    TResult Function(GuildAppearance appearance)? loadSuccess,
+    TResult Function(GuildFailure guildFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
-      return loadSuccess(members);
+      return loadSuccess(appearance);
     }
     return orElse();
   }
@@ -390,10 +403,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   }
 }
 
-abstract class _LoadSuccess implements MemberState {
-  const factory _LoadSuccess(List<Member> members) = _$_LoadSuccess;
+abstract class _LoadSuccess implements GetAppearanceState {
+  const factory _LoadSuccess(GuildAppearance appearance) = _$_LoadSuccess;
 
-  List<Member> get members => throw _privateConstructorUsedError;
+  GuildAppearance get appearance => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -404,13 +417,14 @@ abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(
           _LoadFailure value, $Res Function(_LoadFailure) then) =
       __$LoadFailureCopyWithImpl<$Res>;
-  $Res call({MemberFailure memberFailure});
+  $Res call({GuildFailure guildFailure});
 
-  $MemberFailureCopyWith<$Res> get memberFailure;
+  $GuildFailureCopyWith<$Res> get guildFailure;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$MemberStateCopyWithImpl<$Res>
+class __$LoadFailureCopyWithImpl<$Res>
+    extends _$GetAppearanceStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
   __$LoadFailureCopyWithImpl(
       _LoadFailure _value, $Res Function(_LoadFailure) _then)
@@ -421,48 +435,48 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$MemberStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? memberFailure = freezed,
+    Object? guildFailure = freezed,
   }) {
     return _then(_LoadFailure(
-      memberFailure == freezed
-          ? _value.memberFailure
-          : memberFailure // ignore: cast_nullable_to_non_nullable
-              as MemberFailure,
+      guildFailure == freezed
+          ? _value.guildFailure
+          : guildFailure // ignore: cast_nullable_to_non_nullable
+              as GuildFailure,
     ));
   }
 
   @override
-  $MemberFailureCopyWith<$Res> get memberFailure {
-    return $MemberFailureCopyWith<$Res>(_value.memberFailure, (value) {
-      return _then(_value.copyWith(memberFailure: value));
+  $GuildFailureCopyWith<$Res> get guildFailure {
+    return $GuildFailureCopyWith<$Res>(_value.guildFailure, (value) {
+      return _then(_value.copyWith(guildFailure: value));
     });
   }
 }
 
 /// @nodoc
 class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure(this.memberFailure);
+  const _$_LoadFailure(this.guildFailure);
 
   @override
-  final MemberFailure memberFailure;
+  final GuildFailure guildFailure;
 
   @override
   String toString() {
-    return 'MemberState.loadFailure(memberFailure: $memberFailure)';
+    return 'GetAppearanceState.loadFailure(guildFailure: $guildFailure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoadFailure &&
-            (identical(other.memberFailure, memberFailure) ||
+            (identical(other.guildFailure, guildFailure) ||
                 const DeepCollectionEquality()
-                    .equals(other.memberFailure, memberFailure)));
+                    .equals(other.guildFailure, guildFailure)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(memberFailure);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(guildFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -474,10 +488,10 @@ class _$_LoadFailure implements _LoadFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Member> members) loadSuccess,
-    required TResult Function(MemberFailure memberFailure) loadFailure,
+    required TResult Function(GuildAppearance appearance) loadSuccess,
+    required TResult Function(GuildFailure guildFailure) loadFailure,
   }) {
-    return loadFailure(memberFailure);
+    return loadFailure(guildFailure);
   }
 
   @override
@@ -485,12 +499,12 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Member> members)? loadSuccess,
-    TResult Function(MemberFailure memberFailure)? loadFailure,
+    TResult Function(GuildAppearance appearance)? loadSuccess,
+    TResult Function(GuildFailure guildFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
-      return loadFailure(memberFailure);
+      return loadFailure(guildFailure);
     }
     return orElse();
   }
@@ -522,10 +536,10 @@ class _$_LoadFailure implements _LoadFailure {
   }
 }
 
-abstract class _LoadFailure implements MemberState {
-  const factory _LoadFailure(MemberFailure memberFailure) = _$_LoadFailure;
+abstract class _LoadFailure implements GetAppearanceState {
+  const factory _LoadFailure(GuildFailure guildFailure) = _$_LoadFailure;
 
-  MemberFailure get memberFailure => throw _privateConstructorUsedError;
+  GuildFailure get guildFailure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

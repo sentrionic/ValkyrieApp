@@ -5,4 +5,7 @@ import 'dm_channel.dart';
 
 abstract class IDMRepository {
   Future<Either<DMChannelFailure, List<DMChannel>>> getUserDMs();
+  Future<Either<DMChannelFailure, DMChannel>> getOrCreateDirectMessage(
+    String userId,
+  );
 }

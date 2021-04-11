@@ -1,7 +1,7 @@
 part of 'download_image_cubit.dart';
 
 @freezed
-abstract class DownloadImageState with _$DownloadImageState {
+class DownloadImageState with _$DownloadImageState {
   const factory DownloadImageState({
     required bool showErrorMessages,
     required bool isDownloading,

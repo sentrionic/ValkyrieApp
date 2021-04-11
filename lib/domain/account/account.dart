@@ -6,7 +6,7 @@ import 'package:valkyrie_app/domain/core/failures.dart';
 part 'account.freezed.dart';
 
 @freezed
-abstract class Account implements _$Account {
+class Account with _$Account {
   const Account._();
 
   const factory Account({

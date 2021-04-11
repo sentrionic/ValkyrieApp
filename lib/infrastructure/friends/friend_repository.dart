@@ -35,4 +35,32 @@ class FriendRepository extends IFriendRepository {
       return left(const FriendFailure.unexpected());
     }
   }
+
+  @override
+  Future<Either<FriendFailure, Unit>> sendFriendRequest(String userId) async {
+    try {
+      await _dio.post('/account/$userId/friend');
+      return right(unit);
+    } on DioError catch (err) {
+      print(err);
+      return left(const FriendFailure.unexpected());
+    } on SocketException catch (err) {
+      print(err);
+      return left(const FriendFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Either<FriendFailure, Unit>> removeFriend(String userId) async {
+    try {
+      await _dio.delete('/account/$userId/friend');
+      return right(unit);
+    } on DioError catch (err) {
+      print(err);
+      return left(const FriendFailure.unexpected());
+    } on SocketException catch (err) {
+      print(err);
+      return left(const FriendFailure.unexpected());
+    }
+  }
 }

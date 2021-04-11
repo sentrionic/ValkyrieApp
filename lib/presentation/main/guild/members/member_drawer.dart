@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:valkyrie_app/application/members/member/member_cubit.dart';
+import 'package:valkyrie_app/application/members/member_list/member_list_cubit.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/common/widgets/center_loading_indicator.dart';
@@ -16,14 +16,16 @@ class MemberDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<MemberCubit>()..getGuildMembers(guild.id),
+      create: (context) => getIt<MemberListCubit>()..getGuildMembers(guild.id),
       child: Drawer(
-        child: BlocBuilder<MemberCubit, MemberState>(
+        child: BlocBuilder<MemberListCubit, MemberListState>(
           builder: (context, state) {
             return state.maybeWhen(
               loadSuccess: (members) {
-                final online = context.read<MemberCubit>().getOnlineMembers();
-                final offline = context.read<MemberCubit>().getOfflineMembers();
+                final online =
+                    context.read<MemberListCubit>().getOnlineMembers();
+                final offline =
+                    context.read<MemberListCubit>().getOfflineMembers();
                 return ListView(
                   children: [
                     MemberHeader(),

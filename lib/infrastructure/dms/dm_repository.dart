@@ -36,4 +36,26 @@ class DMRepository extends IDMRepository {
       return left(const DMChannelFailure.unexpected());
     }
   }
+
+  @override
+  Future<Either<DMChannelFailure, DMChannel>> getOrCreateDirectMessage(
+    String userId,
+  ) async {
+    try {
+      final response = await _dio.post('/channels/$userId/dm');
+
+      if (response.statusCode == 200) {
+        final results = jsonDecode(response.data);
+        final channel = DMChannelDto.fromMap(results).toDomain();
+        return right(channel);
+      }
+      return left(const DMChannelFailure.unexpected());
+    } on DioError catch (err) {
+      print(err);
+      return left(const DMChannelFailure.unexpected());
+    } on SocketException catch (err) {
+      print(err);
+      return left(const DMChannelFailure.unexpected());
+    }
+  }
 }

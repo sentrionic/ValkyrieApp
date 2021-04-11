@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:valkyrie_app/application/channels/channel_list/channel_cubit.dart';
 import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
+import 'package:valkyrie_app/presentation/common/utils/get_channel_name.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 
 class MemberHeader extends StatelessWidget {
@@ -9,7 +9,6 @@ class MemberHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final channelId = context.watch<CurrentChannelCubit>().state;
     return Container(
-      height: 100,
       color: ThemeColors.dmBackground,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,13 +24,11 @@ class MemberHeader extends StatelessWidget {
                   Icons.tag,
                   color: Colors.white38,
                 ),
+                const SizedBox(
+                  width: 5,
+                ),
                 Text(
-                  context
-                          .watch<ChannelCubit>()
-                          .getCurrentChannel(channelId)
-                          ?.name
-                          .getOrCrash() ??
-                      "",
+                  getChannelName(context, channelId),
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
@@ -43,9 +40,7 @@ class MemberHeader extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          const Divider(
-            thickness: 1,
-          ),
+          const Divider(),
         ],
       ),
     );

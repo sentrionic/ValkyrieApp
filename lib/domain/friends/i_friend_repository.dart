@@ -4,4 +4,6 @@ import 'package:valkyrie_app/domain/friends/friend_failure.dart';
 
 abstract class IFriendRepository {
   Future<Either<FriendFailure, List<Friend>>> getFriends();
+  Future<Either<FriendFailure, Unit>> sendFriendRequest(String userId);
+  Future<Either<FriendFailure, Unit>> removeFriend(String userId);
 }
