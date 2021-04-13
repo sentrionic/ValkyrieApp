@@ -102,10 +102,22 @@ class ModActionsContainer extends StatelessWidget {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text(
-              "${isBan ? "Ban" : "Kick"} '${member.username}' ?".toUpperCase()),
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "${isBan ? "Ban" : "Kick"} '${member.username}'".toUpperCase(),
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+              const Divider(),
+            ],
+          ),
           content: Text(
-              "Are you sure you want to kick ${member.username}? ${isBan ? "They won't be able to return unless you unban them" : "They will be able to rejoin again with a new invite"}."),
+            "Are you sure you want to ${isBan ? "ban" : "kick"} ${member.username}? ${isBan ? "They won't be able to return unless you unban them" : "They will be able to rejoin again with a new invite"}.",
+            style: const TextStyle(
+              color: Colors.white70,
+            ),
+          ),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),

@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   another_flushbar: ^1.10.17
   calendar_time: ^2.0.0-nullsafety.0
+  cyclop: ^0.4.1
   dartz: ^0.10.0-nullsafety.1
   dio: ^4.0.0-prev3
   flutter_bloc: ^7.0.0

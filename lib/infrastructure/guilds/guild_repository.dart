@@ -70,8 +70,8 @@ class GuildRepository extends IGuildRepository {
       await _dio.put(
         '/guilds/$guildId/member',
         data: {
-          nickname: nickname,
-          color: color,
+          "nickname": nickname,
+          "color": color,
         },
       );
 
@@ -94,7 +94,7 @@ class GuildRepository extends IGuildRepository {
       await _dio.post(
         '/guilds/$guildId/kick',
         data: {
-          memberId: memberId,
+          "memberId": memberId,
         },
       );
 
@@ -115,9 +115,9 @@ class GuildRepository extends IGuildRepository {
   ) async {
     try {
       await _dio.post(
-        '/guilds/$guildId/ban',
+        '/guilds/$guildId/bans',
         data: {
-          memberId: memberId,
+          "memberId": memberId,
         },
       );
 

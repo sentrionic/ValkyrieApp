@@ -22,11 +22,9 @@ class Nickname extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  static const maxLength = 32;
-
   factory Nickname(String input) {
     return Nickname._(
-      validateMaxStringLength(input, maxLength).flatMap(validateStringNotEmpty),
+      validateUsername(input),
     );
   }
 
@@ -36,8 +34,6 @@ class Nickname extends ValueObject<String> {
 class HexColor extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
-
-  static const maxLength = 32;
 
   factory HexColor(String input) {
     return HexColor._(

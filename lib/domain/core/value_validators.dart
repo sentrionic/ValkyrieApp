@@ -15,7 +15,7 @@ Either<ValueFailure<String>, String> validateEmailAddress(String input) {
 }
 
 Either<ValueFailure<String>, String> validateUsername(String input) {
-  if (input.length >= 3 && input.length <= 50) {
+  if (input.length >= 3 && input.length <= 32) {
     return right(input);
   } else {
     return left(ValueFailure.invalidUsername(failedValue: input));
@@ -81,8 +81,8 @@ Either<ValueFailure<File>, File> validateMaxFileSize(
 Either<ValueFailure<String>, String> validateHexColor(
   String input,
 ) {
-  const hexRegex = r"""/^#[0-9a-f]{3}(?:[0-9a-f]{3})?$/i""";
-  if (RegExp(hexRegex).hasMatch(input)) {
+  const hexRegex = r"""^#[0-9a-f]{3}(?:[0-9a-f]{3})?$""";
+  if (RegExp(hexRegex, caseSensitive: false).hasMatch(input)) {
     return right(input);
   } else {
     return left(ValueFailure.invalidColor(failedValue: input));

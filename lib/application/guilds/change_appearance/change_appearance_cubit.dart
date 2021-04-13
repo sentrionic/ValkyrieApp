@@ -22,9 +22,23 @@ class ChangeAppearanceCubit extends Cubit<ChangeAppearanceState> {
     ));
   }
 
+  Future<void> resetNickname() async {
+    emit(state.copyWith(
+      nickname: null,
+      saveFailureOrSuccessOption: none(),
+    ));
+  }
+
   Future<void> colorChanged(String color) async {
     emit(state.copyWith(
       hexColor: HexColor(color),
+      saveFailureOrSuccessOption: none(),
+    ));
+  }
+
+  Future<void> resetColor() async {
+    emit(state.copyWith(
+      hexColor: null,
       saveFailureOrSuccessOption: none(),
     ));
   }

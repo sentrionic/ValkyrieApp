@@ -12,6 +12,7 @@ import 'package:valkyrie_app/presentation/core/screen_arguments/open_url_argumen
 import 'package:valkyrie_app/presentation/main/guild/guild_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/display_screens/photo_view_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/display_screens/web_view_screen.dart';
+import 'package:valkyrie_app/presentation/main/guild/widgets/appearance_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/account_tab/change_password/change_password_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/home_screen.dart';
 import 'package:valkyrie_app/presentation/splash/splash_page.dart';
@@ -92,6 +93,12 @@ class AppRouter {
             url: args.url,
             filename: args.filename,
           ),
+        );
+      case AppearanceScreen.routeName:
+        final GuildScreenArguments args =
+            settings.arguments! as GuildScreenArguments;
+        return SlideTransitionRoute(
+          page: AppearanceScreen(guild: args.guild),
         );
       default:
         return FadeTransitionRoute(

@@ -11,8 +11,6 @@ class ChangeAppearanceState with _$ChangeAppearanceState {
   }) = _ChangeAppearanceState;
 
   factory ChangeAppearanceState.initial() => ChangeAppearanceState(
-        nickname: Nickname(''),
-        hexColor: HexColor(''),
         showErrorMessages: false,
         isSaving: false,
         saveFailureOrSuccessOption: none(),

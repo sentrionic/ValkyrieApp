@@ -16,4 +16,5 @@ class ThemeColors {
   static const brandGreen = Color(0xff43b581);
   static const sheetBackground = Color(0xff35383E);
   static const brandRed = Color(0xffF14645);
+  static const skeletonGray = Color(0xff4E535B);
 }

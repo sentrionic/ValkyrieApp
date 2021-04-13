@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:valkyrie_app/domain/guilds/guild.dart';
+import 'package:valkyrie_app/presentation/main/guild/widgets/guild_settings_sheet.dart';
 
 class ChannelDrawerHeader extends StatelessWidget {
-  final String name;
+  final Guild guild;
 
-  const ChannelDrawerHeader({Key? key, required this.name}) : super(key: key);
+  const ChannelDrawerHeader({Key? key, required this.guild}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class ChannelDrawerHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            name,
+            guild.name.getOrCrash(),
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -21,7 +23,17 @@ class ChannelDrawerHeader extends StatelessWidget {
           ),
           IconButton(
             icon: const Icon(Icons.more_vert),
-            onPressed: () {},
+            onPressed: () {
+              showModalBottomSheet(
+                isScrollControlled: true,
+                context: context,
+                builder: (_) {
+                  return GuildSettingsSheet(
+                    guild: guild,
+                  );
+                },
+              );
+            },
           ),
         ],
       ),
