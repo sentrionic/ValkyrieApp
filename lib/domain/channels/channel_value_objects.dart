@@ -9,7 +9,7 @@ class ChannelName extends ValueObject<String> {
 
   factory ChannelName(String input) {
     return ChannelName._(
-      validateMaxStringLength(input, 50).flatMap(validateStringNotEmpty),
+      validateChannelName(input),
     );
   }
 

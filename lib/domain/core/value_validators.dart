@@ -65,6 +65,14 @@ Either<ValueFailure<String>, String> validateMaxStringLength(
   }
 }
 
+Either<ValueFailure<String>, String> validateChannelName(String input) {
+  if (input.length >= 3 && input.length <= 30) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidChannelName(failedValue: input));
+  }
+}
+
 Either<ValueFailure<File>, File> validateMaxFileSize(
   File input,
   int maxSize,

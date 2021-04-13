@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:valkyrie_app/application/channels/channel_list/channel_cubit.dart';
+import 'package:valkyrie_app/application/channels/channel_list/channel_list_cubit.dart';
 import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
 import 'package:valkyrie_app/application/channels/currently_typing/currently_typing_cubit.dart';
 import 'package:valkyrie_app/application/messages/create_message/create_message_cubit.dart';
@@ -17,6 +17,8 @@ import 'package:valkyrie_app/presentation/main/guild/chat_screen/chat_layout.dar
 import 'package:valkyrie_app/presentation/main/guild/chat_screen/widgets/channel_header.dart';
 import 'package:valkyrie_app/presentation/main/guild/members/member_drawer.dart';
 
+import 'channels/hooks/channel_socket_hook.dart';
+
 class GuildScreen extends HookWidget {
   static const routeName = '/guild';
   final Guild guild;
@@ -26,12 +28,13 @@ class GuildScreen extends HookWidget {
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
     final channelId = context.watch<CurrentChannelCubit>().state;
+    use(ChannelSocketHook(context, guild.id));
 
     return MultiBlocProvider(
       providers: [
         BlocProvider(
           create: (context) =>
-              getIt<ChannelCubit>()..getGuildChannels(guild.id),
+              getIt<ChannelListCubit>()..getGuildChannels(guild.id),
         ),
         BlocProvider(
           create: (context) => getIt<CreateMessageCubit>(),

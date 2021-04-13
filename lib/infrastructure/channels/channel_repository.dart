@@ -38,4 +38,101 @@ class ChannelRepository extends IChannelRepository {
       return left(const ChannelFailure.unexpected());
     }
   }
+
+  @override
+  Future<Either<ChannelFailure, Unit>> createChannel(
+    String guildId,
+    String name, {
+    bool isPublic = true,
+    List<String> members = const [],
+  }) async {
+    try {
+      await _dio.post(
+        '/channels/$guildId',
+        data: {
+          "name": name,
+          "isPublic": isPublic,
+          "members": members,
+        },
+      );
+
+      return right(unit);
+    } on DioError catch (err) {
+      print(err);
+      return left(const ChannelFailure.unexpected());
+    } on SocketException catch (err) {
+      print(err);
+      return left(const ChannelFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Either<ChannelFailure, Unit>> editChannel(
+    String guildId,
+    String channelId,
+    String name, {
+    bool isPublic = true,
+    List<String> members = const [],
+  }) async {
+    try {
+      await _dio.put(
+        '/channels/$guildId/$channelId',
+        data: {
+          "name": name,
+          "isPublic": isPublic,
+          "members": members,
+        },
+      );
+
+      return right(unit);
+    } on DioError catch (err) {
+      print(err);
+      return left(const ChannelFailure.unexpected());
+    } on SocketException catch (err) {
+      print(err);
+      return left(const ChannelFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Either<ChannelFailure, Unit>> deleteChannel(
+    String guildId,
+    String channelId,
+  ) async {
+    try {
+      await _dio.delete(
+        '/channels/$channelId',
+      );
+
+      return right(unit);
+    } on DioError catch (err) {
+      print(err);
+      return left(const ChannelFailure.unexpected());
+    } on SocketException catch (err) {
+      print(err);
+      return left(const ChannelFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Either<ChannelFailure, List<String>>> getPrivateChannelMembers(
+    String channelId,
+  ) async {
+    try {
+      final response = await _dio.get(
+        '/channels/$channelId/members',
+      );
+
+      final results = jsonDecode(response.data);
+      final List<String> list = [];
+      results.forEach((m) => list.add(m));
+      return right(list);
+    } on DioError catch (err) {
+      print(err);
+      return left(const ChannelFailure.unexpected());
+    } on SocketException catch (err) {
+      print(err);
+      return left(const ChannelFailure.unexpected());
+    }
+  }
 }

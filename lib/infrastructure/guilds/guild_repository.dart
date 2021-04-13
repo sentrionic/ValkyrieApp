@@ -130,4 +130,23 @@ class GuildRepository extends IGuildRepository {
       return left(const GuildFailure.unexpected());
     }
   }
+
+  @override
+  Future<Either<GuildFailure, String>> getInviteLink(
+    String guildId, {
+    bool isPermanent = false,
+  }) async {
+    try {
+      final query = isPermanent ? "?isPermanent=true" : "";
+      final response = await _dio.get('/guilds/$guildId/invite$query');
+      final results = jsonDecode(response.data);
+      return right(results.toString());
+    } on DioError catch (err) {
+      print(err);
+      return left(const GuildFailure.unexpected());
+    } on SocketException catch (err) {
+      print(err);
+      return left(const GuildFailure.unexpected());
+    }
+  }
 }

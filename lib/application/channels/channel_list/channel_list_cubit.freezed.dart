@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'channel_cubit.dart';
+part of 'channel_list_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,8 +13,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$ChannelStateTearOff {
-  const _$ChannelStateTearOff();
+class _$ChannelListStateTearOff {
+  const _$ChannelListStateTearOff();
 
   _Initial initial() {
     return const _Initial();
@@ -38,10 +38,10 @@ class _$ChannelStateTearOff {
 }
 
 /// @nodoc
-const $ChannelState = _$ChannelStateTearOff();
+const $ChannelListState = _$ChannelListStateTearOff();
 
 /// @nodoc
-mixin _$ChannelState {
+mixin _$ChannelListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -79,19 +79,20 @@ mixin _$ChannelState {
 }
 
 /// @nodoc
-abstract class $ChannelStateCopyWith<$Res> {
-  factory $ChannelStateCopyWith(
-          ChannelState value, $Res Function(ChannelState) then) =
-      _$ChannelStateCopyWithImpl<$Res>;
+abstract class $ChannelListStateCopyWith<$Res> {
+  factory $ChannelListStateCopyWith(
+          ChannelListState value, $Res Function(ChannelListState) then) =
+      _$ChannelListStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ChannelStateCopyWithImpl<$Res> implements $ChannelStateCopyWith<$Res> {
-  _$ChannelStateCopyWithImpl(this._value, this._then);
+class _$ChannelListStateCopyWithImpl<$Res>
+    implements $ChannelListStateCopyWith<$Res> {
+  _$ChannelListStateCopyWithImpl(this._value, this._then);
 
-  final ChannelState _value;
+  final ChannelListState _value;
   // ignore: unused_field
-  final $Res Function(ChannelState) _then;
+  final $Res Function(ChannelListState) _then;
 }
 
 /// @nodoc
@@ -101,7 +102,7 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$ChannelStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res> extends _$ChannelListStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -116,7 +117,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'ChannelState.initial()';
+    return 'ChannelListState.initial()';
   }
 
   @override
@@ -180,7 +181,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements ChannelState {
+abstract class _Initial implements ChannelListState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -193,7 +194,7 @@ abstract class _$LoadInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$LoadInProgressCopyWithImpl<$Res>
-    extends _$ChannelStateCopyWithImpl<$Res>
+    extends _$ChannelListStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
   __$LoadInProgressCopyWithImpl(
       _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
@@ -209,7 +210,7 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   String toString() {
-    return 'ChannelState.loadInProgress()';
+    return 'ChannelListState.loadInProgress()';
   }
 
   @override
@@ -273,7 +274,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   }
 }
 
-abstract class _LoadInProgress implements ChannelState {
+abstract class _LoadInProgress implements ChannelListState {
   const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
@@ -286,7 +287,8 @@ abstract class _$LoadSuccessCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$ChannelStateCopyWithImpl<$Res>
+class __$LoadSuccessCopyWithImpl<$Res>
+    extends _$ChannelListStateCopyWithImpl<$Res>
     implements _$LoadSuccessCopyWith<$Res> {
   __$LoadSuccessCopyWithImpl(
       _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
@@ -317,7 +319,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   String toString() {
-    return 'ChannelState.loadSuccess(channels: $channels)';
+    return 'ChannelListState.loadSuccess(channels: $channels)';
   }
 
   @override
@@ -391,7 +393,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   }
 }
 
-abstract class _LoadSuccess implements ChannelState {
+abstract class _LoadSuccess implements ChannelListState {
   const factory _LoadSuccess(List<Channel> channels) = _$_LoadSuccess;
 
   List<Channel> get channels => throw _privateConstructorUsedError;
@@ -411,7 +413,8 @@ abstract class _$LoadFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$ChannelStateCopyWithImpl<$Res>
+class __$LoadFailureCopyWithImpl<$Res>
+    extends _$ChannelListStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
   __$LoadFailureCopyWithImpl(
       _LoadFailure _value, $Res Function(_LoadFailure) _then)
@@ -449,7 +452,7 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   String toString() {
-    return 'ChannelState.loadFailure(channelFailure: $channelFailure)';
+    return 'ChannelListState.loadFailure(channelFailure: $channelFailure)';
   }
 
   @override
@@ -524,7 +527,7 @@ class _$_LoadFailure implements _LoadFailure {
   }
 }
 
-abstract class _LoadFailure implements ChannelState {
+abstract class _LoadFailure implements ChannelListState {
   const factory _LoadFailure(ChannelFailure channelFailure) = _$_LoadFailure;
 
   ChannelFailure get channelFailure => throw _privateConstructorUsedError;
