@@ -71,7 +71,7 @@ class _AppearanceScreenForm extends HookWidget {
   Widget build(BuildContext context) {
     final _key = GlobalKey<FormState>();
     final _controller = useTextEditingController();
-    if (appearance.nickname != null) {
+    if (appearance.nickname != null && _controller.text.isEmpty) {
       _controller.text = appearance.nickname!.getOrCrash();
       context
           .read<ChangeAppearanceCubit>()
@@ -95,6 +95,7 @@ class _AppearanceScreenForm extends HookWidget {
               ).show(context);
             },
             (_) {
+              Navigator.of(context).pop();
               FlushBarCreator.showSuccess(
                       message: "Successfully changed your appearance")
                   .show(context);
@@ -110,9 +111,11 @@ class _AppearanceScreenForm extends HookWidget {
             IconButton(
               icon: const Icon(Icons.save),
               onPressed: () {
-                _key.currentState?.save();
-                FocusScope.of(context).unfocus();
-                context.read<ChangeAppearanceCubit>().submitChanges(guild.id);
+                if (_key.currentState!.validate()) {
+                  _key.currentState?.save();
+                  FocusScope.of(context).unfocus();
+                  context.read<ChangeAppearanceCubit>().submitChanges(guild.id);
+                }
               },
             ),
           ],
@@ -122,10 +125,7 @@ class _AppearanceScreenForm extends HookWidget {
           final color = state.hexColor?.getOrCrash();
           return Form(
             key: _key,
-            autovalidateMode:
-                context.watch<ChangeAppearanceCubit>().state.showErrorMessages
-                    ? AutovalidateMode.always
-                    : AutovalidateMode.disabled,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -158,17 +158,13 @@ class _AppearanceScreenForm extends HookWidget {
                           .nicknameChanged(value);
                     }
                   },
-                  validator: (_) {
-                    final nickname =
-                        context.read<ChangeAppearanceCubit>().state.nickname;
-                    if (nickname != null) {
-                      nickname.value.fold(
-                          (f) => f.maybeMap(
-                                invalidUsername: (_) =>
-                                    'Nicknames must be between 3 and 32 characters long',
-                                orElse: () => null,
-                              ),
-                          (r) => null);
+                  validator: (value) {
+                    if (value != null) {
+                      if (value.length < 3 && value.isNotEmpty) {
+                        return "Nickname too short";
+                      } else if (value.length > 32) {
+                        return "Nickname too long";
+                      }
                     }
                   },
                 ),

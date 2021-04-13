@@ -10,7 +10,7 @@ import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/common/utils/flushbar_creator.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_current_user.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
-import 'package:valkyrie_app/presentation/main/guild/chat_screen/sheets/profile_bottom_sheet.dart';
+import 'package:valkyrie_app/presentation/main/guild/sheets/profile/profile_bottom_sheet.dart';
 
 class MessageBottomSheet extends StatelessWidget {
   final Message message;

@@ -4,7 +4,7 @@ import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart
 import 'package:valkyrie_app/application/guilds/guild_list/guild_list_cubit.dart';
 import 'package:valkyrie_app/domain/member/member.dart';
 import 'package:valkyrie_app/presentation/common/extensions/hex_color_extension.dart';
-import 'package:valkyrie_app/presentation/main/guild/chat_screen/sheets/profile_bottom_sheet.dart';
+import 'package:valkyrie_app/presentation/main/guild/sheets/profile/profile_bottom_sheet.dart';
 
 class MemberItem extends StatelessWidget {
   final Member member;

@@ -8,8 +8,8 @@ import 'package:valkyrie_app/domain/member/member.dart';
 import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_current_user.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
-import 'package:valkyrie_app/presentation/main/guild/chat_screen/sheets/mod_actions_container.dart';
-import 'package:valkyrie_app/presentation/main/guild/chat_screen/sheets/user_info_container.dart';
+import 'package:valkyrie_app/presentation/main/guild/sheets/profile/mod_actions_container.dart';
+import 'package:valkyrie_app/presentation/main/guild/sheets/profile/user_info_container.dart';
 
 class ProfileBottomSheet extends StatelessWidget {
   final current = getCurrentUser();

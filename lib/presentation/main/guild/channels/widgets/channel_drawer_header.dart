@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
-import 'package:valkyrie_app/presentation/main/guild/widgets/guild_settings_sheet.dart';
+import 'package:valkyrie_app/presentation/main/guild/sheets/guild/guild_settings_sheet.dart';
 
 class ChannelDrawerHeader extends StatelessWidget {
   final Guild guild;

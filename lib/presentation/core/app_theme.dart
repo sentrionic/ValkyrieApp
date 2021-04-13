@@ -25,6 +25,6 @@ final appTheme = ThemeData.dark().copyWith(
   highlightColor: Colors.black12.withOpacity(.5),
   splashColor: Colors.black12,
   dialogTheme: const DialogTheme(
-    backgroundColor: Color(0xff35383E),
+    backgroundColor: ThemeColors.sheetBackground,
   ),
 );
