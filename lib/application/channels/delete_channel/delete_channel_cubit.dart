@@ -14,7 +14,10 @@ class DeleteChannelCubit extends Cubit<DeleteChannelState> {
   DeleteChannelCubit(this._repository)
       : super(const DeleteChannelState.initial());
 
-  Future<void> deleteChannel(String guildId, String channelId) async {
+  Future<void> deleteChannel({
+    required String guildId,
+    required String channelId,
+  }) async {
     emit(const DeleteChannelState.actionInProgress());
     final possibleFailure = await _repository.deleteChannel(guildId, channelId);
     emit(

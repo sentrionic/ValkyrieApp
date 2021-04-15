@@ -3,7 +3,7 @@ import 'package:transparent_image/transparent_image.dart';
 
 import 'package:valkyrie_app/domain/message/message.dart';
 import 'package:valkyrie_app/presentation/core/screen_arguments/open_url_arguments.dart';
-import 'package:valkyrie_app/presentation/main/guild/screens/photo_view_screen.dart';
+import 'package:valkyrie_app/presentation/main/guild/messages/screens/photo_view_screen.dart';
 
 class ImageFileWidget extends StatelessWidget {
   final Message message;

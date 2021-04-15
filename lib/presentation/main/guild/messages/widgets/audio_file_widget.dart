@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:valkyrie_app/domain/message/message.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/core/screen_arguments/open_url_arguments.dart';
-import 'package:valkyrie_app/presentation/main/guild/screens/web_view_screen.dart';
+import 'package:valkyrie_app/presentation/main/guild/messages/screens/web_view_screen.dart';
 
 class AudioFileWidget extends StatelessWidget {
   final Message message;

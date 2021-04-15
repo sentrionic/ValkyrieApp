@@ -40,14 +40,14 @@ class ChannelRepository extends IChannelRepository {
   }
 
   @override
-  Future<Either<ChannelFailure, Unit>> createChannel(
+  Future<Either<ChannelFailure, Channel>> createChannel(
     String guildId,
     String name, {
     bool isPublic = true,
     List<String> members = const [],
   }) async {
     try {
-      await _dio.post(
+      final response = await _dio.post(
         '/channels/$guildId',
         data: {
           "name": name,
@@ -55,8 +55,8 @@ class ChannelRepository extends IChannelRepository {
           "members": members,
         },
       );
-
-      return right(unit);
+      final result = jsonDecode(response.data);
+      return right(ChannelDto.fromMap(result).toDomain());
     } on DioError catch (err) {
       print(err);
       return left(const ChannelFailure.unexpected());
@@ -101,7 +101,7 @@ class ChannelRepository extends IChannelRepository {
   ) async {
     try {
       await _dio.delete(
-        '/channels/$channelId',
+        '/channels/$guildId/$channelId',
       );
 
       return right(unit);

@@ -30,10 +30,15 @@ class ChannelDrawer extends StatelessWidget {
                     height: 20,
                   ),
                   ChannelDrawerHeader(guild: guild),
-                  InviteButton(),
+                  InviteButton(
+                    guild: guild,
+                  ),
                   Expanded(
                     child: ChannelList(),
-                  )
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                 ],
               ),
             ),

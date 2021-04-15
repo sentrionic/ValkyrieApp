@@ -8,11 +8,15 @@ import 'package:valkyrie_app/presentation/auth/forgot_password/forgot_password_s
 import 'package:valkyrie_app/presentation/auth/login/login_screen.dart';
 import 'package:valkyrie_app/presentation/auth/register/register_screen.dart';
 import 'package:valkyrie_app/presentation/auth/start_up_screen.dart';
+import 'package:valkyrie_app/presentation/core/screen_arguments/channel_screen_arguments.dart';
 import 'package:valkyrie_app/presentation/core/screen_arguments/open_url_arguments.dart';
+import 'package:valkyrie_app/presentation/main/guild/channels/screens/channel_settings/channel_settings_screen.dart';
+import 'package:valkyrie_app/presentation/main/guild/channels/screens/create_channel/create_channel_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/guild_screen.dart';
-import 'package:valkyrie_app/presentation/main/guild/screens/appearance_screen.dart';
-import 'package:valkyrie_app/presentation/main/guild/screens/photo_view_screen.dart';
-import 'package:valkyrie_app/presentation/main/guild/screens/web_view_screen.dart';
+import 'package:valkyrie_app/presentation/main/guild/guild_layout/appearance_screen.dart';
+import 'package:valkyrie_app/presentation/main/guild/channels/screens/invite_screen.dart';
+import 'package:valkyrie_app/presentation/main/guild/messages/screens/photo_view_screen.dart';
+import 'package:valkyrie_app/presentation/main/guild/messages/screens/web_view_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/account_tab/change_password/change_password_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/home_screen.dart';
 import 'package:valkyrie_app/presentation/splash/splash_page.dart';
@@ -32,22 +36,27 @@ class AppRouter {
         return FadeTransitionRoute(
           page: SplashPage(),
         );
+
       case StartUpScreen.routeName:
         return FadeTransitionRoute(
           page: StartUpScreen(),
         );
+
       case LoginScreen.routeName:
         return SlideTransitionRoute(
           page: LoginScreen(),
         );
+
       case RegisterScreen.routeName:
         return SlideTransitionRoute(
           page: RegisterScreen(),
         );
+
       case ForgotPasswordScreen.routeName:
         return SlideTransitionRoute(
           page: ForgotPasswordScreen(),
         );
+
       case HomeScreen.routeName:
         return FadeTransitionRoute(
           page: MultiBlocProvider(
@@ -61,10 +70,12 @@ class AppRouter {
             child: HomeScreen(),
           ),
         );
+
       case ChangePasswordScreen.routeName:
         return SlideTransitionRoute(
           page: ChangePasswordScreen(),
         );
+
       case GuildScreen.routeName:
         final GuildScreenArguments args =
             settings.arguments! as GuildScreenArguments;
@@ -78,6 +89,7 @@ class AppRouter {
             child: GuildScreen(guild: args.guild),
           ),
         );
+
       case WebViewScreen.routeName:
         final OpenUrlArguments args = settings.arguments! as OpenUrlArguments;
         return SlideTransitionRoute(
@@ -86,6 +98,7 @@ class AppRouter {
             filename: args.filename,
           ),
         );
+
       case PhotoViewScreen.routeName:
         final OpenUrlArguments args = settings.arguments! as OpenUrlArguments;
         return SlideTransitionRoute(
@@ -94,12 +107,41 @@ class AppRouter {
             filename: args.filename,
           ),
         );
+
       case AppearanceScreen.routeName:
         final GuildScreenArguments args =
             settings.arguments! as GuildScreenArguments;
         return SlideTransitionRoute(
           page: AppearanceScreen(guild: args.guild),
         );
+
+      case InviteScreen.routeName:
+        final GuildScreenArguments args =
+            settings.arguments! as GuildScreenArguments;
+        return FadeTransitionRoute(
+          page: InviteScreen(guild: args.guild),
+        );
+
+      case CreateChannelScreen.routeName:
+        final GuildScreenArguments args =
+            settings.arguments! as GuildScreenArguments;
+        return FadeTransitionRoute(
+          page: BlocProvider.value(
+            value: _currentChannelCubit,
+            child: CreateChannelScreen(guild: args.guild),
+          ),
+        );
+
+      case ChannelSettingsScreen.routeName:
+        final ChannelScreenArguments args =
+            settings.arguments! as ChannelScreenArguments;
+        return SlideTransitionRoute(
+          page: ChannelSettingsScreen(
+            channel: args.channel,
+            guildId: args.guildId,
+          ),
+        );
+
       default:
         return FadeTransitionRoute(
           page: SplashPage(),

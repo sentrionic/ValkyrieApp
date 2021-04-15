@@ -13,7 +13,10 @@ class GetInviteLinkCubit extends Cubit<GetInviteLinkState> {
   GetInviteLinkCubit(this._repository)
       : super(const GetInviteLinkState.initial());
 
-  Future<void> getInviteLink(String guildId) async {
+  Future<void> getInviteLink(
+    String guildId, {
+    bool isPermanent = false,
+  }) async {
     emit(const GetInviteLinkState.fetchInProgress());
     final failureOrLink = await _repository.getInviteLink(guildId);
     emit(

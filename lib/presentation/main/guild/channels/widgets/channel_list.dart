@@ -11,7 +11,6 @@ class ChannelList extends StatelessWidget {
         return state.maybeWhen(
           loadSuccess: (channels) {
             return ListView.builder(
-              itemExtent: 43,
               // ignore: avoid_redundant_argument_values
               padding: const EdgeInsets.only(top: 0),
               itemBuilder: (context, index) {

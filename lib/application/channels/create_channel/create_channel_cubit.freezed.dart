@@ -22,7 +22,7 @@ class _$CreateChannelStateTearOff {
       required List<String> members,
       required bool showErrorMessages,
       required bool isSubmitting,
-      required Option<Either<ChannelFailure, Unit>>
+      required Option<Either<ChannelFailure, Channel>>
           channelFailureOrSuccessOption}) {
     return _CreateChannelState(
       name: name,
@@ -45,7 +45,7 @@ mixin _$CreateChannelState {
   List<String> get members => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
-  Option<Either<ChannelFailure, Unit>> get channelFailureOrSuccessOption =>
+  Option<Either<ChannelFailure, Channel>> get channelFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -64,7 +64,7 @@ abstract class $CreateChannelStateCopyWith<$Res> {
       List<String> members,
       bool showErrorMessages,
       bool isSubmitting,
-      Option<Either<ChannelFailure, Unit>> channelFailureOrSuccessOption});
+      Option<Either<ChannelFailure, Channel>> channelFailureOrSuccessOption});
 }
 
 /// @nodoc
@@ -109,7 +109,7 @@ class _$CreateChannelStateCopyWithImpl<$Res>
       channelFailureOrSuccessOption: channelFailureOrSuccessOption == freezed
           ? _value.channelFailureOrSuccessOption
           : channelFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<ChannelFailure, Unit>>,
+              as Option<Either<ChannelFailure, Channel>>,
     ));
   }
 }
@@ -127,7 +127,7 @@ abstract class _$CreateChannelStateCopyWith<$Res>
       List<String> members,
       bool showErrorMessages,
       bool isSubmitting,
-      Option<Either<ChannelFailure, Unit>> channelFailureOrSuccessOption});
+      Option<Either<ChannelFailure, Channel>> channelFailureOrSuccessOption});
 }
 
 /// @nodoc
@@ -174,7 +174,7 @@ class __$CreateChannelStateCopyWithImpl<$Res>
       channelFailureOrSuccessOption: channelFailureOrSuccessOption == freezed
           ? _value.channelFailureOrSuccessOption
           : channelFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<ChannelFailure, Unit>>,
+              as Option<Either<ChannelFailure, Channel>>,
     ));
   }
 }
@@ -200,7 +200,7 @@ class _$_CreateChannelState implements _CreateChannelState {
   @override
   final bool isSubmitting;
   @override
-  final Option<Either<ChannelFailure, Unit>> channelFailureOrSuccessOption;
+  final Option<Either<ChannelFailure, Channel>> channelFailureOrSuccessOption;
 
   @override
   String toString() {
@@ -255,7 +255,7 @@ abstract class _CreateChannelState implements CreateChannelState {
       required List<String> members,
       required bool showErrorMessages,
       required bool isSubmitting,
-      required Option<Either<ChannelFailure, Unit>>
+      required Option<Either<ChannelFailure, Channel>>
           channelFailureOrSuccessOption}) = _$_CreateChannelState;
 
   @override
@@ -269,7 +269,7 @@ abstract class _CreateChannelState implements CreateChannelState {
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
   @override
-  Option<Either<ChannelFailure, Unit>> get channelFailureOrSuccessOption =>
+  Option<Either<ChannelFailure, Channel>> get channelFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

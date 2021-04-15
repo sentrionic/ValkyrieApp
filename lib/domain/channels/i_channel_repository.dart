@@ -8,7 +8,7 @@ abstract class IChannelRepository {
     String guildId,
   );
 
-  Future<Either<ChannelFailure, Unit>> createChannel(
+  Future<Either<ChannelFailure, Channel>> createChannel(
     String guildId,
     String name, {
     bool isPublic = true,

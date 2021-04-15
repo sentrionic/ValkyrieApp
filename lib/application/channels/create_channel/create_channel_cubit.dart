@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:valkyrie_app/domain/channels/channel.dart';
 import 'package:valkyrie_app/domain/channels/channel_failure.dart';
 import 'package:valkyrie_app/domain/channels/channel_value_objects.dart';
 import 'package:valkyrie_app/domain/channels/i_channel_repository.dart';
@@ -28,15 +29,22 @@ class CreateChannelCubit extends Cubit<CreateChannelState> {
     ));
   }
 
-  Future<void> membersChanged(List<String> ids) async {
+  Future<void> addMember(String id) async {
     emit(state.copyWith(
-      members: ids,
+      members: [...state.members, id],
+      channelFailureOrSuccessOption: none(),
+    ));
+  }
+
+  Future<void> removeMember(String id) async {
+    emit(state.copyWith(
+      members: state.members.where((c) => c != id).toList(),
       channelFailureOrSuccessOption: none(),
     ));
   }
 
   Future<void> createChannel(String guildId) async {
-    Either<ChannelFailure, Unit>? failureOrSuccess;
+    Either<ChannelFailure, Channel>? failureOrSuccess;
 
     final isNameValid = state.name.isValid();
 

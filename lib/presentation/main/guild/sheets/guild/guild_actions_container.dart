@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/core/screen_arguments/guild_screen_arguments.dart';
-import 'package:valkyrie_app/presentation/main/guild/screens/appearance_screen.dart';
+import 'package:valkyrie_app/presentation/main/guild/channels/screens/create_channel/create_channel_screen.dart';
+import 'package:valkyrie_app/presentation/main/guild/guild_layout/appearance_screen.dart';
 
 class GuildActionsContainer extends StatelessWidget {
   final Guild guild;
@@ -27,7 +28,14 @@ class GuildActionsContainer extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                if (isOwner) _getModalButton("Create Channel", () {}),
+                if (isOwner)
+                  _getModalButton("Create Channel", () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pushNamed(
+                      CreateChannelScreen.routeName,
+                      arguments: GuildScreenArguments(guild),
+                    );
+                  }),
                 const SizedBox(
                   height: 20,
                 ),

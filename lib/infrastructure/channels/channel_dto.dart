@@ -29,7 +29,7 @@ class ChannelDto with _$ChannelDto {
       id: map['id'],
       name: map['name'],
       isPublic: map['isPublic'],
-      hasNotification: map['hasNotification'],
+      hasNotification: map['hasNotification'] ?? false,
     );
   }
 }

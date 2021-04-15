@@ -8,7 +8,8 @@ class CreateChannelState with _$CreateChannelState {
     required List<String> members,
     required bool showErrorMessages,
     required bool isSubmitting,
-    required Option<Either<ChannelFailure, Unit>> channelFailureOrSuccessOption,
+    required Option<Either<ChannelFailure, Channel>>
+        channelFailureOrSuccessOption,
   }) = _CreateChannelState;
 
   factory CreateChannelState.initial() => CreateChannelState(

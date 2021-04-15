@@ -139,8 +139,7 @@ class GuildRepository extends IGuildRepository {
     try {
       final query = isPermanent ? "?isPermanent=true" : "";
       final response = await _dio.get('/guilds/$guildId/invite$query');
-      final results = jsonDecode(response.data);
-      return right(results.toString());
+      return right(response.toString());
     } on DioError catch (err) {
       print(err);
       return left(const GuildFailure.unexpected());
