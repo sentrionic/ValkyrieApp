@@ -43,3 +43,16 @@ class HexColor extends ValueObject<String> {
 
   const HexColor._(this.value);
 }
+
+class InviteLink extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory InviteLink(String input) {
+    return InviteLink._(
+      validateStringNotEmpty(input),
+    );
+  }
+
+  const InviteLink._(this.value);
+}

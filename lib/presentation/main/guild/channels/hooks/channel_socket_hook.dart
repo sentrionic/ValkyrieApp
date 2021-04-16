@@ -79,9 +79,11 @@ class _ChannelSocketHookState extends HookState<void, ChannelSocketHook> {
     socket.on(
       'new_notification',
       (channelId) {
-        hook.context
-            .read<ChannelListCubit>()
-            .addNotification(channelId.toString());
+        if (channelId != context.read<CurrentChannelCubit>().state) {
+          hook.context
+              .read<ChannelListCubit>()
+              .addNotification(channelId.toString());
+        }
       },
     );
   }

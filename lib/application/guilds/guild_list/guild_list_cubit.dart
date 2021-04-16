@@ -6,6 +6,7 @@ import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/domain/guilds/guild_failure.dart';
 import 'package:valkyrie_app/domain/guilds/i_guild_repository.dart';
+import 'package:valkyrie_app/domain/guilds/value_objects.dart';
 
 part 'guild_list_state.dart';
 part 'guild_list_cubit.freezed.dart';
@@ -30,6 +31,76 @@ class GuildListCubit extends Cubit<GuildListState> {
     return state.maybeWhen(
       loadSuccess: (guilds) => guilds.where((g) => g.id == guildId).firstOrNull,
       orElse: () => null,
+    );
+  }
+
+  void addNewGuild(Guild guild) {
+    state.maybeWhen(
+      loadSuccess: (guilds) async {
+        final data = [...guilds, guild];
+
+        emit(GuildListState.loadSuccess(data));
+      },
+      orElse: () {},
+    );
+  }
+
+  void removeGuild(String guildId) {
+    state.maybeWhen(
+      loadSuccess: (guilds) async {
+        final data = guilds.where((g) => g.id != guildId).toList();
+        emit(GuildListState.loadSuccess(data));
+      },
+      orElse: () {},
+    );
+  }
+
+  void editGuild(Guild guild) {
+    state.maybeWhen(
+      loadSuccess: (guilds) async {
+        final data = guilds.map((e) {
+          return e.id == guild.id
+              ? e.copyWith(
+                  name: GuildName(guild.name.getOrCrash()),
+                  icon: guild.icon,
+                )
+              : e;
+        }).toList();
+        emit(GuildListState.loadSuccess(data));
+      },
+      orElse: () {},
+    );
+  }
+
+  void addNotification(String guildId) {
+    state.maybeWhen(
+      loadSuccess: (guilds) async {
+        final data = guilds.map((e) {
+          return e.id == guildId
+              ? e.copyWith(
+                  hasNotification: true,
+                )
+              : e;
+        }).toList();
+        emit(GuildListState.loadSuccess(data));
+      },
+      orElse: () {},
+    );
+  }
+
+  void clearNotification(String guildId) {
+    state.maybeWhen(
+      loadSuccess: (guilds) async {
+        final data = guilds.map((e) {
+          return e.id == guildId
+              ? e.copyWith(
+                  hasNotification: false,
+                )
+              : e;
+        }).toList();
+        emit(GuildListState.loadSuccess(data));
+      },
+      orElse: () {},
     );
   }
 }
