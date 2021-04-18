@@ -16,7 +16,7 @@ class MessageLoaderOrEndIndicator extends StatelessWidget {
           child: Center(
             child: SizedBox(
               width: hasMore ? 33 : double.infinity,
-              height: hasMore ? 33 : 140,
+              height: hasMore ? 33 : 160,
               child: hasMore
                   ? const CircularProgressIndicator(
                       strokeWidth: 1.5,

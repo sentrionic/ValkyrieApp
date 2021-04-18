@@ -1,15 +1,15 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:valkyrie_app/domain/guilds/guild_failure.dart';
-import 'package:valkyrie_app/domain/guilds/i_guild_repository.dart';
+import 'package:valkyrie_app/domain/member/i_member_repository.dart';
+import 'package:valkyrie_app/domain/member/member_failure.dart';
 
 part 'moderate_member_state.dart';
 part 'moderate_member_cubit.freezed.dart';
 
 @injectable
 class ModerateMemberCubit extends Cubit<ModerateMemberState> {
-  final IGuildRepository _repository;
+  final IMemberRepository _repository;
 
   ModerateMemberCubit(this._repository)
       : super(const ModerateMemberState.initial());

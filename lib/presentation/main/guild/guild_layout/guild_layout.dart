@@ -11,6 +11,7 @@ import 'package:valkyrie_app/presentation/main/guild/channels/hooks/channel_sock
 import 'package:valkyrie_app/presentation/main/guild/chat_screen/chat_layout.dart';
 import 'package:valkyrie_app/presentation/main/guild/chat_screen/widgets/channel_header.dart';
 import 'package:valkyrie_app/presentation/main/guild/members/member_drawer.dart';
+import 'package:valkyrie_app/presentation/main/shared/hooks/guild_socket_hook.dart';
 
 class GuildLayout extends HookWidget {
   final Guild guild;
@@ -22,6 +23,7 @@ class GuildLayout extends HookWidget {
     final GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
     final channelId = context.watch<CurrentChannelCubit>().state;
     use(ChannelSocketHook(context, guild.id));
+    use(GuildSocketHook(context));
     return Scaffold(
       key: _drawerKey,
       appBar: AppBar(

@@ -7,11 +7,9 @@ class GuildName extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  static const maxLength = 50;
-
   factory GuildName(String input) {
     return GuildName._(
-      validateMaxStringLength(input, maxLength).flatMap(validateStringNotEmpty),
+      validateChannelName(input),
     );
   }
 

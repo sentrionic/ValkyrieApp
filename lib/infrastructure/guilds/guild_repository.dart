@@ -3,15 +3,11 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:valkyrie_app/domain/guilds/guild_appearance.dart';
 import 'package:valkyrie_app/domain/guilds/guild_failure.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:dartz/dartz.dart';
 import 'package:valkyrie_app/domain/guilds/i_guild_repository.dart';
-import 'package:valkyrie_app/domain/member/member.dart';
-import 'package:valkyrie_app/infrastructure/guilds/guild_appearance_dto.dart';
 import 'package:valkyrie_app/infrastructure/guilds/guild_dto.dart';
-import 'package:valkyrie_app/infrastructure/members/member_dto.dart';
 
 @LazySingleton(as: IGuildRepository)
 class GuildRepository extends IGuildRepository {
@@ -82,6 +78,7 @@ class GuildRepository extends IGuildRepository {
     String guildId,
     String name,
     File? icon,
+    String? url,
   ) async {
     try {
       final formData = FormData.fromMap({
@@ -93,143 +90,14 @@ class GuildRepository extends IGuildRepository {
           "image",
           await MultipartFile.fromFile(icon.path),
         ));
+      } else if (url != null) {
+        //Backend handling is weird, so gotta indicate that icon has the old image
+        formData.fields.add(
+          MapEntry("image", url),
+        );
       }
 
       await _dio.put('/guilds/$guildId', data: formData);
-      return right(unit);
-    } on DioError catch (err) {
-      print(err);
-      return left(const GuildFailure.unexpected());
-    } on SocketException catch (err) {
-      print(err);
-      return left(const GuildFailure.unexpected());
-    }
-  }
-
-  @override
-  Future<Either<GuildFailure, GuildAppearance>> getGuildAppearance(
-    String guildId,
-  ) async {
-    try {
-      final response = await _dio.get('/guilds/$guildId/member');
-
-      if (response.statusCode == 200) {
-        final results = jsonDecode(response.data);
-        final settings = GuildAppearanceDto.fromMap(results).toDomain();
-        return right(settings);
-      }
-      return left(const GuildFailure.unexpected());
-    } on DioError catch (err) {
-      print(err);
-      return left(const GuildFailure.unexpected());
-    } on SocketException catch (err) {
-      print(err);
-      return left(const GuildFailure.unexpected());
-    }
-  }
-
-  @override
-  Future<Either<GuildFailure, Unit>> changeAppearance({
-    required String guildId,
-    String? nickname,
-    String? color,
-  }) async {
-    try {
-      await _dio.put(
-        '/guilds/$guildId/member',
-        data: {
-          "nickname": nickname,
-          "color": color,
-        },
-      );
-
-      return right(unit);
-    } on DioError catch (err) {
-      print(err);
-      return left(const GuildFailure.unexpected());
-    } on SocketException catch (err) {
-      print(err);
-      return left(const GuildFailure.unexpected());
-    }
-  }
-
-  @override
-  Future<Either<GuildFailure, Unit>> kickMember(
-    String guildId,
-    String memberId,
-  ) async {
-    try {
-      await _dio.post(
-        '/guilds/$guildId/kick',
-        data: {
-          "memberId": memberId,
-        },
-      );
-
-      return right(unit);
-    } on DioError catch (err) {
-      print(err);
-      return left(const GuildFailure.unexpected());
-    } on SocketException catch (err) {
-      print(err);
-      return left(const GuildFailure.unexpected());
-    }
-  }
-
-  @override
-  Future<Either<GuildFailure, Unit>> banMember(
-    String guildId,
-    String memberId,
-  ) async {
-    try {
-      await _dio.post(
-        '/guilds/$guildId/bans',
-        data: {
-          "memberId": memberId,
-        },
-      );
-
-      return right(unit);
-    } on DioError catch (err) {
-      print(err);
-      return left(const GuildFailure.unexpected());
-    } on SocketException catch (err) {
-      print(err);
-      return left(const GuildFailure.unexpected());
-    }
-  }
-
-  @override
-  Future<Either<GuildFailure, List<Member>>> getBanList(String guildId) async {
-    try {
-      final response = await _dio.get('/guilds/$guildId/bans');
-
-      if (response.statusCode == 200) {
-        final results = jsonDecode(response.data);
-        final List<Member> list = [];
-        results.forEach((m) => list.add(MemberDto.fromMap(m).toDomain()));
-        return right(list);
-      }
-      return left(const GuildFailure.unexpected());
-    } on DioError catch (err) {
-      print(err);
-      return left(const GuildFailure.unexpected());
-    } on SocketException catch (err) {
-      print(err);
-      return left(const GuildFailure.unexpected());
-    }
-  }
-
-  @override
-  Future<Either<GuildFailure, Unit>> unbanMember(
-    String guildId,
-    String memberId,
-  ) async {
-    try {
-      await _dio.delete('/guilds/$guildId/bans', data: {
-        "memberId": memberId,
-      });
-
       return right(unit);
     } on DioError catch (err) {
       print(err);
@@ -287,7 +155,9 @@ class GuildRepository extends IGuildRepository {
       final result = jsonDecode(response.data);
       return right(GuildDto.fromMap(result).toDomain());
     } on DioError catch (err) {
-      print(err);
+      if (err.response?.statusCode == 404) {
+        return left(const GuildFailure.invalidLink());
+      }
       return left(const GuildFailure.unexpected());
     } on SocketException catch (err) {
       print(err);

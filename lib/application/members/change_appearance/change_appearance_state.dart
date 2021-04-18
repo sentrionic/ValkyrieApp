@@ -7,7 +7,7 @@ class ChangeAppearanceState with _$ChangeAppearanceState {
     @Default(null) HexColor? hexColor,
     required bool showErrorMessages,
     required bool isSaving,
-    required Option<Either<GuildFailure, Unit>> saveFailureOrSuccessOption,
+    required Option<Either<MemberFailure, Unit>> saveFailureOrSuccessOption,
   }) = _ChangeAppearanceState;
 
   factory ChangeAppearanceState.initial() => ChangeAppearanceState(

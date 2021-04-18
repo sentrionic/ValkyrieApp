@@ -18,7 +18,9 @@ class HomeBody extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                HomeIconWidget(),
+                const HomeIconWidget(
+                  isHome: true,
+                ),
                 const SizedBox(
                   height: 3,
                 ),

@@ -6,6 +6,6 @@ class GetAppearanceState with _$GetAppearanceState {
   const factory GetAppearanceState.loadInProgress() = _LoadInProgress;
   const factory GetAppearanceState.loadSuccess(GuildAppearance appearance) =
       _LoadSuccess;
-  const factory GetAppearanceState.loadFailure(GuildFailure guildFailure) =
+  const factory GetAppearanceState.loadFailure(MemberFailure failure) =
       _LoadFailure;
 }

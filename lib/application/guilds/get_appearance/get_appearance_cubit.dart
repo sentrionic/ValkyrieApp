@@ -2,15 +2,15 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/guilds/guild_appearance.dart';
-import 'package:valkyrie_app/domain/guilds/guild_failure.dart';
-import 'package:valkyrie_app/domain/guilds/i_guild_repository.dart';
+import 'package:valkyrie_app/domain/member/i_member_repository.dart';
+import 'package:valkyrie_app/domain/member/member_failure.dart';
 
 part 'get_appearance_state.dart';
 part 'get_appearance_cubit.freezed.dart';
 
 @injectable
 class GetAppearanceCubit extends Cubit<GetAppearanceState> {
-  final IGuildRepository _repository;
+  final IMemberRepository _repository;
   GetAppearanceCubit(this._repository)
       : super(const GetAppearanceState.initial());
 

@@ -27,7 +27,6 @@ class _GuildSocketHookState extends HookState<void, GuildSocketHook> {
   @override
   Future<void> initHook() async {
     super.initHook();
-    // print(current.id);
 
     socket = io.io(
       "$baseUrl/ws",
@@ -83,7 +82,6 @@ class _GuildSocketHookState extends HookState<void, GuildSocketHook> {
 
   @override
   void dispose() {
-    // print("Dispose");
     socket.emit('leaveRoom', current.id);
     socket.disconnect();
     super.dispose();

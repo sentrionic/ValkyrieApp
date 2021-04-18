@@ -5,6 +5,7 @@ class EditGuildState with _$EditGuildState {
   const factory EditGuildState({
     required GuildName name,
     @Default(null) File? icon,
+    @Default(null) String? iconUrl,
     required bool showErrorMessages,
     required bool isSubmitting,
     required Option<Either<GuildFailure, Unit>> guildFailureOrSuccessOption,

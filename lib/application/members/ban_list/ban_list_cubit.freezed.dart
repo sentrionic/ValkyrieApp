@@ -24,13 +24,13 @@ class _$BanListStateTearOff {
     return const _LoadInProgress();
   }
 
-  _LoadSuccess loadSuccess(List<Member> members) {
+  _LoadSuccess loadSuccess(List<BannedMember> members) {
     return _LoadSuccess(
       members,
     );
   }
 
-  _LoadFailure loadFailure(GuildFailure memberFailure) {
+  _LoadFailure loadFailure(MemberFailure memberFailure) {
     return _LoadFailure(
       memberFailure,
     );
@@ -46,16 +46,16 @@ mixin _$BanListState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Member> members) loadSuccess,
-    required TResult Function(GuildFailure memberFailure) loadFailure,
+    required TResult Function(List<BannedMember> members) loadSuccess,
+    required TResult Function(MemberFailure memberFailure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Member> members)? loadSuccess,
-    TResult Function(GuildFailure memberFailure)? loadFailure,
+    TResult Function(List<BannedMember> members)? loadSuccess,
+    TResult Function(MemberFailure memberFailure)? loadFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -132,8 +132,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Member> members) loadSuccess,
-    required TResult Function(GuildFailure memberFailure) loadFailure,
+    required TResult Function(List<BannedMember> members) loadSuccess,
+    required TResult Function(MemberFailure memberFailure) loadFailure,
   }) {
     return initial();
   }
@@ -143,8 +143,8 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Member> members)? loadSuccess,
-    TResult Function(GuildFailure memberFailure)? loadFailure,
+    TResult Function(List<BannedMember> members)? loadSuccess,
+    TResult Function(MemberFailure memberFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -225,8 +225,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Member> members) loadSuccess,
-    required TResult Function(GuildFailure memberFailure) loadFailure,
+    required TResult Function(List<BannedMember> members) loadSuccess,
+    required TResult Function(MemberFailure memberFailure) loadFailure,
   }) {
     return loadInProgress();
   }
@@ -236,8 +236,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Member> members)? loadSuccess,
-    TResult Function(GuildFailure memberFailure)? loadFailure,
+    TResult Function(List<BannedMember> members)? loadSuccess,
+    TResult Function(MemberFailure memberFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -282,7 +282,7 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({List<Member> members});
+  $Res call({List<BannedMember> members});
 }
 
 /// @nodoc
@@ -303,7 +303,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$BanListStateCopyWithImpl<$Res>
       members == freezed
           ? _value.members
           : members // ignore: cast_nullable_to_non_nullable
-              as List<Member>,
+              as List<BannedMember>,
     ));
   }
 }
@@ -313,7 +313,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.members);
 
   @override
-  final List<Member> members;
+  final List<BannedMember> members;
 
   @override
   String toString() {
@@ -342,8 +342,8 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Member> members) loadSuccess,
-    required TResult Function(GuildFailure memberFailure) loadFailure,
+    required TResult Function(List<BannedMember> members) loadSuccess,
+    required TResult Function(MemberFailure memberFailure) loadFailure,
   }) {
     return loadSuccess(members);
   }
@@ -353,8 +353,8 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Member> members)? loadSuccess,
-    TResult Function(GuildFailure memberFailure)? loadFailure,
+    TResult Function(List<BannedMember> members)? loadSuccess,
+    TResult Function(MemberFailure memberFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -391,9 +391,9 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements BanListState {
-  const factory _LoadSuccess(List<Member> members) = _$_LoadSuccess;
+  const factory _LoadSuccess(List<BannedMember> members) = _$_LoadSuccess;
 
-  List<Member> get members => throw _privateConstructorUsedError;
+  List<BannedMember> get members => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -404,9 +404,9 @@ abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(
           _LoadFailure value, $Res Function(_LoadFailure) then) =
       __$LoadFailureCopyWithImpl<$Res>;
-  $Res call({GuildFailure memberFailure});
+  $Res call({MemberFailure memberFailure});
 
-  $GuildFailureCopyWith<$Res> get memberFailure;
+  $MemberFailureCopyWith<$Res> get memberFailure;
 }
 
 /// @nodoc
@@ -427,13 +427,13 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$BanListStateCopyWithImpl<$Res>
       memberFailure == freezed
           ? _value.memberFailure
           : memberFailure // ignore: cast_nullable_to_non_nullable
-              as GuildFailure,
+              as MemberFailure,
     ));
   }
 
   @override
-  $GuildFailureCopyWith<$Res> get memberFailure {
-    return $GuildFailureCopyWith<$Res>(_value.memberFailure, (value) {
+  $MemberFailureCopyWith<$Res> get memberFailure {
+    return $MemberFailureCopyWith<$Res>(_value.memberFailure, (value) {
       return _then(_value.copyWith(memberFailure: value));
     });
   }
@@ -444,7 +444,7 @@ class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.memberFailure);
 
   @override
-  final GuildFailure memberFailure;
+  final MemberFailure memberFailure;
 
   @override
   String toString() {
@@ -474,8 +474,8 @@ class _$_LoadFailure implements _LoadFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<Member> members) loadSuccess,
-    required TResult Function(GuildFailure memberFailure) loadFailure,
+    required TResult Function(List<BannedMember> members) loadSuccess,
+    required TResult Function(MemberFailure memberFailure) loadFailure,
   }) {
     return loadFailure(memberFailure);
   }
@@ -485,8 +485,8 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<Member> members)? loadSuccess,
-    TResult Function(GuildFailure memberFailure)? loadFailure,
+    TResult Function(List<BannedMember> members)? loadSuccess,
+    TResult Function(MemberFailure memberFailure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
@@ -523,9 +523,9 @@ class _$_LoadFailure implements _LoadFailure {
 }
 
 abstract class _LoadFailure implements BanListState {
-  const factory _LoadFailure(GuildFailure memberFailure) = _$_LoadFailure;
+  const factory _LoadFailure(MemberFailure memberFailure) = _$_LoadFailure;
 
-  GuildFailure get memberFailure => throw _privateConstructorUsedError;
+  MemberFailure get memberFailure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

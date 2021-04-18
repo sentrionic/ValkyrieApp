@@ -21,7 +21,8 @@ class _$ChangeAppearanceStateTearOff {
       HexColor? hexColor = null,
       required bool showErrorMessages,
       required bool isSaving,
-      required Option<Either<GuildFailure, Unit>> saveFailureOrSuccessOption}) {
+      required Option<Either<MemberFailure, Unit>>
+          saveFailureOrSuccessOption}) {
     return _ChangeAppearanceState(
       nickname: nickname,
       hexColor: hexColor,
@@ -41,7 +42,7 @@ mixin _$ChangeAppearanceState {
   HexColor? get hexColor => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
-  Option<Either<GuildFailure, Unit>> get saveFailureOrSuccessOption =>
+  Option<Either<MemberFailure, Unit>> get saveFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -59,7 +60,7 @@ abstract class $ChangeAppearanceStateCopyWith<$Res> {
       HexColor? hexColor,
       bool showErrorMessages,
       bool isSaving,
-      Option<Either<GuildFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<MemberFailure, Unit>> saveFailureOrSuccessOption});
 }
 
 /// @nodoc
@@ -99,7 +100,7 @@ class _$ChangeAppearanceStateCopyWithImpl<$Res>
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<GuildFailure, Unit>>,
+              as Option<Either<MemberFailure, Unit>>,
     ));
   }
 }
@@ -116,7 +117,7 @@ abstract class _$ChangeAppearanceStateCopyWith<$Res>
       HexColor? hexColor,
       bool showErrorMessages,
       bool isSaving,
-      Option<Either<GuildFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<MemberFailure, Unit>> saveFailureOrSuccessOption});
 }
 
 /// @nodoc
@@ -158,7 +159,7 @@ class __$ChangeAppearanceStateCopyWithImpl<$Res>
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<GuildFailure, Unit>>,
+              as Option<Either<MemberFailure, Unit>>,
     ));
   }
 }
@@ -183,7 +184,7 @@ class _$_ChangeAppearanceState implements _ChangeAppearanceState {
   @override
   final bool isSaving;
   @override
-  final Option<Either<GuildFailure, Unit>> saveFailureOrSuccessOption;
+  final Option<Either<MemberFailure, Unit>> saveFailureOrSuccessOption;
 
   @override
   String toString() {
@@ -235,7 +236,7 @@ abstract class _ChangeAppearanceState implements ChangeAppearanceState {
       HexColor? hexColor,
       required bool showErrorMessages,
       required bool isSaving,
-      required Option<Either<GuildFailure, Unit>>
+      required Option<Either<MemberFailure, Unit>>
           saveFailureOrSuccessOption}) = _$_ChangeAppearanceState;
 
   @override
@@ -247,7 +248,7 @@ abstract class _ChangeAppearanceState implements ChangeAppearanceState {
   @override
   bool get isSaving => throw _privateConstructorUsedError;
   @override
-  Option<Either<GuildFailure, Unit>> get saveFailureOrSuccessOption =>
+  Option<Either<MemberFailure, Unit>> get saveFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

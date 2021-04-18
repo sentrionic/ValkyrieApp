@@ -30,9 +30,6 @@ import 'application/friends/get_friends/get_friends_cubit.dart' as _i56;
 import 'application/friends/remove_friend/remove_friend_cubit.dart' as _i32;
 import 'application/friends/send_friend_request/send_friend_request_cubit.dart'
     as _i33;
-import 'application/guilds/ban_list/ban_list_cubit.dart' as _i40;
-import 'application/guilds/change_appearance/change_appearance_cubit.dart'
-    as _i41;
 import 'application/guilds/create_guild/create_guild_cubit.dart' as _i45;
 import 'application/guilds/current/current_guild_cubit.dart' as _i4;
 import 'application/guilds/delete_guild/delete_guild_cubit.dart' as _i49;
@@ -44,9 +41,12 @@ import 'application/guilds/invalidate_invites/invalidate_invites_cubit.dart'
     as _i24;
 import 'application/guilds/join_guild/join_guild_cubit.dart' as _i25;
 import 'application/guilds/leave_guild/leave_guild_cubit.dart' as _i26;
-import 'application/guilds/unban_user/unban_user_cubit.dart' as _i35;
+import 'application/members/ban_list/ban_list_cubit.dart' as _i40;
+import 'application/members/change_appearance/change_appearance_cubit.dart'
+    as _i41;
 import 'application/members/member_list/member_list_cubit.dart' as _i28;
 import 'application/members/moderate_member/moderate_member_cubit.dart' as _i30;
+import 'application/members/unban_user/unban_user_cubit.dart' as _i35;
 import 'application/messages/create_message/create_message_cubit.dart' as _i46;
 import 'application/messages/delete_message/delete_message_cubit.dart' as _i50;
 import 'application/messages/download_image/download_image_cubit.dart' as _i6;
@@ -112,7 +112,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i29.MessagesCubit>(
       () => _i29.MessagesCubit(get<_i22.IMessageRepository>()));
   gh.factory<_i30.ModerateMemberCubit>(
-      () => _i30.ModerateMemberCubit(get<_i18.IGuildRepository>()));
+      () => _i30.ModerateMemberCubit(get<_i20.IMemberRepository>()));
   gh.factory<_i31.RegisterFormBloc>(
       () => _i31.RegisterFormBloc(get<_i10.IAuthFacade>()));
   gh.factory<_i32.RemoveFriendCubit>(
@@ -122,7 +122,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i34.StartDMCubit>(
       () => _i34.StartDMCubit(get<_i14.IDMRepository>()));
   gh.factory<_i35.UnbanUserCubit>(
-      () => _i35.UnbanUserCubit(get<_i18.IGuildRepository>()));
+      () => _i35.UnbanUserCubit(get<_i20.IMemberRepository>()));
   gh.factory<_i36.UpdateAccountBloc>(
       () => _i36.UpdateAccountBloc(get<_i8.IAccountRepository>()));
   gh.factory<_i37.UploadImageCubit>(
@@ -132,9 +132,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i39.AuthStatusBloc>(
       () => _i39.AuthStatusBloc(get<_i10.IAuthFacade>()));
   gh.factory<_i40.BanListCubit>(
-      () => _i40.BanListCubit(get<_i18.IGuildRepository>()));
+      () => _i40.BanListCubit(get<_i20.IMemberRepository>()));
   gh.factory<_i41.ChangeAppearanceCubit>(
-      () => _i41.ChangeAppearanceCubit(get<_i18.IGuildRepository>()));
+      () => _i41.ChangeAppearanceCubit(get<_i20.IMemberRepository>()));
   gh.factory<_i42.ChangePasswordCubit>(
       () => _i42.ChangePasswordCubit(get<_i10.IAuthFacade>()));
   gh.factory<_i43.ChannelListCubit>(
@@ -161,7 +161,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i54.ForgotPasswordCubit>(
       () => _i54.ForgotPasswordCubit(get<_i10.IAuthFacade>()));
   gh.factory<_i55.GetAppearanceCubit>(
-      () => _i55.GetAppearanceCubit(get<_i18.IGuildRepository>()));
+      () => _i55.GetAppearanceCubit(get<_i20.IMemberRepository>()));
   gh.factory<_i56.GetFriendsCubit>(
       () => _i56.GetFriendsCubit(get<_i16.IFriendRepository>()));
   gh.factory<_i57.GetInviteLinkCubit>(

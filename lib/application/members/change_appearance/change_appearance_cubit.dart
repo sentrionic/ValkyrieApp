@@ -2,16 +2,16 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:valkyrie_app/domain/guilds/guild_failure.dart';
-import 'package:valkyrie_app/domain/guilds/i_guild_repository.dart';
 import 'package:valkyrie_app/domain/guilds/value_objects.dart';
+import 'package:valkyrie_app/domain/member/i_member_repository.dart';
+import 'package:valkyrie_app/domain/member/member_failure.dart';
 
 part 'change_appearance_state.dart';
 part 'change_appearance_cubit.freezed.dart';
 
 @injectable
 class ChangeAppearanceCubit extends Cubit<ChangeAppearanceState> {
-  final IGuildRepository _repository;
+  final IMemberRepository _repository;
   ChangeAppearanceCubit(this._repository)
       : super(ChangeAppearanceState.initial());
 
@@ -44,7 +44,7 @@ class ChangeAppearanceCubit extends Cubit<ChangeAppearanceState> {
   }
 
   Future<void> submitChanges(String guildId) async {
-    Either<GuildFailure, Unit>? failureOrSuccess;
+    Either<MemberFailure, Unit>? failureOrSuccess;
 
     final isNicknameValid = state.nickname?.isValid() ?? true;
     final isColorValid = state.hexColor?.isValid() ?? true;

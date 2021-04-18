@@ -1,15 +1,15 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:valkyrie_app/domain/guilds/guild_failure.dart';
-import 'package:valkyrie_app/domain/guilds/i_guild_repository.dart';
+import 'package:valkyrie_app/domain/member/i_member_repository.dart';
+import 'package:valkyrie_app/domain/member/member_failure.dart';
 
 part 'unban_user_state.dart';
 part 'unban_user_cubit.freezed.dart';
 
 @injectable
 class UnbanUserCubit extends Cubit<UnbanUserState> {
-  final IGuildRepository _repository;
+  final IMemberRepository _repository;
 
   UnbanUserCubit(this._repository) : super(const UnbanUserState.initial());
 
@@ -22,7 +22,7 @@ class UnbanUserCubit extends Cubit<UnbanUserState> {
     emit(
       possibleFailure.fold(
         (f) => UnbanUserState.unbanFailure(f),
-        (_) => const UnbanUserState.unbanSuccess(),
+        (_) => UnbanUserState.unbanSuccess(memberId),
       ),
     );
   }

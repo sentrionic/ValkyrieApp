@@ -12,6 +12,10 @@ import 'package:valkyrie_app/presentation/core/screen_arguments/channel_screen_a
 import 'package:valkyrie_app/presentation/core/screen_arguments/open_url_arguments.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/screens/channel_settings/channel_settings_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/screens/create_channel/create_channel_screen.dart';
+import 'package:valkyrie_app/presentation/main/guild/guild_layout/edit_guild/edit_guild_screen.dart';
+import 'package:valkyrie_app/presentation/main/guild/guild_layout/guild_settings/guild_settings_screen.dart';
+import 'package:valkyrie_app/presentation/main/guild/guild_layout/manage_bans/manage_bans_screen.dart';
+import 'package:valkyrie_app/presentation/main/shared/add_guild/add_guild_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/guild_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/guild_layout/appearance_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/screens/invite_screen.dart';
@@ -19,6 +23,8 @@ import 'package:valkyrie_app/presentation/main/guild/messages/screens/photo_view
 import 'package:valkyrie_app/presentation/main/guild/messages/screens/web_view_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/account_tab/change_password/change_password_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/home_screen.dart';
+import 'package:valkyrie_app/presentation/main/shared/add_guild/create_guild/create_guild_screen.dart';
+import 'package:valkyrie_app/presentation/main/shared/add_guild/join_guild/join_guild_screen.dart';
 import 'package:valkyrie_app/presentation/splash/splash_page.dart';
 
 import 'screen_arguments/guild_screen_arguments.dart';
@@ -139,6 +145,70 @@ class AppRouter {
           page: ChannelSettingsScreen(
             channel: args.channel,
             guildId: args.guildId,
+          ),
+        );
+
+      case AddGuildScreen.routeName:
+        return FadeTransitionRoute(
+          page: AddGuildScreen(),
+        );
+
+      case CreateGuildScreen.routeName:
+        return FadeTransitionRoute(
+          page: MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: _currentChannelCubit),
+              BlocProvider.value(value: _currentGuildCubit),
+              BlocProvider.value(value: _guildBloc),
+            ],
+            child: CreateGuildScreen(),
+          ),
+        );
+
+      case JoinGuildScreen.routeName:
+        return FadeTransitionRoute(
+          page: MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: _currentChannelCubit),
+              BlocProvider.value(value: _currentGuildCubit),
+              BlocProvider.value(value: _guildBloc),
+            ],
+            child: JoinGuildScreen(),
+          ),
+        );
+
+      case GuildSettingsScreen.routeName:
+        final GuildScreenArguments args =
+            settings.arguments! as GuildScreenArguments;
+        return FadeTransitionRoute(
+          page: MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: _guildBloc),
+            ],
+            child: GuildSettingsScreen(
+              guild: args.guild,
+            ),
+          ),
+        );
+
+      case EditGuildScreen.routeName:
+        final GuildScreenArguments args =
+            settings.arguments! as GuildScreenArguments;
+        return SlideTransitionRoute(
+          page: BlocProvider.value(
+            value: _guildBloc,
+            child: EditGuildScreen(
+              guild: args.guild,
+            ),
+          ),
+        );
+
+      case ManageBansScreen.routeName:
+        final GuildScreenArguments args =
+            settings.arguments! as GuildScreenArguments;
+        return SlideTransitionRoute(
+          page: ManageBansScreen(
+            guild: args.guild,
           ),
         );
 

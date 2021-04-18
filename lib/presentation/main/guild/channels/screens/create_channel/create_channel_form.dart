@@ -72,7 +72,7 @@ class CreateChannelForm extends StatelessWidget {
                     context.read<CreateChannelCubit>().state.name.value.fold(
                           (f) => f.maybeMap(
                             invalidChannelName: (_) =>
-                                'Channel names must be between 3 and 32 characters',
+                                'Channel names must be between 3 and 30 characters',
                             orElse: () => null,
                           ),
                           (_) => null,

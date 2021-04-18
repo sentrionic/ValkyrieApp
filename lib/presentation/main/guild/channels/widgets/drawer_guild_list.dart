@@ -13,7 +13,7 @@ class DrawerGuildList extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          HomeIconWidget(),
+          const HomeIconWidget(),
           const SizedBox(
             height: 3,
           ),

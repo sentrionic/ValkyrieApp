@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
+import 'package:valkyrie_app/presentation/main/shared/add_guild/add_guild_screen.dart';
 
 class AddGuildIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Navigator.of(context).pushNamed(AddGuildScreen.routeName),
       child: Column(
         children: const [
           CircleAvatar(

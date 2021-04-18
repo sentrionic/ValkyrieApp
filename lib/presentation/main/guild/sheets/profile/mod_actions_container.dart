@@ -4,6 +4,7 @@ import 'package:valkyrie_app/application/members/moderate_member/moderate_member
 
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/domain/member/member.dart';
+import 'package:valkyrie_app/presentation/common/widgets/app_icons.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 
 class ModActionsContainer extends StatelessWidget {
@@ -17,37 +18,34 @@ class ModActionsContainer extends StatelessWidget {
       child: Container(
         width: double.infinity,
         color: ThemeColors.accountForm,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 20,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 20,
+              ),
+              Text(
+                guild.name.getOrCrash(),
+                style: const TextStyle(
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white38,
+                  fontSize: 16,
                 ),
-                Text(
-                  guild.name.getOrCrash(),
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white38,
-                    fontSize: 16,
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                _getModalButton(
-                  "Kick",
-                  Icons.person_remove,
-                  () => _showConfirmationDialog(context, cubit, isBan: false),
-                ),
-                _getModalButton(
-                  "Ban",
-                  Icons.remove_circle_outline,
-                  () => _showConfirmationDialog(context, cubit, isBan: true),
-                ),
-              ],
-            ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              _getModalButton(
+                "Kick",
+                Icons.person_remove,
+                () => _showConfirmationDialog(context, cubit, isBan: false),
+              ),
+              _getModalButton(
+                "Ban",
+                AppIcons.hammer,
+                () => _showConfirmationDialog(context, cubit, isBan: true),
+              ),
+            ],
           ),
         ),
       ),

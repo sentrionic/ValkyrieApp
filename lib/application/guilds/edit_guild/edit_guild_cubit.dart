@@ -20,6 +20,7 @@ class EditGuildCubit extends Cubit<EditGuildState> {
   Future<void> initialize(Guild guild) async {
     emit(state.copyWith(
       name: GuildName(guild.name.getOrCrash()),
+      iconUrl: guild.icon,
     ));
   }
 
@@ -33,6 +34,14 @@ class EditGuildCubit extends Cubit<EditGuildState> {
   Future<void> iconChanged(File image) async {
     emit(state.copyWith(
       icon: image,
+      guildFailureOrSuccessOption: none(),
+    ));
+  }
+
+  Future<void> removeIcon() async {
+    emit(state.copyWith(
+      icon: null,
+      iconUrl: null,
       guildFailureOrSuccessOption: none(),
     ));
   }
@@ -52,6 +61,7 @@ class EditGuildCubit extends Cubit<EditGuildState> {
         guildId,
         state.name.getOrCrash(),
         state.icon,
+        state.iconUrl,
       );
     }
 

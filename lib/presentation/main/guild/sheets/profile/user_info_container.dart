@@ -4,6 +4,7 @@ import 'package:valkyrie_app/application/dms/start_dm/start_dm_cubit.dart';
 import 'package:valkyrie_app/application/friends/send_friend_request/send_friend_request_cubit.dart';
 
 import 'package:valkyrie_app/domain/member/member.dart';
+import 'package:valkyrie_app/presentation/common/widgets/app_icons.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 
 class UserInfoContainer extends StatelessWidget {
@@ -91,7 +92,10 @@ class UserInfoContainer extends StatelessWidget {
                               .getOrCreateDM(member.id),
                           child: Column(
                             children: const [
-                              Icon(Icons.chat_bubble),
+                              Icon(
+                                AppIcons.commentalt,
+                                size: 22,
+                              ),
                               SizedBox(
                                 height: 5,
                               ),

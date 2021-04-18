@@ -34,6 +34,13 @@ class GuildListCubit extends Cubit<GuildListState> {
     );
   }
 
+  int getCurrentIndex(String guildId) {
+    return state.maybeWhen(
+      loadSuccess: (guilds) => guilds.indexWhere((g) => g.id == guildId),
+      orElse: () => -1,
+    );
+  }
+
   void addNewGuild(Guild guild) {
     state.maybeWhen(
       loadSuccess: (guilds) async {

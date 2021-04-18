@@ -24,14 +24,16 @@ class _$UnbanUserStateTearOff {
     return const _ActionInProgress();
   }
 
-  _UnbanFailure unbanFailure(GuildFailure failure) {
+  _UnbanFailure unbanFailure(MemberFailure failure) {
     return _UnbanFailure(
       failure,
     );
   }
 
-  _UnbanSuccess unbanSuccess() {
-    return const _UnbanSuccess();
+  _UnbanSuccess unbanSuccess(String memberId) {
+    return _UnbanSuccess(
+      memberId,
+    );
   }
 }
 
@@ -44,16 +46,16 @@ mixin _$UnbanUserState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function(GuildFailure failure) unbanFailure,
-    required TResult Function() unbanSuccess,
+    required TResult Function(MemberFailure failure) unbanFailure,
+    required TResult Function(String memberId) unbanSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(GuildFailure failure)? unbanFailure,
-    TResult Function()? unbanSuccess,
+    TResult Function(MemberFailure failure)? unbanFailure,
+    TResult Function(String memberId)? unbanSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -131,8 +133,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function(GuildFailure failure) unbanFailure,
-    required TResult Function() unbanSuccess,
+    required TResult Function(MemberFailure failure) unbanFailure,
+    required TResult Function(String memberId) unbanSuccess,
   }) {
     return initial();
   }
@@ -142,8 +144,8 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(GuildFailure failure)? unbanFailure,
-    TResult Function()? unbanSuccess,
+    TResult Function(MemberFailure failure)? unbanFailure,
+    TResult Function(String memberId)? unbanSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -224,8 +226,8 @@ class _$_ActionInProgress implements _ActionInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function(GuildFailure failure) unbanFailure,
-    required TResult Function() unbanSuccess,
+    required TResult Function(MemberFailure failure) unbanFailure,
+    required TResult Function(String memberId) unbanSuccess,
   }) {
     return actionInProgress();
   }
@@ -235,8 +237,8 @@ class _$_ActionInProgress implements _ActionInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(GuildFailure failure)? unbanFailure,
-    TResult Function()? unbanSuccess,
+    TResult Function(MemberFailure failure)? unbanFailure,
+    TResult Function(String memberId)? unbanSuccess,
     required TResult orElse(),
   }) {
     if (actionInProgress != null) {
@@ -281,9 +283,9 @@ abstract class _$UnbanFailureCopyWith<$Res> {
   factory _$UnbanFailureCopyWith(
           _UnbanFailure value, $Res Function(_UnbanFailure) then) =
       __$UnbanFailureCopyWithImpl<$Res>;
-  $Res call({GuildFailure failure});
+  $Res call({MemberFailure failure});
 
-  $GuildFailureCopyWith<$Res> get failure;
+  $MemberFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
@@ -305,13 +307,13 @@ class __$UnbanFailureCopyWithImpl<$Res>
       failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
-              as GuildFailure,
+              as MemberFailure,
     ));
   }
 
   @override
-  $GuildFailureCopyWith<$Res> get failure {
-    return $GuildFailureCopyWith<$Res>(_value.failure, (value) {
+  $MemberFailureCopyWith<$Res> get failure {
+    return $MemberFailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
   }
@@ -322,7 +324,7 @@ class _$_UnbanFailure implements _UnbanFailure {
   const _$_UnbanFailure(this.failure);
 
   @override
-  final GuildFailure failure;
+  final MemberFailure failure;
 
   @override
   String toString() {
@@ -351,8 +353,8 @@ class _$_UnbanFailure implements _UnbanFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function(GuildFailure failure) unbanFailure,
-    required TResult Function() unbanSuccess,
+    required TResult Function(MemberFailure failure) unbanFailure,
+    required TResult Function(String memberId) unbanSuccess,
   }) {
     return unbanFailure(failure);
   }
@@ -362,8 +364,8 @@ class _$_UnbanFailure implements _UnbanFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(GuildFailure failure)? unbanFailure,
-    TResult Function()? unbanSuccess,
+    TResult Function(MemberFailure failure)? unbanFailure,
+    TResult Function(String memberId)? unbanSuccess,
     required TResult orElse(),
   }) {
     if (unbanFailure != null) {
@@ -400,9 +402,9 @@ class _$_UnbanFailure implements _UnbanFailure {
 }
 
 abstract class _UnbanFailure implements UnbanUserState {
-  const factory _UnbanFailure(GuildFailure failure) = _$_UnbanFailure;
+  const factory _UnbanFailure(MemberFailure failure) = _$_UnbanFailure;
 
-  GuildFailure get failure => throw _privateConstructorUsedError;
+  MemberFailure get failure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$UnbanFailureCopyWith<_UnbanFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -413,6 +415,7 @@ abstract class _$UnbanSuccessCopyWith<$Res> {
   factory _$UnbanSuccessCopyWith(
           _UnbanSuccess value, $Res Function(_UnbanSuccess) then) =
       __$UnbanSuccessCopyWithImpl<$Res>;
+  $Res call({String memberId});
 }
 
 /// @nodoc
@@ -425,34 +428,59 @@ class __$UnbanSuccessCopyWithImpl<$Res>
 
   @override
   _UnbanSuccess get _value => super._value as _UnbanSuccess;
+
+  @override
+  $Res call({
+    Object? memberId = freezed,
+  }) {
+    return _then(_UnbanSuccess(
+      memberId == freezed
+          ? _value.memberId
+          : memberId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 class _$_UnbanSuccess implements _UnbanSuccess {
-  const _$_UnbanSuccess();
+  const _$_UnbanSuccess(this.memberId);
+
+  @override
+  final String memberId;
 
   @override
   String toString() {
-    return 'UnbanUserState.unbanSuccess()';
+    return 'UnbanUserState.unbanSuccess(memberId: $memberId)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UnbanSuccess);
+    return identical(this, other) ||
+        (other is _UnbanSuccess &&
+            (identical(other.memberId, memberId) ||
+                const DeepCollectionEquality()
+                    .equals(other.memberId, memberId)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(memberId);
+
+  @JsonKey(ignore: true)
+  @override
+  _$UnbanSuccessCopyWith<_UnbanSuccess> get copyWith =>
+      __$UnbanSuccessCopyWithImpl<_UnbanSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function(GuildFailure failure) unbanFailure,
-    required TResult Function() unbanSuccess,
+    required TResult Function(MemberFailure failure) unbanFailure,
+    required TResult Function(String memberId) unbanSuccess,
   }) {
-    return unbanSuccess();
+    return unbanSuccess(memberId);
   }
 
   @override
@@ -460,12 +488,12 @@ class _$_UnbanSuccess implements _UnbanSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(GuildFailure failure)? unbanFailure,
-    TResult Function()? unbanSuccess,
+    TResult Function(MemberFailure failure)? unbanFailure,
+    TResult Function(String memberId)? unbanSuccess,
     required TResult orElse(),
   }) {
     if (unbanSuccess != null) {
-      return unbanSuccess();
+      return unbanSuccess(memberId);
     }
     return orElse();
   }
@@ -498,5 +526,10 @@ class _$_UnbanSuccess implements _UnbanSuccess {
 }
 
 abstract class _UnbanSuccess implements UnbanUserState {
-  const factory _UnbanSuccess() = _$_UnbanSuccess;
+  const factory _UnbanSuccess(String memberId) = _$_UnbanSuccess;
+
+  String get memberId => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$UnbanSuccessCopyWith<_UnbanSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }

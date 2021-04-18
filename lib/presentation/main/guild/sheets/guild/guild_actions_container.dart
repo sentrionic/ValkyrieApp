@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:valkyrie_app/application/guilds/leave_guild/leave_guild_cubit.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/core/screen_arguments/guild_screen_arguments.dart';
@@ -44,7 +46,7 @@ class GuildActionsContainer extends StatelessWidget {
                   Navigator.of(context).pushNamed(AppearanceScreen.routeName,
                       arguments: GuildScreenArguments(guild));
                 }),
-                if (!isOwner) _getLeaveGuildModalButton(),
+                if (!isOwner) _getLeaveGuildModalButton(context),
               ],
             ),
           ),
@@ -86,12 +88,15 @@ class GuildActionsContainer extends StatelessWidget {
     );
   }
 
-  Widget _getLeaveGuildModalButton() {
+  Widget _getLeaveGuildModalButton(BuildContext context) {
     return Container(
       color: ThemeColors.sheetBackground,
       width: double.infinity,
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          final cubit = context.read<LeaveGuildCubit>();
+          _showConfirmationDialog(context, cubit);
+        },
         style: TextButton.styleFrom(
           primary: ThemeColors.brandRed,
         ),
@@ -116,6 +121,53 @@ class GuildActionsContainer extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  void _showConfirmationDialog(
+    BuildContext context,
+    LeaveGuildCubit cubit,
+  ) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Leave '${guild.name.getOrCrash()}'",
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+              const Divider(),
+            ],
+          ),
+          content: Text(
+            "Are you sure you want to leave ${guild.name.getOrCrash()}?",
+            style: const TextStyle(
+              color: Colors.white70,
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text(
+                "Cancel",
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                cubit.leaveGuild(guild.id);
+              },
+              style: ElevatedButton.styleFrom(
+                primary: ThemeColors.themeBlue,
+              ),
+              child: const Text("Leave Server"),
+            ),
+          ],
+        );
+      },
     );
   }
 }

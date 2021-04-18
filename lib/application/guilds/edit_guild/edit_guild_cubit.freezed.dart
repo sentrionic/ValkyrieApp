@@ -19,6 +19,7 @@ class _$EditGuildStateTearOff {
   _EditGuildState call(
       {required GuildName name,
       File? icon = null,
+      String? iconUrl = null,
       required bool showErrorMessages,
       required bool isSubmitting,
       required Option<Either<GuildFailure, Unit>>
@@ -26,6 +27,7 @@ class _$EditGuildStateTearOff {
     return _EditGuildState(
       name: name,
       icon: icon,
+      iconUrl: iconUrl,
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
       guildFailureOrSuccessOption: guildFailureOrSuccessOption,
@@ -40,6 +42,7 @@ const $EditGuildState = _$EditGuildStateTearOff();
 mixin _$EditGuildState {
   GuildName get name => throw _privateConstructorUsedError;
   File? get icon => throw _privateConstructorUsedError;
+  String? get iconUrl => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<GuildFailure, Unit>> get guildFailureOrSuccessOption =>
@@ -58,6 +61,7 @@ abstract class $EditGuildStateCopyWith<$Res> {
   $Res call(
       {GuildName name,
       File? icon,
+      String? iconUrl,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<GuildFailure, Unit>> guildFailureOrSuccessOption});
@@ -76,6 +80,7 @@ class _$EditGuildStateCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? icon = freezed,
+    Object? iconUrl = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
     Object? guildFailureOrSuccessOption = freezed,
@@ -89,6 +94,10 @@ class _$EditGuildStateCopyWithImpl<$Res>
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as File?,
+      iconUrl: iconUrl == freezed
+          ? _value.iconUrl
+          : iconUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -115,6 +124,7 @@ abstract class _$EditGuildStateCopyWith<$Res>
   $Res call(
       {GuildName name,
       File? icon,
+      String? iconUrl,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<GuildFailure, Unit>> guildFailureOrSuccessOption});
@@ -135,6 +145,7 @@ class __$EditGuildStateCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? icon = freezed,
+    Object? iconUrl = freezed,
     Object? showErrorMessages = freezed,
     Object? isSubmitting = freezed,
     Object? guildFailureOrSuccessOption = freezed,
@@ -148,6 +159,10 @@ class __$EditGuildStateCopyWithImpl<$Res>
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as File?,
+      iconUrl: iconUrl == freezed
+          ? _value.iconUrl
+          : iconUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -169,6 +184,7 @@ class _$_EditGuildState implements _EditGuildState {
   const _$_EditGuildState(
       {required this.name,
       this.icon = null,
+      this.iconUrl = null,
       required this.showErrorMessages,
       required this.isSubmitting,
       required this.guildFailureOrSuccessOption});
@@ -178,6 +194,9 @@ class _$_EditGuildState implements _EditGuildState {
   @JsonKey(defaultValue: null)
   @override
   final File? icon;
+  @JsonKey(defaultValue: null)
+  @override
+  final String? iconUrl;
   @override
   final bool showErrorMessages;
   @override
@@ -187,7 +206,7 @@ class _$_EditGuildState implements _EditGuildState {
 
   @override
   String toString() {
-    return 'EditGuildState(name: $name, icon: $icon, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, guildFailureOrSuccessOption: $guildFailureOrSuccessOption)';
+    return 'EditGuildState(name: $name, icon: $icon, iconUrl: $iconUrl, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, guildFailureOrSuccessOption: $guildFailureOrSuccessOption)';
   }
 
   @override
@@ -198,6 +217,9 @@ class _$_EditGuildState implements _EditGuildState {
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.icon, icon) ||
                 const DeepCollectionEquality().equals(other.icon, icon)) &&
+            (identical(other.iconUrl, iconUrl) ||
+                const DeepCollectionEquality()
+                    .equals(other.iconUrl, iconUrl)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
                     .equals(other.showErrorMessages, showErrorMessages)) &&
@@ -216,6 +238,7 @@ class _$_EditGuildState implements _EditGuildState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(icon) ^
+      const DeepCollectionEquality().hash(iconUrl) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(guildFailureOrSuccessOption);
@@ -230,6 +253,7 @@ abstract class _EditGuildState implements EditGuildState {
   const factory _EditGuildState(
       {required GuildName name,
       File? icon,
+      String? iconUrl,
       required bool showErrorMessages,
       required bool isSubmitting,
       required Option<Either<GuildFailure, Unit>>
@@ -239,6 +263,8 @@ abstract class _EditGuildState implements EditGuildState {
   GuildName get name => throw _privateConstructorUsedError;
   @override
   File? get icon => throw _privateConstructorUsedError;
+  @override
+  String? get iconUrl => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override

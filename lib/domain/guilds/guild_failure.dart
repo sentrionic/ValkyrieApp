@@ -5,4 +5,5 @@ part 'guild_failure.freezed.dart';
 @freezed
 class GuildFailure with _$GuildFailure {
   const factory GuildFailure.unexpected() = _Unexpected;
+  const factory GuildFailure.invalidLink() = _InvalidLink;
 }

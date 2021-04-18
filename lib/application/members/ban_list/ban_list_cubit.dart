@@ -1,16 +1,16 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:valkyrie_app/domain/guilds/guild_failure.dart';
-import 'package:valkyrie_app/domain/guilds/i_guild_repository.dart';
-import 'package:valkyrie_app/domain/member/member.dart';
+import 'package:valkyrie_app/domain/member/banned_member.dart';
+import 'package:valkyrie_app/domain/member/i_member_repository.dart';
+import 'package:valkyrie_app/domain/member/member_failure.dart';
 
 part 'ban_list_state.dart';
 part 'ban_list_cubit.freezed.dart';
 
 @injectable
 class BanListCubit extends Cubit<BanListState> {
-  final IGuildRepository _repository;
+  final IMemberRepository _repository;
   BanListCubit(this._repository) : super(const BanListState.initial());
 
   Future<void> getGuildBanList(String guildId) async {

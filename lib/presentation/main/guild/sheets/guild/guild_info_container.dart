@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
+import 'package:valkyrie_app/presentation/core/screen_arguments/guild_screen_arguments.dart';
+import 'package:valkyrie_app/presentation/main/guild/channels/screens/invite_screen.dart';
+import 'package:valkyrie_app/presentation/main/guild/guild_layout/guild_settings/guild_settings_screen.dart';
 
 class GuildInfoContainer extends StatelessWidget {
   final Guild guild;
@@ -67,7 +70,13 @@ class GuildInfoContainer extends StatelessWidget {
                         padding: const EdgeInsets.all(15),
                         child: InkWell(
                           splashColor: ThemeColors.buttonGray,
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.of(context).pop();
+                            Navigator.of(context).pushNamed(
+                              GuildSettingsScreen.routeName,
+                              arguments: GuildScreenArguments(guild),
+                            );
+                          },
                           child: Column(
                             children: const [
                               Icon(Icons.settings),
@@ -83,7 +92,13 @@ class GuildInfoContainer extends StatelessWidget {
                       padding: const EdgeInsets.all(15),
                       child: InkWell(
                         splashColor: ThemeColors.buttonGray,
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          Navigator.of(context).pushNamed(
+                            InviteScreen.routeName,
+                            arguments: GuildScreenArguments(guild),
+                          );
+                        },
                         child: Column(
                           children: const [
                             Icon(

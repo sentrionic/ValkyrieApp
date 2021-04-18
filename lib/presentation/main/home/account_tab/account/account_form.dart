@@ -142,6 +142,7 @@ class AccountForm extends StatelessWidget {
                                       primary: ThemeColors.themeBlue,
                                     ),
                                     onPressed: () {
+                                      FocusScope.of(context).unfocus();
                                       _key.currentState?.save();
                                       context.read<UpdateAccountBloc>().add(
                                             const UpdateAccountEvent.saved(),
@@ -170,7 +171,8 @@ class AccountForm extends StatelessWidget {
                                   child: OutlinedButton(
                                     onPressed: () {
                                       Navigator.of(context).pushNamed(
-                                          ChangePasswordScreen.routeName);
+                                        ChangePasswordScreen.routeName,
+                                      );
                                     },
                                     child: const Text(
                                       "Change Password",

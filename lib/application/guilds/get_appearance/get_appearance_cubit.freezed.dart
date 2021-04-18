@@ -30,9 +30,9 @@ class _$GetAppearanceStateTearOff {
     );
   }
 
-  _LoadFailure loadFailure(GuildFailure guildFailure) {
+  _LoadFailure loadFailure(MemberFailure failure) {
     return _LoadFailure(
-      guildFailure,
+      failure,
     );
   }
 }
@@ -47,7 +47,7 @@ mixin _$GetAppearanceState {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(GuildAppearance appearance) loadSuccess,
-    required TResult Function(GuildFailure guildFailure) loadFailure,
+    required TResult Function(MemberFailure failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,7 +55,7 @@ mixin _$GetAppearanceState {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(GuildAppearance appearance)? loadSuccess,
-    TResult Function(GuildFailure guildFailure)? loadFailure,
+    TResult Function(MemberFailure failure)? loadFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,7 +135,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(GuildAppearance appearance) loadSuccess,
-    required TResult Function(GuildFailure guildFailure) loadFailure,
+    required TResult Function(MemberFailure failure) loadFailure,
   }) {
     return initial();
   }
@@ -146,7 +146,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(GuildAppearance appearance)? loadSuccess,
-    TResult Function(GuildFailure guildFailure)? loadFailure,
+    TResult Function(MemberFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -228,7 +228,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(GuildAppearance appearance) loadSuccess,
-    required TResult Function(GuildFailure guildFailure) loadFailure,
+    required TResult Function(MemberFailure failure) loadFailure,
   }) {
     return loadInProgress();
   }
@@ -239,7 +239,7 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(GuildAppearance appearance)? loadSuccess,
-    TResult Function(GuildFailure guildFailure)? loadFailure,
+    TResult Function(MemberFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -356,7 +356,7 @@ class _$_LoadSuccess implements _LoadSuccess {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(GuildAppearance appearance) loadSuccess,
-    required TResult Function(GuildFailure guildFailure) loadFailure,
+    required TResult Function(MemberFailure failure) loadFailure,
   }) {
     return loadSuccess(appearance);
   }
@@ -367,7 +367,7 @@ class _$_LoadSuccess implements _LoadSuccess {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(GuildAppearance appearance)? loadSuccess,
-    TResult Function(GuildFailure guildFailure)? loadFailure,
+    TResult Function(MemberFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -417,9 +417,9 @@ abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(
           _LoadFailure value, $Res Function(_LoadFailure) then) =
       __$LoadFailureCopyWithImpl<$Res>;
-  $Res call({GuildFailure guildFailure});
+  $Res call({MemberFailure failure});
 
-  $GuildFailureCopyWith<$Res> get guildFailure;
+  $MemberFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
@@ -435,48 +435,47 @@ class __$LoadFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? guildFailure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_LoadFailure(
-      guildFailure == freezed
-          ? _value.guildFailure
-          : guildFailure // ignore: cast_nullable_to_non_nullable
-              as GuildFailure,
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as MemberFailure,
     ));
   }
 
   @override
-  $GuildFailureCopyWith<$Res> get guildFailure {
-    return $GuildFailureCopyWith<$Res>(_value.guildFailure, (value) {
-      return _then(_value.copyWith(guildFailure: value));
+  $MemberFailureCopyWith<$Res> get failure {
+    return $MemberFailureCopyWith<$Res>(_value.failure, (value) {
+      return _then(_value.copyWith(failure: value));
     });
   }
 }
 
 /// @nodoc
 class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure(this.guildFailure);
+  const _$_LoadFailure(this.failure);
 
   @override
-  final GuildFailure guildFailure;
+  final MemberFailure failure;
 
   @override
   String toString() {
-    return 'GetAppearanceState.loadFailure(guildFailure: $guildFailure)';
+    return 'GetAppearanceState.loadFailure(failure: $failure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoadFailure &&
-            (identical(other.guildFailure, guildFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.guildFailure, guildFailure)));
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(guildFailure);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -489,9 +488,9 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(GuildAppearance appearance) loadSuccess,
-    required TResult Function(GuildFailure guildFailure) loadFailure,
+    required TResult Function(MemberFailure failure) loadFailure,
   }) {
-    return loadFailure(guildFailure);
+    return loadFailure(failure);
   }
 
   @override
@@ -500,11 +499,11 @@ class _$_LoadFailure implements _LoadFailure {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(GuildAppearance appearance)? loadSuccess,
-    TResult Function(GuildFailure guildFailure)? loadFailure,
+    TResult Function(MemberFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
-      return loadFailure(guildFailure);
+      return loadFailure(failure);
     }
     return orElse();
   }
@@ -537,9 +536,9 @@ class _$_LoadFailure implements _LoadFailure {
 }
 
 abstract class _LoadFailure implements GetAppearanceState {
-  const factory _LoadFailure(GuildFailure guildFailure) = _$_LoadFailure;
+  const factory _LoadFailure(MemberFailure failure) = _$_LoadFailure;
 
-  GuildFailure get guildFailure => throw _privateConstructorUsedError;
+  MemberFailure get failure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

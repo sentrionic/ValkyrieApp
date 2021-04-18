@@ -13,11 +13,13 @@ import 'package:valkyrie_app/presentation/main/home/account_tab/account/account_
 import 'package:valkyrie_app/presentation/main/home/friends_tab/friend_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/home_tab/widgets/home_navbar.dart';
 import 'package:valkyrie_app/presentation/main/home/home_tab/widgets/home_body.dart';
+import 'package:valkyrie_app/presentation/main/shared/hooks/guild_socket_hook.dart';
 
 class HomeScreen extends HookWidget {
   static const routeName = '/home';
   @override
   Widget build(BuildContext context) {
+    use(GuildSocketHook(context));
     final _currentTab = useState(0);
     final _navigationQueue = useState(ListQueue<int>());
     final List<Widget> children = [

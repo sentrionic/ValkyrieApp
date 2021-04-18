@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:valkyrie_app/application/guilds/guild_list/guild_list_cubit.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/presentation/main/guild/sheets/guild/guild_settings_sheet.dart';
 
@@ -30,6 +32,7 @@ class ChannelDrawerHeader extends StatelessWidget {
                 builder: (_) {
                   return GuildSettingsSheet(
                     guild: guild,
+                    cubit: context.read<GuildListCubit>(),
                   );
                 },
               );

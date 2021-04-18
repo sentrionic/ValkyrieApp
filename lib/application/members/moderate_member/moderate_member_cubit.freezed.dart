@@ -24,7 +24,7 @@ class _$ModerateMemberStateTearOff {
     return const _ActionInProgress();
   }
 
-  _ActionFailure actionFailure(GuildFailure actionFailure) {
+  _ActionFailure actionFailure(MemberFailure actionFailure) {
     return _ActionFailure(
       actionFailure,
     );
@@ -44,7 +44,7 @@ mixin _$ModerateMemberState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function(GuildFailure actionFailure) actionFailure,
+    required TResult Function(MemberFailure actionFailure) actionFailure,
     required TResult Function() actionSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -52,7 +52,7 @@ mixin _$ModerateMemberState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(GuildFailure actionFailure)? actionFailure,
+    TResult Function(MemberFailure actionFailure)? actionFailure,
     TResult Function()? actionSuccess,
     required TResult orElse(),
   }) =>
@@ -132,7 +132,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function(GuildFailure actionFailure) actionFailure,
+    required TResult Function(MemberFailure actionFailure) actionFailure,
     required TResult Function() actionSuccess,
   }) {
     return initial();
@@ -143,7 +143,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(GuildFailure actionFailure)? actionFailure,
+    TResult Function(MemberFailure actionFailure)? actionFailure,
     TResult Function()? actionSuccess,
     required TResult orElse(),
   }) {
@@ -225,7 +225,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function(GuildFailure actionFailure) actionFailure,
+    required TResult Function(MemberFailure actionFailure) actionFailure,
     required TResult Function() actionSuccess,
   }) {
     return actionInProgress();
@@ -236,7 +236,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(GuildFailure actionFailure)? actionFailure,
+    TResult Function(MemberFailure actionFailure)? actionFailure,
     TResult Function()? actionSuccess,
     required TResult orElse(),
   }) {
@@ -282,9 +282,9 @@ abstract class _$ActionFailureCopyWith<$Res> {
   factory _$ActionFailureCopyWith(
           _ActionFailure value, $Res Function(_ActionFailure) then) =
       __$ActionFailureCopyWithImpl<$Res>;
-  $Res call({GuildFailure actionFailure});
+  $Res call({MemberFailure actionFailure});
 
-  $GuildFailureCopyWith<$Res> get actionFailure;
+  $MemberFailureCopyWith<$Res> get actionFailure;
 }
 
 /// @nodoc
@@ -306,13 +306,13 @@ class __$ActionFailureCopyWithImpl<$Res>
       actionFailure == freezed
           ? _value.actionFailure
           : actionFailure // ignore: cast_nullable_to_non_nullable
-              as GuildFailure,
+              as MemberFailure,
     ));
   }
 
   @override
-  $GuildFailureCopyWith<$Res> get actionFailure {
-    return $GuildFailureCopyWith<$Res>(_value.actionFailure, (value) {
+  $MemberFailureCopyWith<$Res> get actionFailure {
+    return $MemberFailureCopyWith<$Res>(_value.actionFailure, (value) {
       return _then(_value.copyWith(actionFailure: value));
     });
   }
@@ -323,7 +323,7 @@ class _$_ActionFailure implements _ActionFailure {
   const _$_ActionFailure(this.actionFailure);
 
   @override
-  final GuildFailure actionFailure;
+  final MemberFailure actionFailure;
 
   @override
   String toString() {
@@ -353,7 +353,7 @@ class _$_ActionFailure implements _ActionFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function(GuildFailure actionFailure) actionFailure,
+    required TResult Function(MemberFailure actionFailure) actionFailure,
     required TResult Function() actionSuccess,
   }) {
     return actionFailure(this.actionFailure);
@@ -364,7 +364,7 @@ class _$_ActionFailure implements _ActionFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(GuildFailure actionFailure)? actionFailure,
+    TResult Function(MemberFailure actionFailure)? actionFailure,
     TResult Function()? actionSuccess,
     required TResult orElse(),
   }) {
@@ -402,9 +402,9 @@ class _$_ActionFailure implements _ActionFailure {
 }
 
 abstract class _ActionFailure implements ModerateMemberState {
-  const factory _ActionFailure(GuildFailure actionFailure) = _$_ActionFailure;
+  const factory _ActionFailure(MemberFailure actionFailure) = _$_ActionFailure;
 
-  GuildFailure get actionFailure => throw _privateConstructorUsedError;
+  MemberFailure get actionFailure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$ActionFailureCopyWith<_ActionFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -451,7 +451,7 @@ class _$_ActionSuccess implements _ActionSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() actionInProgress,
-    required TResult Function(GuildFailure actionFailure) actionFailure,
+    required TResult Function(MemberFailure actionFailure) actionFailure,
     required TResult Function() actionSuccess,
   }) {
     return actionSuccess();
@@ -462,7 +462,7 @@ class _$_ActionSuccess implements _ActionSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
-    TResult Function(GuildFailure actionFailure)? actionFailure,
+    TResult Function(MemberFailure actionFailure)? actionFailure,
     TResult Function()? actionSuccess,
     required TResult orElse(),
   }) {
