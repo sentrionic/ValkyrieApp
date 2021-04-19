@@ -4,12 +4,12 @@ import 'package:valkyrie_app/application/guilds/delete_guild/delete_guild_cubit.
 import 'package:valkyrie_app/application/guilds/invalidate_invites/invalidate_invites_cubit.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/injection.dart';
-import 'package:valkyrie_app/presentation/main/guild/guild_layout/guild_settings/guild_settings_form.dart';
+import 'package:valkyrie_app/presentation/main/guild/guild_layout/guild_overview/guild_overview_form.dart';
 
-class GuildSettingsScreen extends StatelessWidget {
-  static const routeName = "/guild-settings";
+class GuildOverviewScreen extends StatelessWidget {
+  static const routeName = "/guild-overview";
   final Guild guild;
-  const GuildSettingsScreen({Key? key, required this.guild}) : super(key: key);
+  const GuildOverviewScreen({Key? key, required this.guild}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class GuildSettingsScreen extends StatelessWidget {
           create: (context) => getIt<InvalidateInvitesCubit>(),
         ),
       ],
-      child: GuildSettingsForm(
+      child: GuildOverviewForm(
         guild: guild,
       ),
     );

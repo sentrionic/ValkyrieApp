@@ -34,8 +34,10 @@ class JoinGuildForm extends StatelessWidget {
               context.read<GuildListCubit>().addNewGuild(guild);
 
               Navigator.of(context).pushNamedAndRemoveUntil(
-                  GuildScreen.routeName, (route) => false,
-                  arguments: GuildScreenArguments(guild));
+                GuildScreen.routeName,
+                (route) => false,
+                arguments: GuildScreenArguments(guild),
+              );
             },
           ),
         );

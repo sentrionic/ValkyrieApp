@@ -13,7 +13,7 @@ class GuildListWidget extends HookWidget {
     final guildId = context.read<CurrentGuildCubit>().state;
     final index = context.read<GuildListCubit>().getCurrentIndex(guildId);
     final _controller =
-        useScrollController(initialScrollOffset: 5 * index.toDouble());
+        useScrollController(initialScrollOffset: index.toDouble());
     return BlocBuilder<GuildListCubit, GuildListState>(
       builder: (context, state) {
         return state.maybeMap(

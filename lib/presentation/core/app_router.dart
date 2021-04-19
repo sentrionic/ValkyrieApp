@@ -13,7 +13,7 @@ import 'package:valkyrie_app/presentation/core/screen_arguments/open_url_argumen
 import 'package:valkyrie_app/presentation/main/guild/channels/screens/channel_settings/channel_settings_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/screens/create_channel/create_channel_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/guild_layout/edit_guild/edit_guild_screen.dart';
-import 'package:valkyrie_app/presentation/main/guild/guild_layout/guild_settings/guild_settings_screen.dart';
+import 'package:valkyrie_app/presentation/main/guild/guild_layout/guild_overview/guild_overview_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/guild_layout/manage_bans/manage_bans_screen.dart';
 import 'package:valkyrie_app/presentation/main/shared/add_guild/add_guild_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/guild_screen.dart';
@@ -177,7 +177,7 @@ class AppRouter {
           ),
         );
 
-      case GuildSettingsScreen.routeName:
+      case GuildOverviewScreen.routeName:
         final GuildScreenArguments args =
             settings.arguments! as GuildScreenArguments;
         return FadeTransitionRoute(
@@ -185,7 +185,7 @@ class AppRouter {
             providers: [
               BlocProvider.value(value: _guildBloc),
             ],
-            child: GuildSettingsScreen(
+            child: GuildOverviewScreen(
               guild: args.guild,
             ),
           ),

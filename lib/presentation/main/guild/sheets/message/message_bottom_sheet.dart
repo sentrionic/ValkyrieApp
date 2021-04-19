@@ -9,6 +9,8 @@ import 'package:valkyrie_app/domain/message/message.dart';
 import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/common/utils/flushbar_creator.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_current_user.dart';
+import 'package:valkyrie_app/presentation/common/widgets/get_modal_button.dart';
+import 'package:valkyrie_app/presentation/common/widgets/show_confirmation_dialog.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/main/guild/sheets/profile/profile_bottom_sheet.dart';
 
@@ -79,21 +81,32 @@ class _MessageBottomSheetActions extends StatelessWidget {
               height: 10,
             ),
             if (isAuthor && !isFile)
-              _getModalButton("Edit", Icons.edit, () {
+              getModalButton("Edit", Icons.edit, () {
                 final cubit = context.read<EditMessageCubit>();
                 _showEditDialog(context, cubit);
               }),
-            _getModalButton(
+            getModalButton(
               "Copy ${isFile ? "Url" : "Text"}",
               Icons.copy,
-              () => copyToClipboard(context),
+              () => _copyToClipboard(context),
             ),
             if (isAuthor || isOwner)
-              _getModalButton("Delete", Icons.delete, () {
-                final cubit = context.read<DeleteMessageCubit>();
-                _showDeletionDialog(context, cubit);
+              getModalButton("Delete", Icons.delete, () {
+                showConfirmationDialog(
+                  context,
+                  title: "Delete Message",
+                  body: "Are you sure you want to delete this message?",
+                  buttonPrompt: "Delete",
+                  buttonColor: ThemeColors.brandRed,
+                  onSubmit: () {
+                    Navigator.popUntil(context, (route) => route.isFirst);
+                    return context
+                        .read<DeleteMessageCubit>()
+                        .deleteMessage(message.id);
+                  },
+                );
               }),
-            _getModalButton("Profile", Icons.account_box_rounded, () {
+            getModalButton("Profile", Icons.account_box_rounded, () {
               Navigator.of(context).pop();
               showModalBottomSheet(
                 isScrollControlled: true,
@@ -105,75 +118,6 @@ class _MessageBottomSheetActions extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Widget _getModalButton(String label, IconData icon, Function onClick) {
-    return SizedBox(
-      width: double.infinity,
-      child: TextButton(
-        onPressed: () => onClick(),
-        style: TextButton.styleFrom(
-          primary: Colors.white70,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Row(
-              children: [
-                const SizedBox(
-                  width: 10,
-                ),
-                Icon(
-                  icon,
-                  size: 28,
-                ),
-                const SizedBox(
-                  width: 30,
-                ),
-                Text(
-                  label,
-                  style: const TextStyle(
-                    fontSize: 16,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  void _showDeletionDialog(BuildContext context, DeleteMessageCubit cubit) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text('Delete Message'),
-          content: const Text("Are you sure you want to delete this message?"),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text(
-                "Cancel",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                cubit.deleteMessage(message.id);
-                Navigator.popUntil(context, (route) => route.isFirst);
-              },
-              style: ElevatedButton.styleFrom(
-                primary: ThemeColors.brandRed,
-              ),
-              child: const Text("Delete"),
-            ),
-          ],
-        );
-      },
     );
   }
 
@@ -227,7 +171,7 @@ class _MessageBottomSheetActions extends StatelessWidget {
     );
   }
 
-  void copyToClipboard(BuildContext context) {
+  void _copyToClipboard(BuildContext context) {
     final isFile = message.attachment != null;
     final data = isFile ? message.attachment!.url! : message.text!.getOrCrash();
     Clipboard.setData(

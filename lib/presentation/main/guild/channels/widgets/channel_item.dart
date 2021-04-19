@@ -5,6 +5,7 @@ import 'package:valkyrie_app/application/channels/current/current_channel_cubit.
 import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart';
 import 'package:valkyrie_app/domain/channels/channel.dart';
 import 'package:valkyrie_app/presentation/common/widgets/app_icons.dart';
+import 'package:valkyrie_app/presentation/common/widgets/widget_constants.dart';
 import 'package:valkyrie_app/presentation/core/screen_arguments/channel_screen_arguments.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/screens/channel_settings/channel_settings_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/widgets/channel_notification_icon.dart';
@@ -28,7 +29,7 @@ class ChannelItem extends StatelessWidget {
           ChannelNotificationIcon()
         else
           const SizedBox(
-            width: 5,
+            width: WidgetConstants.pillWidth,
           ),
         Expanded(
           child: Padding(

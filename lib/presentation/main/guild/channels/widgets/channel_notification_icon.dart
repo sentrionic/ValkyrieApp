@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:valkyrie_app/presentation/common/widgets/widget_constants.dart';
 
 class ChannelNotificationIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 5,
+      width: WidgetConstants.pillWidth,
       height: 10,
       decoration: const BoxDecoration(
         color: Colors.white,

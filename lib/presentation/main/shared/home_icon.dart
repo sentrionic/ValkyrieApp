@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart';
 import 'package:valkyrie_app/presentation/common/widgets/app_icons.dart';
+import 'package:valkyrie_app/presentation/common/widgets/widget_constants.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/main/home/home_screen.dart';
 import 'package:valkyrie_app/presentation/main/shared/current_guild_pill.dart';
@@ -24,7 +25,7 @@ class HomeIconWidget extends StatelessWidget {
             CurrentGuildPill()
           else
             const SizedBox(
-              width: 7,
+              width: WidgetConstants.pillWidth,
             ),
           Container(
             decoration: BoxDecoration(
@@ -41,7 +42,7 @@ class HomeIconWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            width: 7,
+            width: WidgetConstants.pillWidth,
           ),
         ],
       ),

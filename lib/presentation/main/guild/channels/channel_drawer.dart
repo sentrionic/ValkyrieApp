@@ -21,7 +21,7 @@ class ChannelDrawer extends StatelessWidget {
             child: DrawerGuildList(),
           ),
           Expanded(
-            flex: 10,
+            flex: 11,
             child: Container(
               color: ThemeColors.dmBackground,
               child: Column(

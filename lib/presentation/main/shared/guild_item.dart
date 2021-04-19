@@ -4,6 +4,7 @@ import 'package:valkyrie_app/application/channels/current/current_channel_cubit.
 import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart';
 import 'package:valkyrie_app/application/guilds/guild_list/guild_list_cubit.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
+import 'package:valkyrie_app/presentation/common/widgets/widget_constants.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/core/screen_arguments/guild_screen_arguments.dart';
 import 'package:valkyrie_app/presentation/main/guild/guild_screen.dart';
@@ -11,8 +12,6 @@ import 'package:valkyrie_app/presentation/main/shared/current_guild_pill.dart';
 
 class GuildItem extends StatelessWidget {
   final Guild guild;
-  static const double pillWidth = 7.0;
-
   const GuildItem({
     Key? key,
     required this.guild,
@@ -83,7 +82,7 @@ class GuildItem extends StatelessWidget {
                       : null,
                 ),
               const SizedBox(
-                width: pillWidth,
+                width: WidgetConstants.pillWidth,
               ),
             ],
           ),
@@ -103,7 +102,7 @@ class GuildItem extends StatelessWidget {
       return CurrentGuildPill();
     } else if (hasNotification) {
       return Container(
-        width: pillWidth,
+        width: WidgetConstants.pillWidth,
         height: 10,
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -115,7 +114,7 @@ class GuildItem extends StatelessWidget {
       );
     } else {
       return const SizedBox(
-        width: pillWidth,
+        width: WidgetConstants.pillWidth,
       );
     }
   }

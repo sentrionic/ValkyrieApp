@@ -5,7 +5,10 @@ import 'package:valkyrie_app/application/channels/edit_channel/edit_channel_cubi
 import 'package:valkyrie_app/domain/channels/channel.dart';
 import 'package:valkyrie_app/presentation/common/utils/flushbar_creator.dart';
 import 'package:valkyrie_app/presentation/common/widgets/form_wrapper.dart';
+import 'package:valkyrie_app/presentation/common/widgets/show_confirmation_dialog.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
+
+enum _PopupActions { delete }
 
 class ChannelSettingsForm extends StatelessWidget {
   final Channel channel;
@@ -77,16 +80,29 @@ class ChannelSettingsForm extends StatelessWidget {
             ],
           ),
           actions: [
-            IconButton(
-              icon: const Icon(
-                Icons.delete,
-                color: ThemeColors.brandRed,
-              ),
-              onPressed: () {
-                final cubit = context.read<DeleteChannelCubit>();
-                _showDeleteConfirmation(context, cubit);
+            PopupMenuButton(
+              onSelected: (value) {
+                if (value == _PopupActions.delete) {
+                  showConfirmationDialog(
+                    context,
+                    title: "Delete '${channel.name.getOrCrash()}'",
+                    body:
+                        "Are you sure you want to delete '${channel.name.getOrCrash()}' ? This action cannot be undone.",
+                    buttonPrompt: "Delete",
+                    buttonColor: ThemeColors.brandRed,
+                    onSubmit: () => context
+                        .read<DeleteChannelCubit>()
+                        .deleteChannel(guildId: guildId, channelId: channel.id),
+                  );
+                }
               },
-            ),
+              itemBuilder: (context) => [
+                const PopupMenuItem(
+                  value: _PopupActions.delete,
+                  child: Text("Delete Channel"),
+                ),
+              ],
+            )
           ],
         ),
         body: BlocBuilder<EditChannelCubit, EditChannelState>(
@@ -189,54 +205,6 @@ class ChannelSettingsForm extends StatelessWidget {
           child: const Icon(Icons.save),
         ),
       ),
-    );
-  }
-
-  void _showDeleteConfirmation(
-    BuildContext context,
-    DeleteChannelCubit cubit,
-  ) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text(
-                "Delete Channel",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              Divider(),
-            ],
-          ),
-          content: Text(
-            "Are you sure you want to delete #${channel.name.getOrCrash()}? This cannot be undone.",
-            style: const TextStyle(
-              color: Colors.white70,
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text(
-                "Cancel",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () => cubit.deleteChannel(
-                guildId: guildId,
-                channelId: channel.id,
-              ),
-              style: ElevatedButton.styleFrom(
-                primary: ThemeColors.brandRed,
-              ),
-              child: const Text("Delete"),
-            ),
-          ],
-        );
-      },
     );
   }
 }

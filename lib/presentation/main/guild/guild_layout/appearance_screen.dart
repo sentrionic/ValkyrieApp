@@ -183,16 +183,17 @@ class _AppearanceScreenForm extends HookWidget {
                         ),
                       ),
                       ColorButton(
-                          color: color != null ? HexColor(color) : Colors.white,
-                          config: const ColorPickerConfig(
-                            enableEyePicker: false,
-                            enableOpacity: false,
-                          ),
-                          size: 38,
-                          onColorChanged: (newColor) {
-                            context.read<ChangeAppearanceCubit>().colorChanged(
-                                "#${newColor.value.toRadixString(16).substring(2)}");
-                          }),
+                        color: color != null ? HexColor(color) : Colors.white,
+                        config: const ColorPickerConfig(
+                          enableEyePicker: false,
+                          enableOpacity: false,
+                        ),
+                        size: 38,
+                        onColorChanged: (newColor) {
+                          context.read<ChangeAppearanceCubit>().colorChanged(
+                              "#${newColor.value.toRadixString(16).substring(2)}");
+                        },
+                      ),
                     ],
                   ),
                 ),
