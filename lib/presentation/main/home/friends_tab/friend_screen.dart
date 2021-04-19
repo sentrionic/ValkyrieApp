@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:valkyrie_app/application/friends/get_friends/get_friends_cubit.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
+import 'package:valkyrie_app/presentation/main/home/friends_tab/friend_socket_hook.dart';
 
 import '../../../../injection.dart';
 import 'friend_item.dart';
 
-class FriendListScreen extends StatelessWidget {
+class FriendListScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
+    use(FriendSocketHook(context));
     return BlocProvider(
       create: (context) => getIt<GetFriendsCubit>()..getFriends(),
       child: Scaffold(
@@ -30,7 +33,7 @@ class FriendListScreen extends StatelessWidget {
                 final online =
                     context.read<GetFriendsCubit>().getOnlineFriends();
                 final offline =
-                    context.read<GetFriendsCubit>().getOfflineFriendss();
+                    context.read<GetFriendsCubit>().getOfflineFriends();
                 return ListView(
                   children: [
                     const SizedBox(

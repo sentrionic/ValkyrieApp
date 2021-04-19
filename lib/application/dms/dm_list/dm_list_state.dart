@@ -1,4 +1,4 @@
-part of 'dm_list_bloc.dart';
+part of 'dm_list_cubit.dart';
 
 @freezed
 class DMListState with _$DMListState {

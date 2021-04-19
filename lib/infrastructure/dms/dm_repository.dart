@@ -54,4 +54,18 @@ class DMRepository extends IDMRepository {
       return left(const DMChannelFailure.unexpected());
     }
   }
+
+  @override
+  Future<Either<DMChannelFailure, Unit>> closeDM(String channelId) async {
+    try {
+      await _dio.delete('/channels/$channelId/dm');
+      return right(unit);
+    } on DioError catch (err) {
+      print(err);
+      return left(const DMChannelFailure.unexpected());
+    } on SocketException catch (err) {
+      print(err);
+      return left(const DMChannelFailure.unexpected());
+    }
+  }
 }

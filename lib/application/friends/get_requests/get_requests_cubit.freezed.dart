@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'dm_list_bloc.dart';
+part of 'get_requests_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,289 +13,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$DMListEventTearOff {
-  const _$DMListEventTearOff();
-
-  _GetUserDMs getUserDMs() {
-    return const _GetUserDMs();
-  }
-
-  _DMChannelsReceived dmChannelsReceived(
-      Either<DMChannelFailure, List<DMChannel>> failureOrChannels) {
-    return _DMChannelsReceived(
-      failureOrChannels,
-    );
-  }
-}
-
-/// @nodoc
-const $DMListEvent = _$DMListEventTearOff();
-
-/// @nodoc
-mixin _$DMListEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getUserDMs,
-    required TResult Function(
-            Either<DMChannelFailure, List<DMChannel>> failureOrChannels)
-        dmChannelsReceived,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getUserDMs,
-    TResult Function(
-            Either<DMChannelFailure, List<DMChannel>> failureOrChannels)?
-        dmChannelsReceived,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetUserDMs value) getUserDMs,
-    required TResult Function(_DMChannelsReceived value) dmChannelsReceived,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetUserDMs value)? getUserDMs,
-    TResult Function(_DMChannelsReceived value)? dmChannelsReceived,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DMListEventCopyWith<$Res> {
-  factory $DMListEventCopyWith(
-          DMListEvent value, $Res Function(DMListEvent) then) =
-      _$DMListEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$DMListEventCopyWithImpl<$Res> implements $DMListEventCopyWith<$Res> {
-  _$DMListEventCopyWithImpl(this._value, this._then);
-
-  final DMListEvent _value;
-  // ignore: unused_field
-  final $Res Function(DMListEvent) _then;
-}
-
-/// @nodoc
-abstract class _$GetUserDMsCopyWith<$Res> {
-  factory _$GetUserDMsCopyWith(
-          _GetUserDMs value, $Res Function(_GetUserDMs) then) =
-      __$GetUserDMsCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$GetUserDMsCopyWithImpl<$Res> extends _$DMListEventCopyWithImpl<$Res>
-    implements _$GetUserDMsCopyWith<$Res> {
-  __$GetUserDMsCopyWithImpl(
-      _GetUserDMs _value, $Res Function(_GetUserDMs) _then)
-      : super(_value, (v) => _then(v as _GetUserDMs));
-
-  @override
-  _GetUserDMs get _value => super._value as _GetUserDMs;
-}
-
-/// @nodoc
-class _$_GetUserDMs implements _GetUserDMs {
-  const _$_GetUserDMs();
-
-  @override
-  String toString() {
-    return 'DMListEvent.getUserDMs()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _GetUserDMs);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getUserDMs,
-    required TResult Function(
-            Either<DMChannelFailure, List<DMChannel>> failureOrChannels)
-        dmChannelsReceived,
-  }) {
-    return getUserDMs();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getUserDMs,
-    TResult Function(
-            Either<DMChannelFailure, List<DMChannel>> failureOrChannels)?
-        dmChannelsReceived,
-    required TResult orElse(),
-  }) {
-    if (getUserDMs != null) {
-      return getUserDMs();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetUserDMs value) getUserDMs,
-    required TResult Function(_DMChannelsReceived value) dmChannelsReceived,
-  }) {
-    return getUserDMs(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetUserDMs value)? getUserDMs,
-    TResult Function(_DMChannelsReceived value)? dmChannelsReceived,
-    required TResult orElse(),
-  }) {
-    if (getUserDMs != null) {
-      return getUserDMs(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetUserDMs implements DMListEvent {
-  const factory _GetUserDMs() = _$_GetUserDMs;
-}
-
-/// @nodoc
-abstract class _$DMChannelsReceivedCopyWith<$Res> {
-  factory _$DMChannelsReceivedCopyWith(
-          _DMChannelsReceived value, $Res Function(_DMChannelsReceived) then) =
-      __$DMChannelsReceivedCopyWithImpl<$Res>;
-  $Res call({Either<DMChannelFailure, List<DMChannel>> failureOrChannels});
-}
-
-/// @nodoc
-class __$DMChannelsReceivedCopyWithImpl<$Res>
-    extends _$DMListEventCopyWithImpl<$Res>
-    implements _$DMChannelsReceivedCopyWith<$Res> {
-  __$DMChannelsReceivedCopyWithImpl(
-      _DMChannelsReceived _value, $Res Function(_DMChannelsReceived) _then)
-      : super(_value, (v) => _then(v as _DMChannelsReceived));
-
-  @override
-  _DMChannelsReceived get _value => super._value as _DMChannelsReceived;
-
-  @override
-  $Res call({
-    Object? failureOrChannels = freezed,
-  }) {
-    return _then(_DMChannelsReceived(
-      failureOrChannels == freezed
-          ? _value.failureOrChannels
-          : failureOrChannels // ignore: cast_nullable_to_non_nullable
-              as Either<DMChannelFailure, List<DMChannel>>,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_DMChannelsReceived implements _DMChannelsReceived {
-  const _$_DMChannelsReceived(this.failureOrChannels);
-
-  @override
-  final Either<DMChannelFailure, List<DMChannel>> failureOrChannels;
-
-  @override
-  String toString() {
-    return 'DMListEvent.dmChannelsReceived(failureOrChannels: $failureOrChannels)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _DMChannelsReceived &&
-            (identical(other.failureOrChannels, failureOrChannels) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrChannels, failureOrChannels)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failureOrChannels);
-
-  @JsonKey(ignore: true)
-  @override
-  _$DMChannelsReceivedCopyWith<_DMChannelsReceived> get copyWith =>
-      __$DMChannelsReceivedCopyWithImpl<_DMChannelsReceived>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getUserDMs,
-    required TResult Function(
-            Either<DMChannelFailure, List<DMChannel>> failureOrChannels)
-        dmChannelsReceived,
-  }) {
-    return dmChannelsReceived(failureOrChannels);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getUserDMs,
-    TResult Function(
-            Either<DMChannelFailure, List<DMChannel>> failureOrChannels)?
-        dmChannelsReceived,
-    required TResult orElse(),
-  }) {
-    if (dmChannelsReceived != null) {
-      return dmChannelsReceived(failureOrChannels);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetUserDMs value) getUserDMs,
-    required TResult Function(_DMChannelsReceived value) dmChannelsReceived,
-  }) {
-    return dmChannelsReceived(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetUserDMs value)? getUserDMs,
-    TResult Function(_DMChannelsReceived value)? dmChannelsReceived,
-    required TResult orElse(),
-  }) {
-    if (dmChannelsReceived != null) {
-      return dmChannelsReceived(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _DMChannelsReceived implements DMListEvent {
-  const factory _DMChannelsReceived(
-          Either<DMChannelFailure, List<DMChannel>> failureOrChannels) =
-      _$_DMChannelsReceived;
-
-  Either<DMChannelFailure, List<DMChannel>> get failureOrChannels =>
-      throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$DMChannelsReceivedCopyWith<_DMChannelsReceived> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-class _$DMListStateTearOff {
-  const _$DMListStateTearOff();
+class _$GetRequestsStateTearOff {
+  const _$GetRequestsStateTearOff();
 
   _Initial initial() {
     return const _Initial();
@@ -305,13 +24,13 @@ class _$DMListStateTearOff {
     return const _LoadInProgress();
   }
 
-  _LoadSuccess loadSuccess(List<DMChannel> channels) {
+  _LoadSuccess loadSuccess(List<FriendRequest> requests) {
     return _LoadSuccess(
-      channels,
+      requests,
     );
   }
 
-  _LoadFailure loadFailure(DMChannelFailure failure) {
+  _LoadFailure loadFailure(FriendFailure failure) {
     return _LoadFailure(
       failure,
     );
@@ -319,24 +38,24 @@ class _$DMListStateTearOff {
 }
 
 /// @nodoc
-const $DMListState = _$DMListStateTearOff();
+const $GetRequestsState = _$GetRequestsStateTearOff();
 
 /// @nodoc
-mixin _$DMListState {
+mixin _$GetRequestsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<DMChannel> channels) loadSuccess,
-    required TResult Function(DMChannelFailure failure) loadFailure,
+    required TResult Function(List<FriendRequest> requests) loadSuccess,
+    required TResult Function(FriendFailure failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<DMChannel> channels)? loadSuccess,
-    TResult Function(DMChannelFailure failure)? loadFailure,
+    TResult Function(List<FriendRequest> requests)? loadSuccess,
+    TResult Function(FriendFailure failure)? loadFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -360,19 +79,20 @@ mixin _$DMListState {
 }
 
 /// @nodoc
-abstract class $DMListStateCopyWith<$Res> {
-  factory $DMListStateCopyWith(
-          DMListState value, $Res Function(DMListState) then) =
-      _$DMListStateCopyWithImpl<$Res>;
+abstract class $GetRequestsStateCopyWith<$Res> {
+  factory $GetRequestsStateCopyWith(
+          GetRequestsState value, $Res Function(GetRequestsState) then) =
+      _$GetRequestsStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DMListStateCopyWithImpl<$Res> implements $DMListStateCopyWith<$Res> {
-  _$DMListStateCopyWithImpl(this._value, this._then);
+class _$GetRequestsStateCopyWithImpl<$Res>
+    implements $GetRequestsStateCopyWith<$Res> {
+  _$GetRequestsStateCopyWithImpl(this._value, this._then);
 
-  final DMListState _value;
+  final GetRequestsState _value;
   // ignore: unused_field
-  final $Res Function(DMListState) _then;
+  final $Res Function(GetRequestsState) _then;
 }
 
 /// @nodoc
@@ -382,7 +102,7 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$DMListStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res> extends _$GetRequestsStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -397,7 +117,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'DMListState.initial()';
+    return 'GetRequestsState.initial()';
   }
 
   @override
@@ -413,8 +133,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<DMChannel> channels) loadSuccess,
-    required TResult Function(DMChannelFailure failure) loadFailure,
+    required TResult Function(List<FriendRequest> requests) loadSuccess,
+    required TResult Function(FriendFailure failure) loadFailure,
   }) {
     return initial();
   }
@@ -424,8 +144,8 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<DMChannel> channels)? loadSuccess,
-    TResult Function(DMChannelFailure failure)? loadFailure,
+    TResult Function(List<FriendRequest> requests)? loadSuccess,
+    TResult Function(FriendFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -461,7 +181,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements DMListState {
+abstract class _Initial implements GetRequestsState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -474,7 +194,7 @@ abstract class _$LoadInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$LoadInProgressCopyWithImpl<$Res>
-    extends _$DMListStateCopyWithImpl<$Res>
+    extends _$GetRequestsStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
   __$LoadInProgressCopyWithImpl(
       _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
@@ -490,7 +210,7 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   String toString() {
-    return 'DMListState.loadInProgress()';
+    return 'GetRequestsState.loadInProgress()';
   }
 
   @override
@@ -506,8 +226,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<DMChannel> channels) loadSuccess,
-    required TResult Function(DMChannelFailure failure) loadFailure,
+    required TResult Function(List<FriendRequest> requests) loadSuccess,
+    required TResult Function(FriendFailure failure) loadFailure,
   }) {
     return loadInProgress();
   }
@@ -517,8 +237,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<DMChannel> channels)? loadSuccess,
-    TResult Function(DMChannelFailure failure)? loadFailure,
+    TResult Function(List<FriendRequest> requests)? loadSuccess,
+    TResult Function(FriendFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -554,7 +274,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   }
 }
 
-abstract class _LoadInProgress implements DMListState {
+abstract class _LoadInProgress implements GetRequestsState {
   const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
@@ -563,11 +283,12 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({List<DMChannel> channels});
+  $Res call({List<FriendRequest> requests});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$DMListStateCopyWithImpl<$Res>
+class __$LoadSuccessCopyWithImpl<$Res>
+    extends _$GetRequestsStateCopyWithImpl<$Res>
     implements _$LoadSuccessCopyWith<$Res> {
   __$LoadSuccessCopyWithImpl(
       _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
@@ -578,41 +299,41 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$DMListStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? channels = freezed,
+    Object? requests = freezed,
   }) {
     return _then(_LoadSuccess(
-      channels == freezed
-          ? _value.channels
-          : channels // ignore: cast_nullable_to_non_nullable
-              as List<DMChannel>,
+      requests == freezed
+          ? _value.requests
+          : requests // ignore: cast_nullable_to_non_nullable
+              as List<FriendRequest>,
     ));
   }
 }
 
 /// @nodoc
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.channels);
+  const _$_LoadSuccess(this.requests);
 
   @override
-  final List<DMChannel> channels;
+  final List<FriendRequest> requests;
 
   @override
   String toString() {
-    return 'DMListState.loadSuccess(channels: $channels)';
+    return 'GetRequestsState.loadSuccess(requests: $requests)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LoadSuccess &&
-            (identical(other.channels, channels) ||
+            (identical(other.requests, requests) ||
                 const DeepCollectionEquality()
-                    .equals(other.channels, channels)));
+                    .equals(other.requests, requests)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(channels);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(requests);
 
   @JsonKey(ignore: true)
   @override
@@ -624,10 +345,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<DMChannel> channels) loadSuccess,
-    required TResult Function(DMChannelFailure failure) loadFailure,
+    required TResult Function(List<FriendRequest> requests) loadSuccess,
+    required TResult Function(FriendFailure failure) loadFailure,
   }) {
-    return loadSuccess(channels);
+    return loadSuccess(requests);
   }
 
   @override
@@ -635,12 +356,12 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<DMChannel> channels)? loadSuccess,
-    TResult Function(DMChannelFailure failure)? loadFailure,
+    TResult Function(List<FriendRequest> requests)? loadSuccess,
+    TResult Function(FriendFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
-      return loadSuccess(channels);
+      return loadSuccess(requests);
     }
     return orElse();
   }
@@ -672,10 +393,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   }
 }
 
-abstract class _LoadSuccess implements DMListState {
-  const factory _LoadSuccess(List<DMChannel> channels) = _$_LoadSuccess;
+abstract class _LoadSuccess implements GetRequestsState {
+  const factory _LoadSuccess(List<FriendRequest> requests) = _$_LoadSuccess;
 
-  List<DMChannel> get channels => throw _privateConstructorUsedError;
+  List<FriendRequest> get requests => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -686,13 +407,14 @@ abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(
           _LoadFailure value, $Res Function(_LoadFailure) then) =
       __$LoadFailureCopyWithImpl<$Res>;
-  $Res call({DMChannelFailure failure});
+  $Res call({FriendFailure failure});
 
-  $DMChannelFailureCopyWith<$Res> get failure;
+  $FriendFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$DMListStateCopyWithImpl<$Res>
+class __$LoadFailureCopyWithImpl<$Res>
+    extends _$GetRequestsStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
   __$LoadFailureCopyWithImpl(
       _LoadFailure _value, $Res Function(_LoadFailure) _then)
@@ -709,13 +431,13 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$DMListStateCopyWithImpl<$Res>
       failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
-              as DMChannelFailure,
+              as FriendFailure,
     ));
   }
 
   @override
-  $DMChannelFailureCopyWith<$Res> get failure {
-    return $DMChannelFailureCopyWith<$Res>(_value.failure, (value) {
+  $FriendFailureCopyWith<$Res> get failure {
+    return $FriendFailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
   }
@@ -726,11 +448,11 @@ class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.failure);
 
   @override
-  final DMChannelFailure failure;
+  final FriendFailure failure;
 
   @override
   String toString() {
-    return 'DMListState.loadFailure(failure: $failure)';
+    return 'GetRequestsState.loadFailure(failure: $failure)';
   }
 
   @override
@@ -755,8 +477,8 @@ class _$_LoadFailure implements _LoadFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<DMChannel> channels) loadSuccess,
-    required TResult Function(DMChannelFailure failure) loadFailure,
+    required TResult Function(List<FriendRequest> requests) loadSuccess,
+    required TResult Function(FriendFailure failure) loadFailure,
   }) {
     return loadFailure(failure);
   }
@@ -766,8 +488,8 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<DMChannel> channels)? loadSuccess,
-    TResult Function(DMChannelFailure failure)? loadFailure,
+    TResult Function(List<FriendRequest> requests)? loadSuccess,
+    TResult Function(FriendFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
@@ -803,10 +525,10 @@ class _$_LoadFailure implements _LoadFailure {
   }
 }
 
-abstract class _LoadFailure implements DMListState {
-  const factory _LoadFailure(DMChannelFailure failure) = _$_LoadFailure;
+abstract class _LoadFailure implements GetRequestsState {
+  const factory _LoadFailure(FriendFailure failure) = _$_LoadFailure;
 
-  DMChannelFailure get failure => throw _privateConstructorUsedError;
+  FriendFailure get failure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

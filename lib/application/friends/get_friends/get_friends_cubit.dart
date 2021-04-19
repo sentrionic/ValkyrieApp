@@ -31,10 +31,47 @@ class GetFriendsCubit extends Cubit<GetFriendsState> {
     );
   }
 
-  List<Friend> getOfflineFriendss() {
+  List<Friend> getOfflineFriends() {
     return state.maybeWhen(
       loadSuccess: (friends) => friends.where((f) => !f.isOnline).toList(),
       orElse: () => [],
+    );
+  }
+
+  void addFriend(Friend friend) {
+    state.maybeWhen(
+      loadSuccess: (friends) async {
+        final data = [...friends, friend];
+        data.sort((a, b) => a.username.compareTo(b.username));
+        emit(GetFriendsState.loadSuccess(data));
+      },
+      orElse: () {},
+    );
+  }
+
+  void removeFriend(String friendId) {
+    state.maybeWhen(
+      loadSuccess: (friends) async {
+        final data = friends.where((e) => e.id != friendId).toList();
+        emit(GetFriendsState.loadSuccess(data));
+      },
+      orElse: () {},
+    );
+  }
+
+  void toggleOnlineStatus(String friendId, {required bool isOnline}) {
+    state.maybeWhen(
+      loadSuccess: (friends) async {
+        final data = friends.map((e) {
+          return e.id == friendId
+              ? e.copyWith(
+                  isOnline: isOnline,
+                )
+              : e;
+        }).toList();
+        emit(GetFriendsState.loadSuccess(data));
+      },
+      orElse: () {},
     );
   }
 }
