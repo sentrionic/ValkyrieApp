@@ -25,7 +25,7 @@ class CompactMessageItem extends StatelessWidget {
               final guild =
                   context.read<GuildListCubit>().getCurrentGuild(guildId);
               return MessageBottomSheet(
-                guild: guild!,
+                guild: guild,
                 message: message,
               );
             },

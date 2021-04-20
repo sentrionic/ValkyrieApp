@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
 import 'package:valkyrie_app/application/channels/currently_typing/currently_typing_cubit.dart';
+import 'package:valkyrie_app/application/dms/current/current_dm_cubit.dart';
 import 'package:valkyrie_app/application/messages/get_messages/messages_cubit.dart';
 import 'package:valkyrie_app/application/messages/upload_image/upload_image_cubit.dart';
 import 'package:valkyrie_app/domain/message/message.dart';
@@ -20,10 +21,29 @@ import 'package:valkyrie_app/presentation/main/guild/messages/message_item.dart'
 
 import '../../../common/extensions/date_extension.dart';
 
-class ChatLayout extends HookWidget {
+class GuildChatLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final channelId = context.watch<CurrentChannelCubit>().state;
+    return _ChatLayout(channelId);
+  }
+}
+
+class DMChatLayout extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final channelId = context.watch<CurrentDMCubit>().state;
+    return _ChatLayout(channelId, isDM: true);
+  }
+}
+
+class _ChatLayout extends HookWidget {
+  final String channelId;
+  final bool isDM;
+  const _ChatLayout(this.channelId, {this.isDM = false});
+
+  @override
+  Widget build(BuildContext context) {
     final _controller = useScrollControllerForLoading(context, channelId);
 
     use(MessageSocketHook(context, channelId));
@@ -46,7 +66,10 @@ class ChatLayout extends HookWidget {
                       reverse: true,
                       itemBuilder: (context, index) {
                         return index >= state.messages.length
-                            ? MessageLoaderOrEndIndicator()
+                            ? MessageLoaderOrEndIndicator(
+                                channelId: channelId,
+                                isDM: isDM,
+                              )
                             : _getMessage(state.messages, index);
                       },
                       itemCount: state.messages.length + 1,
@@ -65,7 +88,10 @@ class ChatLayout extends HookWidget {
                     TypingContainer()
                   else
                     const SizedBox(height: 15),
-                  MessageInput(),
+                  MessageInput(
+                    channelId: channelId,
+                    isDM: isDM,
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
@@ -100,7 +126,8 @@ class ChatLayout extends HookWidget {
     } else {
       return Column(
         children: [
-          if (!isSameDay) DateDivider(date: curDate),
+          if (!isSameDay || index == messages.length - 1)
+            DateDivider(date: curDate),
           MessageItem(message: messages[index]),
         ],
       );

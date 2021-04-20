@@ -35,8 +35,12 @@ class DMListCubit extends Cubit<DMListState> {
   void addNewDM(DMChannel channel) {
     state.maybeWhen(
       loadSuccess: (dms) async {
-        final data = [channel, ...dms];
-        emit(DMListState.loadSuccess(data));
+        if (dms.where((e) => e.id == channel.id).firstOrNull == null) {
+          final data = [channel, ...dms];
+          emit(DMListState.loadSuccess(data));
+        } else {
+          pushToTop(channel.id);
+        }
       },
       orElse: () {},
     );

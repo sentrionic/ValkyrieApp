@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:valkyrie_app/domain/friends/friend.dart';
+import 'package:valkyrie_app/presentation/common/widgets/avatar_with_badge.dart';
 
 class FriendItem extends StatelessWidget {
   final Friend friend;
@@ -14,29 +15,7 @@ class FriendItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Stack(
-        children: [
-          CircleAvatar(
-            foregroundImage: NetworkImage(friend.image),
-          ),
-          Positioned(
-            right: 0,
-            bottom: 0,
-            child: Container(
-              padding: const EdgeInsets.all(1),
-              decoration: BoxDecoration(
-                color: friend.isOnline ? Colors.green : Colors.grey,
-                borderRadius: BorderRadius.circular(50),
-                border: Border.all(width: 2),
-              ),
-              constraints: const BoxConstraints(
-                minWidth: 15,
-                minHeight: 15,
-              ),
-            ),
-          )
-        ],
-      ),
+      leading: getAvatarWithBadge(friend.image, isOnline: friend.isOnline),
       title: Text(
         friend.username,
         style: const TextStyle(

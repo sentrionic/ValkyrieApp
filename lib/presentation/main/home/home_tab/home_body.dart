@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
-import 'package:valkyrie_app/presentation/main/home/home_tab/widgets/dm_list.dart';
+import 'package:valkyrie_app/presentation/main/home/direct_messages/components/dm_list.dart';
 import 'package:valkyrie_app/presentation/main/shared/guild_list.dart';
 import 'package:valkyrie_app/presentation/main/shared/home_icon.dart';
 
@@ -35,35 +35,7 @@ class HomeBody extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(
-          flex: 11,
-          child: Container(
-            color: ThemeColors.dmBackground,
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 20,
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 15.0, left: 15.0),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "Direct Messages",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: DMListWidget(),
-                )
-              ],
-            ),
-          ),
-        )
+        DirectMessageList(),
       ],
     );
   }

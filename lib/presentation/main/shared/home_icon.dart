@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:valkyrie_app/application/dms/current/current_dm_cubit.dart';
 import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart';
 import 'package:valkyrie_app/presentation/common/widgets/app_icons.dart';
 import 'package:valkyrie_app/presentation/common/widgets/widget_constants.dart';
@@ -16,6 +17,7 @@ class HomeIconWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         context.read<CurrentGuildCubit>().resetGuildId();
+        context.read<CurrentDMCubit>().resetChannelId();
         Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
       },
       child: Row(

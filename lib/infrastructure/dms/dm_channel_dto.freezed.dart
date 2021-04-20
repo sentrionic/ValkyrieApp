@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$DMChannelDtoTearOff {
   const _$DMChannelDtoTearOff();
 
-  _DMChannelDto call({required String id, required UserDto user}) {
+  _DMChannelDto call({required String id, required DMUser user}) {
     return _DMChannelDto(
       id: id,
       user: user,
@@ -30,7 +30,7 @@ const $DMChannelDto = _$DMChannelDtoTearOff();
 /// @nodoc
 mixin _$DMChannelDto {
   String get id => throw _privateConstructorUsedError;
-  UserDto get user => throw _privateConstructorUsedError;
+  DMUser get user => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DMChannelDtoCopyWith<DMChannelDto> get copyWith =>
@@ -42,9 +42,9 @@ abstract class $DMChannelDtoCopyWith<$Res> {
   factory $DMChannelDtoCopyWith(
           DMChannelDto value, $Res Function(DMChannelDto) then) =
       _$DMChannelDtoCopyWithImpl<$Res>;
-  $Res call({String id, UserDto user});
+  $Res call({String id, DMUser user});
 
-  $UserDtoCopyWith<$Res> get user;
+  $DMUserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -68,13 +68,13 @@ class _$DMChannelDtoCopyWithImpl<$Res> implements $DMChannelDtoCopyWith<$Res> {
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserDto,
+              as DMUser,
     ));
   }
 
   @override
-  $UserDtoCopyWith<$Res> get user {
-    return $UserDtoCopyWith<$Res>(_value.user, (value) {
+  $DMUserCopyWith<$Res> get user {
+    return $DMUserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value));
     });
   }
@@ -87,10 +87,10 @@ abstract class _$DMChannelDtoCopyWith<$Res>
           _DMChannelDto value, $Res Function(_DMChannelDto) then) =
       __$DMChannelDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String id, UserDto user});
+  $Res call({String id, DMUser user});
 
   @override
-  $UserDtoCopyWith<$Res> get user;
+  $DMUserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -116,7 +116,7 @@ class __$DMChannelDtoCopyWithImpl<$Res> extends _$DMChannelDtoCopyWithImpl<$Res>
       user: user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserDto,
+              as DMUser,
     ));
   }
 }
@@ -128,7 +128,7 @@ class _$_DMChannelDto extends _DMChannelDto {
   @override
   final String id;
   @override
-  final UserDto user;
+  final DMUser user;
 
   @override
   String toString() {
@@ -158,14 +158,14 @@ class _$_DMChannelDto extends _DMChannelDto {
 }
 
 abstract class _DMChannelDto extends DMChannelDto {
-  const factory _DMChannelDto({required String id, required UserDto user}) =
+  const factory _DMChannelDto({required String id, required DMUser user}) =
       _$_DMChannelDto;
   const _DMChannelDto._() : super._();
 
   @override
   String get id => throw _privateConstructorUsedError;
   @override
-  UserDto get user => throw _privateConstructorUsedError;
+  DMUser get user => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$DMChannelDtoCopyWith<_DMChannelDto> get copyWith =>

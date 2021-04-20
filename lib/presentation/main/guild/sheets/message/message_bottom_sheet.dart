@@ -16,7 +16,7 @@ import 'package:valkyrie_app/presentation/main/guild/sheets/profile/profile_bott
 
 class MessageBottomSheet extends StatelessWidget {
   final Message message;
-  final Guild guild;
+  final Guild? guild;
   const MessageBottomSheet({
     Key? key,
     required this.message,
@@ -42,7 +42,7 @@ class MessageBottomSheet extends StatelessWidget {
 class _MessageBottomSheetActions extends StatelessWidget {
   final current = getCurrentUser();
   final Message message;
-  final Guild guild;
+  final Guild? guild;
   _MessageBottomSheetActions({
     Key? key,
     required this.message,
@@ -52,7 +52,7 @@ class _MessageBottomSheetActions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isAuthor = message.user.id == current.id;
-    final isOwner = current.id == guild.ownerId;
+    final isOwner = current.id == guild?.ownerId;
     final isFile = message.attachment != null;
 
     return BlocListener<EditMessageCubit, EditMessageState>(
@@ -111,8 +111,11 @@ class _MessageBottomSheetActions extends StatelessWidget {
               showModalBottomSheet(
                 isScrollControlled: true,
                 context: context,
-                builder: (_) =>
-                    ProfileBottomSheet(guild: guild, member: message.user),
+                builder: (_) => ProfileBottomSheet(
+                  guild: guild,
+                  member: message.user,
+                  ctx: context,
+                ),
               );
             }),
           ],

@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
+import 'package:valkyrie_app/application/dms/dm_list/dm_list_cubit.dart';
 import 'package:valkyrie_app/application/messages/get_messages/messages_cubit.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_channel_name.dart';
 
 class MessageLoaderOrEndIndicator extends StatelessWidget {
+  final String channelId;
+  final bool isDM;
+  const MessageLoaderOrEndIndicator({
+    Key? key,
+    required this.channelId,
+    this.isDM = false,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final channelId = context.watch<CurrentChannelCubit>().state;
-    final channelName = getChannelName(context, channelId);
     return BlocBuilder<MessagesCubit, MessagesState>(
       builder: (context, state) => state.maybeWhen(
         loadSuccess: (_, hasMore) => Container(
@@ -16,48 +22,106 @@ class MessageLoaderOrEndIndicator extends StatelessWidget {
           child: Center(
             child: SizedBox(
               width: hasMore ? 33 : double.infinity,
-              height: hasMore ? 33 : 160,
+              height: hasMore ? 33 : _getContainerHeight(isDM),
               child: hasMore
                   ? const CircularProgressIndicator(
                       strokeWidth: 1.5,
                     )
-                  : Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "Welcome to #$channelName!",
-                            style: const TextStyle(
-                              fontSize: 26,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "This is the start of the #$channelName channel.",
-                            style: const TextStyle(
-                              fontSize: 18,
-                              color: Colors.white60,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Divider(),
-                        ],
-                      ),
-                    ),
+                  : _getEndIndicator(context, channelId, isDM),
             ),
           ),
         ),
         orElse: () => Container(),
       ),
+    );
+  }
+
+  double _getContainerHeight(bool needBiggerHeight) {
+    return needBiggerHeight ? 260 : 140;
+  }
+
+  Widget _getEndIndicator(
+    BuildContext context,
+    String channelId,
+    bool isDM,
+  ) {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(
+            height: 10,
+          ),
+          if (isDM)
+            _getDMEndIndicator(context, channelId)
+          else
+            _getChannelEndIndicator(context, channelId),
+          const SizedBox(
+            height: 5,
+          ),
+          const Divider(),
+        ],
+      ),
+    );
+  }
+
+  Widget _getChannelEndIndicator(BuildContext context, String channelId) {
+    final channelName = getChannelName(context, channelId);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Welcome to #$channelName!",
+          style: const TextStyle(
+            fontSize: 26,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
+          "This is the start of the #$channelName channel.",
+          style: const TextStyle(
+            fontSize: 18,
+            color: Colors.white60,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _getDMEndIndicator(BuildContext context, String channelId) {
+    final channel = context.read<DMListCubit>().getCurrentDM(channelId);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        CircleAvatar(
+          backgroundImage:
+              channel != null ? NetworkImage(channel.user.image) : null,
+          radius: 48,
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        Text(
+          channel?.user.username.toUpperCase() ?? "",
+          style: const TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
+          "This is the beginning of your direct message history with @${channel?.user.username}.",
+          style: const TextStyle(
+            color: Colors.white54,
+          ),
+        ),
+      ],
     );
   }
 }

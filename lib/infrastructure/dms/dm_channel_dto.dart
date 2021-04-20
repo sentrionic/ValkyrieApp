@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:valkyrie_app/domain/dms/dm_channel.dart';
-import 'package:valkyrie_app/infrastructure/user/user_dto.dart';
+import 'package:valkyrie_app/domain/dms/dm_user.dart';
+import 'package:valkyrie_app/infrastructure/dms/dm_user_dto.dart';
 
 part 'dm_channel_dto.freezed.dart';
 
@@ -10,17 +11,17 @@ class DMChannelDto with _$DMChannelDto {
 
   const factory DMChannelDto({
     required String id,
-    required UserDto user,
+    required DMUser user,
   }) = _DMChannelDto;
 
   DMChannel toDomain() {
-    return DMChannel(id: id, user: user.toDomain());
+    return DMChannel(id: id, user: user);
   }
 
   factory DMChannelDto.fromMap(Map<String, dynamic> map) {
     return DMChannelDto(
       id: map['id'],
-      user: UserDto.fromMap(map['user']),
+      user: DMUserDto.fromMap(map['user']).toDomain(),
     );
   }
 }

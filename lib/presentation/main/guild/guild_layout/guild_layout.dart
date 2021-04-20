@@ -49,7 +49,7 @@ class GuildLayout extends HookWidget {
       body: BlocProvider<MessagesCubit>(
         create: (context) =>
             getIt<MessagesCubit>()..getChannelMessages(channelId),
-        child: ChatLayout(),
+        child: GuildChatLayout(),
       ),
     );
   }

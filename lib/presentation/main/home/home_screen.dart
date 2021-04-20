@@ -6,13 +6,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:valkyrie_app/application/account/get_account/account_cubit.dart';
 import 'package:valkyrie_app/application/auth/auth_status/auth_status_bloc.dart';
-import 'package:valkyrie_app/application/dms/dm_list/dm_list_cubit.dart';
 import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/auth/start_up_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/account_tab/account/account_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/friends_tab/friend_screen.dart';
-import 'package:valkyrie_app/presentation/main/home/home_tab/widgets/home_navbar.dart';
-import 'package:valkyrie_app/presentation/main/home/home_tab/widgets/home_body.dart';
+import 'package:valkyrie_app/presentation/main/home/home_tab/home_navbar.dart';
+import 'package:valkyrie_app/presentation/main/home/home_tab/home_body.dart';
 import 'package:valkyrie_app/presentation/main/shared/hooks/guild_socket_hook.dart';
 
 class HomeScreen extends HookWidget {
@@ -39,9 +38,6 @@ class HomeScreen extends HookWidget {
 
     return MultiBlocProvider(
       providers: [
-        BlocProvider<DMListCubit>(
-          create: (context) => getIt<DMListCubit>()..getUserDMs(),
-        ),
         BlocProvider<AccountCubit>(
           create: (context) => getIt<AccountCubit>()..getAccount(),
         ),

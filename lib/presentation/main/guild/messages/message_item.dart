@@ -28,8 +28,11 @@ class MessageItem extends StatelessWidget {
           showModalBottomSheet(
             isScrollControlled: true,
             context: context,
-            builder: (_) =>
-                ProfileBottomSheet(guild: guild!, member: message.user),
+            builder: (_) => ProfileBottomSheet(
+              guild: guild,
+              member: message.user,
+              ctx: context,
+            ),
           );
         },
         child: CircleAvatar(
@@ -75,7 +78,7 @@ class MessageItem extends StatelessWidget {
           context: context,
           builder: (_) {
             return MessageBottomSheet(
-              guild: guild!,
+              guild: guild,
               message: message,
             );
           },

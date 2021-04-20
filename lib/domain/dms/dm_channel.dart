@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:valkyrie_app/domain/user/user.dart';
+import 'package:valkyrie_app/domain/dms/dm_user.dart';
 
 part 'dm_channel.freezed.dart';
 
@@ -9,6 +9,6 @@ class DMChannel with _$DMChannel {
 
   const factory DMChannel({
     required String id,
-    required User user,
+    required DMUser user,
   }) = _DMChannel;
 }

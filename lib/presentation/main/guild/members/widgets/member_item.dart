@@ -4,6 +4,7 @@ import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart
 import 'package:valkyrie_app/application/guilds/guild_list/guild_list_cubit.dart';
 import 'package:valkyrie_app/domain/member/member.dart';
 import 'package:valkyrie_app/presentation/common/extensions/hex_color_extension.dart';
+import 'package:valkyrie_app/presentation/common/widgets/avatar_with_badge.dart';
 import 'package:valkyrie_app/presentation/main/guild/sheets/profile/profile_bottom_sheet.dart';
 
 class MemberItem extends StatelessWidget {
@@ -23,33 +24,14 @@ class MemberItem extends StatelessWidget {
         showModalBottomSheet(
           isScrollControlled: true,
           context: context,
-          builder: (_) => ProfileBottomSheet(guild: guild!, member: member),
+          builder: (_) => ProfileBottomSheet(
+            guild: guild,
+            member: member,
+            ctx: context,
+          ),
         );
       },
-      leading: Stack(
-        children: [
-          CircleAvatar(
-            foregroundImage: NetworkImage(member.image),
-            radius: 17,
-          ),
-          Positioned(
-            right: 0,
-            bottom: 0,
-            child: Container(
-              padding: const EdgeInsets.all(1),
-              decoration: BoxDecoration(
-                color: member.isOnline ? Colors.green : Colors.grey,
-                borderRadius: BorderRadius.circular(50),
-                border: Border.all(width: 2),
-              ),
-              constraints: const BoxConstraints(
-                minWidth: 12,
-                minHeight: 12,
-              ),
-            ),
-          )
-        ],
-      ),
+      leading: getAvatarWithBadge(member.image, isOnline: member.isOnline),
       title: Text(
         member.nickname ?? member.username,
         style: TextStyle(

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:valkyrie_app/application/dms/dm_list/dm_list_cubit.dart';
-import 'package:valkyrie_app/presentation/main/home/home_tab/items/dm_item.dart';
-import 'package:valkyrie_app/presentation/main/home/home_tab/widgets/hooks/dm_socket_hook.dart';
+import 'package:valkyrie_app/presentation/main/home/direct_messages/hooks/dm_socket_hook.dart';
+import 'package:valkyrie_app/presentation/main/home/direct_messages/widgets/dm_item.dart';
 
-class DMListWidget extends HookWidget {
+class DMListBuilder extends HookWidget {
   @override
   Widget build(BuildContext context) {
     use(DMSocketHook(context));

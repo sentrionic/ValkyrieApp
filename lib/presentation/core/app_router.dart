@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
+import 'package:valkyrie_app/application/dms/current/current_dm_cubit.dart';
+import 'package:valkyrie_app/application/dms/dm_list/dm_list_cubit.dart';
 import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart';
 import 'package:valkyrie_app/application/guilds/guild_list/guild_list_cubit.dart';
 import 'package:valkyrie_app/injection.dart';
@@ -15,6 +17,7 @@ import 'package:valkyrie_app/presentation/main/guild/channels/screens/create_cha
 import 'package:valkyrie_app/presentation/main/guild/guild_layout/edit_guild/edit_guild_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/guild_layout/guild_overview/guild_overview_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/guild_layout/manage_bans/manage_bans_screen.dart';
+import 'package:valkyrie_app/presentation/main/home/direct_messages/dm_screen.dart';
 import 'package:valkyrie_app/presentation/main/shared/add_guild/add_guild_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/guild_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/guild_layout/appearance_screen.dart';
@@ -35,6 +38,8 @@ class AppRouter {
   final _guildBloc = getIt<GuildListCubit>();
   final _currentChannelCubit = getIt<CurrentChannelCubit>();
   final _currentGuildCubit = getIt<CurrentGuildCubit>();
+  final _currentDMCubit = getIt<CurrentDMCubit>();
+  final _dmListCubit = getIt<DMListCubit>();
 
   Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -68,10 +73,10 @@ class AppRouter {
           page: MultiBlocProvider(
             providers: [
               BlocProvider.value(value: _currentChannelCubit),
-              BlocProvider.value(
-                value: _guildBloc..getGuilds(),
-              ),
+              BlocProvider.value(value: _guildBloc..getGuilds()),
               BlocProvider.value(value: _currentGuildCubit),
+              BlocProvider.value(value: _currentDMCubit),
+              BlocProvider.value(value: _dmListCubit..getUserDMs()),
             ],
             child: HomeScreen(),
           ),
@@ -88,9 +93,11 @@ class AppRouter {
         return FadeTransitionRoute(
           page: MultiBlocProvider(
             providers: [
+              BlocProvider.value(value: _dmListCubit),
               BlocProvider.value(value: _currentChannelCubit),
               BlocProvider.value(value: _guildBloc),
               BlocProvider.value(value: _currentGuildCubit),
+              BlocProvider.value(value: _currentDMCubit),
             ],
             child: GuildScreen(guild: args.guild),
           ),
@@ -209,6 +216,20 @@ class AppRouter {
         return SlideTransitionRoute(
           page: ManageBansScreen(
             guild: args.guild,
+          ),
+        );
+
+      case DMScreen.routeName:
+        return FadeTransitionRoute(
+          page: MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: _dmListCubit),
+              BlocProvider.value(value: _currentDMCubit),
+              BlocProvider.value(value: _currentChannelCubit),
+              BlocProvider.value(value: _currentGuildCubit),
+              BlocProvider.value(value: _guildBloc),
+            ],
+            child: DMScreen(),
           ),
         );
 
