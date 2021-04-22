@@ -6,5 +6,6 @@ class AcceptRequestState with _$AcceptRequestState {
   const factory AcceptRequestState.actionInProgress() = _ActionInProgress;
   const factory AcceptRequestState.actionFailure(FriendFailure friendFailure) =
       _ActionFailure;
-  const factory AcceptRequestState.actionSuccess() = _ActionSuccess;
+  const factory AcceptRequestState.actionSuccess(String requestId) =
+      _ActionSuccess;
 }

@@ -6,6 +6,7 @@ import 'package:valkyrie_app/domain/channels/channel.dart';
 import 'package:valkyrie_app/domain/channels/channel_failure.dart';
 import 'package:valkyrie_app/domain/channels/channel_value_objects.dart';
 import 'package:valkyrie_app/domain/channels/i_channel_repository.dart';
+import 'package:valkyrie_app/domain/member/member.dart';
 
 part 'create_channel_state.dart';
 part 'create_channel_cubit.freezed.dart';
@@ -29,16 +30,18 @@ class CreateChannelCubit extends Cubit<CreateChannelState> {
     ));
   }
 
-  Future<void> addMember(String id) async {
+  Future<void> addMember(Member member) async {
     emit(state.copyWith(
-      members: [...state.members, id],
+      members: state.members.where((e) => e.id == member.id).firstOrNull != null
+          ? [...state.members]
+          : [...state.members, member],
       channelFailureOrSuccessOption: none(),
     ));
   }
 
   Future<void> removeMember(String id) async {
     emit(state.copyWith(
-      members: state.members.where((c) => c != id).toList(),
+      members: state.members.where((c) => c.id != id).toList(),
       channelFailureOrSuccessOption: none(),
     ));
   }
@@ -58,7 +61,7 @@ class CreateChannelCubit extends Cubit<CreateChannelState> {
         guildId,
         state.name.getOrCrash(),
         isPublic: state.isPublic,
-        members: state.members,
+        members: state.members.map((e) => e.id).toList(),
       );
     }
 

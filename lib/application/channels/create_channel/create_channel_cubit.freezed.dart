@@ -19,7 +19,7 @@ class _$CreateChannelStateTearOff {
   _CreateChannelState call(
       {required ChannelName name,
       required bool isPublic,
-      required List<String> members,
+      required List<Member> members,
       required bool showErrorMessages,
       required bool isSubmitting,
       required Option<Either<ChannelFailure, Channel>>
@@ -42,7 +42,7 @@ const $CreateChannelState = _$CreateChannelStateTearOff();
 mixin _$CreateChannelState {
   ChannelName get name => throw _privateConstructorUsedError;
   bool get isPublic => throw _privateConstructorUsedError;
-  List<String> get members => throw _privateConstructorUsedError;
+  List<Member> get members => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<ChannelFailure, Channel>> get channelFailureOrSuccessOption =>
@@ -61,7 +61,7 @@ abstract class $CreateChannelStateCopyWith<$Res> {
   $Res call(
       {ChannelName name,
       bool isPublic,
-      List<String> members,
+      List<Member> members,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<ChannelFailure, Channel>> channelFailureOrSuccessOption});
@@ -97,7 +97,7 @@ class _$CreateChannelStateCopyWithImpl<$Res>
       members: members == freezed
           ? _value.members
           : members // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<Member>,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -124,7 +124,7 @@ abstract class _$CreateChannelStateCopyWith<$Res>
   $Res call(
       {ChannelName name,
       bool isPublic,
-      List<String> members,
+      List<Member> members,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<ChannelFailure, Channel>> channelFailureOrSuccessOption});
@@ -162,7 +162,7 @@ class __$CreateChannelStateCopyWithImpl<$Res>
       members: members == freezed
           ? _value.members
           : members // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<Member>,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -194,7 +194,7 @@ class _$_CreateChannelState implements _CreateChannelState {
   @override
   final bool isPublic;
   @override
-  final List<String> members;
+  final List<Member> members;
   @override
   final bool showErrorMessages;
   @override
@@ -252,7 +252,7 @@ abstract class _CreateChannelState implements CreateChannelState {
   const factory _CreateChannelState(
       {required ChannelName name,
       required bool isPublic,
-      required List<String> members,
+      required List<Member> members,
       required bool showErrorMessages,
       required bool isSubmitting,
       required Option<Either<ChannelFailure, Channel>>
@@ -263,7 +263,7 @@ abstract class _CreateChannelState implements CreateChannelState {
   @override
   bool get isPublic => throw _privateConstructorUsedError;
   @override
-  List<String> get members => throw _privateConstructorUsedError;
+  List<Member> get members => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override

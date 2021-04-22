@@ -37,10 +37,8 @@ class ProfileBottomSheet extends StatelessWidget {
         BlocProvider.value(value: ctx.read<DMListCubit>()),
         BlocProvider.value(value: ctx.read<CurrentDMCubit>()),
         BlocProvider.value(value: ctx.read<CurrentGuildCubit>()),
-        if (!isCurrent) ...[
-          BlocProvider(create: (context) => getIt<StartDMCubit>()),
-          BlocProvider(create: (context) => getIt<SendFriendRequestCubit>()),
-        ],
+        BlocProvider(create: (context) => getIt<StartDMCubit>()),
+        BlocProvider(create: (context) => getIt<SendFriendRequestCubit>()),
         if (isOwner)
           BlocProvider(create: (context) => getIt<ModerateMemberCubit>()),
       ],

@@ -19,7 +19,7 @@ class DeclineRequestCubit extends Cubit<DeclineRequestState> {
     emit(
       possibleFailure.fold(
         (f) => DeclineRequestState.actionFailure(f),
-        (_) => const DeclineRequestState.actionSuccess(),
+        (_) => DeclineRequestState.actionSuccess(userId),
       ),
     );
   }

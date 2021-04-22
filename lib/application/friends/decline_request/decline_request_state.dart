@@ -6,5 +6,6 @@ class DeclineRequestState with _$DeclineRequestState {
   const factory DeclineRequestState.actionInProgress() = _ActionInProgress;
   const factory DeclineRequestState.actionFailure(FriendFailure friendFailure) =
       _ActionFailure;
-  const factory DeclineRequestState.actionSuccess() = _ActionSuccess;
+  const factory DeclineRequestState.actionSuccess(String requestId) =
+      _ActionSuccess;
 }

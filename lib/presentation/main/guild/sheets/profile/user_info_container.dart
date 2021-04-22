@@ -20,25 +20,50 @@ class UserInfoContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<StartDMCubit, StartDMState>(
-      listener: (context, state) {
-        state.maybeMap(
-          fetchSuccess: (state) {
-            context.read<DMListCubit>().addNewDM(state.channel);
-            context.read<CurrentDMCubit>().setDMChannel(state.channel.id);
-            context.read<CurrentGuildCubit>().resetGuildId();
-            Navigator.of(context).pushReplacementNamed(DMScreen.routeName);
+    return MultiBlocListener(
+      listeners: [
+        BlocListener<StartDMCubit, StartDMState>(
+          listener: (context, state) {
+            state.maybeMap(
+              fetchSuccess: (state) {
+                Navigator.of(context).popUntil((route) => route.isFirst);
+                context.read<DMListCubit>().addNewDM(state.channel);
+                context.read<CurrentDMCubit>().setDMChannel(state.channel.id);
+                context.read<CurrentGuildCubit>().resetGuildId();
+                Navigator.of(context).pushReplacementNamed(DMScreen.routeName);
+              },
+              fetchFailure: (state) {
+                FlushBarCreator.showError(
+                  message: state.channelFailure.map(
+                    unexpected: (_) => "Something went wrong. Try again later.",
+                  ),
+                ).show(context);
+              },
+              orElse: () {},
+            );
           },
-          fetchFailure: (state) {
-            FlushBarCreator.showError(
-              message: state.channelFailure.map(
-                unexpected: (_) => "Something went wrong. Try again later.",
-              ),
-            ).show(context);
+        ),
+        BlocListener<SendFriendRequestCubit, SendFriendRequestState>(
+          listener: (context, state) {
+            state.maybeMap(
+              actionSuccess: (state) {
+                Navigator.of(context).pop();
+                FlushBarCreator.showSuccess(message: "Send friend request")
+                    .show(context);
+              },
+              actionFailure: (state) {
+                Navigator.of(context).pop();
+                FlushBarCreator.showError(
+                  message: state.friendFailure.map(
+                    unexpected: (_) => "Something went wrong. Try again later.",
+                  ),
+                ).show(context);
+              },
+              orElse: () {},
+            );
           },
-          orElse: () {},
-        );
-      },
+        ),
+      ],
       child: Row(
         children: [
           Expanded(

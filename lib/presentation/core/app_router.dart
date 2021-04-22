@@ -18,6 +18,7 @@ import 'package:valkyrie_app/presentation/main/guild/guild_layout/edit_guild/edi
 import 'package:valkyrie_app/presentation/main/guild/guild_layout/guild_overview/guild_overview_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/guild_layout/manage_bans/manage_bans_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/direct_messages/dm_screen.dart';
+import 'package:valkyrie_app/presentation/main/home/friends_tab/add_friend/add_friend_screen.dart';
 import 'package:valkyrie_app/presentation/main/shared/add_guild/add_guild_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/guild_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/guild_layout/appearance_screen.dart';
@@ -231,6 +232,11 @@ class AppRouter {
             ],
             child: DMScreen(),
           ),
+        );
+
+      case AddFriendScreen.routeName:
+        return FadeTransitionRoute(
+          page: AddFriendScreen(),
         );
 
       default:

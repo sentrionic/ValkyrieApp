@@ -96,3 +96,11 @@ Either<ValueFailure<String>, String> validateHexColor(
     return left(ValueFailure.invalidColor(failedValue: input));
   }
 }
+
+Either<ValueFailure<String>, String> validateUID(String input) {
+  if (input.length == 20 && double.tryParse(input) != null) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidUID(failedValue: input));
+  }
+}

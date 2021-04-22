@@ -83,7 +83,7 @@ class FriendRepository extends IFriendRepository {
   @override
   Future<Either<FriendFailure, Unit>> declineRequest(String userId) async {
     try {
-      await _dio.delete('/account/$userId/friend/cancel');
+      await _dio.post('/account/$userId/friend/cancel');
       return right(unit);
     } on DioError catch (err) {
       print(err);

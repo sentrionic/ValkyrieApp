@@ -93,7 +93,7 @@ class _ChannelSocketHookState extends HookState<void, ChannelSocketHook> {
 
   @override
   void dispose() {
-    socket.emit('leaveRoom', hook.guildId);
+    socket.emit('leaveGuild', hook.guildId);
     socket.disconnect();
     super.dispose();
   }

@@ -81,6 +81,12 @@ class _$ValueFailureTearOff {
       failedValue: failedValue,
     );
   }
+
+  InvalidUID<T> invalidUID<T>({required T failedValue}) {
+    return InvalidUID<T>(
+      failedValue: failedValue,
+    );
+  }
 }
 
 /// @nodoc
@@ -102,6 +108,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failedValue) passwordsDontMatch,
     required TResult Function(T failedValue, int max) exceedingSize,
     required TResult Function(T failedValue) invalidColor,
+    required TResult Function(T failedValue) invalidUID,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -116,6 +123,7 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue)? passwordsDontMatch,
     TResult Function(T failedValue, int max)? exceedingSize,
     TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -131,6 +139,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(PasswordsDontMatch<T> value) passwordsDontMatch,
     required TResult Function(ExceedingSize<T> value) exceedingSize,
     required TResult Function(InvalidColor<T> value) invalidColor,
+    required TResult Function(InvalidUID<T> value) invalidUID,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -145,6 +154,7 @@ mixin _$ValueFailure<T> {
     TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
     TResult Function(ExceedingSize<T> value)? exceedingSize,
     TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -272,6 +282,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(T failedValue) passwordsDontMatch,
     required TResult Function(T failedValue, int max) exceedingSize,
     required TResult Function(T failedValue) invalidColor,
+    required TResult Function(T failedValue) invalidUID,
   }) {
     return exceedingLength(failedValue, max);
   }
@@ -289,6 +300,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(T failedValue)? passwordsDontMatch,
     TResult Function(T failedValue, int max)? exceedingSize,
     TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -310,6 +322,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(PasswordsDontMatch<T> value) passwordsDontMatch,
     required TResult Function(ExceedingSize<T> value) exceedingSize,
     required TResult Function(InvalidColor<T> value) invalidColor,
+    required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return exceedingLength(this);
   }
@@ -327,6 +340,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
     TResult Function(ExceedingSize<T> value)? exceedingSize,
     TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -423,6 +437,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(T failedValue) passwordsDontMatch,
     required TResult Function(T failedValue, int max) exceedingSize,
     required TResult Function(T failedValue) invalidColor,
+    required TResult Function(T failedValue) invalidUID,
   }) {
     return empty(failedValue);
   }
@@ -440,6 +455,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(T failedValue)? passwordsDontMatch,
     TResult Function(T failedValue, int max)? exceedingSize,
     TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -461,6 +477,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(PasswordsDontMatch<T> value) passwordsDontMatch,
     required TResult Function(ExceedingSize<T> value) exceedingSize,
     required TResult Function(InvalidColor<T> value) invalidColor,
+    required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return empty(this);
   }
@@ -478,6 +495,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
     TResult Function(ExceedingSize<T> value)? exceedingSize,
     TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -586,6 +604,7 @@ class _$TooManyGuilds<T> implements TooManyGuilds<T> {
     required TResult Function(T failedValue) passwordsDontMatch,
     required TResult Function(T failedValue, int max) exceedingSize,
     required TResult Function(T failedValue) invalidColor,
+    required TResult Function(T failedValue) invalidUID,
   }) {
     return tooManyGuilds(failedValue, max);
   }
@@ -603,6 +622,7 @@ class _$TooManyGuilds<T> implements TooManyGuilds<T> {
     TResult Function(T failedValue)? passwordsDontMatch,
     TResult Function(T failedValue, int max)? exceedingSize,
     TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
     required TResult orElse(),
   }) {
     if (tooManyGuilds != null) {
@@ -624,6 +644,7 @@ class _$TooManyGuilds<T> implements TooManyGuilds<T> {
     required TResult Function(PasswordsDontMatch<T> value) passwordsDontMatch,
     required TResult Function(ExceedingSize<T> value) exceedingSize,
     required TResult Function(InvalidColor<T> value) invalidColor,
+    required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return tooManyGuilds(this);
   }
@@ -641,6 +662,7 @@ class _$TooManyGuilds<T> implements TooManyGuilds<T> {
     TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
     TResult Function(ExceedingSize<T> value)? exceedingSize,
     TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
     required TResult orElse(),
   }) {
     if (tooManyGuilds != null) {
@@ -740,6 +762,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(T failedValue) passwordsDontMatch,
     required TResult Function(T failedValue, int max) exceedingSize,
     required TResult Function(T failedValue) invalidColor,
+    required TResult Function(T failedValue) invalidUID,
   }) {
     return invalidEmail(failedValue);
   }
@@ -757,6 +780,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(T failedValue)? passwordsDontMatch,
     TResult Function(T failedValue, int max)? exceedingSize,
     TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -778,6 +802,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(PasswordsDontMatch<T> value) passwordsDontMatch,
     required TResult Function(ExceedingSize<T> value) exceedingSize,
     required TResult Function(InvalidColor<T> value) invalidColor,
+    required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return invalidEmail(this);
   }
@@ -795,6 +820,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
     TResult Function(ExceedingSize<T> value)? exceedingSize,
     TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -892,6 +918,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     required TResult Function(T failedValue) passwordsDontMatch,
     required TResult Function(T failedValue, int max) exceedingSize,
     required TResult Function(T failedValue) invalidColor,
+    required TResult Function(T failedValue) invalidUID,
   }) {
     return invalidUsername(failedValue);
   }
@@ -909,6 +936,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(T failedValue)? passwordsDontMatch,
     TResult Function(T failedValue, int max)? exceedingSize,
     TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
     required TResult orElse(),
   }) {
     if (invalidUsername != null) {
@@ -930,6 +958,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     required TResult Function(PasswordsDontMatch<T> value) passwordsDontMatch,
     required TResult Function(ExceedingSize<T> value) exceedingSize,
     required TResult Function(InvalidColor<T> value) invalidColor,
+    required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return invalidUsername(this);
   }
@@ -947,6 +976,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
     TResult Function(ExceedingSize<T> value)? exceedingSize,
     TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
     required TResult orElse(),
   }) {
     if (invalidUsername != null) {
@@ -1046,6 +1076,7 @@ class _$InvalidChannelName<T> implements InvalidChannelName<T> {
     required TResult Function(T failedValue) passwordsDontMatch,
     required TResult Function(T failedValue, int max) exceedingSize,
     required TResult Function(T failedValue) invalidColor,
+    required TResult Function(T failedValue) invalidUID,
   }) {
     return invalidChannelName(failedValue);
   }
@@ -1063,6 +1094,7 @@ class _$InvalidChannelName<T> implements InvalidChannelName<T> {
     TResult Function(T failedValue)? passwordsDontMatch,
     TResult Function(T failedValue, int max)? exceedingSize,
     TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
     required TResult orElse(),
   }) {
     if (invalidChannelName != null) {
@@ -1084,6 +1116,7 @@ class _$InvalidChannelName<T> implements InvalidChannelName<T> {
     required TResult Function(PasswordsDontMatch<T> value) passwordsDontMatch,
     required TResult Function(ExceedingSize<T> value) exceedingSize,
     required TResult Function(InvalidColor<T> value) invalidColor,
+    required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return invalidChannelName(this);
   }
@@ -1101,6 +1134,7 @@ class _$InvalidChannelName<T> implements InvalidChannelName<T> {
     TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
     TResult Function(ExceedingSize<T> value)? exceedingSize,
     TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
     required TResult orElse(),
   }) {
     if (invalidChannelName != null) {
@@ -1199,6 +1233,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(T failedValue) passwordsDontMatch,
     required TResult Function(T failedValue, int max) exceedingSize,
     required TResult Function(T failedValue) invalidColor,
+    required TResult Function(T failedValue) invalidUID,
   }) {
     return shortPassword(failedValue);
   }
@@ -1216,6 +1251,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(T failedValue)? passwordsDontMatch,
     TResult Function(T failedValue, int max)? exceedingSize,
     TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -1237,6 +1273,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(PasswordsDontMatch<T> value) passwordsDontMatch,
     required TResult Function(ExceedingSize<T> value) exceedingSize,
     required TResult Function(InvalidColor<T> value) invalidColor,
+    required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return shortPassword(this);
   }
@@ -1254,6 +1291,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
     TResult Function(ExceedingSize<T> value)? exceedingSize,
     TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -1352,6 +1390,7 @@ class _$PasswordsDontMatch<T> implements PasswordsDontMatch<T> {
     required TResult Function(T failedValue) passwordsDontMatch,
     required TResult Function(T failedValue, int max) exceedingSize,
     required TResult Function(T failedValue) invalidColor,
+    required TResult Function(T failedValue) invalidUID,
   }) {
     return passwordsDontMatch(failedValue);
   }
@@ -1369,6 +1408,7 @@ class _$PasswordsDontMatch<T> implements PasswordsDontMatch<T> {
     TResult Function(T failedValue)? passwordsDontMatch,
     TResult Function(T failedValue, int max)? exceedingSize,
     TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
     required TResult orElse(),
   }) {
     if (passwordsDontMatch != null) {
@@ -1390,6 +1430,7 @@ class _$PasswordsDontMatch<T> implements PasswordsDontMatch<T> {
     required TResult Function(PasswordsDontMatch<T> value) passwordsDontMatch,
     required TResult Function(ExceedingSize<T> value) exceedingSize,
     required TResult Function(InvalidColor<T> value) invalidColor,
+    required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return passwordsDontMatch(this);
   }
@@ -1407,6 +1448,7 @@ class _$PasswordsDontMatch<T> implements PasswordsDontMatch<T> {
     TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
     TResult Function(ExceedingSize<T> value)? exceedingSize,
     TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
     required TResult orElse(),
   }) {
     if (passwordsDontMatch != null) {
@@ -1516,6 +1558,7 @@ class _$ExceedingSize<T> implements ExceedingSize<T> {
     required TResult Function(T failedValue) passwordsDontMatch,
     required TResult Function(T failedValue, int max) exceedingSize,
     required TResult Function(T failedValue) invalidColor,
+    required TResult Function(T failedValue) invalidUID,
   }) {
     return exceedingSize(failedValue, max);
   }
@@ -1533,6 +1576,7 @@ class _$ExceedingSize<T> implements ExceedingSize<T> {
     TResult Function(T failedValue)? passwordsDontMatch,
     TResult Function(T failedValue, int max)? exceedingSize,
     TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
     required TResult orElse(),
   }) {
     if (exceedingSize != null) {
@@ -1554,6 +1598,7 @@ class _$ExceedingSize<T> implements ExceedingSize<T> {
     required TResult Function(PasswordsDontMatch<T> value) passwordsDontMatch,
     required TResult Function(ExceedingSize<T> value) exceedingSize,
     required TResult Function(InvalidColor<T> value) invalidColor,
+    required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return exceedingSize(this);
   }
@@ -1571,6 +1616,7 @@ class _$ExceedingSize<T> implements ExceedingSize<T> {
     TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
     TResult Function(ExceedingSize<T> value)? exceedingSize,
     TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
     required TResult orElse(),
   }) {
     if (exceedingSize != null) {
@@ -1670,6 +1716,7 @@ class _$InvalidColor<T> implements InvalidColor<T> {
     required TResult Function(T failedValue) passwordsDontMatch,
     required TResult Function(T failedValue, int max) exceedingSize,
     required TResult Function(T failedValue) invalidColor,
+    required TResult Function(T failedValue) invalidUID,
   }) {
     return invalidColor(failedValue);
   }
@@ -1687,6 +1734,7 @@ class _$InvalidColor<T> implements InvalidColor<T> {
     TResult Function(T failedValue)? passwordsDontMatch,
     TResult Function(T failedValue, int max)? exceedingSize,
     TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
     required TResult orElse(),
   }) {
     if (invalidColor != null) {
@@ -1708,6 +1756,7 @@ class _$InvalidColor<T> implements InvalidColor<T> {
     required TResult Function(PasswordsDontMatch<T> value) passwordsDontMatch,
     required TResult Function(ExceedingSize<T> value) exceedingSize,
     required TResult Function(InvalidColor<T> value) invalidColor,
+    required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return invalidColor(this);
   }
@@ -1725,6 +1774,7 @@ class _$InvalidColor<T> implements InvalidColor<T> {
     TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
     TResult Function(ExceedingSize<T> value)? exceedingSize,
     TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
     required TResult orElse(),
   }) {
     if (invalidColor != null) {
@@ -1742,5 +1792,161 @@ abstract class InvalidColor<T> implements ValueFailure<T> {
   @override
   @JsonKey(ignore: true)
   $InvalidColorCopyWith<T, InvalidColor<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InvalidUIDCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $InvalidUIDCopyWith(
+          InvalidUID<T> value, $Res Function(InvalidUID<T>) then) =
+      _$InvalidUIDCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$InvalidUIDCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidUIDCopyWith<T, $Res> {
+  _$InvalidUIDCopyWithImpl(
+      InvalidUID<T> _value, $Res Function(InvalidUID<T>) _then)
+      : super(_value, (v) => _then(v as InvalidUID<T>));
+
+  @override
+  InvalidUID<T> get _value => super._value as InvalidUID<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(InvalidUID<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+class _$InvalidUID<T> implements InvalidUID<T> {
+  const _$InvalidUID({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidUID(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidUID<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
+  @override
+  $InvalidUIDCopyWith<T, InvalidUID<T>> get copyWith =>
+      _$InvalidUIDCopyWithImpl<T, InvalidUID<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue, int max) exceedingLength,
+    required TResult Function(T failedValue) empty,
+    required TResult Function(T failedValue, int max) tooManyGuilds,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) invalidChannelName,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) passwordsDontMatch,
+    required TResult Function(T failedValue, int max) exceedingSize,
+    required TResult Function(T failedValue) invalidColor,
+    required TResult Function(T failedValue) invalidUID,
+  }) {
+    return invalidUID(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue, int max)? tooManyGuilds,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidChannelName,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? passwordsDontMatch,
+    TResult Function(T failedValue, int max)? exceedingSize,
+    TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
+    required TResult orElse(),
+  }) {
+    if (invalidUID != null) {
+      return invalidUID(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(TooManyGuilds<T> value) tooManyGuilds,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(InvalidChannelName<T> value) invalidChannelName,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(PasswordsDontMatch<T> value) passwordsDontMatch,
+    required TResult Function(ExceedingSize<T> value) exceedingSize,
+    required TResult Function(InvalidColor<T> value) invalidColor,
+    required TResult Function(InvalidUID<T> value) invalidUID,
+  }) {
+    return invalidUID(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(TooManyGuilds<T> value)? tooManyGuilds,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidChannelName<T> value)? invalidChannelName,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
+    TResult Function(ExceedingSize<T> value)? exceedingSize,
+    TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
+    required TResult orElse(),
+  }) {
+    if (invalidUID != null) {
+      return invalidUID(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidUID<T> implements ValueFailure<T> {
+  const factory InvalidUID({required T failedValue}) = _$InvalidUID<T>;
+
+  @override
+  T get failedValue => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  $InvalidUIDCopyWith<T, InvalidUID<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

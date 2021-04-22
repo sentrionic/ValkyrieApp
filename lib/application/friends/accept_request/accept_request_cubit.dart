@@ -19,7 +19,7 @@ class AcceptRequestCubit extends Cubit<AcceptRequestState> {
     emit(
       possibleFailure.fold(
         (f) => AcceptRequestState.actionFailure(f),
-        (_) => const AcceptRequestState.actionSuccess(),
+        (_) => AcceptRequestState.actionSuccess(userId),
       ),
     );
   }

@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:valkyrie_app/presentation/core/colors.dart';
 
-Widget getAvatarWithBadge(String image, {required bool isOnline}) {
+Widget getAvatarWithBadge(
+  String image, {
+  required bool isOnline,
+  double? radius,
+}) {
   return Stack(
     children: [
       CircleAvatar(
         backgroundImage: NetworkImage(
           image,
         ),
-        radius: 18,
+        radius: radius ?? 18,
       ),
       Positioned(
         right: 0,
@@ -15,13 +20,16 @@ Widget getAvatarWithBadge(String image, {required bool isOnline}) {
         child: Container(
           padding: const EdgeInsets.all(1),
           decoration: BoxDecoration(
-            color: isOnline ? Colors.green : Colors.grey,
+            color: isOnline ? ThemeColors.brandGreen : Colors.grey,
             borderRadius: BorderRadius.circular(50),
-            border: Border.all(width: 2),
+            border: Border.all(
+              width: 2,
+              color: ThemeColors.dmBackground,
+            ),
           ),
-          constraints: const BoxConstraints(
-            minWidth: 12,
-            minHeight: 12,
+          constraints: BoxConstraints(
+            minWidth: radius != null ? 16 : 12,
+            minHeight: radius != null ? 16 : 12,
           ),
         ),
       )

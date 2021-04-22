@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valkyrie_app/application/channels/current/current_channel_cubit.dart';
+import 'package:valkyrie_app/application/members/member_list/member_list_cubit.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
+import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/common/utils/flushbar_creator.dart';
 import 'package:valkyrie_app/application/channels/create_channel/create_channel_cubit.dart';
 import 'package:valkyrie_app/presentation/common/widgets/form_wrapper.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
+import 'package:valkyrie_app/presentation/main/guild/channels/screens/create_channel/member_select_form.dart';
 
 class CreateChannelForm extends StatelessWidget {
   final Guild guild;
@@ -114,30 +117,10 @@ class CreateChannelForm extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                // TypeAheadField(
-                //   suggestionsCallback: (pattern) {
-                //     return ["Test", "String"].where(
-                //       (element) => element.toLowerCase().contains(
-                //             pattern.toLowerCase(),
-                //           ),
-                //     );
-                //   },
-                //   itemBuilder: (context, suggestion) {
-                //     return ListTile(
-                //       title: Text(suggestion.toString()),
-                //     );
-                //   },
-                //   onSuggestionSelected: (suggestion) {
-                //     context
-                //         .read<CreateChannelCubit>()
-                //         .addMember(suggestion.toString());
-                //   },
-                // ),
-                const Text(
-                  "Work in progress. Use the web version to add members later.",
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
+                BlocProvider(
+                  create: (context) =>
+                      getIt<MemberListCubit>()..getGuildMembers(guild.id),
+                  child: MemberSelectForm(),
                 ),
               ]
             ],

@@ -1,7 +1,7 @@
 part of 'get_requests_cubit.dart';
 
 @freezed
-abstract class GetRequestsState with _$GetRequestsState {
+class GetRequestsState with _$GetRequestsState {
   const factory GetRequestsState.initial() = _Initial;
   const factory GetRequestsState.loadInProgress() = _LoadInProgress;
   const factory GetRequestsState.loadSuccess(List<FriendRequest> requests) =

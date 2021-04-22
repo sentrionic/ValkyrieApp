@@ -5,7 +5,7 @@ class CreateChannelState with _$CreateChannelState {
   const factory CreateChannelState({
     required ChannelName name,
     required bool isPublic,
-    required List<String> members,
+    required List<Member> members,
     required bool showErrorMessages,
     required bool isSubmitting,
     required Option<Either<ChannelFailure, Channel>>

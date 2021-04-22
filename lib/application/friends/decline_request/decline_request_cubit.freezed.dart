@@ -30,8 +30,10 @@ class _$DeclineRequestStateTearOff {
     );
   }
 
-  _ActionSuccess actionSuccess() {
-    return const _ActionSuccess();
+  _ActionSuccess actionSuccess(String requestId) {
+    return _ActionSuccess(
+      requestId,
+    );
   }
 }
 
@@ -45,7 +47,7 @@ mixin _$DeclineRequestState {
     required TResult Function() initial,
     required TResult Function() actionInProgress,
     required TResult Function(FriendFailure friendFailure) actionFailure,
-    required TResult Function() actionSuccess,
+    required TResult Function(String requestId) actionSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,7 +55,7 @@ mixin _$DeclineRequestState {
     TResult Function()? initial,
     TResult Function()? actionInProgress,
     TResult Function(FriendFailure friendFailure)? actionFailure,
-    TResult Function()? actionSuccess,
+    TResult Function(String requestId)? actionSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,7 +135,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() actionInProgress,
     required TResult Function(FriendFailure friendFailure) actionFailure,
-    required TResult Function() actionSuccess,
+    required TResult Function(String requestId) actionSuccess,
   }) {
     return initial();
   }
@@ -144,7 +146,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? actionInProgress,
     TResult Function(FriendFailure friendFailure)? actionFailure,
-    TResult Function()? actionSuccess,
+    TResult Function(String requestId)? actionSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -226,7 +228,7 @@ class _$_ActionInProgress implements _ActionInProgress {
     required TResult Function() initial,
     required TResult Function() actionInProgress,
     required TResult Function(FriendFailure friendFailure) actionFailure,
-    required TResult Function() actionSuccess,
+    required TResult Function(String requestId) actionSuccess,
   }) {
     return actionInProgress();
   }
@@ -237,7 +239,7 @@ class _$_ActionInProgress implements _ActionInProgress {
     TResult Function()? initial,
     TResult Function()? actionInProgress,
     TResult Function(FriendFailure friendFailure)? actionFailure,
-    TResult Function()? actionSuccess,
+    TResult Function(String requestId)? actionSuccess,
     required TResult orElse(),
   }) {
     if (actionInProgress != null) {
@@ -354,7 +356,7 @@ class _$_ActionFailure implements _ActionFailure {
     required TResult Function() initial,
     required TResult Function() actionInProgress,
     required TResult Function(FriendFailure friendFailure) actionFailure,
-    required TResult Function() actionSuccess,
+    required TResult Function(String requestId) actionSuccess,
   }) {
     return actionFailure(friendFailure);
   }
@@ -365,7 +367,7 @@ class _$_ActionFailure implements _ActionFailure {
     TResult Function()? initial,
     TResult Function()? actionInProgress,
     TResult Function(FriendFailure friendFailure)? actionFailure,
-    TResult Function()? actionSuccess,
+    TResult Function(String requestId)? actionSuccess,
     required TResult orElse(),
   }) {
     if (actionFailure != null) {
@@ -415,6 +417,7 @@ abstract class _$ActionSuccessCopyWith<$Res> {
   factory _$ActionSuccessCopyWith(
           _ActionSuccess value, $Res Function(_ActionSuccess) then) =
       __$ActionSuccessCopyWithImpl<$Res>;
+  $Res call({String requestId});
 }
 
 /// @nodoc
@@ -427,24 +430,49 @@ class __$ActionSuccessCopyWithImpl<$Res>
 
   @override
   _ActionSuccess get _value => super._value as _ActionSuccess;
+
+  @override
+  $Res call({
+    Object? requestId = freezed,
+  }) {
+    return _then(_ActionSuccess(
+      requestId == freezed
+          ? _value.requestId
+          : requestId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 class _$_ActionSuccess implements _ActionSuccess {
-  const _$_ActionSuccess();
+  const _$_ActionSuccess(this.requestId);
+
+  @override
+  final String requestId;
 
   @override
   String toString() {
-    return 'DeclineRequestState.actionSuccess()';
+    return 'DeclineRequestState.actionSuccess(requestId: $requestId)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionSuccess);
+    return identical(this, other) ||
+        (other is _ActionSuccess &&
+            (identical(other.requestId, requestId) ||
+                const DeepCollectionEquality()
+                    .equals(other.requestId, requestId)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(requestId);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ActionSuccessCopyWith<_ActionSuccess> get copyWith =>
+      __$ActionSuccessCopyWithImpl<_ActionSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -452,9 +480,9 @@ class _$_ActionSuccess implements _ActionSuccess {
     required TResult Function() initial,
     required TResult Function() actionInProgress,
     required TResult Function(FriendFailure friendFailure) actionFailure,
-    required TResult Function() actionSuccess,
+    required TResult Function(String requestId) actionSuccess,
   }) {
-    return actionSuccess();
+    return actionSuccess(requestId);
   }
 
   @override
@@ -463,11 +491,11 @@ class _$_ActionSuccess implements _ActionSuccess {
     TResult Function()? initial,
     TResult Function()? actionInProgress,
     TResult Function(FriendFailure friendFailure)? actionFailure,
-    TResult Function()? actionSuccess,
+    TResult Function(String requestId)? actionSuccess,
     required TResult orElse(),
   }) {
     if (actionSuccess != null) {
-      return actionSuccess();
+      return actionSuccess(requestId);
     }
     return orElse();
   }
@@ -500,5 +528,10 @@ class _$_ActionSuccess implements _ActionSuccess {
 }
 
 abstract class _ActionSuccess implements DeclineRequestState {
-  const factory _ActionSuccess() = _$_ActionSuccess;
+  const factory _ActionSuccess(String requestId) = _$_ActionSuccess;
+
+  String get requestId => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ActionSuccessCopyWith<_ActionSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
 }

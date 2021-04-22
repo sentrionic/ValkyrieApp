@@ -19,7 +19,7 @@ class _$EditChannelStateTearOff {
   _EditChannelState call(
       {required ChannelName name,
       required bool isPublic,
-      required List<String> members,
+      required List<Member> members,
       required bool showErrorMessages,
       required bool isSubmitting,
       required Option<Either<ChannelFailure, Unit>>
@@ -42,7 +42,7 @@ const $EditChannelState = _$EditChannelStateTearOff();
 mixin _$EditChannelState {
   ChannelName get name => throw _privateConstructorUsedError;
   bool get isPublic => throw _privateConstructorUsedError;
-  List<String> get members => throw _privateConstructorUsedError;
+  List<Member> get members => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<ChannelFailure, Unit>> get channelFailureOrSuccessOption =>
@@ -61,7 +61,7 @@ abstract class $EditChannelStateCopyWith<$Res> {
   $Res call(
       {ChannelName name,
       bool isPublic,
-      List<String> members,
+      List<Member> members,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<ChannelFailure, Unit>> channelFailureOrSuccessOption});
@@ -97,7 +97,7 @@ class _$EditChannelStateCopyWithImpl<$Res>
       members: members == freezed
           ? _value.members
           : members // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<Member>,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -124,7 +124,7 @@ abstract class _$EditChannelStateCopyWith<$Res>
   $Res call(
       {ChannelName name,
       bool isPublic,
-      List<String> members,
+      List<Member> members,
       bool showErrorMessages,
       bool isSubmitting,
       Option<Either<ChannelFailure, Unit>> channelFailureOrSuccessOption});
@@ -162,7 +162,7 @@ class __$EditChannelStateCopyWithImpl<$Res>
       members: members == freezed
           ? _value.members
           : members // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<Member>,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -194,7 +194,7 @@ class _$_EditChannelState implements _EditChannelState {
   @override
   final bool isPublic;
   @override
-  final List<String> members;
+  final List<Member> members;
   @override
   final bool showErrorMessages;
   @override
@@ -252,7 +252,7 @@ abstract class _EditChannelState implements EditChannelState {
   const factory _EditChannelState(
       {required ChannelName name,
       required bool isPublic,
-      required List<String> members,
+      required List<Member> members,
       required bool showErrorMessages,
       required bool isSubmitting,
       required Option<Either<ChannelFailure, Unit>>
@@ -263,7 +263,7 @@ abstract class _EditChannelState implements EditChannelState {
   @override
   bool get isPublic => throw _privateConstructorUsedError;
   @override
-  List<String> get members => throw _privateConstructorUsedError;
+  List<Member> get members => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
