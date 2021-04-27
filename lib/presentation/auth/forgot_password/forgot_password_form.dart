@@ -30,70 +30,73 @@ class ForgotPasswordForm extends StatelessWidget {
         );
       },
       builder: (context, state) {
-        return Form(
-          autovalidateMode: state.showErrorMessages
-              ? AutovalidateMode.always
-              : AutovalidateMode.disabled,
-          child: FormWrapper(
-            children: [
-              const SizedBox(
-                height: 20,
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
-                  labelText: 'Email',
+        return Container(
+          color: ThemeColors.sheetBackground,
+          height: double.infinity,
+          child: Form(
+            autovalidateMode: state.showErrorMessages
+                ? AutovalidateMode.always
+                : AutovalidateMode.disabled,
+            child: FormWrapper(
+              children: [
+                const SizedBox(
+                  height: 20,
                 ),
-                style: const TextStyle(color: Colors.white, fontSize: 20),
-                autocorrect: false,
-                textInputAction: TextInputAction.done,
-                onChanged: (value) =>
-                    context.read<ForgotPasswordCubit>().emailChanged(value),
-                validator: (_) => context
-                    .read<ForgotPasswordCubit>()
-                    .state
-                    .emailAddress
-                    .value
-                    .fold(
-                      (f) => f.maybeMap(
-                        invalidEmail: (_) => 'Invalid Email',
-                        orElse: () => null,
+                TextFormField(
+                  decoration: const InputDecoration(
+                    labelText: 'Email',
+                  ),
+                  autocorrect: false,
+                  textInputAction: TextInputAction.done,
+                  onChanged: (value) =>
+                      context.read<ForgotPasswordCubit>().emailChanged(value),
+                  validator: (_) => context
+                      .read<ForgotPasswordCubit>()
+                      .state
+                      .emailAddress
+                      .value
+                      .fold(
+                        (f) => f.maybeMap(
+                          invalidEmail: (_) => 'Invalid Email',
+                          orElse: () => null,
+                        ),
+                        (_) => null,
                       ),
-                      (_) => null,
-                    ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: ThemeColors.themeBlue,
-                      ),
-                      onPressed: () {
-                        context
-                            .read<ForgotPasswordCubit>()
-                            .submitForgotPassword();
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(vertical: 15),
-                        child: const Text(
-                          "Send Email",
-                          style: TextStyle(
-                            fontSize: 18,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: ThemeColors.themeBlue,
+                        ),
+                        onPressed: () {
+                          context
+                              .read<ForgotPasswordCubit>()
+                              .submitForgotPassword();
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(vertical: 15),
+                          child: const Text(
+                            "Send Email",
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              if (state.isSubmitting) ...[
-                const SizedBox(height: 8),
-                const LinearProgressIndicator(),
-              ]
-            ],
+                  ],
+                ),
+                if (state.isSubmitting) ...[
+                  const SizedBox(height: 8),
+                  const LinearProgressIndicator(),
+                ]
+              ],
+            ),
           ),
         );
       },

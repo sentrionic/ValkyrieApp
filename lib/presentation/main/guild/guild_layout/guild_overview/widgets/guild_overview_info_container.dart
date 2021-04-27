@@ -21,13 +21,15 @@ class GuildOverviewInfoContainer extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 30,
+                  height: 15,
                 ),
                 CircleAvatar(
                   backgroundImage:
                       guild.icon != null ? NetworkImage(guild.icon!) : null,
-                  radius: 75,
-                  backgroundColor: ThemeColors.themeBlue,
+                  radius: 70,
+                  backgroundColor: guild.icon != null
+                      ? ThemeColors.themeBlue
+                      : Colors.transparent,
                   child: guild.icon == null
                       ? Text(
                           guild.name.getOrCrash()[0],
@@ -44,7 +46,7 @@ class GuildOverviewInfoContainer extends StatelessWidget {
                 Text(
                   guild.name.getOrCrash(),
                   style: const TextStyle(
-                    fontSize: 25,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

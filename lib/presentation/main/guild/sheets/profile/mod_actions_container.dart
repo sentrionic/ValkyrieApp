@@ -30,7 +30,7 @@ class ModActionsContainer extends StatelessWidget {
                 guild.name.getOrCrash(),
                 style: const TextStyle(
                   fontWeight: FontWeight.w600,
-                  color: Colors.white38,
+                  color: Colors.white70,
                   fontSize: 16,
                 ),
               ),

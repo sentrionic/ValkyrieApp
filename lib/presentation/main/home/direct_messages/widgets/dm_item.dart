@@ -24,21 +24,27 @@ class DMChannelItem extends StatelessWidget {
         Navigator.of(context).pushReplacementNamed(DMScreen.routeName);
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.only(left: 5, right: 10),
         child: ClipRRect(
           borderRadius: const BorderRadius.all(
             Radius.circular(5),
           ),
           child: ListTile(
+            visualDensity: const VisualDensity(
+              vertical: -1,
+            ),
+            minLeadingWidth: 20,
             tileColor: current ? Colors.white10 : Colors.transparent,
             leading: getAvatarWithBadge(
               channel.user.image,
               isOnline: channel.user.isOnline,
+              imageRadius: 16,
+              iconRadious: 12,
             ),
             title: Text(
               channel.user.username,
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
                 color: current ? Colors.white : Colors.white38,
               ),
             ),

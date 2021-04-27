@@ -5,7 +5,7 @@ import 'package:valkyrie_app/application/dms/current/current_dm_cubit.dart';
 import 'package:valkyrie_app/application/dms/dm_list/dm_list_cubit.dart';
 import 'package:valkyrie_app/application/messages/get_messages/messages_cubit.dart';
 import 'package:valkyrie_app/injection.dart';
-import 'package:valkyrie_app/presentation/core/colors.dart';
+import 'package:valkyrie_app/presentation/common/widgets/drawer_menu_icon.dart';
 import 'package:valkyrie_app/presentation/main/guild/chat_screen/chat_layout.dart';
 import 'package:valkyrie_app/presentation/main/home/direct_messages/components/dm_drawer.dart';
 import 'package:valkyrie_app/presentation/main/home/direct_messages/widgets/dm_chat_header.dart';
@@ -22,10 +22,9 @@ class DMLayout extends StatelessWidget {
     return Scaffold(
       key: _drawerKey,
       appBar: AppBar(
-        backgroundColor: ThemeColors.appBackground,
         title: dmChannel != null ? DMChatHeader(channel: dmChannel) : null,
         leading: IconButton(
-          icon: const Icon(Icons.menu),
+          icon: DrawerMenuIcon(),
           onPressed: () => _drawerKey.currentState!.openDrawer(),
         ),
         actions: [

@@ -14,7 +14,7 @@ class MessageTextWidget extends StatelessWidget {
       children: [
         if (isCompact)
           const SizedBox(
-            width: 76,
+            width: 72,
           ),
         Flexible(
           child: Text(

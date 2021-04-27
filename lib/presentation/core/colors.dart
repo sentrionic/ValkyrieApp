@@ -17,4 +17,7 @@ class ThemeColors {
   static const sheetBackground = Color(0xff35383E);
   static const brandRed = Color(0xffF14645);
   static const skeletonGray = Color(0xff4E535B);
+  static const drawerBackground = Color(0xff2D3134);
+  static const channelRippleColor = Color(0xff383C41);
+  static const infoBackground = Color(0xff1D2223);
 }

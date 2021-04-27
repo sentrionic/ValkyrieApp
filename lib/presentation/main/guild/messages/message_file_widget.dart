@@ -19,7 +19,7 @@ class MessageFileWidget extends StatelessWidget {
       children: [
         if (isCompact)
           const SizedBox(
-            width: 76,
+            width: 72,
           ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),

@@ -15,7 +15,7 @@ class MemberHeader extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
-            height: 10,
+            height: 15,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -33,6 +33,7 @@ class MemberHeader extends StatelessWidget {
                   getChannelName(context, channelId),
                   style: const TextStyle(
                     fontSize: 20,
+                    color: Colors.white,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -42,7 +43,9 @@ class MemberHeader extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          const Divider(),
+          const Divider(
+            height: 2,
+          ),
         ],
       ),
     );

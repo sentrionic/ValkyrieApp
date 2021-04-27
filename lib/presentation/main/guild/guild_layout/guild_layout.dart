@@ -5,7 +5,7 @@ import 'package:valkyrie_app/application/channels/current/current_channel_cubit.
 import 'package:valkyrie_app/application/messages/get_messages/messages_cubit.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/injection.dart';
-import 'package:valkyrie_app/presentation/core/colors.dart';
+import 'package:valkyrie_app/presentation/common/widgets/drawer_menu_icon.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/channel_drawer.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/hooks/channel_socket_hook.dart';
 import 'package:valkyrie_app/presentation/main/guild/chat_screen/chat_layout.dart';
@@ -27,15 +27,18 @@ class GuildLayout extends HookWidget {
     return Scaffold(
       key: _drawerKey,
       appBar: AppBar(
-        backgroundColor: ThemeColors.appBackground,
         title: ChannelHeader(),
         leading: IconButton(
-          icon: const Icon(Icons.menu),
+          icon: DrawerMenuIcon(),
           onPressed: () => _drawerKey.currentState!.openDrawer(),
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.people),
+            icon: const Icon(
+              Icons.people,
+              size: 25,
+              color: Colors.white60,
+            ),
             onPressed: () => _drawerKey.currentState!.openEndDrawer(),
           ),
         ],

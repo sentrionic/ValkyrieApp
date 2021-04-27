@@ -21,9 +21,9 @@ class ChannelDrawer extends StatelessWidget {
             child: DrawerGuildList(),
           ),
           Expanded(
-            flex: 11,
-            child: Container(
-              color: ThemeColors.dmBackground,
+            flex: 12,
+            child: Material(
+              color: ThemeColors.drawerBackground,
               child: Column(
                 children: [
                   const SizedBox(

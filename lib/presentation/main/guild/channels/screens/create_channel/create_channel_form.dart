@@ -46,84 +46,87 @@ class CreateChannelForm extends StatelessWidget {
             ),
           ],
         ),
-        body: Form(
-          autovalidateMode: state.showErrorMessages
-              ? AutovalidateMode.always
-              : AutovalidateMode.disabled,
-          child: FormWrapper(
-            children: [
-              const SizedBox(
-                height: 20,
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
-                  filled: false,
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white70),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white70),
-                  ),
-                  labelText: 'Channel Name',
+        body: Container(
+          color: ThemeColors.sheetBackground,
+          height: double.infinity,
+          child: Form(
+            autovalidateMode: state.showErrorMessages
+                ? AutovalidateMode.always
+                : AutovalidateMode.disabled,
+            child: FormWrapper(
+              children: [
+                const SizedBox(
+                  height: 20,
                 ),
-                style: const TextStyle(color: Colors.white, fontSize: 20),
-                autocorrect: false,
-                textInputAction: TextInputAction.next,
-                onChanged: (value) =>
-                    context.read<CreateChannelCubit>().nameChanged(value),
-                validator: (_) =>
-                    context.read<CreateChannelCubit>().state.name.value.fold(
-                          (f) => f.maybeMap(
-                            invalidChannelName: (_) =>
-                                'Channel names must be between 3 and 30 characters',
-                            orElse: () => null,
+                TextFormField(
+                  decoration: const InputDecoration(
+                    filled: false,
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white70),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white70),
+                    ),
+                    labelText: 'Channel Name',
+                  ),
+                  autocorrect: false,
+                  textInputAction: TextInputAction.next,
+                  onChanged: (value) =>
+                      context.read<CreateChannelCubit>().nameChanged(value),
+                  validator: (_) =>
+                      context.read<CreateChannelCubit>().state.name.value.fold(
+                            (f) => f.maybeMap(
+                              invalidChannelName: (_) =>
+                                  'Channel names must be between 3 and 30 characters',
+                              orElse: () => null,
+                            ),
+                            (_) => null,
                           ),
-                          (_) => null,
-                        ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Divider(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: const [
-                      Icon(Icons.lock_outline_rounded),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text("Private Channel"),
-                    ],
-                  ),
-                  Switch(
-                    value: !state.isPublic,
-                    onChanged: (value) => context
-                        .read<CreateChannelCubit>()
-                        .isPublicChanged(isPublic: !value),
-                    activeColor: ThemeColors.themeBlue,
-                  ),
-                ],
-              ),
-              if (state.isPublic)
-                const Text(
-                  "By making a channel private, only selected members will be able to view this channel.",
-                )
-              else ...[
-                const Text(
-                  "WHO CAN ACCESS THIS CHANNEL?",
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                BlocProvider(
-                  create: (context) =>
-                      getIt<MemberListCubit>()..getGuildMembers(guild.id),
-                  child: MemberSelectForm(),
+                const Divider(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: const [
+                        Icon(Icons.lock_outline_rounded),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text("Private Channel"),
+                      ],
+                    ),
+                    Switch(
+                      value: !state.isPublic,
+                      onChanged: (value) => context
+                          .read<CreateChannelCubit>()
+                          .isPublicChanged(isPublic: !value),
+                      activeColor: ThemeColors.themeBlue,
+                    ),
+                  ],
                 ),
-              ]
-            ],
+                if (state.isPublic)
+                  const Text(
+                    "By making a channel private, only selected members will be able to view this channel.",
+                  )
+                else ...[
+                  const Text(
+                    "WHO CAN ACCESS THIS CHANNEL?",
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  BlocProvider(
+                    create: (context) =>
+                        getIt<MemberListCubit>()..getGuildMembers(guild.id),
+                    child: MemberSelectForm(),
+                  ),
+                ]
+              ],
+            ),
           ),
         ),
       );

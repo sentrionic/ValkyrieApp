@@ -12,3 +12,18 @@ class DMChannel with _$DMChannel {
     required DMUser user,
   }) = _DMChannel;
 }
+
+@freezed
+class DMNotification with _$DMNotification {
+  const DMNotification._();
+
+  const factory DMNotification({
+    required String id,
+    required int count,
+    required DMUser user,
+  }) = _DMNotification;
+
+  DMChannel toDMChannel() {
+    return DMChannel(id: id, user: user);
+  }
+}

@@ -37,7 +37,7 @@ class MessageLoaderOrEndIndicator extends StatelessWidget {
   }
 
   double _getContainerHeight(bool needBiggerHeight) {
-    return needBiggerHeight ? 260 : 140;
+    return needBiggerHeight ? 230 : 120;
   }
 
   Widget _getEndIndicator(
@@ -60,7 +60,6 @@ class MessageLoaderOrEndIndicator extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-          const Divider(),
         ],
       ),
     );
@@ -74,7 +73,7 @@ class MessageLoaderOrEndIndicator extends StatelessWidget {
         Text(
           "Welcome to #$channelName!",
           style: const TextStyle(
-            fontSize: 26,
+            fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -84,7 +83,7 @@ class MessageLoaderOrEndIndicator extends StatelessWidget {
         Text(
           "This is the start of the #$channelName channel.",
           style: const TextStyle(
-            fontSize: 18,
+            fontWeight: FontWeight.w600,
             color: Colors.white60,
           ),
         ),
@@ -100,7 +99,7 @@ class MessageLoaderOrEndIndicator extends StatelessWidget {
         CircleAvatar(
           backgroundImage:
               channel != null ? NetworkImage(channel.user.image) : null,
-          radius: 48,
+          radius: 42,
         ),
         const SizedBox(
           height: 15,
@@ -108,7 +107,7 @@ class MessageLoaderOrEndIndicator extends StatelessWidget {
         Text(
           channel?.user.username.toUpperCase() ?? "",
           style: const TextStyle(
-            fontSize: 24,
+            fontSize: 22,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -118,7 +117,7 @@ class MessageLoaderOrEndIndicator extends StatelessWidget {
         Text(
           "This is the beginning of your direct message history with @${channel?.user.username}.",
           style: const TextStyle(
-            color: Colors.white54,
+            color: Colors.white38,
           ),
         ),
       ],

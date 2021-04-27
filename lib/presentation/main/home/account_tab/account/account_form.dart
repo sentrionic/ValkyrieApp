@@ -103,7 +103,7 @@ class AccountForm extends StatelessWidget {
                                       (r) => null),
                             ),
                             const SizedBox(
-                              height: 10,
+                              height: 15,
                             ),
                             TextFormField(
                               decoration: const InputDecoration(
@@ -153,9 +153,6 @@ class AccountForm extends StatelessWidget {
                                           vertical: 15),
                                       child: const Text(
                                         "Save Changes",
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                        ),
                                       ),
                                     ),
                                   ),

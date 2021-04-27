@@ -4,20 +4,25 @@ import 'colors.dart';
 
 final appTheme = ThemeData.dark().copyWith(
   accentColor: ThemeColors.themeBlue,
-  backgroundColor: ThemeColors.appBackground,
+  backgroundColor: ThemeColors.sheetBackground,
   appBarTheme: const AppBarTheme(
-    backgroundColor: ThemeColors.appBackground,
+    backgroundColor: ThemeColors.drawerBackground,
     elevation: 0,
   ),
   visualDensity: VisualDensity.adaptivePlatformDensity,
-  inputDecorationTheme: const InputDecorationTheme(
-    border: InputBorder.none,
+  inputDecorationTheme: InputDecorationTheme(
+    border: UnderlineInputBorder(
+      borderRadius: BorderRadius.circular(5),
+      borderSide: BorderSide.none,
+    ),
     fillColor: ThemeColors.inputBackground,
-    labelStyle: TextStyle(
+    labelStyle: const TextStyle(
       color: Colors.white70,
     ),
     filled: true,
-    errorStyle: TextStyle(color: ThemeColors.errorRed),
+    errorStyle: const TextStyle(
+      color: ThemeColors.errorRed,
+    ),
   ),
   textSelectionTheme: const TextSelectionThemeData(
     cursorColor: ThemeColors.themeBlue,

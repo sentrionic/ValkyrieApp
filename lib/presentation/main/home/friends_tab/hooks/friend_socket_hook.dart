@@ -35,7 +35,6 @@ class _FriendSocketHookState extends HookState<void, FriendSocketHook> {
       ).setExtraHeaders({"cookie": cookie}).build(),
     );
     socket.emit('joinUser', current.id);
-    socket.emit('getRequestCount');
 
     socket.on('add_friend', (data) {
       final friend = FriendDto.fromMap(data).toDomain();
@@ -69,13 +68,6 @@ class _FriendSocketHookState extends HookState<void, FriendSocketHook> {
       final request = FriendRequestDto.fromMap(data).toDomain();
       hook.context.read<GetRequestsCubit>().addRequest(request);
     });
-
-    socket.on(
-      'requestCount',
-      (count) {
-        print(count);
-      },
-    );
   }
 
   @override

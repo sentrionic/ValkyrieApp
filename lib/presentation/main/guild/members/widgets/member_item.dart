@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart';
 import 'package:valkyrie_app/application/guilds/guild_list/guild_list_cubit.dart';
+import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/domain/member/member.dart';
 import 'package:valkyrie_app/presentation/common/extensions/hex_color_extension.dart';
 import 'package:valkyrie_app/presentation/common/widgets/avatar_with_badge.dart';
@@ -20,18 +21,15 @@ class MemberItem extends StatelessWidget {
       visualDensity: const VisualDensity(
         vertical: -2,
       ),
-      onTap: () {
-        showModalBottomSheet(
-          isScrollControlled: true,
-          context: context,
-          builder: (_) => ProfileBottomSheet(
-            guild: guild,
-            member: member,
-            ctx: context,
-          ),
-        );
-      },
-      leading: getAvatarWithBadge(member.image, isOnline: member.isOnline),
+      minLeadingWidth: 20,
+      onTap: () => _showMemberModal(context, guild),
+      onLongPress: () => _showMemberModal(context, guild),
+      leading: getAvatarWithBadge(
+        member.image,
+        isOnline: member.isOnline,
+        imageRadius: 16,
+        iconRadious: 12,
+      ),
       title: Text(
         member.nickname ?? member.username,
         style: TextStyle(
@@ -40,4 +38,15 @@ class MemberItem extends StatelessWidget {
       ),
     );
   }
+
+  void _showMemberModal(BuildContext context, Guild? guild) =>
+      showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (_) => ProfileBottomSheet(
+          guild: guild,
+          member: member,
+          ctx: context,
+        ),
+      );
 }

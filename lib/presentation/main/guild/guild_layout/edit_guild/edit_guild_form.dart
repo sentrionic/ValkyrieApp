@@ -51,105 +51,110 @@ class EditGuildForm extends HookWidget {
         appBar: AppBar(
           title: const Text("Overview"),
         ),
-        body: FormWrapper(
-          children: [
-            const SizedBox(
-              height: 40,
-            ),
-            BlocBuilder<EditGuildCubit, EditGuildState>(
-              builder: (context, state) => Stack(
-                children: [
-                  GestureDetector(
-                    onTap: () => _selectGuildIcon(context),
-                    child: CircleAvatar(
-                      radius: 45,
-                      backgroundColor: ThemeColors.guildBackground,
-                      foregroundImage:
-                          (state.icon == null && initialIcon.value != null)
-                              ? NetworkImage(guild.icon!)
-                              : null,
-                      child: state.icon != null
-                          ? ClipOval(
-                              child: Image.file(
-                                state.icon!,
-                                fit: BoxFit.cover,
-                              ),
-                            )
-                          : Text(
-                              guild.name.getOrCrash()[0],
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 25,
-                              ),
-                            ),
-                    ),
-                  ),
-                  Positioned(
-                    right: 0,
-                    child: Container(
-                      padding: const EdgeInsets.all(1),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      constraints: const BoxConstraints(
-                        minWidth: 30,
-                        minHeight: 30,
-                      ),
-                      child: const Icon(
-                        Icons.add_photo_alternate_outlined,
-                        color: Colors.black87,
-                      ),
-                    ),
-                  )
-                ],
+        body: Container(
+          color: ThemeColors.sheetBackground,
+          height: double.infinity,
+          child: FormWrapper(
+            children: [
+              const SizedBox(
+                height: 40,
               ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            GestureDetector(
-              onTap: () {
-                initialIcon.value = null;
-                context.read<EditGuildCubit>().removeIcon();
-              },
-              child: const Text(
-                "Remove",
-                style: TextStyle(
-                  color: ThemeColors.themeBlue,
+              BlocBuilder<EditGuildCubit, EditGuildState>(
+                builder: (context, state) => Stack(
+                  children: [
+                    GestureDetector(
+                      onTap: () => _selectGuildIcon(context),
+                      child: CircleAvatar(
+                        radius: 45,
+                        backgroundColor: ThemeColors.guildBackground,
+                        foregroundImage:
+                            (state.icon == null && initialIcon.value != null)
+                                ? NetworkImage(guild.icon!)
+                                : null,
+                        child: state.icon != null
+                            ? ClipOval(
+                                child: Image.file(
+                                  state.icon!,
+                                  fit: BoxFit.cover,
+                                ),
+                              )
+                            : Text(
+                                guild.name.getOrCrash()[0],
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                ),
+                              ),
+                      ),
+                    ),
+                    Positioned(
+                      right: 0,
+                      child: Container(
+                        padding: const EdgeInsets.all(1),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        constraints: const BoxConstraints(
+                          minWidth: 30,
+                          minHeight: 30,
+                        ),
+                        child: const Icon(
+                          Icons.add_photo_alternate_outlined,
+                          color: Colors.black87,
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            Form(
-              autovalidateMode:
-                  context.watch<EditGuildCubit>().state.showErrorMessages
-                      ? AutovalidateMode.always
-                      : AutovalidateMode.disabled,
-              child: Column(
-                children: [
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: 'Server Name',
-                    ),
-                    initialValue: guild.name.getOrCrash(),
-                    onChanged: (value) =>
-                        context.read<EditGuildCubit>().nameChanged(value),
-                    validator: (_) =>
-                        context.read<EditGuildCubit>().state.name.value.fold(
-                            (f) => f.maybeMap(
+              const SizedBox(
+                height: 20,
+              ),
+              GestureDetector(
+                onTap: () {
+                  initialIcon.value = null;
+                  context.read<EditGuildCubit>().removeIcon();
+                },
+                child: const Text(
+                  "Remove",
+                  style: TextStyle(
+                    color: ThemeColors.themeBlue,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Form(
+                autovalidateMode:
+                    context.watch<EditGuildCubit>().state.showErrorMessages
+                        ? AutovalidateMode.always
+                        : AutovalidateMode.disabled,
+                child: Column(
+                  children: [
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: 'Server Name',
+                      ),
+                      initialValue: guild.name.getOrCrash(),
+                      onChanged: (value) =>
+                          context.read<EditGuildCubit>().nameChanged(value),
+                      validator: (_) =>
+                          context.read<EditGuildCubit>().state.name.value.fold(
+                                (f) => f.maybeMap(
                                   invalidChannelName: (_) =>
                                       'Server names must be between 3 and 30 characters long',
                                   orElse: () => null,
                                 ),
-                            (r) => null),
-                  ),
-                ],
+                                (r) => null,
+                              ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {

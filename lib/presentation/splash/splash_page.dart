@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valkyrie_app/application/auth/auth_status/auth_status_bloc.dart';
+import 'package:valkyrie_app/application/dms/dm_list/dm_list_cubit.dart';
+import 'package:valkyrie_app/application/guilds/guild_list/guild_list_cubit.dart';
 import 'package:valkyrie_app/presentation/auth/start_up_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/home_screen.dart';
 
@@ -13,6 +15,8 @@ class SplashPage extends StatelessWidget {
         state.map(
           initial: (_) {},
           authenticated: (_) {
+            context.read<GuildListCubit>().getGuilds();
+            context.read<DMListCubit>().getUserDMs();
             Navigator.pushReplacementNamed(context, HomeScreen.routeName);
           },
           unauthenticated: (_) {

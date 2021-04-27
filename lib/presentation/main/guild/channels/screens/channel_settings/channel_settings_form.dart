@@ -109,99 +109,102 @@ class ChannelSettingsForm extends StatelessWidget {
             )
           ],
         ),
-        body: BlocBuilder<EditChannelCubit, EditChannelState>(
-          builder: (context, state) => Form(
-            key: _key,
-            autovalidateMode: state.showErrorMessages
-                ? AutovalidateMode.always
-                : AutovalidateMode.disabled,
-            child: FormWrapper(
-              children: [
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    filled: false,
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white70),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white70),
-                    ),
-                    labelText: 'Channel Name',
+        body: Container(
+          color: ThemeColors.sheetBackground,
+          height: double.infinity,
+          child: BlocBuilder<EditChannelCubit, EditChannelState>(
+            builder: (context, state) => Form(
+              key: _key,
+              autovalidateMode: state.showErrorMessages
+                  ? AutovalidateMode.always
+                  : AutovalidateMode.disabled,
+              child: FormWrapper(
+                children: [
+                  const SizedBox(
+                    height: 20,
                   ),
-                  initialValue: channel.name.getOrCrash(),
-                  style: const TextStyle(color: Colors.white, fontSize: 20),
-                  autocorrect: false,
-                  textInputAction: TextInputAction.next,
-                  onChanged: (value) =>
-                      context.read<EditChannelCubit>().nameChanged(value),
-                  validator: (_) =>
-                      context.read<EditChannelCubit>().state.name.value.fold(
-                            (f) => f.maybeMap(
-                              invalidChannelName: (_) =>
-                                  'Channel names must be between 3 and 30 characters',
-                              orElse: () => null,
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      filled: false,
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white70),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white70),
+                      ),
+                      labelText: 'Channel Name',
+                    ),
+                    initialValue: channel.name.getOrCrash(),
+                    autocorrect: false,
+                    textInputAction: TextInputAction.next,
+                    onChanged: (value) =>
+                        context.read<EditChannelCubit>().nameChanged(value),
+                    validator: (_) =>
+                        context.read<EditChannelCubit>().state.name.value.fold(
+                              (f) => f.maybeMap(
+                                invalidChannelName: (_) =>
+                                    'Channel names must be between 3 and 30 characters',
+                                orElse: () => null,
+                              ),
+                              (_) => null,
                             ),
-                            (_) => null,
-                          ),
-                  onSaved: (value) {
-                    context.read<EditChannelCubit>().nameChanged(value!);
-                  },
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Divider(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: const [
-                        Icon(Icons.lock_outline_rounded),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text("Private Channel"),
-                      ],
-                    ),
-                    Switch(
-                      value: !state.isPublic,
-                      onChanged: (value) => context
-                          .read<EditChannelCubit>()
-                          .isPublicChanged(isPublic: !value),
-                      activeColor: ThemeColors.themeBlue,
-                    ),
-                  ],
-                ),
-                if (state.isPublic)
-                  const Text(
-                    "By making a channel private, only selected members will be able to view this channel.",
-                  )
-                else ...[
-                  const Text(
-                    "WHO CAN ACCESS THIS CHANNEL?",
+                    onSaved: (value) {
+                      context.read<EditChannelCubit>().nameChanged(value!);
+                    },
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  MultiBlocProvider(
-                    providers: [
-                      BlocProvider(
-                        create: (context) =>
-                            getIt<MemberListCubit>()..getGuildMembers(guildId),
+                  const Divider(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: const [
+                          Icon(Icons.lock_outline_rounded),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text("Private Channel"),
+                        ],
                       ),
-                      BlocProvider(
-                        create: (context) =>
-                            getIt<GetPrivateChannelMembersCubit>()
-                              ..getPrivateChannelMembers(channel.id),
+                      Switch(
+                        value: !state.isPublic,
+                        onChanged: (value) => context
+                            .read<EditChannelCubit>()
+                            .isPublicChanged(isPublic: !value),
+                        activeColor: ThemeColors.themeBlue,
                       ),
                     ],
-                    child: MemberSettingsSelectForm(),
                   ),
-                ]
-              ],
+                  if (state.isPublic)
+                    const Text(
+                      "By making a channel private, only selected members will be able to view this channel.",
+                    )
+                  else ...[
+                    const Text(
+                      "WHO CAN ACCESS THIS CHANNEL?",
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    MultiBlocProvider(
+                      providers: [
+                        BlocProvider(
+                          create: (context) => getIt<MemberListCubit>()
+                            ..getGuildMembers(guildId),
+                        ),
+                        BlocProvider(
+                          create: (context) =>
+                              getIt<GetPrivateChannelMembersCubit>()
+                                ..getPrivateChannelMembers(channel.id),
+                        ),
+                      ],
+                      child: MemberSettingsSelectForm(),
+                    ),
+                  ]
+                ],
+              ),
             ),
           ),
         ),

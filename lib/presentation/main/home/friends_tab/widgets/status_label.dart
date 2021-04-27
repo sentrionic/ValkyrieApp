@@ -16,9 +16,9 @@ class StatusLabel extends StatelessWidget {
       child: Text(
         "${label.toUpperCase()} — $count",
         style: const TextStyle(
-          color: Colors.white24,
-          fontSize: 14,
-          fontWeight: FontWeight.w500,
+          color: Colors.white54,
+          fontSize: 12,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );

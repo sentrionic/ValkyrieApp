@@ -39,20 +39,24 @@ class GuildItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               _getGuildPill(
-                  hasNotification: hasNotification, isCurrent: current),
+                hasNotification: hasNotification,
+                isCurrent: current,
+              ),
               if (current)
                 Container(
-                  height: 52,
-                  width: 52,
-                  decoration: const BoxDecoration(
-                    color: ThemeColors.themeBlue,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
+                  height: 48,
+                  width: 48,
+                  decoration: BoxDecoration(
+                    color: guild.icon == null
+                        ? ThemeColors.themeBlue
+                        : Colors.transparent,
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(18),
                     ),
                   ),
                   child: guild.icon != null
                       ? ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(18),
                           child: Image.network(guild.icon!),
                         )
                       : Center(
@@ -69,7 +73,7 @@ class GuildItem extends StatelessWidget {
                 CircleAvatar(
                   backgroundImage:
                       guild.icon != null ? NetworkImage(guild.icon!) : null,
-                  radius: 26,
+                  radius: 24,
                   backgroundColor: ThemeColors.guildBackground,
                   child: guild.icon == null
                       ? Text(

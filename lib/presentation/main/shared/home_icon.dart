@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valkyrie_app/application/dms/current/current_dm_cubit.dart';
 import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart';
+import 'package:valkyrie_app/application/notifications/request_notifications_cubit.dart';
 import 'package:valkyrie_app/presentation/common/widgets/app_icons.dart';
+import 'package:valkyrie_app/presentation/common/widgets/notification_icon.dart';
 import 'package:valkyrie_app/presentation/common/widgets/widget_constants.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/main/home/home_screen.dart';
@@ -31,16 +33,25 @@ class HomeIconWidget extends StatelessWidget {
             ),
           Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(isHome ? 20 : 50),
+              borderRadius: BorderRadius.circular(isHome ? 18 : 50),
               color:
                   isHome ? ThemeColors.themeBlue : ThemeColors.guildBackground,
             ),
-            width: 50,
-            height: 50,
-            child: const Icon(
-              AppIcons.commentalt,
-              color: Colors.white,
-              size: 20,
+            width: 48,
+            height: 48,
+            child: BlocBuilder<RequestNotificationsCubit, int>(
+              buildWhen: (p, c) => p != c,
+              builder: (context, state) => Stack(
+                alignment: Alignment.center,
+                children: [
+                  const Icon(
+                    AppIcons.commentalt,
+                    size: 22,
+                    color: Colors.white,
+                  ),
+                  if (state > 0) NotificationIcon(count: state)
+                ],
+              ),
             ),
           ),
           const SizedBox(

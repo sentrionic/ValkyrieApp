@@ -12,7 +12,7 @@ class ChannelDrawerHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 15.0, left: 15.0),
+      padding: const EdgeInsets.only(top: 10.0, left: 15.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

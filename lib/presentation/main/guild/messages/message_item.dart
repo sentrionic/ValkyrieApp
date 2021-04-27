@@ -21,7 +21,7 @@ class MessageItem extends StatelessWidget {
     final guild = context.read<GuildListCubit>().getCurrentGuild(guildId);
     return ListTile(
       visualDensity: const VisualDensity(
-        vertical: -3,
+        vertical: -4,
       ),
       leading: GestureDetector(
         onTap: () {
@@ -39,7 +39,7 @@ class MessageItem extends StatelessWidget {
           backgroundImage: NetworkImage(
             message.user.image,
           ),
-          radius: 22,
+          radius: 19,
         ),
       ),
       title: Row(
@@ -47,7 +47,6 @@ class MessageItem extends StatelessWidget {
           Text(
             message.user.nickname ?? message.user.username,
             style: TextStyle(
-              fontSize: 16,
               color: message.user.color != null
                   ? HexColor(message.user.color!)
                   : null,
@@ -62,13 +61,13 @@ class MessageItem extends StatelessWidget {
             ).toHuman,
             style: const TextStyle(
               fontSize: 12,
-              color: Colors.white54,
+              color: Colors.white24,
             ),
           ),
         ],
       ),
       subtitle: Padding(
-        padding: const EdgeInsets.only(top: 5.0),
+        padding: const EdgeInsets.only(top: 2.0),
         child: message.attachment != null
             ? MessageFileWidget(message)
             : MessageTextWidget(message),

@@ -6,7 +6,7 @@ class CurrentGuildPill extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: WidgetConstants.pillWidth,
-      height: 38,
+      height: 34,
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(

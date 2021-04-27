@@ -10,93 +10,96 @@ class AddGuildScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: ThemeColors.sheetBackground,
         leading: IconButton(
           icon: const Icon(Icons.close),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
-      body: FormWrapper(
-        children: [
-          const Text(
-            "Create Your Server",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+      body: Container(
+        color: ThemeColors.sheetBackground,
+        height: double.infinity,
+        child: FormWrapper(
+          children: [
+            const Text(
+              "Create Your Server",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          const SizedBox(height: 15),
-          const Text(
-            "Your server is where you and your friends hang out. Make yours and start talking.",
-            style: TextStyle(
-              color: Colors.white70,
+            const SizedBox(height: 15),
+            const Text(
+              "Your server is where you and your friends hang out. Make yours and start talking.",
+              style: TextStyle(
+                color: Colors.white70,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: SizedBox(
-                  height: 50,
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: SizedBox(
+                    height: 50,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: ThemeColors.messageInput,
+                      ),
+                      onPressed: () => Navigator.of(context).pushNamed(
+                        CreateGuildScreen.routeName,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          SizedBox(),
+                          Text(
+                            "Create My Own",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Icon(Icons.chevron_right_sharp),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            const Text(
+              "Have an invite already?",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 15),
+            Row(
+              children: [
+                Expanded(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: ThemeColors.messageInput,
+                      primary: ThemeColors.buttonGray,
                     ),
                     onPressed: () => Navigator.of(context).pushNamed(
-                      CreateGuildScreen.routeName,
+                      JoinGuildScreen.routeName,
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        SizedBox(),
-                        Text(
-                          "Create My Own",
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ),
-                        Icon(Icons.chevron_right_sharp),
-                      ],
+                    child: const Text(
+                      "Join a friend on Valkyrie",
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          const Text(
-            "Have an invite already?",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+              ],
             ),
-          ),
-          const SizedBox(height: 15),
-          Row(
-            children: [
-              Expanded(
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: ThemeColors.buttonGray,
-                  ),
-                  onPressed: () => Navigator.of(context).pushNamed(
-                    JoinGuildScreen.routeName,
-                  ),
-                  child: const Text(
-                    "Join a friend on Valkyrie",
-                    style: TextStyle(
-                      fontSize: 15,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

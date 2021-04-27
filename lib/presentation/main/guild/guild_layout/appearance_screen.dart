@@ -106,7 +106,6 @@ class _AppearanceScreenForm extends HookWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Change Appearance"),
-          backgroundColor: ThemeColors.appBackground,
           actions: [
             IconButton(
               icon: const Icon(Icons.save),
@@ -123,112 +122,116 @@ class _AppearanceScreenForm extends HookWidget {
         body: BlocBuilder<ChangeAppearanceCubit, ChangeAppearanceState>(
             builder: (context, state) {
           final color = state.hexColor?.getOrCrash();
-          return Form(
-            key: _key,
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.all(15.0),
-                  child: Text(
-                    "NICKNAME",
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+          return Container(
+            color: ThemeColors.sheetBackground,
+            child: Form(
+              key: _key,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(15.0),
+                    child: Text(
+                      "NICKNAME",
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                ),
-                TextFormField(
-                  controller: _controller,
-                  onChanged: (value) {
-                    if (value.isNotEmpty) {
-                      context
-                          .read<ChangeAppearanceCubit>()
-                          .nicknameChanged(value);
-                    } else {
-                      context.read<ChangeAppearanceCubit>().resetNickname();
-                    }
-                  },
-                  onSaved: (value) {
-                    if (value != null && value.isNotEmpty) {
-                      context
-                          .read<ChangeAppearanceCubit>()
-                          .nicknameChanged(value);
-                    }
-                  },
-                  validator: (value) {
-                    if (value != null) {
-                      if (value.length < 3 && value.isNotEmpty) {
-                        return "Nickname too short";
-                      } else if (value.length > 32) {
-                        return "Nickname too long";
+                  TextFormField(
+                    controller: _controller,
+                    onChanged: (value) {
+                      if (value.isNotEmpty) {
+                        context
+                            .read<ChangeAppearanceCubit>()
+                            .nicknameChanged(value);
+                      } else {
+                        context.read<ChangeAppearanceCubit>().resetNickname();
                       }
-                    }
-                  },
-                ),
-                const Divider(),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        "COLOR",
-                        style: TextStyle(
-                          color: Colors.white70,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      ColorButton(
-                        color: color != null ? HexColor(color) : Colors.white,
-                        config: const ColorPickerConfig(
-                          enableEyePicker: false,
-                          enableOpacity: false,
-                        ),
-                        size: 38,
-                        onColorChanged: (newColor) {
-                          context.read<ChangeAppearanceCubit>().colorChanged(
-                              "#${newColor.value.toRadixString(16).substring(2)}");
-                        },
-                      ),
-                    ],
+                    },
+                    onSaved: (value) {
+                      if (value != null && value.isNotEmpty) {
+                        context
+                            .read<ChangeAppearanceCubit>()
+                            .nicknameChanged(value);
+                      }
+                    },
+                    validator: (value) {
+                      if (value != null) {
+                        if (value.length < 3 && value.isNotEmpty) {
+                          return "Nickname too short";
+                        } else if (value.length > 32) {
+                          return "Nickname too long";
+                        }
+                      }
+                    },
                   ),
-                ),
-                const Divider(),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      OutlinedButton(
-                        onPressed: () {
-                          _controller.text = "";
-                          context.read<ChangeAppearanceCubit>().resetNickname();
-                        },
-                        child: const Text(
-                          "Reset Nickname",
+                  const Divider(),
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          "COLOR",
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.white70,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                      ),
-                      OutlinedButton(
-                        onPressed: () =>
-                            context.read<ChangeAppearanceCubit>().resetColor(),
-                        child: const Text(
-                          "Reset Color",
-                          style: TextStyle(
-                            color: Colors.white,
+                        ColorButton(
+                          color: color != null ? HexColor(color) : Colors.white,
+                          config: const ColorPickerConfig(
+                            enableEyePicker: false,
+                            enableOpacity: false,
+                          ),
+                          size: 38,
+                          onColorChanged: (newColor) {
+                            context.read<ChangeAppearanceCubit>().colorChanged(
+                                "#${newColor.value.toRadixString(16).substring(2)}");
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Divider(),
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        OutlinedButton(
+                          onPressed: () {
+                            _controller.text = "";
+                            context
+                                .read<ChangeAppearanceCubit>()
+                                .resetNickname();
+                          },
+                          child: const Text(
+                            "Reset Nickname",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                        OutlinedButton(
+                          onPressed: () => context
+                              .read<ChangeAppearanceCubit>()
+                              .resetColor(),
+                          child: const Text(
+                            "Reset Color",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         }),

@@ -13,12 +13,12 @@ class RoleLabel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       child: Text(
         "${label.toUpperCase()} — $count",
         style: const TextStyle(
           color: Colors.white24,
-          fontSize: 13,
+          fontSize: 12,
           fontWeight: FontWeight.bold,
         ),
       ),

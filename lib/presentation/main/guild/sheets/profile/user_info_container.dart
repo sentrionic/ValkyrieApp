@@ -9,6 +9,7 @@ import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart
 import 'package:valkyrie_app/domain/member/member.dart';
 import 'package:valkyrie_app/presentation/common/utils/flushbar_creator.dart';
 import 'package:valkyrie_app/presentation/common/widgets/app_icons.dart';
+import 'package:valkyrie_app/presentation/common/widgets/avatar_with_badge.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/main/home/direct_messages/dm_screen.dart';
 
@@ -68,35 +69,16 @@ class UserInfoContainer extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              color: ThemeColors.dmBackground,
+              color: ThemeColors.infoBackground,
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Stack(
-                      children: [
-                        CircleAvatar(
-                          radius: 45,
-                          backgroundImage: NetworkImage(member.image),
-                        ),
-                        Positioned(
-                          right: 0,
-                          bottom: 0,
-                          child: Container(
-                            padding: const EdgeInsets.all(1),
-                            decoration: BoxDecoration(
-                              color:
-                                  member.isOnline ? Colors.green : Colors.grey,
-                              borderRadius: BorderRadius.circular(50),
-                              border: Border.all(width: 2),
-                            ),
-                            constraints: const BoxConstraints(
-                              minWidth: 30,
-                              minHeight: 30,
-                            ),
-                          ),
-                        )
-                      ],
+                    padding: const EdgeInsets.all(20),
+                    child: getAvatarWithBadge(
+                      member.image,
+                      isOnline: member.isOnline,
+                      imageRadius: 40,
+                      iconRadious: 25,
                     ),
                   ),
                   if (member.nickname != null) ...[
@@ -145,11 +127,17 @@ class UserInfoContainer extends StatelessWidget {
                                 Icon(
                                   AppIcons.commentalt,
                                   size: 22,
+                                  color: Colors.white70,
                                 ),
                                 SizedBox(
                                   height: 5,
                                 ),
-                                Text("Message"),
+                                Text(
+                                  "Message",
+                                  style: TextStyle(
+                                    color: Colors.white70,
+                                  ),
+                                ),
                               ],
                             ),
                           ),

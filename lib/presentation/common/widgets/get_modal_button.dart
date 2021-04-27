@@ -24,7 +24,7 @@ Widget getModalButton(
               ),
               Icon(
                 icon,
-                size: 24,
+                size: 22,
                 color: textColor,
               ),
               const SizedBox(
@@ -34,6 +34,7 @@ Widget getModalButton(
                 label,
                 style: const TextStyle(
                   fontSize: 16,
+                  color: Colors.white,
                 ),
               ),
             ],

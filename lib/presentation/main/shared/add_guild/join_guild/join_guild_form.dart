@@ -44,129 +44,134 @@ class JoinGuildForm extends StatelessWidget {
       },
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: ThemeColors.sheetBackground,
           leading: IconButton(
             icon: const Icon(Icons.close),
             onPressed: () => Navigator.of(context).pop(),
           ),
         ),
         body: BlocBuilder<JoinGuildCubit, JoinGuildState>(
-          builder: (context, state) => Form(
-            autovalidateMode: state.showErrorMessages
-                ? AutovalidateMode.always
-                : AutovalidateMode.disabled,
-            child: FormWrapper(
-              children: [
-                const Text(
-                  "Do you have an invite?",
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+          builder: (context, state) => Container(
+            color: ThemeColors.sheetBackground,
+            height: double.infinity,
+            child: Form(
+              autovalidateMode: state.showErrorMessages
+                  ? AutovalidateMode.always
+                  : AutovalidateMode.disabled,
+              child: FormWrapper(
+                children: [
+                  const Text(
+                    "Do you have an invite?",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 15),
-                const Text(
-                  "Get the most out of Valkyrie by joining a server.",
-                  style: TextStyle(
-                    color: Colors.white70,
+                  const SizedBox(height: 15),
+                  const Text(
+                    "Get the most out of Valkyrie by joining a server.",
+                    style: TextStyle(
+                      color: Colors.white70,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                          labelText: 'Invite link',
-                        ),
-                        textInputAction: TextInputAction.done,
-                        style: const TextStyle(fontSize: 18),
-                        autocorrect: false,
-                        onChanged: (value) =>
-                            context.read<JoinGuildCubit>().linkChanged(value),
-                        validator: (_) => context
-                            .read<JoinGuildCubit>()
-                            .state
-                            .inviteLink
-                            .value
-                            .fold(
-                              (f) => f.maybeMap(
-                                empty: (_) =>
-                                    'An invite link or code is required',
-                                orElse: () => null,
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            labelText: 'Invite link',
+                          ),
+                          textInputAction: TextInputAction.done,
+                          style: const TextStyle(fontSize: 18),
+                          autocorrect: false,
+                          onChanged: (value) =>
+                              context.read<JoinGuildCubit>().linkChanged(value),
+                          validator: (_) => context
+                              .read<JoinGuildCubit>()
+                              .state
+                              .inviteLink
+                              .value
+                              .fold(
+                                (f) => f.maybeMap(
+                                  empty: (_) =>
+                                      'An invite link or code is required',
+                                  orElse: () => null,
+                                ),
+                                (_) => null,
                               ),
-                              (_) => null,
-                            ),
+                        ),
                       ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    "INVITES SHOULD LOOK LIKE",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
                     ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Text(
-                  "INVITES SHOULD LOOK LIKE",
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text(
-                  "hTKzmak",
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
+                  const SizedBox(
+                    height: 10,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  height: 2,
-                ),
-                const Text(
-                  "https://valkyrieapp.xyz/hTKzmak",
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
+                  const Text(
+                    "hTKzmak",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: SizedBox(
-                        height: 50,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: ThemeColors.themeBlue,
-                          ),
-                          onPressed: () {
-                            FocusScope.of(context).unfocus();
-                            context.read<JoinGuildCubit>().submitJoinGuild();
-                          },
-                          child: const Text(
-                            "Join",
-                            style: TextStyle(
-                              fontSize: 18,
+                  const SizedBox(
+                    height: 2,
+                  ),
+                  const Text(
+                    "https://valkyrieapp.xyz/hTKzmak",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: SizedBox(
+                          height: 45,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: ThemeColors.themeBlue,
+                            ),
+                            onPressed: () {
+                              FocusScope.of(context).unfocus();
+                              context.read<JoinGuildCubit>().submitJoinGuild();
+                            },
+                            child: const Text(
+                              "Join",
+                              style: TextStyle(
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

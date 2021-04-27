@@ -24,3 +24,28 @@ class DMChannelDto with _$DMChannelDto {
     );
   }
 }
+
+@freezed
+class DMNotificationDto with _$DMNotificationDto {
+  const DMNotificationDto._();
+
+  const factory DMNotificationDto({
+    required String id,
+    required DMUserDto user,
+  }) = _DMNotificationDto;
+
+  DMNotification toDomain() {
+    return DMNotification(
+      id: id,
+      count: 1,
+      user: user.toDomain(),
+    );
+  }
+
+  factory DMNotificationDto.fromMap(Map<String, dynamic> map) {
+    return DMNotificationDto(
+      id: map['id'],
+      user: DMUserDto.fromMap(map['user']),
+    );
+  }
+}

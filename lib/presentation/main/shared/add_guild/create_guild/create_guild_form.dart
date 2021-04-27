@@ -44,102 +44,107 @@ class CreateGuildForm extends StatelessWidget {
       },
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: ThemeColors.sheetBackground,
           leading: IconButton(
             icon: const Icon(Icons.close),
             onPressed: () => Navigator.of(context).pop(),
           ),
         ),
         body: BlocBuilder<CreateGuildCubit, CreateGuildState>(
-          builder: (context, state) => Form(
-            key: _key,
-            autovalidateMode: state.showErrorMessages
-                ? AutovalidateMode.always
-                : AutovalidateMode.disabled,
-            child: FormWrapper(
-              children: [
-                const Text(
-                  "Create Your Server",
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+          builder: (context, state) => Container(
+            color: ThemeColors.sheetBackground,
+            height: double.infinity,
+            child: Form(
+              key: _key,
+              autovalidateMode: state.showErrorMessages
+                  ? AutovalidateMode.always
+                  : AutovalidateMode.disabled,
+              child: FormWrapper(
+                children: [
+                  const Text(
+                    "Create Your Server",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 15),
-                const Text(
-                  "Your server is where you and your friends hang out. Make yours and start talking.",
-                  style: TextStyle(
-                    color: Colors.white70,
+                  const SizedBox(height: 15),
+                  const Text(
+                    "Your server is where you and your friends hang out. Make yours and start talking.",
+                    style: TextStyle(
+                      color: Colors.white70,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                          labelText: 'Server Name',
-                        ),
-                        initialValue:
-                            "${current.username.getOrCrash()}'s server",
-                        textInputAction: TextInputAction.done,
-                        style: const TextStyle(fontSize: 18),
-                        autocorrect: false,
-                        onChanged: (value) =>
-                            context.read<CreateGuildCubit>().nameChanged(value),
-                        onSaved: (value) => context
-                            .read<CreateGuildCubit>()
-                            .nameChanged(value!),
-                        validator: (_) => context
-                            .read<CreateGuildCubit>()
-                            .state
-                            .name
-                            .value
-                            .fold(
-                              (f) => f.maybeMap(
-                                invalidChannelName: (_) =>
-                                    'Guild names must be between 3 and 30 characters',
-                                orElse: () => null,
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            labelText: 'Server Name',
+                          ),
+                          initialValue:
+                              "${current.username.getOrCrash()}'s server",
+                          textInputAction: TextInputAction.done,
+                          autocorrect: false,
+                          onChanged: (value) => context
+                              .read<CreateGuildCubit>()
+                              .nameChanged(value),
+                          onSaved: (value) => context
+                              .read<CreateGuildCubit>()
+                              .nameChanged(value!),
+                          validator: (_) => context
+                              .read<CreateGuildCubit>()
+                              .state
+                              .name
+                              .value
+                              .fold(
+                                (f) => f.maybeMap(
+                                  invalidChannelName: (_) =>
+                                      'Guild names must be between 3 and 30 characters',
+                                  orElse: () => null,
+                                ),
+                                (_) => null,
                               ),
-                              (_) => null,
-                            ),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: SizedBox(
-                        height: 50,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: ThemeColors.themeBlue,
-                          ),
-                          onPressed: () {
-                            FocusScope.of(context).unfocus();
-                            _key.currentState?.save();
-                            context
-                                .read<CreateGuildCubit>()
-                                .submitCreateGuild();
-                          },
-                          child: const Text(
-                            "Create Server",
-                            style: TextStyle(
-                              fontSize: 18,
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: SizedBox(
+                          height: 45,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: ThemeColors.themeBlue,
+                            ),
+                            onPressed: () {
+                              FocusScope.of(context).unfocus();
+                              _key.currentState?.save();
+                              context
+                                  .read<CreateGuildCubit>()
+                                  .submitCreateGuild();
+                            },
+                            child: const Text(
+                              "Create Server",
+                              style: TextStyle(
+                                fontSize: 16,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

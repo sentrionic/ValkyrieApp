@@ -24,13 +24,6 @@ class GetFriendsCubit extends Cubit<GetFriendsState> {
     );
   }
 
-  Friend? getFriendById(String id) {
-    return state.maybeWhen(
-      loadSuccess: (friends) => friends.where((f) => f.id == id).firstOrNull,
-      orElse: () => null,
-    );
-  }
-
   List<Friend> getOnlineFriends() {
     return state.maybeWhen(
       loadSuccess: (friends) => friends.where((f) => f.isOnline).toList(),

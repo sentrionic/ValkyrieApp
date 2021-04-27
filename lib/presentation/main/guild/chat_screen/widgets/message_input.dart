@@ -35,11 +35,23 @@ class MessageInput extends HookWidget {
         ),
         child: Row(
           children: [
-            IconButton(
-              icon: const Icon(Icons.photo),
-              iconSize: 25.0,
-              color: Colors.white,
-              onPressed: () => _selectImage(context, channelId),
+            GestureDetector(
+              onTap: () => _selectImage(context, channelId),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: ThemeColors.inputBackground,
+                ),
+                width: 40,
+                height: 40,
+                child: const Icon(
+                  Icons.photo,
+                  size: 25,
+                ),
+              ),
+            ),
+            const SizedBox(
+              width: 10,
             ),
             Expanded(
               child: TextField(
@@ -60,23 +72,30 @@ class MessageInput extends HookWidget {
                     ),
                   ),
                   filled: true,
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                  ),
                 ),
                 maxLines: null,
               ),
             ),
             const SizedBox(
-              width: 5,
+              width: 10,
             ),
-            CircleAvatar(
-              backgroundColor: ThemeColors.themeBlue,
-              radius: 22,
-              child: IconButton(
-                icon: const Icon(Icons.send),
-                iconSize: 20.0,
-                color: Colors.white,
-                onPressed: () {
-                  context.read<CreateMessageCubit>().createMessage(channelId);
-                },
+            GestureDetector(
+              onTap: () =>
+                  context.read<CreateMessageCubit>().createMessage(channelId),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: ThemeColors.themeBlue,
+                ),
+                width: 40,
+                height: 40,
+                child: const Icon(
+                  Icons.send,
+                  size: 20,
+                ),
               ),
             ),
           ],

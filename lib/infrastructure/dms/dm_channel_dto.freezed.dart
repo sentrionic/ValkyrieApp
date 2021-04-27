@@ -171,3 +171,166 @@ abstract class _DMChannelDto extends DMChannelDto {
   _$DMChannelDtoCopyWith<_DMChannelDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$DMNotificationDtoTearOff {
+  const _$DMNotificationDtoTearOff();
+
+  _DMNotificationDto call({required String id, required DMUserDto user}) {
+    return _DMNotificationDto(
+      id: id,
+      user: user,
+    );
+  }
+}
+
+/// @nodoc
+const $DMNotificationDto = _$DMNotificationDtoTearOff();
+
+/// @nodoc
+mixin _$DMNotificationDto {
+  String get id => throw _privateConstructorUsedError;
+  DMUserDto get user => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $DMNotificationDtoCopyWith<DMNotificationDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DMNotificationDtoCopyWith<$Res> {
+  factory $DMNotificationDtoCopyWith(
+          DMNotificationDto value, $Res Function(DMNotificationDto) then) =
+      _$DMNotificationDtoCopyWithImpl<$Res>;
+  $Res call({String id, DMUserDto user});
+
+  $DMUserDtoCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class _$DMNotificationDtoCopyWithImpl<$Res>
+    implements $DMNotificationDtoCopyWith<$Res> {
+  _$DMNotificationDtoCopyWithImpl(this._value, this._then);
+
+  final DMNotificationDto _value;
+  // ignore: unused_field
+  final $Res Function(DMNotificationDto) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? user = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as DMUserDto,
+    ));
+  }
+
+  @override
+  $DMUserDtoCopyWith<$Res> get user {
+    return $DMUserDtoCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$DMNotificationDtoCopyWith<$Res>
+    implements $DMNotificationDtoCopyWith<$Res> {
+  factory _$DMNotificationDtoCopyWith(
+          _DMNotificationDto value, $Res Function(_DMNotificationDto) then) =
+      __$DMNotificationDtoCopyWithImpl<$Res>;
+  @override
+  $Res call({String id, DMUserDto user});
+
+  @override
+  $DMUserDtoCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$DMNotificationDtoCopyWithImpl<$Res>
+    extends _$DMNotificationDtoCopyWithImpl<$Res>
+    implements _$DMNotificationDtoCopyWith<$Res> {
+  __$DMNotificationDtoCopyWithImpl(
+      _DMNotificationDto _value, $Res Function(_DMNotificationDto) _then)
+      : super(_value, (v) => _then(v as _DMNotificationDto));
+
+  @override
+  _DMNotificationDto get _value => super._value as _DMNotificationDto;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? user = freezed,
+  }) {
+    return _then(_DMNotificationDto(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as DMUserDto,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_DMNotificationDto extends _DMNotificationDto {
+  const _$_DMNotificationDto({required this.id, required this.user})
+      : super._();
+
+  @override
+  final String id;
+  @override
+  final DMUserDto user;
+
+  @override
+  String toString() {
+    return 'DMNotificationDto(id: $id, user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DMNotificationDto &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(user);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DMNotificationDtoCopyWith<_DMNotificationDto> get copyWith =>
+      __$DMNotificationDtoCopyWithImpl<_DMNotificationDto>(this, _$identity);
+}
+
+abstract class _DMNotificationDto extends DMNotificationDto {
+  const factory _DMNotificationDto(
+      {required String id, required DMUserDto user}) = _$_DMNotificationDto;
+  const _DMNotificationDto._() : super._();
+
+  @override
+  String get id => throw _privateConstructorUsedError;
+  @override
+  DMUserDto get user => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$DMNotificationDtoCopyWith<_DMNotificationDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}

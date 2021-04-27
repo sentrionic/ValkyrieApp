@@ -7,3 +7,8 @@ Account getCurrentUser() {
   final accountBox = Hive.box<AccountEntity>(BoxNames.currentUser);
   return accountBox.get(BoxKeys.currentKey)!.toDomain();
 }
+
+bool doesCurrentUserExist() {
+  final accountBox = Hive.box<AccountEntity>(BoxNames.currentUser);
+  return accountBox.get(BoxKeys.currentKey) != null;
+}

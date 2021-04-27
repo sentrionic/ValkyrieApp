@@ -21,23 +21,25 @@ class GuildInfoContainer extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            color: ThemeColors.inputBackground,
+            color: ThemeColors.infoBackground,
             child: Column(
               children: [
                 Padding(
                   padding: const EdgeInsets.all(20),
                   child: Container(
-                    height: 90,
-                    width: 90,
-                    decoration: const BoxDecoration(
-                      color: ThemeColors.themeBlue,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(25),
+                    height: 75,
+                    width: 75,
+                    decoration: BoxDecoration(
+                      color: guild.icon != null
+                          ? Colors.transparent
+                          : ThemeColors.themeBlue,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(20),
                       ),
                     ),
                     child: guild.icon != null
                         ? ClipRRect(
-                            borderRadius: BorderRadius.circular(25),
+                            borderRadius: BorderRadius.circular(20),
                             child: Image.network(guild.icon!),
                           )
                         : Center(
@@ -79,11 +81,19 @@ class GuildInfoContainer extends StatelessWidget {
                           },
                           child: Column(
                             children: const [
-                              Icon(Icons.settings),
+                              Icon(
+                                Icons.settings,
+                                color: Colors.white70,
+                              ),
                               SizedBox(
                                 height: 5,
                               ),
-                              Text("Settings"),
+                              Text(
+                                "Settings",
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -103,12 +113,16 @@ class GuildInfoContainer extends StatelessWidget {
                           children: const [
                             Icon(
                               Icons.person_add_alt_1,
+                              color: Colors.white70,
                             ),
                             SizedBox(
                               height: 5,
                             ),
                             Text(
                               "Invite",
+                              style: TextStyle(
+                                color: Colors.white70,
+                              ),
                             ),
                           ],
                         ),

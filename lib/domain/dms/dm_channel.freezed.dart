@@ -168,3 +168,189 @@ abstract class _DMChannel extends DMChannel {
   _$DMChannelCopyWith<_DMChannel> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$DMNotificationTearOff {
+  const _$DMNotificationTearOff();
+
+  _DMNotification call(
+      {required String id, required int count, required DMUser user}) {
+    return _DMNotification(
+      id: id,
+      count: count,
+      user: user,
+    );
+  }
+}
+
+/// @nodoc
+const $DMNotification = _$DMNotificationTearOff();
+
+/// @nodoc
+mixin _$DMNotification {
+  String get id => throw _privateConstructorUsedError;
+  int get count => throw _privateConstructorUsedError;
+  DMUser get user => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $DMNotificationCopyWith<DMNotification> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DMNotificationCopyWith<$Res> {
+  factory $DMNotificationCopyWith(
+          DMNotification value, $Res Function(DMNotification) then) =
+      _$DMNotificationCopyWithImpl<$Res>;
+  $Res call({String id, int count, DMUser user});
+
+  $DMUserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class _$DMNotificationCopyWithImpl<$Res>
+    implements $DMNotificationCopyWith<$Res> {
+  _$DMNotificationCopyWithImpl(this._value, this._then);
+
+  final DMNotification _value;
+  // ignore: unused_field
+  final $Res Function(DMNotification) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? count = freezed,
+    Object? user = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      count: count == freezed
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as DMUser,
+    ));
+  }
+
+  @override
+  $DMUserCopyWith<$Res> get user {
+    return $DMUserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$DMNotificationCopyWith<$Res>
+    implements $DMNotificationCopyWith<$Res> {
+  factory _$DMNotificationCopyWith(
+          _DMNotification value, $Res Function(_DMNotification) then) =
+      __$DMNotificationCopyWithImpl<$Res>;
+  @override
+  $Res call({String id, int count, DMUser user});
+
+  @override
+  $DMUserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$DMNotificationCopyWithImpl<$Res>
+    extends _$DMNotificationCopyWithImpl<$Res>
+    implements _$DMNotificationCopyWith<$Res> {
+  __$DMNotificationCopyWithImpl(
+      _DMNotification _value, $Res Function(_DMNotification) _then)
+      : super(_value, (v) => _then(v as _DMNotification));
+
+  @override
+  _DMNotification get _value => super._value as _DMNotification;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? count = freezed,
+    Object? user = freezed,
+  }) {
+    return _then(_DMNotification(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      count: count == freezed
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as DMUser,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_DMNotification extends _DMNotification {
+  const _$_DMNotification(
+      {required this.id, required this.count, required this.user})
+      : super._();
+
+  @override
+  final String id;
+  @override
+  final int count;
+  @override
+  final DMUser user;
+
+  @override
+  String toString() {
+    return 'DMNotification(id: $id, count: $count, user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DMNotification &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.count, count) ||
+                const DeepCollectionEquality().equals(other.count, count)) &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(count) ^
+      const DeepCollectionEquality().hash(user);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DMNotificationCopyWith<_DMNotification> get copyWith =>
+      __$DMNotificationCopyWithImpl<_DMNotification>(this, _$identity);
+}
+
+abstract class _DMNotification extends DMNotification {
+  const factory _DMNotification(
+      {required String id,
+      required int count,
+      required DMUser user}) = _$_DMNotification;
+  const _DMNotification._() : super._();
+
+  @override
+  String get id => throw _privateConstructorUsedError;
+  @override
+  int get count => throw _privateConstructorUsedError;
+  @override
+  DMUser get user => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$DMNotificationCopyWith<_DMNotification> get copyWith =>
+      throw _privateConstructorUsedError;
+}

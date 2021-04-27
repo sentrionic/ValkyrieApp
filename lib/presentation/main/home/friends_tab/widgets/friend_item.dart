@@ -4,6 +4,7 @@ import 'package:valkyrie_app/application/dms/start_dm/start_dm_cubit.dart';
 import 'package:valkyrie_app/domain/friends/friend.dart';
 import 'package:valkyrie_app/presentation/common/widgets/app_icons.dart';
 import 'package:valkyrie_app/presentation/common/widgets/avatar_with_badge.dart';
+import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/main/home/friends_tab/widgets/bottom_sheet/friend_bottom_sheet.dart';
 
 class FriendItem extends StatelessWidget {
@@ -17,6 +18,7 @@ class FriendItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      visualDensity: const VisualDensity(vertical: 4),
       onTap: () {
         showModalBottomSheet(
           context: context,
@@ -29,24 +31,21 @@ class FriendItem extends StatelessWidget {
       leading: getAvatarWithBadge(
         friend.image,
         isOnline: friend.isOnline,
-        radius: 22,
+        imageRadius: 20,
+        iconRadious: 14,
       ),
       title: Text(
         friend.username,
         style: const TextStyle(
-          fontSize: 16,
+          color: Colors.white60,
         ),
-      ),
-      subtitle: Text(
-        friend.isOnline ? 'Online' : 'Offline',
-        style: const TextStyle(fontSize: 14),
       ),
       trailing: GestureDetector(
         onTap: () => context.read<StartDMCubit>().getOrCreateDM(friend.id),
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
-            color: Colors.black45,
+            color: ThemeColors.inputBackground,
           ),
           width: 35,
           height: 35,

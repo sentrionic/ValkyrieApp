@@ -8,7 +8,7 @@ class DirectMessageList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: 11,
-      child: Container(
+      child: Material(
         color: ThemeColors.dmBackground,
         child: Column(
           children: [

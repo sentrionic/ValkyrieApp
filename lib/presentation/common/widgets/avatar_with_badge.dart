@@ -4,7 +4,8 @@ import 'package:valkyrie_app/presentation/core/colors.dart';
 Widget getAvatarWithBadge(
   String image, {
   required bool isOnline,
-  double? radius,
+  required double imageRadius,
+  required double iconRadious,
 }) {
   return Stack(
     children: [
@@ -12,7 +13,7 @@ Widget getAvatarWithBadge(
         backgroundImage: NetworkImage(
           image,
         ),
-        radius: radius ?? 18,
+        radius: imageRadius,
       ),
       Positioned(
         right: 0,
@@ -28,8 +29,8 @@ Widget getAvatarWithBadge(
             ),
           ),
           constraints: BoxConstraints(
-            minWidth: radius != null ? 16 : 12,
-            minHeight: radius != null ? 16 : 12,
+            minWidth: iconRadious,
+            minHeight: iconRadious,
           ),
         ),
       )

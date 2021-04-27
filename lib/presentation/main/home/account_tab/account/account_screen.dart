@@ -5,7 +5,6 @@ import 'package:valkyrie_app/application/account/update_account/update_account_b
 import 'package:valkyrie_app/application/auth/auth_status/auth_status_bloc.dart';
 import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/common/utils/flushbar_creator.dart';
-import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/main/home/account_tab/account/account_form.dart';
 
 class AccountScreen extends StatelessWidget {
@@ -39,7 +38,6 @@ class AccountScreen extends StatelessWidget {
           appBar: AppBar(
             title: const Text("User Settings"),
             automaticallyImplyLeading: false,
-            backgroundColor: ThemeColors.dmBackground,
             actions: [
               IconButton(
                 icon: const Icon(Icons.exit_to_app),

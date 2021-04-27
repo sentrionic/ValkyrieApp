@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:valkyrie_app/presentation/core/colors.dart';
 
 class CenterLoadingIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: CircularProgressIndicator(
-        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+    return Center(
+      child: Container(
+        color: ThemeColors.sheetBackground,
+        child: const CircularProgressIndicator(
+          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+        ),
       ),
     );
   }

@@ -6,6 +6,7 @@ import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart
 import 'package:valkyrie_app/domain/channels/channel.dart';
 import 'package:valkyrie_app/presentation/common/widgets/app_icons.dart';
 import 'package:valkyrie_app/presentation/common/widgets/widget_constants.dart';
+import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/core/screen_arguments/channel_screen_arguments.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/screens/channel_settings/channel_settings_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/widgets/channel_notification_icon.dart';
@@ -36,45 +37,51 @@ class ChannelItem extends StatelessWidget {
             padding: const EdgeInsets.only(
               right: 10.0,
               left: 5.0,
+              bottom: 5.0,
             ),
             child: ClipRRect(
               borderRadius: const BorderRadius.all(
                 Radius.circular(5),
               ),
-              child: ListTile(
-                contentPadding: const EdgeInsets.only(left: 8),
-                visualDensity: const VisualDensity(
-                  vertical: -3,
+              child: Theme(
+                data: ThemeData(
+                  splashColor: ThemeColors.channelRippleColor,
                 ),
-                tileColor: current ? Colors.white10 : Colors.transparent,
-                title: Row(
-                  children: [
-                    Icon(
-                      channel.isPublic ? AppIcons.hashtag : AppIcons.userlock,
-                      color: hasNotification ? Colors.white : Colors.white38,
-                      size: 18,
-                    ),
-                    const SizedBox(
-                      width: 8,
-                    ),
-                    Text(
-                      channel.name.getOrCrash(),
-                      style: TextStyle(
-                        fontSize: 17,
-                        color: (current || hasNotification)
-                            ? Colors.white
-                            : Colors.white38,
+                child: ListTile(
+                  onLongPress: () => Navigator.of(context).pushNamed(
+                    ChannelSettingsScreen.routeName,
+                    arguments: ChannelScreenArguments(channel, guildId),
+                  ),
+                  onTap: () => context
+                      .read<CurrentChannelCubit>()
+                      .setChannelId(channel.id),
+                  contentPadding: const EdgeInsets.only(left: 8),
+                  visualDensity: const VisualDensity(
+                    vertical: -4,
+                  ),
+                  tileColor: current ? Colors.white10 : Colors.transparent,
+                  title: Row(
+                    children: [
+                      Icon(
+                        channel.isPublic ? AppIcons.hashtag : AppIcons.userlock,
+                        color: hasNotification ? Colors.white : Colors.white38,
+                        size: 18,
                       ),
-                    ),
-                  ],
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      Text(
+                        channel.name.getOrCrash(),
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: (current || hasNotification)
+                              ? Colors.white
+                              : Colors.white38,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                onLongPress: () => Navigator.of(context).pushNamed(
-                  ChannelSettingsScreen.routeName,
-                  arguments: ChannelScreenArguments(channel, guildId),
-                ),
-                onTap: () => context
-                    .read<CurrentChannelCubit>()
-                    .setChannelId(channel.id),
               ),
             ),
           ),

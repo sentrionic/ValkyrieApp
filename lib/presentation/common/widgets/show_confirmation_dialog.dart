@@ -17,7 +17,9 @@ void showConfirmationDialog(
           children: [
             Text(
               title,
-              style: const TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const Divider(),
           ],

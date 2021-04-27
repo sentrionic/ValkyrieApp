@@ -37,44 +37,47 @@ class _InviteScreenForm extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final switchState = useState(false);
-    return Column(
-      children: [
-        const SizedBox(
-          height: 20,
-        ),
-        const Text("Send a server invite link to a friend"),
-        const SizedBox(
-          height: 20,
-        ),
-        Row(
-          children: [
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: SizedBox(
-                  height: 45,
-                  child: BlocBuilder<GetInviteLinkCubit, GetInviteLinkState>(
-                    builder: (context, state) => state.maybeMap(
-                      fetchSuccess: (fetch) => OutlinedButton(
-                        onPressed: () => _copyToClipboard(
-                          context,
-                          fetch.inviteLink,
-                        ),
-                        child: Text(
-                          fetch.inviteLink,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
+    return Container(
+      color: ThemeColors.sheetBackground,
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 20,
+          ),
+          const Text("Send a server invite link to a friend"),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: SizedBox(
+                    height: 45,
+                    child: BlocBuilder<GetInviteLinkCubit, GetInviteLinkState>(
+                      builder: (context, state) => state.maybeMap(
+                        fetchSuccess: (fetch) => OutlinedButton(
+                          onPressed: () => _copyToClipboard(
+                            context,
+                            fetch.inviteLink,
+                          ),
+                          child: Text(
+                            fetch.inviteLink,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
                           ),
                         ),
-                      ),
-                      orElse: () => OutlinedButton(
-                        onPressed: () {},
-                        child: const Text(
-                          "Getting your link...",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
+                        orElse: () => OutlinedButton(
+                          onPressed: () {},
+                          child: const Text(
+                            "Getting your link...",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
                           ),
                         ),
                       ),
@@ -82,51 +85,51 @@ class _InviteScreenForm extends HookWidget {
                   ),
                 ),
               ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        Text(
-          switchState.value
-              ? "Your invite won't expire"
-              : "Your invite link expires in 1 day and can only be used once",
-          style: const TextStyle(
-            color: Colors.white60,
-            fontSize: 12,
-          ),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                "Make it unlimited / Never reset",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                ),
-              ),
-              Switch(
-                activeColor: ThemeColors.themeBlue,
-                value: switchState.value,
-                onChanged: (value) {
-                  switchState.value = value;
-                  context.read<GetInviteLinkCubit>().getInviteLink(
-                        guildId,
-                        isPermanent: switchState.value,
-                      );
-                },
-              ),
             ],
           ),
-        ),
-      ],
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+            switchState.value
+                ? "Your invite won't expire"
+                : "Your invite link expires in 1 day and can only be used once",
+            style: const TextStyle(
+              color: Colors.white60,
+              fontSize: 12,
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  "Make it unlimited / Never reset",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
+                ),
+                Switch(
+                  activeColor: ThemeColors.themeBlue,
+                  value: switchState.value,
+                  onChanged: (value) {
+                    switchState.value = value;
+                    context.read<GetInviteLinkCubit>().getInviteLink(
+                          guildId,
+                          isPermanent: switchState.value,
+                        );
+                  },
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 

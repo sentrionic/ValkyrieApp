@@ -7,6 +7,8 @@ import 'package:valkyrie_app/application/friends/accept_request/accept_request_c
 import 'package:valkyrie_app/application/friends/decline_request/decline_request_cubit.dart';
 import 'package:valkyrie_app/application/friends/get_friends/get_friends_cubit.dart';
 import 'package:valkyrie_app/application/friends/get_requests/get_requests_cubit.dart';
+import 'package:valkyrie_app/application/notifications/notifications_cubit.dart';
+import 'package:valkyrie_app/application/notifications/request_notifications_cubit.dart';
 import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/common/utils/flushbar_creator.dart';
 import 'package:valkyrie_app/presentation/main/home/direct_messages/dm_screen.dart';
@@ -49,6 +51,8 @@ class FriendListScreen extends StatelessWidget {
                 FlushBarCreator.showSuccess(message: "Canceled request")
                     .show(context);
                 context.read<GetRequestsCubit>().removeRequest(state.requestId);
+                context.read<NotificationsCubit>().decrement();
+                context.read<RequestNotificationsCubit>().decrement();
               },
               orElse: () {},
             );
@@ -67,6 +71,8 @@ class FriendListScreen extends StatelessWidget {
                 FlushBarCreator.showSuccess(message: "Accepted request")
                     .show(context);
                 context.read<GetRequestsCubit>().removeRequest(state.requestId);
+                context.read<NotificationsCubit>().decrement();
+                context.read<RequestNotificationsCubit>().decrement();
               },
               orElse: () {},
             );
@@ -74,7 +80,6 @@ class FriendListScreen extends StatelessWidget {
           BlocListener<StartDMCubit, StartDMState>(listener: (context, state) {
             state.maybeMap(
               fetchSuccess: (state) {
-                print("Screen Here");
                 context.read<DMListCubit>().addNewDM(state.channel);
                 context.read<CurrentDMCubit>().setDMChannel(state.channel.id);
                 Navigator.of(context).pushReplacementNamed(DMScreen.routeName);

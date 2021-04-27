@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valkyrie_app/application/dms/current/current_dm_cubit.dart';
-import 'package:valkyrie_app/application/dms/dm_list/dm_list_cubit.dart';
 import 'package:valkyrie_app/application/dms/start_dm/start_dm_cubit.dart';
 import 'package:valkyrie_app/application/friends/send_friend_request/send_friend_request_cubit.dart';
 import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart';
@@ -34,7 +33,6 @@ class ProfileBottomSheet extends StatelessWidget {
 
     return MultiBlocProvider(
       providers: [
-        BlocProvider.value(value: ctx.read<DMListCubit>()),
         BlocProvider.value(value: ctx.read<CurrentDMCubit>()),
         BlocProvider.value(value: ctx.read<CurrentGuildCubit>()),
         BlocProvider(create: (context) => getIt<StartDMCubit>()),

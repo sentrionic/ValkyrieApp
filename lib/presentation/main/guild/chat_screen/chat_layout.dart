@@ -10,6 +10,7 @@ import 'package:valkyrie_app/application/messages/get_messages/messages_cubit.da
 import 'package:valkyrie_app/application/messages/upload_image/upload_image_cubit.dart';
 import 'package:valkyrie_app/domain/message/message.dart';
 import 'package:valkyrie_app/presentation/common/widgets/center_loading_indicator.dart';
+import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/main/guild/chat_screen/hooks/message_socket_hook.dart';
 import 'package:valkyrie_app/presentation/main/guild/chat_screen/hooks/scroll_controller_hook.dart';
 import 'package:valkyrie_app/presentation/main/guild/chat_screen/widgets/date_divider.dart';
@@ -48,60 +49,63 @@ class _ChatLayout extends HookWidget {
 
     use(MessageSocketHook(context, channelId));
 
-    return BlocBuilder<MessagesCubit, MessagesState>(
-      builder: (context, state) {
-        return state.maybeMap(
-          loadSuccess: (state) {
-            return GestureDetector(
-              onTap: () {
-                final FocusScopeNode currentScope = FocusScope.of(context);
-                if (!currentScope.hasPrimaryFocus && currentScope.hasFocus) {
-                  FocusManager.instance.primaryFocus?.unfocus();
-                }
-              },
-              child: Column(
-                children: [
-                  Expanded(
-                    child: ListView.builder(
-                      reverse: true,
-                      itemBuilder: (context, index) {
-                        return index >= state.messages.length
-                            ? MessageLoaderOrEndIndicator(
-                                channelId: channelId,
-                                isDM: isDM,
-                              )
-                            : _getMessage(state.messages, index);
-                      },
-                      itemCount: state.messages.length + 1,
-                      controller: _controller,
+    return Material(
+      color: ThemeColors.sheetBackground,
+      child: BlocBuilder<MessagesCubit, MessagesState>(
+        builder: (context, state) {
+          return state.maybeMap(
+            loadSuccess: (state) {
+              return GestureDetector(
+                onTap: () {
+                  final FocusScopeNode currentScope = FocusScope.of(context);
+                  if (!currentScope.hasPrimaryFocus && currentScope.hasFocus) {
+                    FocusManager.instance.primaryFocus?.unfocus();
+                  }
+                },
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: ListView.builder(
+                        reverse: true,
+                        itemBuilder: (context, index) {
+                          return index >= state.messages.length
+                              ? MessageLoaderOrEndIndicator(
+                                  channelId: channelId,
+                                  isDM: isDM,
+                                )
+                              : _getMessage(state.messages, index);
+                        },
+                        itemCount: state.messages.length + 1,
+                        controller: _controller,
+                      ),
                     ),
-                  ),
-                  BlocBuilder<UploadImageCubit, UploadImageState>(
-                    buildWhen: (p, c) => p.isSubmitting != c.isSubmitting,
-                    builder: (context, state) {
-                      return state.isSubmitting
-                          ? const LinearProgressIndicator()
-                          : Container();
-                    },
-                  ),
-                  if (context.watch<CurrentlyTypingCubit>().state.isNotEmpty)
-                    TypingContainer()
-                  else
-                    const SizedBox(height: 15),
-                  MessageInput(
-                    channelId: channelId,
-                    isDM: isDM,
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                ],
-              ),
-            );
-          },
-          orElse: () => CenterLoadingIndicator(),
-        );
-      },
+                    BlocBuilder<UploadImageCubit, UploadImageState>(
+                      buildWhen: (p, c) => p.isSubmitting != c.isSubmitting,
+                      builder: (context, state) {
+                        return state.isSubmitting
+                            ? const LinearProgressIndicator()
+                            : Container();
+                      },
+                    ),
+                    if (context.watch<CurrentlyTypingCubit>().state.isNotEmpty)
+                      TypingContainer()
+                    else
+                      const SizedBox(height: 15),
+                    MessageInput(
+                      channelId: channelId,
+                      isDM: isDM,
+                    ),
+                    const SizedBox(
+                      height: 6,
+                    ),
+                  ],
+                ),
+              );
+            },
+            orElse: () => CenterLoadingIndicator(),
+          );
+        },
+      ),
     );
   }
 
