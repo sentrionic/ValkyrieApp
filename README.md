@@ -14,7 +14,7 @@ The mobile application for [Valkyrie](https://github.com/sentrionic/Valkyrie) wr
     <tr>
     <td><img src="./assets/github/chat.gif" width="180"></td>
     <td><img src="./assets/github/guilds.gif" width="180"></td>
-    <td><img src="./assets/github/dm.gif" width="180"></td>
+    <td><img src="./assets/github/directmessage.gif" width="180"></td>
     <td><img src="./assets/github/notifications.gif" width="180"></td>
   </tr>
   </table>
