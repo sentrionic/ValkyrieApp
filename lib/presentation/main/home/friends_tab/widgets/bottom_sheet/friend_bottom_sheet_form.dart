@@ -7,6 +7,7 @@ import 'package:valkyrie_app/application/friends/remove_friend/remove_friend_cub
 import 'package:valkyrie_app/domain/friends/friend.dart';
 import 'package:valkyrie_app/presentation/common/utils/flushbar_creator.dart';
 import 'package:valkyrie_app/presentation/common/widgets/app_icons.dart';
+import 'package:valkyrie_app/presentation/common/widgets/avatar_with_badge.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/main/home/direct_messages/dm_screen.dart';
 
@@ -28,14 +29,12 @@ class FriendBottomSheetForm extends StatelessWidget {
                 Navigator.of(context).popUntil((route) => route.isFirst);
                 context.read<DMListCubit>().addNewDM(state.channel);
                 context.read<CurrentDMCubit>().setDMChannel(state.channel.id);
-                Navigator.of(context)
-                    .pushReplacementNamed(DMScreen.routeName);
+                Navigator.of(context).pushReplacementNamed(DMScreen.routeName);
               },
               fetchFailure: (state) {
                 FlushBarCreator.showError(
                   message: state.channelFailure.map(
-                    unexpected: (_) =>
-                        "Something went wrong. Try again later.",
+                    unexpected: (_) => "Something went wrong. Try again later.",
                   ),
                 ).show(context);
               },
@@ -55,8 +54,7 @@ class FriendBottomSheetForm extends StatelessWidget {
                 Navigator.of(context).pop();
                 FlushBarCreator.showError(
                   message: state.friendFailure.map(
-                    unexpected: (_) =>
-                        "Something went wrong. Try again later.",
+                    unexpected: (_) => "Something went wrong. Try again later.",
                   ),
                 ).show(context);
               },
@@ -68,50 +66,32 @@ class FriendBottomSheetForm extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Container(
-              color: ThemeColors.dmBackground,
+            child: Material(
+              color: ThemeColors.infoBackground,
               child: Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(15),
-                    child: Stack(
-                      children: [
-                        CircleAvatar(
-                          radius: 45,
-                          backgroundImage: NetworkImage(friend.image),
-                        ),
-                        Positioned(
-                          right: 0,
-                          bottom: 0,
-                          child: Container(
-                            padding: const EdgeInsets.all(1),
-                            decoration: BoxDecoration(
-                              color: friend.isOnline
-                                  ? ThemeColors.brandGreen
-                                  : Colors.grey,
-                              borderRadius: BorderRadius.circular(50),
-                              border: Border.all(width: 2),
-                            ),
-                            constraints: const BoxConstraints(
-                              minWidth: 30,
-                              minHeight: 30,
-                            ),
-                          ),
-                        )
-                      ],
+                    child: getAvatarWithBadge(
+                      friend.image,
+                      isOnline: friend.isOnline,
+                      imageRadius: 40,
+                      iconRadius: 25,
                     ),
                   ),
                   Text(
                     friend.username,
                     style: const TextStyle(
-                      fontSize: 25,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  const Divider(),
+                  const Divider(
+                    thickness: 1,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -129,11 +109,17 @@ class FriendBottomSheetForm extends StatelessWidget {
                               Icon(
                                 AppIcons.commentalt,
                                 size: 22,
+                                color: Colors.white54,
                               ),
                               SizedBox(
                                 height: 5,
                               ),
-                              Text("Message"),
+                              Text(
+                                "Message",
+                                style: TextStyle(
+                                  color: Colors.white54,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -166,7 +152,9 @@ class FriendBottomSheetForm extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Divider(),
+                  const Divider(
+                    thickness: 1,
+                  ),
                 ],
               ),
             ),

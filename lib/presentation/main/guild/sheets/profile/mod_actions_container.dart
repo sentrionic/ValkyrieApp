@@ -13,6 +13,7 @@ class ModActionsContainer extends StatelessWidget {
   final Guild guild;
   final Member member;
   const ModActionsContainer(this.guild, this.member);
+
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<ModerateMemberCubit>();

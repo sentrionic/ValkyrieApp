@@ -7,6 +7,7 @@ import 'package:valkyrie_app/application/notifications/dm_notifications_cubit.da
 import 'package:valkyrie_app/application/notifications/notifications_cubit.dart';
 import 'package:valkyrie_app/domain/dms/dm_channel.dart';
 import 'package:valkyrie_app/presentation/common/widgets/notification_icon.dart';
+import 'package:valkyrie_app/presentation/common/widgets/widget_constants.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/main/home/direct_messages/dm_screen.dart';
 
@@ -35,7 +36,7 @@ class DMNotificationItem extends StatelessWidget {
           Stack(children: [
             CircleAvatar(
               backgroundImage: NetworkImage(notification.user.image),
-              radius: 24,
+              radius: WidgetConstants.avatarRadius,
               backgroundColor: ThemeColors.guildBackground,
             ),
             NotificationIcon(count: notification.count),

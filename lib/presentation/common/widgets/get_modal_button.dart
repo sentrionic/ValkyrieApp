@@ -4,7 +4,7 @@ Widget getModalButton(
   String label,
   IconData icon,
   Function onClick, [
-  Color? textColor,
+  Color? iconColor,
 ]) {
   return SizedBox(
     width: double.infinity,
@@ -25,7 +25,7 @@ Widget getModalButton(
               Icon(
                 icon,
                 size: 22,
-                color: textColor,
+                color: iconColor,
               ),
               const SizedBox(
                 width: 30,

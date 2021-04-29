@@ -44,19 +44,23 @@ class GuildItem extends StatelessWidget {
               ),
               if (current)
                 Container(
-                  height: 48,
-                  width: 48,
+                  height: WidgetConstants.avatarContainerSize,
+                  width: WidgetConstants.avatarContainerSize,
                   decoration: BoxDecoration(
                     color: guild.icon == null
                         ? ThemeColors.themeBlue
                         : Colors.transparent,
                     borderRadius: const BorderRadius.all(
-                      Radius.circular(18),
+                      Radius.circular(
+                        WidgetConstants.avatarContainerBorderRadius,
+                      ),
                     ),
                   ),
                   child: guild.icon != null
                       ? ClipRRect(
-                          borderRadius: BorderRadius.circular(18),
+                          borderRadius: BorderRadius.circular(
+                            WidgetConstants.avatarContainerBorderRadius,
+                          ),
                           child: Image.network(guild.icon!),
                         )
                       : Center(
@@ -73,7 +77,7 @@ class GuildItem extends StatelessWidget {
                 CircleAvatar(
                   backgroundImage:
                       guild.icon != null ? NetworkImage(guild.icon!) : null,
-                  radius: 24,
+                  radius: WidgetConstants.avatarRadius,
                   backgroundColor: ThemeColors.guildBackground,
                   child: guild.icon == null
                       ? Text(

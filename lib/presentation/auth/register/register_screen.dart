@@ -12,7 +12,7 @@ class RegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: ThemeColors.sheetBackground,
+        backgroundColor: ThemeColors.appBackground,
       ),
       body: BlocProvider(
         create: (context) => getIt<RegisterFormBloc>(),

@@ -50,7 +50,7 @@ class _ChatLayout extends HookWidget {
     use(MessageSocketHook(context, channelId));
 
     return Material(
-      color: ThemeColors.sheetBackground,
+      color: ThemeColors.appBackground,
       child: BlocBuilder<MessagesCubit, MessagesState>(
         builder: (context, state) {
           return state.maybeMap(
@@ -87,16 +87,16 @@ class _ChatLayout extends HookWidget {
                             : Container();
                       },
                     ),
+                    const SizedBox(
+                      height: 3,
+                    ),
                     if (context.watch<CurrentlyTypingCubit>().state.isNotEmpty)
                       TypingContainer()
                     else
-                      const SizedBox(height: 15),
+                      const SizedBox(height: 25),
                     MessageInput(
                       channelId: channelId,
                       isDM: isDM,
-                    ),
-                    const SizedBox(
-                      height: 6,
                     ),
                   ],
                 ),

@@ -110,7 +110,7 @@ class ChannelSettingsForm extends StatelessWidget {
           ],
         ),
         body: Container(
-          color: ThemeColors.sheetBackground,
+          color: ThemeColors.appBackground,
           height: double.infinity,
           child: BlocBuilder<EditChannelCubit, EditChannelState>(
             builder: (context, state) => Form(

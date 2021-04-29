@@ -36,15 +36,17 @@ class CreateGuildForm extends StatelessWidget {
               context.read<GuildListCubit>().addNewGuild(guild);
 
               Navigator.of(context).pushNamedAndRemoveUntil(
-                  GuildScreen.routeName, (route) => false,
-                  arguments: GuildScreenArguments(guild));
+                GuildScreen.routeName,
+                (route) => false,
+                arguments: GuildScreenArguments(guild),
+              );
             },
           ),
         );
       },
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: ThemeColors.sheetBackground,
+          backgroundColor: ThemeColors.appBackground,
           leading: IconButton(
             icon: const Icon(Icons.close),
             onPressed: () => Navigator.of(context).pop(),
@@ -52,7 +54,7 @@ class CreateGuildForm extends StatelessWidget {
         ),
         body: BlocBuilder<CreateGuildCubit, CreateGuildState>(
           builder: (context, state) => Container(
-            color: ThemeColors.sheetBackground,
+            color: ThemeColors.appBackground,
             height: double.infinity,
             child: Form(
               key: _key,
@@ -68,7 +70,9 @@ class CreateGuildForm extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 15),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   const Text(
                     "Your server is where you and your friends hang out. Make yours and start talking.",
                     style: TextStyle(

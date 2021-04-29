@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:valkyrie_app/application/messages/delete_message/delete_message_cubit.dart';
 import 'package:valkyrie_app/application/messages/edit_message/edit_message_cubit.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
@@ -74,7 +73,7 @@ class _MessageBottomSheetActions extends StatelessWidget {
         );
       },
       child: Container(
-        color: ThemeColors.sheetBackground,
+        color: ThemeColors.appBackground,
         child: ListView(
           children: [
             const SizedBox(
@@ -114,7 +113,6 @@ class _MessageBottomSheetActions extends StatelessWidget {
                 builder: (_) => ProfileBottomSheet(
                   guild: guild,
                   member: message.user,
-                  ctx: context,
                 ),
               );
             }),
@@ -157,10 +155,16 @@ class _MessageBottomSheetActions extends StatelessWidget {
               onPressed: () => Navigator.of(context).pop(),
               child: const Text(
                 "Cancel",
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
             ),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: ThemeColors.themeBlue,
+                elevation: 0,
+              ),
               onPressed: () {
                 _key.currentState?.save();
                 FocusScope.of(context).unfocus();

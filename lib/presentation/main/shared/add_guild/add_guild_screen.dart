@@ -10,14 +10,14 @@ class AddGuildScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: ThemeColors.sheetBackground,
+        backgroundColor: ThemeColors.appBackground,
         leading: IconButton(
           icon: const Icon(Icons.close),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
       body: Container(
-        color: ThemeColors.sheetBackground,
+        color: ThemeColors.appBackground,
         height: double.infinity,
         child: FormWrapper(
           children: [
@@ -28,7 +28,9 @@ class AddGuildScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(
+              height: 15,
+            ),
             const Text(
               "Your server is where you and your friends hang out. Make yours and start talking.",
               style: TextStyle(
@@ -80,7 +82,9 @@ class AddGuildScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(
+              height: 15,
+            ),
             Row(
               children: [
                 Expanded(

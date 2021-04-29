@@ -29,8 +29,8 @@ class FriendLayout extends HookWidget {
           ),
         ],
       ),
-      body: Container(
-        color: ThemeColors.sheetBackground,
+      body: Material(
+        color: ThemeColors.appBackground,
         child: Column(
           children: [
             BlocBuilder<GetRequestsCubit, GetRequestsState>(
@@ -54,7 +54,9 @@ class FriendLayout extends HookWidget {
                     ]
                   ],
                 ),
-                orElse: () => Container(),
+                orElse: () => const SizedBox(
+                  height: 50,
+                ),
               ),
             ),
             BlocBuilder<GetFriendsCubit, GetFriendsState>(
@@ -89,7 +91,14 @@ class FriendLayout extends HookWidget {
                       ),
                     );
                   },
-                  orElse: () => CenterLoadingIndicator(),
+                  orElse: () => Column(
+                    children: [
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      CenterLoadingIndicator(),
+                    ],
+                  ),
                 );
               },
             ),

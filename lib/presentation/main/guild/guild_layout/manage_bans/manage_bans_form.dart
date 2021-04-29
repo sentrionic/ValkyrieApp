@@ -41,17 +41,23 @@ class ManageBansForm extends StatelessWidget {
             children: [
               const Text(
                 "Bans",
-                style: TextStyle(color: Colors.white, fontSize: 16.0),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16.0,
+                ),
               ),
               Text(
                 guild.name.getOrCrash(),
-                style: const TextStyle(color: Colors.white30, fontSize: 14.0),
+                style: const TextStyle(
+                  color: Colors.white30,
+                  fontSize: 14.0,
+                ),
               )
             ],
           ),
         ),
         body: Container(
-          color: ThemeColors.sheetBackground,
+          color: ThemeColors.appBackground,
           child: Column(
             children: [
               const SizedBox(

@@ -9,7 +9,7 @@ class ChangePasswordForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: ThemeColors.sheetBackground,
+      color: ThemeColors.appBackground,
       height: double.infinity,
       child: BlocConsumer<ChangePasswordCubit, ChangePasswordState>(
         listener: (context, state) {
@@ -129,6 +129,7 @@ class ChangePasswordForm extends StatelessWidget {
                           primary: ThemeColors.themeBlue,
                         ),
                         onPressed: () {
+                          FocusScope.of(context).unfocus();
                           context
                               .read<ChangePasswordCubit>()
                               .submitPasswordChange();

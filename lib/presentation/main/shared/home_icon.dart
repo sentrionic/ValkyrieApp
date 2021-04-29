@@ -37,8 +37,8 @@ class HomeIconWidget extends StatelessWidget {
               color:
                   isHome ? ThemeColors.themeBlue : ThemeColors.guildBackground,
             ),
-            width: 48,
-            height: 48,
+            width: WidgetConstants.avatarContainerSize,
+            height: WidgetConstants.avatarContainerSize,
             child: BlocBuilder<RequestNotificationsCubit, int>(
               buildWhen: (p, c) => p != c,
               builder: (context, state) => Stack(

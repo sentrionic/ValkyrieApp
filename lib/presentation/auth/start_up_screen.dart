@@ -10,7 +10,7 @@ class StartUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: ThemeColors.sheetBackground,
+        color: ThemeColors.appBackground,
         child: Container(
           margin: const EdgeInsets.all(20),
           child: Center(

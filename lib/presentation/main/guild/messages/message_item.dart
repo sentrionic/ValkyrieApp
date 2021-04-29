@@ -31,7 +31,6 @@ class MessageItem extends StatelessWidget {
             builder: (_) => ProfileBottomSheet(
               guild: guild,
               member: message.user,
-              ctx: context,
             ),
           );
         },

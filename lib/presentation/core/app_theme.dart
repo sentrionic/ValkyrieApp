@@ -4,9 +4,9 @@ import 'colors.dart';
 
 final appTheme = ThemeData.dark().copyWith(
   accentColor: ThemeColors.themeBlue,
-  backgroundColor: ThemeColors.sheetBackground,
+  backgroundColor: ThemeColors.appBackground,
   appBarTheme: const AppBarTheme(
-    backgroundColor: ThemeColors.drawerBackground,
+    backgroundColor: ThemeColors.appBarBackground,
     elevation: 0,
   ),
   visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -30,6 +30,6 @@ final appTheme = ThemeData.dark().copyWith(
   highlightColor: Colors.black12.withOpacity(.5),
   splashColor: Colors.black12,
   dialogTheme: const DialogTheme(
-    backgroundColor: ThemeColors.sheetBackground,
+    backgroundColor: ThemeColors.appBackground,
   ),
 );

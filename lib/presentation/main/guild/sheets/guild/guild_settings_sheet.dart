@@ -69,7 +69,7 @@ class _GuildSettingsSheet extends StatelessWidget {
       },
       child: Container(
         height: MediaQuery.of(context).size.height * 0.75,
-        color: ThemeColors.sheetBackground,
+        color: ThemeColors.appBackground,
         child: Column(
           children: [
             GuildInfoContainer(guild: guild, isOwner: isOwner),

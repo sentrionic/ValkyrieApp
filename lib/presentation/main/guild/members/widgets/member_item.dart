@@ -28,7 +28,7 @@ class MemberItem extends StatelessWidget {
         member.image,
         isOnline: member.isOnline,
         imageRadius: 16,
-        iconRadious: 12,
+        iconRadius: 12,
       ),
       title: Text(
         member.nickname ?? member.username,
@@ -46,7 +46,6 @@ class MemberItem extends StatelessWidget {
         builder: (_) => ProfileBottomSheet(
           guild: guild,
           member: member,
-          ctx: context,
         ),
       );
 }

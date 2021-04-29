@@ -87,7 +87,7 @@ class _TypingIndicatorState extends State<TypingIndicator>
 
   Widget _buildStatusBubble() {
     return SizedBox(
-      width: 40,
+      width: 30,
       height: 20,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -109,8 +109,8 @@ class _TypingIndicatorState extends State<TypingIndicator>
         final circleColorPercent = sin(pi * circleFlashPercent);
 
         return Container(
-          width: 8,
-          height: 8,
+          width: 6,
+          height: 6,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: Color.lerp(widget.flashingCircleDarkColor,

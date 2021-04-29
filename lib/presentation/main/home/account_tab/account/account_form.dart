@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valkyrie_app/application/account/get_account/account_cubit.dart';
 import 'package:valkyrie_app/application/account/update_account/update_account_bloc.dart';
+import 'package:valkyrie_app/presentation/common/widgets/center_loading_indicator.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/main/home/account_tab/change_password/change_password_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/account_tab/account/avatar_widget.dart';
@@ -190,9 +191,7 @@ class AccountForm extends StatelessWidget {
               ),
             ],
           ),
-          orElse: () => const Center(
-            child: CircularProgressIndicator(),
-          ),
+          orElse: () => CenterLoadingIndicator(),
         );
       },
     );

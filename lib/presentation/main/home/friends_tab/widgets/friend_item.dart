@@ -32,7 +32,7 @@ class FriendItem extends StatelessWidget {
         friend.image,
         isOnline: friend.isOnline,
         imageRadius: 20,
-        iconRadious: 14,
+        iconRadius: 14,
       ),
       title: Text(
         friend.username,

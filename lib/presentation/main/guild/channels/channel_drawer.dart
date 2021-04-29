@@ -23,7 +23,7 @@ class ChannelDrawer extends StatelessWidget {
           Expanded(
             flex: 12,
             child: Material(
-              color: ThemeColors.drawerBackground,
+              color: ThemeColors.appBarBackground,
               child: Column(
                 children: [
                   const SizedBox(

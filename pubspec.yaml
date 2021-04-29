@@ -38,6 +38,7 @@ dev_dependencies:
     sdk: flutter
   build_runner: null
   flutter_launcher_icons: "^0.9.0"
+  flutter_native_splash: ^1.1.8+4
   freezed: ^0.14.1
   hive_generator: ^1.0.1
   injectable_generator: ^1.2.2
@@ -69,3 +70,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_native_splash:
+  color: "#35383E"
+  image: assets/logo.png

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:valkyrie_app/application/channels/channel_list/channel_list_cubit.dart';
+import 'package:valkyrie_app/presentation/common/widgets/center_loading_indicator.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/widgets/channel_item.dart';
 
 class ChannelList extends StatelessWidget {
@@ -20,9 +21,7 @@ class ChannelList extends StatelessWidget {
               itemCount: channels.length,
             );
           },
-          orElse: () => const Center(
-            child: CircularProgressIndicator(),
-          ),
+          orElse: () => CenterLoadingIndicator(),
         );
       },
     );

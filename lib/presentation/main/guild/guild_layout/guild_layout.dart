@@ -22,8 +22,10 @@ class GuildLayout extends HookWidget {
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
     final channelId = context.watch<CurrentChannelCubit>().state;
+
     use(ChannelSocketHook(context, guild.id));
     use(GuildSocketHook(context));
+
     return Scaffold(
       key: _drawerKey,
       appBar: AppBar(

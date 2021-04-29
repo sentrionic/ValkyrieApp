@@ -123,7 +123,7 @@ class _AppearanceScreenForm extends HookWidget {
             builder: (context, state) {
           final color = state.hexColor?.getOrCrash();
           return Container(
-            color: ThemeColors.sheetBackground,
+            color: ThemeColors.appBackground,
             child: Form(
               key: _key,
               autovalidateMode: AutovalidateMode.onUserInteraction,

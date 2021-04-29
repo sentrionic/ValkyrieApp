@@ -62,7 +62,7 @@ class AccountAvatar extends StatelessWidget {
           toolbarTitle: "Profile Image",
           toolbarColor: Theme.of(context).primaryColor,
           toolbarWidgetColor: Colors.white,
-          initAspectRatio: CropAspectRatioPreset.original,
+          initAspectRatio: CropAspectRatioPreset.square,
           lockAspectRatio: false,
         ),
         iosUiSettings: const IOSUiSettings(),

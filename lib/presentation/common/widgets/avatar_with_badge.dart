@@ -5,7 +5,7 @@ Widget getAvatarWithBadge(
   String image, {
   required bool isOnline,
   required double imageRadius,
-  required double iconRadious,
+  required double iconRadius,
 }) {
   return Stack(
     children: [
@@ -13,6 +13,7 @@ Widget getAvatarWithBadge(
         backgroundImage: NetworkImage(
           image,
         ),
+        backgroundColor: Colors.transparent,
         radius: imageRadius,
       ),
       Positioned(
@@ -29,8 +30,8 @@ Widget getAvatarWithBadge(
             ),
           ),
           constraints: BoxConstraints(
-            minWidth: iconRadious,
-            minHeight: iconRadious,
+            minWidth: iconRadius,
+            minHeight: iconRadius,
           ),
         ),
       )

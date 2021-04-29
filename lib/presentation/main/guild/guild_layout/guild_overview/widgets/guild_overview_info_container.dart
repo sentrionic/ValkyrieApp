@@ -27,7 +27,7 @@ class GuildOverviewInfoContainer extends StatelessWidget {
                   backgroundImage:
                       guild.icon != null ? NetworkImage(guild.icon!) : null,
                   radius: 70,
-                  backgroundColor: guild.icon != null
+                  backgroundColor: guild.icon == null
                       ? ThemeColors.themeBlue
                       : Colors.transparent,
                   child: guild.icon == null

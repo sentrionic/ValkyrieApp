@@ -47,7 +47,7 @@ class CreateChannelForm extends StatelessWidget {
           ],
         ),
         body: Container(
-          color: ThemeColors.sheetBackground,
+          color: ThemeColors.appBackground,
           height: double.infinity,
           child: Form(
             autovalidateMode: state.showErrorMessages

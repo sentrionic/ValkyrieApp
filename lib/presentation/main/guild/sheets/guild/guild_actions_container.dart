@@ -60,7 +60,7 @@ class GuildActionsContainer extends StatelessWidget {
 
   Widget _getModalButton(String label, Function onClick) {
     return Container(
-      color: ThemeColors.sheetBackground,
+      color: ThemeColors.appBackground,
       width: double.infinity,
       child: TextButton(
         onPressed: () => onClick(),
@@ -93,7 +93,7 @@ class GuildActionsContainer extends StatelessWidget {
 
   Widget _getLeaveGuildModalButton(BuildContext context) {
     return Container(
-      color: ThemeColors.sheetBackground,
+      color: ThemeColors.appBackground,
       width: double.infinity,
       child: TextButton(
         onPressed: () {

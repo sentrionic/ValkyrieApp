@@ -38,7 +38,7 @@ class _InviteScreenForm extends HookWidget {
   Widget build(BuildContext context) {
     final switchState = useState(false);
     return Container(
-      color: ThemeColors.sheetBackground,
+      color: ThemeColors.appBackground,
       child: Column(
         children: [
           const SizedBox(

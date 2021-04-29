@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:valkyrie_app/presentation/common/widgets/widget_constants.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/main/shared/add_guild/add_guild_screen.dart';
 
@@ -10,7 +11,7 @@ class AddGuildIcon extends StatelessWidget {
       child: Column(
         children: const [
           CircleAvatar(
-            radius: 26,
+            radius: WidgetConstants.avatarRadius,
             backgroundColor: ThemeColors.guildBackground,
             child: Icon(
               Icons.add,

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
-
 import 'package:valkyrie_app/application/guilds/edit_guild/edit_guild_cubit.dart';
 import 'package:valkyrie_app/application/guilds/guild_list/guild_list_cubit.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
@@ -19,6 +18,7 @@ class EditGuildForm extends HookWidget {
     Key? key,
     required this.guild,
   }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final initialIcon = useState(guild.icon);
@@ -52,7 +52,7 @@ class EditGuildForm extends HookWidget {
           title: const Text("Overview"),
         ),
         body: Container(
-          color: ThemeColors.sheetBackground,
+          color: ThemeColors.appBackground,
           height: double.infinity,
           child: FormWrapper(
             children: [

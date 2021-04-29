@@ -34,7 +34,7 @@ class _MemberDrawerContent extends HookWidget {
   Widget build(BuildContext context) {
     use(MemberSocketHook(context, guild.id));
     return Material(
-      color: ThemeColors.sheetBackground,
+      color: ThemeColors.appBackground,
       child: BlocBuilder<MemberListCubit, MemberListState>(
         builder: (context, state) {
           return state.maybeWhen(

@@ -20,8 +20,8 @@ class TypingContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black26,
-      height: 30,
+      color: Colors.black12,
+      height: 25,
       child: BlocBuilder<CurrentlyTypingCubit, List<String>>(
         buildWhen: (p, c) => p.length != c.length,
         builder: (context, state) => Row(
@@ -37,7 +37,7 @@ class TypingContainer extends StatelessWidget {
               _getTypingString(state),
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 13,
+                fontSize: 12,
                 color: Colors.white70,
               ),
             ),
@@ -45,7 +45,7 @@ class TypingContainer extends StatelessWidget {
               "${state.length == 1 ? ' is' : ' are'} typing...",
               style: const TextStyle(
                 color: Colors.white70,
-                fontSize: 13,
+                fontSize: 11,
               ),
             ),
           ],

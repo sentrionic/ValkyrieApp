@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:valkyrie_app/domain/message/message.dart';
+import 'package:valkyrie_app/presentation/common/widgets/widget_constants.dart';
 
 class MessageTextWidget extends StatelessWidget {
   final Message message;
   final bool isCompact;
 
-  const MessageTextWidget(this.message, {Key? key, this.isCompact = false})
-      : super(key: key);
+  const MessageTextWidget(
+    this.message, {
+    Key? key,
+    this.isCompact = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +18,7 @@ class MessageTextWidget extends StatelessWidget {
       children: [
         if (isCompact)
           const SizedBox(
-            width: 72,
+            width: WidgetConstants.leftPadding,
           ),
         Flexible(
           child: Text(

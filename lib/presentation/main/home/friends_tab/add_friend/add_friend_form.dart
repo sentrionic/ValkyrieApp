@@ -34,7 +34,7 @@ class AddFriendForm extends StatelessWidget {
       ),
       body: Container(
         height: double.infinity,
-        color: ThemeColors.sheetBackground,
+        color: ThemeColors.appBackground,
         child: BlocConsumer<AddFriendCubit, AddFriendState>(
           listener: (context, state) {
             state.failureOrSuccessOption.fold(

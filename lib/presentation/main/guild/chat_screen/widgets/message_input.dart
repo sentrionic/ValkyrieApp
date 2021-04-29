@@ -29,7 +29,8 @@ class MessageInput extends HookWidget {
         );
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        padding: const EdgeInsets.all(8.0),
+        height: 55,
         constraints: BoxConstraints(
           maxHeight: MediaQuery.of(context).size.height * 0.5,
         ),
@@ -60,6 +61,9 @@ class MessageInput extends HookWidget {
                 },
                 keyboardType: TextInputType.multiline,
                 controller: _controller,
+                style: const TextStyle(
+                  fontSize: 14,
+                ),
                 decoration: InputDecoration(
                   hintText:
                       'Message ${isDM ? "@${getDMUsername(context, channelId)}" : "#${getChannelName(context, channelId)}"}',

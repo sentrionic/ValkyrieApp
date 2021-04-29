@@ -5,7 +5,6 @@ import 'package:valkyrie_app/application/dms/dm_list/dm_list_cubit.dart';
 import 'package:valkyrie_app/application/dms/start_dm/start_dm_cubit.dart';
 import 'package:valkyrie_app/application/friends/send_friend_request/send_friend_request_cubit.dart';
 import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart';
-
 import 'package:valkyrie_app/domain/member/member.dart';
 import 'package:valkyrie_app/presentation/common/utils/flushbar_creator.dart';
 import 'package:valkyrie_app/presentation/common/widgets/app_icons.dart';
@@ -68,7 +67,7 @@ class UserInfoContainer extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Container(
+            child: Material(
               color: ThemeColors.infoBackground,
               child: Column(
                 children: [
@@ -78,7 +77,7 @@ class UserInfoContainer extends StatelessWidget {
                       member.image,
                       isOnline: member.isOnline,
                       imageRadius: 40,
-                      iconRadious: 25,
+                      iconRadius: 25,
                     ),
                   ),
                   if (member.nickname != null) ...[

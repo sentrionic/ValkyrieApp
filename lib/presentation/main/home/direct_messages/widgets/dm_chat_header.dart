@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:valkyrie_app/domain/dms/dm_channel.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_channel_name.dart';
+import 'package:valkyrie_app/presentation/core/colors.dart';
 
 class DMChatHeader extends StatelessWidget {
   final DMChannel channel;
@@ -32,7 +33,8 @@ class DMChatHeader extends StatelessWidget {
           height: 12,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
-            color: (channel.user.isOnline) ? Colors.green : Colors.grey,
+            color:
+                (channel.user.isOnline) ? ThemeColors.brandGreen : Colors.grey,
           ),
         )
       ],

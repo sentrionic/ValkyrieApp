@@ -44,7 +44,7 @@ class JoinGuildForm extends StatelessWidget {
       },
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: ThemeColors.sheetBackground,
+          backgroundColor: ThemeColors.appBackground,
           leading: IconButton(
             icon: const Icon(Icons.close),
             onPressed: () => Navigator.of(context).pop(),
@@ -52,7 +52,7 @@ class JoinGuildForm extends StatelessWidget {
         ),
         body: BlocBuilder<JoinGuildCubit, JoinGuildState>(
           builder: (context, state) => Container(
-            color: ThemeColors.sheetBackground,
+            color: ThemeColors.appBackground,
             height: double.infinity,
             child: Form(
               autovalidateMode: state.showErrorMessages
@@ -67,7 +67,9 @@ class JoinGuildForm extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 15),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   const Text(
                     "Get the most out of Valkyrie by joining a server.",
                     style: TextStyle(

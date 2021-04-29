@@ -2,6 +2,23 @@
 
 The mobile application for [Valkyrie](https://github.com/sentrionic/Valkyrie) written in Flutter.
 
+## Screenshots
+
+<table><tr>
+  <tr>
+    <td><img src="./assets/github/auth.gif" width="180"></td>
+    <td><img src="./assets/github/account.jpg" width="180"></td>
+    <td><img src="./assets/github/friends.gif" width="180"></td>
+    <td><img src="./assets/github/channels.gif" width="180"></td>
+    </tr>
+    <tr>
+    <td><img src="./assets/github/chat.gif" width="180"></td>
+    <td><img src="./assets/github/guilds.gif" width="180"></td>
+    <td><img src="./assets/github/dm.gif" width="180"></td>
+    <td><img src="./assets/github/notifications.gif" width="180"></td>
+  </tr>
+  </table>
+
 ## Stack
 
 - Flutter

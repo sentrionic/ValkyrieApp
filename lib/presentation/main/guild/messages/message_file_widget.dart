@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:valkyrie_app/domain/message/message.dart';
+import 'package:valkyrie_app/presentation/common/widgets/widget_constants.dart';
 import 'package:valkyrie_app/presentation/main/guild/messages/widgets/audio_file_widget.dart';
 import 'package:valkyrie_app/presentation/main/guild/messages/widgets/image_file_widget.dart';
 
@@ -19,7 +20,7 @@ class MessageFileWidget extends StatelessWidget {
       children: [
         if (isCompact)
           const SizedBox(
-            width: 72,
+            width: WidgetConstants.leftPadding,
           ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:valkyrie_app/application/dms/current/current_dm_cubit.dart';
 import 'package:valkyrie_app/application/dms/start_dm/start_dm_cubit.dart';
 import 'package:valkyrie_app/application/friends/send_friend_request/send_friend_request_cubit.dart';
-import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart';
 import 'package:valkyrie_app/application/members/moderate_member/moderate_member_cubit.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/domain/member/member.dart';
@@ -17,13 +15,11 @@ class ProfileBottomSheet extends StatelessWidget {
   final current = getCurrentUser();
   final Member member;
   final Guild? guild;
-  final BuildContext ctx;
 
   ProfileBottomSheet({
     Key? key,
     required this.member,
     required this.guild,
-    required this.ctx,
   }) : super(key: key);
 
   @override
@@ -33,8 +29,6 @@ class ProfileBottomSheet extends StatelessWidget {
 
     return MultiBlocProvider(
       providers: [
-        BlocProvider.value(value: ctx.read<CurrentDMCubit>()),
-        BlocProvider.value(value: ctx.read<CurrentGuildCubit>()),
         BlocProvider(create: (context) => getIt<StartDMCubit>()),
         BlocProvider(create: (context) => getIt<SendFriendRequestCubit>()),
         if (isOwner)
@@ -42,7 +36,7 @@ class ProfileBottomSheet extends StatelessWidget {
       ],
       child: Container(
         height: MediaQuery.of(context).size.height * 0.75,
-        color: ThemeColors.sheetBackground,
+        color: ThemeColors.appBackground,
         child: Column(
           children: [
             UserInfoContainer(member, isCurrent: isCurrent),
