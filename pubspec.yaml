@@ -1,53 +1,53 @@
 name: valkyrie_app
 description: A new Flutter project.
 
-publish_to: "none"
+publish_to: 'none'
 
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  another_flushbar: ^1.10.17
-  calendar_time: ^2.0.0-nullsafety.0
+  another_flushbar: ^1.10.22
+  calendar_time: ^2.0.0
   cyclop: ^0.4.1
-  dartz: ^0.10.0-nullsafety.1
-  dio: ^4.0.0-prev3
+  dartz: ^0.10.0-nullsafety.2
+  dio: ^4.0.0
   flutter_bloc: ^7.0.0
-  flutter_hooks: ^0.16.0
-  flutter_typeahead: ^3.1.1
-  freezed_annotation: ^0.14.1
-  get_it: ^6.0.0
-  hive: ^2.0.1
+  flutter_hooks: ^0.17.0
+  flutter_typeahead: ^3.1.3
+  freezed_annotation: ^0.14.2
+  get_it: ^7.1.3
+  hive: ^2.0.4
   image_cropper: ^1.4.0
   image_downloader: ^0.30.0
-  image_picker: ^0.7.4
-  injectable: ^1.2.2
+  image_picker: ^0.7.5+3
+  injectable: ^1.4.1
   intl: ^0.17.0
-  path_provider: ^2.0.1
+  path_provider: ^2.0.2
   photo_view: ^0.11.1
   socket_io_client: ^1.0.0-nullsafety.0
   transparent_image: ^2.0.0
-  webview_flutter: ^2.0.4
+  webview_flutter: ^2.0.8
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: null
-  flutter_launcher_icons: "^0.9.0"
+  flutter_launcher_icons: '^0.9.0'
   flutter_native_splash: ^1.1.8+4
-  freezed: ^0.14.1
-  hive_generator: ^1.0.1
-  injectable_generator: ^1.2.2
+  freezed: ^0.14.2
+  hive_generator: ^1.1.0
+  injectable_generator: ^1.4.1
   lint: ^1.5.3
 
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/icon/icon.png"
+  image_path: 'assets/icon/icon.png'
 
 flutter:
   uses-material-design: true
@@ -72,5 +72,5 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 
 flutter_native_splash:
-  color: "#35383E"
+  color: '#35383E'
   image: assets/logo.png

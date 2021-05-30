@@ -35,16 +35,12 @@ class AuthFacade implements IAuthFacade {
         data: {"email": emailString, "password": passwordStr},
       );
 
-      if (response.statusCode == 201) {
-        final cookies = response.headers['set-cookie'];
-        _setCookie(cookies!);
-        final results = jsonDecode(response.data);
-        final account = AccountDto.fromMap(results).toDomain();
-        _setUserData(account);
-        return right(unit);
-      } else {
-        return left(const AuthFailure.serverError());
-      }
+      final cookies = response.headers['set-cookie'];
+      _setCookie(cookies!);
+      final results = jsonDecode(response.data);
+      final account = AccountDto.fromMap(results).toDomain();
+      _setUserData(account);
+      return right(unit);
     } on DioError catch (err) {
       print(err);
       if (err.response?.statusCode == 404) {

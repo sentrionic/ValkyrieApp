@@ -83,7 +83,9 @@ class _ChatLayout extends HookWidget {
                       buildWhen: (p, c) => p.isSubmitting != c.isSubmitting,
                       builder: (context, state) {
                         return state.isSubmitting
-                            ? const LinearProgressIndicator()
+                            ? const LinearProgressIndicator(
+                                color: ThemeColors.themeBlue,
+                              )
                             : Container();
                       },
                     ),

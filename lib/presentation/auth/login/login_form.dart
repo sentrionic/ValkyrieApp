@@ -149,7 +149,9 @@ class LoginForm extends StatelessWidget {
               ),
               if (state.isSubmitting) ...[
                 const SizedBox(height: 8),
-                const LinearProgressIndicator(),
+                const LinearProgressIndicator(
+                  color: ThemeColors.themeBlue,
+                ),
               ]
             ],
           ),

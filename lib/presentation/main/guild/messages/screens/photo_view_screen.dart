@@ -4,6 +4,7 @@ import 'package:photo_view/photo_view.dart';
 import 'package:valkyrie_app/application/messages/download_image/download_image_cubit.dart';
 import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/common/utils/flushbar_creator.dart';
+import 'package:valkyrie_app/presentation/core/colors.dart';
 
 class PhotoViewScreen extends StatelessWidget {
   static const routeName = '/photo';
@@ -91,6 +92,7 @@ class _PhotoViewContent extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
                         child: LinearProgressIndicator(
                           value: state.progress.toDouble(),
+                          color: ThemeColors.themeBlue,
                         ),
                       )
                     : Container();
