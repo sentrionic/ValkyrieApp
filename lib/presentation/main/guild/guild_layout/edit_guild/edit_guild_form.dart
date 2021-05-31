@@ -66,7 +66,7 @@ class EditGuildForm extends HookWidget {
                       onTap: () => _selectGuildIcon(context),
                       child: CircleAvatar(
                         radius: 45,
-                        backgroundColor: ThemeColors.guildBackground,
+                        backgroundColor: ThemeColors.themeBlue,
                         foregroundImage:
                             (state.icon == null && initialIcon.value != null)
                                 ? NetworkImage(guild.icon!)

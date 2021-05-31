@@ -96,7 +96,7 @@ class ChannelSettingsForm extends StatelessWidget {
                     buttonColor: ThemeColors.brandRed,
                     onSubmit: () => context
                         .read<DeleteChannelCubit>()
-                        .deleteChannel(guildId: guildId, channelId: channel.id),
+                        .deleteChannel(channel.id),
                   );
                 }
               },
@@ -211,9 +211,7 @@ class ChannelSettingsForm extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             FocusScope.of(context).unfocus();
-            context
-                .read<EditChannelCubit>()
-                .submitEditChannel(guildId, channel.id);
+            context.read<EditChannelCubit>().submitEditChannel(channel.id);
           },
           backgroundColor: ThemeColors.themeBlue,
           foregroundColor: Colors.white,

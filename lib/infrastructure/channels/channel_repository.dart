@@ -68,7 +68,6 @@ class ChannelRepository extends IChannelRepository {
 
   @override
   Future<Either<ChannelFailure, Unit>> editChannel(
-    String guildId,
     String channelId,
     String name, {
     bool isPublic = true,
@@ -76,7 +75,7 @@ class ChannelRepository extends IChannelRepository {
   }) async {
     try {
       await _dio.put(
-        '/channels/$guildId/$channelId',
+        '/channels/$channelId',
         data: {
           "name": name,
           "isPublic": isPublic,
@@ -96,12 +95,11 @@ class ChannelRepository extends IChannelRepository {
 
   @override
   Future<Either<ChannelFailure, Unit>> deleteChannel(
-    String guildId,
     String channelId,
   ) async {
     try {
       await _dio.delete(
-        '/channels/$guildId/$channelId',
+        '/channels/$channelId',
       );
 
       return right(unit);

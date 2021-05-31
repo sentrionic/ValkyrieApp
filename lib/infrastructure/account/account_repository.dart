@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:hive/hive.dart';
+import 'package:http_parser/http_parser.dart';
 import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/account/account_failure.dart';
 import 'package:valkyrie_app/domain/account/account.dart';
@@ -56,7 +57,10 @@ class AccountRepository extends IAccountRepository {
       if (image != null) {
         formData.files.add(MapEntry(
           "image",
-          await MultipartFile.fromFile(image.path),
+          await MultipartFile.fromFile(
+            image.path,
+            contentType: MediaType("image", "jpeg"),
+          ),
         ));
       }
 

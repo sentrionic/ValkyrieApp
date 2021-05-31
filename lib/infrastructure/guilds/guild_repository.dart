@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:http_parser/http_parser.dart';
 import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/guilds/guild_failure.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
@@ -88,12 +89,15 @@ class GuildRepository extends IGuildRepository {
       if (icon != null) {
         formData.files.add(MapEntry(
           "image",
-          await MultipartFile.fromFile(icon.path),
+          await MultipartFile.fromFile(
+            icon.path,
+            contentType: MediaType("image", "jpeg"),
+          ),
         ));
       } else if (url != null) {
-        //Backend handling is weird, so gotta indicate that icon has the old image
+        // Keep the old icon
         formData.fields.add(
-          MapEntry("image", url),
+          MapEntry("icon", url),
         );
       }
 

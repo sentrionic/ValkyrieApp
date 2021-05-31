@@ -16,7 +16,6 @@ abstract class IChannelRepository {
   });
 
   Future<Either<ChannelFailure, Unit>> editChannel(
-    String guildId,
     String channelId,
     String name, {
     bool isPublic = true,
@@ -24,7 +23,6 @@ abstract class IChannelRepository {
   });
 
   Future<Either<ChannelFailure, Unit>> deleteChannel(
-    String guildId,
     String channelId,
   );
 

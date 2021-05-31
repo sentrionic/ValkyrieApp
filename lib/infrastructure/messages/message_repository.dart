@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:http_parser/http_parser.dart';
 import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/message/i_message_repository.dart';
 import 'package:valkyrie_app/domain/message/message.dart';
@@ -71,7 +72,10 @@ class MessageRepository extends IMessageRepository {
       final formData = FormData();
       formData.files.add(MapEntry(
         "file",
-        await MultipartFile.fromFile(path),
+        await MultipartFile.fromFile(
+          path,
+          contentType: MediaType("image", "jpeg"),
+        ),
       ));
       await _dio.post(
         '/messages/$channelId',

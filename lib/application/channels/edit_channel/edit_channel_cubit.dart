@@ -54,7 +54,7 @@ class EditChannelCubit extends Cubit<EditChannelState> {
     ));
   }
 
-  Future<void> submitEditChannel(String guildId, String channelId) async {
+  Future<void> submitEditChannel(String channelId) async {
     Either<ChannelFailure, Unit>? failureOrSuccess;
 
     final isNameValid = state.name.isValid();
@@ -66,7 +66,6 @@ class EditChannelCubit extends Cubit<EditChannelState> {
       ));
 
       failureOrSuccess = await _repository.editChannel(
-        guildId,
         channelId,
         state.name.getOrCrash(),
         isPublic: state.isPublic,
