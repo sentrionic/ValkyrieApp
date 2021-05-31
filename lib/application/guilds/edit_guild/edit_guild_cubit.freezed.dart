@@ -180,6 +180,7 @@ class __$EditGuildStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_EditGuildState implements _EditGuildState {
   const _$_EditGuildState(
       {required this.name,

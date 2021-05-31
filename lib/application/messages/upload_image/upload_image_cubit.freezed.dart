@@ -135,6 +135,7 @@ class __$UploadImageStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_UploadImageState implements _UploadImageState {
   const _$_UploadImageState(
       {required this.showErrorMessages,

@@ -5,12 +5,18 @@ import 'package:valkyrie_app/presentation/common/utils/get_cookie.dart';
 @module
 abstract class InjectableModule {
   @Named("BaseUrl")
-  String get baseUrl => "https://api.valkyrieapp.xyz";
+  String get baseUrl => "api.valkyrieapp.xyz";
+
+  @Named("HttpUrl")
+  String get httpUrl => "https://$baseUrl/api";
+
+  @Named("WSUrl")
+  String get wsUrl => "wss://$baseUrl/ws";
 
   @lazySingleton
-  Dio dio(@Named("BaseUrl") String url) {
+  Dio dio(@Named("HttpUrl") String url) {
     final dio = Dio(
-      BaseOptions(baseUrl: "$url/api", responseType: ResponseType.plain),
+      BaseOptions(baseUrl: url, responseType: ResponseType.plain),
     );
 
     dio.interceptors

@@ -188,6 +188,7 @@ class __$MemberDtoCopyWithImpl<$Res> extends _$MemberDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_MemberDto extends _MemberDto {
   const _$_MemberDto(
       {required this.id,

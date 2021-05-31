@@ -150,6 +150,7 @@ class __$JoinGuildStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_JoinGuildState implements _JoinGuildState {
   const _$_JoinGuildState(
       {required this.inviteLink,

@@ -197,6 +197,7 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Message extends _Message {
   const _$_Message(
       {required this.id,
@@ -399,6 +400,7 @@ class __$AttachmentCopyWithImpl<$Res> extends _$AttachmentCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Attachment extends _Attachment {
   const _$_Attachment({this.filename, this.url, this.filetype}) : super._();
 

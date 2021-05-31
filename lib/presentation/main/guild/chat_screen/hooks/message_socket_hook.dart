@@ -1,6 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:socket_io_client/socket_io_client.dart' as io;
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:valkyrie_app/application/channels/currently_typing/currently_typing_cubit.dart';
 import 'package:valkyrie_app/application/messages/create_message/create_message_cubit.dart';
@@ -9,6 +10,9 @@ import 'package:valkyrie_app/infrastructure/messages/message_dto.dart';
 import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_cookie.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_current_user.dart';
+import 'package:web_socket_channel/io.dart';
+
+import '../../../../common/extensions/socket_extension.dart';
 
 class MessageSocketHook extends Hook<void> {
   final BuildContext context;
@@ -20,8 +24,8 @@ class MessageSocketHook extends Hook<void> {
 }
 
 class _MessageSocketHookState extends HookState<void, MessageSocketHook> {
-  late io.Socket socket;
-  final baseUrl = getIt<String>(instanceName: "BaseUrl");
+  late IOWebSocketChannel socket;
+  final baseUrl = getIt<String>(instanceName: "WSUrl");
   final cookie = getCookie();
   bool isCurrentlyTyping = false;
   final current = getCurrentUser();
@@ -30,61 +34,62 @@ class _MessageSocketHookState extends HookState<void, MessageSocketHook> {
   Future<void> initHook() async {
     super.initHook();
 
-    socket = io.io(
-      "$baseUrl/ws",
-      io.OptionBuilder().setTransports(
-        ['websocket'],
-      ).setExtraHeaders({"cookie": cookie}).build(),
-    );
-    socket.emit('joinChannel', hook.channelId);
+    socket = IOWebSocketChannel.connect(Uri.parse(baseUrl), headers: {
+      "cookie": cookie,
+    });
 
-    //Message events
-    socket.on(
-      'new_message',
-      (data) {
-        final message = MessageDto.fromMap(data).toDomain();
-        hook.context.read<MessagesCubit>().addNewMessage(message);
-      },
-    );
+    socket.emit("joinChannel", room: hook.channelId);
 
-    socket.on(
-      'edit_message',
-      (data) {
-        final message = MessageDto.fromMap(data).toDomain();
-        hook.context.read<MessagesCubit>().updateMessage(message);
-      },
-    );
+    socket.stream.listen((event) {
+      final response = jsonDecode(event);
 
-    socket.on(
-      'delete_message',
-      (data) {
-        final message = MessageDto.fromMap(data).toDomain();
-        hook.context.read<MessagesCubit>().deleteMessage(message);
-      },
-    );
+      switch (response["action"]) {
+        //Message events
+        case "new_message":
+          {
+            final message = MessageDto.fromMap(response["data"]).toDomain();
+            hook.context.read<MessagesCubit>().addNewMessage(message);
+            break;
+          }
 
-    //Typing events
-    socket.on(
-      'addToTyping',
-      (username) {
-        if (username != current.username.getOrCrash()) {
-          hook.context
-              .read<CurrentlyTypingCubit>()
-              .addToTyping(username.toString());
-        }
-      },
-    );
+        case "edit_message":
+          {
+            final message = MessageDto.fromMap(response["data"]).toDomain();
+            hook.context.read<MessagesCubit>().updateMessage(message);
+            break;
+          }
 
-    socket.on(
-      'removeFromTyping',
-      (username) {
-        if (username != current.username.getOrCrash()) {
-          hook.context
-              .read<CurrentlyTypingCubit>()
-              .removeFromTyping(username.toString());
-        }
-      },
-    );
+        case "delete_message":
+          {
+            final messageId = response["data"].toString();
+            hook.context.read<MessagesCubit>().deleteMessage(messageId);
+            break;
+          }
+
+        //Typing events
+        case "addToTyping":
+          {
+            final username = response["data"].toString();
+            if (username != current.username.getOrCrash()) {
+              hook.context
+                  .read<CurrentlyTypingCubit>()
+                  .addToTyping(username.toString());
+            }
+            break;
+          }
+
+        case "removeFromTyping":
+          {
+            final username = response["data"].toString();
+            if (username != current.username.getOrCrash()) {
+              hook.context
+                  .read<CurrentlyTypingCubit>()
+                  .removeFromTyping(username.toString());
+            }
+            break;
+          }
+      }
+    });
   }
 
   @override
@@ -95,14 +100,16 @@ class _MessageSocketHookState extends HookState<void, MessageSocketHook> {
 
     if (text.trim().length == 1 && !isCurrentlyTyping) {
       socket.emit(
-        'startTyping',
-        [hook.channelId, current.username.getOrCrash()],
+        "startTyping",
+        room: hook.channelId,
+        message: current.username.getOrCrash(),
       );
       isCurrentlyTyping = true;
     } else if (text.isEmpty) {
       socket.emit(
-        'stopTyping',
-        [hook.channelId, current.username.getOrCrash()],
+        "stopTyping",
+        room: hook.channelId,
+        message: current.username.getOrCrash(),
       );
       isCurrentlyTyping = false;
     }
@@ -110,16 +117,20 @@ class _MessageSocketHookState extends HookState<void, MessageSocketHook> {
     if (state.isSubmitting) {
       isCurrentlyTyping = false;
       socket.emit(
-        'stopTyping',
-        [hook.channelId, current.username.getOrCrash()],
+        "stopTyping",
+        room: hook.channelId,
+        message: current.username.getOrCrash(),
       );
     }
   }
 
   @override
   void dispose() {
-    socket.emit('leaveRoom', hook.channelId);
-    socket.disconnect();
+    socket.emit(
+      "leaveRoom",
+      room: hook.channelId,
+    );
+    socket.sink.close();
     super.dispose();
   }
 }

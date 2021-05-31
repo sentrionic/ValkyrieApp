@@ -140,6 +140,7 @@ class __$FriendRequestDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_FriendRequestDto extends _FriendRequestDto {
   const _$_FriendRequestDto(
       {required this.id,

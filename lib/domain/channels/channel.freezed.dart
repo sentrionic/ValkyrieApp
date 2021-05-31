@@ -133,6 +133,7 @@ class __$ChannelCopyWithImpl<$Res> extends _$ChannelCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Channel extends _Channel {
   const _$_Channel(
       {required this.id,

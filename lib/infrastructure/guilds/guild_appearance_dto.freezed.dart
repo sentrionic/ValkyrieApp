@@ -112,6 +112,7 @@ class __$GuildAppearanceDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_GuildAppearanceDto extends _GuildAppearanceDto {
   const _$_GuildAppearanceDto({this.nickname, this.color}) : super._();
 

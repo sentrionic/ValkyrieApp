@@ -113,6 +113,7 @@ class __$InitialCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -206,6 +207,7 @@ class __$FetchInProgressCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_FetchInProgress implements _FetchInProgress {
   const _$_FetchInProgress();
 
@@ -312,6 +314,7 @@ class __$FetchSuccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_FetchSuccess implements _FetchSuccess {
   const _$_FetchSuccess(this.inviteLink);
 
@@ -445,6 +448,7 @@ class __$FetchFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_FetchFailure implements _FetchFailure {
   const _$_FetchFailure(this.failure);
 

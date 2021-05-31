@@ -130,6 +130,7 @@ class _$EmailChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$EmailChanged implements EmailChanged {
   const _$EmailChanged(this.email);
 
@@ -253,6 +254,7 @@ class _$PasswordChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$PasswordChanged implements PasswordChanged {
   const _$PasswordChanged(this.password);
 
@@ -377,6 +379,7 @@ class _$UsernameChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$UsernameChanged implements UsernameChanged {
   const _$UsernameChanged(this.username);
 
@@ -488,6 +491,7 @@ class _$RegisterPressedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$RegisterPressed implements RegisterPressed {
   const _$RegisterPressed();
 
@@ -728,6 +732,7 @@ class __$RegisterFormStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_RegisterFormState implements _RegisterFormState {
   const _$_RegisterFormState(
       {required this.emailAddress,

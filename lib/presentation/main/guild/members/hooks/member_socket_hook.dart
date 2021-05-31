@@ -1,11 +1,15 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:socket_io_client/socket_io_client.dart' as io;
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:valkyrie_app/application/members/member_list/member_list_cubit.dart';
 import 'package:valkyrie_app/infrastructure/members/member_dto.dart';
 import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_cookie.dart';
+import 'package:web_socket_channel/io.dart';
+
+import '../../../../common/extensions/socket_extension.dart';
 
 class MemberSocketHook extends Hook<void> {
   final BuildContext context;
@@ -17,53 +21,59 @@ class MemberSocketHook extends Hook<void> {
 }
 
 class _MemberSocketHookState extends HookState<void, MemberSocketHook> {
-  late io.Socket socket;
-  final baseUrl = getIt<String>(instanceName: "BaseUrl");
+  late IOWebSocketChannel socket;
+  final baseUrl = getIt<String>(instanceName: "WSUrl");
   final cookie = getCookie();
 
   @override
   Future<void> initHook() async {
     super.initHook();
 
-    socket = io.io(
-      "$baseUrl/ws",
-      io.OptionBuilder().setTransports(
-        ['websocket'],
-      ).setExtraHeaders({"cookie": cookie}).build(),
-    );
-    socket.emit('joinGuild', hook.guildId);
+    socket = IOWebSocketChannel.connect(Uri.parse(baseUrl), headers: {
+      "cookie": cookie,
+    });
+    socket.emit('joinGuild', room: hook.guildId);
 
-    //Member events
-    socket.on(
-      'add_member',
-      (data) {
-        final member = MemberDto.fromMap(data).toDomain();
-        hook.context.read<MemberListCubit>().addNewMember(member);
-      },
-    );
+    socket.stream.listen(
+      (event) {
+        final response = jsonDecode(event);
 
-    socket.on(
-      'remove_member',
-      (memberId) {
-        hook.context.read<MemberListCubit>().removeMember(memberId.toString());
-      },
-    );
+        switch (response["action"]) {
+          //Member events
+          case "add_member":
+            {
+              final member = MemberDto.fromMap(response["data"]).toDomain();
+              hook.context.read<MemberListCubit>().addNewMember(member);
+              break;
+            }
 
-    socket.on(
-      'toggle_online',
-      (memberId) {
-        hook.context
-            .read<MemberListCubit>()
-            .toggleOnlineStatus(memberId, isOnline: true);
-      },
-    );
+          case "remove_member":
+            {
+              final memberId = response["data"].toString();
+              hook.context
+                  .read<MemberListCubit>()
+                  .removeMember(memberId.toString());
+              break;
+            }
 
-    socket.on(
-      'toggle_offline',
-      (memberId) {
-        hook.context
-            .read<MemberListCubit>()
-            .toggleOnlineStatus(memberId, isOnline: false);
+          case "toggle_online":
+            {
+              final memberId = response["data"].toString();
+              hook.context
+                  .read<MemberListCubit>()
+                  .toggleOnlineStatus(memberId, isOnline: true);
+              break;
+            }
+
+          case "toggle_offline":
+            {
+              final memberId = response["data"].toString();
+              hook.context
+                  .read<MemberListCubit>()
+                  .toggleOnlineStatus(memberId, isOnline: false);
+              break;
+            }
+        }
       },
     );
   }
@@ -73,8 +83,8 @@ class _MemberSocketHookState extends HookState<void, MemberSocketHook> {
 
   @override
   void dispose() {
-    socket.emit('leaveRoom', hook.guildId);
-    socket.disconnect();
+    socket.emit('leaveRoom', room: hook.guildId);
+    socket.sink.close();
     super.dispose();
   }
 }

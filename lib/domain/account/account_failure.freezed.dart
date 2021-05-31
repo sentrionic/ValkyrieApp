@@ -136,6 +136,7 @@ class __$UnexpectedCopyWithImpl<$Res> extends _$AccountFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Unexpected implements _Unexpected {
   const _$_Unexpected();
 
@@ -241,6 +242,7 @@ class _$InvalidUsernameCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$InvalidUsername implements InvalidUsername {
   const _$InvalidUsername();
 
@@ -346,6 +348,7 @@ class _$InvalidEmailCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$InvalidEmail implements InvalidEmail {
   const _$InvalidEmail();
 
@@ -451,6 +454,7 @@ class _$EmailAlreadyInUseCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   const _$EmailAlreadyInUse();
 
@@ -556,6 +560,7 @@ class _$InvalidPasswordCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$InvalidPassword implements InvalidPassword {
   const _$InvalidPassword();
 
@@ -672,6 +677,7 @@ class _$BadRequestCopyWithImpl<$Res> extends _$AccountFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$BadRequest implements BadRequest {
   const _$BadRequest(this.message);
 
@@ -793,6 +799,7 @@ class _$ServerErrorCopyWithImpl<$Res> extends _$AccountFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$ServerError implements ServerError {
   const _$ServerError();
 

@@ -150,6 +150,7 @@ class __$EditMessageStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_EditMessageState implements _EditMessageState {
   const _$_EditMessageState(
       {required this.text,

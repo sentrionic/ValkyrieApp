@@ -149,6 +149,7 @@ class __$ForgotPasswordStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ForgotPasswordState implements _ForgotPasswordState {
   const _$_ForgotPasswordState(
       {required this.emailAddress,

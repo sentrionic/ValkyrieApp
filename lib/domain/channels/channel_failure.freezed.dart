@@ -86,6 +86,7 @@ class __$UnexpectedCopyWithImpl<$Res> extends _$ChannelFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Unexpected implements _Unexpected {
   const _$_Unexpected();
 

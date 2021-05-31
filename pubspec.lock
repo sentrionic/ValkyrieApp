@@ -107,12 +107,12 @@ packages:
     source: hosted
     version: "5.0.0"
   built_value:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: built_value
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "8.0.0"
+    version: "8.0.6"
   calendar_time:
     dependency: "direct main"
     description:
@@ -665,20 +665,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
-  socket_io_client:
-    dependency: "direct main"
-    description:
-      name: socket_io_client
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.0-nullsafety.0"
-  socket_io_common:
-    dependency: transitive
-    description:
-      name: socket_io_common
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.0-nullsafety.1"
   source_gen:
     dependency: transitive
     description:
@@ -785,7 +771,7 @@ packages:
     source: hosted
     version: "1.0.0"
   web_socket_channel:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: web_socket_channel
       url: "https://pub.dartlang.org"

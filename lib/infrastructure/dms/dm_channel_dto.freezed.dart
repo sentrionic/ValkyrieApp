@@ -122,6 +122,7 @@ class __$DMChannelDtoCopyWithImpl<$Res> extends _$DMChannelDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DMChannelDto extends _DMChannelDto {
   const _$_DMChannelDto({required this.id, required this.user}) : super._();
 
@@ -284,6 +285,7 @@ class __$DMNotificationDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DMNotificationDto extends _DMNotificationDto {
   const _$_DMNotificationDto({required this.id, required this.user})
       : super._();

@@ -125,6 +125,7 @@ class __$BannedMemberDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_BannedMemberDto extends _BannedMemberDto {
   const _$_BannedMemberDto(
       {required this.id, required this.username, required this.image})

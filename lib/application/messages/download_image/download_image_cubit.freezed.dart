@@ -150,6 +150,7 @@ class __$DownloadImageStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DownloadImageState implements _DownloadImageState {
   const _$_DownloadImageState(
       {required this.showErrorMessages,

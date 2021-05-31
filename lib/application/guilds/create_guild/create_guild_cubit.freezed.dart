@@ -150,6 +150,7 @@ class __$CreateGuildStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_CreateGuildState implements _CreateGuildState {
   const _$_CreateGuildState(
       {required this.name,

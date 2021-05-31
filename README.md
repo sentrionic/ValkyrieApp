@@ -27,9 +27,10 @@ The mobile application for [Valkyrie](https://github.com/sentrionic/Valkyrie) wr
 
 - [get_it](https://pub.dev/packages/get_it) for dependency injection
 
-- REST for data fetching and socket.io for websocket events
+- REST for data fetching and websockets for real time events
 
 For all features check out the parent [repository](https://github.com/sentrionic/Valkyrie).
+For the socket.io version check out the `main` branch.
 
 The architecture of this app is based on Reso Coder's [Domain Driven Design Principles](https://resocoder.com/2020/03/09/flutter-firebase-ddd-course-1-domain-driven-design-principles/):
 
@@ -45,7 +46,7 @@ The architecture of this app is based on Reso Coder's [Domain Driven Design Prin
 
 You will need Flutter Version 2 to run this app.
 
-This app was created and tested on `Flutter 2.0.5` and `Dart 2.12.3` .
+This app was created and tested on `Flutter 2.2.1` and `Dart 2.13.1` .
 
 ```
 git clone https://github.com/sentrionic/ValkyrieApp.git
@@ -55,7 +56,8 @@ flutter packages get
 
 For debug mode run `flutter run` and for production mode run `flutter run --release`
 
-If you want to use your own server you will base to change the `BaseUrl` in `InjectableModule`.
+If you want to use your own server you will base to change the `BaseUrl` in `InjectableModule`
+and then run `flutter pub run build_runner build --delete-conflicting-outputs`
 
 If said server runs on `localhost` you will also need to add `android:usesCleartextTraffic="true"` to the Android manifest.
 

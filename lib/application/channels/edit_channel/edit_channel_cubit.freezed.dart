@@ -180,6 +180,7 @@ class __$EditChannelStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_EditChannelState implements _EditChannelState {
   const _$_EditChannelState(
       {required this.name,

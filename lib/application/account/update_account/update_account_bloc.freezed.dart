@@ -130,6 +130,7 @@ class __$EmailChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_EmailChanged implements _EmailChanged {
   const _$_EmailChanged(this.email);
 
@@ -253,6 +254,7 @@ class __$UsernameChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_UsernameChanged implements _UsernameChanged {
   const _$_UsernameChanged(this.username);
 
@@ -377,6 +379,7 @@ class __$ImageChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ImageChanged implements _ImageChanged {
   const _$_ImageChanged(this.image);
 
@@ -484,6 +487,7 @@ class __$SavedCopyWithImpl<$Res> extends _$UpdateAccountEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Saved implements _Saved {
   const _$_Saved();
 
@@ -725,6 +729,7 @@ class __$UpdateAccountStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_UpdateAccountState implements _UpdateAccountState {
   const _$_UpdateAccountState(
       {required this.username,

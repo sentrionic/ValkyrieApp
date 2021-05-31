@@ -110,6 +110,7 @@ class __$InitialCopyWithImpl<$Res> extends _$RemoveFriendStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -203,6 +204,7 @@ class __$ActionInProgressCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -318,6 +320,7 @@ class __$ActionFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ActionFailure implements _ActionFailure {
   const _$_ActionFailure(this.friendFailure);
 
@@ -429,6 +432,7 @@ class __$ActionSuccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ActionSuccess implements _ActionSuccess {
   const _$_ActionSuccess();
 

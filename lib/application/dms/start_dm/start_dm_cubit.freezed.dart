@@ -111,6 +111,7 @@ class __$InitialCopyWithImpl<$Res> extends _$StartDMStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -204,6 +205,7 @@ class __$FetchInProgressCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_FetchInProgress implements _FetchInProgress {
   const _$_FetchInProgress();
 
@@ -318,6 +320,7 @@ class __$FetchSuccessCopyWithImpl<$Res> extends _$StartDMStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_FetchSuccess implements _FetchSuccess {
   const _$_FetchSuccess(this.channel);
 
@@ -449,6 +452,7 @@ class __$FetchFailureCopyWithImpl<$Res> extends _$StartDMStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_FetchFailure implements _FetchFailure {
   const _$_FetchFailure(this.channelFailure);
 

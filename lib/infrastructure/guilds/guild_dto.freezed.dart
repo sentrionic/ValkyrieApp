@@ -172,6 +172,7 @@ class __$GuildDtoCopyWithImpl<$Res> extends _$GuildDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_GuildDto extends _GuildDto {
   const _$_GuildDto(
       {required this.id,

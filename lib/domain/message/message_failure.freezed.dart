@@ -94,6 +94,7 @@ class __$UnexpectedCopyWithImpl<$Res> extends _$MessageFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Unexpected implements _Unexpected {
   const _$_Unexpected();
 
@@ -179,6 +180,7 @@ class __$FileTooLargeCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_FileTooLarge implements _FileTooLarge {
   const _$_FileTooLarge();
 

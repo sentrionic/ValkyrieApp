@@ -234,6 +234,7 @@ class _$ExceedingLengthCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$ExceedingLength<T> implements ExceedingLength<T> {
   const _$ExceedingLength({required this.failedValue, required this.max});
 
@@ -395,6 +396,7 @@ class _$EmptyCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$Empty<T> implements Empty<T> {
   const _$Empty({required this.failedValue});
 
@@ -556,6 +558,7 @@ class _$TooManyGuildsCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$TooManyGuilds<T> implements TooManyGuilds<T> {
   const _$TooManyGuilds({required this.failedValue, required this.max});
 
@@ -720,6 +723,7 @@ class _$InvalidEmailCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$InvalidEmail<T> implements InvalidEmail<T> {
   const _$InvalidEmail({required this.failedValue});
 
@@ -876,6 +880,7 @@ class _$InvalidUsernameCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$InvalidUsername<T> implements InvalidUsername<T> {
   const _$InvalidUsername({required this.failedValue});
 
@@ -1033,6 +1038,7 @@ class _$InvalidChannelNameCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$InvalidChannelName<T> implements InvalidChannelName<T> {
   const _$InvalidChannelName({required this.failedValue});
 
@@ -1191,6 +1197,7 @@ class _$ShortPasswordCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$ShortPassword<T> implements ShortPassword<T> {
   const _$ShortPassword({required this.failedValue});
 
@@ -1347,6 +1354,7 @@ class _$PasswordsDontMatchCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$PasswordsDontMatch<T> implements PasswordsDontMatch<T> {
   const _$PasswordsDontMatch({required this.failedValue});
 
@@ -1510,6 +1518,7 @@ class _$ExceedingSizeCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$ExceedingSize<T> implements ExceedingSize<T> {
   const _$ExceedingSize({required this.failedValue, required this.max});
 
@@ -1674,6 +1683,7 @@ class _$InvalidColorCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$InvalidColor<T> implements InvalidColor<T> {
   const _$InvalidColor({required this.failedValue});
 
@@ -1830,6 +1840,7 @@ class _$InvalidUIDCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$InvalidUID<T> implements InvalidUID<T> {
   const _$InvalidUID({required this.failedValue});
 

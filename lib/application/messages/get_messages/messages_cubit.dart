@@ -63,10 +63,10 @@ class MessagesCubit extends Cubit<MessagesState> {
     );
   }
 
-  void deleteMessage(Message message) {
+  void deleteMessage(String messageId) {
     state.maybeWhen(
       loadSuccess: (messages, hasMore) async {
-        final data = messages.where((e) => e.id != message.id).toList();
+        final data = messages.where((e) => e.id != messageId).toList();
         emit(MessagesState.loadSuccess(data, hasMore: hasMore));
       },
       orElse: () {},

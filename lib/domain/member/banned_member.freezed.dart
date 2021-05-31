@@ -123,6 +123,7 @@ class __$BannedMemberCopyWithImpl<$Res> extends _$BannedMemberCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_BannedMember extends _BannedMember {
   const _$_BannedMember(
       {required this.id, required this.username, required this.image})

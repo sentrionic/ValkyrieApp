@@ -111,6 +111,7 @@ class __$InitialCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -204,6 +205,7 @@ class __$ActionInProgressCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -319,6 +321,7 @@ class __$DeleteFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DeleteFailure implements _DeleteFailure {
   const _$_DeleteFailure(this.messageFailure);
 
@@ -432,6 +435,7 @@ class __$DeleteSuccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DeleteSuccess implements _DeleteSuccess {
   const _$_DeleteSuccess();
 

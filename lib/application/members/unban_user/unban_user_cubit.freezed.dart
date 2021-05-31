@@ -112,6 +112,7 @@ class __$InitialCopyWithImpl<$Res> extends _$UnbanUserStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -205,6 +206,7 @@ class __$ActionInProgressCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -320,6 +322,7 @@ class __$UnbanFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_UnbanFailure implements _UnbanFailure {
   const _$_UnbanFailure(this.failure);
 
@@ -443,6 +446,7 @@ class __$UnbanSuccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_UnbanSuccess implements _UnbanSuccess {
   const _$_UnbanSuccess(this.memberId);
 

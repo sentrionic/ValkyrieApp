@@ -165,6 +165,7 @@ class __$ChangeAppearanceStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ChangeAppearanceState implements _ChangeAppearanceState {
   const _$_ChangeAppearanceState(
       {this.nickname = null,

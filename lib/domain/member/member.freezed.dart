@@ -186,6 +186,7 @@ class __$MemberCopyWithImpl<$Res> extends _$MemberCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Member extends _Member {
   const _$_Member(
       {required this.id,

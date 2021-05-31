@@ -109,6 +109,7 @@ class __$InitialCopyWithImpl<$Res> extends _$CloseDMStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -202,6 +203,7 @@ class __$ActionInProgressCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -316,6 +318,7 @@ class __$CloseFailureCopyWithImpl<$Res> extends _$CloseDMStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_CloseFailure implements _CloseFailure {
   const _$_CloseFailure(this.failure);
 
@@ -425,6 +428,7 @@ class __$CloseSuccessCopyWithImpl<$Res> extends _$CloseDMStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_CloseSuccess implements _CloseSuccess {
   const _$_CloseSuccess();
 

@@ -21,13 +21,10 @@ class DMRepository extends IDMRepository {
     try {
       final response = await _dio.get('/channels/me/dm');
 
-      if (response.statusCode == 200) {
-        final results = jsonDecode(response.data);
-        final List<DMChannel> list = [];
-        results.forEach((c) => list.add(DMChannelDto.fromMap(c).toDomain()));
-        return right(list);
-      }
-      return left(const DMChannelFailure.unexpected());
+      final results = jsonDecode(response.data);
+      final List<DMChannel> list = [];
+      results.forEach((c) => list.add(DMChannelDto.fromMap(c).toDomain()));
+      return right(list);
     } on DioError catch (err) {
       print(err);
       return left(const DMChannelFailure.unexpected());

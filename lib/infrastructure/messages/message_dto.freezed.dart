@@ -201,6 +201,7 @@ class __$MessageDtoCopyWithImpl<$Res> extends _$MessageDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_MessageDto extends _MessageDto {
   const _$_MessageDto(
       {required this.id,
@@ -409,6 +410,7 @@ class __$AttachmentDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_AttachmentDto extends _AttachmentDto {
   const _$_AttachmentDto(
       {required this.filename, required this.url, required this.filetype})

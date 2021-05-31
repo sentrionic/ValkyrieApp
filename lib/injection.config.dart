@@ -97,8 +97,10 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i10.RequestNotificationsCubit>(
       () => _i10.RequestNotificationsCubit());
   gh.factory<String>(() => injectableModule.baseUrl, instanceName: 'BaseUrl');
+  gh.factory<String>(() => injectableModule.httpUrl, instanceName: 'HttpUrl');
+  gh.factory<String>(() => injectableModule.wsUrl, instanceName: 'WSUrl');
   gh.lazySingleton<_i11.Dio>(
-      () => injectableModule.dio(get<String>(instanceName: 'BaseUrl')));
+      () => injectableModule.dio(get<String>(instanceName: 'HttpUrl')));
   gh.lazySingleton<_i12.IAccountRepository>(
       () => _i13.AccountRepository(get<_i11.Dio>()));
   gh.lazySingleton<_i14.IAuthFacade>(() => _i15.AuthFacade(get<_i11.Dio>()));

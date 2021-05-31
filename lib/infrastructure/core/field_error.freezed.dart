@@ -109,6 +109,7 @@ class __$FieldErrorCopyWithImpl<$Res> extends _$FieldErrorCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_FieldError extends _FieldError {
   const _$_FieldError({required this.field, required this.message}) : super._();
 

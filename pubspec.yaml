@@ -29,14 +29,15 @@ dependencies:
   intl: ^0.17.0
   path_provider: ^2.0.2
   photo_view: ^0.11.1
-  socket_io_client: ^1.0.0-nullsafety.0
   transparent_image: ^2.0.0
+  web_socket_channel: ^2.1.0
   webview_flutter: ^2.0.8
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: null
+  build_runner: ^2.0.4
+  built_value: ^8.0.6
   flutter_launcher_icons: '^0.9.0'
   flutter_native_splash: ^1.1.8+4
   freezed: ^0.14.2
@@ -67,10 +68,8 @@ flutter:
     - family: AppIcons
       fonts:
         - asset: assets/fonts/AppIcons.ttf
-  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
 flutter_native_splash:
   color: '#35383E'
   image: assets/logo.png

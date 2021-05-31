@@ -112,6 +112,7 @@ class __$InitialCopyWithImpl<$Res> extends _$GuildListStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -205,6 +206,7 @@ class __$LoadInProgressCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -311,6 +313,7 @@ class __$LoadSuccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.guilds);
 
@@ -443,6 +446,7 @@ class __$LoadFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.guildFailure);
 

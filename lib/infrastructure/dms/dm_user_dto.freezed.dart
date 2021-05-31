@@ -150,6 +150,7 @@ class __$DMUserDtoCopyWithImpl<$Res> extends _$DMUserDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DMUserDto extends _DMUserDto {
   const _$_DMUserDto(
       {required this.id,

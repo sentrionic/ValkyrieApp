@@ -149,6 +149,7 @@ class __$AddFriendStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_AddFriendState implements _AddFriendState {
   const _$_AddFriendState(
       {required this.uid,

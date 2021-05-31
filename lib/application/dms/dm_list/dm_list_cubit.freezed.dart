@@ -111,6 +111,7 @@ class __$InitialCopyWithImpl<$Res> extends _$DMListStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -204,6 +205,7 @@ class __$LoadInProgressCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -309,6 +311,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$DMListStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.channels);
 
@@ -441,6 +444,7 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$DMListStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.failure);
 

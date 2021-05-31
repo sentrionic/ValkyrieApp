@@ -137,6 +137,7 @@ class __$AccountDtoCopyWithImpl<$Res> extends _$AccountDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_AccountDto extends _AccountDto {
   const _$_AccountDto(
       {required this.id,

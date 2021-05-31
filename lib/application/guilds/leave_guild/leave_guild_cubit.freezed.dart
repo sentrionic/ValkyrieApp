@@ -110,6 +110,7 @@ class __$InitialCopyWithImpl<$Res> extends _$LeaveGuildStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -203,6 +204,7 @@ class __$ActionInProgressCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -318,6 +320,7 @@ class __$LeaveFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LeaveFailure implements _LeaveFailure {
   const _$_LeaveFailure(this.failure);
 
@@ -428,6 +431,7 @@ class __$LeaveSuccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LeaveSuccess implements _LeaveSuccess {
   const _$_LeaveSuccess();
 

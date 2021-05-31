@@ -93,6 +93,7 @@ class __$UnexpectedCopyWithImpl<$Res> extends _$GuildFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Unexpected implements _Unexpected {
   const _$_Unexpected();
 
@@ -177,6 +178,7 @@ class __$InvalidLinkCopyWithImpl<$Res> extends _$GuildFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_InvalidLink implements _InvalidLink {
   const _$_InvalidLink();
 

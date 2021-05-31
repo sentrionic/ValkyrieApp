@@ -87,6 +87,7 @@ class __$FriendFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_FriendFailure implements _FriendFailure {
   const _$_FriendFailure();
 

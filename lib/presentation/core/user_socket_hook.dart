@@ -1,6 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:socket_io_client/socket_io_client.dart' as io;
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:valkyrie_app/application/dms/current/current_dm_cubit.dart';
 import 'package:valkyrie_app/application/notifications/dm_notifications_cubit.dart';
@@ -10,6 +11,9 @@ import 'package:valkyrie_app/infrastructure/dms/dm_channel_dto.dart';
 import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_cookie.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_current_user.dart';
+import 'package:web_socket_channel/io.dart';
+
+import '../common/extensions/socket_extension.dart';
 
 class UserSocketHook extends Hook<void> {
   final BuildContext context;
@@ -21,8 +25,8 @@ class UserSocketHook extends Hook<void> {
 
 class _UserSocketHookState extends HookState<void, UserSocketHook>
     with WidgetsBindingObserver {
-  late io.Socket socket;
-  final baseUrl = getIt<String>(instanceName: "BaseUrl");
+  late IOWebSocketChannel socket;
+  final baseUrl = getIt<String>(instanceName: "WSUrl");
   final cookie = getCookie();
   final current = getCurrentUser();
 
@@ -31,35 +35,52 @@ class _UserSocketHookState extends HookState<void, UserSocketHook>
     super.initHook();
     WidgetsBinding.instance!.addObserver(this);
 
-    socket = io.io(
-      "$baseUrl/ws",
-      io.OptionBuilder().setTransports(
-        ['websocket'],
-      ).setExtraHeaders({"cookie": cookie}).build(),
-    );
-    socket.emit('joinUser', current.id);
+    socket = IOWebSocketChannel.connect(Uri.parse(baseUrl), headers: {
+      "cookie": cookie,
+    });
+    socket.emit('joinUser', room: current.id);
     socket.emit('toggleOnline');
     socket.emit('getRequestCount');
 
-    socket.on('new_dm_notification', (data) {
-      final notification = DMNotificationDto.fromMap(data).toDomain();
-      if (context.read<CurrentDMCubit>().state != notification.id) {
-        hook.context.read<DMNotificationsCubit>().addNotification(notification);
-        hook.context.read<NotificationsCubit>().increment();
-      }
-    });
+    socket.stream.listen(
+      (event) {
+        final response = jsonDecode(event);
 
-    socket.on('send_request', (channelId) {
-      hook.context.read<RequestNotificationsCubit>().addNotification(1);
-      hook.context.read<NotificationsCubit>().increment();
-    });
+        switch (response["action"]) {
+          case "new_dm_notification":
+            {
+              final notification =
+                  DMNotificationDto.fromMap(response["data"]).toDomain();
+              if (context.read<CurrentDMCubit>().state != notification.id) {
+                hook.context
+                    .read<DMNotificationsCubit>()
+                    .addNotification(notification);
+                hook.context.read<NotificationsCubit>().increment();
+              }
+              break;
+            }
 
-    socket.on('requestCount', (count) {
-      hook.context
-          .read<RequestNotificationsCubit>()
-          .addNotification(int.parse(count));
-      hook.context.read<NotificationsCubit>().addToCount(int.parse(count));
-    });
+          case "send_request":
+            {
+              hook.context.read<RequestNotificationsCubit>().addNotification(1);
+              hook.context.read<NotificationsCubit>().increment();
+              break;
+            }
+
+          case "requestCount":
+            {
+              final count = response["data"].toString();
+              hook.context
+                  .read<RequestNotificationsCubit>()
+                  .addNotification(int.parse(count));
+              hook.context
+                  .read<NotificationsCubit>()
+                  .addToCount(int.parse(count));
+              break;
+            }
+        }
+      },
+    );
   }
 
   @override
@@ -67,9 +88,9 @@ class _UserSocketHookState extends HookState<void, UserSocketHook>
 
   @override
   void dispose() {
-    socket.emit('leaveRoom', current.id);
+    socket.emit('leaveRoom', room: current.id);
     socket.emit('toggleOffline');
-    socket.disconnect();
+    socket.sink.close();
     super.dispose();
     WidgetsBinding.instance!.removeObserver(this);
   }

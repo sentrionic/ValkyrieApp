@@ -179,6 +179,7 @@ class __$ChangePasswordStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ChangePasswordState implements _ChangePasswordState {
   const _$_ChangePasswordState(
       {required this.oldPassword,
