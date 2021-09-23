@@ -43,7 +43,7 @@ class GuildScreen extends HookWidget {
             listener: (context, state) {
               state.maybeMap(
                 deleteFailure: (state) {
-                  FlushBarCreator.showError(
+                  showError(
                     message: state.messageFailure.maybeMap(
                       orElse: () => 'Something went wrong. Try again later.',
                     ),
@@ -59,7 +59,7 @@ class GuildScreen extends HookWidget {
                 () => {},
                 (either) => either.fold(
                   (failure) {
-                    FlushBarCreator.showError(
+                    showError(
                       message: failure.map(
                         unexpected: (_) =>
                             'Something went wrong. Try again later.',

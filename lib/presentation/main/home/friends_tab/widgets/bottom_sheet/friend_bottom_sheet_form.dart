@@ -32,7 +32,7 @@ class FriendBottomSheetForm extends StatelessWidget {
                 Navigator.of(context).pushReplacementNamed(DMScreen.routeName);
               },
               fetchFailure: (state) {
-                FlushBarCreator.showError(
+                showError(
                   message: state.channelFailure.map(
                     unexpected: (_) => "Something went wrong. Try again later.",
                   ),
@@ -47,12 +47,11 @@ class FriendBottomSheetForm extends StatelessWidget {
             state.maybeMap(
               actionSuccess: (state) {
                 Navigator.of(context).pop();
-                FlushBarCreator.showSuccess(message: "Removed user")
-                    .show(context);
+                showSuccess(message: "Removed user").show(context);
               },
               actionFailure: (state) {
                 Navigator.of(context).pop();
-                FlushBarCreator.showError(
+                showError(
                   message: state.friendFailure.map(
                     unexpected: (_) => "Something went wrong. Try again later.",
                   ),

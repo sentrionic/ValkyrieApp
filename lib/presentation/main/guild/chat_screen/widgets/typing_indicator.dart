@@ -44,10 +44,12 @@ class _TypingIndicatorState extends State<TypingIndicator>
       parent: _appearanceController,
       curve: const Interval(0.0, 0.4, curve: Curves.easeOut),
       reverseCurve: const Interval(0.0, 1.0, curve: Curves.easeOut),
-    ).drive(Tween<double>(
-      begin: 0.0,
-      end: 60.0,
-    ));
+    ).drive(
+      Tween<double>(
+        begin: 0.0,
+        end: 60.0,
+      ),
+    );
 
     _repeatingController = AnimationController(
       vsync: this,
@@ -113,8 +115,11 @@ class _TypingIndicatorState extends State<TypingIndicator>
           height: 6,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Color.lerp(widget.flashingCircleDarkColor,
-                widget.flashingCircleBrightColor, circleColorPercent),
+            color: Color.lerp(
+              widget.flashingCircleDarkColor,
+              widget.flashingCircleBrightColor,
+              circleColorPercent,
+            ),
           ),
         );
       },

@@ -15,17 +15,21 @@ class CreateMessageCubit extends Cubit<CreateMessageState> {
   CreateMessageCubit(this._repository) : super(CreateMessageState.initial());
 
   Future<void> messageTextChanged(String text) async {
-    emit(state.copyWith(
-      text: MessageText(text),
-      messageFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        text: MessageText(text),
+        messageFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> resetMessageText() async {
-    emit(state.copyWith(
-      text: MessageText(''),
-      messageFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        text: MessageText(''),
+        messageFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> createMessage(String channelId) async {
@@ -34,19 +38,23 @@ class CreateMessageCubit extends Cubit<CreateMessageState> {
     final isMessageValid = state.text.isValid();
 
     if (isMessageValid) {
-      emit(state.copyWith(
-        isSubmitting: true,
-        messageFailureOrSuccessOption: none(),
-      ));
+      emit(
+        state.copyWith(
+          isSubmitting: true,
+          messageFailureOrSuccessOption: none(),
+        ),
+      );
 
       failureOrSuccess =
           await _repository.createMessage(channelId, state.text.getOrCrash());
     }
 
-    emit(state.copyWith(
-      isSubmitting: false,
-      showErrorMessages: true,
-      messageFailureOrSuccessOption: optionOf(failureOrSuccess),
-    ));
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        messageFailureOrSuccessOption: optionOf(failureOrSuccess),
+      ),
+    );
   }
 }

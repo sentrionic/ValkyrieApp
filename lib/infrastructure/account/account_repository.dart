@@ -1,13 +1,13 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:hive/hive.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:injectable/injectable.dart';
-import 'package:valkyrie_app/domain/account/account_failure.dart';
 import 'package:valkyrie_app/domain/account/account.dart';
-import 'package:dartz/dartz.dart';
+import 'package:valkyrie_app/domain/account/account_failure.dart';
 import 'package:valkyrie_app/domain/account/i_account_repository.dart';
 import 'package:valkyrie_app/domain/auth/auth_value_objects.dart';
 import 'package:valkyrie_app/infrastructure/account/account_dto.dart';
@@ -55,13 +55,15 @@ class AccountRepository extends IAccountRepository {
       });
 
       if (image != null) {
-        formData.files.add(MapEntry(
-          "image",
-          await MultipartFile.fromFile(
-            image.path,
-            contentType: MediaType("image", "jpeg"),
+        formData.files.add(
+          MapEntry(
+            "image",
+            await MultipartFile.fromFile(
+              image.path,
+              contentType: MediaType("image", "jpeg"),
+            ),
           ),
-        ));
+        );
       }
 
       final response = await _dio.put('/account', data: formData);

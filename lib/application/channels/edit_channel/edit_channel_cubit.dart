@@ -17,41 +17,52 @@ class EditChannelCubit extends Cubit<EditChannelState> {
   EditChannelCubit(this._repository) : super(EditChannelState.initial());
 
   Future<void> initialize(Channel channel) async {
-    emit(state.copyWith(
-      name: ChannelName(channel.name.getOrCrash()),
-      isPublic: channel.isPublic,
-      channelFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        name: ChannelName(channel.name.getOrCrash()),
+        isPublic: channel.isPublic,
+        channelFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> nameChanged(String name) async {
-    emit(state.copyWith(
-      name: ChannelName(name),
-      channelFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        name: ChannelName(name),
+        channelFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> isPublicChanged({required bool isPublic}) async {
-    emit(state.copyWith(
-      isPublic: isPublic,
-      channelFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        isPublic: isPublic,
+        channelFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> addMember(Member member) async {
-    emit(state.copyWith(
-      members: state.members.where((e) => e.id == member.id).firstOrNull != null
-          ? [...state.members]
-          : [...state.members, member],
-      channelFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        members:
+            state.members.where((e) => e.id == member.id).firstOrNull != null
+                ? [...state.members]
+                : [...state.members, member],
+        channelFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> removeMember(String id) async {
-    emit(state.copyWith(
-      members: state.members.where((c) => c.id != id).toList(),
-      channelFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        members: state.members.where((c) => c.id != id).toList(),
+        channelFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> submitEditChannel(String channelId) async {
@@ -60,10 +71,12 @@ class EditChannelCubit extends Cubit<EditChannelState> {
     final isNameValid = state.name.isValid();
 
     if (isNameValid) {
-      emit(state.copyWith(
-        isSubmitting: true,
-        channelFailureOrSuccessOption: none(),
-      ));
+      emit(
+        state.copyWith(
+          isSubmitting: true,
+          channelFailureOrSuccessOption: none(),
+        ),
+      );
 
       failureOrSuccess = await _repository.editChannel(
         channelId,
@@ -73,10 +86,12 @@ class EditChannelCubit extends Cubit<EditChannelState> {
       );
     }
 
-    emit(state.copyWith(
-      isSubmitting: false,
-      showErrorMessages: true,
-      channelFailureOrSuccessOption: optionOf(failureOrSuccess),
-    ));
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        channelFailureOrSuccessOption: optionOf(failureOrSuccess),
+      ),
+    );
   }
 }

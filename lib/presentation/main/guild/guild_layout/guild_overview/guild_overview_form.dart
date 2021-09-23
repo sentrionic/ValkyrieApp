@@ -26,7 +26,7 @@ class GuildOverviewForm extends StatelessWidget {
             state.maybeMap(
               deleteFailure: (state) {
                 Navigator.of(context).pop();
-                FlushBarCreator.showError(
+                showError(
                   message: state.maybeMap(
                     orElse: () => "Server Error. Try again later.",
                   ),
@@ -47,14 +47,14 @@ class GuildOverviewForm extends StatelessWidget {
           listener: (context, state) {
             state.maybeMap(
               deleteFailure: (state) {
-                FlushBarCreator.showError(
+                showError(
                   message: state.maybeMap(
                     orElse: () => "Server Error. Try again later.",
                   ),
                 ).show(context);
               },
               deleteSuccess: (_) {
-                FlushBarCreator.showSuccess(
+                showSuccess(
                   message: "Successfully deleted all invites.",
                 ).show(context);
               },

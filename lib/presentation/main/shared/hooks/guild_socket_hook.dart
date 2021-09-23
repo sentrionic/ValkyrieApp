@@ -32,9 +32,12 @@ class _GuildSocketHookState extends HookState<void, GuildSocketHook> {
   Future<void> initHook() async {
     super.initHook();
 
-    socket = IOWebSocketChannel.connect(Uri.parse(baseUrl), headers: {
-      "cookie": cookie,
-    });
+    socket = IOWebSocketChannel.connect(
+      Uri.parse(baseUrl),
+      headers: {
+        "cookie": cookie,
+      },
+    );
     socket.emit('joinUser', room: current.id);
 
     socket.stream.listen(
@@ -57,9 +60,7 @@ class _GuildSocketHookState extends HookState<void, GuildSocketHook> {
                 Navigator.of(context)
                     .pushReplacementNamed(HomeScreen.routeName);
               }
-              hook.context
-                  .read<GuildListCubit>()
-                  .removeGuild(guildId.toString());
+              hook.context.read<GuildListCubit>().removeGuild(guildId);
               break;
             }
 
@@ -70,9 +71,7 @@ class _GuildSocketHookState extends HookState<void, GuildSocketHook> {
                 Navigator.of(context)
                     .pushReplacementNamed(HomeScreen.routeName);
               }
-              hook.context
-                  .read<GuildListCubit>()
-                  .removeGuild(guildId.toString());
+              hook.context.read<GuildListCubit>().removeGuild(guildId);
               break;
             }
 
@@ -80,9 +79,7 @@ class _GuildSocketHookState extends HookState<void, GuildSocketHook> {
             {
               final guildId = response["data"].toString();
               if (guildId != context.read<CurrentGuildCubit>().state) {
-                hook.context
-                    .read<GuildListCubit>()
-                    .addNotification(guildId.toString());
+                hook.context.read<GuildListCubit>().addNotification(guildId);
               }
               break;
             }

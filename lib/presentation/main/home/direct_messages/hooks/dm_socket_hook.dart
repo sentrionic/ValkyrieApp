@@ -29,9 +29,12 @@ class _DMSocketHookState extends HookState<void, DMSocketHook> {
   Future<void> initHook() async {
     super.initHook();
 
-    socket = IOWebSocketChannel.connect(Uri.parse(baseUrl), headers: {
-      "cookie": cookie,
-    });
+    socket = IOWebSocketChannel.connect(
+      Uri.parse(baseUrl),
+      headers: {
+        "cookie": cookie,
+      },
+    );
     socket.emit('joinUser', room: current.id);
 
     socket.stream.listen(

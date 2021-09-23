@@ -70,10 +70,7 @@ class MessageInput extends HookWidget {
                   fillColor: ThemeColors.messageInput,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25.0),
-                    borderSide: const BorderSide(
-                      width: 0,
-                      style: BorderStyle.none,
-                    ),
+                    borderSide: BorderSide.none,
                   ),
                   filled: true,
                   contentPadding: const EdgeInsets.symmetric(
@@ -109,7 +106,7 @@ class MessageInput extends HookWidget {
   }
 
   Future<void> _selectImage(BuildContext context, String channelId) async {
-    final pickedFile = await ImagePicker().getImage(
+    final pickedFile = await ImagePicker().pickImage(
       source: ImageSource.gallery,
     );
     if (pickedFile != null) {

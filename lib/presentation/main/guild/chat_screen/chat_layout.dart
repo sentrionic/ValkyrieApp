@@ -15,8 +15,8 @@ import 'package:valkyrie_app/presentation/main/guild/chat_screen/hooks/message_s
 import 'package:valkyrie_app/presentation/main/guild/chat_screen/hooks/scroll_controller_hook.dart';
 import 'package:valkyrie_app/presentation/main/guild/chat_screen/widgets/date_divider.dart';
 import 'package:valkyrie_app/presentation/main/guild/chat_screen/widgets/message_input.dart';
-import 'package:valkyrie_app/presentation/main/guild/chat_screen/widgets/typing_container.dart';
 import 'package:valkyrie_app/presentation/main/guild/chat_screen/widgets/message_loader_or_end.dart';
+import 'package:valkyrie_app/presentation/main/guild/chat_screen/widgets/typing_container.dart';
 import 'package:valkyrie_app/presentation/main/guild/messages/compact_message_item.dart';
 import 'package:valkyrie_app/presentation/main/guild/messages/message_item.dart';
 

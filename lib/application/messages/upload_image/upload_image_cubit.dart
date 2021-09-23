@@ -17,26 +17,30 @@ class UploadImageCubit extends Cubit<UploadImageState> {
   final IMessageRepository _repository;
   UploadImageCubit(this._repository) : super(UploadImageState.initial());
 
-  Future<void> uploadImage(String channelId, PickedFile image) async {
+  Future<void> uploadImage(String channelId, XFile image) async {
     Either<MessageFailure, Unit>? failureOrSuccess;
 
     final file = MessageImage(File(image.path));
 
     if (file.isValid()) {
-      emit(state.copyWith(
-        isSubmitting: true,
-        messageFailureOrSuccessOption: none(),
-      ));
+      emit(
+        state.copyWith(
+          isSubmitting: true,
+          messageFailureOrSuccessOption: none(),
+        ),
+      );
 
       failureOrSuccess = await _repository.uploadImage(channelId, image.path);
     } else {
       failureOrSuccess = left(const MessageFailure.fileTooLarge());
     }
 
-    emit(state.copyWith(
-      isSubmitting: false,
-      showErrorMessages: true,
-      messageFailureOrSuccessOption: optionOf(failureOrSuccess),
-    ));
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        messageFailureOrSuccessOption: optionOf(failureOrSuccess),
+      ),
+    );
   }
 }

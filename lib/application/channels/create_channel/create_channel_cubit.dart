@@ -17,33 +17,42 @@ class CreateChannelCubit extends Cubit<CreateChannelState> {
   CreateChannelCubit(this._repository) : super(CreateChannelState.initial());
 
   Future<void> nameChanged(String name) async {
-    emit(state.copyWith(
-      name: ChannelName(name),
-      channelFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        name: ChannelName(name),
+        channelFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> isPublicChanged({required bool isPublic}) async {
-    emit(state.copyWith(
-      isPublic: isPublic,
-      channelFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        isPublic: isPublic,
+        channelFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> addMember(Member member) async {
-    emit(state.copyWith(
-      members: state.members.where((e) => e.id == member.id).firstOrNull != null
-          ? [...state.members]
-          : [...state.members, member],
-      channelFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        members:
+            state.members.where((e) => e.id == member.id).firstOrNull != null
+                ? [...state.members]
+                : [...state.members, member],
+        channelFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> removeMember(String id) async {
-    emit(state.copyWith(
-      members: state.members.where((c) => c.id != id).toList(),
-      channelFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        members: state.members.where((c) => c.id != id).toList(),
+        channelFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> createChannel(String guildId) async {
@@ -52,10 +61,12 @@ class CreateChannelCubit extends Cubit<CreateChannelState> {
     final isNameValid = state.name.isValid();
 
     if (isNameValid) {
-      emit(state.copyWith(
-        isSubmitting: true,
-        channelFailureOrSuccessOption: none(),
-      ));
+      emit(
+        state.copyWith(
+          isSubmitting: true,
+          channelFailureOrSuccessOption: none(),
+        ),
+      );
 
       failureOrSuccess = await _repository.createChannel(
         guildId,
@@ -65,10 +76,12 @@ class CreateChannelCubit extends Cubit<CreateChannelState> {
       );
     }
 
-    emit(state.copyWith(
-      isSubmitting: false,
-      showErrorMessages: true,
-      channelFailureOrSuccessOption: optionOf(failureOrSuccess),
-    ));
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        channelFailureOrSuccessOption: optionOf(failureOrSuccess),
+      ),
+    );
   }
 }

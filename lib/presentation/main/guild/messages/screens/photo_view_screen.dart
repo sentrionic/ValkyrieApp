@@ -47,14 +47,14 @@ class _PhotoViewContent extends StatelessWidget {
           () => {},
           (either) => either.fold(
             (failure) {
-              FlushBarCreator.showError(
-                  message: failure.maybeMap(
-                orElse: () => 'Something went wrong. Try again later.',
-              )).show(context);
+              showError(
+                message: failure.maybeMap(
+                  orElse: () => 'Something went wrong. Try again later.',
+                ),
+              ).show(context);
             },
             (_) {
-              FlushBarCreator.showSuccess(message: 'Download Success.')
-                  .show(context);
+              showSuccess(message: 'Download Success.').show(context);
             },
           ),
         );

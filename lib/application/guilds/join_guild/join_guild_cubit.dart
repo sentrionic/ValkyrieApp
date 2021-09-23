@@ -16,10 +16,12 @@ class JoinGuildCubit extends Cubit<JoinGuildState> {
   JoinGuildCubit(this._repository) : super(JoinGuildState.initial());
 
   Future<void> linkChanged(String link) async {
-    emit(state.copyWith(
-      inviteLink: InviteLink(link),
-      guildFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        inviteLink: InviteLink(link),
+        guildFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> submitJoinGuild() async {
@@ -28,20 +30,24 @@ class JoinGuildCubit extends Cubit<JoinGuildState> {
     final isInviteValid = state.inviteLink.isValid();
 
     if (isInviteValid) {
-      emit(state.copyWith(
-        isSubmitting: true,
-        guildFailureOrSuccessOption: none(),
-      ));
+      emit(
+        state.copyWith(
+          isSubmitting: true,
+          guildFailureOrSuccessOption: none(),
+        ),
+      );
 
       failureOrSuccess = await _repository.joinGuild(
         state.inviteLink.getOrCrash(),
       );
     }
 
-    emit(state.copyWith(
-      isSubmitting: false,
-      showErrorMessages: true,
-      guildFailureOrSuccessOption: optionOf(failureOrSuccess),
-    ));
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        guildFailureOrSuccessOption: optionOf(failureOrSuccess),
+      ),
+    );
   }
 }

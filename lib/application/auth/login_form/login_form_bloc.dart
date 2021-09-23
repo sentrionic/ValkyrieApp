@@ -2,15 +2,15 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:injectable/injectable.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/auth/auth_failure.dart';
 import 'package:valkyrie_app/domain/auth/auth_value_objects.dart';
 import 'package:valkyrie_app/domain/auth/i_auth_facade.dart';
 
+part 'login_form_bloc.freezed.dart';
 part 'login_form_event.dart';
 part 'login_form_state.dart';
-part 'login_form_bloc.freezed.dart';
 
 @injectable
 class LoginFormBloc extends Bloc<LoginFormEvent, LoginFormState> {

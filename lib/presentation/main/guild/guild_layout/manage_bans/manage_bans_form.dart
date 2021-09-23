@@ -22,9 +22,10 @@ class ManageBansForm extends StatelessWidget {
       listener: (context, state) {
         state.maybeMap(
           unbanFailure: (state) {
-            FlushBarCreator.showError(
+            showError(
               message: state.failure.map(
-                  unexpected: (_) => "Something went wrong, try again later."),
+                unexpected: (_) => "Something went wrong, try again later.",
+              ),
             ).show(context);
           },
           unbanSuccess: (state) {

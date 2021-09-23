@@ -53,7 +53,7 @@ class AccountAvatar extends StatelessWidget {
 
   Future<void> _selectProfileImage(BuildContext context) async {
     final pickedFile =
-        await ImagePicker().getImage(source: ImageSource.gallery);
+        await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
       final croppedFile = await ImageCropper.cropImage(
         sourcePath: pickedFile.path,

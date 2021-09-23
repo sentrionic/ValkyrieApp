@@ -35,14 +35,14 @@ class ChannelSettingsForm extends StatelessWidget {
               () => {},
               (either) => either.fold(
                 (failure) {
-                  FlushBarCreator.showError(
+                  showError(
                     message: failure.maybeMap(
                       orElse: () => "Server Error. Try again later.",
                     ),
                   ).show(context);
                 },
                 (_) {
-                  FlushBarCreator.showSuccess(
+                  showSuccess(
                     message: "Successfully changed channel settings",
                   ).show(context);
                 },
@@ -54,9 +54,10 @@ class ChannelSettingsForm extends StatelessWidget {
           listener: (context, state) {
             state.maybeWhen(
               deleteFailure: (state) {
-                FlushBarCreator.showError(
+                showError(
                   message: state.maybeMap(
-                      orElse: () => "Something went wrong. Try again later"),
+                    orElse: () => "Something went wrong. Try again later",
+                  ),
                 ).show(context);
               },
               deleteSuccess: () {

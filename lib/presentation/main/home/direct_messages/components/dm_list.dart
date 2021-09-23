@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
-import 'package:valkyrie_app/presentation/main/home/direct_messages/widgets/dm_list_header.dart';
 import 'package:valkyrie_app/presentation/main/home/direct_messages/components/dm_list_builder.dart';
+import 'package:valkyrie_app/presentation/main/home/direct_messages/widgets/dm_list_header.dart';
 
 class DirectMessageList extends StatelessWidget {
   @override

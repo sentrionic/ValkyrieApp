@@ -35,9 +35,12 @@ class _UserSocketHookState extends HookState<void, UserSocketHook>
     super.initHook();
     WidgetsBinding.instance!.addObserver(this);
 
-    socket = IOWebSocketChannel.connect(Uri.parse(baseUrl), headers: {
-      "cookie": cookie,
-    });
+    socket = IOWebSocketChannel.connect(
+      Uri.parse(baseUrl),
+      headers: {
+        "cookie": cookie,
+      },
+    );
     socket.emit('joinUser', room: current.id);
     socket.emit('toggleOnline');
     socket.emit('getRequestCount');

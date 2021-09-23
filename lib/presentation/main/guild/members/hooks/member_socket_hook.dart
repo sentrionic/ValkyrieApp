@@ -29,9 +29,12 @@ class _MemberSocketHookState extends HookState<void, MemberSocketHook> {
   Future<void> initHook() async {
     super.initHook();
 
-    socket = IOWebSocketChannel.connect(Uri.parse(baseUrl), headers: {
-      "cookie": cookie,
-    });
+    socket = IOWebSocketChannel.connect(
+      Uri.parse(baseUrl),
+      headers: {
+        "cookie": cookie,
+      },
+    );
     socket.emit('joinGuild', room: hook.guildId);
 
     socket.stream.listen(
@@ -50,9 +53,7 @@ class _MemberSocketHookState extends HookState<void, MemberSocketHook> {
           case "remove_member":
             {
               final memberId = response["data"].toString();
-              hook.context
-                  .read<MemberListCubit>()
-                  .removeMember(memberId.toString());
+              hook.context.read<MemberListCubit>().removeMember(memberId);
               break;
             }
 

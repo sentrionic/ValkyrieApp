@@ -45,10 +45,12 @@ Either<ValueFailure<List<T>>, List<T>> validateMaxGuildLength<T>(
   if (input.length <= maxLength) {
     return right(input);
   } else {
-    return left(ValueFailure.tooManyGuilds(
-      failedValue: input,
-      max: maxLength,
-    ));
+    return left(
+      ValueFailure.tooManyGuilds(
+        failedValue: input,
+        max: maxLength,
+      ),
+    );
   }
 }
 

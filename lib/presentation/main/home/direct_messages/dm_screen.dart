@@ -38,7 +38,7 @@ class DMScreen extends StatelessWidget {
             listener: (context, state) {
               state.maybeMap(
                 deleteFailure: (state) {
-                  FlushBarCreator.showError(
+                  showError(
                     message: state.messageFailure.maybeMap(
                       orElse: () => 'Something went wrong. Try again later.',
                     ),
@@ -54,7 +54,7 @@ class DMScreen extends StatelessWidget {
                 () => {},
                 (either) => either.fold(
                   (failure) {
-                    FlushBarCreator.showError(
+                    showError(
                       message: failure.map(
                         unexpected: (_) =>
                             'Something went wrong. Try again later.',

@@ -32,9 +32,12 @@ class _FriendSocketHookState extends HookState<void, FriendSocketHook> {
   Future<void> initHook() async {
     super.initHook();
 
-    socket = IOWebSocketChannel.connect(Uri.parse(baseUrl), headers: {
-      "cookie": cookie,
-    });
+    socket = IOWebSocketChannel.connect(
+      Uri.parse(baseUrl),
+      headers: {
+        "cookie": cookie,
+      },
+    );
     socket.emit('joinUser', room: current.id);
 
     socket.stream.listen(
@@ -61,16 +64,18 @@ class _FriendSocketHookState extends HookState<void, FriendSocketHook> {
           case "toggle_online":
             {
               hook.context.read<GetFriendsCubit>().toggleOnlineStatus(
-                  response["data"].toString(),
-                  isOnline: true);
+                    response["data"].toString(),
+                    isOnline: true,
+                  );
               break;
             }
 
           case "toggle_offline":
             {
               hook.context.read<GetFriendsCubit>().toggleOnlineStatus(
-                  response["data"].toString(),
-                  isOnline: false);
+                    response["data"].toString(),
+                    isOnline: false,
+                  );
               break;
             }
 

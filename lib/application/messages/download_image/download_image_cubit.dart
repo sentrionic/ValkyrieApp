@@ -15,10 +15,12 @@ class DownloadImageCubit extends Cubit<DownloadImageState> {
   Future<void> downloadImage(String url) async {
     Either<MessageFailure, Unit>? failureOrSuccess;
 
-    emit(state.copyWith(
-      isDownloading: true,
-      downloadFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        isDownloading: true,
+        downloadFailureOrSuccessOption: none(),
+      ),
+    );
 
     final imageId = await ImageDownloader.downloadImage(url);
     ImageDownloader.callback(
@@ -33,11 +35,13 @@ class DownloadImageCubit extends Cubit<DownloadImageState> {
       failureOrSuccess = right(unit);
     }
 
-    emit(state.copyWith(
-      progress: 0,
-      isDownloading: false,
-      showErrorMessages: true,
-      downloadFailureOrSuccessOption: optionOf(failureOrSuccess),
-    ));
+    emit(
+      state.copyWith(
+        progress: 0,
+        isDownloading: false,
+        showErrorMessages: true,
+        downloadFailureOrSuccessOption: optionOf(failureOrSuccess),
+      ),
+    );
   }
 }

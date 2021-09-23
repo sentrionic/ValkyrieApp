@@ -34,9 +34,12 @@ class _MessageSocketHookState extends HookState<void, MessageSocketHook> {
   Future<void> initHook() async {
     super.initHook();
 
-    socket = IOWebSocketChannel.connect(Uri.parse(baseUrl), headers: {
-      "cookie": cookie,
-    });
+    socket = IOWebSocketChannel.connect(
+      Uri.parse(baseUrl),
+      headers: {
+        "cookie": cookie,
+      },
+    );
 
     socket.emit("joinChannel", room: hook.channelId);
 
@@ -71,9 +74,7 @@ class _MessageSocketHookState extends HookState<void, MessageSocketHook> {
           {
             final username = response["data"].toString();
             if (username != current.username.getOrCrash()) {
-              hook.context
-                  .read<CurrentlyTypingCubit>()
-                  .addToTyping(username.toString());
+              hook.context.read<CurrentlyTypingCubit>().addToTyping(username);
             }
             break;
           }
@@ -84,7 +85,7 @@ class _MessageSocketHookState extends HookState<void, MessageSocketHook> {
             if (username != current.username.getOrCrash()) {
               hook.context
                   .read<CurrentlyTypingCubit>()
-                  .removeFromTyping(username.toString());
+                  .removeFromTyping(username);
             }
             break;
           }

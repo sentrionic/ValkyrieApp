@@ -18,7 +18,7 @@ class AccountScreen extends StatelessWidget {
             () => {},
             (either) => either.fold(
               (failure) {
-                FlushBarCreator.showError(
+                showError(
                   message: failure.maybeMap(
                     badRequest: (value) => value.message,
                     orElse: () => "Server Error. Try again later.",
@@ -26,8 +26,7 @@ class AccountScreen extends StatelessWidget {
                 ).show(context);
               },
               (account) {
-                FlushBarCreator.showSuccess(
-                        message: "Successfully updated your account")
+                showSuccess(message: "Successfully updated your account")
                     .show(context);
                 context.read<AccountCubit>().updateAccount(account);
               },

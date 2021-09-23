@@ -18,32 +18,40 @@ class EditGuildCubit extends Cubit<EditGuildState> {
   EditGuildCubit(this._repository) : super(EditGuildState.initial());
 
   Future<void> initialize(Guild guild) async {
-    emit(state.copyWith(
-      name: GuildName(guild.name.getOrCrash()),
-      iconUrl: guild.icon,
-    ));
+    emit(
+      state.copyWith(
+        name: GuildName(guild.name.getOrCrash()),
+        iconUrl: guild.icon,
+      ),
+    );
   }
 
   Future<void> nameChanged(String name) async {
-    emit(state.copyWith(
-      name: GuildName(name),
-      guildFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        name: GuildName(name),
+        guildFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> iconChanged(File image) async {
-    emit(state.copyWith(
-      icon: image,
-      guildFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        icon: image,
+        guildFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> removeIcon() async {
-    emit(state.copyWith(
-      icon: null,
-      iconUrl: null,
-      guildFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        icon: null,
+        iconUrl: null,
+        guildFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> submitEditGuild(String guildId) async {
@@ -52,10 +60,12 @@ class EditGuildCubit extends Cubit<EditGuildState> {
     final isNameValid = state.name.isValid();
 
     if (isNameValid) {
-      emit(state.copyWith(
-        isSubmitting: true,
-        guildFailureOrSuccessOption: none(),
-      ));
+      emit(
+        state.copyWith(
+          isSubmitting: true,
+          guildFailureOrSuccessOption: none(),
+        ),
+      );
 
       failureOrSuccess = await _repository.editGuild(
         guildId,
@@ -65,10 +75,12 @@ class EditGuildCubit extends Cubit<EditGuildState> {
       );
     }
 
-    emit(state.copyWith(
-      isSubmitting: false,
-      showErrorMessages: true,
-      guildFailureOrSuccessOption: optionOf(failureOrSuccess),
-    ));
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        guildFailureOrSuccessOption: optionOf(failureOrSuccess),
+      ),
+    );
   }
 }

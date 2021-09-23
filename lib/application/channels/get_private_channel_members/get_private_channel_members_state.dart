@@ -6,7 +6,9 @@ class GetPrivateChannelMembersState with _$GetPrivateChannelMembersState {
   const factory GetPrivateChannelMembersState.fetchInProgress() =
       _FetchInProgress;
   const factory GetPrivateChannelMembersState.fetchSuccess(
-      List<String> memberIds) = _FetchSuccess;
+    List<String> memberIds,
+  ) = _FetchSuccess;
   const factory GetPrivateChannelMembersState.fetchFailure(
-      ChannelFailure failure) = _FetchFailure;
+    ChannelFailure failure,
+  ) = _FetchFailure;
 }

@@ -161,9 +161,12 @@ class MemberRepository extends IMemberRepository {
     String memberId,
   ) async {
     try {
-      await _dio.delete('/guilds/$guildId/bans', data: {
-        "memberId": memberId,
-      });
+      await _dio.delete(
+        '/guilds/$guildId/bans',
+        data: {
+          "memberId": memberId,
+        },
+      );
 
       return right(unit);
     } on DioError catch (err) {

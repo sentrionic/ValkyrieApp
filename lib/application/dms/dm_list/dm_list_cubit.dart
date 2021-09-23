@@ -19,10 +19,12 @@ class DMListCubit extends Cubit<DMListState> {
   Future<void> getUserDMs() async {
     emit(const DMListState.loadInProgress());
     final failureOrChannels = await _repository.getUserDMs();
-    emit(failureOrChannels.fold(
-      (f) => DMListState.loadFailure(f),
-      (dms) => DMListState.loadSuccess(dms),
-    ));
+    emit(
+      failureOrChannels.fold(
+        (f) => DMListState.loadFailure(f),
+        (dms) => DMListState.loadSuccess(dms),
+      ),
+    );
   }
 
   DMChannel? getCurrentDM(String channelId) {

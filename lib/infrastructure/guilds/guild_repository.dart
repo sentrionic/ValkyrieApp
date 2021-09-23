@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:injectable/injectable.dart';
-import 'package:valkyrie_app/domain/guilds/guild_failure.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
-import 'package:dartz/dartz.dart';
+import 'package:valkyrie_app/domain/guilds/guild_failure.dart';
 import 'package:valkyrie_app/domain/guilds/i_guild_repository.dart';
 import 'package:valkyrie_app/infrastructure/guilds/guild_dto.dart';
 
@@ -87,13 +87,15 @@ class GuildRepository extends IGuildRepository {
       });
 
       if (icon != null) {
-        formData.files.add(MapEntry(
-          "image",
-          await MultipartFile.fromFile(
-            icon.path,
-            contentType: MediaType("image", "jpeg"),
+        formData.files.add(
+          MapEntry(
+            "image",
+            await MultipartFile.fromFile(
+              icon.path,
+              contentType: MediaType("image", "jpeg"),
+            ),
           ),
-        ));
+        );
       } else if (url != null) {
         // Keep the old icon
         formData.fields.add(

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
+import 'package:valkyrie_app/presentation/main/guild/channels/widgets/channel_drawer_header.dart';
+import 'package:valkyrie_app/presentation/main/guild/channels/widgets/channel_list.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/widgets/drawer_guild_list.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/widgets/invite_button.dart';
-import 'package:valkyrie_app/presentation/main/guild/channels/widgets/channel_list.dart';
-import 'package:valkyrie_app/presentation/main/guild/channels/widgets/channel_drawer_header.dart';
 
 class ChannelDrawer extends StatelessWidget {
   final Guild guild;

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'colors.dart';
 
-final appTheme = ThemeData.dark().copyWith(
-  accentColor: ThemeColors.themeBlue,
+final ThemeData theme = ThemeData.dark();
+final appTheme = theme.copyWith(
+  colorScheme: theme.colorScheme.copyWith(secondary: ThemeColors.themeBlue),
   backgroundColor: ThemeColors.appBackground,
   appBarTheme: const AppBarTheme(
     backgroundColor: ThemeColors.appBarBackground,

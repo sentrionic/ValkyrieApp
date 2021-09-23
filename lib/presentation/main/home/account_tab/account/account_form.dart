@@ -4,8 +4,8 @@ import 'package:valkyrie_app/application/account/get_account/account_cubit.dart'
 import 'package:valkyrie_app/application/account/update_account/update_account_bloc.dart';
 import 'package:valkyrie_app/presentation/common/widgets/center_loading_indicator.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
-import 'package:valkyrie_app/presentation/main/home/account_tab/change_password/change_password_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/account_tab/account/avatar_widget.dart';
+import 'package:valkyrie_app/presentation/main/home/account_tab/change_password/change_password_screen.dart';
 
 class AccountForm extends StatelessWidget {
   @override
@@ -84,24 +84,27 @@ class AccountForm extends StatelessWidget {
                               initialValue: account.username.getOrCrash(),
                               onChanged: (value) => context
                                   .read<UpdateAccountBloc>()
-                                  .add(UpdateAccountEvent.usernameChanged(
-                                      value)),
+                                  .add(
+                                    UpdateAccountEvent.usernameChanged(value),
+                                  ),
                               onSaved: (value) => context
                                   .read<UpdateAccountBloc>()
-                                  .add(UpdateAccountEvent.usernameChanged(
-                                      value!)),
+                                  .add(
+                                    UpdateAccountEvent.usernameChanged(value!),
+                                  ),
                               validator: (_) => context
                                   .read<UpdateAccountBloc>()
                                   .state
                                   .username
                                   .value
                                   .fold(
-                                      (f) => f.maybeMap(
-                                            invalidUsername: (_) =>
-                                                'Username must be at least 3 charactesr long',
-                                            orElse: () => null,
-                                          ),
-                                      (r) => null),
+                                    (f) => f.maybeMap(
+                                      invalidUsername: (_) =>
+                                          'Username must be at least 3 charactesr long',
+                                      orElse: () => null,
+                                    ),
+                                    (r) => null,
+                                  ),
                             ),
                             const SizedBox(
                               height: 15,
@@ -125,12 +128,13 @@ class AccountForm extends StatelessWidget {
                                   .emailAddress
                                   .value
                                   .fold(
-                                      (f) => f.maybeMap(
-                                            invalidEmail: (_) =>
-                                                'Must be a valid email address',
-                                            orElse: () => null,
-                                          ),
-                                      (r) => null),
+                                    (f) => f.maybeMap(
+                                      invalidEmail: (_) =>
+                                          'Must be a valid email address',
+                                      orElse: () => null,
+                                    ),
+                                    (r) => null,
+                                  ),
                             ),
                             const SizedBox(
                               height: 35,
@@ -151,7 +155,8 @@ class AccountForm extends StatelessWidget {
                                     },
                                     child: Container(
                                       padding: const EdgeInsets.symmetric(
-                                          vertical: 15),
+                                        vertical: 15,
+                                      ),
                                       child: const Text(
                                         "Save Changes",
                                       ),

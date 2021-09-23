@@ -15,10 +15,12 @@ class AddFriendCubit extends Cubit<AddFriendState> {
   AddFriendCubit(this._repository) : super(AddFriendState.initial());
 
   Future<void> idChanged(String id) async {
-    emit(state.copyWith(
-      uid: UID(id),
-      failureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        uid: UID(id),
+        failureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> sendFriendRequest() async {
@@ -27,20 +29,24 @@ class AddFriendCubit extends Cubit<AddFriendState> {
     final isUIDValid = state.uid.isValid();
 
     if (isUIDValid) {
-      emit(state.copyWith(
-        isSubmitting: true,
-        failureOrSuccessOption: none(),
-      ));
+      emit(
+        state.copyWith(
+          isSubmitting: true,
+          failureOrSuccessOption: none(),
+        ),
+      );
 
       failureOrSuccess = await _repository.sendFriendRequest(
         state.uid.getOrCrash(),
       );
     }
 
-    emit(state.copyWith(
-      isSubmitting: false,
-      showErrorMessages: true,
-      failureOrSuccessOption: optionOf(failureOrSuccess),
-    ));
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        failureOrSuccessOption: optionOf(failureOrSuccess),
+      ),
+    );
   }
 }

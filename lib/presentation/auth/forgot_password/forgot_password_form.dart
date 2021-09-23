@@ -14,14 +14,14 @@ class ForgotPasswordForm extends StatelessWidget {
           () {},
           (either) => either.fold(
             (failure) {
-              FlushBarCreator.showError(
+              showError(
                 message: failure.maybeMap(
                   orElse: () => "Server Error. Try again later.",
                 ),
               ).show(context);
             },
             (_) {
-              FlushBarCreator.showSuccess(
+              showSuccess(
                 message:
                     "If an account with that email already exists, we sent you an email",
               ).show(context);

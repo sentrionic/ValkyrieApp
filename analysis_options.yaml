@@ -7,8 +7,9 @@ analyzer:
     must_be_immutable: error
     sort_unnamed_constructors_first: ignore
     argument_type_not_assignable: ignore
+    use_build_context_synchronously: ignore
     avoid_print: ignore
     sort_pub_dependencies: ignore
   exclude:
-    - "**/*.g.dart"
-    - "**/*.freezed.dart"
+    - '**/*.g.dart'
+    - '**/*.freezed.dart'

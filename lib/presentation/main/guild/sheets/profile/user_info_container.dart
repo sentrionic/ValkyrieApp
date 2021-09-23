@@ -33,7 +33,7 @@ class UserInfoContainer extends StatelessWidget {
                 Navigator.of(context).pushReplacementNamed(DMScreen.routeName);
               },
               fetchFailure: (state) {
-                FlushBarCreator.showError(
+                showError(
                   message: state.channelFailure.map(
                     unexpected: (_) => "Something went wrong. Try again later.",
                   ),
@@ -48,12 +48,11 @@ class UserInfoContainer extends StatelessWidget {
             state.maybeMap(
               actionSuccess: (state) {
                 Navigator.of(context).pop();
-                FlushBarCreator.showSuccess(message: "Send friend request")
-                    .show(context);
+                showSuccess(message: "Send friend request").show(context);
               },
               actionFailure: (state) {
                 Navigator.of(context).pop();
-                FlushBarCreator.showError(
+                showError(
                   message: state.friendFailure.map(
                     unexpected: (_) => "Something went wrong. Try again later.",
                   ),

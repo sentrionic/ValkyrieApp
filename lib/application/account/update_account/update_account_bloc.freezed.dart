@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'update_account_bloc.dart';
 
@@ -53,6 +54,14 @@ mixin _$UpdateAccountEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? saved,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailChanged,
     TResult Function(String username)? usernameChanged,
@@ -67,6 +76,14 @@ mixin _$UpdateAccountEvent {
     required TResult Function(_UsernameChanged value) usernameChanged,
     required TResult Function(_ImageChanged value) imageChanged,
     required TResult Function(_Saved value) saved,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Saved value)? saved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -172,6 +189,17 @@ class _$_EmailChanged implements _EmailChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? saved,
+  }) {
+    return emailChanged?.call(email);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailChanged,
     TResult Function(String username)? usernameChanged,
@@ -194,6 +222,17 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(_Saved value) saved,
   }) {
     return emailChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Saved value)? saved,
+  }) {
+    return emailChanged?.call(this);
   }
 
   @override
@@ -297,6 +336,17 @@ class _$_UsernameChanged implements _UsernameChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? saved,
+  }) {
+    return usernameChanged?.call(username);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailChanged,
     TResult Function(String username)? usernameChanged,
@@ -319,6 +369,17 @@ class _$_UsernameChanged implements _UsernameChanged {
     required TResult Function(_Saved value) saved,
   }) {
     return usernameChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Saved value)? saved,
+  }) {
+    return usernameChanged?.call(this);
   }
 
   @override
@@ -421,6 +482,17 @@ class _$_ImageChanged implements _ImageChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? saved,
+  }) {
+    return imageChanged?.call(image);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailChanged,
     TResult Function(String username)? usernameChanged,
@@ -443,6 +515,17 @@ class _$_ImageChanged implements _ImageChanged {
     required TResult Function(_Saved value) saved,
   }) {
     return imageChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Saved value)? saved,
+  }) {
+    return imageChanged?.call(this);
   }
 
   @override
@@ -517,6 +600,17 @@ class _$_Saved implements _Saved {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function(String username)? usernameChanged,
+    TResult Function(File image)? imageChanged,
+    TResult Function()? saved,
+  }) {
+    return saved?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String email)? emailChanged,
     TResult Function(String username)? usernameChanged,
@@ -539,6 +633,17 @@ class _$_Saved implements _Saved {
     required TResult Function(_Saved value) saved,
   }) {
     return saved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_UsernameChanged value)? usernameChanged,
+    TResult Function(_ImageChanged value)? imageChanged,
+    TResult Function(_Saved value)? saved,
+  }) {
+    return saved?.call(this);
   }
 
   @override

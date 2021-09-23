@@ -70,13 +70,15 @@ class MessageRepository extends IMessageRepository {
   ) async {
     try {
       final formData = FormData();
-      formData.files.add(MapEntry(
-        "file",
-        await MultipartFile.fromFile(
-          path,
-          contentType: MediaType("image", "jpeg"),
+      formData.files.add(
+        MapEntry(
+          "file",
+          await MultipartFile.fromFile(
+            path,
+            contentType: MediaType("image", "jpeg"),
+          ),
         ),
-      ));
+      );
       await _dio.post(
         '/messages/$channelId',
         data: formData,

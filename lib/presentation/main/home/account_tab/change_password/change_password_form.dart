@@ -17,7 +17,7 @@ class ChangePasswordForm extends StatelessWidget {
             () {},
             (either) => either.fold(
               (failure) {
-                FlushBarCreator.showError(
+                showError(
                   message: failure.maybeMap(
                     passwordsDontMatch: (_) => "The new passwords do not match",
                     badRequest: (value) => value.error,
@@ -26,7 +26,7 @@ class ChangePasswordForm extends StatelessWidget {
                 ).show(context);
               },
               (_) {
-                FlushBarCreator.showSuccess(
+                showSuccess(
                   message: "Successfully changed your password",
                 ).show(context);
               },

@@ -51,7 +51,7 @@ class _GuildSettingsSheet extends StatelessWidget {
         state.maybeMap(
           leaveFailure: (state) {
             Navigator.of(context).pop();
-            FlushBarCreator.showError(
+            showError(
               message: state.maybeMap(
                 orElse: () => "Server Error. Try again later.",
               ),

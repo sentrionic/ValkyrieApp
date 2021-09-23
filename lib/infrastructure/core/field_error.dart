@@ -23,7 +23,8 @@ class FieldError with _$FieldError {
 
   static List<FieldError> getErrors(Response<dynamic> response) {
     final results = List<Map<String, dynamic>>.from(
-        jsonDecode(response.toString())['errors']);
+      jsonDecode(response.toString())['errors'],
+    );
     return results.map((e) => FieldError.fromMap(e)).toList();
   }
 }

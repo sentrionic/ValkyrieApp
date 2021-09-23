@@ -16,10 +16,12 @@ class CreateGuildCubit extends Cubit<CreateGuildState> {
   CreateGuildCubit(this._repository) : super(CreateGuildState.initial());
 
   Future<void> nameChanged(String name) async {
-    emit(state.copyWith(
-      name: GuildName(name),
-      guildFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        name: GuildName(name),
+        guildFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> submitCreateGuild() async {
@@ -28,20 +30,24 @@ class CreateGuildCubit extends Cubit<CreateGuildState> {
     final isNameValid = state.name.isValid();
 
     if (isNameValid) {
-      emit(state.copyWith(
-        isSubmitting: true,
-        guildFailureOrSuccessOption: none(),
-      ));
+      emit(
+        state.copyWith(
+          isSubmitting: true,
+          guildFailureOrSuccessOption: none(),
+        ),
+      );
 
       failureOrSuccess = await _repository.createGuild(
         state.name.getOrCrash(),
       );
     }
 
-    emit(state.copyWith(
-      isSubmitting: false,
-      showErrorMessages: true,
-      guildFailureOrSuccessOption: optionOf(failureOrSuccess),
-    ));
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        guildFailureOrSuccessOption: optionOf(failureOrSuccess),
+      ),
+    );
   }
 }

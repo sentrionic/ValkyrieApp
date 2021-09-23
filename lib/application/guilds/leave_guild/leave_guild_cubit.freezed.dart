@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'leave_guild_cubit.dart';
 
@@ -49,6 +50,14 @@ mixin _$LeaveGuildState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(GuildFailure failure)? leaveFailure,
+    TResult Function()? leaveSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -63,6 +72,14 @@ mixin _$LeaveGuildState {
     required TResult Function(_ActionInProgress value) actionInProgress,
     required TResult Function(_LeaveFailure value) leaveFailure,
     required TResult Function(_LeaveSuccess value) leaveSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_LeaveFailure value)? leaveFailure,
+    TResult Function(_LeaveSuccess value)? leaveSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -140,6 +157,17 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(GuildFailure failure)? leaveFailure,
+    TResult Function()? leaveSuccess,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -162,6 +190,17 @@ class _$_Initial implements _Initial {
     required TResult Function(_LeaveSuccess value) leaveSuccess,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_LeaveFailure value)? leaveFailure,
+    TResult Function(_LeaveSuccess value)? leaveSuccess,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -234,6 +273,17 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(GuildFailure failure)? leaveFailure,
+    TResult Function()? leaveSuccess,
+  }) {
+    return actionInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -256,6 +306,17 @@ class _$_ActionInProgress implements _ActionInProgress {
     required TResult Function(_LeaveSuccess value) leaveSuccess,
   }) {
     return actionInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_LeaveFailure value)? leaveFailure,
+    TResult Function(_LeaveSuccess value)? leaveSuccess,
+  }) {
+    return actionInProgress?.call(this);
   }
 
   @override
@@ -362,6 +423,17 @@ class _$_LeaveFailure implements _LeaveFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(GuildFailure failure)? leaveFailure,
+    TResult Function()? leaveSuccess,
+  }) {
+    return leaveFailure?.call(failure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -384,6 +456,17 @@ class _$_LeaveFailure implements _LeaveFailure {
     required TResult Function(_LeaveSuccess value) leaveSuccess,
   }) {
     return leaveFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_LeaveFailure value)? leaveFailure,
+    TResult Function(_LeaveSuccess value)? leaveSuccess,
+  }) {
+    return leaveFailure?.call(this);
   }
 
   @override
@@ -461,6 +544,17 @@ class _$_LeaveSuccess implements _LeaveSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(GuildFailure failure)? leaveFailure,
+    TResult Function()? leaveSuccess,
+  }) {
+    return leaveSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -483,6 +577,17 @@ class _$_LeaveSuccess implements _LeaveSuccess {
     required TResult Function(_LeaveSuccess value) leaveSuccess,
   }) {
     return leaveSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_LeaveFailure value)? leaveFailure,
+    TResult Function(_LeaveSuccess value)? leaveSuccess,
+  }) {
+    return leaveSuccess?.call(this);
   }
 
   @override

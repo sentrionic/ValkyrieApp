@@ -22,7 +22,7 @@ class CreateGuildForm extends StatelessWidget {
           () {},
           (either) => either.fold(
             (failure) {
-              FlushBarCreator.showError(
+              showError(
                 message: failure.maybeMap(
                   orElse: () => "Server Error. Try again later.",
                 ),

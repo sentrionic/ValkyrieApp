@@ -41,14 +41,14 @@ class AddFriendForm extends StatelessWidget {
               () {},
               (either) => either.fold(
                 (failure) {
-                  FlushBarCreator.showError(
+                  showError(
                     message: failure.maybeMap(
                       orElse: () => "Something went wrong. Try again later.",
                     ),
                   ).show(context);
                 },
                 (_) {
-                  FlushBarCreator.showSuccess(
+                  showSuccess(
                     message: "Successfully sent a friend request.",
                   ).show(context);
                 },

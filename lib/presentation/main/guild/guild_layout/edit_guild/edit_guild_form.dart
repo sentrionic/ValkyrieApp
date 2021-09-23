@@ -28,7 +28,7 @@ class EditGuildForm extends HookWidget {
           () => {},
           (either) => either.fold(
             (failure) {
-              FlushBarCreator.showError(
+              showError(
                 message: failure.maybeMap(
                   orElse: () => "Server Error. Try again later.",
                 ),
@@ -171,7 +171,7 @@ class EditGuildForm extends HookWidget {
 
   Future<void> _selectGuildIcon(BuildContext context) async {
     final pickedFile =
-        await ImagePicker().getImage(source: ImageSource.gallery);
+        await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
       final croppedFile = await ImageCropper.cropImage(
         sourcePath: pickedFile.path,

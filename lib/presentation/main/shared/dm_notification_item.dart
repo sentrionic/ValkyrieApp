@@ -33,14 +33,16 @@ class DMNotificationItem extends StatelessWidget {
       },
       child: Column(
         children: [
-          Stack(children: [
-            CircleAvatar(
-              backgroundImage: NetworkImage(notification.user.image),
-              radius: WidgetConstants.avatarRadius,
-              backgroundColor: ThemeColors.guildBackground,
-            ),
-            NotificationIcon(count: notification.count),
-          ]),
+          Stack(
+            children: [
+              CircleAvatar(
+                backgroundImage: NetworkImage(notification.user.image),
+                radius: WidgetConstants.avatarRadius,
+                backgroundColor: ThemeColors.guildBackground,
+              ),
+              NotificationIcon(count: notification.count),
+            ],
+          ),
           const SizedBox(
             height: 10,
           ),

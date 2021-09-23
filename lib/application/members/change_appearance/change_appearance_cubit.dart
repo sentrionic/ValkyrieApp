@@ -16,31 +16,39 @@ class ChangeAppearanceCubit extends Cubit<ChangeAppearanceState> {
       : super(ChangeAppearanceState.initial());
 
   Future<void> nicknameChanged(String nickname) async {
-    emit(state.copyWith(
-      nickname: Nickname(nickname),
-      saveFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        nickname: Nickname(nickname),
+        saveFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> resetNickname() async {
-    emit(state.copyWith(
-      nickname: null,
-      saveFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        nickname: null,
+        saveFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> colorChanged(String color) async {
-    emit(state.copyWith(
-      hexColor: HexColor(color),
-      saveFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        hexColor: HexColor(color),
+        saveFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> resetColor() async {
-    emit(state.copyWith(
-      hexColor: null,
-      saveFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        hexColor: null,
+        saveFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> submitChanges(String guildId) async {
@@ -50,10 +58,12 @@ class ChangeAppearanceCubit extends Cubit<ChangeAppearanceState> {
     final isColorValid = state.hexColor?.isValid() ?? true;
 
     if (isNicknameValid && isColorValid) {
-      emit(state.copyWith(
-        isSaving: true,
-        saveFailureOrSuccessOption: none(),
-      ));
+      emit(
+        state.copyWith(
+          isSaving: true,
+          saveFailureOrSuccessOption: none(),
+        ),
+      );
 
       failureOrSuccess = await _repository.changeAppearance(
         guildId: guildId,
@@ -62,10 +72,12 @@ class ChangeAppearanceCubit extends Cubit<ChangeAppearanceState> {
       );
     }
 
-    emit(state.copyWith(
-      isSaving: false,
-      showErrorMessages: true,
-      saveFailureOrSuccessOption: optionOf(failureOrSuccess),
-    ));
+    emit(
+      state.copyWith(
+        isSaving: false,
+        showErrorMessages: true,
+        saveFailureOrSuccessOption: optionOf(failureOrSuccess),
+      ),
+    );
   }
 }

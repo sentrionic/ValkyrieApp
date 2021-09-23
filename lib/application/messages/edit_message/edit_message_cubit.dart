@@ -15,10 +15,12 @@ class EditMessageCubit extends Cubit<EditMessageState> {
   EditMessageCubit(this._repository) : super(EditMessageState.initial());
 
   Future<void> messageTextChanged(String text) async {
-    emit(state.copyWith(
-      text: MessageText(text),
-      saveFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        text: MessageText(text),
+        saveFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> submitEdit(String messageId) async {
@@ -27,19 +29,23 @@ class EditMessageCubit extends Cubit<EditMessageState> {
     final isMessageValid = state.text.isValid();
 
     if (isMessageValid) {
-      emit(state.copyWith(
-        isSubmitting: true,
-        saveFailureOrSuccessOption: none(),
-      ));
+      emit(
+        state.copyWith(
+          isSubmitting: true,
+          saveFailureOrSuccessOption: none(),
+        ),
+      );
 
       failureOrSuccess =
           await _repository.editMessage(messageId, state.text.getOrCrash());
     }
 
-    emit(state.copyWith(
-      isSubmitting: false,
-      showErrorMessages: true,
-      saveFailureOrSuccessOption: optionOf(failureOrSuccess),
-    ));
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        saveFailureOrSuccessOption: optionOf(failureOrSuccess),
+      ),
+    );
   }
 }

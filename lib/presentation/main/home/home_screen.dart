@@ -10,8 +10,8 @@ import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/auth/start_up_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/account_tab/account/account_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/friends_tab/friend_screen.dart';
-import 'package:valkyrie_app/presentation/main/home/home_tab/home_navbar.dart';
 import 'package:valkyrie_app/presentation/main/home/home_tab/home_body.dart';
+import 'package:valkyrie_app/presentation/main/home/home_tab/home_navbar.dart';
 import 'package:valkyrie_app/presentation/main/shared/hooks/guild_socket_hook.dart';
 
 class HomeScreen extends HookWidget {

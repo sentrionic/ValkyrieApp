@@ -1,13 +1,13 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/account/account.dart';
-import 'package:valkyrie_app/domain/auth/auth_value_objects.dart';
 import 'package:valkyrie_app/domain/auth/auth_failure.dart';
-import 'package:dartz/dartz.dart';
+import 'package:valkyrie_app/domain/auth/auth_value_objects.dart';
 import 'package:valkyrie_app/domain/auth/i_auth_facade.dart';
 import 'package:valkyrie_app/infrastructure/account/account_dto.dart';
 import 'package:valkyrie_app/infrastructure/account/account_entity.dart';
@@ -42,8 +42,7 @@ class AuthFacade implements IAuthFacade {
       _setUserData(account);
       return right(unit);
     } on DioError catch (err) {
-      print(err);
-      if (err.response?.statusCode == 404) {
+      if (err.response?.statusCode == 401) {
         return left(const AuthFailure.invalidCredentials());
       }
       return left(const AuthFailure.serverError());

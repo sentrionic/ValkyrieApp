@@ -19,7 +19,7 @@ class JoinGuildForm extends StatelessWidget {
           () {},
           (either) => either.fold(
             (failure) {
-              FlushBarCreator.showError(
+              showError(
                 message: failure.maybeMap(
                   invalidLink: (_) => "Invalid Link. Try another one.",
                   orElse: () => "Server Error. Try again later.",

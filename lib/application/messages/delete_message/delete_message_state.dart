@@ -5,6 +5,7 @@ class DeleteMessageState with _$DeleteMessageState {
   const factory DeleteMessageState.initial() = _Initial;
   const factory DeleteMessageState.actionInProgress() = _ActionInProgress;
   const factory DeleteMessageState.deleteFailure(
-      MessageFailure messageFailure) = _DeleteFailure;
+    MessageFailure messageFailure,
+  ) = _DeleteFailure;
   const factory DeleteMessageState.deleteSuccess() = _DeleteSuccess;
 }

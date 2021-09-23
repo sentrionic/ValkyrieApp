@@ -33,9 +33,12 @@ class _ChannelSocketHookState extends HookState<void, ChannelSocketHook> {
   Future<void> initHook() async {
     super.initHook();
 
-    socket = IOWebSocketChannel.connect(Uri.parse(baseUrl), headers: {
-      "cookie": cookie,
-    });
+    socket = IOWebSocketChannel.connect(
+      Uri.parse(baseUrl),
+      headers: {
+        "cookie": cookie,
+      },
+    );
     socket.emit('joinGuild', room: hook.guildId);
 
     socket.stream.listen((event) {
@@ -75,9 +78,7 @@ class _ChannelSocketHookState extends HookState<void, ChannelSocketHook> {
                 }
               }
             }
-            hook.context
-                .read<ChannelListCubit>()
-                .removeChannel(channelId.toString());
+            hook.context.read<ChannelListCubit>().removeChannel(channelId);
             break;
           }
 
@@ -85,9 +86,7 @@ class _ChannelSocketHookState extends HookState<void, ChannelSocketHook> {
           {
             final channelId = response["data"].toString();
             if (channelId != context.read<CurrentChannelCubit>().state) {
-              hook.context
-                  .read<ChannelListCubit>()
-                  .addNotification(channelId.toString());
+              hook.context.read<ChannelListCubit>().addNotification(channelId);
               break;
             }
           }

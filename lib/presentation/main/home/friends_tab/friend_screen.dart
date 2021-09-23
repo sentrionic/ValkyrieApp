@@ -38,62 +38,72 @@ class FriendListScreen extends StatelessWidget {
       child: MultiBlocListener(
         listeners: [
           BlocListener<DeclineRequestCubit, DeclineRequestState>(
-              listener: (context, state) {
-            state.maybeMap(
-              actionFailure: (state) {
-                FlushBarCreator.showError(
-                  message: state.friendFailure.map(
+            listener: (context, state) {
+              state.maybeMap(
+                actionFailure: (state) {
+                  showError(
+                    message: state.friendFailure.map(
                       unexpected: (_) =>
-                          "Something went wrong. Try again later."),
-                ).show(context);
-              },
-              actionSuccess: (state) {
-                FlushBarCreator.showSuccess(message: "Canceled request")
-                    .show(context);
-                context.read<GetRequestsCubit>().removeRequest(state.requestId);
-                context.read<NotificationsCubit>().decrement();
-                context.read<RequestNotificationsCubit>().decrement();
-              },
-              orElse: () {},
-            );
-          }),
+                          "Something went wrong. Try again later.",
+                    ),
+                  ).show(context);
+                },
+                actionSuccess: (state) {
+                  showSuccess(message: "Canceled request").show(context);
+                  context
+                      .read<GetRequestsCubit>()
+                      .removeRequest(state.requestId);
+                  context.read<NotificationsCubit>().decrement();
+                  context.read<RequestNotificationsCubit>().decrement();
+                },
+                orElse: () {},
+              );
+            },
+          ),
           BlocListener<AcceptRequestCubit, AcceptRequestState>(
-              listener: (context, state) {
-            state.maybeMap(
-              actionFailure: (state) {
-                FlushBarCreator.showError(
-                  message: state.friendFailure.map(
+            listener: (context, state) {
+              state.maybeMap(
+                actionFailure: (state) {
+                  showError(
+                    message: state.friendFailure.map(
                       unexpected: (_) =>
-                          "Something went wrong. Try again later."),
-                ).show(context);
-              },
-              actionSuccess: (state) {
-                FlushBarCreator.showSuccess(message: "Accepted request")
-                    .show(context);
-                context.read<GetRequestsCubit>().removeRequest(state.requestId);
-                context.read<NotificationsCubit>().decrement();
-                context.read<RequestNotificationsCubit>().decrement();
-              },
-              orElse: () {},
-            );
-          }),
-          BlocListener<StartDMCubit, StartDMState>(listener: (context, state) {
-            state.maybeMap(
-              fetchSuccess: (state) {
-                context.read<DMListCubit>().addNewDM(state.channel);
-                context.read<CurrentDMCubit>().setDMChannel(state.channel.id);
-                Navigator.of(context).pushReplacementNamed(DMScreen.routeName);
-              },
-              fetchFailure: (state) {
-                FlushBarCreator.showError(
-                  message: state.channelFailure.map(
-                    unexpected: (_) => "Something went wrong. Try again later.",
-                  ),
-                ).show(context);
-              },
-              orElse: () {},
-            );
-          }),
+                          "Something went wrong. Try again later.",
+                    ),
+                  ).show(context);
+                },
+                actionSuccess: (state) {
+                  showSuccess(message: "Accepted request").show(context);
+                  context
+                      .read<GetRequestsCubit>()
+                      .removeRequest(state.requestId);
+                  context.read<NotificationsCubit>().decrement();
+                  context.read<RequestNotificationsCubit>().decrement();
+                },
+                orElse: () {},
+              );
+            },
+          ),
+          BlocListener<StartDMCubit, StartDMState>(
+            listener: (context, state) {
+              state.maybeMap(
+                fetchSuccess: (state) {
+                  context.read<DMListCubit>().addNewDM(state.channel);
+                  context.read<CurrentDMCubit>().setDMChannel(state.channel.id);
+                  Navigator.of(context)
+                      .pushReplacementNamed(DMScreen.routeName);
+                },
+                fetchFailure: (state) {
+                  showError(
+                    message: state.channelFailure.map(
+                      unexpected: (_) =>
+                          "Something went wrong. Try again later.",
+                    ),
+                  ).show(context);
+                },
+                orElse: () {},
+              );
+            },
+          ),
         ],
         child: FriendLayout(),
       ),

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'failures.dart';
 
@@ -112,6 +113,21 @@ mixin _$ValueFailure<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue, int max)? tooManyGuilds,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidChannelName,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? passwordsDontMatch,
+    TResult Function(T failedValue, int max)? exceedingSize,
+    TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -140,6 +156,21 @@ mixin _$ValueFailure<T> {
     required TResult Function(ExceedingSize<T> value) exceedingSize,
     required TResult Function(InvalidColor<T> value) invalidColor,
     required TResult Function(InvalidUID<T> value) invalidUID,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(TooManyGuilds<T> value)? tooManyGuilds,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidChannelName<T> value)? invalidChannelName,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
+    TResult Function(ExceedingSize<T> value)? exceedingSize,
+    TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -290,6 +321,24 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue, int max)? tooManyGuilds,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidChannelName,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? passwordsDontMatch,
+    TResult Function(T failedValue, int max)? exceedingSize,
+    TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
+  }) {
+    return exceedingLength?.call(failedValue, max);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -326,6 +375,24 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return exceedingLength(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(TooManyGuilds<T> value)? tooManyGuilds,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidChannelName<T> value)? invalidChannelName,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
+    TResult Function(ExceedingSize<T> value)? exceedingSize,
+    TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
+  }) {
+    return exceedingLength?.call(this);
   }
 
   @override
@@ -446,6 +513,24 @@ class _$Empty<T> implements Empty<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue, int max)? tooManyGuilds,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidChannelName,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? passwordsDontMatch,
+    TResult Function(T failedValue, int max)? exceedingSize,
+    TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
+  }) {
+    return empty?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -482,6 +567,24 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return empty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(TooManyGuilds<T> value)? tooManyGuilds,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidChannelName<T> value)? invalidChannelName,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
+    TResult Function(ExceedingSize<T> value)? exceedingSize,
+    TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
+  }) {
+    return empty?.call(this);
   }
 
   @override
@@ -614,6 +717,24 @@ class _$TooManyGuilds<T> implements TooManyGuilds<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue, int max)? tooManyGuilds,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidChannelName,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? passwordsDontMatch,
+    TResult Function(T failedValue, int max)? exceedingSize,
+    TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
+  }) {
+    return tooManyGuilds?.call(failedValue, max);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -650,6 +771,24 @@ class _$TooManyGuilds<T> implements TooManyGuilds<T> {
     required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return tooManyGuilds(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(TooManyGuilds<T> value)? tooManyGuilds,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidChannelName<T> value)? invalidChannelName,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
+    TResult Function(ExceedingSize<T> value)? exceedingSize,
+    TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
+  }) {
+    return tooManyGuilds?.call(this);
   }
 
   @override
@@ -773,6 +912,24 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue, int max)? tooManyGuilds,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidChannelName,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? passwordsDontMatch,
+    TResult Function(T failedValue, int max)? exceedingSize,
+    TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
+  }) {
+    return invalidEmail?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -809,6 +966,24 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return invalidEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(TooManyGuilds<T> value)? tooManyGuilds,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidChannelName<T> value)? invalidChannelName,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
+    TResult Function(ExceedingSize<T> value)? exceedingSize,
+    TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
+  }) {
+    return invalidEmail?.call(this);
   }
 
   @override
@@ -930,6 +1105,24 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue, int max)? tooManyGuilds,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidChannelName,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? passwordsDontMatch,
+    TResult Function(T failedValue, int max)? exceedingSize,
+    TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
+  }) {
+    return invalidUsername?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -966,6 +1159,24 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return invalidUsername(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(TooManyGuilds<T> value)? tooManyGuilds,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidChannelName<T> value)? invalidChannelName,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
+    TResult Function(ExceedingSize<T> value)? exceedingSize,
+    TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
+  }) {
+    return invalidUsername?.call(this);
   }
 
   @override
@@ -1089,6 +1300,24 @@ class _$InvalidChannelName<T> implements InvalidChannelName<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue, int max)? tooManyGuilds,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidChannelName,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? passwordsDontMatch,
+    TResult Function(T failedValue, int max)? exceedingSize,
+    TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
+  }) {
+    return invalidChannelName?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -1125,6 +1354,24 @@ class _$InvalidChannelName<T> implements InvalidChannelName<T> {
     required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return invalidChannelName(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(TooManyGuilds<T> value)? tooManyGuilds,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidChannelName<T> value)? invalidChannelName,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
+    TResult Function(ExceedingSize<T> value)? exceedingSize,
+    TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
+  }) {
+    return invalidChannelName?.call(this);
   }
 
   @override
@@ -1247,6 +1494,24 @@ class _$ShortPassword<T> implements ShortPassword<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue, int max)? tooManyGuilds,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidChannelName,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? passwordsDontMatch,
+    TResult Function(T failedValue, int max)? exceedingSize,
+    TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
+  }) {
+    return shortPassword?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -1283,6 +1548,24 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return shortPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(TooManyGuilds<T> value)? tooManyGuilds,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidChannelName<T> value)? invalidChannelName,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
+    TResult Function(ExceedingSize<T> value)? exceedingSize,
+    TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
+  }) {
+    return shortPassword?.call(this);
   }
 
   @override
@@ -1405,6 +1688,24 @@ class _$PasswordsDontMatch<T> implements PasswordsDontMatch<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue, int max)? tooManyGuilds,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidChannelName,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? passwordsDontMatch,
+    TResult Function(T failedValue, int max)? exceedingSize,
+    TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
+  }) {
+    return passwordsDontMatch?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -1441,6 +1742,24 @@ class _$PasswordsDontMatch<T> implements PasswordsDontMatch<T> {
     required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return passwordsDontMatch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(TooManyGuilds<T> value)? tooManyGuilds,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidChannelName<T> value)? invalidChannelName,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
+    TResult Function(ExceedingSize<T> value)? exceedingSize,
+    TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
+  }) {
+    return passwordsDontMatch?.call(this);
   }
 
   @override
@@ -1574,6 +1893,24 @@ class _$ExceedingSize<T> implements ExceedingSize<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue, int max)? tooManyGuilds,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidChannelName,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? passwordsDontMatch,
+    TResult Function(T failedValue, int max)? exceedingSize,
+    TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
+  }) {
+    return exceedingSize?.call(failedValue, max);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -1610,6 +1947,24 @@ class _$ExceedingSize<T> implements ExceedingSize<T> {
     required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return exceedingSize(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(TooManyGuilds<T> value)? tooManyGuilds,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidChannelName<T> value)? invalidChannelName,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
+    TResult Function(ExceedingSize<T> value)? exceedingSize,
+    TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
+  }) {
+    return exceedingSize?.call(this);
   }
 
   @override
@@ -1733,6 +2088,24 @@ class _$InvalidColor<T> implements InvalidColor<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue, int max)? tooManyGuilds,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidChannelName,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? passwordsDontMatch,
+    TResult Function(T failedValue, int max)? exceedingSize,
+    TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
+  }) {
+    return invalidColor?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -1769,6 +2142,24 @@ class _$InvalidColor<T> implements InvalidColor<T> {
     required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return invalidColor(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(TooManyGuilds<T> value)? tooManyGuilds,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidChannelName<T> value)? invalidChannelName,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
+    TResult Function(ExceedingSize<T> value)? exceedingSize,
+    TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
+  }) {
+    return invalidColor?.call(this);
   }
 
   @override
@@ -1890,6 +2281,24 @@ class _$InvalidUID<T> implements InvalidUID<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue, int max)? tooManyGuilds,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? invalidChannelName,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? passwordsDontMatch,
+    TResult Function(T failedValue, int max)? exceedingSize,
+    TResult Function(T failedValue)? invalidColor,
+    TResult Function(T failedValue)? invalidUID,
+  }) {
+    return invalidUID?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -1926,6 +2335,24 @@ class _$InvalidUID<T> implements InvalidUID<T> {
     required TResult Function(InvalidUID<T> value) invalidUID,
   }) {
     return invalidUID(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(TooManyGuilds<T> value)? tooManyGuilds,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(InvalidChannelName<T> value)? invalidChannelName,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PasswordsDontMatch<T> value)? passwordsDontMatch,
+    TResult Function(ExceedingSize<T> value)? exceedingSize,
+    TResult Function(InvalidColor<T> value)? invalidColor,
+    TResult Function(InvalidUID<T> value)? invalidUID,
+  }) {
+    return invalidUID?.call(this);
   }
 
   @override

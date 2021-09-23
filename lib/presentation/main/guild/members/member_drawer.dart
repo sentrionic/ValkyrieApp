@@ -5,8 +5,8 @@ import 'package:valkyrie_app/application/members/member_list/member_list_cubit.d
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
-import 'package:valkyrie_app/presentation/main/guild/members/widgets/member_item.dart';
 import 'package:valkyrie_app/presentation/main/guild/members/widgets/member_header.dart';
+import 'package:valkyrie_app/presentation/main/guild/members/widgets/member_item.dart';
 import 'package:valkyrie_app/presentation/main/guild/members/widgets/member_loading_skeleton.dart';
 import 'package:valkyrie_app/presentation/main/guild/members/widgets/role_label.dart';
 

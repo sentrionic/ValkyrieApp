@@ -15,10 +15,12 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
   ForgotPasswordCubit(this._authFacade) : super(ForgotPasswordState.initial());
 
   Future<void> emailChanged(String email) async {
-    emit(state.copyWith(
-      emailAddress: EmailAddress(email),
-      authFailureOrSuccessOption: none(),
-    ));
+    emit(
+      state.copyWith(
+        emailAddress: EmailAddress(email),
+        authFailureOrSuccessOption: none(),
+      ),
+    );
   }
 
   Future<void> submitForgotPassword() async {
@@ -27,19 +29,23 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
     final isEmailValid = state.emailAddress.isValid();
 
     if (isEmailValid) {
-      emit(state.copyWith(
-        isSubmitting: true,
-        authFailureOrSuccessOption: none(),
-      ));
+      emit(
+        state.copyWith(
+          isSubmitting: true,
+          authFailureOrSuccessOption: none(),
+        ),
+      );
 
       failureOrSuccess =
           await _authFacade.forgotPassword(emailAddress: state.emailAddress);
     }
 
-    emit(state.copyWith(
-      isSubmitting: false,
-      showErrorMessages: true,
-      authFailureOrSuccessOption: optionOf(failureOrSuccess),
-    ));
+    emit(
+      state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        authFailureOrSuccessOption: optionOf(failureOrSuccess),
+      ),
+    );
   }
 }

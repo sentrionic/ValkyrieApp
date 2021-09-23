@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'moderate_member_cubit.dart';
 
@@ -49,6 +50,14 @@ mixin _$ModerateMemberState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(MemberFailure actionFailure)? actionFailure,
+    TResult Function()? actionSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -63,6 +72,14 @@ mixin _$ModerateMemberState {
     required TResult Function(_ActionInProgress value) actionInProgress,
     required TResult Function(_ActionFailure value) actionFailure,
     required TResult Function(_ActionSuccess value) actionSuccess,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ActionFailure value)? actionFailure,
+    TResult Function(_ActionSuccess value)? actionSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -141,6 +158,17 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(MemberFailure actionFailure)? actionFailure,
+    TResult Function()? actionSuccess,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -163,6 +191,17 @@ class _$_Initial implements _Initial {
     required TResult Function(_ActionSuccess value) actionSuccess,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ActionFailure value)? actionFailure,
+    TResult Function(_ActionSuccess value)? actionSuccess,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -235,6 +274,17 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(MemberFailure actionFailure)? actionFailure,
+    TResult Function()? actionSuccess,
+  }) {
+    return actionInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -257,6 +307,17 @@ class _$_ActionInProgress implements _ActionInProgress {
     required TResult Function(_ActionSuccess value) actionSuccess,
   }) {
     return actionInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ActionFailure value)? actionFailure,
+    TResult Function(_ActionSuccess value)? actionSuccess,
+  }) {
+    return actionInProgress?.call(this);
   }
 
   @override
@@ -364,6 +425,17 @@ class _$_ActionFailure implements _ActionFailure {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(MemberFailure actionFailure)? actionFailure,
+    TResult Function()? actionSuccess,
+  }) {
+    return actionFailure?.call(this.actionFailure);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -386,6 +458,17 @@ class _$_ActionFailure implements _ActionFailure {
     required TResult Function(_ActionSuccess value) actionSuccess,
   }) {
     return actionFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ActionFailure value)? actionFailure,
+    TResult Function(_ActionSuccess value)? actionSuccess,
+  }) {
+    return actionFailure?.call(this);
   }
 
   @override
@@ -463,6 +546,17 @@ class _$_ActionSuccess implements _ActionSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? actionInProgress,
+    TResult Function(MemberFailure actionFailure)? actionFailure,
+    TResult Function()? actionSuccess,
+  }) {
+    return actionSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? actionInProgress,
@@ -485,6 +579,17 @@ class _$_ActionSuccess implements _ActionSuccess {
     required TResult Function(_ActionSuccess value) actionSuccess,
   }) {
     return actionSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ActionInProgress value)? actionInProgress,
+    TResult Function(_ActionFailure value)? actionFailure,
+    TResult Function(_ActionSuccess value)? actionSuccess,
+  }) {
+    return actionSuccess?.call(this);
   }
 
   @override
