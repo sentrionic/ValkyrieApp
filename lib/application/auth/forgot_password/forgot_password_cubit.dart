@@ -9,11 +9,14 @@ import 'package:valkyrie_app/domain/auth/i_auth_facade.dart';
 part 'forgot_password_state.dart';
 part 'forgot_password_cubit.freezed.dart';
 
+/// ForgotPasswordCubit manages the forgot password flow
 @injectable
 class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
   final IAuthFacade _authFacade;
   ForgotPasswordCubit(this._authFacade) : super(ForgotPasswordState.initial());
 
+  /// Changes the value of the [EmailAddress] in the [ForgotPasswordState]
+  /// and resets the error.
   Future<void> emailChanged(String email) async {
     emit(
       state.copyWith(
@@ -23,6 +26,8 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
     );
   }
 
+  /// Sends a forgot password request to the network.
+  /// Emits [unit] when successful, [AuthFailure] otherwise.
   Future<void> submitForgotPassword() async {
     Either<AuthFailure, Unit>? failureOrSuccess;
 

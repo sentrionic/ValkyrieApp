@@ -9,6 +9,7 @@ part 'auth_status_event.dart';
 part 'auth_status_state.dart';
 part 'auth_status_bloc.freezed.dart';
 
+/// AuthStatusBloc manages the current user's auth status within the app.
 @injectable
 class AuthStatusBloc extends Bloc<AuthStatusEvent, AuthStatusState> {
   final IAuthFacade _authFacade;

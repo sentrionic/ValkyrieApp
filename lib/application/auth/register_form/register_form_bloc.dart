@@ -12,6 +12,7 @@ part 'register_form_event.dart';
 part 'register_form_state.dart';
 part 'register_form_bloc.freezed.dart';
 
+/// RegisterFormBloc manages the user's register flow
 @injectable
 class RegisterFormBloc extends Bloc<RegisterFormEvent, RegisterFormState> {
   final IAuthFacade _authFacade;

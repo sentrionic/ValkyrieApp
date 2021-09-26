@@ -12,6 +12,7 @@ part 'login_form_bloc.freezed.dart';
 part 'login_form_event.dart';
 part 'login_form_state.dart';
 
+/// LoginFormBloc manages the user's login flow
 @injectable
 class LoginFormBloc extends Bloc<LoginFormEvent, LoginFormState> {
   final IAuthFacade _authFacade;
