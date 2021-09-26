@@ -12,7 +12,7 @@ jobs:
       - name: Clone flutter repository from stable channel with 2.5.1 version
         uses: subosito/flutter-action@v1
         with:
-          flutter-version: '2.2.3'
+          flutter-version: '2.5.1'
           channel: 'stable'
 
       - name: Checkout code

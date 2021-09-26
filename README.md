@@ -61,6 +61,10 @@ and then run `flutter pub run build_runner build --delete-conflicting-outputs`
 
 If said server runs on `localhost` you will also need to add `android:usesCleartextTraffic="true"` to the Android manifest.
 
+## Tests
+
+To run all tests run `flutter test`
+
 ## Additional Information
 
 This app was tested and is working on Android and the general design is based on Discord's Android version.
