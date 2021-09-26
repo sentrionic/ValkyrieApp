@@ -11,11 +11,13 @@ import 'package:valkyrie_app/domain/guilds/value_objects.dart';
 part 'guild_list_state.dart';
 part 'guild_list_cubit.freezed.dart';
 
+/// GuildListCubit manages everything related to the user's guilds
 @injectable
 class GuildListCubit extends Cubit<GuildListState> {
   final IGuildRepository _repository;
   GuildListCubit(this._repository) : super(const GuildListState.initial());
 
+  /// Returns the guilds the user is in
   Future<void> getGuilds() async {
     emit(const GuildListState.loadInProgress());
     final failureOrGuilds = await _repository.getUserGuilds();
@@ -27,6 +29,7 @@ class GuildListCubit extends Cubit<GuildListState> {
     );
   }
 
+  /// Returns the currently open guild if it exists
   Guild? getCurrentGuild(String guildId) {
     return state.maybeWhen(
       loadSuccess: (guilds) => guilds.where((g) => g.id == guildId).firstOrNull,
@@ -34,6 +37,7 @@ class GuildListCubit extends Cubit<GuildListState> {
     );
   }
 
+  /// Returns the index of the currently open guild if it exists, else -1
   int getCurrentIndex(String guildId) {
     return state.maybeWhen(
       loadSuccess: (guilds) => guilds.indexWhere((g) => g.id == guildId),
@@ -41,6 +45,7 @@ class GuildListCubit extends Cubit<GuildListState> {
     );
   }
 
+  /// Adds the given guild to the [GuildListState]
   void addNewGuild(Guild guild) {
     state.maybeWhen(
       loadSuccess: (guilds) async {
@@ -52,6 +57,7 @@ class GuildListCubit extends Cubit<GuildListState> {
     );
   }
 
+  /// Adds the guild for the given id from the [GuildListState]
   void removeGuild(String guildId) {
     state.maybeWhen(
       loadSuccess: (guilds) async {
@@ -62,6 +68,8 @@ class GuildListCubit extends Cubit<GuildListState> {
     );
   }
 
+  /// Edits the 'GuildName' and 'icon' in the [GuildListState] with the
+  /// values from the provided guild
   void editGuild(Guild guild) {
     state.maybeWhen(
       loadSuccess: (guilds) async {
@@ -79,6 +87,7 @@ class GuildListCubit extends Cubit<GuildListState> {
     );
   }
 
+  /// Sets 'hasNotification' to true for the given guild
   void addNotification(String guildId) {
     state.maybeWhen(
       loadSuccess: (guilds) async {
@@ -95,6 +104,7 @@ class GuildListCubit extends Cubit<GuildListState> {
     );
   }
 
+  /// Sets 'hasNotification' to false for the given guild
   void clearNotification(String guildId) {
     state.maybeWhen(
       loadSuccess: (guilds) async {

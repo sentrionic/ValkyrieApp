@@ -10,11 +10,14 @@ import 'package:valkyrie_app/domain/guilds/value_objects.dart';
 part 'create_guild_state.dart';
 part 'create_guild_cubit.freezed.dart';
 
+/// CreateGuildCubit manages everything related to the guild creation
 @injectable
 class CreateGuildCubit extends Cubit<CreateGuildState> {
   final IGuildRepository _repository;
   CreateGuildCubit(this._repository) : super(CreateGuildState.initial());
 
+  /// Changes the name of the [GuildName] in the [CreateGuildState]
+  /// and resets the error.
   Future<void> nameChanged(String name) async {
     emit(
       state.copyWith(
@@ -24,6 +27,8 @@ class CreateGuildCubit extends Cubit<CreateGuildState> {
     );
   }
 
+  /// Creates a new guild in the network and emits it
+  /// if the name is valid.
   Future<void> submitCreateGuild() async {
     Either<GuildFailure, Guild>? failureOrSuccess;
 

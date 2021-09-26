@@ -10,11 +10,14 @@ import 'package:valkyrie_app/domain/guilds/value_objects.dart';
 part 'join_guild_state.dart';
 part 'join_guild_cubit.freezed.dart';
 
+/// JoinGuildCubit manages the guild joining of a user with the given invite link.
 @injectable
 class JoinGuildCubit extends Cubit<JoinGuildState> {
   final IGuildRepository _repository;
   JoinGuildCubit(this._repository) : super(JoinGuildState.initial());
 
+  /// Changes the inviteLink in the [JoinGuildState]
+  /// and resets the error.
   Future<void> linkChanged(String link) async {
     emit(
       state.copyWith(
@@ -24,6 +27,8 @@ class JoinGuildCubit extends Cubit<JoinGuildState> {
     );
   }
 
+  /// Joins the [Guild] for the given link if it's valid.
+  /// Emits the joined [Guild] if successful and the error otherwise
   Future<void> submitJoinGuild() async {
     Either<GuildFailure, Guild>? failureOrSuccess;
 

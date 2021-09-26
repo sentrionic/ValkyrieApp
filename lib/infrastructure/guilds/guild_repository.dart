@@ -21,13 +21,10 @@ class GuildRepository extends IGuildRepository {
     try {
       final response = await _dio.get('/guilds');
 
-      if (response.statusCode == 200) {
-        final results = jsonDecode(response.data);
-        final List<Guild> list = [];
-        results.forEach((g) => list.add(GuildDto.fromMap(g).toDomain()));
-        return right(list);
-      }
-      return left(const GuildFailure.unexpected());
+      final results = jsonDecode(response.data);
+      final List<Guild> list = [];
+      results.forEach((g) => list.add(GuildDto.fromMap(g).toDomain()));
+      return right(list);
     } on DioError catch (err) {
       print(err);
       return left(const GuildFailure.unexpected());

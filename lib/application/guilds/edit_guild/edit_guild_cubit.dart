@@ -12,11 +12,13 @@ import 'package:valkyrie_app/domain/guilds/value_objects.dart';
 part 'edit_guild_state.dart';
 part 'edit_guild_cubit.freezed.dart';
 
+/// EditGuildCubit manages the edit of guilds
 @injectable
 class EditGuildCubit extends Cubit<EditGuildState> {
   final IGuildRepository _repository;
   EditGuildCubit(this._repository) : super(EditGuildState.initial());
 
+  /// Sets the initial [GuildName, iconUrl] of the to be edited guild in the [EditGuildState].
   Future<void> initialize(Guild guild) async {
     emit(
       state.copyWith(
@@ -26,6 +28,8 @@ class EditGuildCubit extends Cubit<EditGuildState> {
     );
   }
 
+  /// Changes the name of the [GuildName] in the [EditGuildState]
+  /// and resets the error.
   Future<void> nameChanged(String name) async {
     emit(
       state.copyWith(
@@ -35,6 +39,8 @@ class EditGuildCubit extends Cubit<EditGuildState> {
     );
   }
 
+  /// Changes the file of the [icon] in the [EditGuildState]
+  /// and resets the error.
   Future<void> iconChanged(File image) async {
     emit(
       state.copyWith(
@@ -44,6 +50,8 @@ class EditGuildCubit extends Cubit<EditGuildState> {
     );
   }
 
+  /// Sets the [icon] and [iconUrl] in the [EditGuildState] to null
+  /// and resets the error. This will remove any icon of the [Guild]
   Future<void> removeIcon() async {
     emit(
       state.copyWith(
@@ -54,6 +62,8 @@ class EditGuildCubit extends Cubit<EditGuildState> {
     );
   }
 
+  /// Edits the provided [Guild] in the network if the name is valid.
+  /// Emits [Unit] if successful and the error otherwise
   Future<void> submitEditGuild(String guildId) async {
     Either<GuildFailure, Unit>? failureOrSuccess;
 

@@ -7,12 +7,14 @@ import 'package:valkyrie_app/domain/guilds/i_guild_repository.dart';
 part 'invalidate_invites_state.dart';
 part 'invalidate_invites_cubit.freezed.dart';
 
+/// InvalidateInvitesCubit deletes all permanent invites of a guild.
 @injectable
 class InvalidateInvitesCubit extends Cubit<InvalidateInvitesState> {
   final IGuildRepository _repository;
   InvalidateInvitesCubit(this._repository)
       : super(const InvalidateInvitesState.initial());
 
+  /// Deletes all permanent invites of the given guild
   Future<void> invalidateInvites(String guildId) async {
     emit(const InvalidateInvitesState.actionInProgress());
     final possibleFailure = await _repository.invalidateInviteLink(guildId);

@@ -36,6 +36,7 @@ dependencies:
   webview_flutter: ^2.0.14
 
 dev_dependencies:
+  bloc_test: ^8.2.0
   build_runner: ^2.1.2
   built_value: ^8.1.2
   flutter_launcher_icons: '^0.9.2'
@@ -46,6 +47,7 @@ dev_dependencies:
   hive_generator: ^1.1.1
   injectable_generator: ^1.5.2
   lint: ^1.7.2
+  mocktail: ^0.1.4
 
 flutter_icons:
   android: true
