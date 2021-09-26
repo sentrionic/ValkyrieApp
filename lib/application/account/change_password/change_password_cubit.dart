@@ -10,11 +10,14 @@ import 'package:valkyrie_app/domain/auth/i_auth_facade.dart';
 part 'change_password_cubit.freezed.dart';
 part 'change_password_state.dart';
 
+/// ChangePasswordCubit manages the password change request
 @injectable
 class ChangePasswordCubit extends Cubit<ChangePasswordState> {
   final IAuthFacade _authFacade;
   ChangePasswordCubit(this._authFacade) : super(ChangePasswordState.initial());
 
+  /// Changes the value of the old [Password] in the [ChangePasswordState]
+  /// and resets the error.
   Future<void> oldPasswordChanged(String oldPassword) async {
     emit(
       state.copyWith(
@@ -24,6 +27,8 @@ class ChangePasswordCubit extends Cubit<ChangePasswordState> {
     );
   }
 
+  /// Changes the value of the new [Password] in the [ChangePasswordState]
+  /// and resets the error.
   Future<void> newPasswordChanged(String newPassword) async {
     emit(
       state.copyWith(
@@ -33,6 +38,8 @@ class ChangePasswordCubit extends Cubit<ChangePasswordState> {
     );
   }
 
+  /// Changes the value of the confirm new [Password] in the [ChangePasswordState]
+  /// and resets the error.
   Future<void> confirmNewPasswordChanged(String confirmNewPassword) async {
     emit(
       state.copyWith(
@@ -42,6 +49,8 @@ class ChangePasswordCubit extends Cubit<ChangePasswordState> {
     );
   }
 
+  /// Changes the user's password in the network.
+  /// Emits [unit] when successful, [AuthFailure] otherwise.
   Future<void> submitPasswordChange() async {
     Either<AuthFailure, Unit>? failureOrSuccess;
 

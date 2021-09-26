@@ -24,10 +24,6 @@ void main() {
     final mockGuild = getGuildFixture();
     final name = mockGuild.name.getOrCrash();
 
-    test('initial GuildListState should be CreateGuildState.initial()', () {
-      expect(createGuildCubit.state, equals(CreateGuildState.initial()));
-    });
-
     blocTest<CreateGuildCubit, CreateGuildState>(
       'emits the new [GuildName]',
       build: () => createGuildCubit,
@@ -45,7 +41,7 @@ void main() {
     final mockGuild = getGuildFixture();
     final name = mockGuild.name.getOrCrash();
 
-    test('initial GuildListState should be CreateGuildState.initial()', () {
+    test('initial CreateGuildState should be CreateGuildState.initial()', () {
       // assert
       expect(createGuildCubit.state, equals(CreateGuildState.initial()));
     });

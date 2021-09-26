@@ -13,6 +13,7 @@ part 'update_account_event.dart';
 part 'update_account_state.dart';
 part 'update_account_bloc.freezed.dart';
 
+/// UpdateAccountBloc manages the update of the user's account information
 @injectable
 class UpdateAccountBloc extends Bloc<UpdateAccountEvent, UpdateAccountState> {
   final IAccountRepository _repository;
@@ -51,6 +52,7 @@ class UpdateAccountBloc extends Bloc<UpdateAccountEvent, UpdateAccountState> {
             isSaving: true,
             saveFailureOrSuccessOption: none(),
           );
+
           failureOrSuccess = await _repository.updateAccount(
             emailAddress: state.emailAddress,
             username: state.username,

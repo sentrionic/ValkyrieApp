@@ -21,3 +21,8 @@ String getRandomId() => String.fromCharCodes(
     );
 
 String getRandomName() => getRandomString(getRandomInt(6, 12));
+
+String getRandomEmail() => "${getRandomName()}@example.com";
+
+String getImageUrl() =>
+    "https://gravatar.com/avatar/${getRandomId()}?d=identicon";
