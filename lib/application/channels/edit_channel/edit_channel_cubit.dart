@@ -11,11 +11,13 @@ import 'package:valkyrie_app/domain/member/member.dart';
 part 'edit_channel_state.dart';
 part 'edit_channel_cubit.freezed.dart';
 
+/// EditGuildCubit manages the editing of channels
 @injectable
 class EditChannelCubit extends Cubit<EditChannelState> {
   final IChannelRepository _repository;
   EditChannelCubit(this._repository) : super(EditChannelState.initial());
 
+  /// Sets the initial [ChannelName, isPublic] values of the to be edited channel in the [EditChannelState].
   Future<void> initialize(Channel channel) async {
     emit(
       state.copyWith(
@@ -26,6 +28,8 @@ class EditChannelCubit extends Cubit<EditChannelState> {
     );
   }
 
+  /// Changes the value of the [ChannelName] in the [EditChannelState]
+  /// and resets the error.
   Future<void> nameChanged(String name) async {
     emit(
       state.copyWith(
@@ -35,6 +39,8 @@ class EditChannelCubit extends Cubit<EditChannelState> {
     );
   }
 
+  /// Changes the value of [isPublic] in the [EditChannelState]
+  /// and resets the error.
   Future<void> isPublicChanged({required bool isPublic}) async {
     emit(
       state.copyWith(
@@ -44,6 +50,8 @@ class EditChannelCubit extends Cubit<EditChannelState> {
     );
   }
 
+  /// Adds a new member to the [members] list in the [EditChannelState]
+  /// and resets the error.
   Future<void> addMember(Member member) async {
     emit(
       state.copyWith(
@@ -56,6 +64,8 @@ class EditChannelCubit extends Cubit<EditChannelState> {
     );
   }
 
+  /// Removes the member from the [members] list in the [EditChannelState]
+  /// and resets the error.
   Future<void> removeMember(String id) async {
     emit(
       state.copyWith(
@@ -65,6 +75,8 @@ class EditChannelCubit extends Cubit<EditChannelState> {
     );
   }
 
+  /// Updates the provided [Channel] in the network if the name is valid.
+  /// Emits [unit] if successfull and the [ChannelFailure] error otherwise.
   Future<void> submitEditChannel(String channelId) async {
     Either<ChannelFailure, Unit>? failureOrSuccess;
 

@@ -9,12 +9,14 @@ import 'package:valkyrie_app/domain/channels/i_channel_repository.dart';
 part 'channel_list_state.dart';
 part 'channel_list_cubit.freezed.dart';
 
+/// ChannelListCubit manages everything related to the current [Guild]'s [Channel]s
 @injectable
 class ChannelListCubit extends Cubit<ChannelListState> {
   final IChannelRepository _repository;
 
   ChannelListCubit(this._repository) : super(const ChannelListState.initial());
 
+  /// Returns the current guild's channels
   Future<void> getGuildChannels(String guildId) async {
     emit(const ChannelListState.loadInProgress());
     final failureOrChannels = await _repository.getGuildChannels(guildId);
@@ -26,6 +28,7 @@ class ChannelListCubit extends Cubit<ChannelListState> {
     );
   }
 
+  /// Returns the currently open channel if it exists
   Channel? getCurrentChannel(String channelId) {
     return state.maybeWhen(
       loadSuccess: (channels) =>
@@ -34,6 +37,7 @@ class ChannelListCubit extends Cubit<ChannelListState> {
     );
   }
 
+  /// Adds the given channel to the [ChannelListState]
   void addNewChannel(Channel channel) {
     state.maybeWhen(
       loadSuccess: (channels) async {
@@ -45,6 +49,7 @@ class ChannelListCubit extends Cubit<ChannelListState> {
     );
   }
 
+  /// Adds the channel for the given id from the [ChannelListState]
   void removeChannel(String channelId) {
     state.maybeWhen(
       loadSuccess: (channels) async {
@@ -55,6 +60,8 @@ class ChannelListCubit extends Cubit<ChannelListState> {
     );
   }
 
+  /// Replaces the [ChannelName] and [isPublic] property in the [ChannelListState] with the
+  /// values from the provided channel
   void editChannel(Channel channel) {
     state.maybeWhen(
       loadSuccess: (channels) async {
@@ -72,6 +79,7 @@ class ChannelListCubit extends Cubit<ChannelListState> {
     );
   }
 
+  /// Sets [hasNotification] to true for the given channel
   void addNotification(String channelId) {
     state.maybeWhen(
       loadSuccess: (channels) async {
@@ -88,6 +96,7 @@ class ChannelListCubit extends Cubit<ChannelListState> {
     );
   }
 
+  /// Sets [hasNotification] to false for the given channel
   void clearNotification(String channelId) {
     state.maybeWhen(
       loadSuccess: (channels) async {

@@ -12,7 +12,7 @@ import 'package:valkyrie_app/domain/guilds/value_objects.dart';
 part 'edit_guild_state.dart';
 part 'edit_guild_cubit.freezed.dart';
 
-/// EditGuildCubit manages the edit of guilds
+/// EditGuildCubit manages the editing of guilds
 @injectable
 class EditGuildCubit extends Cubit<EditGuildState> {
   final IGuildRepository _repository;
