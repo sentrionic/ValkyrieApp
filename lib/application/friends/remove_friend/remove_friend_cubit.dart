@@ -7,12 +7,15 @@ import 'package:valkyrie_app/domain/friends/i_friend_repository.dart';
 part 'remove_friend_state.dart';
 part 'remove_friend_cubit.freezed.dart';
 
+/// RemoveFriendCubit handles the removal of [Friend]s
 @injectable
 class RemoveFriendCubit extends Cubit<RemoveFriendState> {
   final IFriendRepository _repository;
   RemoveFriendCubit(this._repository)
       : super(const RemoveFriendState.initial());
 
+  /// Removes the given friend from the user's friend list.
+  /// Emits [unit] if successful and [FriendFailure] otherwise.
   Future<void> removeFriend(String userId) async {
     emit(const RemoveFriendState.actionInProgress());
     final possibleFailure = await _repository.removeFriend(userId);

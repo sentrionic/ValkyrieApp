@@ -9,11 +9,14 @@ import 'package:valkyrie_app/domain/friends/value_objects.dart';
 part 'add_friend_state.dart';
 part 'add_friend_cubit.freezed.dart';
 
+/// AcceptRequestCubit handles adding user's to friends flow
 @injectable
 class AddFriendCubit extends Cubit<AddFriendState> {
   final IFriendRepository _repository;
   AddFriendCubit(this._repository) : super(AddFriendState.initial());
 
+  /// Changes the value of the [uid] in the [AddFriendState]
+  /// and resets the error.
   Future<void> idChanged(String id) async {
     emit(
       state.copyWith(
@@ -23,6 +26,8 @@ class AddFriendCubit extends Cubit<AddFriendState> {
     );
   }
 
+  /// Sends a friend request to the given user.
+  /// Emits the [unit] if successful and [FriendFailure] otherwise
   Future<void> sendFriendRequest() async {
     Either<FriendFailure, Unit>? failureOrSuccess;
 

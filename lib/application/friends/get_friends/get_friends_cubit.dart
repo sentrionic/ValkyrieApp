@@ -8,11 +8,14 @@ import 'package:valkyrie_app/domain/friends/i_friend_repository.dart';
 part 'get_friends_state.dart';
 part 'get_friends_cubit.freezed.dart';
 
+/// GetFriendsCubit manages everything related to the current user's [Friend]s
 @injectable
 class GetFriendsCubit extends Cubit<GetFriendsState> {
   final IFriendRepository _repository;
   GetFriendsCubit(this._repository) : super(const GetFriendsState.initial());
 
+  /// Fetches the user's friends from the network.
+  /// Emits a list of [Friend]s if successful and [FriendFailure] otherwise.
   Future<void> getFriends() async {
     emit(const GetFriendsState.loadInProgress());
     final failureOrFriends = await _repository.getFriends();
@@ -24,6 +27,7 @@ class GetFriendsCubit extends Cubit<GetFriendsState> {
     );
   }
 
+  /// Returns a list of the user's [Friend]s that are currently online
   List<Friend> getOnlineFriends() {
     return state.maybeWhen(
       loadSuccess: (friends) => friends.where((f) => f.isOnline).toList(),
@@ -31,6 +35,7 @@ class GetFriendsCubit extends Cubit<GetFriendsState> {
     );
   }
 
+  /// Returns a list of the user's [Friend]s that are currently offline
   List<Friend> getOfflineFriends() {
     return state.maybeWhen(
       loadSuccess: (friends) => friends.where((f) => !f.isOnline).toList(),
@@ -38,6 +43,7 @@ class GetFriendsCubit extends Cubit<GetFriendsState> {
     );
   }
 
+  /// Adds the given friend to the [GetFriendsState]
   void addFriend(Friend friend) {
     state.maybeWhen(
       loadSuccess: (friends) async {
@@ -49,6 +55,7 @@ class GetFriendsCubit extends Cubit<GetFriendsState> {
     );
   }
 
+  /// Removes the friend for the given id from the [GetFriendsState]
   void removeFriend(String friendId) {
     state.maybeWhen(
       loadSuccess: (friends) async {
@@ -59,6 +66,7 @@ class GetFriendsCubit extends Cubit<GetFriendsState> {
     );
   }
 
+  /// Changes the online status of the friend for the given id to the given value
   void toggleOnlineStatus(String friendId, {required bool isOnline}) {
     state.maybeWhen(
       loadSuccess: (friends) async {

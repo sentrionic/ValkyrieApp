@@ -49,7 +49,7 @@ class ChannelListCubit extends Cubit<ChannelListState> {
     );
   }
 
-  /// Adds the channel for the given id from the [ChannelListState]
+  /// Removes the channel for the given id from the [ChannelListState]
   void removeChannel(String channelId) {
     state.maybeWhen(
       loadSuccess: (channels) async {
