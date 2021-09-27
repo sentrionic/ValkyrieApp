@@ -74,6 +74,10 @@ void main() {
         const ChannelListState.loadInProgress(),
         const ChannelListState.loadFailure(ChannelFailure.unexpected())
       ],
+      verify: (_) {
+        verify(() => mockChannelRepository.getGuildChannels(channelId))
+            .called(1);
+      },
     );
   });
 

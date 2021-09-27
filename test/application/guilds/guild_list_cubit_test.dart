@@ -71,6 +71,9 @@ void main() {
         const GuildListState.loadInProgress(),
         const GuildListState.loadFailure(GuildFailure.unexpected())
       ],
+      verify: (_) {
+        verify(() => mockGuildRepository.getUserGuilds()).called(1);
+      },
     );
   });
 
