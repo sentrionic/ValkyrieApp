@@ -12,11 +12,14 @@ import 'package:valkyrie_app/domain/message/message_value_objects.dart';
 part 'upload_image_state.dart';
 part 'upload_image_cubit.freezed.dart';
 
+/// UploadImageCubit handles the creation of messages containing images.
 @injectable
 class UploadImageCubit extends Cubit<UploadImageState> {
   final IMessageRepository _repository;
   UploadImageCubit(this._repository) : super(UploadImageState.initial());
 
+  /// Uploads the given file to the network to create a message.
+  /// Emits [unit] if successful and [MessageFailure] otherwise.
   Future<void> uploadImage(String channelId, XFile image) async {
     Either<MessageFailure, Unit>? failureOrSuccess;
 

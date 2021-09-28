@@ -9,8 +9,8 @@ class DMNotificationsCubit extends Cubit<List<DMNotification>> {
 
   /// Adds a [DMNotification] to the list or increases its count if it already exists.
   /// Emits the list of all [DMNotification].
-  void addNotification(DMNotification notification) {
-    final index = state.indexWhere((e) => e.id == notification.id);
+  void addNotification(DMNotification newNotification) {
+    final index = state.indexWhere((e) => e.id == newNotification.id);
     if (index != -1) {
       final notification = state[index];
       emit([
@@ -18,7 +18,7 @@ class DMNotificationsCubit extends Cubit<List<DMNotification>> {
         ...state.where((e) => e.id != notification.id).toList()
       ]);
     } else {
-      emit([notification, ...state]);
+      emit([newNotification, ...state]);
     }
   }
 

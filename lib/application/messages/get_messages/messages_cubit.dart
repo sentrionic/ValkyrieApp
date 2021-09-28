@@ -8,13 +8,19 @@ import 'package:valkyrie_app/domain/message/message_failure.dart';
 part 'messages_state.dart';
 part 'messages_cubit.freezed.dart';
 
+/// MessagesCubit manages everything related to the fetched messages.
 @injectable
 class MessagesCubit extends Cubit<MessagesState> {
   final IMessageRepository _repository;
   bool isSubmiting = false;
 
+  // Maximum number of messages fetched per request
+  final fetchedMessageSize = 35;
+
   MessagesCubit(this._repository) : super(const MessagesState.initial());
 
+  /// Fetches the first page of messages for the given channel.
+  /// Emits a list of [Message] and [hasMore] if successful and [MessageFailure] otherwise.
   Future<void> getChannelMessages(String channelId) async {
     emit(const MessagesState.loadInProgress());
     final failureOrMessages = await _repository.getChannelMessages(channelId);
@@ -23,12 +29,14 @@ class MessagesCubit extends Cubit<MessagesState> {
         (f) => MessagesState.loadFailure(f),
         (messages) => MessagesState.loadSuccess(
           messages,
-          hasMore: messages.length == 35,
+          hasMore: messages.length == fetchedMessageSize,
         ),
       ),
     );
   }
 
+  /// Fetches the next page of messages for the given channelId.
+  /// Emits a list of the old and new [Message] and [hasMore] if successful and [MessageFailure] otherwise.
   Future<void> fetchMoreMessages(String channelId) async {
     state.maybeWhen(
       loadSuccess: (messages, hasMore) async {
@@ -43,7 +51,7 @@ class MessagesCubit extends Cubit<MessagesState> {
               (f) => MessagesState.loadFailure(f),
               (newMessages) => MessagesState.loadSuccess(
                 messages + newMessages,
-                hasMore: newMessages.length == 35,
+                hasMore: newMessages.length == fetchedMessageSize,
               ),
             ),
           );
@@ -53,6 +61,7 @@ class MessagesCubit extends Cubit<MessagesState> {
     );
   }
 
+  /// Adds the given message to the [MessagesState]
   void addNewMessage(Message message) {
     state.maybeWhen(
       loadSuccess: (messages, hasMore) async {
@@ -63,6 +72,7 @@ class MessagesCubit extends Cubit<MessagesState> {
     );
   }
 
+  /// Removes the message for the given id from the [MessagesState]
   void deleteMessage(String messageId) {
     state.maybeWhen(
       loadSuccess: (messages, hasMore) async {
@@ -73,6 +83,8 @@ class MessagesCubit extends Cubit<MessagesState> {
     );
   }
 
+  /// Edits the [MessageText] and [updatedAt] properties in the [MessagesState] with the
+  /// values from the provided message
   void updateMessage(Message message) {
     state.maybeWhen(
       loadSuccess: (messages, hasMore) async {

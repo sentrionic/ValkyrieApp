@@ -63,6 +63,8 @@ If said server runs on `localhost` you will also need to add `android:usesCleart
 
 ## Tests
 
+Tests were written for all Use Cases in the `Application` directory.
+
 To run all tests run `flutter test`
 
 ## Additional Information
