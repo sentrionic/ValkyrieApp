@@ -9,11 +9,14 @@ import 'package:valkyrie_app/domain/message/message_value_objects.dart';
 part 'create_message_state.dart';
 part 'create_message_cubit.freezed.dart';
 
+/// CreateMessageCubit manages the creation of a [Message]
 @injectable
 class CreateMessageCubit extends Cubit<CreateMessageState> {
   final IMessageRepository _repository;
   CreateMessageCubit(this._repository) : super(CreateMessageState.initial());
 
+  /// Changes the value of the [MessageText] in the [CreateMessageState]
+  /// and resets the error.
   Future<void> messageTextChanged(String text) async {
     emit(
       state.copyWith(
@@ -23,6 +26,8 @@ class CreateMessageCubit extends Cubit<CreateMessageState> {
     );
   }
 
+  /// Resets the value of the [MessageText] in the [CreateMessageState]
+  /// and the error.
   Future<void> resetMessageText() async {
     emit(
       state.copyWith(
@@ -32,6 +37,8 @@ class CreateMessageCubit extends Cubit<CreateMessageState> {
     );
   }
 
+  /// Submits the request to the network if the text is not empty.
+  /// Emits [unit] if the request was successful, [MessageFailure] otherwise.
   Future<void> createMessage(String channelId) async {
     Either<MessageFailure, Unit>? failureOrSuccess;
 

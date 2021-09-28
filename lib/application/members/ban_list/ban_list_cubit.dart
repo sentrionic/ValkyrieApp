@@ -8,11 +8,14 @@ import 'package:valkyrie_app/domain/member/member_failure.dart';
 part 'ban_list_state.dart';
 part 'ban_list_cubit.freezed.dart';
 
+/// BanListCubit manages everything related to the [Guild]'s ban list
 @injectable
 class BanListCubit extends Cubit<BanListState> {
   final IMemberRepository _repository;
   BanListCubit(this._repository) : super(const BanListState.initial());
 
+  /// Fetches a list of users that are banned from this guild.
+  /// Emits a list of [BannedMember] when successful and [MemberFailure] otherwise.
   Future<void> getGuildBanList(String guildId) async {
     emit(const BanListState.loadInProgress());
     final failureOrGuilds = await _repository.getBanList(guildId);
@@ -24,6 +27,7 @@ class BanListCubit extends Cubit<BanListState> {
     );
   }
 
+  /// Removes the user for the given id from the [BanListState]
   void removeBan(String memberId) {
     state.maybeWhen(
       loadSuccess: (members) async {

@@ -9,12 +9,15 @@ import 'package:valkyrie_app/domain/member/member_failure.dart';
 part 'change_appearance_state.dart';
 part 'change_appearance_cubit.freezed.dart';
 
+/// ChangeAppearanceCubit manages editing the user's [GuildAppearance]
 @injectable
 class ChangeAppearanceCubit extends Cubit<ChangeAppearanceState> {
   final IMemberRepository _repository;
   ChangeAppearanceCubit(this._repository)
       : super(ChangeAppearanceState.initial());
 
+  /// Changes the [Nickname] in the [ChangeAppearanceState]
+  /// and resets the error.
   Future<void> nicknameChanged(String nickname) async {
     emit(
       state.copyWith(
@@ -24,6 +27,8 @@ class ChangeAppearanceCubit extends Cubit<ChangeAppearanceState> {
     );
   }
 
+  /// Sets the [Nickname] to null in the [ChangeAppearanceState]
+  /// and resets the error.
   Future<void> resetNickname() async {
     emit(
       state.copyWith(
@@ -33,6 +38,8 @@ class ChangeAppearanceCubit extends Cubit<ChangeAppearanceState> {
     );
   }
 
+  /// Changes the [HexColor] in the [ChangeAppearanceState]
+  /// and resets the error.
   Future<void> colorChanged(String color) async {
     emit(
       state.copyWith(
@@ -42,6 +49,8 @@ class ChangeAppearanceCubit extends Cubit<ChangeAppearanceState> {
     );
   }
 
+  /// Sets the [HexColor] to null in the [ChangeAppearanceState]
+  /// and resets the error.
   Future<void> resetColor() async {
     emit(
       state.copyWith(
@@ -51,6 +60,8 @@ class ChangeAppearanceCubit extends Cubit<ChangeAppearanceState> {
     );
   }
 
+  /// Applies the changes to the network for the given guild.
+  /// Emits [unit] if successful and [MemberFailure] otherwise.
   Future<void> submitChanges(String guildId) async {
     Either<MemberFailure, Unit>? failureOrSuccess;
 

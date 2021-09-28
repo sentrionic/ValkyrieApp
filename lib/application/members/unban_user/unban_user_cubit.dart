@@ -7,12 +7,14 @@ import 'package:valkyrie_app/domain/member/member_failure.dart';
 part 'unban_user_state.dart';
 part 'unban_user_cubit.freezed.dart';
 
+/// UnbanUserCubit handles the unbanning of users
 @injectable
 class UnbanUserCubit extends Cubit<UnbanUserState> {
   final IMemberRepository _repository;
 
   UnbanUserCubit(this._repository) : super(const UnbanUserState.initial());
 
+  /// Unbans the given user from the given [Guild]
   Future<void> unbanMember(
     String guildId,
     String memberId,

@@ -7,6 +7,7 @@ import 'package:valkyrie_app/domain/member/member_failure.dart';
 part 'moderate_member_state.dart';
 part 'moderate_member_cubit.freezed.dart';
 
+/// ModerateMemberCubit handles the moderation of members
 @injectable
 class ModerateMemberCubit extends Cubit<ModerateMemberState> {
   final IMemberRepository _repository;
@@ -14,6 +15,8 @@ class ModerateMemberCubit extends Cubit<ModerateMemberState> {
   ModerateMemberCubit(this._repository)
       : super(const ModerateMemberState.initial());
 
+  /// Kicks the given [Member] from the given [Guild].
+  /// Said member will be able to rejoin.
   Future<void> kickMember(String guildId, String memberId) async {
     emit(const ModerateMemberState.actionInProgress());
     final possibleFailure = await _repository.kickMember(guildId, memberId);
@@ -25,6 +28,8 @@ class ModerateMemberCubit extends Cubit<ModerateMemberState> {
     );
   }
 
+  /// Bans the given [Member] from the given [Guild].
+  /// Said member will not be able to rejoin.
   Future<void> banMember(String guildId, String memberId) async {
     emit(const ModerateMemberState.actionInProgress());
     final possibleFailure = await _repository.banMember(guildId, memberId);

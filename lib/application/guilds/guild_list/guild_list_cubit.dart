@@ -57,7 +57,7 @@ class GuildListCubit extends Cubit<GuildListState> {
     );
   }
 
-  /// Adds the guild for the given id from the [GuildListState]
+  /// Removes the guild for the given id from the [GuildListState]
   void removeGuild(String guildId) {
     state.maybeWhen(
       loadSuccess: (guilds) async {

@@ -26,6 +26,16 @@ Member getMemberFixture() {
   );
 }
 
+List<Member> getMemberListFixture() {
+  final List<Member> list = [];
+
+  for (var i = 0; i < 5; i++) {
+    list.add(getMemberFixture());
+  }
+
+  return list;
+}
+
 DMUser getDMUserFixture() {
   return DMUser(
     id: getRandomId(),
