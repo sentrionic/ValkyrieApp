@@ -83,6 +83,7 @@ class GuildRepository extends IGuildRepository {
         "name": name,
       });
 
+      // User uploaded a new icon
       if (icon != null) {
         formData.files.add(
           MapEntry(

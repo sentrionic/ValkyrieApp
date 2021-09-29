@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1440949655536930816",
+    "name": "Test Server",
+    "ownerId": "1440949629427388416",
+    "icon": null,
+    "createdAt": "2021-09-23T08:02:24.087974Z",
+    "updatedAt": "2021-09-23T08:08:31.908828Z",
+    "hasNotification": false,
+    "default_channel_id": "1440949655578873856"
+  },
+  {
+    "id": "1470949655536935816",
+    "name": "Another Test Server",
+    "ownerId": "5440949629227388412",
+    "icon": null,
+    "createdAt": "2021-09-23T08:04:54.087974Z",
+    "updatedAt": "2021-09-23T08:09:40.908828Z",
+    "hasNotification": false,
+    "default_channel_id": "1450949655678273652"
+  }
+]

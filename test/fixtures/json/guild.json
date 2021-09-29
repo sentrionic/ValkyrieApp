@@ -1,0 +1,10 @@
+{
+  "id": "1440949655536930816",
+  "name": "Test Server",
+  "ownerId": "1440949629427388416",
+  "icon": null,
+  "createdAt": "2021-09-23T08:02:24.087974Z",
+  "updatedAt": "2021-09-23T08:08:31.908828Z",
+  "hasNotification": false,
+  "default_channel_id": "1440949655578873856"
+}
