@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1440949655578873856",
+    "name": "general",
+    "isPublic": true,
+    "createdAt": "2021-09-23T08:02:24.09785Z",
+    "updatedAt": "2021-09-23T08:02:33.870486Z",
+    "hasNotification": false
+  },
+  {
+    "id": "1440951198269050880",
+    "name": "random",
+    "isPublic": true,
+    "createdAt": "2021-09-23T08:08:31.904375Z",
+    "updatedAt": "2021-09-23T08:08:31.904375Z",
+    "hasNotification": false
+  }
+]

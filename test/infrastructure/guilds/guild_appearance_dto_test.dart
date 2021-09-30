@@ -21,7 +21,7 @@ void main() {
     color: HexColor(color),
   );
 
-  group('fromJson', () {
+  group('GuildAppearanceDto.fromMap', () {
     test(
       'should return a valid DTO when the JSON is valid',
       () async {

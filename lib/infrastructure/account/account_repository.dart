@@ -25,14 +25,10 @@ class AccountRepository extends IAccountRepository {
   Future<Either<AccountFailure, Account>> getAccount() async {
     try {
       final response = await _dio.get('/account');
-
-      if (response.statusCode == 200) {
-        final results = jsonDecode(response.data);
-        final account = AccountDto.fromMap(results).toDomain();
-        _setUserData(account);
-        return right(account);
-      }
-      return left(const AccountFailure.unexpected());
+      final results = jsonDecode(response.data);
+      final account = AccountDto.fromMap(results).toDomain();
+      _setUserData(account);
+      return right(account);
     } on DioError catch (err) {
       print(err);
       return left(const AccountFailure.unexpected());
@@ -68,13 +64,10 @@ class AccountRepository extends IAccountRepository {
 
       final response = await _dio.put('/account', data: formData);
 
-      if (response.statusCode == 200) {
-        final results = jsonDecode(response.data);
-        final account = AccountDto.fromMap(results).toDomain();
-        _setUserData(account);
-        return right(account);
-      }
-      return left(const AccountFailure.unexpected());
+      final results = jsonDecode(response.data);
+      final account = AccountDto.fromMap(results).toDomain();
+      _setUserData(account);
+      return right(account);
     } on DioError catch (err) {
       if (err.response?.statusCode == 400) {
         final errors = FieldError.getErrors(err.response!);
@@ -91,7 +84,10 @@ class AccountRepository extends IAccountRepository {
   }
 
   void _setUserData(Account account) {
-    final box = Hive.box<AccountEntity>(BoxNames.currentUser);
-    box.put(BoxKeys.currentKey, AccountEntity.fromDomain(account));
+    // Hacky solution to allow testing
+    if (!Platform.environment.containsKey('FLUTTER_TEST')) {
+      final box = Hive.box<AccountEntity>(BoxNames.currentUser);
+      box.put(BoxKeys.currentKey, AccountEntity.fromDomain(account));
+    }
   }
 }

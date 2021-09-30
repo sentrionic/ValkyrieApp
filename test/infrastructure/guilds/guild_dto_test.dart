@@ -24,7 +24,7 @@ void main() {
     hasNotification: false,
   );
 
-  group('fromJson', () {
+  group('GuildDto.fromMap', () {
     test(
       'should return a valid DTO when the JSON is valid',
       () async {

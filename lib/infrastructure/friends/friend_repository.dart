@@ -22,13 +22,10 @@ class FriendRepository extends IFriendRepository {
     try {
       final response = await _dio.get('/account/me/friends');
 
-      if (response.statusCode == 200) {
-        final results = jsonDecode(response.data);
-        final List<Friend> list = [];
-        results.forEach((f) => list.add(FriendDto.fromMap(f).toDomain()));
-        return right(list);
-      }
-      return left(const FriendFailure.unexpected());
+      final results = jsonDecode(response.data);
+      final List<Friend> list = [];
+      results.forEach((f) => list.add(FriendDto.fromMap(f).toDomain()));
+      return right(list);
     } on DioError catch (err) {
       print(err);
       return left(const FriendFailure.unexpected());
@@ -100,14 +97,10 @@ class FriendRepository extends IFriendRepository {
     try {
       final response = await _dio.get('/account/me/pending');
 
-      if (response.statusCode == 200) {
-        final results = jsonDecode(response.data);
-        final List<FriendRequest> list = [];
-        results
-            .forEach((f) => list.add(FriendRequestDto.fromMap(f).toDomain()));
-        return right(list);
-      }
-      return left(const FriendFailure.unexpected());
+      final results = jsonDecode(response.data);
+      final List<FriendRequest> list = [];
+      results.forEach((f) => list.add(FriendRequestDto.fromMap(f).toDomain()));
+      return right(list);
     } on DioError catch (err) {
       print(err);
       return left(const FriendFailure.unexpected());

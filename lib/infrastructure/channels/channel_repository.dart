@@ -23,13 +23,10 @@ class ChannelRepository extends IChannelRepository {
     try {
       final response = await _dio.get('/channels/$guildId');
 
-      if (response.statusCode == 200) {
-        final results = jsonDecode(response.data);
-        final List<Channel> list = [];
-        results.forEach((c) => list.add(ChannelDto.fromMap(c).toDomain()));
-        return right(list);
-      }
-      return left(const ChannelFailure.unexpected());
+      final results = jsonDecode(response.data);
+      final List<Channel> list = [];
+      results.forEach((c) => list.add(ChannelDto.fromMap(c).toDomain()));
+      return right(list);
     } on DioError catch (err) {
       print(err);
       return left(const ChannelFailure.unexpected());

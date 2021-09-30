@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1443510582618624000",
+    "user": {
+      "id": "1443510513748152320",
+      "username": "Bob",
+      "image": "https://gravatar.com/avatar/4b9bb80620f03eb3719e0a061c14283d?d=identicon",
+      "isOnline": false,
+      "isFriend": false
+    }
+  },
+  {
+    "id": "2444510582648624507",
+    "user": {
+      "id": "1653410523744152428",
+      "username": "Alice",
+      "image": "https://gravatar.com/avatar/4b5ab50620f03ebv7g9e04061c14283d?d=identicon",
+      "isOnline": false,
+      "isFriend": false
+    }
+  }
+]
