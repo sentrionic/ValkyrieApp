@@ -21,8 +21,10 @@ class _$GuildFailureTearOff {
     return const _Unexpected();
   }
 
-  _InvalidLink invalidLink() {
-    return const _InvalidLink();
+  _BadRequest badRequest(String message) {
+    return _BadRequest(
+      message,
+    );
   }
 }
 
@@ -34,38 +36,38 @@ mixin _$GuildFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
-    required TResult Function() invalidLink,
+    required TResult Function(String message) badRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
-    TResult Function()? invalidLink,
+    TResult Function(String message)? badRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
-    TResult Function()? invalidLink,
+    TResult Function(String message)? badRequest,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(_InvalidLink value) invalidLink,
+    required TResult Function(_BadRequest value) badRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_InvalidLink value)? invalidLink,
+    TResult Function(_BadRequest value)? badRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_InvalidLink value)? invalidLink,
+    TResult Function(_BadRequest value)? badRequest,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,7 +129,7 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
-    required TResult Function() invalidLink,
+    required TResult Function(String message) badRequest,
   }) {
     return unexpected();
   }
@@ -136,7 +138,7 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
-    TResult Function()? invalidLink,
+    TResult Function(String message)? badRequest,
   }) {
     return unexpected?.call();
   }
@@ -145,7 +147,7 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
-    TResult Function()? invalidLink,
+    TResult Function(String message)? badRequest,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -158,7 +160,7 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(_InvalidLink value) invalidLink,
+    required TResult Function(_BadRequest value) badRequest,
   }) {
     return unexpected(this);
   }
@@ -167,7 +169,7 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_InvalidLink value)? invalidLink,
+    TResult Function(_BadRequest value)? badRequest,
   }) {
     return unexpected?.call(this);
   }
@@ -176,7 +178,7 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_InvalidLink value)? invalidLink,
+    TResult Function(_BadRequest value)? badRequest,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -191,68 +193,93 @@ abstract class _Unexpected implements GuildFailure {
 }
 
 /// @nodoc
-abstract class _$InvalidLinkCopyWith<$Res> {
-  factory _$InvalidLinkCopyWith(
-          _InvalidLink value, $Res Function(_InvalidLink) then) =
-      __$InvalidLinkCopyWithImpl<$Res>;
+abstract class _$BadRequestCopyWith<$Res> {
+  factory _$BadRequestCopyWith(
+          _BadRequest value, $Res Function(_BadRequest) then) =
+      __$BadRequestCopyWithImpl<$Res>;
+  $Res call({String message});
 }
 
 /// @nodoc
-class __$InvalidLinkCopyWithImpl<$Res> extends _$GuildFailureCopyWithImpl<$Res>
-    implements _$InvalidLinkCopyWith<$Res> {
-  __$InvalidLinkCopyWithImpl(
-      _InvalidLink _value, $Res Function(_InvalidLink) _then)
-      : super(_value, (v) => _then(v as _InvalidLink));
+class __$BadRequestCopyWithImpl<$Res> extends _$GuildFailureCopyWithImpl<$Res>
+    implements _$BadRequestCopyWith<$Res> {
+  __$BadRequestCopyWithImpl(
+      _BadRequest _value, $Res Function(_BadRequest) _then)
+      : super(_value, (v) => _then(v as _BadRequest));
 
   @override
-  _InvalidLink get _value => super._value as _InvalidLink;
+  _BadRequest get _value => super._value as _BadRequest;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_BadRequest(
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_InvalidLink implements _InvalidLink {
-  const _$_InvalidLink();
+class _$_BadRequest implements _BadRequest {
+  const _$_BadRequest(this.message);
+
+  @override
+  final String message;
 
   @override
   String toString() {
-    return 'GuildFailure.invalidLink()';
+    return 'GuildFailure.badRequest(message: $message)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InvalidLink);
+    return identical(this, other) ||
+        (other is _BadRequest &&
+            (identical(other.message, message) ||
+                const DeepCollectionEquality().equals(other.message, message)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+
+  @JsonKey(ignore: true)
+  @override
+  _$BadRequestCopyWith<_BadRequest> get copyWith =>
+      __$BadRequestCopyWithImpl<_BadRequest>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
-    required TResult Function() invalidLink,
+    required TResult Function(String message) badRequest,
   }) {
-    return invalidLink();
+    return badRequest(message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
-    TResult Function()? invalidLink,
+    TResult Function(String message)? badRequest,
   }) {
-    return invalidLink?.call();
+    return badRequest?.call(message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
-    TResult Function()? invalidLink,
+    TResult Function(String message)? badRequest,
     required TResult orElse(),
   }) {
-    if (invalidLink != null) {
-      return invalidLink();
+    if (badRequest != null) {
+      return badRequest(message);
     }
     return orElse();
   }
@@ -261,34 +288,39 @@ class _$_InvalidLink implements _InvalidLink {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(_InvalidLink value) invalidLink,
+    required TResult Function(_BadRequest value) badRequest,
   }) {
-    return invalidLink(this);
+    return badRequest(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_InvalidLink value)? invalidLink,
+    TResult Function(_BadRequest value)? badRequest,
   }) {
-    return invalidLink?.call(this);
+    return badRequest?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_InvalidLink value)? invalidLink,
+    TResult Function(_BadRequest value)? badRequest,
     required TResult orElse(),
   }) {
-    if (invalidLink != null) {
-      return invalidLink(this);
+    if (badRequest != null) {
+      return badRequest(this);
     }
     return orElse();
   }
 }
 
-abstract class _InvalidLink implements GuildFailure {
-  const factory _InvalidLink() = _$_InvalidLink;
+abstract class _BadRequest implements GuildFailure {
+  const factory _BadRequest(String message) = _$_BadRequest;
+
+  String get message => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$BadRequestCopyWith<_BadRequest> get copyWith =>
+      throw _privateConstructorUsedError;
 }

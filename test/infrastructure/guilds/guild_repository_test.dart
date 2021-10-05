@@ -136,6 +136,9 @@ void main() {
     final result = json.decode(data);
     final tMockGuild = GuildDto.fromMap(result).toDomain();
 
+    final errorsData = fixture('field_errors.json');
+    final errorData = fixture('field_error.json');
+
     void setUpHttpSuccess201(String name, String data) {
       when(
         () => client.post(
@@ -164,6 +167,28 @@ void main() {
       ).thenThrow(
         DioError(
           requestOptions: RequestOptions(path: path, method: "POST"),
+        ),
+      );
+    }
+
+    void setUpHttp400Failure(String data) {
+      when(
+        () => client.post(
+          any(),
+          data: {
+            "name": name,
+          },
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            data: data,
+            statusCode: 400,
+            requestOptions:
+                RequestOptions(path: '/guilds/create', method: "POST"),
+          ),
+          requestOptions:
+              RequestOptions(path: '/guilds/create', method: "POST"),
         ),
       );
     }
@@ -227,6 +252,48 @@ void main() {
         expect(
           value,
           equals(const GuildFailure.unexpected()),
+        );
+      },
+    );
+
+    test(
+      'should return a GuildFailure.badRequest when DioError is thrown with status 400 and a single error',
+      () async {
+        // arrange
+        setUpHttp400Failure(errorData);
+
+        // act
+        final result = await repository.createGuild(name);
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const GuildFailure.badRequest("Message")),
+        );
+      },
+    );
+
+    test(
+      'should return a GuildFailure.badRequest when DioError is thrown with status 400 and multiple errors',
+      () async {
+        // arrange
+        setUpHttp400Failure(errorsData);
+
+        // act
+        final result = await repository.createGuild(name);
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const GuildFailure.badRequest("Message")),
         );
       },
     );
@@ -390,6 +457,24 @@ void main() {
       );
     }
 
+    void setUpHttp400Failure() {
+      when(
+        () => client.put(
+          any(),
+          data: any(named: "data"),
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            statusCode: 400,
+            data: fixture('field_errors.json'),
+            requestOptions: RequestOptions(path: '/guilds/$id'),
+          ),
+          requestOptions: RequestOptions(path: '/guilds/$id'),
+        ),
+      );
+    }
+
     void setUpHttpSocketException() {
       when(
         () => client.put(
@@ -453,6 +538,27 @@ void main() {
         expect(
           value,
           equals(const GuildFailure.unexpected()),
+        );
+      },
+    );
+
+    test(
+      'should return a GuildFailure.badRequest when DioError is thrown with status 400',
+      () async {
+        // arrange
+        setUpHttp400Failure();
+
+        // act
+        final result = await repository.editGuild(id, name, null, null);
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const GuildFailure.badRequest("Message")),
         );
       },
     );
@@ -731,6 +837,27 @@ void main() {
       );
     }
 
+    void setUpHttp400Failure() {
+      when(
+        () => client.post(
+          any(),
+          data: {
+            "link": link,
+          },
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            data: fixture('field_error.json'),
+            statusCode: 400,
+            requestOptions:
+                RequestOptions(path: '/guilds/join', method: "POST"),
+          ),
+          requestOptions: RequestOptions(path: '/guilds/join', method: "POST"),
+        ),
+      );
+    }
+
     void setUpHttpSocketException() {
       when(() => client.post(any(), data: {"link": link})).thenThrow(
         const SocketException("Not connected"),
@@ -790,6 +917,27 @@ void main() {
         expect(
           value,
           equals(const GuildFailure.unexpected()),
+        );
+      },
+    );
+
+    test(
+      'should return a GuildFailure.badRequest when DioError is thrown',
+      () async {
+        // arrange
+        setUpHttp400Failure();
+
+        // act
+        final result = await repository.joinGuild(link);
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const GuildFailure.badRequest("Message")),
         );
       },
     );

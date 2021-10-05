@@ -22,11 +22,16 @@ class GetInviteLinkCubit extends Cubit<GetInviteLinkState> {
     bool isPermanent = false,
   }) async {
     emit(const GetInviteLinkState.fetchInProgress());
-    final failureOrLink = await _repository.getInviteLink(guildId);
+    final failureOrLink = await _repository.getInviteLink(
+      guildId,
+      isPermanent: isPermanent,
+    );
     emit(
       failureOrLink.fold(
         (f) => GetInviteLinkState.fetchFailure(f),
-        (inviteLink) => GetInviteLinkState.fetchSuccess(inviteLink),
+        // Invite link contains "", so gotta remove it
+        (inviteLink) =>
+            GetInviteLinkState.fetchSuccess(inviteLink.replaceAll('"', '')),
       ),
     );
   }

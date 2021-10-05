@@ -24,6 +24,12 @@ class _$MessageFailureTearOff {
   _FileTooLarge fileTooLarge() {
     return const _FileTooLarge();
   }
+
+  _BadRequest badRequest(String message) {
+    return _BadRequest(
+      message,
+    );
+  }
 }
 
 /// @nodoc
@@ -35,18 +41,21 @@ mixin _$MessageFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() fileTooLarge,
+    required TResult Function(String message) badRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? fileTooLarge,
+    TResult Function(String message)? badRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? fileTooLarge,
+    TResult Function(String message)? badRequest,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,18 +63,21 @@ mixin _$MessageFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_FileTooLarge value) fileTooLarge,
+    required TResult Function(_BadRequest value) badRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_FileTooLarge value)? fileTooLarge,
+    TResult Function(_BadRequest value)? badRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_FileTooLarge value)? fileTooLarge,
+    TResult Function(_BadRequest value)? badRequest,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -129,6 +141,7 @@ class _$_Unexpected implements _Unexpected {
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() fileTooLarge,
+    required TResult Function(String message) badRequest,
   }) {
     return unexpected();
   }
@@ -138,6 +151,7 @@ class _$_Unexpected implements _Unexpected {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? fileTooLarge,
+    TResult Function(String message)? badRequest,
   }) {
     return unexpected?.call();
   }
@@ -147,6 +161,7 @@ class _$_Unexpected implements _Unexpected {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? fileTooLarge,
+    TResult Function(String message)? badRequest,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -160,6 +175,7 @@ class _$_Unexpected implements _Unexpected {
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_FileTooLarge value) fileTooLarge,
+    required TResult Function(_BadRequest value) badRequest,
   }) {
     return unexpected(this);
   }
@@ -169,6 +185,7 @@ class _$_Unexpected implements _Unexpected {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_FileTooLarge value)? fileTooLarge,
+    TResult Function(_BadRequest value)? badRequest,
   }) {
     return unexpected?.call(this);
   }
@@ -178,6 +195,7 @@ class _$_Unexpected implements _Unexpected {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_FileTooLarge value)? fileTooLarge,
+    TResult Function(_BadRequest value)? badRequest,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -233,6 +251,7 @@ class _$_FileTooLarge implements _FileTooLarge {
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
     required TResult Function() fileTooLarge,
+    required TResult Function(String message) badRequest,
   }) {
     return fileTooLarge();
   }
@@ -242,6 +261,7 @@ class _$_FileTooLarge implements _FileTooLarge {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? fileTooLarge,
+    TResult Function(String message)? badRequest,
   }) {
     return fileTooLarge?.call();
   }
@@ -251,6 +271,7 @@ class _$_FileTooLarge implements _FileTooLarge {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? fileTooLarge,
+    TResult Function(String message)? badRequest,
     required TResult orElse(),
   }) {
     if (fileTooLarge != null) {
@@ -264,6 +285,7 @@ class _$_FileTooLarge implements _FileTooLarge {
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_FileTooLarge value) fileTooLarge,
+    required TResult Function(_BadRequest value) badRequest,
   }) {
     return fileTooLarge(this);
   }
@@ -273,6 +295,7 @@ class _$_FileTooLarge implements _FileTooLarge {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_FileTooLarge value)? fileTooLarge,
+    TResult Function(_BadRequest value)? badRequest,
   }) {
     return fileTooLarge?.call(this);
   }
@@ -282,6 +305,7 @@ class _$_FileTooLarge implements _FileTooLarge {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_FileTooLarge value)? fileTooLarge,
+    TResult Function(_BadRequest value)? badRequest,
     required TResult orElse(),
   }) {
     if (fileTooLarge != null) {
@@ -293,4 +317,143 @@ class _$_FileTooLarge implements _FileTooLarge {
 
 abstract class _FileTooLarge implements MessageFailure {
   const factory _FileTooLarge() = _$_FileTooLarge;
+}
+
+/// @nodoc
+abstract class _$BadRequestCopyWith<$Res> {
+  factory _$BadRequestCopyWith(
+          _BadRequest value, $Res Function(_BadRequest) then) =
+      __$BadRequestCopyWithImpl<$Res>;
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$BadRequestCopyWithImpl<$Res> extends _$MessageFailureCopyWithImpl<$Res>
+    implements _$BadRequestCopyWith<$Res> {
+  __$BadRequestCopyWithImpl(
+      _BadRequest _value, $Res Function(_BadRequest) _then)
+      : super(_value, (v) => _then(v as _BadRequest));
+
+  @override
+  _BadRequest get _value => super._value as _BadRequest;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_BadRequest(
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_BadRequest implements _BadRequest {
+  const _$_BadRequest(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'MessageFailure.badRequest(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _BadRequest &&
+            (identical(other.message, message) ||
+                const DeepCollectionEquality().equals(other.message, message)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+
+  @JsonKey(ignore: true)
+  @override
+  _$BadRequestCopyWith<_BadRequest> get copyWith =>
+      __$BadRequestCopyWithImpl<_BadRequest>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() fileTooLarge,
+    required TResult Function(String message) badRequest,
+  }) {
+    return badRequest(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? fileTooLarge,
+    TResult Function(String message)? badRequest,
+  }) {
+    return badRequest?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? fileTooLarge,
+    TResult Function(String message)? badRequest,
+    required TResult orElse(),
+  }) {
+    if (badRequest != null) {
+      return badRequest(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_FileTooLarge value) fileTooLarge,
+    required TResult Function(_BadRequest value) badRequest,
+  }) {
+    return badRequest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_FileTooLarge value)? fileTooLarge,
+    TResult Function(_BadRequest value)? badRequest,
+  }) {
+    return badRequest?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_FileTooLarge value)? fileTooLarge,
+    TResult Function(_BadRequest value)? badRequest,
+    required TResult orElse(),
+  }) {
+    if (badRequest != null) {
+      return badRequest(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _BadRequest implements MessageFailure {
+  const factory _BadRequest(String message) = _$_BadRequest;
+
+  String get message => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$BadRequestCopyWith<_BadRequest> get copyWith =>
+      throw _privateConstructorUsedError;
 }

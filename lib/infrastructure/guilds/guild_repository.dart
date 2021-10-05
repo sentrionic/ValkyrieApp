@@ -8,6 +8,7 @@ import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/domain/guilds/guild_failure.dart';
 import 'package:valkyrie_app/domain/guilds/i_guild_repository.dart';
+import 'package:valkyrie_app/infrastructure/core/field_error.dart';
 import 'package:valkyrie_app/infrastructure/guilds/guild_dto.dart';
 
 @LazySingleton(as: IGuildRepository)
@@ -47,6 +48,25 @@ class GuildRepository extends IGuildRepository {
       return right(GuildDto.fromMap(result).toDomain());
     } on DioError catch (err) {
       print(err);
+      if (err.response?.statusCode == 400) {
+        final result = Map<String, dynamic>.from(
+          jsonDecode(err.response!.toString()),
+        );
+
+        if (result["errors"] != null) {
+          final list = List<Map<String, dynamic>>.from(result["errors"]);
+          final errors = list.map((e) => FieldError.fromMap(e)).toList();
+          if (errors.isNotEmpty) {
+            return left(GuildFailure.badRequest(errors[0].message));
+          }
+        }
+
+        if (result["error"] != null) {
+          final error = Map<String, dynamic>.from(result["error"]);
+          final fieldError = FieldError.fromMap(error);
+          return left(GuildFailure.badRequest(fieldError.message));
+        }
+      }
       return left(const GuildFailure.unexpected());
     } on SocketException catch (err) {
       print(err);
@@ -105,6 +125,12 @@ class GuildRepository extends IGuildRepository {
       return right(unit);
     } on DioError catch (err) {
       print(err);
+      if (err.response?.statusCode == 400) {
+        final errors = FieldError.getErrors(err.response!);
+        if (errors.isNotEmpty) {
+          return left(GuildFailure.badRequest(errors[0].message));
+        }
+      }
       return left(const GuildFailure.unexpected());
     } on SocketException catch (err) {
       print(err);
@@ -159,8 +185,9 @@ class GuildRepository extends IGuildRepository {
       final result = jsonDecode(response.data);
       return right(GuildDto.fromMap(result).toDomain());
     } on DioError catch (err) {
-      if (err.response?.statusCode == 404) {
-        return left(const GuildFailure.invalidLink());
+      if (err.response?.statusCode == 400) {
+        final error = FieldError.getError(err.response!);
+        return left(GuildFailure.badRequest(error.message));
       }
       return left(const GuildFailure.unexpected());
     } on SocketException catch (err) {

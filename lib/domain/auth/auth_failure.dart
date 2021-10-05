@@ -4,12 +4,8 @@ part 'auth_failure.freezed.dart';
 
 @freezed
 class AuthFailure with _$AuthFailure {
-  const factory AuthFailure.invalidUsername() = InvalidUsername;
-  const factory AuthFailure.invalidEmail() = InvalidEmail;
-  const factory AuthFailure.emailAlreadyInUse() = EmailAlreadyInUse;
-  const factory AuthFailure.invalidPassword() = InvalidPassword;
-  const factory AuthFailure.passwordsDontMatch() = PasswordsDontMatch;
-  const factory AuthFailure.invalidCredentials() = InvalidCredentials;
-  const factory AuthFailure.serverError() = ServerError;
-  const factory AuthFailure.badRequest(String error) = BadRequest;
+  const factory AuthFailure.passwordsDontMatch() = _PasswordsDontMatch;
+  const factory AuthFailure.invalidCredentials() = _InvalidCredentials;
+  const factory AuthFailure.serverError() = _ServerError;
+  const factory AuthFailure.badRequest(String error) = _BadRequest;
 }

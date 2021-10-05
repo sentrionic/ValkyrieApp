@@ -196,6 +196,15 @@ class AccountForm extends StatelessWidget {
               ),
             ],
           ),
+          loadFailure: (failure) => const Center(
+            child: Text(
+              "Something went wrong.\nTry loggin out and loggin back in.",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+          ),
           orElse: () => CenterLoadingIndicator(),
         );
       },

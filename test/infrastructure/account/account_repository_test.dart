@@ -39,6 +39,18 @@ void main() {
       );
     }
 
+    void setUpHttp404Failure() {
+      when(() => client.get(any())).thenThrow(
+        DioError(
+          response: Response(
+            statusCode: 404,
+            requestOptions: RequestOptions(path: '/account', method: "GET"),
+          ),
+          requestOptions: RequestOptions(path: '/account', method: "GET"),
+        ),
+      );
+    }
+
     void setUpHttpFailure() {
       when(() => client.get(any())).thenThrow(
         DioError(
@@ -111,6 +123,27 @@ void main() {
     );
 
     test(
+      'should return an AccountFailure.unauthenticated when DioError is thrown with code 404',
+      () async {
+        // arrange
+        setUpHttp404Failure();
+
+        // act
+        final result = await repository.getAccount();
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const AccountFailure.unauthenticated()),
+        );
+      },
+    );
+
+    test(
       'should return an AccountFailure when SocketException is thrown',
       () async {
         // arrange
@@ -137,6 +170,8 @@ void main() {
     final result = json.decode(data);
     final account = AccountDto.fromMap(result);
 
+    final errorData = fixture('field_errors.json');
+
     final email = getRandomEmail();
     final name = getRandomName();
 
@@ -160,6 +195,24 @@ void main() {
         ),
       ).thenThrow(
         DioError(
+          requestOptions: RequestOptions(path: '/account'),
+        ),
+      );
+    }
+
+    void setUpHttp400Failure() {
+      when(
+        () => client.put(
+          any(),
+          data: any(named: "data"),
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            data: errorData,
+            statusCode: 400,
+            requestOptions: RequestOptions(path: '/account'),
+          ),
           requestOptions: RequestOptions(path: '/account'),
         ),
       );
@@ -239,6 +292,30 @@ void main() {
         expect(
           value,
           equals(const AccountFailure.unexpected()),
+        );
+      },
+    );
+
+    test(
+      'should return an AccountFailure.badRequest when DioError is thrown',
+      () async {
+        // arrange
+        setUpHttp400Failure();
+
+        // act
+        final result = await repository.updateAccount(
+          emailAddress: EmailAddress(email),
+          username: Username(name),
+        );
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const AccountFailure.badRequest("Message")),
         );
       },
     );

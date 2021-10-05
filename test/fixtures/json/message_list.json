@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1440949678773374976",
+    "text": "This is a test",
+    "createdAt": "2021-09-23T08:02:29.627925Z",
+    "updatedAt": "2021-09-23T08:02:29.627925Z",
+    "attachment": null,
+    "user": {
+      "id": "1440949629427388416",
+      "username": "Sen",
+      "image": "https://harmony-cdn.s3.eu-central-1.amazonaws.com/files/valkyrie/users/1440949629427388416/1440950088254885888.jpeg",
+      "isOnline": false,
+      "createdAt": "2021-09-23T08:02:17.865655Z",
+      "updatedAt": "2021-09-30T17:15:18.536807Z",
+      "nickname": null,
+      "color": null,
+      "isFriend": false
+    }
+  }
+]

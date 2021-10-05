@@ -6,7 +6,7 @@ class CenterLoadingIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        color: ThemeColors.appBackground,
+        color: ThemeColors.dmBackground,
         child: const CircularProgressIndicator(
           valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
         ),

@@ -50,6 +50,20 @@ void main() {
       );
     }
 
+    void setUpHttp404Failure() {
+      when(() => client.get(any())).thenThrow(
+        DioError(
+          response: Response(
+            statusCode: 404,
+            requestOptions:
+                RequestOptions(path: '/channels/$guildId', method: "GET"),
+          ),
+          requestOptions:
+              RequestOptions(path: '/channels/$guildId', method: "GET"),
+        ),
+      );
+    }
+
     void setUpHttpSocketException() {
       when(() => client.get(any())).thenThrow(
         const SocketException("Not connected"),
@@ -111,6 +125,27 @@ void main() {
     );
 
     test(
+      'should return a ChannelFailure.notFound when DioError is thrown',
+      () async {
+        // arrange
+        setUpHttp404Failure();
+
+        // act
+        final result = await repository.getGuildChannels(guildId);
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const ChannelFailure.notFound()),
+        );
+      },
+    );
+
+    test(
       'should return a ChannelFailure when SocketException is thrown',
       () async {
         // arrange
@@ -138,6 +173,9 @@ void main() {
     final data = fixture('channel.json');
     final result = json.decode(data);
     final tMockChannel = ChannelDto.fromMap(result).toDomain();
+
+    final errorsData = fixture('field_errors.json');
+    final errorData = fixture('field_error.json');
 
     void setUpHttpSuccess() {
       when(
@@ -170,6 +208,30 @@ void main() {
         ),
       ).thenThrow(
         DioError(
+          requestOptions:
+              RequestOptions(path: '/channels/$guildId', method: "POST"),
+        ),
+      );
+    }
+
+    void setUpHttp400Failure(String data) {
+      when(
+        () => client.post(
+          any(),
+          data: {
+            "name": name,
+            "isPublic": true,
+            "members": [],
+          },
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            data: data,
+            statusCode: 400,
+            requestOptions:
+                RequestOptions(path: '/channels/$guildId', method: "POST"),
+          ),
           requestOptions:
               RequestOptions(path: '/channels/$guildId', method: "POST"),
         ),
@@ -251,6 +313,48 @@ void main() {
     );
 
     test(
+      'should return a ChannelFailure.badRequest when DioError is thrown with status 400 and multiple errors',
+      () async {
+        // arrange
+        setUpHttp400Failure(errorsData);
+
+        // act
+        final result = await repository.createChannel(guildId, name);
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const ChannelFailure.badRequest("Message")),
+        );
+      },
+    );
+
+    test(
+      'should return a ChannelFailure.badRequest when DioError is thrown with status 400 and single error',
+      () async {
+        // arrange
+        setUpHttp400Failure(errorData);
+
+        // act
+        final result = await repository.createChannel(guildId, name);
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const ChannelFailure.badRequest("Message")),
+        );
+      },
+    );
+
+    test(
       'should return a ChannelFailure when SocketException is thrown',
       () async {
         // arrange
@@ -275,6 +379,7 @@ void main() {
   group("EditChannel", () {
     final channelId = getRandomId();
     final name = getRandomName();
+    final data = fixture('field_errors.json');
 
     void setUpHttpSuccess() {
       when(
@@ -306,6 +411,30 @@ void main() {
         ),
       ).thenThrow(
         DioError(
+          requestOptions:
+              RequestOptions(path: '/channels/$channelId', method: "PUT"),
+        ),
+      );
+    }
+
+    void setUpHttp400Failure() {
+      when(
+        () => client.put(
+          any(),
+          data: {
+            "name": name,
+            "isPublic": true,
+            "members": [],
+          },
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            statusCode: 400,
+            data: data,
+            requestOptions:
+                RequestOptions(path: '/channels/$channelId', method: "PUT"),
+          ),
           requestOptions:
               RequestOptions(path: '/channels/$channelId', method: "PUT"),
         ),
@@ -392,6 +521,27 @@ void main() {
     );
 
     test(
+      'should return a ChannelFailure.badRequest when DioError is thrown',
+      () async {
+        // arrange
+        setUpHttp400Failure();
+
+        // act
+        final result = await repository.editChannel(channelId, name);
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const ChannelFailure.badRequest("Message")),
+        );
+      },
+    );
+
+    test(
       'should return a ChannelFailure when SocketException is thrown',
       () async {
         // arrange
@@ -415,6 +565,7 @@ void main() {
 
   group("DeleteChannel", () {
     final id = getRandomId();
+    final data = fixture('field_error.json');
 
     void setUpHttpSuccess() {
       when(
@@ -436,6 +587,23 @@ void main() {
         ),
       ).thenThrow(
         DioError(
+          requestOptions: RequestOptions(path: '/channels/$id'),
+        ),
+      );
+    }
+
+    void setUpHttp400Failure() {
+      when(
+        () => client.delete(
+          any(),
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            data: data,
+            statusCode: 400,
+            requestOptions: RequestOptions(path: '/channels/$id'),
+          ),
           requestOptions: RequestOptions(path: '/channels/$id'),
         ),
       );
@@ -496,6 +664,27 @@ void main() {
         expect(
           value,
           equals(const ChannelFailure.unexpected()),
+        );
+      },
+    );
+
+    test(
+      'should return a ChannelFailure.badRequest when DioError is thrown',
+      () async {
+        // arrange
+        setUpHttp400Failure();
+
+        // act
+        final result = await repository.deleteChannel(id);
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const ChannelFailure.badRequest("Message")),
         );
       },
     );

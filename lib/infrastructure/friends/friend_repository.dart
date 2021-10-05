@@ -8,6 +8,7 @@ import 'package:valkyrie_app/domain/friends/friend.dart';
 import 'package:valkyrie_app/domain/friends/friend_failure.dart';
 import 'package:valkyrie_app/domain/friends/friend_request.dart';
 import 'package:valkyrie_app/domain/friends/i_friend_repository.dart';
+import 'package:valkyrie_app/infrastructure/core/field_error.dart';
 import 'package:valkyrie_app/infrastructure/friends/friend_dto.dart';
 import 'package:valkyrie_app/infrastructure/friends/friend_request_dto.dart';
 
@@ -42,6 +43,15 @@ class FriendRepository extends IFriendRepository {
       return right(unit);
     } on DioError catch (err) {
       print(err);
+      if (err.response?.statusCode == 400) {
+        final error = FieldError.getError(err.response!);
+        return left(FriendFailure.badRequest(error.message));
+      }
+      if (err.response?.statusCode == 404) {
+        return left(
+          const FriendFailure.badRequest("No user with that ID found"),
+        );
+      }
       return left(const FriendFailure.unexpected());
     } on SocketException catch (err) {
       print(err);
@@ -56,6 +66,10 @@ class FriendRepository extends IFriendRepository {
       return right(unit);
     } on DioError catch (err) {
       print(err);
+      if (err.response?.statusCode == 400) {
+        final error = FieldError.getError(err.response!);
+        return left(FriendFailure.badRequest(error.message));
+      }
       return left(const FriendFailure.unexpected());
     } on SocketException catch (err) {
       print(err);
@@ -70,6 +84,10 @@ class FriendRepository extends IFriendRepository {
       return right(unit);
     } on DioError catch (err) {
       print(err);
+      if (err.response?.statusCode == 400) {
+        final error = FieldError.getError(err.response!);
+        return left(FriendFailure.badRequest(error.message));
+      }
       return left(const FriendFailure.unexpected());
     } on SocketException catch (err) {
       print(err);
@@ -84,6 +102,10 @@ class FriendRepository extends IFriendRepository {
       return right(unit);
     } on DioError catch (err) {
       print(err);
+      if (err.response?.statusCode == 400) {
+        final error = FieldError.getError(err.response!);
+        return left(FriendFailure.badRequest(error.message));
+      }
       return left(const FriendFailure.unexpected());
     } on SocketException catch (err) {
       print(err);

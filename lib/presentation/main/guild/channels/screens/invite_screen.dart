@@ -57,19 +57,21 @@ class _InviteScreenForm extends HookWidget {
                     height: 45,
                     child: BlocBuilder<GetInviteLinkCubit, GetInviteLinkState>(
                       builder: (context, state) => state.maybeMap(
-                        fetchSuccess: (fetch) => OutlinedButton(
-                          onPressed: () => _copyToClipboard(
-                            context,
-                            fetch.inviteLink,
-                          ),
-                          child: Text(
-                            fetch.inviteLink,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
+                        fetchSuccess: (fetch) {
+                          return OutlinedButton(
+                            onPressed: () => _copyToClipboard(
+                              context,
+                              fetch.inviteLink,
                             ),
-                          ),
-                        ),
+                            child: Text(
+                              fetch.inviteLink,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                          );
+                        },
                         orElse: () => OutlinedButton(
                           onPressed: () {},
                           child: const Text(

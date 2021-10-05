@@ -135,6 +135,7 @@ void main() {
 
   group("SendFriendRequest", () {
     final id = getRandomId();
+    final data = fixture('field_error.json');
 
     void setUpHttpSuccess() {
       when(
@@ -156,6 +157,51 @@ void main() {
         ),
       ).thenThrow(
         DioError(
+          requestOptions: RequestOptions(
+            path: '/account/$id/friend',
+            method: "POST",
+          ),
+        ),
+      );
+    }
+
+    void setUpHttp400Failure() {
+      when(
+        () => client.post(
+          any(),
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            statusCode: 400,
+            data: data,
+            requestOptions: RequestOptions(
+              path: '/account/$id/friend',
+              method: "POST",
+            ),
+          ),
+          requestOptions: RequestOptions(
+            path: '/account/$id/friend',
+            method: "POST",
+          ),
+        ),
+      );
+    }
+
+    void setUpHttp404Failure() {
+      when(
+        () => client.post(
+          any(),
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            statusCode: 404,
+            requestOptions: RequestOptions(
+              path: '/account/$id/friend',
+              method: "POST",
+            ),
+          ),
           requestOptions: RequestOptions(
             path: '/account/$id/friend',
             method: "POST",
@@ -234,6 +280,48 @@ void main() {
     );
 
     test(
+      'should return a FriendFailure.badRequest when DioError is thrown with status 400',
+      () async {
+        // arrange
+        setUpHttp400Failure();
+
+        // act
+        final result = await repository.sendFriendRequest(id);
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const FriendFailure.badRequest("Message")),
+        );
+      },
+    );
+
+    test(
+      'should return a FriendFailure.badRequest when DioError is thrown with status 404',
+      () async {
+        // arrange
+        setUpHttp404Failure();
+
+        // act
+        final result = await repository.sendFriendRequest(id);
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const FriendFailure.badRequest("No user with that ID found")),
+        );
+      },
+    );
+
+    test(
       'should return a FriendFailure when SocketException is thrown',
       () async {
         // arrange
@@ -257,6 +345,7 @@ void main() {
 
   group("RemoveFriend", () {
     final id = getRandomId();
+    final data = fixture('field_error.json');
 
     void setUpHttpSuccess() {
       when(
@@ -278,6 +367,29 @@ void main() {
         ),
       ).thenThrow(
         DioError(
+          requestOptions: RequestOptions(
+            path: '/account/$id/friend',
+            method: "DELETE",
+          ),
+        ),
+      );
+    }
+
+    void setUpHttp400Failure() {
+      when(
+        () => client.delete(
+          any(),
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            statusCode: 400,
+            data: data,
+            requestOptions: RequestOptions(
+              path: '/account/$id/friend',
+              method: "DELETE",
+            ),
+          ),
           requestOptions: RequestOptions(
             path: '/account/$id/friend',
             method: "DELETE",
@@ -356,6 +468,27 @@ void main() {
     );
 
     test(
+      'should return a FriendFailure.badRequest when DioError is thrown with status 400',
+      () async {
+        // arrange
+        setUpHttp400Failure();
+
+        // act
+        final result = await repository.removeFriend(id);
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const FriendFailure.badRequest("Message")),
+        );
+      },
+    );
+
+    test(
       'should return a FriendFailure when SocketException is thrown',
       () async {
         // arrange
@@ -379,6 +512,7 @@ void main() {
 
   group("AcceptRequest", () {
     final id = getRandomId();
+    final data = fixture("field_error.json");
 
     void setUpHttpSuccess() {
       when(
@@ -400,6 +534,29 @@ void main() {
         ),
       ).thenThrow(
         DioError(
+          requestOptions: RequestOptions(
+            path: '/account/$id/friend/accept',
+            method: "POST",
+          ),
+        ),
+      );
+    }
+
+    void setUpHttp400Failure() {
+      when(
+        () => client.post(
+          any(),
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            statusCode: 400,
+            data: data,
+            requestOptions: RequestOptions(
+              path: '/account/$id/friend/accept',
+              method: "POST",
+            ),
+          ),
           requestOptions: RequestOptions(
             path: '/account/$id/friend/accept',
             method: "POST",
@@ -478,6 +635,27 @@ void main() {
     );
 
     test(
+      'should return a FriendFailure.badRequest when DioError is thrown with status 400',
+      () async {
+        // arrange
+        setUpHttp400Failure();
+
+        // act
+        final result = await repository.acceptRequest(id);
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const FriendFailure.badRequest("Message")),
+        );
+      },
+    );
+
+    test(
       'should return a FriendFailure when SocketException is thrown',
       () async {
         // arrange
@@ -501,6 +679,7 @@ void main() {
 
   group("DeclineRequest", () {
     final id = getRandomId();
+    final data = fixture("field_error.json");
 
     void setUpHttpSuccess() {
       when(
@@ -522,6 +701,29 @@ void main() {
         ),
       ).thenThrow(
         DioError(
+          requestOptions: RequestOptions(
+            path: '/account/$id/friend/cancel',
+            method: "POST",
+          ),
+        ),
+      );
+    }
+
+    void setUpHttp400Failure() {
+      when(
+        () => client.post(
+          any(),
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            statusCode: 400,
+            data: data,
+            requestOptions: RequestOptions(
+              path: '/account/$id/friend/cancel',
+              method: "POST",
+            ),
+          ),
           requestOptions: RequestOptions(
             path: '/account/$id/friend/cancel',
             method: "POST",
@@ -595,6 +797,27 @@ void main() {
         expect(
           value,
           equals(const FriendFailure.unexpected()),
+        );
+      },
+    );
+
+    test(
+      'should return a FriendFailure.badRequest when DioError is thrown with status 400',
+      () async {
+        // arrange
+        setUpHttp400Failure();
+
+        // act
+        final result = await repository.declineRequest(id);
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const FriendFailure.badRequest("Message")),
         );
       },
     );

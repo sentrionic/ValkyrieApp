@@ -43,6 +43,7 @@ class FriendListScreen extends StatelessWidget {
                 actionFailure: (state) {
                   showError(
                     message: state.friendFailure.map(
+                      badRequest: (failure) => failure.message,
                       unexpected: (_) =>
                           "Something went wrong. Try again later.",
                     ),
@@ -66,6 +67,7 @@ class FriendListScreen extends StatelessWidget {
                 actionFailure: (state) {
                   showError(
                     message: state.friendFailure.map(
+                      badRequest: (failure) => failure.message,
                       unexpected: (_) =>
                           "Something went wrong. Try again later.",
                     ),
@@ -95,6 +97,7 @@ class FriendListScreen extends StatelessWidget {
                 fetchFailure: (state) {
                   showError(
                     message: state.channelFailure.map(
+                      notFound: (_) => "Could not find the member",
                       unexpected: (_) =>
                           "Something went wrong. Try again later.",
                     ),

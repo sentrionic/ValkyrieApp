@@ -62,6 +62,26 @@ void main() {
       );
     }
 
+    void setUpHttp401Failure() {
+      when(
+        () => client.post(
+          any(),
+          data: {
+            "email": email,
+            "password": password,
+          },
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            statusCode: 401,
+            requestOptions: RequestOptions(path: '/account/login'),
+          ),
+          requestOptions: RequestOptions(path: '/account/login'),
+        ),
+      );
+    }
+
     void setUpHttpSocketException() {
       when(
         () => client.post(
@@ -145,29 +165,10 @@ void main() {
     );
 
     test(
-      'should return an AuthFailure.invalidCredentials when DioError is thrown',
+      'should return an AuthFailure.invalidCredentials when DioError is thrown with status 401',
       () async {
         // arrange
-        when(
-          () => client.post(
-            any(),
-            data: {
-              "email": email,
-              "password": password,
-            },
-          ),
-        ).thenThrow(
-          DioError(
-            response: Response(
-              requestOptions: RequestOptions(path: 'account/login'),
-              statusCode: 401,
-            ),
-            requestOptions: RequestOptions(
-              path: 'account/login',
-              method: "POST",
-            ),
-          ),
-        );
+        setUpHttp401Failure();
 
         // act
         final result = await repository.login(
@@ -214,6 +215,7 @@ void main() {
 
   group('Register', () {
     final data = fixture('account.json');
+    final errorData = fixture('field_errors.json');
     final email = getRandomEmail();
     final password = getRandomString(12);
     final username = getRandomName();
@@ -250,6 +252,28 @@ void main() {
         ),
       ).thenThrow(
         DioError(
+          requestOptions: RequestOptions(path: '/account/register'),
+        ),
+      );
+    }
+
+    void setUpHttp400Failure() {
+      when(
+        () => client.post(
+          any(),
+          data: {
+            "email": email,
+            "password": password,
+            "username": username,
+          },
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            data: errorData,
+            statusCode: 400,
+            requestOptions: RequestOptions(path: '/account/register'),
+          ),
           requestOptions: RequestOptions(path: '/account/register'),
         ),
       );
@@ -343,6 +367,31 @@ void main() {
     );
 
     test(
+      'should return an AuthFailure.badRequest when DioError is thrown with status 400',
+      () async {
+        // arrange
+        setUpHttp400Failure();
+
+        // act
+        final result = await repository.register(
+          emailAddress: EmailAddress(email),
+          password: Password(password),
+          username: Username(username),
+        );
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const AuthFailure.badRequest("Message")),
+        );
+      },
+    );
+
+    test(
       'should return an AuthFailure when SocketException is thrown',
       () async {
         // arrange
@@ -371,6 +420,8 @@ void main() {
   group('ChangePassword', () {
     final oldPassword = getRandomString(8);
     final newPassword = getRandomString(8);
+    final errorData = fixture('field_error.json');
+    final errorsData = fixture('field_errors.json');
 
     void setUpHttpSuccess() {
       when(
@@ -402,6 +453,50 @@ void main() {
         ),
       ).thenThrow(
         DioError(
+          requestOptions: RequestOptions(path: '/account/change-password'),
+        ),
+      );
+    }
+
+    void setUpHttp401Failure() {
+      when(
+        () => client.put(
+          any(),
+          data: {
+            "currentPassword": oldPassword,
+            "newPassword": newPassword,
+            "confirmNewPassword": newPassword
+          },
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            data: errorData,
+            statusCode: 401,
+            requestOptions: RequestOptions(path: '/account/change-password'),
+          ),
+          requestOptions: RequestOptions(path: '/account/change-password'),
+        ),
+      );
+    }
+
+    void setUpHttp400Failure() {
+      when(
+        () => client.put(
+          any(),
+          data: {
+            "currentPassword": oldPassword,
+            "newPassword": newPassword,
+            "confirmNewPassword": newPassword
+          },
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            data: errorsData,
+            statusCode: 400,
+            requestOptions: RequestOptions(path: '/account/change-password'),
+          ),
           requestOptions: RequestOptions(path: '/account/change-password'),
         ),
       );
@@ -498,27 +593,7 @@ void main() {
       'should return an AuthFailure.badRequest when the oldPassword is wrong and DioError is thrown',
       () async {
         // arrange
-        when(
-          () => client.put(
-            any(),
-            data: {
-              "currentPassword": oldPassword,
-              "newPassword": newPassword,
-              "confirmNewPassword": newPassword
-            },
-          ),
-        ).thenThrow(
-          DioError(
-            response: Response(
-              requestOptions: RequestOptions(path: 'account/change-password'),
-              statusCode: 401,
-            ),
-            requestOptions: RequestOptions(
-              path: 'account/change-password',
-              method: "PUT",
-            ),
-          ),
-        );
+        setUpHttp401Failure();
 
         // act
         final result = await repository.changePassword(
@@ -534,7 +609,32 @@ void main() {
 
         expect(
           value,
-          equals(const AuthFailure.badRequest("Invalid old password")),
+          equals(const AuthFailure.badRequest("Message")),
+        );
+      },
+    );
+
+    test(
+      'should return an AuthFailure.badRequest when DioError is thrown with status 400',
+      () async {
+        // arrange
+        setUpHttp400Failure();
+
+        // act
+        final result = await repository.changePassword(
+          oldPassword: Password(oldPassword),
+          newPassword: Password(newPassword),
+          confirmNewPassword: Password(newPassword),
+        );
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const AuthFailure.badRequest("Message")),
         );
       },
     );

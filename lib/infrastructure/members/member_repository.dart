@@ -9,6 +9,7 @@ import 'package:valkyrie_app/domain/member/banned_member.dart';
 import 'package:valkyrie_app/domain/member/i_member_repository.dart';
 import 'package:valkyrie_app/domain/member/member.dart';
 import 'package:valkyrie_app/domain/member/member_failure.dart';
+import 'package:valkyrie_app/infrastructure/core/field_error.dart';
 import 'package:valkyrie_app/infrastructure/guilds/guild_appearance_dto.dart';
 import 'package:valkyrie_app/infrastructure/members/banned_member_dto.dart';
 
@@ -26,14 +27,10 @@ class MemberRepository extends IMemberRepository {
   ) async {
     try {
       final response = await _dio.get('/guilds/$guildId/members');
-
-      if (response.statusCode == 200) {
-        final results = jsonDecode(response.data);
-        final List<Member> list = [];
-        results.forEach((c) => list.add(MemberDto.fromMap(c).toDomain()));
-        return right(list);
-      }
-      return left(const MemberFailure.unexpected());
+      final results = jsonDecode(response.data);
+      final List<Member> list = [];
+      results.forEach((c) => list.add(MemberDto.fromMap(c).toDomain()));
+      return right(list);
     } on DioError catch (err) {
       print(err);
       return left(const MemberFailure.unexpected());
@@ -50,12 +47,9 @@ class MemberRepository extends IMemberRepository {
     try {
       final response = await _dio.get('/guilds/$guildId/member');
 
-      if (response.statusCode == 200) {
-        final results = jsonDecode(response.data);
-        final settings = GuildAppearanceDto.fromMap(results).toDomain();
-        return right(settings);
-      }
-      return left(const MemberFailure.unexpected());
+      final results = jsonDecode(response.data);
+      final settings = GuildAppearanceDto.fromMap(results).toDomain();
+      return right(settings);
     } on DioError catch (err) {
       print(err);
       return left(const MemberFailure.unexpected());
@@ -83,6 +77,10 @@ class MemberRepository extends IMemberRepository {
       return right(unit);
     } on DioError catch (err) {
       print(err);
+      if (err.response?.statusCode == 400) {
+        final error = FieldError.getError(err.response!);
+        return left(MemberFailure.badRequest(error.message));
+      }
       return left(const MemberFailure.unexpected());
     } on SocketException catch (err) {
       print(err);

@@ -24,6 +24,7 @@ class ManageBansForm extends StatelessWidget {
           unbanFailure: (state) {
             showError(
               message: state.failure.map(
+                badRequest: (failure) => failure.message,
                 unexpected: (_) => "Something went wrong, try again later.",
               ),
             ).show(context);

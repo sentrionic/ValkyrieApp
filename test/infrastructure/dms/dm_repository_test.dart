@@ -166,6 +166,28 @@ void main() {
       );
     }
 
+    void setUpHttp404Failure() {
+      when(
+        () => client.post(
+          any(),
+        ),
+      ).thenThrow(
+        DioError(
+          response: Response(
+            statusCode: 404,
+            requestOptions: RequestOptions(
+              path: '/channels/${tMockChannel.user.id}/dm',
+              method: "POST",
+            ),
+          ),
+          requestOptions: RequestOptions(
+            path: '/channels/${tMockChannel.user.id}/dm',
+            method: "POST",
+          ),
+        ),
+      );
+    }
+
     void setUpHttpSocketException() {
       when(
         () => client.post(
@@ -233,6 +255,28 @@ void main() {
         expect(
           value,
           equals(const DMChannelFailure.unexpected()),
+        );
+      },
+    );
+
+    test(
+      'should return a DMChannelFailure.notFound when DioError is thrown with status 404',
+      () async {
+        // arrange
+        setUpHttp404Failure();
+
+        // act
+        final result =
+            await repository.getOrCreateDirectMessage(tMockChannel.user.id);
+
+        // assert
+        expect(result.isLeft(), true);
+
+        final value = result.fold((l) => l, (r) => r);
+
+        expect(
+          value,
+          equals(const DMChannelFailure.notFound()),
         );
       },
     );

@@ -30,7 +30,9 @@ class AccountRepository extends IAccountRepository {
       _setUserData(account);
       return right(account);
     } on DioError catch (err) {
-      print(err);
+      if (err.response?.statusCode == 404) {
+        return left(const AccountFailure.unauthenticated());
+      }
       return left(const AccountFailure.unexpected());
     } on SocketException catch (err) {
       print(err);

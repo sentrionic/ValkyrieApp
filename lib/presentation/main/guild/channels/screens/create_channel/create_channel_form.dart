@@ -24,6 +24,7 @@ class CreateChannelForm extends StatelessWidget {
             (failure) {
               showError(
                 message: failure.maybeMap(
+                  badRequest: (err) => err.message,
                   orElse: () => "Server Error. Try again later.",
                 ),
               ).show(context);

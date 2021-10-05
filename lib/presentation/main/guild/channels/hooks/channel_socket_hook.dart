@@ -10,6 +10,7 @@ import 'package:valkyrie_app/application/guilds/guild_list/guild_list_cubit.dart
 import 'package:valkyrie_app/infrastructure/channels/channel_dto.dart';
 import 'package:valkyrie_app/injection.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_cookie.dart';
+import 'package:valkyrie_app/presentation/common/utils/get_current_user.dart';
 import 'package:valkyrie_app/presentation/main/home/home_screen.dart';
 import 'package:web_socket_channel/io.dart';
 
@@ -28,6 +29,7 @@ class _ChannelSocketHookState extends HookState<void, ChannelSocketHook> {
   late IOWebSocketChannel socket;
   final baseUrl = getIt<String>(instanceName: "WSUrl");
   final cookie = getCookie();
+  final current = getCurrentUser();
 
   @override
   Future<void> initHook() async {
@@ -40,6 +42,7 @@ class _ChannelSocketHookState extends HookState<void, ChannelSocketHook> {
       },
     );
     socket.emit('joinGuild', room: hook.guildId);
+    socket.emit('joinUser', room: current.id);
 
     socket.stream.listen((event) {
       final response = jsonDecode(event);
@@ -47,6 +50,13 @@ class _ChannelSocketHookState extends HookState<void, ChannelSocketHook> {
       switch (response["action"]) {
         //Channel events
         case "add_channel":
+          {
+            final channel = ChannelDto.fromMap(response["data"]).toDomain();
+            hook.context.read<ChannelListCubit>().addNewChannel(channel);
+            break;
+          }
+
+        case "add_private_channel":
           {
             final channel = ChannelDto.fromMap(response["data"]).toDomain();
             hook.context.read<ChannelListCubit>().addNewChannel(channel);
@@ -100,6 +110,7 @@ class _ChannelSocketHookState extends HookState<void, ChannelSocketHook> {
   @override
   void dispose() {
     socket.emit('leaveGuild', room: hook.guildId);
+    socket.emit('leaveRoom', room: current.id);
     socket.sink.close();
     super.dispose();
   }

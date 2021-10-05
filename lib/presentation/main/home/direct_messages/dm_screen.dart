@@ -56,6 +56,7 @@ class DMScreen extends StatelessWidget {
                   (failure) {
                     showError(
                       message: failure.map(
+                        badRequest: (failure) => failure.message,
                         unexpected: (_) =>
                             'Something went wrong. Try again later.',
                         fileTooLarge: (_) =>

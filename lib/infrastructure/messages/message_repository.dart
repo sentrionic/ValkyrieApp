@@ -8,6 +8,7 @@ import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/message/i_message_repository.dart';
 import 'package:valkyrie_app/domain/message/message.dart';
 import 'package:valkyrie_app/domain/message/message_failure.dart';
+import 'package:valkyrie_app/infrastructure/core/field_error.dart';
 
 import 'message_dto.dart';
 
@@ -26,13 +27,10 @@ class MessageRepository extends IMessageRepository {
       final cursorParam = cursor != null ? "?cursor=$cursor" : "";
       final response = await _dio.get('/messages/$channelId$cursorParam');
 
-      if (response.statusCode == 200) {
-        final results = jsonDecode(response.data);
-        final List<Message> list = [];
-        results.forEach((c) => list.add(MessageDto.fromMap(c).toDomain()));
-        return right(list);
-      }
-      return left(const MessageFailure.unexpected());
+      final results = jsonDecode(response.data);
+      final List<Message> list = [];
+      results.forEach((c) => list.add(MessageDto.fromMap(c).toDomain()));
+      return right(list);
     } on DioError catch (err) {
       print(err);
       return left(const MessageFailure.unexpected());
@@ -55,7 +53,13 @@ class MessageRepository extends IMessageRepository {
       );
       return right(unit);
     } on DioError catch (err) {
-      print(err.response);
+      print(err);
+      if (err.response?.statusCode == 400) {
+        final errors = FieldError.getErrors(err.response!);
+        if (errors.isNotEmpty) {
+          return left(MessageFailure.badRequest(errors[0].message));
+        }
+      }
       return left(const MessageFailure.unexpected());
     } on SocketException catch (err) {
       print(err);
@@ -86,6 +90,12 @@ class MessageRepository extends IMessageRepository {
       return right(unit);
     } on DioError catch (err) {
       print(err.response);
+      if (err.response?.statusCode == 400) {
+        final errors = FieldError.getErrors(err.response!);
+        if (errors.isNotEmpty) {
+          return left(MessageFailure.badRequest(errors[0].message));
+        }
+      }
       return left(const MessageFailure.unexpected());
     } on SocketException catch (err) {
       print(err);
@@ -106,6 +116,12 @@ class MessageRepository extends IMessageRepository {
       return right(unit);
     } on DioError catch (err) {
       print(err.response);
+      if (err.response?.statusCode == 400) {
+        final errors = FieldError.getErrors(err.response!);
+        if (errors.isNotEmpty) {
+          return left(MessageFailure.badRequest(errors[0].message));
+        }
+      }
       return left(const MessageFailure.unexpected());
     } on SocketException catch (err) {
       print(err);

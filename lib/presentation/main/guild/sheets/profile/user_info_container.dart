@@ -35,6 +35,7 @@ class UserInfoContainer extends StatelessWidget {
               fetchFailure: (state) {
                 showError(
                   message: state.channelFailure.map(
+                    notFound: (_) => "Could not find the member",
                     unexpected: (_) => "Something went wrong. Try again later.",
                   ),
                 ).show(context);
@@ -54,6 +55,7 @@ class UserInfoContainer extends StatelessWidget {
                 Navigator.of(context).pop();
                 showError(
                   message: state.friendFailure.map(
+                    badRequest: (failure) => failure.message,
                     unexpected: (_) => "Something went wrong. Try again later.",
                   ),
                 ).show(context);

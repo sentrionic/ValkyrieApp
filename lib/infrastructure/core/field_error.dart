@@ -27,4 +27,12 @@ class FieldError with _$FieldError {
     );
     return results.map((e) => FieldError.fromMap(e)).toList();
   }
+
+  // ignore: prefer_constructors_over_static_methods
+  static FieldError getError(Response<dynamic> response) {
+    final result = Map<String, dynamic>.from(
+      jsonDecode(response.toString())['error'],
+    );
+    return FieldError.fromMap(result);
+  }
 }

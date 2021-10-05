@@ -7,6 +7,7 @@ import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/channels/channel.dart';
 import 'package:valkyrie_app/domain/channels/channel_failure.dart';
 import 'package:valkyrie_app/domain/channels/i_channel_repository.dart';
+import 'package:valkyrie_app/infrastructure/core/field_error.dart';
 
 import 'channel_dto.dart';
 
@@ -29,6 +30,9 @@ class ChannelRepository extends IChannelRepository {
       return right(list);
     } on DioError catch (err) {
       print(err);
+      if (err.response?.statusCode == 404) {
+        return left(const ChannelFailure.notFound());
+      }
       return left(const ChannelFailure.unexpected());
     } on SocketException catch (err) {
       print(err);
@@ -56,6 +60,25 @@ class ChannelRepository extends IChannelRepository {
       return right(ChannelDto.fromMap(result).toDomain());
     } on DioError catch (err) {
       print(err);
+      if (err.response?.statusCode == 400) {
+        final result = Map<String, dynamic>.from(
+          jsonDecode(err.response!.toString()),
+        );
+
+        if (result["errors"] != null) {
+          final list = List<Map<String, dynamic>>.from(result["errors"]);
+          final errors = list.map((e) => FieldError.fromMap(e)).toList();
+          if (errors.isNotEmpty) {
+            return left(ChannelFailure.badRequest(errors[0].message));
+          }
+        }
+
+        if (result["error"] != null) {
+          final error = Map<String, dynamic>.from(result["error"]);
+          final fieldError = FieldError.fromMap(error);
+          return left(ChannelFailure.badRequest(fieldError.message));
+        }
+      }
       return left(const ChannelFailure.unexpected());
     } on SocketException catch (err) {
       print(err);
@@ -83,6 +106,12 @@ class ChannelRepository extends IChannelRepository {
       return right(unit);
     } on DioError catch (err) {
       print(err);
+      if (err.response?.statusCode == 400) {
+        final errors = FieldError.getErrors(err.response!);
+        if (errors.isNotEmpty) {
+          return left(ChannelFailure.badRequest(errors[0].message));
+        }
+      }
       return left(const ChannelFailure.unexpected());
     } on SocketException catch (err) {
       print(err);
@@ -102,6 +131,10 @@ class ChannelRepository extends IChannelRepository {
       return right(unit);
     } on DioError catch (err) {
       print(err);
+      if (err.response?.statusCode == 400) {
+        final error = FieldError.getError(err.response!);
+        return left(ChannelFailure.badRequest(error.message));
+      }
       return left(const ChannelFailure.unexpected());
     } on SocketException catch (err) {
       print(err);

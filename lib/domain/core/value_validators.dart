@@ -99,8 +99,11 @@ Either<ValueFailure<String>, String> validateHexColor(
   }
 }
 
+/// Check if ID is the right length and numeric
 Either<ValueFailure<String>, String> validateUID(String input) {
-  if (input.length == 20 && double.tryParse(input) != null) {
+  if (input.length >= 18 &&
+      input.length <= 22 &&
+      double.tryParse(input) != null) {
     return right(input);
   } else {
     return left(ValueFailure.invalidUID(failedValue: input));

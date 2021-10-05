@@ -21,7 +21,7 @@ class JoinGuildForm extends StatelessWidget {
             (failure) {
               showError(
                 message: failure.maybeMap(
-                  invalidLink: (_) => "Invalid Link. Try another one.",
+                  badRequest: (failure) => failure.message,
                   orElse: () => "Server Error. Try again later.",
                 ),
               ).show(context);

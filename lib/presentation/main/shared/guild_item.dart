@@ -61,7 +61,10 @@ class GuildItem extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                             WidgetConstants.avatarContainerBorderRadius,
                           ),
-                          child: Image.network(guild.icon!),
+                          child: Image.network(
+                            guild.icon!,
+                            fit: BoxFit.cover,
+                          ),
                         )
                       : Center(
                           child: Text(

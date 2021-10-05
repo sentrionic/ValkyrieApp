@@ -21,30 +21,18 @@ class _$AccountFailureTearOff {
     return const _Unexpected();
   }
 
-  InvalidUsername invalidUsername() {
-    return const InvalidUsername();
-  }
-
-  InvalidEmail invalidEmail() {
-    return const InvalidEmail();
-  }
-
-  EmailAlreadyInUse emailAlreadyInUse() {
-    return const EmailAlreadyInUse();
-  }
-
-  InvalidPassword invalidPassword() {
-    return const InvalidPassword();
-  }
-
-  BadRequest badRequest(String message) {
-    return BadRequest(
+  _BadRequest badRequest(String message) {
+    return _BadRequest(
       message,
     );
   }
 
-  ServerError serverError() {
-    return const ServerError();
+  _ServerError serverError() {
+    return const _ServerError();
+  }
+
+  _Unauthenticated unauthenticated() {
+    return const _Unauthenticated();
   }
 }
 
@@ -56,68 +44,50 @@ mixin _$AccountFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
-    required TResult Function() invalidUsername,
-    required TResult Function() invalidEmail,
-    required TResult Function() emailAlreadyInUse,
-    required TResult Function() invalidPassword,
     required TResult Function(String message) badRequest,
     required TResult Function() serverError,
+    required TResult Function() unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
     TResult Function(String message)? badRequest,
     TResult Function()? serverError,
+    TResult Function()? unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
     TResult Function(String message)? badRequest,
     TResult Function()? serverError,
+    TResult Function()? unauthenticated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(InvalidUsername value) invalidUsername,
-    required TResult Function(InvalidEmail value) invalidEmail,
-    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
-    required TResult Function(InvalidPassword value) invalidPassword,
-    required TResult Function(BadRequest value) badRequest,
-    required TResult Function(ServerError value) serverError,
+    required TResult Function(_BadRequest value) badRequest,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_Unauthenticated value) unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
+    TResult Function(_BadRequest value)? badRequest,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_Unauthenticated value)? unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
+    TResult Function(_BadRequest value)? badRequest,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -180,12 +150,9 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
-    required TResult Function() invalidUsername,
-    required TResult Function() invalidEmail,
-    required TResult Function() emailAlreadyInUse,
-    required TResult Function() invalidPassword,
     required TResult Function(String message) badRequest,
     required TResult Function() serverError,
+    required TResult Function() unauthenticated,
   }) {
     return unexpected();
   }
@@ -194,12 +161,9 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
     TResult Function(String message)? badRequest,
     TResult Function()? serverError,
+    TResult Function()? unauthenticated,
   }) {
     return unexpected?.call();
   }
@@ -208,12 +172,9 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
     TResult Function(String message)? badRequest,
     TResult Function()? serverError,
+    TResult Function()? unauthenticated,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -226,12 +187,9 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(InvalidUsername value) invalidUsername,
-    required TResult Function(InvalidEmail value) invalidEmail,
-    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
-    required TResult Function(InvalidPassword value) invalidPassword,
-    required TResult Function(BadRequest value) badRequest,
-    required TResult Function(ServerError value) serverError,
+    required TResult Function(_BadRequest value) badRequest,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_Unauthenticated value) unauthenticated,
   }) {
     return unexpected(this);
   }
@@ -240,12 +198,9 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
+    TResult Function(_BadRequest value)? badRequest,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_Unauthenticated value)? unauthenticated,
   }) {
     return unexpected?.call(this);
   }
@@ -254,12 +209,9 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
+    TResult Function(_BadRequest value)? badRequest,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -274,563 +226,28 @@ abstract class _Unexpected implements AccountFailure {
 }
 
 /// @nodoc
-abstract class $InvalidUsernameCopyWith<$Res> {
-  factory $InvalidUsernameCopyWith(
-          InvalidUsername value, $Res Function(InvalidUsername) then) =
-      _$InvalidUsernameCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$InvalidUsernameCopyWithImpl<$Res>
-    extends _$AccountFailureCopyWithImpl<$Res>
-    implements $InvalidUsernameCopyWith<$Res> {
-  _$InvalidUsernameCopyWithImpl(
-      InvalidUsername _value, $Res Function(InvalidUsername) _then)
-      : super(_value, (v) => _then(v as InvalidUsername));
-
-  @override
-  InvalidUsername get _value => super._value as InvalidUsername;
-}
-
-/// @nodoc
-
-class _$InvalidUsername implements InvalidUsername {
-  const _$InvalidUsername();
-
-  @override
-  String toString() {
-    return 'AccountFailure.invalidUsername()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InvalidUsername);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() unexpected,
-    required TResult Function() invalidUsername,
-    required TResult Function() invalidEmail,
-    required TResult Function() emailAlreadyInUse,
-    required TResult Function() invalidPassword,
-    required TResult Function(String message) badRequest,
-    required TResult Function() serverError,
-  }) {
-    return invalidUsername();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
-    TResult Function(String message)? badRequest,
-    TResult Function()? serverError,
-  }) {
-    return invalidUsername?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
-    TResult Function(String message)? badRequest,
-    TResult Function()? serverError,
-    required TResult orElse(),
-  }) {
-    if (invalidUsername != null) {
-      return invalidUsername();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(InvalidUsername value) invalidUsername,
-    required TResult Function(InvalidEmail value) invalidEmail,
-    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
-    required TResult Function(InvalidPassword value) invalidPassword,
-    required TResult Function(BadRequest value) badRequest,
-    required TResult Function(ServerError value) serverError,
-  }) {
-    return invalidUsername(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
-  }) {
-    return invalidUsername?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
-    required TResult orElse(),
-  }) {
-    if (invalidUsername != null) {
-      return invalidUsername(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class InvalidUsername implements AccountFailure {
-  const factory InvalidUsername() = _$InvalidUsername;
-}
-
-/// @nodoc
-abstract class $InvalidEmailCopyWith<$Res> {
-  factory $InvalidEmailCopyWith(
-          InvalidEmail value, $Res Function(InvalidEmail) then) =
-      _$InvalidEmailCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$InvalidEmailCopyWithImpl<$Res>
-    extends _$AccountFailureCopyWithImpl<$Res>
-    implements $InvalidEmailCopyWith<$Res> {
-  _$InvalidEmailCopyWithImpl(
-      InvalidEmail _value, $Res Function(InvalidEmail) _then)
-      : super(_value, (v) => _then(v as InvalidEmail));
-
-  @override
-  InvalidEmail get _value => super._value as InvalidEmail;
-}
-
-/// @nodoc
-
-class _$InvalidEmail implements InvalidEmail {
-  const _$InvalidEmail();
-
-  @override
-  String toString() {
-    return 'AccountFailure.invalidEmail()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InvalidEmail);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() unexpected,
-    required TResult Function() invalidUsername,
-    required TResult Function() invalidEmail,
-    required TResult Function() emailAlreadyInUse,
-    required TResult Function() invalidPassword,
-    required TResult Function(String message) badRequest,
-    required TResult Function() serverError,
-  }) {
-    return invalidEmail();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
-    TResult Function(String message)? badRequest,
-    TResult Function()? serverError,
-  }) {
-    return invalidEmail?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
-    TResult Function(String message)? badRequest,
-    TResult Function()? serverError,
-    required TResult orElse(),
-  }) {
-    if (invalidEmail != null) {
-      return invalidEmail();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(InvalidUsername value) invalidUsername,
-    required TResult Function(InvalidEmail value) invalidEmail,
-    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
-    required TResult Function(InvalidPassword value) invalidPassword,
-    required TResult Function(BadRequest value) badRequest,
-    required TResult Function(ServerError value) serverError,
-  }) {
-    return invalidEmail(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
-  }) {
-    return invalidEmail?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
-    required TResult orElse(),
-  }) {
-    if (invalidEmail != null) {
-      return invalidEmail(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class InvalidEmail implements AccountFailure {
-  const factory InvalidEmail() = _$InvalidEmail;
-}
-
-/// @nodoc
-abstract class $EmailAlreadyInUseCopyWith<$Res> {
-  factory $EmailAlreadyInUseCopyWith(
-          EmailAlreadyInUse value, $Res Function(EmailAlreadyInUse) then) =
-      _$EmailAlreadyInUseCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$EmailAlreadyInUseCopyWithImpl<$Res>
-    extends _$AccountFailureCopyWithImpl<$Res>
-    implements $EmailAlreadyInUseCopyWith<$Res> {
-  _$EmailAlreadyInUseCopyWithImpl(
-      EmailAlreadyInUse _value, $Res Function(EmailAlreadyInUse) _then)
-      : super(_value, (v) => _then(v as EmailAlreadyInUse));
-
-  @override
-  EmailAlreadyInUse get _value => super._value as EmailAlreadyInUse;
-}
-
-/// @nodoc
-
-class _$EmailAlreadyInUse implements EmailAlreadyInUse {
-  const _$EmailAlreadyInUse();
-
-  @override
-  String toString() {
-    return 'AccountFailure.emailAlreadyInUse()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is EmailAlreadyInUse);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() unexpected,
-    required TResult Function() invalidUsername,
-    required TResult Function() invalidEmail,
-    required TResult Function() emailAlreadyInUse,
-    required TResult Function() invalidPassword,
-    required TResult Function(String message) badRequest,
-    required TResult Function() serverError,
-  }) {
-    return emailAlreadyInUse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
-    TResult Function(String message)? badRequest,
-    TResult Function()? serverError,
-  }) {
-    return emailAlreadyInUse?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
-    TResult Function(String message)? badRequest,
-    TResult Function()? serverError,
-    required TResult orElse(),
-  }) {
-    if (emailAlreadyInUse != null) {
-      return emailAlreadyInUse();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(InvalidUsername value) invalidUsername,
-    required TResult Function(InvalidEmail value) invalidEmail,
-    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
-    required TResult Function(InvalidPassword value) invalidPassword,
-    required TResult Function(BadRequest value) badRequest,
-    required TResult Function(ServerError value) serverError,
-  }) {
-    return emailAlreadyInUse(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
-  }) {
-    return emailAlreadyInUse?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
-    required TResult orElse(),
-  }) {
-    if (emailAlreadyInUse != null) {
-      return emailAlreadyInUse(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class EmailAlreadyInUse implements AccountFailure {
-  const factory EmailAlreadyInUse() = _$EmailAlreadyInUse;
-}
-
-/// @nodoc
-abstract class $InvalidPasswordCopyWith<$Res> {
-  factory $InvalidPasswordCopyWith(
-          InvalidPassword value, $Res Function(InvalidPassword) then) =
-      _$InvalidPasswordCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$InvalidPasswordCopyWithImpl<$Res>
-    extends _$AccountFailureCopyWithImpl<$Res>
-    implements $InvalidPasswordCopyWith<$Res> {
-  _$InvalidPasswordCopyWithImpl(
-      InvalidPassword _value, $Res Function(InvalidPassword) _then)
-      : super(_value, (v) => _then(v as InvalidPassword));
-
-  @override
-  InvalidPassword get _value => super._value as InvalidPassword;
-}
-
-/// @nodoc
-
-class _$InvalidPassword implements InvalidPassword {
-  const _$InvalidPassword();
-
-  @override
-  String toString() {
-    return 'AccountFailure.invalidPassword()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InvalidPassword);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() unexpected,
-    required TResult Function() invalidUsername,
-    required TResult Function() invalidEmail,
-    required TResult Function() emailAlreadyInUse,
-    required TResult Function() invalidPassword,
-    required TResult Function(String message) badRequest,
-    required TResult Function() serverError,
-  }) {
-    return invalidPassword();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
-    TResult Function(String message)? badRequest,
-    TResult Function()? serverError,
-  }) {
-    return invalidPassword?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
-    TResult Function(String message)? badRequest,
-    TResult Function()? serverError,
-    required TResult orElse(),
-  }) {
-    if (invalidPassword != null) {
-      return invalidPassword();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(InvalidUsername value) invalidUsername,
-    required TResult Function(InvalidEmail value) invalidEmail,
-    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
-    required TResult Function(InvalidPassword value) invalidPassword,
-    required TResult Function(BadRequest value) badRequest,
-    required TResult Function(ServerError value) serverError,
-  }) {
-    return invalidPassword(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
-  }) {
-    return invalidPassword?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
-    required TResult orElse(),
-  }) {
-    if (invalidPassword != null) {
-      return invalidPassword(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class InvalidPassword implements AccountFailure {
-  const factory InvalidPassword() = _$InvalidPassword;
-}
-
-/// @nodoc
-abstract class $BadRequestCopyWith<$Res> {
-  factory $BadRequestCopyWith(
-          BadRequest value, $Res Function(BadRequest) then) =
-      _$BadRequestCopyWithImpl<$Res>;
+abstract class _$BadRequestCopyWith<$Res> {
+  factory _$BadRequestCopyWith(
+          _BadRequest value, $Res Function(_BadRequest) then) =
+      __$BadRequestCopyWithImpl<$Res>;
   $Res call({String message});
 }
 
 /// @nodoc
-class _$BadRequestCopyWithImpl<$Res> extends _$AccountFailureCopyWithImpl<$Res>
-    implements $BadRequestCopyWith<$Res> {
-  _$BadRequestCopyWithImpl(BadRequest _value, $Res Function(BadRequest) _then)
-      : super(_value, (v) => _then(v as BadRequest));
+class __$BadRequestCopyWithImpl<$Res> extends _$AccountFailureCopyWithImpl<$Res>
+    implements _$BadRequestCopyWith<$Res> {
+  __$BadRequestCopyWithImpl(
+      _BadRequest _value, $Res Function(_BadRequest) _then)
+      : super(_value, (v) => _then(v as _BadRequest));
 
   @override
-  BadRequest get _value => super._value as BadRequest;
+  _BadRequest get _value => super._value as _BadRequest;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(BadRequest(
+    return _then(_BadRequest(
       message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -841,8 +258,8 @@ class _$BadRequestCopyWithImpl<$Res> extends _$AccountFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BadRequest implements BadRequest {
-  const _$BadRequest(this.message);
+class _$_BadRequest implements _BadRequest {
+  const _$_BadRequest(this.message);
 
   @override
   final String message;
@@ -855,7 +272,7 @@ class _$BadRequest implements BadRequest {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is BadRequest &&
+        (other is _BadRequest &&
             (identical(other.message, message) ||
                 const DeepCollectionEquality().equals(other.message, message)));
   }
@@ -866,19 +283,16 @@ class _$BadRequest implements BadRequest {
 
   @JsonKey(ignore: true)
   @override
-  $BadRequestCopyWith<BadRequest> get copyWith =>
-      _$BadRequestCopyWithImpl<BadRequest>(this, _$identity);
+  _$BadRequestCopyWith<_BadRequest> get copyWith =>
+      __$BadRequestCopyWithImpl<_BadRequest>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
-    required TResult Function() invalidUsername,
-    required TResult Function() invalidEmail,
-    required TResult Function() emailAlreadyInUse,
-    required TResult Function() invalidPassword,
     required TResult Function(String message) badRequest,
     required TResult Function() serverError,
+    required TResult Function() unauthenticated,
   }) {
     return badRequest(message);
   }
@@ -887,12 +301,9 @@ class _$BadRequest implements BadRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
     TResult Function(String message)? badRequest,
     TResult Function()? serverError,
+    TResult Function()? unauthenticated,
   }) {
     return badRequest?.call(message);
   }
@@ -901,12 +312,9 @@ class _$BadRequest implements BadRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
     TResult Function(String message)? badRequest,
     TResult Function()? serverError,
+    TResult Function()? unauthenticated,
     required TResult orElse(),
   }) {
     if (badRequest != null) {
@@ -919,12 +327,9 @@ class _$BadRequest implements BadRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(InvalidUsername value) invalidUsername,
-    required TResult Function(InvalidEmail value) invalidEmail,
-    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
-    required TResult Function(InvalidPassword value) invalidPassword,
-    required TResult Function(BadRequest value) badRequest,
-    required TResult Function(ServerError value) serverError,
+    required TResult Function(_BadRequest value) badRequest,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_Unauthenticated value) unauthenticated,
   }) {
     return badRequest(this);
   }
@@ -933,12 +338,9 @@ class _$BadRequest implements BadRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
+    TResult Function(_BadRequest value)? badRequest,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_Unauthenticated value)? unauthenticated,
   }) {
     return badRequest?.call(this);
   }
@@ -947,12 +349,9 @@ class _$BadRequest implements BadRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
+    TResult Function(_BadRequest value)? badRequest,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),
   }) {
     if (badRequest != null) {
@@ -962,37 +361,38 @@ class _$BadRequest implements BadRequest {
   }
 }
 
-abstract class BadRequest implements AccountFailure {
-  const factory BadRequest(String message) = _$BadRequest;
+abstract class _BadRequest implements AccountFailure {
+  const factory _BadRequest(String message) = _$_BadRequest;
 
   String get message => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $BadRequestCopyWith<BadRequest> get copyWith =>
+  _$BadRequestCopyWith<_BadRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ServerErrorCopyWith<$Res> {
-  factory $ServerErrorCopyWith(
-          ServerError value, $Res Function(ServerError) then) =
-      _$ServerErrorCopyWithImpl<$Res>;
+abstract class _$ServerErrorCopyWith<$Res> {
+  factory _$ServerErrorCopyWith(
+          _ServerError value, $Res Function(_ServerError) then) =
+      __$ServerErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ServerErrorCopyWithImpl<$Res> extends _$AccountFailureCopyWithImpl<$Res>
-    implements $ServerErrorCopyWith<$Res> {
-  _$ServerErrorCopyWithImpl(
-      ServerError _value, $Res Function(ServerError) _then)
-      : super(_value, (v) => _then(v as ServerError));
+class __$ServerErrorCopyWithImpl<$Res>
+    extends _$AccountFailureCopyWithImpl<$Res>
+    implements _$ServerErrorCopyWith<$Res> {
+  __$ServerErrorCopyWithImpl(
+      _ServerError _value, $Res Function(_ServerError) _then)
+      : super(_value, (v) => _then(v as _ServerError));
 
   @override
-  ServerError get _value => super._value as ServerError;
+  _ServerError get _value => super._value as _ServerError;
 }
 
 /// @nodoc
 
-class _$ServerError implements ServerError {
-  const _$ServerError();
+class _$_ServerError implements _ServerError {
+  const _$_ServerError();
 
   @override
   String toString() {
@@ -1001,7 +401,7 @@ class _$ServerError implements ServerError {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerError);
+    return identical(this, other) || (other is _ServerError);
   }
 
   @override
@@ -1011,12 +411,9 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
-    required TResult Function() invalidUsername,
-    required TResult Function() invalidEmail,
-    required TResult Function() emailAlreadyInUse,
-    required TResult Function() invalidPassword,
     required TResult Function(String message) badRequest,
     required TResult Function() serverError,
+    required TResult Function() unauthenticated,
   }) {
     return serverError();
   }
@@ -1025,12 +422,9 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
     TResult Function(String message)? badRequest,
     TResult Function()? serverError,
+    TResult Function()? unauthenticated,
   }) {
     return serverError?.call();
   }
@@ -1039,12 +433,9 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
-    TResult Function()? invalidUsername,
-    TResult Function()? invalidEmail,
-    TResult Function()? emailAlreadyInUse,
-    TResult Function()? invalidPassword,
     TResult Function(String message)? badRequest,
     TResult Function()? serverError,
+    TResult Function()? unauthenticated,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -1057,12 +448,9 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
-    required TResult Function(InvalidUsername value) invalidUsername,
-    required TResult Function(InvalidEmail value) invalidEmail,
-    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
-    required TResult Function(InvalidPassword value) invalidPassword,
-    required TResult Function(BadRequest value) badRequest,
-    required TResult Function(ServerError value) serverError,
+    required TResult Function(_BadRequest value) badRequest,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_Unauthenticated value) unauthenticated,
   }) {
     return serverError(this);
   }
@@ -1071,12 +459,9 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
+    TResult Function(_BadRequest value)? badRequest,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_Unauthenticated value)? unauthenticated,
   }) {
     return serverError?.call(this);
   }
@@ -1085,12 +470,9 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
-    TResult Function(InvalidUsername value)? invalidUsername,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(BadRequest value)? badRequest,
-    TResult Function(ServerError value)? serverError,
+    TResult Function(_BadRequest value)? badRequest,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_Unauthenticated value)? unauthenticated,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -1100,6 +482,122 @@ class _$ServerError implements ServerError {
   }
 }
 
-abstract class ServerError implements AccountFailure {
-  const factory ServerError() = _$ServerError;
+abstract class _ServerError implements AccountFailure {
+  const factory _ServerError() = _$_ServerError;
+}
+
+/// @nodoc
+abstract class _$UnauthenticatedCopyWith<$Res> {
+  factory _$UnauthenticatedCopyWith(
+          _Unauthenticated value, $Res Function(_Unauthenticated) then) =
+      __$UnauthenticatedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$UnauthenticatedCopyWithImpl<$Res>
+    extends _$AccountFailureCopyWithImpl<$Res>
+    implements _$UnauthenticatedCopyWith<$Res> {
+  __$UnauthenticatedCopyWithImpl(
+      _Unauthenticated _value, $Res Function(_Unauthenticated) _then)
+      : super(_value, (v) => _then(v as _Unauthenticated));
+
+  @override
+  _Unauthenticated get _value => super._value as _Unauthenticated;
+}
+
+/// @nodoc
+
+class _$_Unauthenticated implements _Unauthenticated {
+  const _$_Unauthenticated();
+
+  @override
+  String toString() {
+    return 'AccountFailure.unauthenticated()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Unauthenticated);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function(String message) badRequest,
+    required TResult Function() serverError,
+    required TResult Function() unauthenticated,
+  }) {
+    return unauthenticated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function(String message)? badRequest,
+    TResult Function()? serverError,
+    TResult Function()? unauthenticated,
+  }) {
+    return unauthenticated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function(String message)? badRequest,
+    TResult Function()? serverError,
+    TResult Function()? unauthenticated,
+    required TResult orElse(),
+  }) {
+    if (unauthenticated != null) {
+      return unauthenticated();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_BadRequest value) badRequest,
+    required TResult Function(_ServerError value) serverError,
+    required TResult Function(_Unauthenticated value) unauthenticated,
+  }) {
+    return unauthenticated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_BadRequest value)? badRequest,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+  }) {
+    return unauthenticated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_BadRequest value)? badRequest,
+    TResult Function(_ServerError value)? serverError,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+    required TResult orElse(),
+  }) {
+    if (unauthenticated != null) {
+      return unauthenticated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Unauthenticated implements AccountFailure {
+  const factory _Unauthenticated() = _$_Unauthenticated;
 }

@@ -46,7 +46,7 @@ The architecture of this app is based on Reso Coder's [Domain Driven Design Prin
 
 You will need Flutter Version 2 to run this app.
 
-This app was created and tested on `Flutter 2.5.1` and `Dart 2.14.2` .
+This app was created and tested on `Flutter 2.5.2` and `Dart 2.14.3` .
 
 ```
 git clone https://github.com/sentrionic/ValkyrieApp.git
@@ -63,7 +63,7 @@ If said server runs on `localhost` you will also need to add `android:usesCleart
 
 ## Tests
 
-Tests were written for all Use Cases in the `Application` directory.
+Tests were written for all Use Cases in the `Application` directory and the repositories and DTOs in the `Infrastructure` directory.
 
 To run all tests run `flutter test`
 
@@ -73,3 +73,7 @@ This app was tested and is working on Android and the general design is based on
 
 The iOS version will need additional configuration done to the packages to run.
 As I do not own a Mac I cannot work on it.
+
+## Credits
+
+[Reso Coder](https://resocoder.com/): This app's structure is based on his DDD tutorial and the tests are based on his TDD tutorial.

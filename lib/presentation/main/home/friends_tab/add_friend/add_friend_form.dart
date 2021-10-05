@@ -43,6 +43,7 @@ class AddFriendForm extends StatelessWidget {
                 (failure) {
                   showError(
                     message: failure.maybeMap(
+                      badRequest: (failure) => failure.message,
                       orElse: () => "Something went wrong. Try again later.",
                     ),
                   ).show(context);

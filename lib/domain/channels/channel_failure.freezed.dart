@@ -20,6 +20,16 @@ class _$ChannelFailureTearOff {
   _Unexpected unexpected() {
     return const _Unexpected();
   }
+
+  _NotFound notFound() {
+    return const _NotFound();
+  }
+
+  _BadRequest badRequest(String message) {
+    return _BadRequest(
+      message,
+    );
+  }
 }
 
 /// @nodoc
@@ -30,32 +40,44 @@ mixin _$ChannelFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
+    required TResult Function() notFound,
+    required TResult Function(String message) badRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? notFound,
+    TResult Function(String message)? badRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? notFound,
+    TResult Function(String message)? badRequest,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotFound value) notFound,
+    required TResult Function(_BadRequest value) badRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_BadRequest value)? badRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_BadRequest value)? badRequest,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -118,6 +140,8 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
+    required TResult Function() notFound,
+    required TResult Function(String message) badRequest,
   }) {
     return unexpected();
   }
@@ -126,6 +150,8 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? notFound,
+    TResult Function(String message)? badRequest,
   }) {
     return unexpected?.call();
   }
@@ -134,6 +160,8 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? notFound,
+    TResult Function(String message)? badRequest,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -146,6 +174,8 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotFound value) notFound,
+    required TResult Function(_BadRequest value) badRequest,
   }) {
     return unexpected(this);
   }
@@ -154,6 +184,8 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_BadRequest value)? badRequest,
   }) {
     return unexpected?.call(this);
   }
@@ -162,6 +194,8 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_BadRequest value)? badRequest,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -173,4 +207,250 @@ class _$_Unexpected implements _Unexpected {
 
 abstract class _Unexpected implements ChannelFailure {
   const factory _Unexpected() = _$_Unexpected;
+}
+
+/// @nodoc
+abstract class _$NotFoundCopyWith<$Res> {
+  factory _$NotFoundCopyWith(_NotFound value, $Res Function(_NotFound) then) =
+      __$NotFoundCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$NotFoundCopyWithImpl<$Res> extends _$ChannelFailureCopyWithImpl<$Res>
+    implements _$NotFoundCopyWith<$Res> {
+  __$NotFoundCopyWithImpl(_NotFound _value, $Res Function(_NotFound) _then)
+      : super(_value, (v) => _then(v as _NotFound));
+
+  @override
+  _NotFound get _value => super._value as _NotFound;
+}
+
+/// @nodoc
+
+class _$_NotFound implements _NotFound {
+  const _$_NotFound();
+
+  @override
+  String toString() {
+    return 'ChannelFailure.notFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _NotFound);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() notFound,
+    required TResult Function(String message) badRequest,
+  }) {
+    return notFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? notFound,
+    TResult Function(String message)? badRequest,
+  }) {
+    return notFound?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? notFound,
+    TResult Function(String message)? badRequest,
+    required TResult orElse(),
+  }) {
+    if (notFound != null) {
+      return notFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotFound value) notFound,
+    required TResult Function(_BadRequest value) badRequest,
+  }) {
+    return notFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_BadRequest value)? badRequest,
+  }) {
+    return notFound?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_BadRequest value)? badRequest,
+    required TResult orElse(),
+  }) {
+    if (notFound != null) {
+      return notFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NotFound implements ChannelFailure {
+  const factory _NotFound() = _$_NotFound;
+}
+
+/// @nodoc
+abstract class _$BadRequestCopyWith<$Res> {
+  factory _$BadRequestCopyWith(
+          _BadRequest value, $Res Function(_BadRequest) then) =
+      __$BadRequestCopyWithImpl<$Res>;
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$BadRequestCopyWithImpl<$Res> extends _$ChannelFailureCopyWithImpl<$Res>
+    implements _$BadRequestCopyWith<$Res> {
+  __$BadRequestCopyWithImpl(
+      _BadRequest _value, $Res Function(_BadRequest) _then)
+      : super(_value, (v) => _then(v as _BadRequest));
+
+  @override
+  _BadRequest get _value => super._value as _BadRequest;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_BadRequest(
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_BadRequest implements _BadRequest {
+  const _$_BadRequest(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'ChannelFailure.badRequest(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _BadRequest &&
+            (identical(other.message, message) ||
+                const DeepCollectionEquality().equals(other.message, message)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+
+  @JsonKey(ignore: true)
+  @override
+  _$BadRequestCopyWith<_BadRequest> get copyWith =>
+      __$BadRequestCopyWithImpl<_BadRequest>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() notFound,
+    required TResult Function(String message) badRequest,
+  }) {
+    return badRequest(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? notFound,
+    TResult Function(String message)? badRequest,
+  }) {
+    return badRequest?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? notFound,
+    TResult Function(String message)? badRequest,
+    required TResult orElse(),
+  }) {
+    if (badRequest != null) {
+      return badRequest(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_NotFound value) notFound,
+    required TResult Function(_BadRequest value) badRequest,
+  }) {
+    return badRequest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_BadRequest value)? badRequest,
+  }) {
+    return badRequest?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_NotFound value)? notFound,
+    TResult Function(_BadRequest value)? badRequest,
+    required TResult orElse(),
+  }) {
+    if (badRequest != null) {
+      return badRequest(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _BadRequest implements ChannelFailure {
+  const factory _BadRequest(String message) = _$_BadRequest;
+
+  String get message => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$BadRequestCopyWith<_BadRequest> get copyWith =>
+      throw _privateConstructorUsedError;
 }

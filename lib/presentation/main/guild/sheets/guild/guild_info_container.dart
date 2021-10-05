@@ -40,7 +40,10 @@ class GuildInfoContainer extends StatelessWidget {
                     child: guild.icon != null
                         ? ClipRRect(
                             borderRadius: BorderRadius.circular(20),
-                            child: Image.network(guild.icon!),
+                            child: Image.network(
+                              guild.icon!,
+                              fit: BoxFit.cover,
+                            ),
                           )
                         : Center(
                             child: Text(

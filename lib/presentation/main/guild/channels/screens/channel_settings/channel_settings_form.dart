@@ -56,6 +56,7 @@ class ChannelSettingsForm extends StatelessWidget {
               deleteFailure: (state) {
                 showError(
                   message: state.maybeMap(
+                    badRequest: (failure) => failure.message,
                     orElse: () => "Something went wrong. Try again later",
                   ),
                 ).show(context);

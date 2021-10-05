@@ -45,6 +45,9 @@ class DMRepository extends IDMRepository {
       return right(channel);
     } on DioError catch (err) {
       print(err);
+      if (err.response?.statusCode == 404) {
+        return left(const DMChannelFailure.notFound());
+      }
       return left(const DMChannelFailure.unexpected());
     } on SocketException catch (err) {
       print(err);

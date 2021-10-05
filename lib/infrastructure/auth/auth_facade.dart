@@ -78,7 +78,7 @@ class AuthFacade implements IAuthFacade {
       _setUserData(account);
       return right(unit);
     } on DioError catch (err) {
-      if (err.response != null) {
+      if (err.response?.statusCode == 400 && err.response != null) {
         final errors = FieldError.getErrors(err.response!);
         if (errors.isNotEmpty) {
           return left(AuthFailure.badRequest(errors[0].message));
@@ -131,8 +131,16 @@ class AuthFacade implements IAuthFacade {
 
       return right(unit);
     } on DioError catch (err) {
-      if (err.response?.statusCode == 401) {
-        return left(const AuthFailure.badRequest("Invalid old password"));
+      switch (err.response?.statusCode) {
+        case 400:
+          final errors = FieldError.getErrors(err.response!);
+          if (errors.isNotEmpty) {
+            return left(AuthFailure.badRequest(errors[0].message));
+          }
+          break;
+        case 401:
+          final error = FieldError.getError(err.response!);
+          return left(AuthFailure.badRequest(error.message));
       }
       return left(const AuthFailure.serverError());
     } on SocketException catch (_) {
