@@ -30,7 +30,7 @@ The mobile application for [Valkyrie](https://github.com/sentrionic/Valkyrie) wr
 - REST for data fetching and websockets for real time events
 
 For all features check out the parent [repository](https://github.com/sentrionic/Valkyrie).
-For the socket.io version check out the `main` branch.
+For the socket.io version check out the `v1` branch.
 
 The architecture of this app is based on Reso Coder's [Domain Driven Design Principles](https://resocoder.com/2020/03/09/flutter-firebase-ddd-course-1-domain-driven-design-principles/):
 
