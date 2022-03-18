@@ -9,11 +9,10 @@ import 'package:valkyrie_app/application/notifications/notifications_cubit.dart'
 import 'package:valkyrie_app/application/notifications/request_notifications_cubit.dart';
 import 'package:valkyrie_app/infrastructure/dms/dm_channel_dto.dart';
 import 'package:valkyrie_app/injection.dart';
+import 'package:valkyrie_app/presentation/common/extensions/socket_extension.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_cookie.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_current_user.dart';
 import 'package:web_socket_channel/io.dart';
-
-import '../common/extensions/socket_extension.dart';
 
 class UserSocketHook extends Hook<void> {
   final BuildContext context;

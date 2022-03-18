@@ -20,12 +20,10 @@ abstract class InjectableModule {
     );
 
     dio.interceptors.add(
-      InterceptorsWrapper(
-        onRequest: (options, handler) async {
-          dio.interceptors.requestLock.lock();
+      QueuedInterceptorsWrapper(
+        onRequest: (options, handler) {
           final cookie = getCookie();
           if (cookie != "null") options.headers["cookie"] = cookie;
-          dio.interceptors.requestLock.unlock();
           return handler.next(options); // continue
         },
       ),

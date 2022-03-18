@@ -8,11 +8,10 @@ import 'package:valkyrie_app/application/friends/get_requests/get_requests_cubit
 import 'package:valkyrie_app/infrastructure/friends/friend_dto.dart';
 import 'package:valkyrie_app/infrastructure/friends/friend_request_dto.dart';
 import 'package:valkyrie_app/injection.dart';
+import 'package:valkyrie_app/presentation/common/extensions/socket_extension.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_cookie.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_current_user.dart';
 import 'package:web_socket_channel/io.dart';
-
-import '../../../../common/extensions/socket_extension.dart';
 
 class FriendSocketHook extends Hook<void> {
   final BuildContext context;

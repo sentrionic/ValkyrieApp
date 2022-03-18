@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 
-import 'failures.dart';
+import 'package:valkyrie_app/domain/core/failures.dart';
 
 Either<ValueFailure<String>, String> validateEmailAddress(String input) {
   const emailRegex =

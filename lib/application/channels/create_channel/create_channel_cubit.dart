@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/channels/channel.dart';
@@ -8,8 +8,8 @@ import 'package:valkyrie_app/domain/channels/channel_value_objects.dart';
 import 'package:valkyrie_app/domain/channels/i_channel_repository.dart';
 import 'package:valkyrie_app/domain/member/member.dart';
 
-part 'create_channel_state.dart';
 part 'create_channel_cubit.freezed.dart';
+part 'create_channel_state.dart';
 
 /// CreateChannelCubit manages the creation of a [Guild]'s [Channel]
 @injectable

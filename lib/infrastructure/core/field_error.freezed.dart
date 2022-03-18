@@ -127,18 +127,17 @@ class _$_FieldError extends _FieldError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FieldError &&
-            (identical(other.field, field) ||
-                const DeepCollectionEquality().equals(other.field, field)) &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+        (other.runtimeType == runtimeType &&
+            other is _FieldError &&
+            const DeepCollectionEquality().equals(other.field, field) &&
+            const DeepCollectionEquality().equals(other.message, message));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(field) ^
-      const DeepCollectionEquality().hash(message);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(field),
+      const DeepCollectionEquality().hash(message));
 
   @JsonKey(ignore: true)
   @override
@@ -152,9 +151,9 @@ abstract class _FieldError extends FieldError {
   const _FieldError._() : super._();
 
   @override
-  String get field => throw _privateConstructorUsedError;
+  String get field;
   @override
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$FieldErrorCopyWith<_FieldError> get copyWith =>

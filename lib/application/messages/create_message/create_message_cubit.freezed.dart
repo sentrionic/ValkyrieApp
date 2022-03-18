@@ -176,29 +176,25 @@ class _$_CreateMessageState implements _CreateMessageState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CreateMessageState &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.messageFailureOrSuccessOption,
-                    messageFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.messageFailureOrSuccessOption,
-                    messageFailureOrSuccessOption)));
+        (other.runtimeType == runtimeType &&
+            other is _CreateMessageState &&
+            const DeepCollectionEquality().equals(other.text, text) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality()
+                .equals(other.isSubmitting, isSubmitting) &&
+            const DeepCollectionEquality().equals(
+                other.messageFailureOrSuccessOption,
+                messageFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(messageFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(text),
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(isSubmitting),
+      const DeepCollectionEquality().hash(messageFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
@@ -215,14 +211,13 @@ abstract class _CreateMessageState implements CreateMessageState {
           messageFailureOrSuccessOption}) = _$_CreateMessageState;
 
   @override
-  MessageText get text => throw _privateConstructorUsedError;
+  MessageText get text;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<MessageFailure, Unit>> get messageFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<MessageFailure, Unit>> get messageFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$CreateMessageStateCopyWith<_CreateMessageState> get copyWith =>

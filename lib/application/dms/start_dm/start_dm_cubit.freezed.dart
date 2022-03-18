@@ -139,7 +139,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -255,7 +256,8 @@ class _$_FetchInProgress implements _FetchInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FetchInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _FetchInProgress);
   }
 
   @override
@@ -396,14 +398,14 @@ class _$_FetchSuccess implements _FetchSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FetchSuccess &&
-            (identical(other.channel, channel) ||
-                const DeepCollectionEquality().equals(other.channel, channel)));
+        (other.runtimeType == runtimeType &&
+            other is _FetchSuccess &&
+            const DeepCollectionEquality().equals(other.channel, channel));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(channel);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(channel));
 
   @JsonKey(ignore: true)
   @override
@@ -488,7 +490,7 @@ class _$_FetchSuccess implements _FetchSuccess {
 abstract class _FetchSuccess implements StartDMState {
   const factory _FetchSuccess(DMChannel channel) = _$_FetchSuccess;
 
-  DMChannel get channel => throw _privateConstructorUsedError;
+  DMChannel get channel;
   @JsonKey(ignore: true)
   _$FetchSuccessCopyWith<_FetchSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -550,16 +552,15 @@ class _$_FetchFailure implements _FetchFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FetchFailure &&
-            (identical(other.channelFailure, channelFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.channelFailure, channelFailure)));
+        (other.runtimeType == runtimeType &&
+            other is _FetchFailure &&
+            const DeepCollectionEquality()
+                .equals(other.channelFailure, channelFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(channelFailure);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(channelFailure));
 
   @JsonKey(ignore: true)
   @override
@@ -645,7 +646,7 @@ abstract class _FetchFailure implements StartDMState {
   const factory _FetchFailure(DMChannelFailure channelFailure) =
       _$_FetchFailure;
 
-  DMChannelFailure get channelFailure => throw _privateConstructorUsedError;
+  DMChannelFailure get channelFailure;
   @JsonKey(ignore: true)
   _$FetchFailureCopyWith<_FetchFailure> get copyWith =>
       throw _privateConstructorUsedError;

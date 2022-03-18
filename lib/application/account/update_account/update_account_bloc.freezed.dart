@@ -162,14 +162,14 @@ class _$_EmailChanged implements _EmailChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _EmailChanged &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)));
+        (other.runtimeType == runtimeType &&
+            other is _EmailChanged &&
+            const DeepCollectionEquality().equals(other.email, email));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
 
   @JsonKey(ignore: true)
   @override
@@ -254,7 +254,7 @@ class _$_EmailChanged implements _EmailChanged {
 abstract class _EmailChanged implements UpdateAccountEvent {
   const factory _EmailChanged(String email) = _$_EmailChanged;
 
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @JsonKey(ignore: true)
   _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -308,15 +308,14 @@ class _$_UsernameChanged implements _UsernameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UsernameChanged &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)));
+        (other.runtimeType == runtimeType &&
+            other is _UsernameChanged &&
+            const DeepCollectionEquality().equals(other.username, username));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(username));
 
   @JsonKey(ignore: true)
   @override
@@ -401,7 +400,7 @@ class _$_UsernameChanged implements _UsernameChanged {
 abstract class _UsernameChanged implements UpdateAccountEvent {
   const factory _UsernameChanged(String username) = _$_UsernameChanged;
 
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @JsonKey(ignore: true)
   _$UsernameChangedCopyWith<_UsernameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -455,14 +454,14 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ImageChanged &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)));
+        (other.runtimeType == runtimeType &&
+            other is _ImageChanged &&
+            const DeepCollectionEquality().equals(other.image, image));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(image);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override
@@ -547,7 +546,7 @@ class _$_ImageChanged implements _ImageChanged {
 abstract class _ImageChanged implements UpdateAccountEvent {
   const factory _ImageChanged(File image) = _$_ImageChanged;
 
-  File get image => throw _privateConstructorUsedError;
+  File get image;
   @JsonKey(ignore: true)
   _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -581,7 +580,8 @@ class _$_Saved implements _Saved {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Saved);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Saved);
   }
 
   @override
@@ -848,7 +848,7 @@ class _$_UpdateAccountState implements _UpdateAccountState {
   final Username username;
   @override
   final EmailAddress emailAddress;
-  @JsonKey(defaultValue: null)
+  @JsonKey()
   @override
   final File? image;
   @override
@@ -866,37 +866,28 @@ class _$_UpdateAccountState implements _UpdateAccountState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UpdateAccountState &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
-            (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSaving, isSaving) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSaving, isSaving)) &&
-            (identical(other.saveFailureOrSuccessOption,
-                    saveFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.saveFailureOrSuccessOption,
-                    saveFailureOrSuccessOption)));
+        (other.runtimeType == runtimeType &&
+            other is _UpdateAccountState &&
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality()
+                .equals(other.emailAddress, emailAddress) &&
+            const DeepCollectionEquality().equals(other.image, image) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality().equals(other.isSaving, isSaving) &&
+            const DeepCollectionEquality().equals(
+                other.saveFailureOrSuccessOption, saveFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(image) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSaving) ^
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(emailAddress),
+      const DeepCollectionEquality().hash(image),
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(isSaving),
+      const DeepCollectionEquality().hash(saveFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
@@ -915,18 +906,17 @@ abstract class _UpdateAccountState implements UpdateAccountState {
           saveFailureOrSuccessOption}) = _$_UpdateAccountState;
 
   @override
-  Username get username => throw _privateConstructorUsedError;
+  Username get username;
   @override
-  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  EmailAddress get emailAddress;
   @override
-  File? get image => throw _privateConstructorUsedError;
+  File? get image;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSaving => throw _privateConstructorUsedError;
+  bool get isSaving;
   @override
-  Option<Either<AccountFailure, Account>> get saveFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<AccountFailure, Account>> get saveFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$UpdateAccountStateCopyWith<_UpdateAccountState> get copyWith =>

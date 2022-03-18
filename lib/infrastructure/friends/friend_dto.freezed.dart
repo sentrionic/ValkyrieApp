@@ -162,26 +162,21 @@ class _$_FriendDto extends _FriendDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FriendDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)) &&
-            (identical(other.isOnline, isOnline) ||
-                const DeepCollectionEquality()
-                    .equals(other.isOnline, isOnline)));
+        (other.runtimeType == runtimeType &&
+            other is _FriendDto &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality().equals(other.image, image) &&
+            const DeepCollectionEquality().equals(other.isOnline, isOnline));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(image) ^
-      const DeepCollectionEquality().hash(isOnline);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(image),
+      const DeepCollectionEquality().hash(isOnline));
 
   @JsonKey(ignore: true)
   @override
@@ -198,13 +193,13 @@ abstract class _FriendDto extends FriendDto {
   const _FriendDto._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
-  bool get isOnline => throw _privateConstructorUsedError;
+  bool get isOnline;
   @override
   @JsonKey(ignore: true)
   _$FriendDtoCopyWith<_FriendDto> get copyWith =>

@@ -165,6 +165,7 @@ class _AppearanceScreenForm extends HookWidget {
                             return "Nickname too long";
                           }
                         }
+                        return null;
                       },
                     ),
                     const Divider(),

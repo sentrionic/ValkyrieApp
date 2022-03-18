@@ -130,19 +130,17 @@ class _$_GuildAppearanceDto extends _GuildAppearanceDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _GuildAppearanceDto &&
-            (identical(other.nickname, nickname) ||
-                const DeepCollectionEquality()
-                    .equals(other.nickname, nickname)) &&
-            (identical(other.color, color) ||
-                const DeepCollectionEquality().equals(other.color, color)));
+        (other.runtimeType == runtimeType &&
+            other is _GuildAppearanceDto &&
+            const DeepCollectionEquality().equals(other.nickname, nickname) &&
+            const DeepCollectionEquality().equals(other.color, color));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(nickname) ^
-      const DeepCollectionEquality().hash(color);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(nickname),
+      const DeepCollectionEquality().hash(color));
 
   @JsonKey(ignore: true)
   @override
@@ -156,9 +154,9 @@ abstract class _GuildAppearanceDto extends GuildAppearanceDto {
   const _GuildAppearanceDto._() : super._();
 
   @override
-  String? get nickname => throw _privateConstructorUsedError;
+  String? get nickname;
   @override
-  String? get color => throw _privateConstructorUsedError;
+  String? get color;
   @override
   @JsonKey(ignore: true)
   _$GuildAppearanceDtoCopyWith<_GuildAppearanceDto> get copyWith =>

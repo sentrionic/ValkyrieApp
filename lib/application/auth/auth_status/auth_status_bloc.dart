@@ -1,6 +1,4 @@
-import 'dart:async';
-
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/auth/i_auth_facade.dart';
@@ -14,23 +12,22 @@ part 'auth_status_bloc.freezed.dart';
 class AuthStatusBloc extends Bloc<AuthStatusEvent, AuthStatusState> {
   final IAuthFacade _authFacade;
 
-  AuthStatusBloc(this._authFacade) : super(const AuthStatusState.initial());
-
-  @override
-  Stream<AuthStatusState> mapEventToState(
-    AuthStatusEvent event,
-  ) async* {
-    yield* event.map(
-      authCheckRequested: (e) async* {
-        final authenticated = await _authFacade.checkAuthenticated();
-        yield authenticated
-            ? const AuthStatusState.authenticated()
-            : const AuthStatusState.unauthenticated();
-      },
-      signedOut: (e) async* {
-        await _authFacade.logout();
-        yield const AuthStatusState.unauthenticated();
-      },
-    );
+  AuthStatusBloc(this._authFacade) : super(const AuthStatusState.initial()) {
+    on<AuthStatusEvent>((event, emit) async {
+      await event.map(
+        authCheckRequested: (e) async {
+          final authenticated = await _authFacade.checkAuthenticated();
+          emit(
+            authenticated
+                ? const AuthStatusState.authenticated()
+                : const AuthStatusState.unauthenticated(),
+          );
+        },
+        signedOut: (e) async {
+          await _authFacade.logout();
+          emit(const AuthStatusState.unauthenticated());
+        },
+      );
+    });
   }
 }

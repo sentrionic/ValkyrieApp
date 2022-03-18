@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 
-import 'auth_failure.dart';
-import 'auth_value_objects.dart';
+import 'package:valkyrie_app/domain/auth/auth_failure.dart';
+import 'package:valkyrie_app/domain/auth/auth_value_objects.dart';
 
 abstract class IAuthFacade {
   Future<Either<AuthFailure, Unit>> register({

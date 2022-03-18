@@ -141,7 +141,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -257,7 +258,8 @@ class _$_FetchInProgress implements _FetchInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FetchInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _FetchInProgress);
   }
 
   @override
@@ -390,15 +392,15 @@ class _$_FetchSuccess implements _FetchSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FetchSuccess &&
-            (identical(other.inviteLink, inviteLink) ||
-                const DeepCollectionEquality()
-                    .equals(other.inviteLink, inviteLink)));
+        (other.runtimeType == runtimeType &&
+            other is _FetchSuccess &&
+            const DeepCollectionEquality()
+                .equals(other.inviteLink, inviteLink));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(inviteLink);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(inviteLink));
 
   @JsonKey(ignore: true)
   @override
@@ -483,7 +485,7 @@ class _$_FetchSuccess implements _FetchSuccess {
 abstract class _FetchSuccess implements GetInviteLinkState {
   const factory _FetchSuccess(String inviteLink) = _$_FetchSuccess;
 
-  String get inviteLink => throw _privateConstructorUsedError;
+  String get inviteLink;
   @JsonKey(ignore: true)
   _$FetchSuccessCopyWith<_FetchSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -546,14 +548,14 @@ class _$_FetchFailure implements _FetchFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FetchFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _FetchFailure &&
+            const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
@@ -638,7 +640,7 @@ class _$_FetchFailure implements _FetchFailure {
 abstract class _FetchFailure implements GetInviteLinkState {
   const factory _FetchFailure(GuildFailure failure) = _$_FetchFailure;
 
-  GuildFailure get failure => throw _privateConstructorUsedError;
+  GuildFailure get failure;
   @JsonKey(ignore: true)
   _$FetchFailureCopyWith<_FetchFailure> get copyWith =>
       throw _privateConstructorUsedError;

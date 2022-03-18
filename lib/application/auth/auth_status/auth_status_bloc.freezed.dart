@@ -119,7 +119,8 @@ class _$AuthCheckRequested implements AuthCheckRequested {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AuthCheckRequested);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is AuthCheckRequested);
   }
 
   @override
@@ -220,7 +221,8 @@ class _$SignedOut implements SignedOut {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SignedOut);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SignedOut);
   }
 
   @override
@@ -406,7 +408,8 @@ class _$Initial implements Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Initial);
   }
 
   @override
@@ -516,7 +519,8 @@ class _$Authenticated implements Authenticated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Authenticated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Authenticated);
   }
 
   @override
@@ -626,7 +630,8 @@ class _$Unauthenticated implements Unauthenticated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Unauthenticated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Unauthenticated);
   }
 
   @override

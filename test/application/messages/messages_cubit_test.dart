@@ -15,11 +15,9 @@ class MockMessageRepository extends Mock implements IMessageRepository {}
 
 void main() {
   late MockMessageRepository repository;
-  late MessagesCubit listCubit;
 
   setUp(() {
     repository = MockMessageRepository();
-    listCubit = MessagesCubit(repository);
   });
 
   void _setUpGetChannelMessagesSuccess(List<Message> list, String channelId) {
@@ -37,14 +35,17 @@ void main() {
 
     test('initial MessagesState should be MessagesState.initial()', () {
       // assert
-      expect(listCubit.state, equals(const MessagesState.initial()));
+      expect(
+        MessagesCubit(repository).state,
+        equals(const MessagesState.initial()),
+      );
     });
 
     blocTest<MessagesCubit, MessagesState>(
       'emits [loadInProgress, loadSuccess] states for successful message list fetch',
       build: () {
         _setUpGetChannelMessagesSuccess(messageList, channelId);
-        return listCubit;
+        return MessagesCubit(repository);
       },
       act: (cubit) => cubit.getChannelMessages(channelId),
       expect: () => [
@@ -65,7 +66,7 @@ void main() {
             () => left(const MessageFailure.unexpected()),
           ),
         );
-        return listCubit;
+        return MessagesCubit(repository);
       },
       act: (cubit) => cubit.getChannelMessages(channelId),
       expect: () => [
@@ -85,7 +86,10 @@ void main() {
 
     test('initial MessagesState should be MessagesState.initial()', () {
       // assert
-      expect(listCubit.state, equals(const MessagesState.initial()));
+      expect(
+        MessagesCubit(repository).state,
+        equals(const MessagesState.initial()),
+      );
     });
 
     blocTest<MessagesCubit, MessagesState>(
@@ -102,11 +106,17 @@ void main() {
             () => right(nextPageList),
           ),
         );
-        return listCubit;
+        return MessagesCubit(repository);
       },
       seed: () => MessagesState.loadSuccess(messageList, hasMore: true),
       act: (cubit) => cubit.fetchMoreMessages(channelId),
-      expect: () => [],
+      wait: const Duration(milliseconds: 2),
+      expect: () => [
+        MessagesState.loadSuccess(
+          [...messageList, ...nextPageList],
+          hasMore: false,
+        ),
+      ],
       verify: (_) {
         verify(
           () => repository.getChannelMessages(
@@ -131,11 +141,14 @@ void main() {
             () => left(const MessageFailure.unexpected()),
           ),
         );
-        return listCubit;
+        return MessagesCubit(repository);
       },
       seed: () => MessagesState.loadSuccess(messageList, hasMore: true),
       act: (cubit) => cubit.fetchMoreMessages(channelId),
-      expect: () => [],
+      wait: const Duration(milliseconds: 2),
+      expect: () => [
+        const MessagesState.loadFailure(MessageFailure.unexpected()),
+      ],
       verify: (_) {
         verify(
           () => repository.getChannelMessages(
@@ -149,7 +162,7 @@ void main() {
     blocTest<MessagesCubit, MessagesState>(
       'does not fetch if state is not MessagesState.success',
       build: () {
-        return listCubit;
+        return MessagesCubit(repository);
       },
       act: (cubit) => cubit.fetchMoreMessages(channelId),
       expect: () => [],
@@ -166,7 +179,7 @@ void main() {
     blocTest<MessagesCubit, MessagesState>(
       'does not fetch if hasMore is false',
       build: () {
-        return listCubit;
+        return MessagesCubit(repository);
       },
       seed: () => MessagesState.loadSuccess(messageList, hasMore: false),
       act: (cubit) => cubit.fetchMoreMessages(channelId),
@@ -189,13 +202,11 @@ void main() {
 
     blocTest<MessagesCubit, MessagesState>(
       'successfully adds the new message',
-      build: () {
-        return listCubit;
-      },
+      build: () => MessagesCubit(repository),
       act: (cubit) async {
         _setUpGetChannelMessagesSuccess(messageList, channelId);
-        await listCubit.getChannelMessages(channelId);
-        listCubit.addNewMessage(mockMessage);
+        await cubit.getChannelMessages(channelId);
+        cubit.addNewMessage(mockMessage);
       },
       expect: () => [
         const MessagesState.loadInProgress(),
@@ -209,15 +220,16 @@ void main() {
 
     test('adds the new message at the beginning of the list', () async {
       // arrange
+      final cubit = MessagesCubit(repository);
       _setUpGetChannelMessagesSuccess(messageList, channelId);
-      await listCubit.getChannelMessages(channelId);
+      await cubit.getChannelMessages(channelId);
 
       // act
-      listCubit.addNewMessage(mockMessage);
+      cubit.addNewMessage(mockMessage);
 
       // assert
       expect(
-        listCubit.state,
+        cubit.state,
         equals(
           MessagesState.loadSuccess(
             [mockMessage, ...messageList],
@@ -226,7 +238,7 @@ void main() {
         ),
       );
 
-      listCubit.state.maybeWhen(
+      cubit.state.maybeWhen(
         loadSuccess: (messages, hasMore) {
           expect(messages.length, messageList.length + 1);
           expect(messages.first, mockMessage);
@@ -241,12 +253,13 @@ void main() {
         'does not add the message if the state is not MessagesState.loadSuccess()',
         () async {
       // arrange
+      final cubit = MessagesCubit(repository);
 
       // act
-      listCubit.addNewMessage(mockMessage);
+      cubit.addNewMessage(mockMessage);
 
       // assert
-      expect(listCubit.state, equals(const MessagesState.initial()));
+      expect(cubit.state, equals(const MessagesState.initial()));
     });
   });
 
@@ -257,16 +270,14 @@ void main() {
 
     blocTest<MessagesCubit, MessagesState>(
       'successfully removes the message for the given messageId',
-      build: () {
-        return listCubit;
-      },
+      build: () => MessagesCubit(repository),
       act: (cubit) async {
         _setUpGetChannelMessagesSuccess(
           [...messageList, mockMessage],
           channelId,
         );
-        await listCubit.getChannelMessages(channelId);
-        listCubit.deleteMessage(mockMessage.id);
+        await cubit.getChannelMessages(channelId);
+        cubit.deleteMessage(mockMessage.id);
       },
       expect: () => [
         const MessagesState.loadInProgress(),
@@ -280,19 +291,20 @@ void main() {
 
     test('removes the message from the list', () async {
       // arrange
+      final cubit = MessagesCubit(repository);
       _setUpGetChannelMessagesSuccess([...messageList, mockMessage], channelId);
-      await listCubit.getChannelMessages(channelId);
+      await cubit.getChannelMessages(channelId);
 
       // act
-      listCubit.deleteMessage(mockMessage.id);
+      cubit.deleteMessage(mockMessage.id);
 
       // assert
       expect(
-        listCubit.state,
+        cubit.state,
         equals(MessagesState.loadSuccess(messageList, hasMore: false)),
       );
 
-      listCubit.state.maybeWhen(
+      cubit.state.maybeWhen(
         loadSuccess: (messages, hasMore) {
           expect(messages.length, messageList.length);
           expect(messages.where((g) => g.id == mockMessage.id).toList(), []);
@@ -306,30 +318,32 @@ void main() {
         'does not remove the message if the state is not MessagesState.loadSuccess()',
         () async {
       // arrange
+      final cubit = MessagesCubit(repository);
 
       // act
-      listCubit.deleteMessage(mockMessage.id);
+      cubit.deleteMessage(mockMessage.id);
 
       // assert
-      expect(listCubit.state, equals(const MessagesState.initial()));
+      expect(cubit.state, equals(const MessagesState.initial()));
     });
 
     test('does not remove a message if it cannot find a message for the id',
         () async {
       // arrange
+      final cubit = MessagesCubit(repository);
       _setUpGetChannelMessagesSuccess(messageList, channelId);
-      await listCubit.getChannelMessages(channelId);
+      await cubit.getChannelMessages(channelId);
 
       // act
-      listCubit.deleteMessage(mockMessage.id);
+      cubit.deleteMessage(mockMessage.id);
 
       // assert
       expect(
-        listCubit.state,
+        cubit.state,
         equals(MessagesState.loadSuccess(messageList, hasMore: false)),
       );
 
-      listCubit.state.maybeWhen(
+      cubit.state.maybeWhen(
         loadSuccess: (messages, hasMore) {
           expect(messages.length, messageList.length);
         },
@@ -348,16 +362,14 @@ void main() {
 
     blocTest<MessagesCubit, MessagesState>(
       'successfully edits the message for the given message',
-      build: () {
-        return listCubit;
-      },
+      build: () => MessagesCubit(repository),
       act: (cubit) async {
         _setUpGetChannelMessagesSuccess(
           [...messageList, mockMessage],
           channelId,
         );
-        await listCubit.getChannelMessages(channelId);
-        listCubit.updateMessage(editedMessage);
+        await cubit.getChannelMessages(channelId);
+        cubit.updateMessage(editedMessage);
       },
       expect: () => [
         const MessagesState.loadInProgress(),
@@ -374,18 +386,19 @@ void main() {
 
     test('successfully edits the message', () async {
       // arrange
+      final cubit = MessagesCubit(repository);
       _setUpGetChannelMessagesSuccess(
         [...messageList, mockMessage],
         channelId,
       );
-      await listCubit.getChannelMessages(channelId);
+      await cubit.getChannelMessages(channelId);
 
       // act
-      listCubit.updateMessage(editedMessage);
+      cubit.updateMessage(editedMessage);
 
       // assert
       expect(
-        listCubit.state,
+        cubit.state,
         equals(
           MessagesState.loadSuccess(
             [...messageList, editedMessage],
@@ -394,7 +407,7 @@ void main() {
         ),
       );
 
-      listCubit.state.maybeWhen(
+      cubit.state.maybeWhen(
         loadSuccess: (messages, hasMore) {
           expect(messages.length, messageList.length + 1);
           expect(messages.last, editedMessage);
@@ -408,29 +421,31 @@ void main() {
         'does not edit the message if the state is not MessagesState.loadSuccess()',
         () async {
       // arrange
+      final cubit = MessagesCubit(repository);
 
       // act
-      listCubit.updateMessage(mockMessage);
+      cubit.updateMessage(mockMessage);
 
       // assert
-      expect(listCubit.state, equals(const MessagesState.initial()));
+      expect(cubit.state, equals(const MessagesState.initial()));
     });
 
     test('does not edit a message if it cannot find the message', () async {
       // arrange
+      final cubit = MessagesCubit(repository);
       _setUpGetChannelMessagesSuccess(messageList, channelId);
-      await listCubit.getChannelMessages(channelId);
+      await cubit.getChannelMessages(channelId);
 
       // act
-      listCubit.updateMessage(mockMessage);
+      cubit.updateMessage(mockMessage);
 
       // assert
       expect(
-        listCubit.state,
+        cubit.state,
         equals(MessagesState.loadSuccess(messageList, hasMore: false)),
       );
 
-      listCubit.state.maybeWhen(
+      cubit.state.maybeWhen(
         loadSuccess: (messages, hasMore) {
           expect(messages.length, messageList.length);
         },

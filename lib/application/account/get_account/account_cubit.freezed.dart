@@ -139,7 +139,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -255,7 +256,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -396,14 +398,14 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadSuccess &&
-            (identical(other.account, account) ||
-                const DeepCollectionEquality().equals(other.account, account)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadSuccess &&
+            const DeepCollectionEquality().equals(other.account, account));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(account);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(account));
 
   @JsonKey(ignore: true)
   @override
@@ -488,7 +490,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements AccountState {
   const factory _LoadSuccess(Account account) = _$_LoadSuccess;
 
-  Account get account => throw _privateConstructorUsedError;
+  Account get account;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -550,14 +552,14 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
+            const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
@@ -642,7 +644,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements AccountState {
   const factory _LoadFailure(AccountFailure failure) = _$_LoadFailure;
 
-  AccountFailure get failure => throw _privateConstructorUsedError;
+  AccountFailure get failure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

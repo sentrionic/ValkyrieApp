@@ -81,14 +81,15 @@ void main() {
             () => right(unit),
           ),
         );
-        registerFormBloc
-          ..add(RegisterFormEvent.passwordChanged(password))
-          ..add(RegisterFormEvent.usernameChanged(username))
-          ..add(RegisterFormEvent.emailChanged(email));
         return registerFormBloc;
       },
-      skip: 3,
+      seed: () => RegisterFormState.initial().copyWith(
+        username: Username(username),
+        emailAddress: EmailAddress(email),
+        password: Password(password),
+      ),
       act: (bloc) => bloc.add(const RegisterFormEvent.registerPressed()),
+      wait: const Duration(milliseconds: 2),
       expect: () => [
         RegisterFormState.initial().copyWith(
           emailAddress: EmailAddress(email),
@@ -133,14 +134,15 @@ void main() {
             () => left(const AuthFailure.serverError()),
           ),
         );
-        registerFormBloc
-          ..add(RegisterFormEvent.passwordChanged(password))
-          ..add(RegisterFormEvent.usernameChanged(username))
-          ..add(RegisterFormEvent.emailChanged(email));
         return registerFormBloc;
       },
-      skip: 3,
+      seed: () => RegisterFormState.initial().copyWith(
+        username: Username(username),
+        emailAddress: EmailAddress(email),
+        password: Password(password),
+      ),
       act: (bloc) => bloc.add(const RegisterFormEvent.registerPressed()),
+      wait: const Duration(milliseconds: 2),
       expect: () => [
         RegisterFormState.initial().copyWith(
           emailAddress: EmailAddress(email),

@@ -5,14 +5,14 @@ on:
   push:
 
 jobs:
-  lint:
-    name: Analyze the code
+  build:
+    name: Analyze & Test
     runs-on: ubuntu-latest
     steps:
-      - name: Clone flutter repository from stable channel with 2.5.1 version
-        uses: subosito/flutter-action@v1
+      - name: Clone flutter repository from stable channel with 2.10.3 version
+        uses: subosito/flutter-action@v2
         with:
-          flutter-version: '2.5.1'
+          flutter-version: '2.10.3'
           channel: 'stable'
 
       - name: Checkout code
@@ -24,22 +24,5 @@ jobs:
       - name: Analyze code
         run: flutter analyze
 
-  test:
-    name: Test on ubuntu-latest
-    needs: lint
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clone flutter repository from stable channel with 2.5.1 version
-        uses: subosito/flutter-action@v1
-        with:
-          flutter-version: '2.5.1'
-          channel: 'stable'
-
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Update dependencies
-        run: flutter pub get
-
-      - name: Test
+      - name: Test code
         run: flutter test

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:valkyrie_app/application/guilds/edit_guild/edit_guild_cubit.dart';
@@ -12,7 +11,7 @@ import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/core/screen_arguments/guild_screen_arguments.dart';
 import 'package:valkyrie_app/presentation/main/guild/guild_screen.dart';
 
-class EditGuildForm extends HookWidget {
+class EditGuildForm extends StatefulWidget {
   final Guild guild;
   const EditGuildForm({
     Key? key,
@@ -20,8 +19,22 @@ class EditGuildForm extends HookWidget {
   }) : super(key: key);
 
   @override
+  State<EditGuildForm> createState() => _EditGuildFormState();
+}
+
+class _EditGuildFormState extends State<EditGuildForm> {
+  late final String? _initialIcon;
+
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      _initialIcon = widget.guild.icon;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final initialIcon = useState(guild.icon);
     return BlocListener<EditGuildCubit, EditGuildState>(
       listener: (context, state) {
         state.guildFailureOrSuccessOption.fold(
@@ -35,8 +48,9 @@ class EditGuildForm extends HookWidget {
               ).show(context);
             },
             (_) {
-              final updated =
-                  context.read<GuildListCubit>().getCurrentGuild(guild.id);
+              final updated = context
+                  .read<GuildListCubit>()
+                  .getCurrentGuild(widget.guild.id);
               Navigator.pushNamedAndRemoveUntil(
                 context,
                 GuildScreen.routeName,
@@ -68,8 +82,8 @@ class EditGuildForm extends HookWidget {
                         radius: 45,
                         backgroundColor: ThemeColors.themeBlue,
                         foregroundImage:
-                            (state.icon == null && initialIcon.value != null)
-                                ? NetworkImage(guild.icon!)
+                            (state.icon == null && _initialIcon != null)
+                                ? NetworkImage(widget.guild.icon!)
                                 : null,
                         child: state.icon != null
                             ? ClipOval(
@@ -79,7 +93,7 @@ class EditGuildForm extends HookWidget {
                                 ),
                               )
                             : Text(
-                                guild.name.getOrCrash()[0],
+                                widget.guild.name.getOrCrash()[0],
                                 style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 25,
@@ -113,7 +127,9 @@ class EditGuildForm extends HookWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  initialIcon.value = null;
+                  setState(() {
+                    _initialIcon = null;
+                  });
                   context.read<EditGuildCubit>().removeIcon();
                 },
                 child: const Text(
@@ -137,7 +153,7 @@ class EditGuildForm extends HookWidget {
                       decoration: const InputDecoration(
                         labelText: 'Server Name',
                       ),
-                      initialValue: guild.name.getOrCrash(),
+                      initialValue: widget.guild.name.getOrCrash(),
                       onChanged: (value) =>
                           context.read<EditGuildCubit>().nameChanged(value),
                       validator: (_) =>
@@ -159,7 +175,7 @@ class EditGuildForm extends HookWidget {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             FocusScope.of(context).unfocus();
-            context.read<EditGuildCubit>().submitEditGuild(guild.id);
+            context.read<EditGuildCubit>().submitEditGuild(widget.guild.id);
           },
           backgroundColor: ThemeColors.themeBlue,
           foregroundColor: Colors.white,
@@ -173,7 +189,8 @@ class EditGuildForm extends HookWidget {
     final pickedFile =
         await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
-      final croppedFile = await ImageCropper.cropImage(
+      if (!mounted) return;
+      final croppedFile = await ImageCropper().cropImage(
         sourcePath: pickedFile.path,
         cropStyle: CropStyle.circle,
         androidUiSettings: AndroidUiSettings(
@@ -187,6 +204,7 @@ class EditGuildForm extends HookWidget {
         compressQuality: 70,
       );
       if (croppedFile != null) {
+        if (!mounted) return;
         context.read<EditGuildCubit>().iconChanged(croppedFile);
       }
     }

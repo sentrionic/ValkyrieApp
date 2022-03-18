@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 
-import 'guild.dart';
-import 'guild_failure.dart';
+import 'package:valkyrie_app/domain/guilds/guild.dart';
+import 'package:valkyrie_app/domain/guilds/guild_failure.dart';
 
 abstract class IGuildRepository {
   Future<Either<GuildFailure, List<Guild>>> getUserGuilds();

@@ -222,37 +222,27 @@ class _$_Member extends _Member {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Member &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)) &&
-            (identical(other.isOnline, isOnline) ||
-                const DeepCollectionEquality()
-                    .equals(other.isOnline, isOnline)) &&
-            (identical(other.isFriend, isFriend) ||
-                const DeepCollectionEquality()
-                    .equals(other.isFriend, isFriend)) &&
-            (identical(other.nickname, nickname) ||
-                const DeepCollectionEquality()
-                    .equals(other.nickname, nickname)) &&
-            (identical(other.color, color) ||
-                const DeepCollectionEquality().equals(other.color, color)));
+        (other.runtimeType == runtimeType &&
+            other is _Member &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality().equals(other.image, image) &&
+            const DeepCollectionEquality().equals(other.isOnline, isOnline) &&
+            const DeepCollectionEquality().equals(other.isFriend, isFriend) &&
+            const DeepCollectionEquality().equals(other.nickname, nickname) &&
+            const DeepCollectionEquality().equals(other.color, color));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(image) ^
-      const DeepCollectionEquality().hash(isOnline) ^
-      const DeepCollectionEquality().hash(isFriend) ^
-      const DeepCollectionEquality().hash(nickname) ^
-      const DeepCollectionEquality().hash(color);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(image),
+      const DeepCollectionEquality().hash(isOnline),
+      const DeepCollectionEquality().hash(isFriend),
+      const DeepCollectionEquality().hash(nickname),
+      const DeepCollectionEquality().hash(color));
 
   @JsonKey(ignore: true)
   @override
@@ -272,19 +262,19 @@ abstract class _Member extends Member {
   const _Member._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
-  bool get isOnline => throw _privateConstructorUsedError;
+  bool get isOnline;
   @override
-  bool get isFriend => throw _privateConstructorUsedError;
+  bool get isFriend;
   @override
-  String? get nickname => throw _privateConstructorUsedError;
+  String? get nickname;
   @override
-  String? get color => throw _privateConstructorUsedError;
+  String? get color;
   @override
   @JsonKey(ignore: true)
   _$MemberCopyWith<_Member> get copyWith => throw _privateConstructorUsedError;

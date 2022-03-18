@@ -139,7 +139,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -255,7 +256,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -397,16 +399,15 @@ class _$_DeleteFailure implements _DeleteFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DeleteFailure &&
-            (identical(other.messageFailure, messageFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.messageFailure, messageFailure)));
+        (other.runtimeType == runtimeType &&
+            other is _DeleteFailure &&
+            const DeepCollectionEquality()
+                .equals(other.messageFailure, messageFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(messageFailure);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(messageFailure));
 
   @JsonKey(ignore: true)
   @override
@@ -492,7 +493,7 @@ abstract class _DeleteFailure implements DeleteMessageState {
   const factory _DeleteFailure(MessageFailure messageFailure) =
       _$_DeleteFailure;
 
-  MessageFailure get messageFailure => throw _privateConstructorUsedError;
+  MessageFailure get messageFailure;
   @JsonKey(ignore: true)
   _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -529,7 +530,8 @@ class _$_DeleteSuccess implements _DeleteSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DeleteSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _DeleteSuccess);
   }
 
   @override

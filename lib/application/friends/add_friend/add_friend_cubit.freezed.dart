@@ -175,27 +175,24 @@ class _$_AddFriendState implements _AddFriendState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AddFriendState &&
-            (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.failureOrSuccessOption, failureOrSuccessOption)));
+        (other.runtimeType == runtimeType &&
+            other is _AddFriendState &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality()
+                .equals(other.isSubmitting, isSubmitting) &&
+            const DeepCollectionEquality()
+                .equals(other.failureOrSuccessOption, failureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(uid) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(failureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(isSubmitting),
+      const DeepCollectionEquality().hash(failureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
@@ -212,14 +209,13 @@ abstract class _AddFriendState implements AddFriendState {
           failureOrSuccessOption}) = _$_AddFriendState;
 
   @override
-  UID get uid => throw _privateConstructorUsedError;
+  UID get uid;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<FriendFailure, Unit>> get failureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<FriendFailure, Unit>> get failureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$AddFriendStateCopyWith<_AddFriendState> get copyWith =>

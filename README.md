@@ -2,6 +2,8 @@
 
 The mobile application for [Valkyrie](https://github.com/sentrionic/Valkyrie) written in Flutter.
 
+For the APK check out the [Release tab](https://github.com/sentrionic/ValkyrieApp/releases).
+
 ## Screenshots
 
 <table><tr>
@@ -34,11 +36,13 @@ For the socket.io version check out the `v1` branch.
 
 The architecture of this app is based on Reso Coder's [Domain Driven Design Principles](https://resocoder.com/2020/03/09/flutter-firebase-ddd-course-1-domain-driven-design-principles/):
 
+![DDD architecture](https://resocoder.com/wp-content/uploads/2020/03/DDD-Flutter-Diagram-v3.svg)
+
 > **Application** contains all the Use Cases
 
 > **Domain** contains the business logic (entities and validation)
 
-> **Infrastructure** contains the repositories and network calls
+> **Infrastructure** contains the repositories and network calls as well as Data Transfer Objects
 
 > **Presentation** contains all the UI components and the web sockets
 
@@ -46,7 +50,7 @@ The architecture of this app is based on Reso Coder's [Domain Driven Design Prin
 
 You will need Flutter Version 2 to run this app.
 
-This app was created and tested on `Flutter 2.5.2` and `Dart 2.14.3` .
+This app was created and tested on `Flutter 2.10.3` and `Dart 2.16.1` .
 
 ```
 git clone https://github.com/sentrionic/ValkyrieApp.git
@@ -56,10 +60,13 @@ flutter packages get
 
 For debug mode run `flutter run` and for production mode run `flutter run --release`
 
-If you want to use your own server you will base to change the `BaseUrl` in `InjectableModule`
-and then run `flutter pub run build_runner build --delete-conflicting-outputs`
+To run the code generator using `freezed`, run `flutter pub run build_runner watch --delete-conflicting-outputs`.
 
-If said server runs on `localhost` you will also need to add `android:usesCleartextTraffic="true"` to the Android manifest.
+If you want to use your own server you will need to change the `BaseUrl` in `InjectableModule`.
+
+If said server runs locally you will also need to add `android:usesCleartextTraffic="true"` to the Android manifest.
+
+**Note**: Instead of `localhost` you need to specify your `IPv4 Address` (e.g. `192.168.2.xxx`), otherwise the HttpClient won't be able to connect to the server.
 
 ## Tests
 

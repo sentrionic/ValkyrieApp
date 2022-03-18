@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'errors.dart';
-import 'failures.dart';
+import 'package:valkyrie_app/domain/core/errors.dart';
+import 'package:valkyrie_app/domain/core/failures.dart';
 
 @immutable
 abstract class ValueObject<T> {
@@ -13,8 +13,18 @@ abstract class ValueObject<T> {
 
   /// Throws [UnexpectedValueError] containing the [ValueFailure]
   T getOrCrash() {
-    // id = identity - same as writing (right) => right
-    return value.fold((f) => throw UnexpectedValueError(f), id);
+    // During development throw an error for easier debugging.
+    if (!const bool.fromEnvironment('dart.vm.product')) {
+      // id = identity - same as writing (right) => right
+      return value.fold((f) => throw UnexpectedValueError(f), id);
+    }
+    // Return the value either way to not confuse the user.
+    return getValue();
+  }
+
+  /// Returns the value either way.
+  T getValue() {
+    return value.fold((l) => l.failedValue, id);
   }
 
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit {

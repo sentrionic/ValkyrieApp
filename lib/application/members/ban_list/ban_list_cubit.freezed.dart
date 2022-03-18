@@ -139,7 +139,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -255,7 +256,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -387,14 +389,14 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadSuccess &&
-            (identical(other.members, members) ||
-                const DeepCollectionEquality().equals(other.members, members)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadSuccess &&
+            const DeepCollectionEquality().equals(other.members, members));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(members);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(members));
 
   @JsonKey(ignore: true)
   @override
@@ -479,7 +481,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements BanListState {
   const factory _LoadSuccess(List<BannedMember> members) = _$_LoadSuccess;
 
-  List<BannedMember> get members => throw _privateConstructorUsedError;
+  List<BannedMember> get members;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -541,15 +543,15 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
-            (identical(other.memberFailure, memberFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.memberFailure, memberFailure)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
+            const DeepCollectionEquality()
+                .equals(other.memberFailure, memberFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(memberFailure);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(memberFailure));
 
   @JsonKey(ignore: true)
   @override
@@ -634,7 +636,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements BanListState {
   const factory _LoadFailure(MemberFailure memberFailure) = _$_LoadFailure;
 
-  MemberFailure get memberFailure => throw _privateConstructorUsedError;
+  MemberFailure get memberFailure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

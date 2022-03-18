@@ -140,7 +140,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -256,7 +257,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -389,14 +391,14 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadSuccess &&
-            (identical(other.guilds, guilds) ||
-                const DeepCollectionEquality().equals(other.guilds, guilds)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadSuccess &&
+            const DeepCollectionEquality().equals(other.guilds, guilds));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(guilds);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(guilds));
 
   @JsonKey(ignore: true)
   @override
@@ -481,7 +483,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements GuildListState {
   const factory _LoadSuccess(List<Guild> guilds) = _$_LoadSuccess;
 
-  List<Guild> get guilds => throw _privateConstructorUsedError;
+  List<Guild> get guilds;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -544,15 +546,15 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
-            (identical(other.guildFailure, guildFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.guildFailure, guildFailure)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
+            const DeepCollectionEquality()
+                .equals(other.guildFailure, guildFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(guildFailure);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(guildFailure));
 
   @JsonKey(ignore: true)
   @override
@@ -637,7 +639,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements GuildListState {
   const factory _LoadFailure(GuildFailure guildFailure) = _$_LoadFailure;
 
-  GuildFailure get guildFailure => throw _privateConstructorUsedError;
+  GuildFailure get guildFailure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

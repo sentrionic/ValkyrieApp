@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 /// NotificationsCubit keeps track of all notifications the current user has.

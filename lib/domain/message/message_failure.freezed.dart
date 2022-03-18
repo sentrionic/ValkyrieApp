@@ -130,7 +130,8 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Unexpected);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Unexpected);
   }
 
   @override
@@ -240,7 +241,8 @@ class _$_FileTooLarge implements _FileTooLarge {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FileTooLarge);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _FileTooLarge);
   }
 
   @override
@@ -366,14 +368,14 @@ class _$_BadRequest implements _BadRequest {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BadRequest &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+        (other.runtimeType == runtimeType &&
+            other is _BadRequest &&
+            const DeepCollectionEquality().equals(other.message, message));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
 
   @JsonKey(ignore: true)
   @override
@@ -452,7 +454,7 @@ class _$_BadRequest implements _BadRequest {
 abstract class _BadRequest implements MessageFailure {
   const factory _BadRequest(String message) = _$_BadRequest;
 
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @JsonKey(ignore: true)
   _$BadRequestCopyWith<_BadRequest> get copyWith =>
       throw _privateConstructorUsedError;

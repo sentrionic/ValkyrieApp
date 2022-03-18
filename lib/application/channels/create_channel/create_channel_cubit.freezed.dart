@@ -212,37 +212,29 @@ class _$_CreateChannelState implements _CreateChannelState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CreateChannelState &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.isPublic, isPublic) ||
-                const DeepCollectionEquality()
-                    .equals(other.isPublic, isPublic)) &&
-            (identical(other.members, members) ||
-                const DeepCollectionEquality()
-                    .equals(other.members, members)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.channelFailureOrSuccessOption,
-                    channelFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.channelFailureOrSuccessOption,
-                    channelFailureOrSuccessOption)));
+        (other.runtimeType == runtimeType &&
+            other is _CreateChannelState &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.isPublic, isPublic) &&
+            const DeepCollectionEquality().equals(other.members, members) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality()
+                .equals(other.isSubmitting, isSubmitting) &&
+            const DeepCollectionEquality().equals(
+                other.channelFailureOrSuccessOption,
+                channelFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(isPublic) ^
-      const DeepCollectionEquality().hash(members) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(channelFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(isPublic),
+      const DeepCollectionEquality().hash(members),
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(isSubmitting),
+      const DeepCollectionEquality().hash(channelFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
@@ -261,18 +253,17 @@ abstract class _CreateChannelState implements CreateChannelState {
           channelFailureOrSuccessOption}) = _$_CreateChannelState;
 
   @override
-  ChannelName get name => throw _privateConstructorUsedError;
+  ChannelName get name;
   @override
-  bool get isPublic => throw _privateConstructorUsedError;
+  bool get isPublic;
   @override
-  List<Member> get members => throw _privateConstructorUsedError;
+  List<Member> get members;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<ChannelFailure, Channel>> get channelFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<ChannelFailure, Channel>> get channelFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$CreateChannelStateCopyWith<_CreateChannelState> get copyWith =>

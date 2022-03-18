@@ -10,7 +10,7 @@ import 'package:valkyrie_app/domain/message/message.dart';
 import 'package:valkyrie_app/domain/message/message_failure.dart';
 import 'package:valkyrie_app/infrastructure/core/field_error.dart';
 
-import 'message_dto.dart';
+import 'package:valkyrie_app/infrastructure/messages/message_dto.dart';
 
 @LazySingleton(as: IMessageRepository)
 class MessageRepository extends IMessageRepository {

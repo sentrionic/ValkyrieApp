@@ -137,18 +137,17 @@ class _$_DMChannel extends _DMChannel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DMChannel &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _DMChannel &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(user);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -162,9 +161,9 @@ abstract class _DMChannel extends DMChannel {
   const _DMChannel._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  DMUser get user => throw _privateConstructorUsedError;
+  DMUser get user;
   @override
   @JsonKey(ignore: true)
   _$DMChannelCopyWith<_DMChannel> get copyWith =>
@@ -317,21 +316,19 @@ class _$_DMNotification extends _DMNotification {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DMNotification &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.count, count) ||
-                const DeepCollectionEquality().equals(other.count, count)) &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _DMNotification &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.count, count) &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(count) ^
-      const DeepCollectionEquality().hash(user);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(count),
+      const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -347,11 +344,11 @@ abstract class _DMNotification extends DMNotification {
   const _DMNotification._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  int get count => throw _privateConstructorUsedError;
+  int get count;
   @override
-  DMUser get user => throw _privateConstructorUsedError;
+  DMUser get user;
   @override
   @JsonKey(ignore: true)
   _$DMNotificationCopyWith<_DMNotification> get copyWith =>

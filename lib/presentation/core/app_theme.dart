@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'colors.dart';
+import 'package:valkyrie_app/presentation/core/colors.dart';
 
 final ThemeData theme = ThemeData.dark();
 final appTheme = theme.copyWith(

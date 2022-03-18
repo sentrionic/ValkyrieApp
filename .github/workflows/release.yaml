@@ -1,0 +1,30 @@
+name: Releases
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    name: Release APK
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '11.0'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '2.10.3'
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
+      - run: flutter build apk --release
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: 'build/app/outputs/flutter-apk/*.apk'
+          allowUpdates: true
+          token: ${{ secrets.GITHUB_TOKEN }}

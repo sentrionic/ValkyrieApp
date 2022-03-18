@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 /// CurrentDMCubit stores and retrieves the 'channelId' of the currently open [DMChannel]

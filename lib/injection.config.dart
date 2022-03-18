@@ -4,8 +4,6 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
-// ignore_for_file: require_trailing_commas
-
 import 'package:dio/dio.dart' as _i11;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;

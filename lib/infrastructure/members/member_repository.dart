@@ -13,7 +13,7 @@ import 'package:valkyrie_app/infrastructure/core/field_error.dart';
 import 'package:valkyrie_app/infrastructure/guilds/guild_appearance_dto.dart';
 import 'package:valkyrie_app/infrastructure/members/banned_member_dto.dart';
 
-import 'member_dto.dart';
+import 'package:valkyrie_app/infrastructure/members/member_dto.dart';
 
 @LazySingleton(as: IMemberRepository)
 class MemberRepository extends IMemberRepository {

@@ -138,7 +138,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -254,7 +255,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -396,14 +398,14 @@ class _$_LeaveFailure implements _LeaveFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LeaveFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _LeaveFailure &&
+            const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
@@ -488,7 +490,7 @@ class _$_LeaveFailure implements _LeaveFailure {
 abstract class _LeaveFailure implements LeaveGuildState {
   const factory _LeaveFailure(GuildFailure failure) = _$_LeaveFailure;
 
-  GuildFailure get failure => throw _privateConstructorUsedError;
+  GuildFailure get failure;
   @JsonKey(ignore: true)
   _$LeaveFailureCopyWith<_LeaveFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -525,7 +527,8 @@ class _$_LeaveSuccess implements _LeaveSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LeaveSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LeaveSuccess);
   }
 
   @override

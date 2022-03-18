@@ -7,10 +7,9 @@ import 'package:valkyrie_app/presentation/common/widgets/center_loading_indicato
 import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/main/home/friends_tab/add_friend/add_friend_screen.dart';
 import 'package:valkyrie_app/presentation/main/home/friends_tab/hooks/friend_socket_hook.dart';
+import 'package:valkyrie_app/presentation/main/home/friends_tab/widgets/friend_item.dart';
 import 'package:valkyrie_app/presentation/main/home/friends_tab/widgets/request_item.dart';
 import 'package:valkyrie_app/presentation/main/home/friends_tab/widgets/status_label.dart';
-
-import 'widgets/friend_item.dart';
 
 class FriendLayout extends HookWidget {
   @override

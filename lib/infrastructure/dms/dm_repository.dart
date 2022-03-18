@@ -8,7 +8,7 @@ import 'package:valkyrie_app/domain/dms/dm_channel.dart';
 import 'package:valkyrie_app/domain/dms/dm_failure.dart';
 import 'package:valkyrie_app/domain/dms/i_dm_repository.dart';
 
-import 'dm_channel_dto.dart';
+import 'package:valkyrie_app/infrastructure/dms/dm_channel_dto.dart';
 
 @LazySingleton(as: IDMRepository)
 class DMRepository extends IDMRepository {

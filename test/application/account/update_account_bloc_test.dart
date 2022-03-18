@@ -76,12 +76,13 @@ void main() {
             () => right(updatedAccount),
           ),
         );
-        updateAccountBloc
-          ..add(UpdateAccountEvent.usernameChanged(newUsername))
-          ..add(UpdateAccountEvent.emailChanged(newEmail));
         return updateAccountBloc;
       },
-      skip: 2,
+      seed: () => UpdateAccountState.initial().copyWith(
+        emailAddress: EmailAddress(newEmail),
+        username: Username(newUsername),
+      ),
+      wait: const Duration(milliseconds: 2),
       act: (bloc) => bloc.add(const UpdateAccountEvent.saved()),
       expect: () => [
         UpdateAccountState.initial().copyWith(
@@ -123,12 +124,13 @@ void main() {
             () => left(const AccountFailure.unexpected()),
           ),
         );
-        updateAccountBloc
-          ..add(UpdateAccountEvent.usernameChanged(newUsername))
-          ..add(UpdateAccountEvent.emailChanged(newEmail));
         return updateAccountBloc;
       },
-      skip: 2,
+      seed: () => UpdateAccountState.initial().copyWith(
+        emailAddress: EmailAddress(newEmail),
+        username: Username(newUsername),
+      ),
+      wait: const Duration(milliseconds: 2),
       act: (bloc) => bloc.add(const UpdateAccountEvent.saved()),
       expect: () => [
         UpdateAccountState.initial().copyWith(

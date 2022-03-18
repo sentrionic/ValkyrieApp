@@ -138,7 +138,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -254,7 +255,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -396,14 +398,14 @@ class _$_DeleteFailure implements _DeleteFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DeleteFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _DeleteFailure &&
+            const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
@@ -488,7 +490,7 @@ class _$_DeleteFailure implements _DeleteFailure {
 abstract class _DeleteFailure implements DeleteGuildState {
   const factory _DeleteFailure(GuildFailure failure) = _$_DeleteFailure;
 
-  GuildFailure get failure => throw _privateConstructorUsedError;
+  GuildFailure get failure;
   @JsonKey(ignore: true)
   _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -525,7 +527,8 @@ class _$_DeleteSuccess implements _DeleteSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DeleteSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _DeleteSuccess);
   }
 
   @override

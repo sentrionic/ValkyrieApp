@@ -145,22 +145,19 @@ class _$_BannedMember extends _BannedMember {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BannedMember &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)));
+        (other.runtimeType == runtimeType &&
+            other is _BannedMember &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality().equals(other.image, image));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(image);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override
@@ -176,11 +173,11 @@ abstract class _BannedMember extends BannedMember {
   const _BannedMember._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
   @JsonKey(ignore: true)
   _$BannedMemberCopyWith<_BannedMember> get copyWith =>

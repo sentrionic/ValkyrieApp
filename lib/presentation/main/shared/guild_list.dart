@@ -6,7 +6,7 @@ import 'package:valkyrie_app/application/guilds/guild_list/guild_list_cubit.dart
 import 'package:valkyrie_app/presentation/common/widgets/widget_constants.dart';
 import 'package:valkyrie_app/presentation/main/shared/add_guild/add_guild_icon.dart';
 
-import 'guild_item.dart';
+import 'package:valkyrie_app/presentation/main/shared/guild_item.dart';
 
 class GuildListWidget extends HookWidget {
   @override

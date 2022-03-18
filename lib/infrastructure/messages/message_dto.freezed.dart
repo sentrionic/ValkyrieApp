@@ -234,33 +234,26 @@ class _$_MessageDto extends _MessageDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _MessageDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.text, text) ||
-                const DeepCollectionEquality().equals(other.text, text)) &&
-            (identical(other.attachment, attachment) ||
-                const DeepCollectionEquality()
-                    .equals(other.attachment, attachment)) &&
-            (identical(other.createdAt, createdAt) ||
-                const DeepCollectionEquality()
-                    .equals(other.createdAt, createdAt)) &&
-            (identical(other.updatedAt, updatedAt) ||
-                const DeepCollectionEquality()
-                    .equals(other.updatedAt, updatedAt)) &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _MessageDto &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.text, text) &&
+            const DeepCollectionEquality()
+                .equals(other.attachment, attachment) &&
+            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
+            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(text) ^
-      const DeepCollectionEquality().hash(attachment) ^
-      const DeepCollectionEquality().hash(createdAt) ^
-      const DeepCollectionEquality().hash(updatedAt) ^
-      const DeepCollectionEquality().hash(user);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(text),
+      const DeepCollectionEquality().hash(attachment),
+      const DeepCollectionEquality().hash(createdAt),
+      const DeepCollectionEquality().hash(updatedAt),
+      const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -279,17 +272,17 @@ abstract class _MessageDto extends MessageDto {
   const _MessageDto._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String? get text => throw _privateConstructorUsedError;
+  String? get text;
   @override
-  AttachmentDto? get attachment => throw _privateConstructorUsedError;
+  AttachmentDto? get attachment;
   @override
-  String get createdAt => throw _privateConstructorUsedError;
+  String get createdAt;
   @override
-  String get updatedAt => throw _privateConstructorUsedError;
+  String get updatedAt;
   @override
-  MemberDto get user => throw _privateConstructorUsedError;
+  MemberDto get user;
   @override
   @JsonKey(ignore: true)
   _$MessageDtoCopyWith<_MessageDto> get copyWith =>
@@ -432,23 +425,19 @@ class _$_AttachmentDto extends _AttachmentDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AttachmentDto &&
-            (identical(other.filename, filename) ||
-                const DeepCollectionEquality()
-                    .equals(other.filename, filename)) &&
-            (identical(other.url, url) ||
-                const DeepCollectionEquality().equals(other.url, url)) &&
-            (identical(other.filetype, filetype) ||
-                const DeepCollectionEquality()
-                    .equals(other.filetype, filetype)));
+        (other.runtimeType == runtimeType &&
+            other is _AttachmentDto &&
+            const DeepCollectionEquality().equals(other.filename, filename) &&
+            const DeepCollectionEquality().equals(other.url, url) &&
+            const DeepCollectionEquality().equals(other.filetype, filetype));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(filename) ^
-      const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(filetype);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(filename),
+      const DeepCollectionEquality().hash(url),
+      const DeepCollectionEquality().hash(filetype));
 
   @JsonKey(ignore: true)
   @override
@@ -464,11 +453,11 @@ abstract class _AttachmentDto extends AttachmentDto {
   const _AttachmentDto._() : super._();
 
   @override
-  String get filename => throw _privateConstructorUsedError;
+  String get filename;
   @override
-  String get url => throw _privateConstructorUsedError;
+  String get url;
   @override
-  String get filetype => throw _privateConstructorUsedError;
+  String get filetype;
   @override
   @JsonKey(ignore: true)
   _$AttachmentDtoCopyWith<_AttachmentDto> get copyWith =>

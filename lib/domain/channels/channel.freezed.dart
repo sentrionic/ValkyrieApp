@@ -160,26 +160,22 @@ class _$_Channel extends _Channel {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Channel &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.isPublic, isPublic) ||
-                const DeepCollectionEquality()
-                    .equals(other.isPublic, isPublic)) &&
-            (identical(other.hasNotification, hasNotification) ||
-                const DeepCollectionEquality()
-                    .equals(other.hasNotification, hasNotification)));
+        (other.runtimeType == runtimeType &&
+            other is _Channel &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.isPublic, isPublic) &&
+            const DeepCollectionEquality()
+                .equals(other.hasNotification, hasNotification));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(isPublic) ^
-      const DeepCollectionEquality().hash(hasNotification);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(isPublic),
+      const DeepCollectionEquality().hash(hasNotification));
 
   @JsonKey(ignore: true)
   @override
@@ -196,13 +192,13 @@ abstract class _Channel extends Channel {
   const _Channel._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  ChannelName get name => throw _privateConstructorUsedError;
+  ChannelName get name;
   @override
-  bool get isPublic => throw _privateConstructorUsedError;
+  bool get isPublic;
   @override
-  bool get hasNotification => throw _privateConstructorUsedError;
+  bool get hasNotification;
   @override
   @JsonKey(ignore: true)
   _$ChannelCopyWith<_Channel> get copyWith =>

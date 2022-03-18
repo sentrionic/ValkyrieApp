@@ -140,7 +140,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -256,7 +257,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -389,15 +391,14 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadSuccess &&
-            (identical(other.channels, channels) ||
-                const DeepCollectionEquality()
-                    .equals(other.channels, channels)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadSuccess &&
+            const DeepCollectionEquality().equals(other.channels, channels));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(channels);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(channels));
 
   @JsonKey(ignore: true)
   @override
@@ -482,7 +483,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements ChannelListState {
   const factory _LoadSuccess(List<Channel> channels) = _$_LoadSuccess;
 
-  List<Channel> get channels => throw _privateConstructorUsedError;
+  List<Channel> get channels;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -545,16 +546,15 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
-            (identical(other.channelFailure, channelFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.channelFailure, channelFailure)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
+            const DeepCollectionEquality()
+                .equals(other.channelFailure, channelFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(channelFailure);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(channelFailure));
 
   @JsonKey(ignore: true)
   @override
@@ -639,7 +639,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements ChannelListState {
   const factory _LoadFailure(ChannelFailure channelFailure) = _$_LoadFailure;
 
-  ChannelFailure get channelFailure => throw _privateConstructorUsedError;
+  ChannelFailure get channelFailure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

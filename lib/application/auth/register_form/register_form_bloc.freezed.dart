@@ -162,14 +162,14 @@ class _$EmailChanged implements EmailChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmailChanged &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)));
+        (other.runtimeType == runtimeType &&
+            other is EmailChanged &&
+            const DeepCollectionEquality().equals(other.email, email));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
 
   @JsonKey(ignore: true)
   @override
@@ -254,7 +254,7 @@ class _$EmailChanged implements EmailChanged {
 abstract class EmailChanged implements RegisterFormEvent {
   const factory EmailChanged(String email) = _$EmailChanged;
 
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @JsonKey(ignore: true)
   $EmailChangedCopyWith<EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -308,15 +308,14 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PasswordChanged &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)));
+        (other.runtimeType == runtimeType &&
+            other is PasswordChanged &&
+            const DeepCollectionEquality().equals(other.password, password));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(password));
 
   @JsonKey(ignore: true)
   @override
@@ -401,7 +400,7 @@ class _$PasswordChanged implements PasswordChanged {
 abstract class PasswordChanged implements RegisterFormEvent {
   const factory PasswordChanged(String password) = _$PasswordChanged;
 
-  String get password => throw _privateConstructorUsedError;
+  String get password;
   @JsonKey(ignore: true)
   $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -455,15 +454,14 @@ class _$UsernameChanged implements UsernameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UsernameChanged &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)));
+        (other.runtimeType == runtimeType &&
+            other is UsernameChanged &&
+            const DeepCollectionEquality().equals(other.username, username));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(username));
 
   @JsonKey(ignore: true)
   @override
@@ -548,7 +546,7 @@ class _$UsernameChanged implements UsernameChanged {
 abstract class UsernameChanged implements RegisterFormEvent {
   const factory UsernameChanged(String username) = _$UsernameChanged;
 
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @JsonKey(ignore: true)
   $UsernameChangedCopyWith<UsernameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -585,7 +583,8 @@ class _$RegisterPressed implements RegisterPressed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is RegisterPressed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is RegisterPressed);
   }
 
   @override
@@ -868,38 +867,29 @@ class _$_RegisterFormState implements _RegisterFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RegisterFormState &&
-            (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.authFailureOrSuccessOption,
-                    authFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.authFailureOrSuccessOption,
-                    authFailureOrSuccessOption)));
+        (other.runtimeType == runtimeType &&
+            other is _RegisterFormState &&
+            const DeepCollectionEquality()
+                .equals(other.emailAddress, emailAddress) &&
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality().equals(other.password, password) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality()
+                .equals(other.isSubmitting, isSubmitting) &&
+            const DeepCollectionEquality().equals(
+                other.authFailureOrSuccessOption, authFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(authFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(emailAddress),
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(password),
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(isSubmitting),
+      const DeepCollectionEquality().hash(authFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
@@ -918,18 +908,17 @@ abstract class _RegisterFormState implements RegisterFormState {
           authFailureOrSuccessOption}) = _$_RegisterFormState;
 
   @override
-  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  EmailAddress get emailAddress;
   @override
-  Username get username => throw _privateConstructorUsedError;
+  Username get username;
   @override
-  Password get password => throw _privateConstructorUsedError;
+  Password get password;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$RegisterFormStateCopyWith<_RegisterFormState> get copyWith =>

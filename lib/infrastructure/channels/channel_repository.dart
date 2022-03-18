@@ -7,9 +7,8 @@ import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/channels/channel.dart';
 import 'package:valkyrie_app/domain/channels/channel_failure.dart';
 import 'package:valkyrie_app/domain/channels/i_channel_repository.dart';
+import 'package:valkyrie_app/infrastructure/channels/channel_dto.dart';
 import 'package:valkyrie_app/infrastructure/core/field_error.dart';
-
-import 'channel_dto.dart';
 
 @LazySingleton(as: IChannelRepository)
 class ChannelRepository extends IChannelRepository {

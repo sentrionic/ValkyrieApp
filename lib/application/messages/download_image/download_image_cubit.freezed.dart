@@ -176,30 +176,25 @@ class _$_DownloadImageState implements _DownloadImageState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DownloadImageState &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isDownloading, isDownloading) ||
-                const DeepCollectionEquality()
-                    .equals(other.isDownloading, isDownloading)) &&
-            (identical(other.progress, progress) ||
-                const DeepCollectionEquality()
-                    .equals(other.progress, progress)) &&
-            (identical(other.downloadFailureOrSuccessOption,
-                    downloadFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.downloadFailureOrSuccessOption,
-                    downloadFailureOrSuccessOption)));
+        (other.runtimeType == runtimeType &&
+            other is _DownloadImageState &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality()
+                .equals(other.isDownloading, isDownloading) &&
+            const DeepCollectionEquality().equals(other.progress, progress) &&
+            const DeepCollectionEquality().equals(
+                other.downloadFailureOrSuccessOption,
+                downloadFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isDownloading) ^
-      const DeepCollectionEquality().hash(progress) ^
-      const DeepCollectionEquality().hash(downloadFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(isDownloading),
+      const DeepCollectionEquality().hash(progress),
+      const DeepCollectionEquality().hash(downloadFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
@@ -216,14 +211,13 @@ abstract class _DownloadImageState implements DownloadImageState {
           downloadFailureOrSuccessOption}) = _$_DownloadImageState;
 
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isDownloading => throw _privateConstructorUsedError;
+  bool get isDownloading;
   @override
-  int get progress => throw _privateConstructorUsedError;
+  int get progress;
   @override
-  Option<Either<MessageFailure, Unit>> get downloadFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<MessageFailure, Unit>> get downloadFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$DownloadImageStateCopyWith<_DownloadImageState> get copyWith =>

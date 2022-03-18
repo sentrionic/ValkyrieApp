@@ -205,33 +205,27 @@ class _$_GuildDto extends _GuildDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _GuildDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.defaultChannelId, defaultChannelId) ||
-                const DeepCollectionEquality()
-                    .equals(other.defaultChannelId, defaultChannelId)) &&
-            (identical(other.ownerId, ownerId) ||
-                const DeepCollectionEquality()
-                    .equals(other.ownerId, ownerId)) &&
-            (identical(other.hasNotification, hasNotification) ||
-                const DeepCollectionEquality()
-                    .equals(other.hasNotification, hasNotification)) &&
-            (identical(other.icon, icon) ||
-                const DeepCollectionEquality().equals(other.icon, icon)));
+        (other.runtimeType == runtimeType &&
+            other is _GuildDto &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality()
+                .equals(other.defaultChannelId, defaultChannelId) &&
+            const DeepCollectionEquality().equals(other.ownerId, ownerId) &&
+            const DeepCollectionEquality()
+                .equals(other.hasNotification, hasNotification) &&
+            const DeepCollectionEquality().equals(other.icon, icon));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(defaultChannelId) ^
-      const DeepCollectionEquality().hash(ownerId) ^
-      const DeepCollectionEquality().hash(hasNotification) ^
-      const DeepCollectionEquality().hash(icon);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(defaultChannelId),
+      const DeepCollectionEquality().hash(ownerId),
+      const DeepCollectionEquality().hash(hasNotification),
+      const DeepCollectionEquality().hash(icon));
 
   @JsonKey(ignore: true)
   @override
@@ -250,17 +244,17 @@ abstract class _GuildDto extends GuildDto {
   const _GuildDto._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get defaultChannelId => throw _privateConstructorUsedError;
+  String get defaultChannelId;
   @override
-  String get ownerId => throw _privateConstructorUsedError;
+  String get ownerId;
   @override
-  bool get hasNotification => throw _privateConstructorUsedError;
+  bool get hasNotification;
   @override
-  String? get icon => throw _privateConstructorUsedError;
+  String? get icon;
   @override
   @JsonKey(ignore: true)
   _$GuildDtoCopyWith<_GuildDto> get copyWith =>

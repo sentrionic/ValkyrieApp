@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 /// CurrentGuildCubit stores and retrieves the 'guildId' of the currently open [Guild]

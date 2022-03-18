@@ -1,13 +1,13 @@
-import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/auth/auth_failure.dart';
 import 'package:valkyrie_app/domain/auth/auth_value_objects.dart';
 import 'package:valkyrie_app/domain/auth/i_auth_facade.dart';
 
-part 'forgot_password_state.dart';
 part 'forgot_password_cubit.freezed.dart';
+part 'forgot_password_state.dart';
 
 /// ForgotPasswordCubit manages the forgot password flow
 @injectable

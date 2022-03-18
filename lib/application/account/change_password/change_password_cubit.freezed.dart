@@ -211,38 +211,31 @@ class _$_ChangePasswordState implements _ChangePasswordState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ChangePasswordState &&
-            (identical(other.oldPassword, oldPassword) ||
-                const DeepCollectionEquality()
-                    .equals(other.oldPassword, oldPassword)) &&
-            (identical(other.newPassword, newPassword) ||
-                const DeepCollectionEquality()
-                    .equals(other.newPassword, newPassword)) &&
-            (identical(other.confirmNewPassword, confirmNewPassword) ||
-                const DeepCollectionEquality()
-                    .equals(other.confirmNewPassword, confirmNewPassword)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.authFailureOrSuccessOption,
-                    authFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.authFailureOrSuccessOption,
-                    authFailureOrSuccessOption)));
+        (other.runtimeType == runtimeType &&
+            other is _ChangePasswordState &&
+            const DeepCollectionEquality()
+                .equals(other.oldPassword, oldPassword) &&
+            const DeepCollectionEquality()
+                .equals(other.newPassword, newPassword) &&
+            const DeepCollectionEquality()
+                .equals(other.confirmNewPassword, confirmNewPassword) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality()
+                .equals(other.isSubmitting, isSubmitting) &&
+            const DeepCollectionEquality().equals(
+                other.authFailureOrSuccessOption, authFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(oldPassword) ^
-      const DeepCollectionEquality().hash(newPassword) ^
-      const DeepCollectionEquality().hash(confirmNewPassword) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(authFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(oldPassword),
+      const DeepCollectionEquality().hash(newPassword),
+      const DeepCollectionEquality().hash(confirmNewPassword),
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(isSubmitting),
+      const DeepCollectionEquality().hash(authFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
@@ -262,18 +255,17 @@ abstract class _ChangePasswordState implements ChangePasswordState {
           authFailureOrSuccessOption}) = _$_ChangePasswordState;
 
   @override
-  Password get oldPassword => throw _privateConstructorUsedError;
+  Password get oldPassword;
   @override
-  Password get newPassword => throw _privateConstructorUsedError;
+  Password get newPassword;
   @override
-  Password get confirmNewPassword => throw _privateConstructorUsedError;
+  Password get confirmNewPassword;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$ChangePasswordStateCopyWith<_ChangePasswordState> get copyWith =>

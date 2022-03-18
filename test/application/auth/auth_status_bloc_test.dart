@@ -39,6 +39,7 @@ void main() {
         expect: () => [
           const AuthStatusState.authenticated(),
         ],
+        wait: const Duration(milliseconds: 2),
         verify: (_) {
           verify(
             () => mockAuthRepository.checkAuthenticated(),
@@ -60,6 +61,7 @@ void main() {
           return authStatusBloc;
         },
         act: (bloc) => bloc.add(const AuthStatusEvent.authCheckRequested()),
+        wait: const Duration(milliseconds: 2),
         expect: () => [
           const AuthStatusState.unauthenticated(),
         ],
@@ -86,6 +88,7 @@ void main() {
           return authStatusBloc;
         },
         act: (bloc) => bloc.add(const AuthStatusEvent.signedOut()),
+        wait: const Duration(milliseconds: 2),
         expect: () => [
           const AuthStatusState.unauthenticated(),
         ],

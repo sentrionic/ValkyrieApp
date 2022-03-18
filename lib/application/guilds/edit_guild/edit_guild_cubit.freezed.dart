@@ -193,10 +193,10 @@ class _$_EditGuildState implements _EditGuildState {
 
   @override
   final GuildName name;
-  @JsonKey(defaultValue: null)
+  @JsonKey()
   @override
   final File? icon;
-  @JsonKey(defaultValue: null)
+  @JsonKey()
   @override
   final String? iconUrl;
   @override
@@ -214,36 +214,29 @@ class _$_EditGuildState implements _EditGuildState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _EditGuildState &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.icon, icon) ||
-                const DeepCollectionEquality().equals(other.icon, icon)) &&
-            (identical(other.iconUrl, iconUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.iconUrl, iconUrl)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.guildFailureOrSuccessOption,
-                    guildFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.guildFailureOrSuccessOption,
-                    guildFailureOrSuccessOption)));
+        (other.runtimeType == runtimeType &&
+            other is _EditGuildState &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.icon, icon) &&
+            const DeepCollectionEquality().equals(other.iconUrl, iconUrl) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality()
+                .equals(other.isSubmitting, isSubmitting) &&
+            const DeepCollectionEquality().equals(
+                other.guildFailureOrSuccessOption,
+                guildFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(icon) ^
-      const DeepCollectionEquality().hash(iconUrl) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(guildFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(icon),
+      const DeepCollectionEquality().hash(iconUrl),
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(isSubmitting),
+      const DeepCollectionEquality().hash(guildFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
@@ -262,18 +255,17 @@ abstract class _EditGuildState implements EditGuildState {
           guildFailureOrSuccessOption}) = _$_EditGuildState;
 
   @override
-  GuildName get name => throw _privateConstructorUsedError;
+  GuildName get name;
   @override
-  File? get icon => throw _privateConstructorUsedError;
+  File? get icon;
   @override
-  String? get iconUrl => throw _privateConstructorUsedError;
+  String? get iconUrl;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<GuildFailure, Unit>> get guildFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<GuildFailure, Unit>> get guildFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$EditGuildStateCopyWith<_EditGuildState> get copyWith =>

@@ -175,10 +175,10 @@ class _$_ChangeAppearanceState implements _ChangeAppearanceState {
       required this.isSaving,
       required this.saveFailureOrSuccessOption});
 
-  @JsonKey(defaultValue: null)
+  @JsonKey()
   @override
   final Nickname? nickname;
-  @JsonKey(defaultValue: null)
+  @JsonKey()
   @override
   final HexColor? hexColor;
   @override
@@ -196,34 +196,25 @@ class _$_ChangeAppearanceState implements _ChangeAppearanceState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ChangeAppearanceState &&
-            (identical(other.nickname, nickname) ||
-                const DeepCollectionEquality()
-                    .equals(other.nickname, nickname)) &&
-            (identical(other.hexColor, hexColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.hexColor, hexColor)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSaving, isSaving) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSaving, isSaving)) &&
-            (identical(other.saveFailureOrSuccessOption,
-                    saveFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.saveFailureOrSuccessOption,
-                    saveFailureOrSuccessOption)));
+        (other.runtimeType == runtimeType &&
+            other is _ChangeAppearanceState &&
+            const DeepCollectionEquality().equals(other.nickname, nickname) &&
+            const DeepCollectionEquality().equals(other.hexColor, hexColor) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality().equals(other.isSaving, isSaving) &&
+            const DeepCollectionEquality().equals(
+                other.saveFailureOrSuccessOption, saveFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(nickname) ^
-      const DeepCollectionEquality().hash(hexColor) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSaving) ^
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(nickname),
+      const DeepCollectionEquality().hash(hexColor),
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(isSaving),
+      const DeepCollectionEquality().hash(saveFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
@@ -242,16 +233,15 @@ abstract class _ChangeAppearanceState implements ChangeAppearanceState {
           saveFailureOrSuccessOption}) = _$_ChangeAppearanceState;
 
   @override
-  Nickname? get nickname => throw _privateConstructorUsedError;
+  Nickname? get nickname;
   @override
-  HexColor? get hexColor => throw _privateConstructorUsedError;
+  HexColor? get hexColor;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSaving => throw _privateConstructorUsedError;
+  bool get isSaving;
   @override
-  Option<Either<MemberFailure, Unit>> get saveFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<MemberFailure, Unit>> get saveFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$ChangeAppearanceStateCopyWith<_ChangeAppearanceState> get copyWith =>

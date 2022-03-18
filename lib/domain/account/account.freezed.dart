@@ -160,25 +160,21 @@ class _$_Account extends _Account {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Account &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)));
+        (other.runtimeType == runtimeType &&
+            other is _Account &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality().equals(other.email, email) &&
+            const DeepCollectionEquality().equals(other.image, image));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(image);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(email),
+      const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override
@@ -195,13 +191,13 @@ abstract class _Account extends Account {
   const _Account._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  Username get username => throw _privateConstructorUsedError;
+  Username get username;
   @override
-  EmailAddress get email => throw _privateConstructorUsedError;
+  EmailAddress get email;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
   @JsonKey(ignore: true)
   _$AccountCopyWith<_Account> get copyWith =>

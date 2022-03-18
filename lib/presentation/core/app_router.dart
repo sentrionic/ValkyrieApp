@@ -4,7 +4,10 @@ import 'package:valkyrie_app/presentation/auth/login/login_screen.dart';
 import 'package:valkyrie_app/presentation/auth/register/register_screen.dart';
 import 'package:valkyrie_app/presentation/auth/start_up_screen.dart';
 import 'package:valkyrie_app/presentation/core/screen_arguments/channel_screen_arguments.dart';
+import 'package:valkyrie_app/presentation/core/screen_arguments/guild_screen_arguments.dart';
 import 'package:valkyrie_app/presentation/core/screen_arguments/open_url_arguments.dart';
+import 'package:valkyrie_app/presentation/core/screen_transitions/fade_transition_route.dart';
+import 'package:valkyrie_app/presentation/core/screen_transitions/slide_transition_route.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/screens/channel_settings/channel_settings_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/screens/create_channel/create_channel_screen.dart';
 import 'package:valkyrie_app/presentation/main/guild/channels/screens/invite_screen.dart';
@@ -23,10 +26,6 @@ import 'package:valkyrie_app/presentation/main/shared/add_guild/add_guild_screen
 import 'package:valkyrie_app/presentation/main/shared/add_guild/create_guild/create_guild_screen.dart';
 import 'package:valkyrie_app/presentation/main/shared/add_guild/join_guild/join_guild_screen.dart';
 import 'package:valkyrie_app/presentation/splash/splash_page.dart';
-
-import 'screen_arguments/guild_screen_arguments.dart';
-import 'screen_transitions/fade_transition_route.dart';
-import 'screen_transitions/slide_transition_route.dart';
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings settings) {

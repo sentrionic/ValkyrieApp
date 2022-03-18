@@ -139,7 +139,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -255,7 +256,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -397,15 +399,15 @@ class _$_ActionFailure implements _ActionFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ActionFailure &&
-            (identical(other.actionFailure, actionFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.actionFailure, actionFailure)));
+        (other.runtimeType == runtimeType &&
+            other is _ActionFailure &&
+            const DeepCollectionEquality()
+                .equals(other.actionFailure, actionFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(actionFailure);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(actionFailure));
 
   @JsonKey(ignore: true)
   @override
@@ -490,7 +492,7 @@ class _$_ActionFailure implements _ActionFailure {
 abstract class _ActionFailure implements ModerateMemberState {
   const factory _ActionFailure(MemberFailure actionFailure) = _$_ActionFailure;
 
-  MemberFailure get actionFailure => throw _privateConstructorUsedError;
+  MemberFailure get actionFailure;
   @JsonKey(ignore: true)
   _$ActionFailureCopyWith<_ActionFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -527,7 +529,8 @@ class _$_ActionSuccess implements _ActionSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionSuccess);
   }
 
   @override

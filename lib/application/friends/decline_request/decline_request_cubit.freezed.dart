@@ -141,7 +141,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -257,7 +258,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -399,15 +401,15 @@ class _$_ActionFailure implements _ActionFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ActionFailure &&
-            (identical(other.friendFailure, friendFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.friendFailure, friendFailure)));
+        (other.runtimeType == runtimeType &&
+            other is _ActionFailure &&
+            const DeepCollectionEquality()
+                .equals(other.friendFailure, friendFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(friendFailure);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(friendFailure));
 
   @JsonKey(ignore: true)
   @override
@@ -492,7 +494,7 @@ class _$_ActionFailure implements _ActionFailure {
 abstract class _ActionFailure implements DeclineRequestState {
   const factory _ActionFailure(FriendFailure friendFailure) = _$_ActionFailure;
 
-  FriendFailure get friendFailure => throw _privateConstructorUsedError;
+  FriendFailure get friendFailure;
   @JsonKey(ignore: true)
   _$ActionFailureCopyWith<_ActionFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -546,15 +548,14 @@ class _$_ActionSuccess implements _ActionSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ActionSuccess &&
-            (identical(other.requestId, requestId) ||
-                const DeepCollectionEquality()
-                    .equals(other.requestId, requestId)));
+        (other.runtimeType == runtimeType &&
+            other is _ActionSuccess &&
+            const DeepCollectionEquality().equals(other.requestId, requestId));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(requestId);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(requestId));
 
   @JsonKey(ignore: true)
   @override
@@ -639,7 +640,7 @@ class _$_ActionSuccess implements _ActionSuccess {
 abstract class _ActionSuccess implements DeclineRequestState {
   const factory _ActionSuccess(String requestId) = _$_ActionSuccess;
 
-  String get requestId => throw _privateConstructorUsedError;
+  String get requestId;
   @JsonKey(ignore: true)
   _$ActionSuccessCopyWith<_ActionSuccess> get copyWith =>
       throw _privateConstructorUsedError;

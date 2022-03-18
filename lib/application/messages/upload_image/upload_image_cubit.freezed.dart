@@ -158,26 +158,23 @@ class _$_UploadImageState implements _UploadImageState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UploadImageState &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.messageFailureOrSuccessOption,
-                    messageFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.messageFailureOrSuccessOption,
-                    messageFailureOrSuccessOption)));
+        (other.runtimeType == runtimeType &&
+            other is _UploadImageState &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality()
+                .equals(other.isSubmitting, isSubmitting) &&
+            const DeepCollectionEquality().equals(
+                other.messageFailureOrSuccessOption,
+                messageFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(messageFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(isSubmitting),
+      const DeepCollectionEquality().hash(messageFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
@@ -193,12 +190,11 @@ abstract class _UploadImageState implements UploadImageState {
           messageFailureOrSuccessOption}) = _$_UploadImageState;
 
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<MessageFailure, Unit>> get messageFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<MessageFailure, Unit>> get messageFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$UploadImageStateCopyWith<_UploadImageState> get copyWith =>

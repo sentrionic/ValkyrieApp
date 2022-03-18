@@ -141,7 +141,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -257,7 +258,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -396,19 +398,17 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadSuccess &&
-            (identical(other.messages, messages) ||
-                const DeepCollectionEquality()
-                    .equals(other.messages, messages)) &&
-            (identical(other.hasMore, hasMore) ||
-                const DeepCollectionEquality().equals(other.hasMore, hasMore)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadSuccess &&
+            const DeepCollectionEquality().equals(other.messages, messages) &&
+            const DeepCollectionEquality().equals(other.hasMore, hasMore));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(messages) ^
-      const DeepCollectionEquality().hash(hasMore);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(messages),
+      const DeepCollectionEquality().hash(hasMore));
 
   @JsonKey(ignore: true)
   @override
@@ -494,8 +494,8 @@ abstract class _LoadSuccess implements MessagesState {
   const factory _LoadSuccess(List<Message> messages, {required bool hasMore}) =
       _$_LoadSuccess;
 
-  List<Message> get messages => throw _privateConstructorUsedError;
-  bool get hasMore => throw _privateConstructorUsedError;
+  List<Message> get messages;
+  bool get hasMore;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -557,16 +557,15 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
-            (identical(other.messageFailure, messageFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.messageFailure, messageFailure)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
+            const DeepCollectionEquality()
+                .equals(other.messageFailure, messageFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(messageFailure);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(messageFailure));
 
   @JsonKey(ignore: true)
   @override
@@ -651,7 +650,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements MessagesState {
   const factory _LoadFailure(MessageFailure messageFailure) = _$_LoadFailure;
 
-  MessageFailure get messageFailure => throw _privateConstructorUsedError;
+  MessageFailure get messageFailure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

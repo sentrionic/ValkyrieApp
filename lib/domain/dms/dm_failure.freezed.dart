@@ -119,7 +119,8 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Unexpected);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Unexpected);
   }
 
   @override
@@ -220,7 +221,8 @@ class _$_NotFound implements _NotFound {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NotFound);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _NotFound);
   }
 
   @override

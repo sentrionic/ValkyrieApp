@@ -164,25 +164,21 @@ class _$_AccountDto extends _AccountDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AccountDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)));
+        (other.runtimeType == runtimeType &&
+            other is _AccountDto &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality().equals(other.email, email) &&
+            const DeepCollectionEquality().equals(other.image, image));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(image);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(email),
+      const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override
@@ -199,13 +195,13 @@ abstract class _AccountDto extends AccountDto {
   const _AccountDto._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
   @JsonKey(ignore: true)
   _$AccountDtoCopyWith<_AccountDto> get copyWith =>

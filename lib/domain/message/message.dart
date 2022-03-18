@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:valkyrie_app/domain/member/member.dart';
 
-import 'message_value_objects.dart';
+import 'package:valkyrie_app/domain/message/message_value_objects.dart';
 
 part 'message.freezed.dart';
 

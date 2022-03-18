@@ -106,11 +106,14 @@ class MessageInput extends HookWidget {
   }
 
   Future<void> _selectImage(BuildContext context, String channelId) async {
-    final pickedFile = await ImagePicker().pickImage(
+    ImagePicker()
+        .pickImage(
       source: ImageSource.gallery,
-    );
-    if (pickedFile != null) {
-      context.read<UploadImageCubit>().uploadImage(channelId, pickedFile);
-    }
+    )
+        .then((value) {
+      if (value != null) {
+        context.read<UploadImageCubit>().uploadImage(channelId, value);
+      }
+    });
   }
 }

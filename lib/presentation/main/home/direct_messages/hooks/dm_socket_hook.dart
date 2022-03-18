@@ -5,11 +5,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:valkyrie_app/application/dms/dm_list/dm_list_cubit.dart';
 import 'package:valkyrie_app/injection.dart';
+import 'package:valkyrie_app/presentation/common/extensions/socket_extension.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_cookie.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_current_user.dart';
 import 'package:web_socket_channel/io.dart';
-
-import '../../../../common/extensions/socket_extension.dart';
 
 class DMSocketHook extends Hook<void> {
   final BuildContext context;

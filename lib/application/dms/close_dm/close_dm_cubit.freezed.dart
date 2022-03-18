@@ -137,7 +137,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -253,7 +254,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -394,14 +396,14 @@ class _$_CloseFailure implements _CloseFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CloseFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _CloseFailure &&
+            const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
@@ -486,7 +488,7 @@ class _$_CloseFailure implements _CloseFailure {
 abstract class _CloseFailure implements CloseDMState {
   const factory _CloseFailure(DMChannelFailure failure) = _$_CloseFailure;
 
-  DMChannelFailure get failure => throw _privateConstructorUsedError;
+  DMChannelFailure get failure;
   @JsonKey(ignore: true)
   _$CloseFailureCopyWith<_CloseFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -522,7 +524,8 @@ class _$_CloseSuccess implements _CloseSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CloseSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _CloseSuccess);
   }
 
   @override

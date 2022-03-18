@@ -141,7 +141,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -257,7 +258,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -399,15 +401,15 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadSuccess &&
-            (identical(other.appearance, appearance) ||
-                const DeepCollectionEquality()
-                    .equals(other.appearance, appearance)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadSuccess &&
+            const DeepCollectionEquality()
+                .equals(other.appearance, appearance));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(appearance);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(appearance));
 
   @JsonKey(ignore: true)
   @override
@@ -492,7 +494,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements GetAppearanceState {
   const factory _LoadSuccess(GuildAppearance appearance) = _$_LoadSuccess;
 
-  GuildAppearance get appearance => throw _privateConstructorUsedError;
+  GuildAppearance get appearance;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -555,14 +557,14 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
+            const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
@@ -647,7 +649,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements GetAppearanceState {
   const factory _LoadFailure(MemberFailure failure) = _$_LoadFailure;
 
-  MemberFailure get failure => throw _privateConstructorUsedError;
+  MemberFailure get failure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

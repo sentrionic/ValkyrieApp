@@ -67,13 +67,14 @@ void main() {
             () => right(unit),
           ),
         );
-        loginFormBloc
-          ..add(LoginFormEvent.passwordChanged(password))
-          ..add(LoginFormEvent.emailChanged(email));
         return loginFormBloc;
       },
-      skip: 2,
+      seed: () => LoginFormState.initial().copyWith(
+        password: Password(password),
+        emailAddress: EmailAddress(email),
+      ),
       act: (bloc) => bloc.add(const LoginFormEvent.loginPressed()),
+      wait: const Duration(milliseconds: 2),
       expect: () => [
         LoginFormState.initial().copyWith(
           emailAddress: EmailAddress(email),
@@ -114,13 +115,14 @@ void main() {
             () => left(const AuthFailure.serverError()),
           ),
         );
-        loginFormBloc
-          ..add(LoginFormEvent.passwordChanged(password))
-          ..add(LoginFormEvent.emailChanged(email));
         return loginFormBloc;
       },
-      skip: 2,
       act: (bloc) => bloc.add(const LoginFormEvent.loginPressed()),
+      seed: () => LoginFormState.initial().copyWith(
+        password: Password(password),
+        emailAddress: EmailAddress(email),
+      ),
+      wait: const Duration(milliseconds: 2),
       expect: () => [
         LoginFormState.initial().copyWith(
           emailAddress: EmailAddress(email),

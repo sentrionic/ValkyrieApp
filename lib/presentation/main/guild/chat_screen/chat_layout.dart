@@ -9,6 +9,7 @@ import 'package:valkyrie_app/application/dms/current/current_dm_cubit.dart';
 import 'package:valkyrie_app/application/messages/get_messages/messages_cubit.dart';
 import 'package:valkyrie_app/application/messages/upload_image/upload_image_cubit.dart';
 import 'package:valkyrie_app/domain/message/message.dart';
+import 'package:valkyrie_app/presentation/common/extensions/date_extension.dart';
 import 'package:valkyrie_app/presentation/common/widgets/center_loading_indicator.dart';
 import 'package:valkyrie_app/presentation/core/colors.dart';
 import 'package:valkyrie_app/presentation/main/guild/chat_screen/hooks/message_socket_hook.dart';
@@ -19,8 +20,6 @@ import 'package:valkyrie_app/presentation/main/guild/chat_screen/widgets/message
 import 'package:valkyrie_app/presentation/main/guild/chat_screen/widgets/typing_container.dart';
 import 'package:valkyrie_app/presentation/main/guild/messages/compact_message_item.dart';
 import 'package:valkyrie_app/presentation/main/guild/messages/message_item.dart';
-
-import '../../../common/extensions/date_extension.dart';
 
 class GuildChatLayout extends StatelessWidget {
   @override

@@ -175,30 +175,25 @@ class _$_ForgotPasswordState implements _ForgotPasswordState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ForgotPasswordState &&
-            (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.authFailureOrSuccessOption,
-                    authFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.authFailureOrSuccessOption,
-                    authFailureOrSuccessOption)));
+        (other.runtimeType == runtimeType &&
+            other is _ForgotPasswordState &&
+            const DeepCollectionEquality()
+                .equals(other.emailAddress, emailAddress) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality()
+                .equals(other.isSubmitting, isSubmitting) &&
+            const DeepCollectionEquality().equals(
+                other.authFailureOrSuccessOption, authFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(authFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(emailAddress),
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(isSubmitting),
+      const DeepCollectionEquality().hash(authFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
@@ -216,14 +211,13 @@ abstract class _ForgotPasswordState implements ForgotPasswordState {
           authFailureOrSuccessOption}) = _$_ForgotPasswordState;
 
   @override
-  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  EmailAddress get emailAddress;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$ForgotPasswordStateCopyWith<_ForgotPasswordState> get copyWith =>

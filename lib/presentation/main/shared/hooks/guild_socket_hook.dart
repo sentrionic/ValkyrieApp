@@ -7,12 +7,11 @@ import 'package:valkyrie_app/application/guilds/current/current_guild_cubit.dart
 import 'package:valkyrie_app/application/guilds/guild_list/guild_list_cubit.dart';
 import 'package:valkyrie_app/infrastructure/guilds/guild_dto.dart';
 import 'package:valkyrie_app/injection.dart';
+import 'package:valkyrie_app/presentation/common/extensions/socket_extension.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_cookie.dart';
 import 'package:valkyrie_app/presentation/common/utils/get_current_user.dart';
 import 'package:valkyrie_app/presentation/main/home/home_screen.dart';
 import 'package:web_socket_channel/io.dart';
-
-import '../../../common/extensions/socket_extension.dart';
 
 class GuildSocketHook extends Hook<void> {
   final BuildContext context;

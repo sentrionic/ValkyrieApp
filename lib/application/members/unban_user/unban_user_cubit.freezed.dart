@@ -140,7 +140,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -256,7 +257,8 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ActionInProgress);
   }
 
   @override
@@ -398,14 +400,14 @@ class _$_UnbanFailure implements _UnbanFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UnbanFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _UnbanFailure &&
+            const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
@@ -490,7 +492,7 @@ class _$_UnbanFailure implements _UnbanFailure {
 abstract class _UnbanFailure implements UnbanUserState {
   const factory _UnbanFailure(MemberFailure failure) = _$_UnbanFailure;
 
-  MemberFailure get failure => throw _privateConstructorUsedError;
+  MemberFailure get failure;
   @JsonKey(ignore: true)
   _$UnbanFailureCopyWith<_UnbanFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -544,15 +546,14 @@ class _$_UnbanSuccess implements _UnbanSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UnbanSuccess &&
-            (identical(other.memberId, memberId) ||
-                const DeepCollectionEquality()
-                    .equals(other.memberId, memberId)));
+        (other.runtimeType == runtimeType &&
+            other is _UnbanSuccess &&
+            const DeepCollectionEquality().equals(other.memberId, memberId));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(memberId);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(memberId));
 
   @JsonKey(ignore: true)
   @override
@@ -637,7 +638,7 @@ class _$_UnbanSuccess implements _UnbanSuccess {
 abstract class _UnbanSuccess implements UnbanUserState {
   const factory _UnbanSuccess(String memberId) = _$_UnbanSuccess;
 
-  String get memberId => throw _privateConstructorUsedError;
+  String get memberId;
   @JsonKey(ignore: true)
   _$UnbanSuccessCopyWith<_UnbanSuccess> get copyWith =>
       throw _privateConstructorUsedError;

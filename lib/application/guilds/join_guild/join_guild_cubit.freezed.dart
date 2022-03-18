@@ -176,30 +176,26 @@ class _$_JoinGuildState implements _JoinGuildState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _JoinGuildState &&
-            (identical(other.inviteLink, inviteLink) ||
-                const DeepCollectionEquality()
-                    .equals(other.inviteLink, inviteLink)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.guildFailureOrSuccessOption,
-                    guildFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.guildFailureOrSuccessOption,
-                    guildFailureOrSuccessOption)));
+        (other.runtimeType == runtimeType &&
+            other is _JoinGuildState &&
+            const DeepCollectionEquality()
+                .equals(other.inviteLink, inviteLink) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality()
+                .equals(other.isSubmitting, isSubmitting) &&
+            const DeepCollectionEquality().equals(
+                other.guildFailureOrSuccessOption,
+                guildFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(inviteLink) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(guildFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(inviteLink),
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(isSubmitting),
+      const DeepCollectionEquality().hash(guildFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
@@ -216,14 +212,13 @@ abstract class _JoinGuildState implements JoinGuildState {
           guildFailureOrSuccessOption}) = _$_JoinGuildState;
 
   @override
-  InviteLink get inviteLink => throw _privateConstructorUsedError;
+  InviteLink get inviteLink;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<GuildFailure, Guild>> get guildFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<GuildFailure, Guild>> get guildFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$JoinGuildStateCopyWith<_JoinGuildState> get copyWith =>

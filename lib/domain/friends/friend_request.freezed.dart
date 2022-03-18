@@ -167,25 +167,21 @@ class _$_FriendRequest extends _FriendRequest {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FriendRequest &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is _FriendRequest &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.username, username) &&
+            const DeepCollectionEquality().equals(other.image, image) &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(image) ^
-      const DeepCollectionEquality().hash(type);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(username),
+      const DeepCollectionEquality().hash(image),
+      const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
@@ -202,13 +198,13 @@ abstract class _FriendRequest extends FriendRequest {
   const _FriendRequest._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
-  RequestType get type => throw _privateConstructorUsedError;
+  RequestType get type;
   @override
   @JsonKey(ignore: true)
   _$FriendRequestCopyWith<_FriendRequest> get copyWith =>

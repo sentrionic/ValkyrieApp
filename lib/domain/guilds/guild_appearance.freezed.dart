@@ -130,19 +130,17 @@ class _$_GuildAppearance extends _GuildAppearance {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _GuildAppearance &&
-            (identical(other.nickname, nickname) ||
-                const DeepCollectionEquality()
-                    .equals(other.nickname, nickname)) &&
-            (identical(other.color, color) ||
-                const DeepCollectionEquality().equals(other.color, color)));
+        (other.runtimeType == runtimeType &&
+            other is _GuildAppearance &&
+            const DeepCollectionEquality().equals(other.nickname, nickname) &&
+            const DeepCollectionEquality().equals(other.color, color));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(nickname) ^
-      const DeepCollectionEquality().hash(color);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(nickname),
+      const DeepCollectionEquality().hash(color));
 
   @JsonKey(ignore: true)
   @override
@@ -156,9 +154,9 @@ abstract class _GuildAppearance extends GuildAppearance {
   const _GuildAppearance._() : super._();
 
   @override
-  Nickname? get nickname => throw _privateConstructorUsedError;
+  Nickname? get nickname;
   @override
-  HexColor? get color => throw _privateConstructorUsedError;
+  HexColor? get color;
   @override
   @JsonKey(ignore: true)
   _$GuildAppearanceCopyWith<_GuildAppearance> get copyWith =>

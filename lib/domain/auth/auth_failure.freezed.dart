@@ -140,7 +140,8 @@ class _$_PasswordsDontMatch implements _PasswordsDontMatch {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _PasswordsDontMatch);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _PasswordsDontMatch);
   }
 
   @override
@@ -256,7 +257,8 @@ class _$_InvalidCredentials implements _InvalidCredentials {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InvalidCredentials);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _InvalidCredentials);
   }
 
   @override
@@ -371,7 +373,8 @@ class _$_ServerError implements _ServerError {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ServerError);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ServerError);
   }
 
   @override
@@ -503,14 +506,14 @@ class _$_BadRequest implements _BadRequest {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BadRequest &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)));
+        (other.runtimeType == runtimeType &&
+            other is _BadRequest &&
+            const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
@@ -595,7 +598,7 @@ class _$_BadRequest implements _BadRequest {
 abstract class _BadRequest implements AuthFailure {
   const factory _BadRequest(String error) = _$_BadRequest;
 
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @JsonKey(ignore: true)
   _$BadRequestCopyWith<_BadRequest> get copyWith =>
       throw _privateConstructorUsedError;

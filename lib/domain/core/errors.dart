@@ -1,4 +1,4 @@
-import 'failures.dart';
+import 'package:valkyrie_app/domain/core/failures.dart';
 
 class UnexpectedValueError extends Error {
   final ValueFailure valueFailure;
