@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'moderate_member_cubit.dart';
@@ -11,33 +12,7 @@ part of 'moderate_member_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ModerateMemberStateTearOff {
-  const _$ModerateMemberStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _ActionInProgress actionInProgress() {
-    return const _ActionInProgress();
-  }
-
-  _ActionFailure actionFailure(MemberFailure actionFailure) {
-    return _ActionFailure(
-      actionFailure,
-    );
-  }
-
-  _ActionSuccess actionSuccess() {
-    return const _ActionSuccess();
-  }
-}
-
-/// @nodoc
-const $ModerateMemberState = _$ModerateMemberStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ModerateMemberState {
@@ -111,20 +86,21 @@ class _$ModerateMemberStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
     extends _$ModerateMemberStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, (v) => _then(v as _$_Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  _$_Initial get _value => super._value as _$_Initial;
 }
 
 /// @nodoc
@@ -140,7 +116,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -226,22 +202,22 @@ abstract class _Initial implements ModerateMemberState {
 }
 
 /// @nodoc
-abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
-      __$ActionInProgressCopyWithImpl<$Res>;
+abstract class _$$_ActionInProgressCopyWith<$Res> {
+  factory _$$_ActionInProgressCopyWith(
+          _$_ActionInProgress value, $Res Function(_$_ActionInProgress) then) =
+      __$$_ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res>
+class __$$_ActionInProgressCopyWithImpl<$Res>
     extends _$ModerateMemberStateCopyWithImpl<$Res>
-    implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(
-      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _ActionInProgress));
+    implements _$$_ActionInProgressCopyWith<$Res> {
+  __$$_ActionInProgressCopyWithImpl(
+      _$_ActionInProgress _value, $Res Function(_$_ActionInProgress) _then)
+      : super(_value, (v) => _then(v as _$_ActionInProgress));
 
   @override
-  _ActionInProgress get _value => super._value as _ActionInProgress;
+  _$_ActionInProgress get _value => super._value as _$_ActionInProgress;
 }
 
 /// @nodoc
@@ -257,7 +233,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ActionInProgress);
+        (other.runtimeType == runtimeType && other is _$_ActionInProgress);
   }
 
   @override
@@ -343,31 +319,31 @@ abstract class _ActionInProgress implements ModerateMemberState {
 }
 
 /// @nodoc
-abstract class _$ActionFailureCopyWith<$Res> {
-  factory _$ActionFailureCopyWith(
-          _ActionFailure value, $Res Function(_ActionFailure) then) =
-      __$ActionFailureCopyWithImpl<$Res>;
+abstract class _$$_ActionFailureCopyWith<$Res> {
+  factory _$$_ActionFailureCopyWith(
+          _$_ActionFailure value, $Res Function(_$_ActionFailure) then) =
+      __$$_ActionFailureCopyWithImpl<$Res>;
   $Res call({MemberFailure actionFailure});
 
   $MemberFailureCopyWith<$Res> get actionFailure;
 }
 
 /// @nodoc
-class __$ActionFailureCopyWithImpl<$Res>
+class __$$_ActionFailureCopyWithImpl<$Res>
     extends _$ModerateMemberStateCopyWithImpl<$Res>
-    implements _$ActionFailureCopyWith<$Res> {
-  __$ActionFailureCopyWithImpl(
-      _ActionFailure _value, $Res Function(_ActionFailure) _then)
-      : super(_value, (v) => _then(v as _ActionFailure));
+    implements _$$_ActionFailureCopyWith<$Res> {
+  __$$_ActionFailureCopyWithImpl(
+      _$_ActionFailure _value, $Res Function(_$_ActionFailure) _then)
+      : super(_value, (v) => _then(v as _$_ActionFailure));
 
   @override
-  _ActionFailure get _value => super._value as _ActionFailure;
+  _$_ActionFailure get _value => super._value as _$_ActionFailure;
 
   @override
   $Res call({
     Object? actionFailure = freezed,
   }) {
-    return _then(_ActionFailure(
+    return _then(_$_ActionFailure(
       actionFailure == freezed
           ? _value.actionFailure
           : actionFailure // ignore: cast_nullable_to_non_nullable
@@ -400,7 +376,7 @@ class _$_ActionFailure implements _ActionFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ActionFailure &&
+            other is _$_ActionFailure &&
             const DeepCollectionEquality()
                 .equals(other.actionFailure, actionFailure));
   }
@@ -411,8 +387,8 @@ class _$_ActionFailure implements _ActionFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$ActionFailureCopyWith<_ActionFailure> get copyWith =>
-      __$ActionFailureCopyWithImpl<_ActionFailure>(this, _$identity);
+  _$$_ActionFailureCopyWith<_$_ActionFailure> get copyWith =>
+      __$$_ActionFailureCopyWithImpl<_$_ActionFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -490,31 +466,32 @@ class _$_ActionFailure implements _ActionFailure {
 }
 
 abstract class _ActionFailure implements ModerateMemberState {
-  const factory _ActionFailure(MemberFailure actionFailure) = _$_ActionFailure;
+  const factory _ActionFailure(final MemberFailure actionFailure) =
+      _$_ActionFailure;
 
-  MemberFailure get actionFailure;
+  MemberFailure get actionFailure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ActionFailureCopyWith<_ActionFailure> get copyWith =>
+  _$$_ActionFailureCopyWith<_$_ActionFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ActionSuccessCopyWith<$Res> {
-  factory _$ActionSuccessCopyWith(
-          _ActionSuccess value, $Res Function(_ActionSuccess) then) =
-      __$ActionSuccessCopyWithImpl<$Res>;
+abstract class _$$_ActionSuccessCopyWith<$Res> {
+  factory _$$_ActionSuccessCopyWith(
+          _$_ActionSuccess value, $Res Function(_$_ActionSuccess) then) =
+      __$$_ActionSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionSuccessCopyWithImpl<$Res>
+class __$$_ActionSuccessCopyWithImpl<$Res>
     extends _$ModerateMemberStateCopyWithImpl<$Res>
-    implements _$ActionSuccessCopyWith<$Res> {
-  __$ActionSuccessCopyWithImpl(
-      _ActionSuccess _value, $Res Function(_ActionSuccess) _then)
-      : super(_value, (v) => _then(v as _ActionSuccess));
+    implements _$$_ActionSuccessCopyWith<$Res> {
+  __$$_ActionSuccessCopyWithImpl(
+      _$_ActionSuccess _value, $Res Function(_$_ActionSuccess) _then)
+      : super(_value, (v) => _then(v as _$_ActionSuccess));
 
   @override
-  _ActionSuccess get _value => super._value as _ActionSuccess;
+  _$_ActionSuccess get _value => super._value as _$_ActionSuccess;
 }
 
 /// @nodoc
@@ -530,7 +507,7 @@ class _$_ActionSuccess implements _ActionSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ActionSuccess);
+        (other.runtimeType == runtimeType && other is _$_ActionSuccess);
   }
 
   @override

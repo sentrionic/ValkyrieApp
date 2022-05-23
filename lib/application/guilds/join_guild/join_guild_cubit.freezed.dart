@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'join_guild_cubit.dart';
@@ -11,29 +12,7 @@ part of 'join_guild_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$JoinGuildStateTearOff {
-  const _$JoinGuildStateTearOff();
-
-  _JoinGuildState call(
-      {required InviteLink inviteLink,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<GuildFailure, Guild>>
-          guildFailureOrSuccessOption}) {
-    return _JoinGuildState(
-      inviteLink: inviteLink,
-      showErrorMessages: showErrorMessages,
-      isSubmitting: isSubmitting,
-      guildFailureOrSuccessOption: guildFailureOrSuccessOption,
-    );
-  }
-}
-
-/// @nodoc
-const $JoinGuildState = _$JoinGuildStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$JoinGuildState {
@@ -98,11 +77,11 @@ class _$JoinGuildStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$JoinGuildStateCopyWith<$Res>
+abstract class _$$_JoinGuildStateCopyWith<$Res>
     implements $JoinGuildStateCopyWith<$Res> {
-  factory _$JoinGuildStateCopyWith(
-          _JoinGuildState value, $Res Function(_JoinGuildState) then) =
-      __$JoinGuildStateCopyWithImpl<$Res>;
+  factory _$$_JoinGuildStateCopyWith(
+          _$_JoinGuildState value, $Res Function(_$_JoinGuildState) then) =
+      __$$_JoinGuildStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {InviteLink inviteLink,
@@ -112,15 +91,15 @@ abstract class _$JoinGuildStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$JoinGuildStateCopyWithImpl<$Res>
+class __$$_JoinGuildStateCopyWithImpl<$Res>
     extends _$JoinGuildStateCopyWithImpl<$Res>
-    implements _$JoinGuildStateCopyWith<$Res> {
-  __$JoinGuildStateCopyWithImpl(
-      _JoinGuildState _value, $Res Function(_JoinGuildState) _then)
-      : super(_value, (v) => _then(v as _JoinGuildState));
+    implements _$$_JoinGuildStateCopyWith<$Res> {
+  __$$_JoinGuildStateCopyWithImpl(
+      _$_JoinGuildState _value, $Res Function(_$_JoinGuildState) _then)
+      : super(_value, (v) => _then(v as _$_JoinGuildState));
 
   @override
-  _JoinGuildState get _value => super._value as _JoinGuildState;
+  _$_JoinGuildState get _value => super._value as _$_JoinGuildState;
 
   @override
   $Res call({
@@ -129,7 +108,7 @@ class __$JoinGuildStateCopyWithImpl<$Res>
     Object? isSubmitting = freezed,
     Object? guildFailureOrSuccessOption = freezed,
   }) {
-    return _then(_JoinGuildState(
+    return _then(_$_JoinGuildState(
       inviteLink: inviteLink == freezed
           ? _value.inviteLink
           : inviteLink // ignore: cast_nullable_to_non_nullable
@@ -177,7 +156,7 @@ class _$_JoinGuildState implements _JoinGuildState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _JoinGuildState &&
+            other is _$_JoinGuildState &&
             const DeepCollectionEquality()
                 .equals(other.inviteLink, inviteLink) &&
             const DeepCollectionEquality()
@@ -199,28 +178,29 @@ class _$_JoinGuildState implements _JoinGuildState {
 
   @JsonKey(ignore: true)
   @override
-  _$JoinGuildStateCopyWith<_JoinGuildState> get copyWith =>
-      __$JoinGuildStateCopyWithImpl<_JoinGuildState>(this, _$identity);
+  _$$_JoinGuildStateCopyWith<_$_JoinGuildState> get copyWith =>
+      __$$_JoinGuildStateCopyWithImpl<_$_JoinGuildState>(this, _$identity);
 }
 
 abstract class _JoinGuildState implements JoinGuildState {
   const factory _JoinGuildState(
-      {required InviteLink inviteLink,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<GuildFailure, Guild>>
+      {required final InviteLink inviteLink,
+      required final bool showErrorMessages,
+      required final bool isSubmitting,
+      required final Option<Either<GuildFailure, Guild>>
           guildFailureOrSuccessOption}) = _$_JoinGuildState;
 
   @override
-  InviteLink get inviteLink;
+  InviteLink get inviteLink => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isSubmitting;
+  bool get isSubmitting => throw _privateConstructorUsedError;
   @override
-  Option<Either<GuildFailure, Guild>> get guildFailureOrSuccessOption;
+  Option<Either<GuildFailure, Guild>> get guildFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$JoinGuildStateCopyWith<_JoinGuildState> get copyWith =>
+  _$$_JoinGuildStateCopyWith<_$_JoinGuildState> get copyWith =>
       throw _privateConstructorUsedError;
 }

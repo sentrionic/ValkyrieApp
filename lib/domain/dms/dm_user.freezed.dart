@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'dm_user.dart';
@@ -11,30 +12,7 @@ part of 'dm_user.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$DMUserTearOff {
-  const _$DMUserTearOff();
-
-  _DMUser call(
-      {required String id,
-      required String username,
-      required String image,
-      required bool isOnline,
-      required bool isFriend}) {
-    return _DMUser(
-      id: id,
-      username: username,
-      image: image,
-      isOnline: isOnline,
-      isFriend: isFriend,
-    );
-  }
-}
-
-/// @nodoc
-const $DMUser = _$DMUserTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$DMUser {
@@ -98,22 +76,22 @@ class _$DMUserCopyWithImpl<$Res> implements $DMUserCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DMUserCopyWith<$Res> implements $DMUserCopyWith<$Res> {
-  factory _$DMUserCopyWith(_DMUser value, $Res Function(_DMUser) then) =
-      __$DMUserCopyWithImpl<$Res>;
+abstract class _$$_DMUserCopyWith<$Res> implements $DMUserCopyWith<$Res> {
+  factory _$$_DMUserCopyWith(_$_DMUser value, $Res Function(_$_DMUser) then) =
+      __$$_DMUserCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id, String username, String image, bool isOnline, bool isFriend});
 }
 
 /// @nodoc
-class __$DMUserCopyWithImpl<$Res> extends _$DMUserCopyWithImpl<$Res>
-    implements _$DMUserCopyWith<$Res> {
-  __$DMUserCopyWithImpl(_DMUser _value, $Res Function(_DMUser) _then)
-      : super(_value, (v) => _then(v as _DMUser));
+class __$$_DMUserCopyWithImpl<$Res> extends _$DMUserCopyWithImpl<$Res>
+    implements _$$_DMUserCopyWith<$Res> {
+  __$$_DMUserCopyWithImpl(_$_DMUser _value, $Res Function(_$_DMUser) _then)
+      : super(_value, (v) => _then(v as _$_DMUser));
 
   @override
-  _DMUser get _value => super._value as _DMUser;
+  _$_DMUser get _value => super._value as _$_DMUser;
 
   @override
   $Res call({
@@ -123,7 +101,7 @@ class __$DMUserCopyWithImpl<$Res> extends _$DMUserCopyWithImpl<$Res>
     Object? isOnline = freezed,
     Object? isFriend = freezed,
   }) {
-    return _then(_DMUser(
+    return _then(_$_DMUser(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -179,7 +157,7 @@ class _$_DMUser extends _DMUser {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DMUser &&
+            other is _$_DMUser &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.username, username) &&
             const DeepCollectionEquality().equals(other.image, image) &&
@@ -198,30 +176,31 @@ class _$_DMUser extends _DMUser {
 
   @JsonKey(ignore: true)
   @override
-  _$DMUserCopyWith<_DMUser> get copyWith =>
-      __$DMUserCopyWithImpl<_DMUser>(this, _$identity);
+  _$$_DMUserCopyWith<_$_DMUser> get copyWith =>
+      __$$_DMUserCopyWithImpl<_$_DMUser>(this, _$identity);
 }
 
 abstract class _DMUser extends DMUser {
   const factory _DMUser(
-      {required String id,
-      required String username,
-      required String image,
-      required bool isOnline,
-      required bool isFriend}) = _$_DMUser;
+      {required final String id,
+      required final String username,
+      required final String image,
+      required final bool isOnline,
+      required final bool isFriend}) = _$_DMUser;
   const _DMUser._() : super._();
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get username;
+  String get username => throw _privateConstructorUsedError;
   @override
-  String get image;
+  String get image => throw _privateConstructorUsedError;
   @override
-  bool get isOnline;
+  bool get isOnline => throw _privateConstructorUsedError;
   @override
-  bool get isFriend;
+  bool get isFriend => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DMUserCopyWith<_DMUser> get copyWith => throw _privateConstructorUsedError;
+  _$$_DMUserCopyWith<_$_DMUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }

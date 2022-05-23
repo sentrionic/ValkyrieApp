@@ -32,7 +32,7 @@ class _UserSocketHookState extends HookState<void, UserSocketHook>
   @override
   Future<void> initHook() async {
     super.initHook();
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
 
     socket = IOWebSocketChannel.connect(
       Uri.parse(baseUrl),
@@ -94,7 +94,7 @@ class _UserSocketHookState extends HookState<void, UserSocketHook>
     socket.emit('toggleOffline');
     socket.sink.close();
     super.dispose();
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
   }
 
   @override

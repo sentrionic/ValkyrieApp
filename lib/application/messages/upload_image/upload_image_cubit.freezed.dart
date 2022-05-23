@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'upload_image_cubit.dart';
@@ -11,27 +12,7 @@ part of 'upload_image_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UploadImageStateTearOff {
-  const _$UploadImageStateTearOff();
-
-  _UploadImageState call(
-      {required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<MessageFailure, Unit>>
-          messageFailureOrSuccessOption}) {
-    return _UploadImageState(
-      showErrorMessages: showErrorMessages,
-      isSubmitting: isSubmitting,
-      messageFailureOrSuccessOption: messageFailureOrSuccessOption,
-    );
-  }
-}
-
-/// @nodoc
-const $UploadImageState = _$UploadImageStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$UploadImageState {
@@ -89,11 +70,11 @@ class _$UploadImageStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$UploadImageStateCopyWith<$Res>
+abstract class _$$_UploadImageStateCopyWith<$Res>
     implements $UploadImageStateCopyWith<$Res> {
-  factory _$UploadImageStateCopyWith(
-          _UploadImageState value, $Res Function(_UploadImageState) then) =
-      __$UploadImageStateCopyWithImpl<$Res>;
+  factory _$$_UploadImageStateCopyWith(
+          _$_UploadImageState value, $Res Function(_$_UploadImageState) then) =
+      __$$_UploadImageStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool showErrorMessages,
@@ -102,15 +83,15 @@ abstract class _$UploadImageStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$UploadImageStateCopyWithImpl<$Res>
+class __$$_UploadImageStateCopyWithImpl<$Res>
     extends _$UploadImageStateCopyWithImpl<$Res>
-    implements _$UploadImageStateCopyWith<$Res> {
-  __$UploadImageStateCopyWithImpl(
-      _UploadImageState _value, $Res Function(_UploadImageState) _then)
-      : super(_value, (v) => _then(v as _UploadImageState));
+    implements _$$_UploadImageStateCopyWith<$Res> {
+  __$$_UploadImageStateCopyWithImpl(
+      _$_UploadImageState _value, $Res Function(_$_UploadImageState) _then)
+      : super(_value, (v) => _then(v as _$_UploadImageState));
 
   @override
-  _UploadImageState get _value => super._value as _UploadImageState;
+  _$_UploadImageState get _value => super._value as _$_UploadImageState;
 
   @override
   $Res call({
@@ -118,7 +99,7 @@ class __$UploadImageStateCopyWithImpl<$Res>
     Object? isSubmitting = freezed,
     Object? messageFailureOrSuccessOption = freezed,
   }) {
-    return _then(_UploadImageState(
+    return _then(_$_UploadImageState(
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -159,7 +140,7 @@ class _$_UploadImageState implements _UploadImageState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UploadImageState &&
+            other is _$_UploadImageState &&
             const DeepCollectionEquality()
                 .equals(other.showErrorMessages, showErrorMessages) &&
             const DeepCollectionEquality()
@@ -178,25 +159,26 @@ class _$_UploadImageState implements _UploadImageState {
 
   @JsonKey(ignore: true)
   @override
-  _$UploadImageStateCopyWith<_UploadImageState> get copyWith =>
-      __$UploadImageStateCopyWithImpl<_UploadImageState>(this, _$identity);
+  _$$_UploadImageStateCopyWith<_$_UploadImageState> get copyWith =>
+      __$$_UploadImageStateCopyWithImpl<_$_UploadImageState>(this, _$identity);
 }
 
 abstract class _UploadImageState implements UploadImageState {
   const factory _UploadImageState(
-      {required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<MessageFailure, Unit>>
+      {required final bool showErrorMessages,
+      required final bool isSubmitting,
+      required final Option<Either<MessageFailure, Unit>>
           messageFailureOrSuccessOption}) = _$_UploadImageState;
 
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isSubmitting;
+  bool get isSubmitting => throw _privateConstructorUsedError;
   @override
-  Option<Either<MessageFailure, Unit>> get messageFailureOrSuccessOption;
+  Option<Either<MessageFailure, Unit>> get messageFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UploadImageStateCopyWith<_UploadImageState> get copyWith =>
+  _$$_UploadImageStateCopyWith<_$_UploadImageState> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'message.dart';
@@ -11,32 +12,7 @@ part of 'message.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$MessageTearOff {
-  const _$MessageTearOff();
-
-  _Message call(
-      {required String id,
-      MessageText? text,
-      Attachment? attachment,
-      required String createdAt,
-      required String updatedAt,
-      required Member user}) {
-    return _Message(
-      id: id,
-      text: text,
-      attachment: attachment,
-      createdAt: createdAt,
-      updatedAt: updatedAt,
-      user: user,
-    );
-  }
-}
-
-/// @nodoc
-const $Message = _$MessageTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Message {
@@ -132,9 +108,10 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
-  factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) =
-      __$MessageCopyWithImpl<$Res>;
+abstract class _$$_MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
+  factory _$$_MessageCopyWith(
+          _$_Message value, $Res Function(_$_Message) then) =
+      __$$_MessageCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -151,13 +128,13 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
-    implements _$MessageCopyWith<$Res> {
-  __$MessageCopyWithImpl(_Message _value, $Res Function(_Message) _then)
-      : super(_value, (v) => _then(v as _Message));
+class __$$_MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
+    implements _$$_MessageCopyWith<$Res> {
+  __$$_MessageCopyWithImpl(_$_Message _value, $Res Function(_$_Message) _then)
+      : super(_value, (v) => _then(v as _$_Message));
 
   @override
-  _Message get _value => super._value as _Message;
+  _$_Message get _value => super._value as _$_Message;
 
   @override
   $Res call({
@@ -168,7 +145,7 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
     Object? updatedAt = freezed,
     Object? user = freezed,
   }) {
-    return _then(_Message(
+    return _then(_$_Message(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -231,7 +208,7 @@ class _$_Message extends _Message {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Message &&
+            other is _$_Message &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.text, text) &&
             const DeepCollectionEquality()
@@ -253,53 +230,37 @@ class _$_Message extends _Message {
 
   @JsonKey(ignore: true)
   @override
-  _$MessageCopyWith<_Message> get copyWith =>
-      __$MessageCopyWithImpl<_Message>(this, _$identity);
+  _$$_MessageCopyWith<_$_Message> get copyWith =>
+      __$$_MessageCopyWithImpl<_$_Message>(this, _$identity);
 }
 
 abstract class _Message extends Message {
   const factory _Message(
-      {required String id,
-      MessageText? text,
-      Attachment? attachment,
-      required String createdAt,
-      required String updatedAt,
-      required Member user}) = _$_Message;
+      {required final String id,
+      final MessageText? text,
+      final Attachment? attachment,
+      required final String createdAt,
+      required final String updatedAt,
+      required final Member user}) = _$_Message;
   const _Message._() : super._();
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  MessageText? get text;
+  MessageText? get text => throw _privateConstructorUsedError;
   @override
-  Attachment? get attachment;
+  Attachment? get attachment => throw _privateConstructorUsedError;
   @override
-  String get createdAt;
+  String get createdAt => throw _privateConstructorUsedError;
   @override
-  String get updatedAt;
+  String get updatedAt => throw _privateConstructorUsedError;
   @override
-  Member get user;
+  Member get user => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$MessageCopyWith<_Message> get copyWith =>
+  _$$_MessageCopyWith<_$_Message> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$AttachmentTearOff {
-  const _$AttachmentTearOff();
-
-  _Attachment call({String? filename, String? url, String? filetype}) {
-    return _Attachment(
-      filename: filename,
-      url: url,
-      filetype: filetype,
-    );
-  }
-}
-
-/// @nodoc
-const $Attachment = _$AttachmentTearOff();
 
 /// @nodoc
 mixin _$Attachment {
@@ -352,23 +313,24 @@ class _$AttachmentCopyWithImpl<$Res> implements $AttachmentCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AttachmentCopyWith<$Res> implements $AttachmentCopyWith<$Res> {
-  factory _$AttachmentCopyWith(
-          _Attachment value, $Res Function(_Attachment) then) =
-      __$AttachmentCopyWithImpl<$Res>;
+abstract class _$$_AttachmentCopyWith<$Res>
+    implements $AttachmentCopyWith<$Res> {
+  factory _$$_AttachmentCopyWith(
+          _$_Attachment value, $Res Function(_$_Attachment) then) =
+      __$$_AttachmentCopyWithImpl<$Res>;
   @override
   $Res call({String? filename, String? url, String? filetype});
 }
 
 /// @nodoc
-class __$AttachmentCopyWithImpl<$Res> extends _$AttachmentCopyWithImpl<$Res>
-    implements _$AttachmentCopyWith<$Res> {
-  __$AttachmentCopyWithImpl(
-      _Attachment _value, $Res Function(_Attachment) _then)
-      : super(_value, (v) => _then(v as _Attachment));
+class __$$_AttachmentCopyWithImpl<$Res> extends _$AttachmentCopyWithImpl<$Res>
+    implements _$$_AttachmentCopyWith<$Res> {
+  __$$_AttachmentCopyWithImpl(
+      _$_Attachment _value, $Res Function(_$_Attachment) _then)
+      : super(_value, (v) => _then(v as _$_Attachment));
 
   @override
-  _Attachment get _value => super._value as _Attachment;
+  _$_Attachment get _value => super._value as _$_Attachment;
 
   @override
   $Res call({
@@ -376,7 +338,7 @@ class __$AttachmentCopyWithImpl<$Res> extends _$AttachmentCopyWithImpl<$Res>
     Object? url = freezed,
     Object? filetype = freezed,
   }) {
-    return _then(_Attachment(
+    return _then(_$_Attachment(
       filename: filename == freezed
           ? _value.filename
           : filename // ignore: cast_nullable_to_non_nullable
@@ -414,7 +376,7 @@ class _$_Attachment extends _Attachment {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Attachment &&
+            other is _$_Attachment &&
             const DeepCollectionEquality().equals(other.filename, filename) &&
             const DeepCollectionEquality().equals(other.url, url) &&
             const DeepCollectionEquality().equals(other.filetype, filetype));
@@ -429,23 +391,25 @@ class _$_Attachment extends _Attachment {
 
   @JsonKey(ignore: true)
   @override
-  _$AttachmentCopyWith<_Attachment> get copyWith =>
-      __$AttachmentCopyWithImpl<_Attachment>(this, _$identity);
+  _$$_AttachmentCopyWith<_$_Attachment> get copyWith =>
+      __$$_AttachmentCopyWithImpl<_$_Attachment>(this, _$identity);
 }
 
 abstract class _Attachment extends Attachment {
-  const factory _Attachment({String? filename, String? url, String? filetype}) =
-      _$_Attachment;
+  const factory _Attachment(
+      {final String? filename,
+      final String? url,
+      final String? filetype}) = _$_Attachment;
   const _Attachment._() : super._();
 
   @override
-  String? get filename;
+  String? get filename => throw _privateConstructorUsedError;
   @override
-  String? get url;
+  String? get url => throw _privateConstructorUsedError;
   @override
-  String? get filetype;
+  String? get filetype => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AttachmentCopyWith<_Attachment> get copyWith =>
+  _$$_AttachmentCopyWith<_$_Attachment> get copyWith =>
       throw _privateConstructorUsedError;
 }

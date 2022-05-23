@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'get_invite_link_cubit.dart';
@@ -11,35 +12,7 @@ part of 'get_invite_link_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$GetInviteLinkStateTearOff {
-  const _$GetInviteLinkStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _FetchInProgress fetchInProgress() {
-    return const _FetchInProgress();
-  }
-
-  _FetchSuccess fetchSuccess(String inviteLink) {
-    return _FetchSuccess(
-      inviteLink,
-    );
-  }
-
-  _FetchFailure fetchFailure(GuildFailure failure) {
-    return _FetchFailure(
-      failure,
-    );
-  }
-}
-
-/// @nodoc
-const $GetInviteLinkState = _$GetInviteLinkStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$GetInviteLinkState {
@@ -113,20 +86,21 @@ class _$GetInviteLinkStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
     extends _$GetInviteLinkStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, (v) => _then(v as _$_Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  _$_Initial get _value => super._value as _$_Initial;
 }
 
 /// @nodoc
@@ -142,7 +116,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -228,22 +202,22 @@ abstract class _Initial implements GetInviteLinkState {
 }
 
 /// @nodoc
-abstract class _$FetchInProgressCopyWith<$Res> {
-  factory _$FetchInProgressCopyWith(
-          _FetchInProgress value, $Res Function(_FetchInProgress) then) =
-      __$FetchInProgressCopyWithImpl<$Res>;
+abstract class _$$_FetchInProgressCopyWith<$Res> {
+  factory _$$_FetchInProgressCopyWith(
+          _$_FetchInProgress value, $Res Function(_$_FetchInProgress) then) =
+      __$$_FetchInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$FetchInProgressCopyWithImpl<$Res>
+class __$$_FetchInProgressCopyWithImpl<$Res>
     extends _$GetInviteLinkStateCopyWithImpl<$Res>
-    implements _$FetchInProgressCopyWith<$Res> {
-  __$FetchInProgressCopyWithImpl(
-      _FetchInProgress _value, $Res Function(_FetchInProgress) _then)
-      : super(_value, (v) => _then(v as _FetchInProgress));
+    implements _$$_FetchInProgressCopyWith<$Res> {
+  __$$_FetchInProgressCopyWithImpl(
+      _$_FetchInProgress _value, $Res Function(_$_FetchInProgress) _then)
+      : super(_value, (v) => _then(v as _$_FetchInProgress));
 
   @override
-  _FetchInProgress get _value => super._value as _FetchInProgress;
+  _$_FetchInProgress get _value => super._value as _$_FetchInProgress;
 }
 
 /// @nodoc
@@ -259,7 +233,7 @@ class _$_FetchInProgress implements _FetchInProgress {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _FetchInProgress);
+        (other.runtimeType == runtimeType && other is _$_FetchInProgress);
   }
 
   @override
@@ -345,29 +319,29 @@ abstract class _FetchInProgress implements GetInviteLinkState {
 }
 
 /// @nodoc
-abstract class _$FetchSuccessCopyWith<$Res> {
-  factory _$FetchSuccessCopyWith(
-          _FetchSuccess value, $Res Function(_FetchSuccess) then) =
-      __$FetchSuccessCopyWithImpl<$Res>;
+abstract class _$$_FetchSuccessCopyWith<$Res> {
+  factory _$$_FetchSuccessCopyWith(
+          _$_FetchSuccess value, $Res Function(_$_FetchSuccess) then) =
+      __$$_FetchSuccessCopyWithImpl<$Res>;
   $Res call({String inviteLink});
 }
 
 /// @nodoc
-class __$FetchSuccessCopyWithImpl<$Res>
+class __$$_FetchSuccessCopyWithImpl<$Res>
     extends _$GetInviteLinkStateCopyWithImpl<$Res>
-    implements _$FetchSuccessCopyWith<$Res> {
-  __$FetchSuccessCopyWithImpl(
-      _FetchSuccess _value, $Res Function(_FetchSuccess) _then)
-      : super(_value, (v) => _then(v as _FetchSuccess));
+    implements _$$_FetchSuccessCopyWith<$Res> {
+  __$$_FetchSuccessCopyWithImpl(
+      _$_FetchSuccess _value, $Res Function(_$_FetchSuccess) _then)
+      : super(_value, (v) => _then(v as _$_FetchSuccess));
 
   @override
-  _FetchSuccess get _value => super._value as _FetchSuccess;
+  _$_FetchSuccess get _value => super._value as _$_FetchSuccess;
 
   @override
   $Res call({
     Object? inviteLink = freezed,
   }) {
-    return _then(_FetchSuccess(
+    return _then(_$_FetchSuccess(
       inviteLink == freezed
           ? _value.inviteLink
           : inviteLink // ignore: cast_nullable_to_non_nullable
@@ -393,7 +367,7 @@ class _$_FetchSuccess implements _FetchSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FetchSuccess &&
+            other is _$_FetchSuccess &&
             const DeepCollectionEquality()
                 .equals(other.inviteLink, inviteLink));
   }
@@ -404,8 +378,8 @@ class _$_FetchSuccess implements _FetchSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$FetchSuccessCopyWith<_FetchSuccess> get copyWith =>
-      __$FetchSuccessCopyWithImpl<_FetchSuccess>(this, _$identity);
+  _$$_FetchSuccessCopyWith<_$_FetchSuccess> get copyWith =>
+      __$$_FetchSuccessCopyWithImpl<_$_FetchSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -483,40 +457,40 @@ class _$_FetchSuccess implements _FetchSuccess {
 }
 
 abstract class _FetchSuccess implements GetInviteLinkState {
-  const factory _FetchSuccess(String inviteLink) = _$_FetchSuccess;
+  const factory _FetchSuccess(final String inviteLink) = _$_FetchSuccess;
 
-  String get inviteLink;
+  String get inviteLink => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$FetchSuccessCopyWith<_FetchSuccess> get copyWith =>
+  _$$_FetchSuccessCopyWith<_$_FetchSuccess> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$FetchFailureCopyWith<$Res> {
-  factory _$FetchFailureCopyWith(
-          _FetchFailure value, $Res Function(_FetchFailure) then) =
-      __$FetchFailureCopyWithImpl<$Res>;
+abstract class _$$_FetchFailureCopyWith<$Res> {
+  factory _$$_FetchFailureCopyWith(
+          _$_FetchFailure value, $Res Function(_$_FetchFailure) then) =
+      __$$_FetchFailureCopyWithImpl<$Res>;
   $Res call({GuildFailure failure});
 
   $GuildFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
-class __$FetchFailureCopyWithImpl<$Res>
+class __$$_FetchFailureCopyWithImpl<$Res>
     extends _$GetInviteLinkStateCopyWithImpl<$Res>
-    implements _$FetchFailureCopyWith<$Res> {
-  __$FetchFailureCopyWithImpl(
-      _FetchFailure _value, $Res Function(_FetchFailure) _then)
-      : super(_value, (v) => _then(v as _FetchFailure));
+    implements _$$_FetchFailureCopyWith<$Res> {
+  __$$_FetchFailureCopyWithImpl(
+      _$_FetchFailure _value, $Res Function(_$_FetchFailure) _then)
+      : super(_value, (v) => _then(v as _$_FetchFailure));
 
   @override
-  _FetchFailure get _value => super._value as _FetchFailure;
+  _$_FetchFailure get _value => super._value as _$_FetchFailure;
 
   @override
   $Res call({
     Object? failure = freezed,
   }) {
-    return _then(_FetchFailure(
+    return _then(_$_FetchFailure(
       failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -549,7 +523,7 @@ class _$_FetchFailure implements _FetchFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FetchFailure &&
+            other is _$_FetchFailure &&
             const DeepCollectionEquality().equals(other.failure, failure));
   }
 
@@ -559,8 +533,8 @@ class _$_FetchFailure implements _FetchFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$FetchFailureCopyWith<_FetchFailure> get copyWith =>
-      __$FetchFailureCopyWithImpl<_FetchFailure>(this, _$identity);
+  _$$_FetchFailureCopyWith<_$_FetchFailure> get copyWith =>
+      __$$_FetchFailureCopyWithImpl<_$_FetchFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -638,10 +612,10 @@ class _$_FetchFailure implements _FetchFailure {
 }
 
 abstract class _FetchFailure implements GetInviteLinkState {
-  const factory _FetchFailure(GuildFailure failure) = _$_FetchFailure;
+  const factory _FetchFailure(final GuildFailure failure) = _$_FetchFailure;
 
-  GuildFailure get failure;
+  GuildFailure get failure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$FetchFailureCopyWith<_FetchFailure> get copyWith =>
+  _$$_FetchFailureCopyWith<_$_FetchFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }

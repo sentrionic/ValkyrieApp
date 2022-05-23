@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'create_guild_cubit.dart';
@@ -11,29 +12,7 @@ part of 'create_guild_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CreateGuildStateTearOff {
-  const _$CreateGuildStateTearOff();
-
-  _CreateGuildState call(
-      {required GuildName name,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<GuildFailure, Guild>>
-          guildFailureOrSuccessOption}) {
-    return _CreateGuildState(
-      name: name,
-      showErrorMessages: showErrorMessages,
-      isSubmitting: isSubmitting,
-      guildFailureOrSuccessOption: guildFailureOrSuccessOption,
-    );
-  }
-}
-
-/// @nodoc
-const $CreateGuildState = _$CreateGuildStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CreateGuildState {
@@ -98,11 +77,11 @@ class _$CreateGuildStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CreateGuildStateCopyWith<$Res>
+abstract class _$$_CreateGuildStateCopyWith<$Res>
     implements $CreateGuildStateCopyWith<$Res> {
-  factory _$CreateGuildStateCopyWith(
-          _CreateGuildState value, $Res Function(_CreateGuildState) then) =
-      __$CreateGuildStateCopyWithImpl<$Res>;
+  factory _$$_CreateGuildStateCopyWith(
+          _$_CreateGuildState value, $Res Function(_$_CreateGuildState) then) =
+      __$$_CreateGuildStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {GuildName name,
@@ -112,15 +91,15 @@ abstract class _$CreateGuildStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CreateGuildStateCopyWithImpl<$Res>
+class __$$_CreateGuildStateCopyWithImpl<$Res>
     extends _$CreateGuildStateCopyWithImpl<$Res>
-    implements _$CreateGuildStateCopyWith<$Res> {
-  __$CreateGuildStateCopyWithImpl(
-      _CreateGuildState _value, $Res Function(_CreateGuildState) _then)
-      : super(_value, (v) => _then(v as _CreateGuildState));
+    implements _$$_CreateGuildStateCopyWith<$Res> {
+  __$$_CreateGuildStateCopyWithImpl(
+      _$_CreateGuildState _value, $Res Function(_$_CreateGuildState) _then)
+      : super(_value, (v) => _then(v as _$_CreateGuildState));
 
   @override
-  _CreateGuildState get _value => super._value as _CreateGuildState;
+  _$_CreateGuildState get _value => super._value as _$_CreateGuildState;
 
   @override
   $Res call({
@@ -129,7 +108,7 @@ class __$CreateGuildStateCopyWithImpl<$Res>
     Object? isSubmitting = freezed,
     Object? guildFailureOrSuccessOption = freezed,
   }) {
-    return _then(_CreateGuildState(
+    return _then(_$_CreateGuildState(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -177,7 +156,7 @@ class _$_CreateGuildState implements _CreateGuildState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CreateGuildState &&
+            other is _$_CreateGuildState &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
                 .equals(other.showErrorMessages, showErrorMessages) &&
@@ -198,28 +177,29 @@ class _$_CreateGuildState implements _CreateGuildState {
 
   @JsonKey(ignore: true)
   @override
-  _$CreateGuildStateCopyWith<_CreateGuildState> get copyWith =>
-      __$CreateGuildStateCopyWithImpl<_CreateGuildState>(this, _$identity);
+  _$$_CreateGuildStateCopyWith<_$_CreateGuildState> get copyWith =>
+      __$$_CreateGuildStateCopyWithImpl<_$_CreateGuildState>(this, _$identity);
 }
 
 abstract class _CreateGuildState implements CreateGuildState {
   const factory _CreateGuildState(
-      {required GuildName name,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<GuildFailure, Guild>>
+      {required final GuildName name,
+      required final bool showErrorMessages,
+      required final bool isSubmitting,
+      required final Option<Either<GuildFailure, Guild>>
           guildFailureOrSuccessOption}) = _$_CreateGuildState;
 
   @override
-  GuildName get name;
+  GuildName get name => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isSubmitting;
+  bool get isSubmitting => throw _privateConstructorUsedError;
   @override
-  Option<Either<GuildFailure, Guild>> get guildFailureOrSuccessOption;
+  Option<Either<GuildFailure, Guild>> get guildFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CreateGuildStateCopyWith<_CreateGuildState> get copyWith =>
+  _$$_CreateGuildStateCopyWith<_$_CreateGuildState> get copyWith =>
       throw _privateConstructorUsedError;
 }

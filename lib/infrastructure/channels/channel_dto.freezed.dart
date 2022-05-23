@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'channel_dto.dart';
@@ -11,28 +12,7 @@ part of 'channel_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ChannelDtoTearOff {
-  const _$ChannelDtoTearOff();
-
-  _ChannelDto call(
-      {required String id,
-      required String name,
-      required bool isPublic,
-      required bool hasNotification}) {
-    return _ChannelDto(
-      id: id,
-      name: name,
-      isPublic: isPublic,
-      hasNotification: hasNotification,
-    );
-  }
-}
-
-/// @nodoc
-const $ChannelDto = _$ChannelDtoTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ChannelDto {
@@ -91,23 +71,24 @@ class _$ChannelDtoCopyWithImpl<$Res> implements $ChannelDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ChannelDtoCopyWith<$Res> implements $ChannelDtoCopyWith<$Res> {
-  factory _$ChannelDtoCopyWith(
-          _ChannelDto value, $Res Function(_ChannelDto) then) =
-      __$ChannelDtoCopyWithImpl<$Res>;
+abstract class _$$_ChannelDtoCopyWith<$Res>
+    implements $ChannelDtoCopyWith<$Res> {
+  factory _$$_ChannelDtoCopyWith(
+          _$_ChannelDto value, $Res Function(_$_ChannelDto) then) =
+      __$$_ChannelDtoCopyWithImpl<$Res>;
   @override
   $Res call({String id, String name, bool isPublic, bool hasNotification});
 }
 
 /// @nodoc
-class __$ChannelDtoCopyWithImpl<$Res> extends _$ChannelDtoCopyWithImpl<$Res>
-    implements _$ChannelDtoCopyWith<$Res> {
-  __$ChannelDtoCopyWithImpl(
-      _ChannelDto _value, $Res Function(_ChannelDto) _then)
-      : super(_value, (v) => _then(v as _ChannelDto));
+class __$$_ChannelDtoCopyWithImpl<$Res> extends _$ChannelDtoCopyWithImpl<$Res>
+    implements _$$_ChannelDtoCopyWith<$Res> {
+  __$$_ChannelDtoCopyWithImpl(
+      _$_ChannelDto _value, $Res Function(_$_ChannelDto) _then)
+      : super(_value, (v) => _then(v as _$_ChannelDto));
 
   @override
-  _ChannelDto get _value => super._value as _ChannelDto;
+  _$_ChannelDto get _value => super._value as _$_ChannelDto;
 
   @override
   $Res call({
@@ -116,7 +97,7 @@ class __$ChannelDtoCopyWithImpl<$Res> extends _$ChannelDtoCopyWithImpl<$Res>
     Object? isPublic = freezed,
     Object? hasNotification = freezed,
   }) {
-    return _then(_ChannelDto(
+    return _then(_$_ChannelDto(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -165,7 +146,7 @@ class _$_ChannelDto extends _ChannelDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ChannelDto &&
+            other is _$_ChannelDto &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.isPublic, isPublic) &&
@@ -183,28 +164,28 @@ class _$_ChannelDto extends _ChannelDto {
 
   @JsonKey(ignore: true)
   @override
-  _$ChannelDtoCopyWith<_ChannelDto> get copyWith =>
-      __$ChannelDtoCopyWithImpl<_ChannelDto>(this, _$identity);
+  _$$_ChannelDtoCopyWith<_$_ChannelDto> get copyWith =>
+      __$$_ChannelDtoCopyWithImpl<_$_ChannelDto>(this, _$identity);
 }
 
 abstract class _ChannelDto extends ChannelDto {
   const factory _ChannelDto(
-      {required String id,
-      required String name,
-      required bool isPublic,
-      required bool hasNotification}) = _$_ChannelDto;
+      {required final String id,
+      required final String name,
+      required final bool isPublic,
+      required final bool hasNotification}) = _$_ChannelDto;
   const _ChannelDto._() : super._();
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  bool get isPublic;
+  bool get isPublic => throw _privateConstructorUsedError;
   @override
-  bool get hasNotification;
+  bool get hasNotification => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ChannelDtoCopyWith<_ChannelDto> get copyWith =>
+  _$$_ChannelDtoCopyWith<_$_ChannelDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

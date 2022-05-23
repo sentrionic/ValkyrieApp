@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'field_error.dart';
@@ -11,22 +12,7 @@ part of 'field_error.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$FieldErrorTearOff {
-  const _$FieldErrorTearOff();
-
-  _FieldError call({required String field, required String message}) {
-    return _FieldError(
-      field: field,
-      message: message,
-    );
-  }
-}
-
-/// @nodoc
-const $FieldError = _$FieldErrorTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$FieldError {
@@ -73,30 +59,31 @@ class _$FieldErrorCopyWithImpl<$Res> implements $FieldErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$FieldErrorCopyWith<$Res> implements $FieldErrorCopyWith<$Res> {
-  factory _$FieldErrorCopyWith(
-          _FieldError value, $Res Function(_FieldError) then) =
-      __$FieldErrorCopyWithImpl<$Res>;
+abstract class _$$_FieldErrorCopyWith<$Res>
+    implements $FieldErrorCopyWith<$Res> {
+  factory _$$_FieldErrorCopyWith(
+          _$_FieldError value, $Res Function(_$_FieldError) then) =
+      __$$_FieldErrorCopyWithImpl<$Res>;
   @override
   $Res call({String field, String message});
 }
 
 /// @nodoc
-class __$FieldErrorCopyWithImpl<$Res> extends _$FieldErrorCopyWithImpl<$Res>
-    implements _$FieldErrorCopyWith<$Res> {
-  __$FieldErrorCopyWithImpl(
-      _FieldError _value, $Res Function(_FieldError) _then)
-      : super(_value, (v) => _then(v as _FieldError));
+class __$$_FieldErrorCopyWithImpl<$Res> extends _$FieldErrorCopyWithImpl<$Res>
+    implements _$$_FieldErrorCopyWith<$Res> {
+  __$$_FieldErrorCopyWithImpl(
+      _$_FieldError _value, $Res Function(_$_FieldError) _then)
+      : super(_value, (v) => _then(v as _$_FieldError));
 
   @override
-  _FieldError get _value => super._value as _FieldError;
+  _$_FieldError get _value => super._value as _$_FieldError;
 
   @override
   $Res call({
     Object? field = freezed,
     Object? message = freezed,
   }) {
-    return _then(_FieldError(
+    return _then(_$_FieldError(
       field: field == freezed
           ? _value.field
           : field // ignore: cast_nullable_to_non_nullable
@@ -128,7 +115,7 @@ class _$_FieldError extends _FieldError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FieldError &&
+            other is _$_FieldError &&
             const DeepCollectionEquality().equals(other.field, field) &&
             const DeepCollectionEquality().equals(other.message, message));
   }
@@ -141,21 +128,22 @@ class _$_FieldError extends _FieldError {
 
   @JsonKey(ignore: true)
   @override
-  _$FieldErrorCopyWith<_FieldError> get copyWith =>
-      __$FieldErrorCopyWithImpl<_FieldError>(this, _$identity);
+  _$$_FieldErrorCopyWith<_$_FieldError> get copyWith =>
+      __$$_FieldErrorCopyWithImpl<_$_FieldError>(this, _$identity);
 }
 
 abstract class _FieldError extends FieldError {
-  const factory _FieldError({required String field, required String message}) =
-      _$_FieldError;
+  const factory _FieldError(
+      {required final String field,
+      required final String message}) = _$_FieldError;
   const _FieldError._() : super._();
 
   @override
-  String get field;
+  String get field => throw _privateConstructorUsedError;
   @override
-  String get message;
+  String get message => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FieldErrorCopyWith<_FieldError> get copyWith =>
+  _$$_FieldErrorCopyWith<_$_FieldError> get copyWith =>
       throw _privateConstructorUsedError;
 }

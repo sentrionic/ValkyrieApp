@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'friend.dart';
@@ -11,28 +12,7 @@ part of 'friend.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$FriendTearOff {
-  const _$FriendTearOff();
-
-  _Friend call(
-      {required String id,
-      required String username,
-      required String image,
-      required bool isOnline}) {
-    return _Friend(
-      id: id,
-      username: username,
-      image: image,
-      isOnline: isOnline,
-    );
-  }
-}
-
-/// @nodoc
-const $Friend = _$FriendTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Friend {
@@ -89,21 +69,21 @@ class _$FriendCopyWithImpl<$Res> implements $FriendCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$FriendCopyWith<$Res> implements $FriendCopyWith<$Res> {
-  factory _$FriendCopyWith(_Friend value, $Res Function(_Friend) then) =
-      __$FriendCopyWithImpl<$Res>;
+abstract class _$$_FriendCopyWith<$Res> implements $FriendCopyWith<$Res> {
+  factory _$$_FriendCopyWith(_$_Friend value, $Res Function(_$_Friend) then) =
+      __$$_FriendCopyWithImpl<$Res>;
   @override
   $Res call({String id, String username, String image, bool isOnline});
 }
 
 /// @nodoc
-class __$FriendCopyWithImpl<$Res> extends _$FriendCopyWithImpl<$Res>
-    implements _$FriendCopyWith<$Res> {
-  __$FriendCopyWithImpl(_Friend _value, $Res Function(_Friend) _then)
-      : super(_value, (v) => _then(v as _Friend));
+class __$$_FriendCopyWithImpl<$Res> extends _$FriendCopyWithImpl<$Res>
+    implements _$$_FriendCopyWith<$Res> {
+  __$$_FriendCopyWithImpl(_$_Friend _value, $Res Function(_$_Friend) _then)
+      : super(_value, (v) => _then(v as _$_Friend));
 
   @override
-  _Friend get _value => super._value as _Friend;
+  _$_Friend get _value => super._value as _$_Friend;
 
   @override
   $Res call({
@@ -112,7 +92,7 @@ class __$FriendCopyWithImpl<$Res> extends _$FriendCopyWithImpl<$Res>
     Object? image = freezed,
     Object? isOnline = freezed,
   }) {
-    return _then(_Friend(
+    return _then(_$_Friend(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -161,7 +141,7 @@ class _$_Friend extends _Friend {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Friend &&
+            other is _$_Friend &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.username, username) &&
             const DeepCollectionEquality().equals(other.image, image) &&
@@ -178,27 +158,28 @@ class _$_Friend extends _Friend {
 
   @JsonKey(ignore: true)
   @override
-  _$FriendCopyWith<_Friend> get copyWith =>
-      __$FriendCopyWithImpl<_Friend>(this, _$identity);
+  _$$_FriendCopyWith<_$_Friend> get copyWith =>
+      __$$_FriendCopyWithImpl<_$_Friend>(this, _$identity);
 }
 
 abstract class _Friend extends Friend {
   const factory _Friend(
-      {required String id,
-      required String username,
-      required String image,
-      required bool isOnline}) = _$_Friend;
+      {required final String id,
+      required final String username,
+      required final String image,
+      required final bool isOnline}) = _$_Friend;
   const _Friend._() : super._();
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get username;
+  String get username => throw _privateConstructorUsedError;
   @override
-  String get image;
+  String get image => throw _privateConstructorUsedError;
   @override
-  bool get isOnline;
+  bool get isOnline => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FriendCopyWith<_Friend> get copyWith => throw _privateConstructorUsedError;
+  _$$_FriendCopyWith<_$_Friend> get copyWith =>
+      throw _privateConstructorUsedError;
 }

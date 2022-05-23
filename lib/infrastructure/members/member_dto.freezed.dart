@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'member_dto.dart';
@@ -11,34 +12,7 @@ part of 'member_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$MemberDtoTearOff {
-  const _$MemberDtoTearOff();
-
-  _MemberDto call(
-      {required String id,
-      required String username,
-      required String image,
-      required bool isOnline,
-      required bool isFriend,
-      String? nickname,
-      String? color}) {
-    return _MemberDto(
-      id: id,
-      username: username,
-      image: image,
-      isOnline: isOnline,
-      isFriend: isFriend,
-      nickname: nickname,
-      color: color,
-    );
-  }
-}
-
-/// @nodoc
-const $MemberDto = _$MemberDtoTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$MemberDto {
@@ -121,10 +95,10 @@ class _$MemberDtoCopyWithImpl<$Res> implements $MemberDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$MemberDtoCopyWith<$Res> implements $MemberDtoCopyWith<$Res> {
-  factory _$MemberDtoCopyWith(
-          _MemberDto value, $Res Function(_MemberDto) then) =
-      __$MemberDtoCopyWithImpl<$Res>;
+abstract class _$$_MemberDtoCopyWith<$Res> implements $MemberDtoCopyWith<$Res> {
+  factory _$$_MemberDtoCopyWith(
+          _$_MemberDto value, $Res Function(_$_MemberDto) then) =
+      __$$_MemberDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -137,13 +111,14 @@ abstract class _$MemberDtoCopyWith<$Res> implements $MemberDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$MemberDtoCopyWithImpl<$Res> extends _$MemberDtoCopyWithImpl<$Res>
-    implements _$MemberDtoCopyWith<$Res> {
-  __$MemberDtoCopyWithImpl(_MemberDto _value, $Res Function(_MemberDto) _then)
-      : super(_value, (v) => _then(v as _MemberDto));
+class __$$_MemberDtoCopyWithImpl<$Res> extends _$MemberDtoCopyWithImpl<$Res>
+    implements _$$_MemberDtoCopyWith<$Res> {
+  __$$_MemberDtoCopyWithImpl(
+      _$_MemberDto _value, $Res Function(_$_MemberDto) _then)
+      : super(_value, (v) => _then(v as _$_MemberDto));
 
   @override
-  _MemberDto get _value => super._value as _MemberDto;
+  _$_MemberDto get _value => super._value as _$_MemberDto;
 
   @override
   $Res call({
@@ -155,7 +130,7 @@ class __$MemberDtoCopyWithImpl<$Res> extends _$MemberDtoCopyWithImpl<$Res>
     Object? nickname = freezed,
     Object? color = freezed,
   }) {
-    return _then(_MemberDto(
+    return _then(_$_MemberDto(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -225,7 +200,7 @@ class _$_MemberDto extends _MemberDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _MemberDto &&
+            other is _$_MemberDto &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.username, username) &&
             const DeepCollectionEquality().equals(other.image, image) &&
@@ -248,37 +223,37 @@ class _$_MemberDto extends _MemberDto {
 
   @JsonKey(ignore: true)
   @override
-  _$MemberDtoCopyWith<_MemberDto> get copyWith =>
-      __$MemberDtoCopyWithImpl<_MemberDto>(this, _$identity);
+  _$$_MemberDtoCopyWith<_$_MemberDto> get copyWith =>
+      __$$_MemberDtoCopyWithImpl<_$_MemberDto>(this, _$identity);
 }
 
 abstract class _MemberDto extends MemberDto {
   const factory _MemberDto(
-      {required String id,
-      required String username,
-      required String image,
-      required bool isOnline,
-      required bool isFriend,
-      String? nickname,
-      String? color}) = _$_MemberDto;
+      {required final String id,
+      required final String username,
+      required final String image,
+      required final bool isOnline,
+      required final bool isFriend,
+      final String? nickname,
+      final String? color}) = _$_MemberDto;
   const _MemberDto._() : super._();
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get username;
+  String get username => throw _privateConstructorUsedError;
   @override
-  String get image;
+  String get image => throw _privateConstructorUsedError;
   @override
-  bool get isOnline;
+  bool get isOnline => throw _privateConstructorUsedError;
   @override
-  bool get isFriend;
+  bool get isFriend => throw _privateConstructorUsedError;
   @override
-  String? get nickname;
+  String? get nickname => throw _privateConstructorUsedError;
   @override
-  String? get color;
+  String? get color => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$MemberDtoCopyWith<_MemberDto> get copyWith =>
+  _$$_MemberDtoCopyWith<_$_MemberDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

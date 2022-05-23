@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'guild_dto.dart';
@@ -11,32 +12,7 @@ part of 'guild_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$GuildDtoTearOff {
-  const _$GuildDtoTearOff();
-
-  _GuildDto call(
-      {required String id,
-      required String name,
-      required String defaultChannelId,
-      required String ownerId,
-      required bool hasNotification,
-      String? icon}) {
-    return _GuildDto(
-      id: id,
-      name: name,
-      defaultChannelId: defaultChannelId,
-      ownerId: ownerId,
-      hasNotification: hasNotification,
-      icon: icon,
-    );
-  }
-}
-
-/// @nodoc
-const $GuildDto = _$GuildDtoTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$GuildDto {
@@ -112,9 +88,10 @@ class _$GuildDtoCopyWithImpl<$Res> implements $GuildDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GuildDtoCopyWith<$Res> implements $GuildDtoCopyWith<$Res> {
-  factory _$GuildDtoCopyWith(_GuildDto value, $Res Function(_GuildDto) then) =
-      __$GuildDtoCopyWithImpl<$Res>;
+abstract class _$$_GuildDtoCopyWith<$Res> implements $GuildDtoCopyWith<$Res> {
+  factory _$$_GuildDtoCopyWith(
+          _$_GuildDto value, $Res Function(_$_GuildDto) then) =
+      __$$_GuildDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -126,13 +103,14 @@ abstract class _$GuildDtoCopyWith<$Res> implements $GuildDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$GuildDtoCopyWithImpl<$Res> extends _$GuildDtoCopyWithImpl<$Res>
-    implements _$GuildDtoCopyWith<$Res> {
-  __$GuildDtoCopyWithImpl(_GuildDto _value, $Res Function(_GuildDto) _then)
-      : super(_value, (v) => _then(v as _GuildDto));
+class __$$_GuildDtoCopyWithImpl<$Res> extends _$GuildDtoCopyWithImpl<$Res>
+    implements _$$_GuildDtoCopyWith<$Res> {
+  __$$_GuildDtoCopyWithImpl(
+      _$_GuildDto _value, $Res Function(_$_GuildDto) _then)
+      : super(_value, (v) => _then(v as _$_GuildDto));
 
   @override
-  _GuildDto get _value => super._value as _GuildDto;
+  _$_GuildDto get _value => super._value as _$_GuildDto;
 
   @override
   $Res call({
@@ -143,7 +121,7 @@ class __$GuildDtoCopyWithImpl<$Res> extends _$GuildDtoCopyWithImpl<$Res>
     Object? hasNotification = freezed,
     Object? icon = freezed,
   }) {
-    return _then(_GuildDto(
+    return _then(_$_GuildDto(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -206,7 +184,7 @@ class _$_GuildDto extends _GuildDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GuildDto &&
+            other is _$_GuildDto &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
@@ -229,34 +207,34 @@ class _$_GuildDto extends _GuildDto {
 
   @JsonKey(ignore: true)
   @override
-  _$GuildDtoCopyWith<_GuildDto> get copyWith =>
-      __$GuildDtoCopyWithImpl<_GuildDto>(this, _$identity);
+  _$$_GuildDtoCopyWith<_$_GuildDto> get copyWith =>
+      __$$_GuildDtoCopyWithImpl<_$_GuildDto>(this, _$identity);
 }
 
 abstract class _GuildDto extends GuildDto {
   const factory _GuildDto(
-      {required String id,
-      required String name,
-      required String defaultChannelId,
-      required String ownerId,
-      required bool hasNotification,
-      String? icon}) = _$_GuildDto;
+      {required final String id,
+      required final String name,
+      required final String defaultChannelId,
+      required final String ownerId,
+      required final bool hasNotification,
+      final String? icon}) = _$_GuildDto;
   const _GuildDto._() : super._();
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  String get defaultChannelId;
+  String get defaultChannelId => throw _privateConstructorUsedError;
   @override
-  String get ownerId;
+  String get ownerId => throw _privateConstructorUsedError;
   @override
-  bool get hasNotification;
+  bool get hasNotification => throw _privateConstructorUsedError;
   @override
-  String? get icon;
+  String? get icon => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$GuildDtoCopyWith<_GuildDto> get copyWith =>
+  _$$_GuildDtoCopyWith<_$_GuildDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

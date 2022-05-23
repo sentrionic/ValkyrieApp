@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'account_failure.dart';
@@ -11,33 +12,7 @@ part of 'account_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AccountFailureTearOff {
-  const _$AccountFailureTearOff();
-
-  _Unexpected unexpected() {
-    return const _Unexpected();
-  }
-
-  _BadRequest badRequest(String message) {
-    return _BadRequest(
-      message,
-    );
-  }
-
-  _ServerError serverError() {
-    return const _ServerError();
-  }
-
-  _Unauthenticated unauthenticated() {
-    return const _Unauthenticated();
-  }
-}
-
-/// @nodoc
-const $AccountFailure = _$AccountFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AccountFailure {
@@ -111,21 +86,22 @@ class _$AccountFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$UnexpectedCopyWith<$Res> {
-  factory _$UnexpectedCopyWith(
-          _Unexpected value, $Res Function(_Unexpected) then) =
-      __$UnexpectedCopyWithImpl<$Res>;
+abstract class _$$_UnexpectedCopyWith<$Res> {
+  factory _$$_UnexpectedCopyWith(
+          _$_Unexpected value, $Res Function(_$_Unexpected) then) =
+      __$$_UnexpectedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnexpectedCopyWithImpl<$Res> extends _$AccountFailureCopyWithImpl<$Res>
-    implements _$UnexpectedCopyWith<$Res> {
-  __$UnexpectedCopyWithImpl(
-      _Unexpected _value, $Res Function(_Unexpected) _then)
-      : super(_value, (v) => _then(v as _Unexpected));
+class __$$_UnexpectedCopyWithImpl<$Res>
+    extends _$AccountFailureCopyWithImpl<$Res>
+    implements _$$_UnexpectedCopyWith<$Res> {
+  __$$_UnexpectedCopyWithImpl(
+      _$_Unexpected _value, $Res Function(_$_Unexpected) _then)
+      : super(_value, (v) => _then(v as _$_Unexpected));
 
   @override
-  _Unexpected get _value => super._value as _Unexpected;
+  _$_Unexpected get _value => super._value as _$_Unexpected;
 }
 
 /// @nodoc
@@ -141,7 +117,7 @@ class _$_Unexpected implements _Unexpected {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Unexpected);
+        (other.runtimeType == runtimeType && other is _$_Unexpected);
   }
 
   @override
@@ -227,28 +203,29 @@ abstract class _Unexpected implements AccountFailure {
 }
 
 /// @nodoc
-abstract class _$BadRequestCopyWith<$Res> {
-  factory _$BadRequestCopyWith(
-          _BadRequest value, $Res Function(_BadRequest) then) =
-      __$BadRequestCopyWithImpl<$Res>;
+abstract class _$$_BadRequestCopyWith<$Res> {
+  factory _$$_BadRequestCopyWith(
+          _$_BadRequest value, $Res Function(_$_BadRequest) then) =
+      __$$_BadRequestCopyWithImpl<$Res>;
   $Res call({String message});
 }
 
 /// @nodoc
-class __$BadRequestCopyWithImpl<$Res> extends _$AccountFailureCopyWithImpl<$Res>
-    implements _$BadRequestCopyWith<$Res> {
-  __$BadRequestCopyWithImpl(
-      _BadRequest _value, $Res Function(_BadRequest) _then)
-      : super(_value, (v) => _then(v as _BadRequest));
+class __$$_BadRequestCopyWithImpl<$Res>
+    extends _$AccountFailureCopyWithImpl<$Res>
+    implements _$$_BadRequestCopyWith<$Res> {
+  __$$_BadRequestCopyWithImpl(
+      _$_BadRequest _value, $Res Function(_$_BadRequest) _then)
+      : super(_value, (v) => _then(v as _$_BadRequest));
 
   @override
-  _BadRequest get _value => super._value as _BadRequest;
+  _$_BadRequest get _value => super._value as _$_BadRequest;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_BadRequest(
+    return _then(_$_BadRequest(
       message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -274,7 +251,7 @@ class _$_BadRequest implements _BadRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _BadRequest &&
+            other is _$_BadRequest &&
             const DeepCollectionEquality().equals(other.message, message));
   }
 
@@ -284,8 +261,8 @@ class _$_BadRequest implements _BadRequest {
 
   @JsonKey(ignore: true)
   @override
-  _$BadRequestCopyWith<_BadRequest> get copyWith =>
-      __$BadRequestCopyWithImpl<_BadRequest>(this, _$identity);
+  _$$_BadRequestCopyWith<_$_BadRequest> get copyWith =>
+      __$$_BadRequestCopyWithImpl<_$_BadRequest>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -363,31 +340,31 @@ class _$_BadRequest implements _BadRequest {
 }
 
 abstract class _BadRequest implements AccountFailure {
-  const factory _BadRequest(String message) = _$_BadRequest;
+  const factory _BadRequest(final String message) = _$_BadRequest;
 
-  String get message;
+  String get message => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$BadRequestCopyWith<_BadRequest> get copyWith =>
+  _$$_BadRequestCopyWith<_$_BadRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ServerErrorCopyWith<$Res> {
-  factory _$ServerErrorCopyWith(
-          _ServerError value, $Res Function(_ServerError) then) =
-      __$ServerErrorCopyWithImpl<$Res>;
+abstract class _$$_ServerErrorCopyWith<$Res> {
+  factory _$$_ServerErrorCopyWith(
+          _$_ServerError value, $Res Function(_$_ServerError) then) =
+      __$$_ServerErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ServerErrorCopyWithImpl<$Res>
+class __$$_ServerErrorCopyWithImpl<$Res>
     extends _$AccountFailureCopyWithImpl<$Res>
-    implements _$ServerErrorCopyWith<$Res> {
-  __$ServerErrorCopyWithImpl(
-      _ServerError _value, $Res Function(_ServerError) _then)
-      : super(_value, (v) => _then(v as _ServerError));
+    implements _$$_ServerErrorCopyWith<$Res> {
+  __$$_ServerErrorCopyWithImpl(
+      _$_ServerError _value, $Res Function(_$_ServerError) _then)
+      : super(_value, (v) => _then(v as _$_ServerError));
 
   @override
-  _ServerError get _value => super._value as _ServerError;
+  _$_ServerError get _value => super._value as _$_ServerError;
 }
 
 /// @nodoc
@@ -403,7 +380,7 @@ class _$_ServerError implements _ServerError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ServerError);
+        (other.runtimeType == runtimeType && other is _$_ServerError);
   }
 
   @override
@@ -489,22 +466,22 @@ abstract class _ServerError implements AccountFailure {
 }
 
 /// @nodoc
-abstract class _$UnauthenticatedCopyWith<$Res> {
-  factory _$UnauthenticatedCopyWith(
-          _Unauthenticated value, $Res Function(_Unauthenticated) then) =
-      __$UnauthenticatedCopyWithImpl<$Res>;
+abstract class _$$_UnauthenticatedCopyWith<$Res> {
+  factory _$$_UnauthenticatedCopyWith(
+          _$_Unauthenticated value, $Res Function(_$_Unauthenticated) then) =
+      __$$_UnauthenticatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnauthenticatedCopyWithImpl<$Res>
+class __$$_UnauthenticatedCopyWithImpl<$Res>
     extends _$AccountFailureCopyWithImpl<$Res>
-    implements _$UnauthenticatedCopyWith<$Res> {
-  __$UnauthenticatedCopyWithImpl(
-      _Unauthenticated _value, $Res Function(_Unauthenticated) _then)
-      : super(_value, (v) => _then(v as _Unauthenticated));
+    implements _$$_UnauthenticatedCopyWith<$Res> {
+  __$$_UnauthenticatedCopyWithImpl(
+      _$_Unauthenticated _value, $Res Function(_$_Unauthenticated) _then)
+      : super(_value, (v) => _then(v as _$_Unauthenticated));
 
   @override
-  _Unauthenticated get _value => super._value as _Unauthenticated;
+  _$_Unauthenticated get _value => super._value as _$_Unauthenticated;
 }
 
 /// @nodoc
@@ -520,7 +497,7 @@ class _$_Unauthenticated implements _Unauthenticated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Unauthenticated);
+        (other.runtimeType == runtimeType && other is _$_Unauthenticated);
   }
 
   @override

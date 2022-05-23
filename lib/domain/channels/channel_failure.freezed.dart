@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'channel_failure.dart';
@@ -11,29 +12,7 @@ part of 'channel_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ChannelFailureTearOff {
-  const _$ChannelFailureTearOff();
-
-  _Unexpected unexpected() {
-    return const _Unexpected();
-  }
-
-  _NotFound notFound() {
-    return const _NotFound();
-  }
-
-  _BadRequest badRequest(String message) {
-    return _BadRequest(
-      message,
-    );
-  }
-}
-
-/// @nodoc
-const $ChannelFailure = _$ChannelFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ChannelFailure {
@@ -101,21 +80,22 @@ class _$ChannelFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$UnexpectedCopyWith<$Res> {
-  factory _$UnexpectedCopyWith(
-          _Unexpected value, $Res Function(_Unexpected) then) =
-      __$UnexpectedCopyWithImpl<$Res>;
+abstract class _$$_UnexpectedCopyWith<$Res> {
+  factory _$$_UnexpectedCopyWith(
+          _$_Unexpected value, $Res Function(_$_Unexpected) then) =
+      __$$_UnexpectedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnexpectedCopyWithImpl<$Res> extends _$ChannelFailureCopyWithImpl<$Res>
-    implements _$UnexpectedCopyWith<$Res> {
-  __$UnexpectedCopyWithImpl(
-      _Unexpected _value, $Res Function(_Unexpected) _then)
-      : super(_value, (v) => _then(v as _Unexpected));
+class __$$_UnexpectedCopyWithImpl<$Res>
+    extends _$ChannelFailureCopyWithImpl<$Res>
+    implements _$$_UnexpectedCopyWith<$Res> {
+  __$$_UnexpectedCopyWithImpl(
+      _$_Unexpected _value, $Res Function(_$_Unexpected) _then)
+      : super(_value, (v) => _then(v as _$_Unexpected));
 
   @override
-  _Unexpected get _value => super._value as _Unexpected;
+  _$_Unexpected get _value => super._value as _$_Unexpected;
 }
 
 /// @nodoc
@@ -131,7 +111,7 @@ class _$_Unexpected implements _Unexpected {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Unexpected);
+        (other.runtimeType == runtimeType && other is _$_Unexpected);
   }
 
   @override
@@ -211,19 +191,21 @@ abstract class _Unexpected implements ChannelFailure {
 }
 
 /// @nodoc
-abstract class _$NotFoundCopyWith<$Res> {
-  factory _$NotFoundCopyWith(_NotFound value, $Res Function(_NotFound) then) =
-      __$NotFoundCopyWithImpl<$Res>;
+abstract class _$$_NotFoundCopyWith<$Res> {
+  factory _$$_NotFoundCopyWith(
+          _$_NotFound value, $Res Function(_$_NotFound) then) =
+      __$$_NotFoundCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NotFoundCopyWithImpl<$Res> extends _$ChannelFailureCopyWithImpl<$Res>
-    implements _$NotFoundCopyWith<$Res> {
-  __$NotFoundCopyWithImpl(_NotFound _value, $Res Function(_NotFound) _then)
-      : super(_value, (v) => _then(v as _NotFound));
+class __$$_NotFoundCopyWithImpl<$Res> extends _$ChannelFailureCopyWithImpl<$Res>
+    implements _$$_NotFoundCopyWith<$Res> {
+  __$$_NotFoundCopyWithImpl(
+      _$_NotFound _value, $Res Function(_$_NotFound) _then)
+      : super(_value, (v) => _then(v as _$_NotFound));
 
   @override
-  _NotFound get _value => super._value as _NotFound;
+  _$_NotFound get _value => super._value as _$_NotFound;
 }
 
 /// @nodoc
@@ -239,7 +221,7 @@ class _$_NotFound implements _NotFound {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _NotFound);
+        (other.runtimeType == runtimeType && other is _$_NotFound);
   }
 
   @override
@@ -319,28 +301,29 @@ abstract class _NotFound implements ChannelFailure {
 }
 
 /// @nodoc
-abstract class _$BadRequestCopyWith<$Res> {
-  factory _$BadRequestCopyWith(
-          _BadRequest value, $Res Function(_BadRequest) then) =
-      __$BadRequestCopyWithImpl<$Res>;
+abstract class _$$_BadRequestCopyWith<$Res> {
+  factory _$$_BadRequestCopyWith(
+          _$_BadRequest value, $Res Function(_$_BadRequest) then) =
+      __$$_BadRequestCopyWithImpl<$Res>;
   $Res call({String message});
 }
 
 /// @nodoc
-class __$BadRequestCopyWithImpl<$Res> extends _$ChannelFailureCopyWithImpl<$Res>
-    implements _$BadRequestCopyWith<$Res> {
-  __$BadRequestCopyWithImpl(
-      _BadRequest _value, $Res Function(_BadRequest) _then)
-      : super(_value, (v) => _then(v as _BadRequest));
+class __$$_BadRequestCopyWithImpl<$Res>
+    extends _$ChannelFailureCopyWithImpl<$Res>
+    implements _$$_BadRequestCopyWith<$Res> {
+  __$$_BadRequestCopyWithImpl(
+      _$_BadRequest _value, $Res Function(_$_BadRequest) _then)
+      : super(_value, (v) => _then(v as _$_BadRequest));
 
   @override
-  _BadRequest get _value => super._value as _BadRequest;
+  _$_BadRequest get _value => super._value as _$_BadRequest;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_BadRequest(
+    return _then(_$_BadRequest(
       message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -366,7 +349,7 @@ class _$_BadRequest implements _BadRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _BadRequest &&
+            other is _$_BadRequest &&
             const DeepCollectionEquality().equals(other.message, message));
   }
 
@@ -376,8 +359,8 @@ class _$_BadRequest implements _BadRequest {
 
   @JsonKey(ignore: true)
   @override
-  _$BadRequestCopyWith<_BadRequest> get copyWith =>
-      __$BadRequestCopyWithImpl<_BadRequest>(this, _$identity);
+  _$$_BadRequestCopyWith<_$_BadRequest> get copyWith =>
+      __$$_BadRequestCopyWithImpl<_$_BadRequest>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -449,10 +432,10 @@ class _$_BadRequest implements _BadRequest {
 }
 
 abstract class _BadRequest implements ChannelFailure {
-  const factory _BadRequest(String message) = _$_BadRequest;
+  const factory _BadRequest(final String message) = _$_BadRequest;
 
-  String get message;
+  String get message => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$BadRequestCopyWith<_BadRequest> get copyWith =>
+  _$$_BadRequestCopyWith<_$_BadRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }

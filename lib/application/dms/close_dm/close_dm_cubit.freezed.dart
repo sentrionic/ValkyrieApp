@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'close_dm_cubit.dart';
@@ -11,33 +12,7 @@ part of 'close_dm_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CloseDMStateTearOff {
-  const _$CloseDMStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _ActionInProgress actionInProgress() {
-    return const _ActionInProgress();
-  }
-
-  _CloseFailure closeFailure(DMChannelFailure failure) {
-    return _CloseFailure(
-      failure,
-    );
-  }
-
-  _CloseSuccess closeSuccess() {
-    return const _CloseSuccess();
-  }
-}
-
-/// @nodoc
-const $CloseDMState = _$CloseDMStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CloseDMState {
@@ -110,19 +85,20 @@ class _$CloseDMStateCopyWithImpl<$Res> implements $CloseDMStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$CloseDMStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$$_InitialCopyWithImpl<$Res> extends _$CloseDMStateCopyWithImpl<$Res>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, (v) => _then(v as _$_Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  _$_Initial get _value => super._value as _$_Initial;
 }
 
 /// @nodoc
@@ -138,7 +114,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -224,22 +200,22 @@ abstract class _Initial implements CloseDMState {
 }
 
 /// @nodoc
-abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
-      __$ActionInProgressCopyWithImpl<$Res>;
+abstract class _$$_ActionInProgressCopyWith<$Res> {
+  factory _$$_ActionInProgressCopyWith(
+          _$_ActionInProgress value, $Res Function(_$_ActionInProgress) then) =
+      __$$_ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res>
+class __$$_ActionInProgressCopyWithImpl<$Res>
     extends _$CloseDMStateCopyWithImpl<$Res>
-    implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(
-      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _ActionInProgress));
+    implements _$$_ActionInProgressCopyWith<$Res> {
+  __$$_ActionInProgressCopyWithImpl(
+      _$_ActionInProgress _value, $Res Function(_$_ActionInProgress) _then)
+      : super(_value, (v) => _then(v as _$_ActionInProgress));
 
   @override
-  _ActionInProgress get _value => super._value as _ActionInProgress;
+  _$_ActionInProgress get _value => super._value as _$_ActionInProgress;
 }
 
 /// @nodoc
@@ -255,7 +231,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ActionInProgress);
+        (other.runtimeType == runtimeType && other is _$_ActionInProgress);
   }
 
   @override
@@ -341,30 +317,31 @@ abstract class _ActionInProgress implements CloseDMState {
 }
 
 /// @nodoc
-abstract class _$CloseFailureCopyWith<$Res> {
-  factory _$CloseFailureCopyWith(
-          _CloseFailure value, $Res Function(_CloseFailure) then) =
-      __$CloseFailureCopyWithImpl<$Res>;
+abstract class _$$_CloseFailureCopyWith<$Res> {
+  factory _$$_CloseFailureCopyWith(
+          _$_CloseFailure value, $Res Function(_$_CloseFailure) then) =
+      __$$_CloseFailureCopyWithImpl<$Res>;
   $Res call({DMChannelFailure failure});
 
   $DMChannelFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
-class __$CloseFailureCopyWithImpl<$Res> extends _$CloseDMStateCopyWithImpl<$Res>
-    implements _$CloseFailureCopyWith<$Res> {
-  __$CloseFailureCopyWithImpl(
-      _CloseFailure _value, $Res Function(_CloseFailure) _then)
-      : super(_value, (v) => _then(v as _CloseFailure));
+class __$$_CloseFailureCopyWithImpl<$Res>
+    extends _$CloseDMStateCopyWithImpl<$Res>
+    implements _$$_CloseFailureCopyWith<$Res> {
+  __$$_CloseFailureCopyWithImpl(
+      _$_CloseFailure _value, $Res Function(_$_CloseFailure) _then)
+      : super(_value, (v) => _then(v as _$_CloseFailure));
 
   @override
-  _CloseFailure get _value => super._value as _CloseFailure;
+  _$_CloseFailure get _value => super._value as _$_CloseFailure;
 
   @override
   $Res call({
     Object? failure = freezed,
   }) {
-    return _then(_CloseFailure(
+    return _then(_$_CloseFailure(
       failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -397,7 +374,7 @@ class _$_CloseFailure implements _CloseFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CloseFailure &&
+            other is _$_CloseFailure &&
             const DeepCollectionEquality().equals(other.failure, failure));
   }
 
@@ -407,8 +384,8 @@ class _$_CloseFailure implements _CloseFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$CloseFailureCopyWith<_CloseFailure> get copyWith =>
-      __$CloseFailureCopyWithImpl<_CloseFailure>(this, _$identity);
+  _$$_CloseFailureCopyWith<_$_CloseFailure> get copyWith =>
+      __$$_CloseFailureCopyWithImpl<_$_CloseFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -486,30 +463,31 @@ class _$_CloseFailure implements _CloseFailure {
 }
 
 abstract class _CloseFailure implements CloseDMState {
-  const factory _CloseFailure(DMChannelFailure failure) = _$_CloseFailure;
+  const factory _CloseFailure(final DMChannelFailure failure) = _$_CloseFailure;
 
-  DMChannelFailure get failure;
+  DMChannelFailure get failure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$CloseFailureCopyWith<_CloseFailure> get copyWith =>
+  _$$_CloseFailureCopyWith<_$_CloseFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$CloseSuccessCopyWith<$Res> {
-  factory _$CloseSuccessCopyWith(
-          _CloseSuccess value, $Res Function(_CloseSuccess) then) =
-      __$CloseSuccessCopyWithImpl<$Res>;
+abstract class _$$_CloseSuccessCopyWith<$Res> {
+  factory _$$_CloseSuccessCopyWith(
+          _$_CloseSuccess value, $Res Function(_$_CloseSuccess) then) =
+      __$$_CloseSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$CloseSuccessCopyWithImpl<$Res> extends _$CloseDMStateCopyWithImpl<$Res>
-    implements _$CloseSuccessCopyWith<$Res> {
-  __$CloseSuccessCopyWithImpl(
-      _CloseSuccess _value, $Res Function(_CloseSuccess) _then)
-      : super(_value, (v) => _then(v as _CloseSuccess));
+class __$$_CloseSuccessCopyWithImpl<$Res>
+    extends _$CloseDMStateCopyWithImpl<$Res>
+    implements _$$_CloseSuccessCopyWith<$Res> {
+  __$$_CloseSuccessCopyWithImpl(
+      _$_CloseSuccess _value, $Res Function(_$_CloseSuccess) _then)
+      : super(_value, (v) => _then(v as _$_CloseSuccess));
 
   @override
-  _CloseSuccess get _value => super._value as _CloseSuccess;
+  _$_CloseSuccess get _value => super._value as _$_CloseSuccess;
 }
 
 /// @nodoc
@@ -525,7 +503,7 @@ class _$_CloseSuccess implements _CloseSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _CloseSuccess);
+        (other.runtimeType == runtimeType && other is _$_CloseSuccess);
   }
 
   @override

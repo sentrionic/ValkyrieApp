@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'update_account_bloc.dart';
@@ -11,37 +12,7 @@ part of 'update_account_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UpdateAccountEventTearOff {
-  const _$UpdateAccountEventTearOff();
-
-  _EmailChanged emailChanged(String email) {
-    return _EmailChanged(
-      email,
-    );
-  }
-
-  _UsernameChanged usernameChanged(String username) {
-    return _UsernameChanged(
-      username,
-    );
-  }
-
-  _ImageChanged imageChanged(File image) {
-    return _ImageChanged(
-      image,
-    );
-  }
-
-  _Saved saved() {
-    return const _Saved();
-  }
-}
-
-/// @nodoc
-const $UpdateAccountEvent = _$UpdateAccountEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$UpdateAccountEvent {
@@ -115,29 +86,29 @@ class _$UpdateAccountEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$EmailChangedCopyWith<$Res> {
-  factory _$EmailChangedCopyWith(
-          _EmailChanged value, $Res Function(_EmailChanged) then) =
-      __$EmailChangedCopyWithImpl<$Res>;
+abstract class _$$_EmailChangedCopyWith<$Res> {
+  factory _$$_EmailChangedCopyWith(
+          _$_EmailChanged value, $Res Function(_$_EmailChanged) then) =
+      __$$_EmailChangedCopyWithImpl<$Res>;
   $Res call({String email});
 }
 
 /// @nodoc
-class __$EmailChangedCopyWithImpl<$Res>
+class __$$_EmailChangedCopyWithImpl<$Res>
     extends _$UpdateAccountEventCopyWithImpl<$Res>
-    implements _$EmailChangedCopyWith<$Res> {
-  __$EmailChangedCopyWithImpl(
-      _EmailChanged _value, $Res Function(_EmailChanged) _then)
-      : super(_value, (v) => _then(v as _EmailChanged));
+    implements _$$_EmailChangedCopyWith<$Res> {
+  __$$_EmailChangedCopyWithImpl(
+      _$_EmailChanged _value, $Res Function(_$_EmailChanged) _then)
+      : super(_value, (v) => _then(v as _$_EmailChanged));
 
   @override
-  _EmailChanged get _value => super._value as _EmailChanged;
+  _$_EmailChanged get _value => super._value as _$_EmailChanged;
 
   @override
   $Res call({
     Object? email = freezed,
   }) {
-    return _then(_EmailChanged(
+    return _then(_$_EmailChanged(
       email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -163,7 +134,7 @@ class _$_EmailChanged implements _EmailChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _EmailChanged &&
+            other is _$_EmailChanged &&
             const DeepCollectionEquality().equals(other.email, email));
   }
 
@@ -173,8 +144,8 @@ class _$_EmailChanged implements _EmailChanged {
 
   @JsonKey(ignore: true)
   @override
-  _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
-      __$EmailChangedCopyWithImpl<_EmailChanged>(this, _$identity);
+  _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
+      __$$_EmailChangedCopyWithImpl<_$_EmailChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -252,38 +223,38 @@ class _$_EmailChanged implements _EmailChanged {
 }
 
 abstract class _EmailChanged implements UpdateAccountEvent {
-  const factory _EmailChanged(String email) = _$_EmailChanged;
+  const factory _EmailChanged(final String email) = _$_EmailChanged;
 
-  String get email;
+  String get email => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
+  _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UsernameChangedCopyWith<$Res> {
-  factory _$UsernameChangedCopyWith(
-          _UsernameChanged value, $Res Function(_UsernameChanged) then) =
-      __$UsernameChangedCopyWithImpl<$Res>;
+abstract class _$$_UsernameChangedCopyWith<$Res> {
+  factory _$$_UsernameChangedCopyWith(
+          _$_UsernameChanged value, $Res Function(_$_UsernameChanged) then) =
+      __$$_UsernameChangedCopyWithImpl<$Res>;
   $Res call({String username});
 }
 
 /// @nodoc
-class __$UsernameChangedCopyWithImpl<$Res>
+class __$$_UsernameChangedCopyWithImpl<$Res>
     extends _$UpdateAccountEventCopyWithImpl<$Res>
-    implements _$UsernameChangedCopyWith<$Res> {
-  __$UsernameChangedCopyWithImpl(
-      _UsernameChanged _value, $Res Function(_UsernameChanged) _then)
-      : super(_value, (v) => _then(v as _UsernameChanged));
+    implements _$$_UsernameChangedCopyWith<$Res> {
+  __$$_UsernameChangedCopyWithImpl(
+      _$_UsernameChanged _value, $Res Function(_$_UsernameChanged) _then)
+      : super(_value, (v) => _then(v as _$_UsernameChanged));
 
   @override
-  _UsernameChanged get _value => super._value as _UsernameChanged;
+  _$_UsernameChanged get _value => super._value as _$_UsernameChanged;
 
   @override
   $Res call({
     Object? username = freezed,
   }) {
-    return _then(_UsernameChanged(
+    return _then(_$_UsernameChanged(
       username == freezed
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
@@ -309,7 +280,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UsernameChanged &&
+            other is _$_UsernameChanged &&
             const DeepCollectionEquality().equals(other.username, username));
   }
 
@@ -319,8 +290,8 @@ class _$_UsernameChanged implements _UsernameChanged {
 
   @JsonKey(ignore: true)
   @override
-  _$UsernameChangedCopyWith<_UsernameChanged> get copyWith =>
-      __$UsernameChangedCopyWithImpl<_UsernameChanged>(this, _$identity);
+  _$$_UsernameChangedCopyWith<_$_UsernameChanged> get copyWith =>
+      __$$_UsernameChangedCopyWithImpl<_$_UsernameChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -398,38 +369,38 @@ class _$_UsernameChanged implements _UsernameChanged {
 }
 
 abstract class _UsernameChanged implements UpdateAccountEvent {
-  const factory _UsernameChanged(String username) = _$_UsernameChanged;
+  const factory _UsernameChanged(final String username) = _$_UsernameChanged;
 
-  String get username;
+  String get username => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$UsernameChangedCopyWith<_UsernameChanged> get copyWith =>
+  _$$_UsernameChangedCopyWith<_$_UsernameChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ImageChangedCopyWith<$Res> {
-  factory _$ImageChangedCopyWith(
-          _ImageChanged value, $Res Function(_ImageChanged) then) =
-      __$ImageChangedCopyWithImpl<$Res>;
+abstract class _$$_ImageChangedCopyWith<$Res> {
+  factory _$$_ImageChangedCopyWith(
+          _$_ImageChanged value, $Res Function(_$_ImageChanged) then) =
+      __$$_ImageChangedCopyWithImpl<$Res>;
   $Res call({File image});
 }
 
 /// @nodoc
-class __$ImageChangedCopyWithImpl<$Res>
+class __$$_ImageChangedCopyWithImpl<$Res>
     extends _$UpdateAccountEventCopyWithImpl<$Res>
-    implements _$ImageChangedCopyWith<$Res> {
-  __$ImageChangedCopyWithImpl(
-      _ImageChanged _value, $Res Function(_ImageChanged) _then)
-      : super(_value, (v) => _then(v as _ImageChanged));
+    implements _$$_ImageChangedCopyWith<$Res> {
+  __$$_ImageChangedCopyWithImpl(
+      _$_ImageChanged _value, $Res Function(_$_ImageChanged) _then)
+      : super(_value, (v) => _then(v as _$_ImageChanged));
 
   @override
-  _ImageChanged get _value => super._value as _ImageChanged;
+  _$_ImageChanged get _value => super._value as _$_ImageChanged;
 
   @override
   $Res call({
     Object? image = freezed,
   }) {
-    return _then(_ImageChanged(
+    return _then(_$_ImageChanged(
       image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -455,7 +426,7 @@ class _$_ImageChanged implements _ImageChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ImageChanged &&
+            other is _$_ImageChanged &&
             const DeepCollectionEquality().equals(other.image, image));
   }
 
@@ -465,8 +436,8 @@ class _$_ImageChanged implements _ImageChanged {
 
   @JsonKey(ignore: true)
   @override
-  _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
-      __$ImageChangedCopyWithImpl<_ImageChanged>(this, _$identity);
+  _$$_ImageChangedCopyWith<_$_ImageChanged> get copyWith =>
+      __$$_ImageChangedCopyWithImpl<_$_ImageChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -544,28 +515,29 @@ class _$_ImageChanged implements _ImageChanged {
 }
 
 abstract class _ImageChanged implements UpdateAccountEvent {
-  const factory _ImageChanged(File image) = _$_ImageChanged;
+  const factory _ImageChanged(final File image) = _$_ImageChanged;
 
-  File get image;
+  File get image => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
+  _$$_ImageChangedCopyWith<_$_ImageChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SavedCopyWith<$Res> {
-  factory _$SavedCopyWith(_Saved value, $Res Function(_Saved) then) =
-      __$SavedCopyWithImpl<$Res>;
+abstract class _$$_SavedCopyWith<$Res> {
+  factory _$$_SavedCopyWith(_$_Saved value, $Res Function(_$_Saved) then) =
+      __$$_SavedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SavedCopyWithImpl<$Res> extends _$UpdateAccountEventCopyWithImpl<$Res>
-    implements _$SavedCopyWith<$Res> {
-  __$SavedCopyWithImpl(_Saved _value, $Res Function(_Saved) _then)
-      : super(_value, (v) => _then(v as _Saved));
+class __$$_SavedCopyWithImpl<$Res>
+    extends _$UpdateAccountEventCopyWithImpl<$Res>
+    implements _$$_SavedCopyWith<$Res> {
+  __$$_SavedCopyWithImpl(_$_Saved _value, $Res Function(_$_Saved) _then)
+      : super(_value, (v) => _then(v as _$_Saved));
 
   @override
-  _Saved get _value => super._value as _Saved;
+  _$_Saved get _value => super._value as _$_Saved;
 }
 
 /// @nodoc
@@ -581,7 +553,7 @@ class _$_Saved implements _Saved {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Saved);
+        (other.runtimeType == runtimeType && other is _$_Saved);
   }
 
   @override
@@ -667,32 +639,6 @@ abstract class _Saved implements UpdateAccountEvent {
 }
 
 /// @nodoc
-class _$UpdateAccountStateTearOff {
-  const _$UpdateAccountStateTearOff();
-
-  _UpdateAccountState call(
-      {required Username username,
-      required EmailAddress emailAddress,
-      File? image = null,
-      required bool showErrorMessages,
-      required bool isSaving,
-      required Option<Either<AccountFailure, Account>>
-          saveFailureOrSuccessOption}) {
-    return _UpdateAccountState(
-      username: username,
-      emailAddress: emailAddress,
-      image: image,
-      showErrorMessages: showErrorMessages,
-      isSaving: isSaving,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption,
-    );
-  }
-}
-
-/// @nodoc
-const $UpdateAccountState = _$UpdateAccountStateTearOff();
-
-/// @nodoc
 mixin _$UpdateAccountState {
   Username get username => throw _privateConstructorUsedError;
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
@@ -769,11 +715,11 @@ class _$UpdateAccountStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$UpdateAccountStateCopyWith<$Res>
+abstract class _$$_UpdateAccountStateCopyWith<$Res>
     implements $UpdateAccountStateCopyWith<$Res> {
-  factory _$UpdateAccountStateCopyWith(
-          _UpdateAccountState value, $Res Function(_UpdateAccountState) then) =
-      __$UpdateAccountStateCopyWithImpl<$Res>;
+  factory _$$_UpdateAccountStateCopyWith(_$_UpdateAccountState value,
+          $Res Function(_$_UpdateAccountState) then) =
+      __$$_UpdateAccountStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {Username username,
@@ -785,15 +731,15 @@ abstract class _$UpdateAccountStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$UpdateAccountStateCopyWithImpl<$Res>
+class __$$_UpdateAccountStateCopyWithImpl<$Res>
     extends _$UpdateAccountStateCopyWithImpl<$Res>
-    implements _$UpdateAccountStateCopyWith<$Res> {
-  __$UpdateAccountStateCopyWithImpl(
-      _UpdateAccountState _value, $Res Function(_UpdateAccountState) _then)
-      : super(_value, (v) => _then(v as _UpdateAccountState));
+    implements _$$_UpdateAccountStateCopyWith<$Res> {
+  __$$_UpdateAccountStateCopyWithImpl(
+      _$_UpdateAccountState _value, $Res Function(_$_UpdateAccountState) _then)
+      : super(_value, (v) => _then(v as _$_UpdateAccountState));
 
   @override
-  _UpdateAccountState get _value => super._value as _UpdateAccountState;
+  _$_UpdateAccountState get _value => super._value as _$_UpdateAccountState;
 
   @override
   $Res call({
@@ -804,7 +750,7 @@ class __$UpdateAccountStateCopyWithImpl<$Res>
     Object? isSaving = freezed,
     Object? saveFailureOrSuccessOption = freezed,
   }) {
-    return _then(_UpdateAccountState(
+    return _then(_$_UpdateAccountState(
       username: username == freezed
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
@@ -848,8 +794,8 @@ class _$_UpdateAccountState implements _UpdateAccountState {
   final Username username;
   @override
   final EmailAddress emailAddress;
-  @JsonKey()
   @override
+  @JsonKey()
   final File? image;
   @override
   final bool showErrorMessages;
@@ -867,7 +813,7 @@ class _$_UpdateAccountState implements _UpdateAccountState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UpdateAccountState &&
+            other is _$_UpdateAccountState &&
             const DeepCollectionEquality().equals(other.username, username) &&
             const DeepCollectionEquality()
                 .equals(other.emailAddress, emailAddress) &&
@@ -891,34 +837,36 @@ class _$_UpdateAccountState implements _UpdateAccountState {
 
   @JsonKey(ignore: true)
   @override
-  _$UpdateAccountStateCopyWith<_UpdateAccountState> get copyWith =>
-      __$UpdateAccountStateCopyWithImpl<_UpdateAccountState>(this, _$identity);
+  _$$_UpdateAccountStateCopyWith<_$_UpdateAccountState> get copyWith =>
+      __$$_UpdateAccountStateCopyWithImpl<_$_UpdateAccountState>(
+          this, _$identity);
 }
 
 abstract class _UpdateAccountState implements UpdateAccountState {
   const factory _UpdateAccountState(
-      {required Username username,
-      required EmailAddress emailAddress,
-      File? image,
-      required bool showErrorMessages,
-      required bool isSaving,
-      required Option<Either<AccountFailure, Account>>
+      {required final Username username,
+      required final EmailAddress emailAddress,
+      final File? image,
+      required final bool showErrorMessages,
+      required final bool isSaving,
+      required final Option<Either<AccountFailure, Account>>
           saveFailureOrSuccessOption}) = _$_UpdateAccountState;
 
   @override
-  Username get username;
+  Username get username => throw _privateConstructorUsedError;
   @override
-  EmailAddress get emailAddress;
+  EmailAddress get emailAddress => throw _privateConstructorUsedError;
   @override
-  File? get image;
+  File? get image => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isSaving;
+  bool get isSaving => throw _privateConstructorUsedError;
   @override
-  Option<Either<AccountFailure, Account>> get saveFailureOrSuccessOption;
+  Option<Either<AccountFailure, Account>> get saveFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UpdateAccountStateCopyWith<_UpdateAccountState> get copyWith =>
+  _$$_UpdateAccountStateCopyWith<_$_UpdateAccountState> get copyWith =>
       throw _privateConstructorUsedError;
 }

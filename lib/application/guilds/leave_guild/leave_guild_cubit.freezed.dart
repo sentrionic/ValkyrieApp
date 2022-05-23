@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'leave_guild_cubit.dart';
@@ -11,33 +12,7 @@ part of 'leave_guild_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$LeaveGuildStateTearOff {
-  const _$LeaveGuildStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _ActionInProgress actionInProgress() {
-    return const _ActionInProgress();
-  }
-
-  _LeaveFailure leaveFailure(GuildFailure failure) {
-    return _LeaveFailure(
-      failure,
-    );
-  }
-
-  _LeaveSuccess leaveSuccess() {
-    return const _LeaveSuccess();
-  }
-}
-
-/// @nodoc
-const $LeaveGuildState = _$LeaveGuildStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$LeaveGuildState {
@@ -111,19 +86,20 @@ class _$LeaveGuildStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$LeaveGuildStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$$_InitialCopyWithImpl<$Res> extends _$LeaveGuildStateCopyWithImpl<$Res>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, (v) => _then(v as _$_Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  _$_Initial get _value => super._value as _$_Initial;
 }
 
 /// @nodoc
@@ -139,7 +115,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -225,22 +201,22 @@ abstract class _Initial implements LeaveGuildState {
 }
 
 /// @nodoc
-abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
-      __$ActionInProgressCopyWithImpl<$Res>;
+abstract class _$$_ActionInProgressCopyWith<$Res> {
+  factory _$$_ActionInProgressCopyWith(
+          _$_ActionInProgress value, $Res Function(_$_ActionInProgress) then) =
+      __$$_ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res>
+class __$$_ActionInProgressCopyWithImpl<$Res>
     extends _$LeaveGuildStateCopyWithImpl<$Res>
-    implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(
-      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _ActionInProgress));
+    implements _$$_ActionInProgressCopyWith<$Res> {
+  __$$_ActionInProgressCopyWithImpl(
+      _$_ActionInProgress _value, $Res Function(_$_ActionInProgress) _then)
+      : super(_value, (v) => _then(v as _$_ActionInProgress));
 
   @override
-  _ActionInProgress get _value => super._value as _ActionInProgress;
+  _$_ActionInProgress get _value => super._value as _$_ActionInProgress;
 }
 
 /// @nodoc
@@ -256,7 +232,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ActionInProgress);
+        (other.runtimeType == runtimeType && other is _$_ActionInProgress);
   }
 
   @override
@@ -342,31 +318,31 @@ abstract class _ActionInProgress implements LeaveGuildState {
 }
 
 /// @nodoc
-abstract class _$LeaveFailureCopyWith<$Res> {
-  factory _$LeaveFailureCopyWith(
-          _LeaveFailure value, $Res Function(_LeaveFailure) then) =
-      __$LeaveFailureCopyWithImpl<$Res>;
+abstract class _$$_LeaveFailureCopyWith<$Res> {
+  factory _$$_LeaveFailureCopyWith(
+          _$_LeaveFailure value, $Res Function(_$_LeaveFailure) then) =
+      __$$_LeaveFailureCopyWithImpl<$Res>;
   $Res call({GuildFailure failure});
 
   $GuildFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
-class __$LeaveFailureCopyWithImpl<$Res>
+class __$$_LeaveFailureCopyWithImpl<$Res>
     extends _$LeaveGuildStateCopyWithImpl<$Res>
-    implements _$LeaveFailureCopyWith<$Res> {
-  __$LeaveFailureCopyWithImpl(
-      _LeaveFailure _value, $Res Function(_LeaveFailure) _then)
-      : super(_value, (v) => _then(v as _LeaveFailure));
+    implements _$$_LeaveFailureCopyWith<$Res> {
+  __$$_LeaveFailureCopyWithImpl(
+      _$_LeaveFailure _value, $Res Function(_$_LeaveFailure) _then)
+      : super(_value, (v) => _then(v as _$_LeaveFailure));
 
   @override
-  _LeaveFailure get _value => super._value as _LeaveFailure;
+  _$_LeaveFailure get _value => super._value as _$_LeaveFailure;
 
   @override
   $Res call({
     Object? failure = freezed,
   }) {
-    return _then(_LeaveFailure(
+    return _then(_$_LeaveFailure(
       failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -399,7 +375,7 @@ class _$_LeaveFailure implements _LeaveFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LeaveFailure &&
+            other is _$_LeaveFailure &&
             const DeepCollectionEquality().equals(other.failure, failure));
   }
 
@@ -409,8 +385,8 @@ class _$_LeaveFailure implements _LeaveFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$LeaveFailureCopyWith<_LeaveFailure> get copyWith =>
-      __$LeaveFailureCopyWithImpl<_LeaveFailure>(this, _$identity);
+  _$$_LeaveFailureCopyWith<_$_LeaveFailure> get copyWith =>
+      __$$_LeaveFailureCopyWithImpl<_$_LeaveFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -488,31 +464,31 @@ class _$_LeaveFailure implements _LeaveFailure {
 }
 
 abstract class _LeaveFailure implements LeaveGuildState {
-  const factory _LeaveFailure(GuildFailure failure) = _$_LeaveFailure;
+  const factory _LeaveFailure(final GuildFailure failure) = _$_LeaveFailure;
 
-  GuildFailure get failure;
+  GuildFailure get failure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$LeaveFailureCopyWith<_LeaveFailure> get copyWith =>
+  _$$_LeaveFailureCopyWith<_$_LeaveFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$LeaveSuccessCopyWith<$Res> {
-  factory _$LeaveSuccessCopyWith(
-          _LeaveSuccess value, $Res Function(_LeaveSuccess) then) =
-      __$LeaveSuccessCopyWithImpl<$Res>;
+abstract class _$$_LeaveSuccessCopyWith<$Res> {
+  factory _$$_LeaveSuccessCopyWith(
+          _$_LeaveSuccess value, $Res Function(_$_LeaveSuccess) then) =
+      __$$_LeaveSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LeaveSuccessCopyWithImpl<$Res>
+class __$$_LeaveSuccessCopyWithImpl<$Res>
     extends _$LeaveGuildStateCopyWithImpl<$Res>
-    implements _$LeaveSuccessCopyWith<$Res> {
-  __$LeaveSuccessCopyWithImpl(
-      _LeaveSuccess _value, $Res Function(_LeaveSuccess) _then)
-      : super(_value, (v) => _then(v as _LeaveSuccess));
+    implements _$$_LeaveSuccessCopyWith<$Res> {
+  __$$_LeaveSuccessCopyWithImpl(
+      _$_LeaveSuccess _value, $Res Function(_$_LeaveSuccess) _then)
+      : super(_value, (v) => _then(v as _$_LeaveSuccess));
 
   @override
-  _LeaveSuccess get _value => super._value as _LeaveSuccess;
+  _$_LeaveSuccess get _value => super._value as _$_LeaveSuccess;
 }
 
 /// @nodoc
@@ -528,7 +504,7 @@ class _$_LeaveSuccess implements _LeaveSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _LeaveSuccess);
+        (other.runtimeType == runtimeType && other is _$_LeaveSuccess);
   }
 
   @override

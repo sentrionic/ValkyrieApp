@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'download_image_cubit.dart';
@@ -11,29 +12,7 @@ part of 'download_image_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$DownloadImageStateTearOff {
-  const _$DownloadImageStateTearOff();
-
-  _DownloadImageState call(
-      {required bool showErrorMessages,
-      required bool isDownloading,
-      required int progress,
-      required Option<Either<MessageFailure, Unit>>
-          downloadFailureOrSuccessOption}) {
-    return _DownloadImageState(
-      showErrorMessages: showErrorMessages,
-      isDownloading: isDownloading,
-      progress: progress,
-      downloadFailureOrSuccessOption: downloadFailureOrSuccessOption,
-    );
-  }
-}
-
-/// @nodoc
-const $DownloadImageState = _$DownloadImageStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$DownloadImageState {
@@ -98,11 +77,11 @@ class _$DownloadImageStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DownloadImageStateCopyWith<$Res>
+abstract class _$$_DownloadImageStateCopyWith<$Res>
     implements $DownloadImageStateCopyWith<$Res> {
-  factory _$DownloadImageStateCopyWith(
-          _DownloadImageState value, $Res Function(_DownloadImageState) then) =
-      __$DownloadImageStateCopyWithImpl<$Res>;
+  factory _$$_DownloadImageStateCopyWith(_$_DownloadImageState value,
+          $Res Function(_$_DownloadImageState) then) =
+      __$$_DownloadImageStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool showErrorMessages,
@@ -112,15 +91,15 @@ abstract class _$DownloadImageStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DownloadImageStateCopyWithImpl<$Res>
+class __$$_DownloadImageStateCopyWithImpl<$Res>
     extends _$DownloadImageStateCopyWithImpl<$Res>
-    implements _$DownloadImageStateCopyWith<$Res> {
-  __$DownloadImageStateCopyWithImpl(
-      _DownloadImageState _value, $Res Function(_DownloadImageState) _then)
-      : super(_value, (v) => _then(v as _DownloadImageState));
+    implements _$$_DownloadImageStateCopyWith<$Res> {
+  __$$_DownloadImageStateCopyWithImpl(
+      _$_DownloadImageState _value, $Res Function(_$_DownloadImageState) _then)
+      : super(_value, (v) => _then(v as _$_DownloadImageState));
 
   @override
-  _DownloadImageState get _value => super._value as _DownloadImageState;
+  _$_DownloadImageState get _value => super._value as _$_DownloadImageState;
 
   @override
   $Res call({
@@ -129,7 +108,7 @@ class __$DownloadImageStateCopyWithImpl<$Res>
     Object? progress = freezed,
     Object? downloadFailureOrSuccessOption = freezed,
   }) {
-    return _then(_DownloadImageState(
+    return _then(_$_DownloadImageState(
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -177,7 +156,7 @@ class _$_DownloadImageState implements _DownloadImageState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DownloadImageState &&
+            other is _$_DownloadImageState &&
             const DeepCollectionEquality()
                 .equals(other.showErrorMessages, showErrorMessages) &&
             const DeepCollectionEquality()
@@ -198,28 +177,30 @@ class _$_DownloadImageState implements _DownloadImageState {
 
   @JsonKey(ignore: true)
   @override
-  _$DownloadImageStateCopyWith<_DownloadImageState> get copyWith =>
-      __$DownloadImageStateCopyWithImpl<_DownloadImageState>(this, _$identity);
+  _$$_DownloadImageStateCopyWith<_$_DownloadImageState> get copyWith =>
+      __$$_DownloadImageStateCopyWithImpl<_$_DownloadImageState>(
+          this, _$identity);
 }
 
 abstract class _DownloadImageState implements DownloadImageState {
   const factory _DownloadImageState(
-      {required bool showErrorMessages,
-      required bool isDownloading,
-      required int progress,
-      required Option<Either<MessageFailure, Unit>>
+      {required final bool showErrorMessages,
+      required final bool isDownloading,
+      required final int progress,
+      required final Option<Either<MessageFailure, Unit>>
           downloadFailureOrSuccessOption}) = _$_DownloadImageState;
 
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isDownloading;
+  bool get isDownloading => throw _privateConstructorUsedError;
   @override
-  int get progress;
+  int get progress => throw _privateConstructorUsedError;
   @override
-  Option<Either<MessageFailure, Unit>> get downloadFailureOrSuccessOption;
+  Option<Either<MessageFailure, Unit>> get downloadFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DownloadImageStateCopyWith<_DownloadImageState> get copyWith =>
+  _$$_DownloadImageStateCopyWith<_$_DownloadImageState> get copyWith =>
       throw _privateConstructorUsedError;
 }

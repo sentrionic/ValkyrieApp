@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'messages_cubit.dart';
@@ -11,36 +12,7 @@ part of 'messages_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$MessagesStateTearOff {
-  const _$MessagesStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _LoadInProgress loadInProgress() {
-    return const _LoadInProgress();
-  }
-
-  _LoadSuccess loadSuccess(List<Message> messages, {required bool hasMore}) {
-    return _LoadSuccess(
-      messages,
-      hasMore: hasMore,
-    );
-  }
-
-  _LoadFailure loadFailure(MessageFailure messageFailure) {
-    return _LoadFailure(
-      messageFailure,
-    );
-  }
-}
-
-/// @nodoc
-const $MessagesState = _$MessagesStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$MessagesState {
@@ -114,19 +86,20 @@ class _$MessagesStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$MessagesStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$$_InitialCopyWithImpl<$Res> extends _$MessagesStateCopyWithImpl<$Res>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, (v) => _then(v as _$_Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  _$_Initial get _value => super._value as _$_Initial;
 }
 
 /// @nodoc
@@ -142,7 +115,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -228,22 +201,22 @@ abstract class _Initial implements MessagesState {
 }
 
 /// @nodoc
-abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(
-          _LoadInProgress value, $Res Function(_LoadInProgress) then) =
-      __$LoadInProgressCopyWithImpl<$Res>;
+abstract class _$$_LoadInProgressCopyWith<$Res> {
+  factory _$$_LoadInProgressCopyWith(
+          _$_LoadInProgress value, $Res Function(_$_LoadInProgress) then) =
+      __$$_LoadInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res>
+class __$$_LoadInProgressCopyWithImpl<$Res>
     extends _$MessagesStateCopyWithImpl<$Res>
-    implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(
-      _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
-      : super(_value, (v) => _then(v as _LoadInProgress));
+    implements _$$_LoadInProgressCopyWith<$Res> {
+  __$$_LoadInProgressCopyWithImpl(
+      _$_LoadInProgress _value, $Res Function(_$_LoadInProgress) _then)
+      : super(_value, (v) => _then(v as _$_LoadInProgress));
 
   @override
-  _LoadInProgress get _value => super._value as _LoadInProgress;
+  _$_LoadInProgress get _value => super._value as _$_LoadInProgress;
 }
 
 /// @nodoc
@@ -259,7 +232,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _LoadInProgress);
+        (other.runtimeType == runtimeType && other is _$_LoadInProgress);
   }
 
   @override
@@ -345,31 +318,32 @@ abstract class _LoadInProgress implements MessagesState {
 }
 
 /// @nodoc
-abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(
-          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
-      __$LoadSuccessCopyWithImpl<$Res>;
+abstract class _$$_LoadSuccessCopyWith<$Res> {
+  factory _$$_LoadSuccessCopyWith(
+          _$_LoadSuccess value, $Res Function(_$_LoadSuccess) then) =
+      __$$_LoadSuccessCopyWithImpl<$Res>;
   $Res call({List<Message> messages, bool hasMore});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$MessagesStateCopyWithImpl<$Res>
-    implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(
-      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
-      : super(_value, (v) => _then(v as _LoadSuccess));
+class __$$_LoadSuccessCopyWithImpl<$Res>
+    extends _$MessagesStateCopyWithImpl<$Res>
+    implements _$$_LoadSuccessCopyWith<$Res> {
+  __$$_LoadSuccessCopyWithImpl(
+      _$_LoadSuccess _value, $Res Function(_$_LoadSuccess) _then)
+      : super(_value, (v) => _then(v as _$_LoadSuccess));
 
   @override
-  _LoadSuccess get _value => super._value as _LoadSuccess;
+  _$_LoadSuccess get _value => super._value as _$_LoadSuccess;
 
   @override
   $Res call({
     Object? messages = freezed,
     Object? hasMore = freezed,
   }) {
-    return _then(_LoadSuccess(
+    return _then(_$_LoadSuccess(
       messages == freezed
-          ? _value.messages
+          ? _value._messages
           : messages // ignore: cast_nullable_to_non_nullable
               as List<Message>,
       hasMore: hasMore == freezed
@@ -383,10 +357,16 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$MessagesStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.messages, {required this.hasMore});
+  const _$_LoadSuccess(final List<Message> messages, {required this.hasMore})
+      : _messages = messages;
 
+  final List<Message> _messages;
   @override
-  final List<Message> messages;
+  List<Message> get messages {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_messages);
+  }
+
   @override
   final bool hasMore;
 
@@ -399,21 +379,21 @@ class _$_LoadSuccess implements _LoadSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoadSuccess &&
-            const DeepCollectionEquality().equals(other.messages, messages) &&
+            other is _$_LoadSuccess &&
+            const DeepCollectionEquality().equals(other._messages, _messages) &&
             const DeepCollectionEquality().equals(other.hasMore, hasMore));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(messages),
+      const DeepCollectionEquality().hash(_messages),
       const DeepCollectionEquality().hash(hasMore));
 
   @JsonKey(ignore: true)
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
-      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
+      __$$_LoadSuccessCopyWithImpl<_$_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -491,41 +471,42 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements MessagesState {
-  const factory _LoadSuccess(List<Message> messages, {required bool hasMore}) =
-      _$_LoadSuccess;
+  const factory _LoadSuccess(final List<Message> messages,
+      {required final bool hasMore}) = _$_LoadSuccess;
 
-  List<Message> get messages;
-  bool get hasMore;
+  List<Message> get messages => throw _privateConstructorUsedError;
+  bool get hasMore => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+  _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(
-          _LoadFailure value, $Res Function(_LoadFailure) then) =
-      __$LoadFailureCopyWithImpl<$Res>;
+abstract class _$$_LoadFailureCopyWith<$Res> {
+  factory _$$_LoadFailureCopyWith(
+          _$_LoadFailure value, $Res Function(_$_LoadFailure) then) =
+      __$$_LoadFailureCopyWithImpl<$Res>;
   $Res call({MessageFailure messageFailure});
 
   $MessageFailureCopyWith<$Res> get messageFailure;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$MessagesStateCopyWithImpl<$Res>
-    implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(
-      _LoadFailure _value, $Res Function(_LoadFailure) _then)
-      : super(_value, (v) => _then(v as _LoadFailure));
+class __$$_LoadFailureCopyWithImpl<$Res>
+    extends _$MessagesStateCopyWithImpl<$Res>
+    implements _$$_LoadFailureCopyWith<$Res> {
+  __$$_LoadFailureCopyWithImpl(
+      _$_LoadFailure _value, $Res Function(_$_LoadFailure) _then)
+      : super(_value, (v) => _then(v as _$_LoadFailure));
 
   @override
-  _LoadFailure get _value => super._value as _LoadFailure;
+  _$_LoadFailure get _value => super._value as _$_LoadFailure;
 
   @override
   $Res call({
     Object? messageFailure = freezed,
   }) {
-    return _then(_LoadFailure(
+    return _then(_$_LoadFailure(
       messageFailure == freezed
           ? _value.messageFailure
           : messageFailure // ignore: cast_nullable_to_non_nullable
@@ -558,7 +539,7 @@ class _$_LoadFailure implements _LoadFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoadFailure &&
+            other is _$_LoadFailure &&
             const DeepCollectionEquality()
                 .equals(other.messageFailure, messageFailure));
   }
@@ -569,8 +550,8 @@ class _$_LoadFailure implements _LoadFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
-      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
+      __$$_LoadFailureCopyWithImpl<_$_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -648,10 +629,11 @@ class _$_LoadFailure implements _LoadFailure {
 }
 
 abstract class _LoadFailure implements MessagesState {
-  const factory _LoadFailure(MessageFailure messageFailure) = _$_LoadFailure;
+  const factory _LoadFailure(final MessageFailure messageFailure) =
+      _$_LoadFailure;
 
-  MessageFailure get messageFailure;
+  MessageFailure get messageFailure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+  _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'change_appearance_cubit.dart';
@@ -11,31 +12,7 @@ part of 'change_appearance_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ChangeAppearanceStateTearOff {
-  const _$ChangeAppearanceStateTearOff();
-
-  _ChangeAppearanceState call(
-      {Nickname? nickname = null,
-      HexColor? hexColor = null,
-      required bool showErrorMessages,
-      required bool isSaving,
-      required Option<Either<MemberFailure, Unit>>
-          saveFailureOrSuccessOption}) {
-    return _ChangeAppearanceState(
-      nickname: nickname,
-      hexColor: hexColor,
-      showErrorMessages: showErrorMessages,
-      isSaving: isSaving,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption,
-    );
-  }
-}
-
-/// @nodoc
-const $ChangeAppearanceState = _$ChangeAppearanceStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ChangeAppearanceState {
@@ -107,11 +84,11 @@ class _$ChangeAppearanceStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ChangeAppearanceStateCopyWith<$Res>
+abstract class _$$_ChangeAppearanceStateCopyWith<$Res>
     implements $ChangeAppearanceStateCopyWith<$Res> {
-  factory _$ChangeAppearanceStateCopyWith(_ChangeAppearanceState value,
-          $Res Function(_ChangeAppearanceState) then) =
-      __$ChangeAppearanceStateCopyWithImpl<$Res>;
+  factory _$$_ChangeAppearanceStateCopyWith(_$_ChangeAppearanceState value,
+          $Res Function(_$_ChangeAppearanceState) then) =
+      __$$_ChangeAppearanceStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {Nickname? nickname,
@@ -122,15 +99,16 @@ abstract class _$ChangeAppearanceStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ChangeAppearanceStateCopyWithImpl<$Res>
+class __$$_ChangeAppearanceStateCopyWithImpl<$Res>
     extends _$ChangeAppearanceStateCopyWithImpl<$Res>
-    implements _$ChangeAppearanceStateCopyWith<$Res> {
-  __$ChangeAppearanceStateCopyWithImpl(_ChangeAppearanceState _value,
-      $Res Function(_ChangeAppearanceState) _then)
-      : super(_value, (v) => _then(v as _ChangeAppearanceState));
+    implements _$$_ChangeAppearanceStateCopyWith<$Res> {
+  __$$_ChangeAppearanceStateCopyWithImpl(_$_ChangeAppearanceState _value,
+      $Res Function(_$_ChangeAppearanceState) _then)
+      : super(_value, (v) => _then(v as _$_ChangeAppearanceState));
 
   @override
-  _ChangeAppearanceState get _value => super._value as _ChangeAppearanceState;
+  _$_ChangeAppearanceState get _value =>
+      super._value as _$_ChangeAppearanceState;
 
   @override
   $Res call({
@@ -140,7 +118,7 @@ class __$ChangeAppearanceStateCopyWithImpl<$Res>
     Object? isSaving = freezed,
     Object? saveFailureOrSuccessOption = freezed,
   }) {
-    return _then(_ChangeAppearanceState(
+    return _then(_$_ChangeAppearanceState(
       nickname: nickname == freezed
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
@@ -175,11 +153,11 @@ class _$_ChangeAppearanceState implements _ChangeAppearanceState {
       required this.isSaving,
       required this.saveFailureOrSuccessOption});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final Nickname? nickname;
-  @JsonKey()
   @override
+  @JsonKey()
   final HexColor? hexColor;
   @override
   final bool showErrorMessages;
@@ -197,7 +175,7 @@ class _$_ChangeAppearanceState implements _ChangeAppearanceState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ChangeAppearanceState &&
+            other is _$_ChangeAppearanceState &&
             const DeepCollectionEquality().equals(other.nickname, nickname) &&
             const DeepCollectionEquality().equals(other.hexColor, hexColor) &&
             const DeepCollectionEquality()
@@ -218,32 +196,33 @@ class _$_ChangeAppearanceState implements _ChangeAppearanceState {
 
   @JsonKey(ignore: true)
   @override
-  _$ChangeAppearanceStateCopyWith<_ChangeAppearanceState> get copyWith =>
-      __$ChangeAppearanceStateCopyWithImpl<_ChangeAppearanceState>(
+  _$$_ChangeAppearanceStateCopyWith<_$_ChangeAppearanceState> get copyWith =>
+      __$$_ChangeAppearanceStateCopyWithImpl<_$_ChangeAppearanceState>(
           this, _$identity);
 }
 
 abstract class _ChangeAppearanceState implements ChangeAppearanceState {
   const factory _ChangeAppearanceState(
-      {Nickname? nickname,
-      HexColor? hexColor,
-      required bool showErrorMessages,
-      required bool isSaving,
-      required Option<Either<MemberFailure, Unit>>
+      {final Nickname? nickname,
+      final HexColor? hexColor,
+      required final bool showErrorMessages,
+      required final bool isSaving,
+      required final Option<Either<MemberFailure, Unit>>
           saveFailureOrSuccessOption}) = _$_ChangeAppearanceState;
 
   @override
-  Nickname? get nickname;
+  Nickname? get nickname => throw _privateConstructorUsedError;
   @override
-  HexColor? get hexColor;
+  HexColor? get hexColor => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isSaving;
+  bool get isSaving => throw _privateConstructorUsedError;
   @override
-  Option<Either<MemberFailure, Unit>> get saveFailureOrSuccessOption;
+  Option<Either<MemberFailure, Unit>> get saveFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ChangeAppearanceStateCopyWith<_ChangeAppearanceState> get copyWith =>
+  _$$_ChangeAppearanceStateCopyWith<_$_ChangeAppearanceState> get copyWith =>
       throw _privateConstructorUsedError;
 }

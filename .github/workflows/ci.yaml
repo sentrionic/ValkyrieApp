@@ -9,16 +9,15 @@ jobs:
     name: Analyze & Test
     runs-on: ubuntu-latest
     steps:
-      - name: Clone flutter repository from stable channel with 2.10.3 version
+      - name: Clone flutter repository from stable channel with the latest version
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '2.10.3'
           channel: 'stable'
 
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Update dependencies
+      - name: Get dependencies
         run: flutter pub get
 
       - name: Analyze code

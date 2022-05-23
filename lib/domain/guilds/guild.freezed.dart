@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'guild.dart';
@@ -11,32 +12,7 @@ part of 'guild.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$GuildTearOff {
-  const _$GuildTearOff();
-
-  _Guild call(
-      {required String id,
-      required GuildName name,
-      required String defaultChannel,
-      required String ownerId,
-      required bool hasNotification,
-      String? icon}) {
-    return _Guild(
-      id: id,
-      name: name,
-      defaultChannel: defaultChannel,
-      ownerId: ownerId,
-      hasNotification: hasNotification,
-      icon: icon,
-    );
-  }
-}
-
-/// @nodoc
-const $Guild = _$GuildTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Guild {
@@ -111,9 +87,9 @@ class _$GuildCopyWithImpl<$Res> implements $GuildCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GuildCopyWith<$Res> implements $GuildCopyWith<$Res> {
-  factory _$GuildCopyWith(_Guild value, $Res Function(_Guild) then) =
-      __$GuildCopyWithImpl<$Res>;
+abstract class _$$_GuildCopyWith<$Res> implements $GuildCopyWith<$Res> {
+  factory _$$_GuildCopyWith(_$_Guild value, $Res Function(_$_Guild) then) =
+      __$$_GuildCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -125,13 +101,13 @@ abstract class _$GuildCopyWith<$Res> implements $GuildCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$GuildCopyWithImpl<$Res> extends _$GuildCopyWithImpl<$Res>
-    implements _$GuildCopyWith<$Res> {
-  __$GuildCopyWithImpl(_Guild _value, $Res Function(_Guild) _then)
-      : super(_value, (v) => _then(v as _Guild));
+class __$$_GuildCopyWithImpl<$Res> extends _$GuildCopyWithImpl<$Res>
+    implements _$$_GuildCopyWith<$Res> {
+  __$$_GuildCopyWithImpl(_$_Guild _value, $Res Function(_$_Guild) _then)
+      : super(_value, (v) => _then(v as _$_Guild));
 
   @override
-  _Guild get _value => super._value as _Guild;
+  _$_Guild get _value => super._value as _$_Guild;
 
   @override
   $Res call({
@@ -142,7 +118,7 @@ class __$GuildCopyWithImpl<$Res> extends _$GuildCopyWithImpl<$Res>
     Object? hasNotification = freezed,
     Object? icon = freezed,
   }) {
-    return _then(_Guild(
+    return _then(_$_Guild(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -205,7 +181,7 @@ class _$_Guild extends _Guild {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Guild &&
+            other is _$_Guild &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
@@ -228,33 +204,34 @@ class _$_Guild extends _Guild {
 
   @JsonKey(ignore: true)
   @override
-  _$GuildCopyWith<_Guild> get copyWith =>
-      __$GuildCopyWithImpl<_Guild>(this, _$identity);
+  _$$_GuildCopyWith<_$_Guild> get copyWith =>
+      __$$_GuildCopyWithImpl<_$_Guild>(this, _$identity);
 }
 
 abstract class _Guild extends Guild {
   const factory _Guild(
-      {required String id,
-      required GuildName name,
-      required String defaultChannel,
-      required String ownerId,
-      required bool hasNotification,
-      String? icon}) = _$_Guild;
+      {required final String id,
+      required final GuildName name,
+      required final String defaultChannel,
+      required final String ownerId,
+      required final bool hasNotification,
+      final String? icon}) = _$_Guild;
   const _Guild._() : super._();
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  GuildName get name;
+  GuildName get name => throw _privateConstructorUsedError;
   @override
-  String get defaultChannel;
+  String get defaultChannel => throw _privateConstructorUsedError;
   @override
-  String get ownerId;
+  String get ownerId => throw _privateConstructorUsedError;
   @override
-  bool get hasNotification;
+  bool get hasNotification => throw _privateConstructorUsedError;
   @override
-  String? get icon;
+  String? get icon => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$GuildCopyWith<_Guild> get copyWith => throw _privateConstructorUsedError;
+  _$$_GuildCopyWith<_$_Guild> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'delete_guild_cubit.dart';
@@ -11,33 +12,7 @@ part of 'delete_guild_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$DeleteGuildStateTearOff {
-  const _$DeleteGuildStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _ActionInProgress actionInProgress() {
-    return const _ActionInProgress();
-  }
-
-  _DeleteFailure deleteFailure(GuildFailure failure) {
-    return _DeleteFailure(
-      failure,
-    );
-  }
-
-  _DeleteSuccess deleteSuccess() {
-    return const _DeleteSuccess();
-  }
-}
-
-/// @nodoc
-const $DeleteGuildState = _$DeleteGuildStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$DeleteGuildState {
@@ -111,19 +86,21 @@ class _$DeleteGuildStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$DeleteGuildStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$DeleteGuildStateCopyWithImpl<$Res>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, (v) => _then(v as _$_Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  _$_Initial get _value => super._value as _$_Initial;
 }
 
 /// @nodoc
@@ -139,7 +116,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -225,22 +202,22 @@ abstract class _Initial implements DeleteGuildState {
 }
 
 /// @nodoc
-abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
-      __$ActionInProgressCopyWithImpl<$Res>;
+abstract class _$$_ActionInProgressCopyWith<$Res> {
+  factory _$$_ActionInProgressCopyWith(
+          _$_ActionInProgress value, $Res Function(_$_ActionInProgress) then) =
+      __$$_ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res>
+class __$$_ActionInProgressCopyWithImpl<$Res>
     extends _$DeleteGuildStateCopyWithImpl<$Res>
-    implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(
-      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _ActionInProgress));
+    implements _$$_ActionInProgressCopyWith<$Res> {
+  __$$_ActionInProgressCopyWithImpl(
+      _$_ActionInProgress _value, $Res Function(_$_ActionInProgress) _then)
+      : super(_value, (v) => _then(v as _$_ActionInProgress));
 
   @override
-  _ActionInProgress get _value => super._value as _ActionInProgress;
+  _$_ActionInProgress get _value => super._value as _$_ActionInProgress;
 }
 
 /// @nodoc
@@ -256,7 +233,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ActionInProgress);
+        (other.runtimeType == runtimeType && other is _$_ActionInProgress);
   }
 
   @override
@@ -342,31 +319,31 @@ abstract class _ActionInProgress implements DeleteGuildState {
 }
 
 /// @nodoc
-abstract class _$DeleteFailureCopyWith<$Res> {
-  factory _$DeleteFailureCopyWith(
-          _DeleteFailure value, $Res Function(_DeleteFailure) then) =
-      __$DeleteFailureCopyWithImpl<$Res>;
+abstract class _$$_DeleteFailureCopyWith<$Res> {
+  factory _$$_DeleteFailureCopyWith(
+          _$_DeleteFailure value, $Res Function(_$_DeleteFailure) then) =
+      __$$_DeleteFailureCopyWithImpl<$Res>;
   $Res call({GuildFailure failure});
 
   $GuildFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
-class __$DeleteFailureCopyWithImpl<$Res>
+class __$$_DeleteFailureCopyWithImpl<$Res>
     extends _$DeleteGuildStateCopyWithImpl<$Res>
-    implements _$DeleteFailureCopyWith<$Res> {
-  __$DeleteFailureCopyWithImpl(
-      _DeleteFailure _value, $Res Function(_DeleteFailure) _then)
-      : super(_value, (v) => _then(v as _DeleteFailure));
+    implements _$$_DeleteFailureCopyWith<$Res> {
+  __$$_DeleteFailureCopyWithImpl(
+      _$_DeleteFailure _value, $Res Function(_$_DeleteFailure) _then)
+      : super(_value, (v) => _then(v as _$_DeleteFailure));
 
   @override
-  _DeleteFailure get _value => super._value as _DeleteFailure;
+  _$_DeleteFailure get _value => super._value as _$_DeleteFailure;
 
   @override
   $Res call({
     Object? failure = freezed,
   }) {
-    return _then(_DeleteFailure(
+    return _then(_$_DeleteFailure(
       failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -399,7 +376,7 @@ class _$_DeleteFailure implements _DeleteFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DeleteFailure &&
+            other is _$_DeleteFailure &&
             const DeepCollectionEquality().equals(other.failure, failure));
   }
 
@@ -409,8 +386,8 @@ class _$_DeleteFailure implements _DeleteFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
-      __$DeleteFailureCopyWithImpl<_DeleteFailure>(this, _$identity);
+  _$$_DeleteFailureCopyWith<_$_DeleteFailure> get copyWith =>
+      __$$_DeleteFailureCopyWithImpl<_$_DeleteFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -488,31 +465,31 @@ class _$_DeleteFailure implements _DeleteFailure {
 }
 
 abstract class _DeleteFailure implements DeleteGuildState {
-  const factory _DeleteFailure(GuildFailure failure) = _$_DeleteFailure;
+  const factory _DeleteFailure(final GuildFailure failure) = _$_DeleteFailure;
 
-  GuildFailure get failure;
+  GuildFailure get failure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
+  _$$_DeleteFailureCopyWith<_$_DeleteFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DeleteSuccessCopyWith<$Res> {
-  factory _$DeleteSuccessCopyWith(
-          _DeleteSuccess value, $Res Function(_DeleteSuccess) then) =
-      __$DeleteSuccessCopyWithImpl<$Res>;
+abstract class _$$_DeleteSuccessCopyWith<$Res> {
+  factory _$$_DeleteSuccessCopyWith(
+          _$_DeleteSuccess value, $Res Function(_$_DeleteSuccess) then) =
+      __$$_DeleteSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DeleteSuccessCopyWithImpl<$Res>
+class __$$_DeleteSuccessCopyWithImpl<$Res>
     extends _$DeleteGuildStateCopyWithImpl<$Res>
-    implements _$DeleteSuccessCopyWith<$Res> {
-  __$DeleteSuccessCopyWithImpl(
-      _DeleteSuccess _value, $Res Function(_DeleteSuccess) _then)
-      : super(_value, (v) => _then(v as _DeleteSuccess));
+    implements _$$_DeleteSuccessCopyWith<$Res> {
+  __$$_DeleteSuccessCopyWithImpl(
+      _$_DeleteSuccess _value, $Res Function(_$_DeleteSuccess) _then)
+      : super(_value, (v) => _then(v as _$_DeleteSuccess));
 
   @override
-  _DeleteSuccess get _value => super._value as _DeleteSuccess;
+  _$_DeleteSuccess get _value => super._value as _$_DeleteSuccess;
 }
 
 /// @nodoc
@@ -528,7 +505,7 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _DeleteSuccess);
+        (other.runtimeType == runtimeType && other is _$_DeleteSuccess);
   }
 
   @override

@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'unban_user_cubit.dart';
@@ -11,35 +12,7 @@ part of 'unban_user_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UnbanUserStateTearOff {
-  const _$UnbanUserStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _ActionInProgress actionInProgress() {
-    return const _ActionInProgress();
-  }
-
-  _UnbanFailure unbanFailure(MemberFailure failure) {
-    return _UnbanFailure(
-      failure,
-    );
-  }
-
-  _UnbanSuccess unbanSuccess(String memberId) {
-    return _UnbanSuccess(
-      memberId,
-    );
-  }
-}
-
-/// @nodoc
-const $UnbanUserState = _$UnbanUserStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$UnbanUserState {
@@ -113,19 +86,20 @@ class _$UnbanUserStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$UnbanUserStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$$_InitialCopyWithImpl<$Res> extends _$UnbanUserStateCopyWithImpl<$Res>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, (v) => _then(v as _$_Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  _$_Initial get _value => super._value as _$_Initial;
 }
 
 /// @nodoc
@@ -141,7 +115,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -227,22 +201,22 @@ abstract class _Initial implements UnbanUserState {
 }
 
 /// @nodoc
-abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
-      __$ActionInProgressCopyWithImpl<$Res>;
+abstract class _$$_ActionInProgressCopyWith<$Res> {
+  factory _$$_ActionInProgressCopyWith(
+          _$_ActionInProgress value, $Res Function(_$_ActionInProgress) then) =
+      __$$_ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res>
+class __$$_ActionInProgressCopyWithImpl<$Res>
     extends _$UnbanUserStateCopyWithImpl<$Res>
-    implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(
-      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _ActionInProgress));
+    implements _$$_ActionInProgressCopyWith<$Res> {
+  __$$_ActionInProgressCopyWithImpl(
+      _$_ActionInProgress _value, $Res Function(_$_ActionInProgress) _then)
+      : super(_value, (v) => _then(v as _$_ActionInProgress));
 
   @override
-  _ActionInProgress get _value => super._value as _ActionInProgress;
+  _$_ActionInProgress get _value => super._value as _$_ActionInProgress;
 }
 
 /// @nodoc
@@ -258,7 +232,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ActionInProgress);
+        (other.runtimeType == runtimeType && other is _$_ActionInProgress);
   }
 
   @override
@@ -344,31 +318,31 @@ abstract class _ActionInProgress implements UnbanUserState {
 }
 
 /// @nodoc
-abstract class _$UnbanFailureCopyWith<$Res> {
-  factory _$UnbanFailureCopyWith(
-          _UnbanFailure value, $Res Function(_UnbanFailure) then) =
-      __$UnbanFailureCopyWithImpl<$Res>;
+abstract class _$$_UnbanFailureCopyWith<$Res> {
+  factory _$$_UnbanFailureCopyWith(
+          _$_UnbanFailure value, $Res Function(_$_UnbanFailure) then) =
+      __$$_UnbanFailureCopyWithImpl<$Res>;
   $Res call({MemberFailure failure});
 
   $MemberFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
-class __$UnbanFailureCopyWithImpl<$Res>
+class __$$_UnbanFailureCopyWithImpl<$Res>
     extends _$UnbanUserStateCopyWithImpl<$Res>
-    implements _$UnbanFailureCopyWith<$Res> {
-  __$UnbanFailureCopyWithImpl(
-      _UnbanFailure _value, $Res Function(_UnbanFailure) _then)
-      : super(_value, (v) => _then(v as _UnbanFailure));
+    implements _$$_UnbanFailureCopyWith<$Res> {
+  __$$_UnbanFailureCopyWithImpl(
+      _$_UnbanFailure _value, $Res Function(_$_UnbanFailure) _then)
+      : super(_value, (v) => _then(v as _$_UnbanFailure));
 
   @override
-  _UnbanFailure get _value => super._value as _UnbanFailure;
+  _$_UnbanFailure get _value => super._value as _$_UnbanFailure;
 
   @override
   $Res call({
     Object? failure = freezed,
   }) {
-    return _then(_UnbanFailure(
+    return _then(_$_UnbanFailure(
       failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -401,7 +375,7 @@ class _$_UnbanFailure implements _UnbanFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UnbanFailure &&
+            other is _$_UnbanFailure &&
             const DeepCollectionEquality().equals(other.failure, failure));
   }
 
@@ -411,8 +385,8 @@ class _$_UnbanFailure implements _UnbanFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$UnbanFailureCopyWith<_UnbanFailure> get copyWith =>
-      __$UnbanFailureCopyWithImpl<_UnbanFailure>(this, _$identity);
+  _$$_UnbanFailureCopyWith<_$_UnbanFailure> get copyWith =>
+      __$$_UnbanFailureCopyWithImpl<_$_UnbanFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -490,38 +464,38 @@ class _$_UnbanFailure implements _UnbanFailure {
 }
 
 abstract class _UnbanFailure implements UnbanUserState {
-  const factory _UnbanFailure(MemberFailure failure) = _$_UnbanFailure;
+  const factory _UnbanFailure(final MemberFailure failure) = _$_UnbanFailure;
 
-  MemberFailure get failure;
+  MemberFailure get failure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$UnbanFailureCopyWith<_UnbanFailure> get copyWith =>
+  _$$_UnbanFailureCopyWith<_$_UnbanFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UnbanSuccessCopyWith<$Res> {
-  factory _$UnbanSuccessCopyWith(
-          _UnbanSuccess value, $Res Function(_UnbanSuccess) then) =
-      __$UnbanSuccessCopyWithImpl<$Res>;
+abstract class _$$_UnbanSuccessCopyWith<$Res> {
+  factory _$$_UnbanSuccessCopyWith(
+          _$_UnbanSuccess value, $Res Function(_$_UnbanSuccess) then) =
+      __$$_UnbanSuccessCopyWithImpl<$Res>;
   $Res call({String memberId});
 }
 
 /// @nodoc
-class __$UnbanSuccessCopyWithImpl<$Res>
+class __$$_UnbanSuccessCopyWithImpl<$Res>
     extends _$UnbanUserStateCopyWithImpl<$Res>
-    implements _$UnbanSuccessCopyWith<$Res> {
-  __$UnbanSuccessCopyWithImpl(
-      _UnbanSuccess _value, $Res Function(_UnbanSuccess) _then)
-      : super(_value, (v) => _then(v as _UnbanSuccess));
+    implements _$$_UnbanSuccessCopyWith<$Res> {
+  __$$_UnbanSuccessCopyWithImpl(
+      _$_UnbanSuccess _value, $Res Function(_$_UnbanSuccess) _then)
+      : super(_value, (v) => _then(v as _$_UnbanSuccess));
 
   @override
-  _UnbanSuccess get _value => super._value as _UnbanSuccess;
+  _$_UnbanSuccess get _value => super._value as _$_UnbanSuccess;
 
   @override
   $Res call({
     Object? memberId = freezed,
   }) {
-    return _then(_UnbanSuccess(
+    return _then(_$_UnbanSuccess(
       memberId == freezed
           ? _value.memberId
           : memberId // ignore: cast_nullable_to_non_nullable
@@ -547,7 +521,7 @@ class _$_UnbanSuccess implements _UnbanSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UnbanSuccess &&
+            other is _$_UnbanSuccess &&
             const DeepCollectionEquality().equals(other.memberId, memberId));
   }
 
@@ -557,8 +531,8 @@ class _$_UnbanSuccess implements _UnbanSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$UnbanSuccessCopyWith<_UnbanSuccess> get copyWith =>
-      __$UnbanSuccessCopyWithImpl<_UnbanSuccess>(this, _$identity);
+  _$$_UnbanSuccessCopyWith<_$_UnbanSuccess> get copyWith =>
+      __$$_UnbanSuccessCopyWithImpl<_$_UnbanSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -636,10 +610,10 @@ class _$_UnbanSuccess implements _UnbanSuccess {
 }
 
 abstract class _UnbanSuccess implements UnbanUserState {
-  const factory _UnbanSuccess(String memberId) = _$_UnbanSuccess;
+  const factory _UnbanSuccess(final String memberId) = _$_UnbanSuccess;
 
-  String get memberId;
+  String get memberId => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$UnbanSuccessCopyWith<_UnbanSuccess> get copyWith =>
+  _$$_UnbanSuccessCopyWith<_$_UnbanSuccess> get copyWith =>
       throw _privateConstructorUsedError;
 }

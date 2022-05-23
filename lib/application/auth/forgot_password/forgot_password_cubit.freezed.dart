@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'forgot_password_cubit.dart';
@@ -11,28 +12,7 @@ part of 'forgot_password_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ForgotPasswordStateTearOff {
-  const _$ForgotPasswordStateTearOff();
-
-  _ForgotPasswordState call(
-      {required EmailAddress emailAddress,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption}) {
-    return _ForgotPasswordState(
-      emailAddress: emailAddress,
-      showErrorMessages: showErrorMessages,
-      isSubmitting: isSubmitting,
-      authFailureOrSuccessOption: authFailureOrSuccessOption,
-    );
-  }
-}
-
-/// @nodoc
-const $ForgotPasswordState = _$ForgotPasswordStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ForgotPasswordState {
@@ -97,11 +77,11 @@ class _$ForgotPasswordStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ForgotPasswordStateCopyWith<$Res>
+abstract class _$$_ForgotPasswordStateCopyWith<$Res>
     implements $ForgotPasswordStateCopyWith<$Res> {
-  factory _$ForgotPasswordStateCopyWith(_ForgotPasswordState value,
-          $Res Function(_ForgotPasswordState) then) =
-      __$ForgotPasswordStateCopyWithImpl<$Res>;
+  factory _$$_ForgotPasswordStateCopyWith(_$_ForgotPasswordState value,
+          $Res Function(_$_ForgotPasswordState) then) =
+      __$$_ForgotPasswordStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {EmailAddress emailAddress,
@@ -111,15 +91,15 @@ abstract class _$ForgotPasswordStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ForgotPasswordStateCopyWithImpl<$Res>
+class __$$_ForgotPasswordStateCopyWithImpl<$Res>
     extends _$ForgotPasswordStateCopyWithImpl<$Res>
-    implements _$ForgotPasswordStateCopyWith<$Res> {
-  __$ForgotPasswordStateCopyWithImpl(
-      _ForgotPasswordState _value, $Res Function(_ForgotPasswordState) _then)
-      : super(_value, (v) => _then(v as _ForgotPasswordState));
+    implements _$$_ForgotPasswordStateCopyWith<$Res> {
+  __$$_ForgotPasswordStateCopyWithImpl(_$_ForgotPasswordState _value,
+      $Res Function(_$_ForgotPasswordState) _then)
+      : super(_value, (v) => _then(v as _$_ForgotPasswordState));
 
   @override
-  _ForgotPasswordState get _value => super._value as _ForgotPasswordState;
+  _$_ForgotPasswordState get _value => super._value as _$_ForgotPasswordState;
 
   @override
   $Res call({
@@ -128,7 +108,7 @@ class __$ForgotPasswordStateCopyWithImpl<$Res>
     Object? isSubmitting = freezed,
     Object? authFailureOrSuccessOption = freezed,
   }) {
-    return _then(_ForgotPasswordState(
+    return _then(_$_ForgotPasswordState(
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
@@ -176,7 +156,7 @@ class _$_ForgotPasswordState implements _ForgotPasswordState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ForgotPasswordState &&
+            other is _$_ForgotPasswordState &&
             const DeepCollectionEquality()
                 .equals(other.emailAddress, emailAddress) &&
             const DeepCollectionEquality()
@@ -197,29 +177,30 @@ class _$_ForgotPasswordState implements _ForgotPasswordState {
 
   @JsonKey(ignore: true)
   @override
-  _$ForgotPasswordStateCopyWith<_ForgotPasswordState> get copyWith =>
-      __$ForgotPasswordStateCopyWithImpl<_ForgotPasswordState>(
+  _$$_ForgotPasswordStateCopyWith<_$_ForgotPasswordState> get copyWith =>
+      __$$_ForgotPasswordStateCopyWithImpl<_$_ForgotPasswordState>(
           this, _$identity);
 }
 
 abstract class _ForgotPasswordState implements ForgotPasswordState {
   const factory _ForgotPasswordState(
-      {required EmailAddress emailAddress,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<AuthFailure, Unit>>
+      {required final EmailAddress emailAddress,
+      required final bool showErrorMessages,
+      required final bool isSubmitting,
+      required final Option<Either<AuthFailure, Unit>>
           authFailureOrSuccessOption}) = _$_ForgotPasswordState;
 
   @override
-  EmailAddress get emailAddress;
+  EmailAddress get emailAddress => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isSubmitting;
+  bool get isSubmitting => throw _privateConstructorUsedError;
   @override
-  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;
+  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ForgotPasswordStateCopyWith<_ForgotPasswordState> get copyWith =>
+  _$$_ForgotPasswordStateCopyWith<_$_ForgotPasswordState> get copyWith =>
       throw _privateConstructorUsedError;
 }

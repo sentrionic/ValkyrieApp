@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_cropper/image_cropper.dart';
@@ -193,19 +195,20 @@ class _EditGuildFormState extends State<EditGuildForm> {
       final croppedFile = await ImageCropper().cropImage(
         sourcePath: pickedFile.path,
         cropStyle: CropStyle.circle,
-        androidUiSettings: AndroidUiSettings(
-          toolbarTitle: "Guild Icon",
-          toolbarColor: Theme.of(context).primaryColor,
-          toolbarWidgetColor: Colors.white,
-          initAspectRatio: CropAspectRatioPreset.square,
-          lockAspectRatio: false,
-        ),
-        iosUiSettings: const IOSUiSettings(),
+        uiSettings: [
+          AndroidUiSettings(
+            toolbarTitle: "Guild Icon",
+            toolbarColor: Theme.of(context).primaryColor,
+            toolbarWidgetColor: Colors.white,
+            initAspectRatio: CropAspectRatioPreset.square,
+            lockAspectRatio: false,
+          ),
+        ],
         compressQuality: 70,
       );
       if (croppedFile != null) {
         if (!mounted) return;
-        context.read<EditGuildCubit>().iconChanged(croppedFile);
+        context.read<EditGuildCubit>().iconChanged(File(croppedFile.path));
       }
     }
   }

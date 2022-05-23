@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'add_friend_cubit.dart';
@@ -11,28 +12,7 @@ part of 'add_friend_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AddFriendStateTearOff {
-  const _$AddFriendStateTearOff();
-
-  _AddFriendState call(
-      {required UID uid,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<FriendFailure, Unit>> failureOrSuccessOption}) {
-    return _AddFriendState(
-      uid: uid,
-      showErrorMessages: showErrorMessages,
-      isSubmitting: isSubmitting,
-      failureOrSuccessOption: failureOrSuccessOption,
-    );
-  }
-}
-
-/// @nodoc
-const $AddFriendState = _$AddFriendStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AddFriendState {
@@ -97,11 +77,11 @@ class _$AddFriendStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AddFriendStateCopyWith<$Res>
+abstract class _$$_AddFriendStateCopyWith<$Res>
     implements $AddFriendStateCopyWith<$Res> {
-  factory _$AddFriendStateCopyWith(
-          _AddFriendState value, $Res Function(_AddFriendState) then) =
-      __$AddFriendStateCopyWithImpl<$Res>;
+  factory _$$_AddFriendStateCopyWith(
+          _$_AddFriendState value, $Res Function(_$_AddFriendState) then) =
+      __$$_AddFriendStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {UID uid,
@@ -111,15 +91,15 @@ abstract class _$AddFriendStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AddFriendStateCopyWithImpl<$Res>
+class __$$_AddFriendStateCopyWithImpl<$Res>
     extends _$AddFriendStateCopyWithImpl<$Res>
-    implements _$AddFriendStateCopyWith<$Res> {
-  __$AddFriendStateCopyWithImpl(
-      _AddFriendState _value, $Res Function(_AddFriendState) _then)
-      : super(_value, (v) => _then(v as _AddFriendState));
+    implements _$$_AddFriendStateCopyWith<$Res> {
+  __$$_AddFriendStateCopyWithImpl(
+      _$_AddFriendState _value, $Res Function(_$_AddFriendState) _then)
+      : super(_value, (v) => _then(v as _$_AddFriendState));
 
   @override
-  _AddFriendState get _value => super._value as _AddFriendState;
+  _$_AddFriendState get _value => super._value as _$_AddFriendState;
 
   @override
   $Res call({
@@ -128,7 +108,7 @@ class __$AddFriendStateCopyWithImpl<$Res>
     Object? isSubmitting = freezed,
     Object? failureOrSuccessOption = freezed,
   }) {
-    return _then(_AddFriendState(
+    return _then(_$_AddFriendState(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -176,7 +156,7 @@ class _$_AddFriendState implements _AddFriendState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AddFriendState &&
+            other is _$_AddFriendState &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality()
                 .equals(other.showErrorMessages, showErrorMessages) &&
@@ -196,28 +176,29 @@ class _$_AddFriendState implements _AddFriendState {
 
   @JsonKey(ignore: true)
   @override
-  _$AddFriendStateCopyWith<_AddFriendState> get copyWith =>
-      __$AddFriendStateCopyWithImpl<_AddFriendState>(this, _$identity);
+  _$$_AddFriendStateCopyWith<_$_AddFriendState> get copyWith =>
+      __$$_AddFriendStateCopyWithImpl<_$_AddFriendState>(this, _$identity);
 }
 
 abstract class _AddFriendState implements AddFriendState {
   const factory _AddFriendState(
-      {required UID uid,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<FriendFailure, Unit>>
+      {required final UID uid,
+      required final bool showErrorMessages,
+      required final bool isSubmitting,
+      required final Option<Either<FriendFailure, Unit>>
           failureOrSuccessOption}) = _$_AddFriendState;
 
   @override
-  UID get uid;
+  UID get uid => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isSubmitting;
+  bool get isSubmitting => throw _privateConstructorUsedError;
   @override
-  Option<Either<FriendFailure, Unit>> get failureOrSuccessOption;
+  Option<Either<FriendFailure, Unit>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AddFriendStateCopyWith<_AddFriendState> get copyWith =>
+  _$$_AddFriendStateCopyWith<_$_AddFriendState> get copyWith =>
       throw _privateConstructorUsedError;
 }

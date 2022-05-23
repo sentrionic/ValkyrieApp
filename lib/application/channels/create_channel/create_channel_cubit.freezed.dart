@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'create_channel_cubit.dart';
@@ -11,33 +12,7 @@ part of 'create_channel_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CreateChannelStateTearOff {
-  const _$CreateChannelStateTearOff();
-
-  _CreateChannelState call(
-      {required ChannelName name,
-      required bool isPublic,
-      required List<Member> members,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<ChannelFailure, Channel>>
-          channelFailureOrSuccessOption}) {
-    return _CreateChannelState(
-      name: name,
-      isPublic: isPublic,
-      members: members,
-      showErrorMessages: showErrorMessages,
-      isSubmitting: isSubmitting,
-      channelFailureOrSuccessOption: channelFailureOrSuccessOption,
-    );
-  }
-}
-
-/// @nodoc
-const $CreateChannelState = _$CreateChannelStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CreateChannelState {
@@ -116,11 +91,11 @@ class _$CreateChannelStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CreateChannelStateCopyWith<$Res>
+abstract class _$$_CreateChannelStateCopyWith<$Res>
     implements $CreateChannelStateCopyWith<$Res> {
-  factory _$CreateChannelStateCopyWith(
-          _CreateChannelState value, $Res Function(_CreateChannelState) then) =
-      __$CreateChannelStateCopyWithImpl<$Res>;
+  factory _$$_CreateChannelStateCopyWith(_$_CreateChannelState value,
+          $Res Function(_$_CreateChannelState) then) =
+      __$$_CreateChannelStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {ChannelName name,
@@ -132,15 +107,15 @@ abstract class _$CreateChannelStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CreateChannelStateCopyWithImpl<$Res>
+class __$$_CreateChannelStateCopyWithImpl<$Res>
     extends _$CreateChannelStateCopyWithImpl<$Res>
-    implements _$CreateChannelStateCopyWith<$Res> {
-  __$CreateChannelStateCopyWithImpl(
-      _CreateChannelState _value, $Res Function(_CreateChannelState) _then)
-      : super(_value, (v) => _then(v as _CreateChannelState));
+    implements _$$_CreateChannelStateCopyWith<$Res> {
+  __$$_CreateChannelStateCopyWithImpl(
+      _$_CreateChannelState _value, $Res Function(_$_CreateChannelState) _then)
+      : super(_value, (v) => _then(v as _$_CreateChannelState));
 
   @override
-  _CreateChannelState get _value => super._value as _CreateChannelState;
+  _$_CreateChannelState get _value => super._value as _$_CreateChannelState;
 
   @override
   $Res call({
@@ -151,7 +126,7 @@ class __$CreateChannelStateCopyWithImpl<$Res>
     Object? isSubmitting = freezed,
     Object? channelFailureOrSuccessOption = freezed,
   }) {
-    return _then(_CreateChannelState(
+    return _then(_$_CreateChannelState(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -161,7 +136,7 @@ class __$CreateChannelStateCopyWithImpl<$Res>
           : isPublic // ignore: cast_nullable_to_non_nullable
               as bool,
       members: members == freezed
-          ? _value.members
+          ? _value._members
           : members // ignore: cast_nullable_to_non_nullable
               as List<Member>,
       showErrorMessages: showErrorMessages == freezed
@@ -186,17 +161,23 @@ class _$_CreateChannelState implements _CreateChannelState {
   const _$_CreateChannelState(
       {required this.name,
       required this.isPublic,
-      required this.members,
+      required final List<Member> members,
       required this.showErrorMessages,
       required this.isSubmitting,
-      required this.channelFailureOrSuccessOption});
+      required this.channelFailureOrSuccessOption})
+      : _members = members;
 
   @override
   final ChannelName name;
   @override
   final bool isPublic;
+  final List<Member> _members;
   @override
-  final List<Member> members;
+  List<Member> get members {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_members);
+  }
+
   @override
   final bool showErrorMessages;
   @override
@@ -213,10 +194,10 @@ class _$_CreateChannelState implements _CreateChannelState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CreateChannelState &&
+            other is _$_CreateChannelState &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.isPublic, isPublic) &&
-            const DeepCollectionEquality().equals(other.members, members) &&
+            const DeepCollectionEquality().equals(other._members, _members) &&
             const DeepCollectionEquality()
                 .equals(other.showErrorMessages, showErrorMessages) &&
             const DeepCollectionEquality()
@@ -231,41 +212,43 @@ class _$_CreateChannelState implements _CreateChannelState {
       runtimeType,
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(isPublic),
-      const DeepCollectionEquality().hash(members),
+      const DeepCollectionEquality().hash(_members),
       const DeepCollectionEquality().hash(showErrorMessages),
       const DeepCollectionEquality().hash(isSubmitting),
       const DeepCollectionEquality().hash(channelFailureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
-  _$CreateChannelStateCopyWith<_CreateChannelState> get copyWith =>
-      __$CreateChannelStateCopyWithImpl<_CreateChannelState>(this, _$identity);
+  _$$_CreateChannelStateCopyWith<_$_CreateChannelState> get copyWith =>
+      __$$_CreateChannelStateCopyWithImpl<_$_CreateChannelState>(
+          this, _$identity);
 }
 
 abstract class _CreateChannelState implements CreateChannelState {
   const factory _CreateChannelState(
-      {required ChannelName name,
-      required bool isPublic,
-      required List<Member> members,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<ChannelFailure, Channel>>
+      {required final ChannelName name,
+      required final bool isPublic,
+      required final List<Member> members,
+      required final bool showErrorMessages,
+      required final bool isSubmitting,
+      required final Option<Either<ChannelFailure, Channel>>
           channelFailureOrSuccessOption}) = _$_CreateChannelState;
 
   @override
-  ChannelName get name;
+  ChannelName get name => throw _privateConstructorUsedError;
   @override
-  bool get isPublic;
+  bool get isPublic => throw _privateConstructorUsedError;
   @override
-  List<Member> get members;
+  List<Member> get members => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isSubmitting;
+  bool get isSubmitting => throw _privateConstructorUsedError;
   @override
-  Option<Either<ChannelFailure, Channel>> get channelFailureOrSuccessOption;
+  Option<Either<ChannelFailure, Channel>> get channelFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CreateChannelStateCopyWith<_CreateChannelState> get copyWith =>
+  _$$_CreateChannelStateCopyWith<_$_CreateChannelState> get copyWith =>
       throw _privateConstructorUsedError;
 }

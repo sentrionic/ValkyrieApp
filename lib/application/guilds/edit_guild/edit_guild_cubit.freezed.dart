@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'edit_guild_cubit.dart';
@@ -11,33 +12,7 @@ part of 'edit_guild_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$EditGuildStateTearOff {
-  const _$EditGuildStateTearOff();
-
-  _EditGuildState call(
-      {required GuildName name,
-      File? icon = null,
-      String? iconUrl = null,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<GuildFailure, Unit>>
-          guildFailureOrSuccessOption}) {
-    return _EditGuildState(
-      name: name,
-      icon: icon,
-      iconUrl: iconUrl,
-      showErrorMessages: showErrorMessages,
-      isSubmitting: isSubmitting,
-      guildFailureOrSuccessOption: guildFailureOrSuccessOption,
-    );
-  }
-}
-
-/// @nodoc
-const $EditGuildState = _$EditGuildStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$EditGuildState {
@@ -116,11 +91,11 @@ class _$EditGuildStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$EditGuildStateCopyWith<$Res>
+abstract class _$$_EditGuildStateCopyWith<$Res>
     implements $EditGuildStateCopyWith<$Res> {
-  factory _$EditGuildStateCopyWith(
-          _EditGuildState value, $Res Function(_EditGuildState) then) =
-      __$EditGuildStateCopyWithImpl<$Res>;
+  factory _$$_EditGuildStateCopyWith(
+          _$_EditGuildState value, $Res Function(_$_EditGuildState) then) =
+      __$$_EditGuildStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {GuildName name,
@@ -132,15 +107,15 @@ abstract class _$EditGuildStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$EditGuildStateCopyWithImpl<$Res>
+class __$$_EditGuildStateCopyWithImpl<$Res>
     extends _$EditGuildStateCopyWithImpl<$Res>
-    implements _$EditGuildStateCopyWith<$Res> {
-  __$EditGuildStateCopyWithImpl(
-      _EditGuildState _value, $Res Function(_EditGuildState) _then)
-      : super(_value, (v) => _then(v as _EditGuildState));
+    implements _$$_EditGuildStateCopyWith<$Res> {
+  __$$_EditGuildStateCopyWithImpl(
+      _$_EditGuildState _value, $Res Function(_$_EditGuildState) _then)
+      : super(_value, (v) => _then(v as _$_EditGuildState));
 
   @override
-  _EditGuildState get _value => super._value as _EditGuildState;
+  _$_EditGuildState get _value => super._value as _$_EditGuildState;
 
   @override
   $Res call({
@@ -151,7 +126,7 @@ class __$EditGuildStateCopyWithImpl<$Res>
     Object? isSubmitting = freezed,
     Object? guildFailureOrSuccessOption = freezed,
   }) {
-    return _then(_EditGuildState(
+    return _then(_$_EditGuildState(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -193,11 +168,11 @@ class _$_EditGuildState implements _EditGuildState {
 
   @override
   final GuildName name;
-  @JsonKey()
   @override
+  @JsonKey()
   final File? icon;
-  @JsonKey()
   @override
+  @JsonKey()
   final String? iconUrl;
   @override
   final bool showErrorMessages;
@@ -215,7 +190,7 @@ class _$_EditGuildState implements _EditGuildState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _EditGuildState &&
+            other is _$_EditGuildState &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.icon, icon) &&
             const DeepCollectionEquality().equals(other.iconUrl, iconUrl) &&
@@ -240,34 +215,35 @@ class _$_EditGuildState implements _EditGuildState {
 
   @JsonKey(ignore: true)
   @override
-  _$EditGuildStateCopyWith<_EditGuildState> get copyWith =>
-      __$EditGuildStateCopyWithImpl<_EditGuildState>(this, _$identity);
+  _$$_EditGuildStateCopyWith<_$_EditGuildState> get copyWith =>
+      __$$_EditGuildStateCopyWithImpl<_$_EditGuildState>(this, _$identity);
 }
 
 abstract class _EditGuildState implements EditGuildState {
   const factory _EditGuildState(
-      {required GuildName name,
-      File? icon,
-      String? iconUrl,
-      required bool showErrorMessages,
-      required bool isSubmitting,
-      required Option<Either<GuildFailure, Unit>>
+      {required final GuildName name,
+      final File? icon,
+      final String? iconUrl,
+      required final bool showErrorMessages,
+      required final bool isSubmitting,
+      required final Option<Either<GuildFailure, Unit>>
           guildFailureOrSuccessOption}) = _$_EditGuildState;
 
   @override
-  GuildName get name;
+  GuildName get name => throw _privateConstructorUsedError;
   @override
-  File? get icon;
+  File? get icon => throw _privateConstructorUsedError;
   @override
-  String? get iconUrl;
+  String? get iconUrl => throw _privateConstructorUsedError;
   @override
-  bool get showErrorMessages;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
-  bool get isSubmitting;
+  bool get isSubmitting => throw _privateConstructorUsedError;
   @override
-  Option<Either<GuildFailure, Unit>> get guildFailureOrSuccessOption;
+  Option<Either<GuildFailure, Unit>> get guildFailureOrSuccessOption =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$EditGuildStateCopyWith<_EditGuildState> get copyWith =>
+  _$$_EditGuildStateCopyWith<_$_EditGuildState> get copyWith =>
       throw _privateConstructorUsedError;
 }

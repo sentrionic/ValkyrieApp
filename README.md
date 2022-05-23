@@ -48,9 +48,7 @@ The architecture of this app is based on Reso Coder's [Domain Driven Design Prin
 
 ## Installation
 
-You will need Flutter Version 2 to run this app.
-
-This app was created and tested on `Flutter 2.10.3` and `Dart 2.16.1` .
+This app was created and tested on `Flutter 3.0.0` and `Dart 2.17.0` .
 
 ```
 git clone https://github.com/sentrionic/ValkyrieApp.git

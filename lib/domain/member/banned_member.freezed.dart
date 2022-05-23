@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'banned_member.dart';
@@ -11,24 +12,7 @@ part of 'banned_member.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$BannedMemberTearOff {
-  const _$BannedMemberTearOff();
-
-  _BannedMember call(
-      {required String id, required String username, required String image}) {
-    return _BannedMember(
-      id: id,
-      username: username,
-      image: image,
-    );
-  }
-}
-
-/// @nodoc
-const $BannedMember = _$BannedMemberTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$BannedMember {
@@ -81,24 +65,25 @@ class _$BannedMemberCopyWithImpl<$Res> implements $BannedMemberCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$BannedMemberCopyWith<$Res>
+abstract class _$$_BannedMemberCopyWith<$Res>
     implements $BannedMemberCopyWith<$Res> {
-  factory _$BannedMemberCopyWith(
-          _BannedMember value, $Res Function(_BannedMember) then) =
-      __$BannedMemberCopyWithImpl<$Res>;
+  factory _$$_BannedMemberCopyWith(
+          _$_BannedMember value, $Res Function(_$_BannedMember) then) =
+      __$$_BannedMemberCopyWithImpl<$Res>;
   @override
   $Res call({String id, String username, String image});
 }
 
 /// @nodoc
-class __$BannedMemberCopyWithImpl<$Res> extends _$BannedMemberCopyWithImpl<$Res>
-    implements _$BannedMemberCopyWith<$Res> {
-  __$BannedMemberCopyWithImpl(
-      _BannedMember _value, $Res Function(_BannedMember) _then)
-      : super(_value, (v) => _then(v as _BannedMember));
+class __$$_BannedMemberCopyWithImpl<$Res>
+    extends _$BannedMemberCopyWithImpl<$Res>
+    implements _$$_BannedMemberCopyWith<$Res> {
+  __$$_BannedMemberCopyWithImpl(
+      _$_BannedMember _value, $Res Function(_$_BannedMember) _then)
+      : super(_value, (v) => _then(v as _$_BannedMember));
 
   @override
-  _BannedMember get _value => super._value as _BannedMember;
+  _$_BannedMember get _value => super._value as _$_BannedMember;
 
   @override
   $Res call({
@@ -106,7 +91,7 @@ class __$BannedMemberCopyWithImpl<$Res> extends _$BannedMemberCopyWithImpl<$Res>
     Object? username = freezed,
     Object? image = freezed,
   }) {
-    return _then(_BannedMember(
+    return _then(_$_BannedMember(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -146,7 +131,7 @@ class _$_BannedMember extends _BannedMember {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _BannedMember &&
+            other is _$_BannedMember &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.username, username) &&
             const DeepCollectionEquality().equals(other.image, image));
@@ -161,25 +146,25 @@ class _$_BannedMember extends _BannedMember {
 
   @JsonKey(ignore: true)
   @override
-  _$BannedMemberCopyWith<_BannedMember> get copyWith =>
-      __$BannedMemberCopyWithImpl<_BannedMember>(this, _$identity);
+  _$$_BannedMemberCopyWith<_$_BannedMember> get copyWith =>
+      __$$_BannedMemberCopyWithImpl<_$_BannedMember>(this, _$identity);
 }
 
 abstract class _BannedMember extends BannedMember {
   const factory _BannedMember(
-      {required String id,
-      required String username,
-      required String image}) = _$_BannedMember;
+      {required final String id,
+      required final String username,
+      required final String image}) = _$_BannedMember;
   const _BannedMember._() : super._();
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get username;
+  String get username => throw _privateConstructorUsedError;
   @override
-  String get image;
+  String get image => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$BannedMemberCopyWith<_BannedMember> get copyWith =>
+  _$$_BannedMemberCopyWith<_$_BannedMember> get copyWith =>
       throw _privateConstructorUsedError;
 }

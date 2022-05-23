@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'friend_request.dart';
@@ -11,28 +12,7 @@ part of 'friend_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$FriendRequestTearOff {
-  const _$FriendRequestTearOff();
-
-  _FriendRequest call(
-      {required String id,
-      required String username,
-      required String image,
-      required RequestType type}) {
-    return _FriendRequest(
-      id: id,
-      username: username,
-      image: image,
-      type: type,
-    );
-  }
-}
-
-/// @nodoc
-const $FriendRequest = _$FriendRequestTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$FriendRequest {
@@ -92,25 +72,25 @@ class _$FriendRequestCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$FriendRequestCopyWith<$Res>
+abstract class _$$_FriendRequestCopyWith<$Res>
     implements $FriendRequestCopyWith<$Res> {
-  factory _$FriendRequestCopyWith(
-          _FriendRequest value, $Res Function(_FriendRequest) then) =
-      __$FriendRequestCopyWithImpl<$Res>;
+  factory _$$_FriendRequestCopyWith(
+          _$_FriendRequest value, $Res Function(_$_FriendRequest) then) =
+      __$$_FriendRequestCopyWithImpl<$Res>;
   @override
   $Res call({String id, String username, String image, RequestType type});
 }
 
 /// @nodoc
-class __$FriendRequestCopyWithImpl<$Res>
+class __$$_FriendRequestCopyWithImpl<$Res>
     extends _$FriendRequestCopyWithImpl<$Res>
-    implements _$FriendRequestCopyWith<$Res> {
-  __$FriendRequestCopyWithImpl(
-      _FriendRequest _value, $Res Function(_FriendRequest) _then)
-      : super(_value, (v) => _then(v as _FriendRequest));
+    implements _$$_FriendRequestCopyWith<$Res> {
+  __$$_FriendRequestCopyWithImpl(
+      _$_FriendRequest _value, $Res Function(_$_FriendRequest) _then)
+      : super(_value, (v) => _then(v as _$_FriendRequest));
 
   @override
-  _FriendRequest get _value => super._value as _FriendRequest;
+  _$_FriendRequest get _value => super._value as _$_FriendRequest;
 
   @override
   $Res call({
@@ -119,7 +99,7 @@ class __$FriendRequestCopyWithImpl<$Res>
     Object? image = freezed,
     Object? type = freezed,
   }) {
-    return _then(_FriendRequest(
+    return _then(_$_FriendRequest(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -168,7 +148,7 @@ class _$_FriendRequest extends _FriendRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FriendRequest &&
+            other is _$_FriendRequest &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.username, username) &&
             const DeepCollectionEquality().equals(other.image, image) &&
@@ -185,28 +165,28 @@ class _$_FriendRequest extends _FriendRequest {
 
   @JsonKey(ignore: true)
   @override
-  _$FriendRequestCopyWith<_FriendRequest> get copyWith =>
-      __$FriendRequestCopyWithImpl<_FriendRequest>(this, _$identity);
+  _$$_FriendRequestCopyWith<_$_FriendRequest> get copyWith =>
+      __$$_FriendRequestCopyWithImpl<_$_FriendRequest>(this, _$identity);
 }
 
 abstract class _FriendRequest extends FriendRequest {
   const factory _FriendRequest(
-      {required String id,
-      required String username,
-      required String image,
-      required RequestType type}) = _$_FriendRequest;
+      {required final String id,
+      required final String username,
+      required final String image,
+      required final RequestType type}) = _$_FriendRequest;
   const _FriendRequest._() : super._();
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get username;
+  String get username => throw _privateConstructorUsedError;
   @override
-  String get image;
+  String get image => throw _privateConstructorUsedError;
   @override
-  RequestType get type;
+  RequestType get type => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FriendRequestCopyWith<_FriendRequest> get copyWith =>
+  _$$_FriendRequestCopyWith<_$_FriendRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }

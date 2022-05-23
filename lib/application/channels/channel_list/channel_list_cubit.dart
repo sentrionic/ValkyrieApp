@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -6,8 +7,8 @@ import 'package:valkyrie_app/domain/channels/channel_failure.dart';
 import 'package:valkyrie_app/domain/channels/channel_value_objects.dart';
 import 'package:valkyrie_app/domain/channels/i_channel_repository.dart';
 
-part 'channel_list_state.dart';
 part 'channel_list_cubit.freezed.dart';
+part 'channel_list_state.dart';
 
 /// ChannelListCubit manages everything related to the current [Guild]'s [Channel]s
 @injectable

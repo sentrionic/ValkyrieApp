@@ -101,9 +101,11 @@ class AuthFacade implements IAuthFacade {
   @override
   Future<void> logout() async {
     try {
-      await _dio.post("/account/logout");
-      await Hive.box(BoxNames.settingsBox).clear();
-      await Hive.box<AccountEntity>(BoxNames.currentUser).clear();
+      Future.wait([
+        Hive.box(BoxNames.settingsBox).clear(),
+        Hive.box<AccountEntity>(BoxNames.currentUser).clear(),
+        _dio.post("/account/logout"),
+      ]);
     } on DioError catch (e) {
       print(e);
     }

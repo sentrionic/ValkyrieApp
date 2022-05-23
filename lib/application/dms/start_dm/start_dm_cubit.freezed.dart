@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'start_dm_cubit.dart';
@@ -11,35 +12,7 @@ part of 'start_dm_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$StartDMStateTearOff {
-  const _$StartDMStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _FetchInProgress fetchInProgress() {
-    return const _FetchInProgress();
-  }
-
-  _FetchSuccess fetchSuccess(DMChannel channel) {
-    return _FetchSuccess(
-      channel,
-    );
-  }
-
-  _FetchFailure fetchFailure(DMChannelFailure channelFailure) {
-    return _FetchFailure(
-      channelFailure,
-    );
-  }
-}
-
-/// @nodoc
-const $StartDMState = _$StartDMStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$StartDMState {
@@ -112,19 +85,20 @@ class _$StartDMStateCopyWithImpl<$Res> implements $StartDMStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$StartDMStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$$_InitialCopyWithImpl<$Res> extends _$StartDMStateCopyWithImpl<$Res>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, (v) => _then(v as _$_Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  _$_Initial get _value => super._value as _$_Initial;
 }
 
 /// @nodoc
@@ -140,7 +114,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -226,22 +200,22 @@ abstract class _Initial implements StartDMState {
 }
 
 /// @nodoc
-abstract class _$FetchInProgressCopyWith<$Res> {
-  factory _$FetchInProgressCopyWith(
-          _FetchInProgress value, $Res Function(_FetchInProgress) then) =
-      __$FetchInProgressCopyWithImpl<$Res>;
+abstract class _$$_FetchInProgressCopyWith<$Res> {
+  factory _$$_FetchInProgressCopyWith(
+          _$_FetchInProgress value, $Res Function(_$_FetchInProgress) then) =
+      __$$_FetchInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$FetchInProgressCopyWithImpl<$Res>
+class __$$_FetchInProgressCopyWithImpl<$Res>
     extends _$StartDMStateCopyWithImpl<$Res>
-    implements _$FetchInProgressCopyWith<$Res> {
-  __$FetchInProgressCopyWithImpl(
-      _FetchInProgress _value, $Res Function(_FetchInProgress) _then)
-      : super(_value, (v) => _then(v as _FetchInProgress));
+    implements _$$_FetchInProgressCopyWith<$Res> {
+  __$$_FetchInProgressCopyWithImpl(
+      _$_FetchInProgress _value, $Res Function(_$_FetchInProgress) _then)
+      : super(_value, (v) => _then(v as _$_FetchInProgress));
 
   @override
-  _FetchInProgress get _value => super._value as _FetchInProgress;
+  _$_FetchInProgress get _value => super._value as _$_FetchInProgress;
 }
 
 /// @nodoc
@@ -257,7 +231,7 @@ class _$_FetchInProgress implements _FetchInProgress {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _FetchInProgress);
+        (other.runtimeType == runtimeType && other is _$_FetchInProgress);
   }
 
   @override
@@ -343,30 +317,31 @@ abstract class _FetchInProgress implements StartDMState {
 }
 
 /// @nodoc
-abstract class _$FetchSuccessCopyWith<$Res> {
-  factory _$FetchSuccessCopyWith(
-          _FetchSuccess value, $Res Function(_FetchSuccess) then) =
-      __$FetchSuccessCopyWithImpl<$Res>;
+abstract class _$$_FetchSuccessCopyWith<$Res> {
+  factory _$$_FetchSuccessCopyWith(
+          _$_FetchSuccess value, $Res Function(_$_FetchSuccess) then) =
+      __$$_FetchSuccessCopyWithImpl<$Res>;
   $Res call({DMChannel channel});
 
   $DMChannelCopyWith<$Res> get channel;
 }
 
 /// @nodoc
-class __$FetchSuccessCopyWithImpl<$Res> extends _$StartDMStateCopyWithImpl<$Res>
-    implements _$FetchSuccessCopyWith<$Res> {
-  __$FetchSuccessCopyWithImpl(
-      _FetchSuccess _value, $Res Function(_FetchSuccess) _then)
-      : super(_value, (v) => _then(v as _FetchSuccess));
+class __$$_FetchSuccessCopyWithImpl<$Res>
+    extends _$StartDMStateCopyWithImpl<$Res>
+    implements _$$_FetchSuccessCopyWith<$Res> {
+  __$$_FetchSuccessCopyWithImpl(
+      _$_FetchSuccess _value, $Res Function(_$_FetchSuccess) _then)
+      : super(_value, (v) => _then(v as _$_FetchSuccess));
 
   @override
-  _FetchSuccess get _value => super._value as _FetchSuccess;
+  _$_FetchSuccess get _value => super._value as _$_FetchSuccess;
 
   @override
   $Res call({
     Object? channel = freezed,
   }) {
-    return _then(_FetchSuccess(
+    return _then(_$_FetchSuccess(
       channel == freezed
           ? _value.channel
           : channel // ignore: cast_nullable_to_non_nullable
@@ -399,7 +374,7 @@ class _$_FetchSuccess implements _FetchSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FetchSuccess &&
+            other is _$_FetchSuccess &&
             const DeepCollectionEquality().equals(other.channel, channel));
   }
 
@@ -409,8 +384,8 @@ class _$_FetchSuccess implements _FetchSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$FetchSuccessCopyWith<_FetchSuccess> get copyWith =>
-      __$FetchSuccessCopyWithImpl<_FetchSuccess>(this, _$identity);
+  _$$_FetchSuccessCopyWith<_$_FetchSuccess> get copyWith =>
+      __$$_FetchSuccessCopyWithImpl<_$_FetchSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -488,39 +463,40 @@ class _$_FetchSuccess implements _FetchSuccess {
 }
 
 abstract class _FetchSuccess implements StartDMState {
-  const factory _FetchSuccess(DMChannel channel) = _$_FetchSuccess;
+  const factory _FetchSuccess(final DMChannel channel) = _$_FetchSuccess;
 
-  DMChannel get channel;
+  DMChannel get channel => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$FetchSuccessCopyWith<_FetchSuccess> get copyWith =>
+  _$$_FetchSuccessCopyWith<_$_FetchSuccess> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$FetchFailureCopyWith<$Res> {
-  factory _$FetchFailureCopyWith(
-          _FetchFailure value, $Res Function(_FetchFailure) then) =
-      __$FetchFailureCopyWithImpl<$Res>;
+abstract class _$$_FetchFailureCopyWith<$Res> {
+  factory _$$_FetchFailureCopyWith(
+          _$_FetchFailure value, $Res Function(_$_FetchFailure) then) =
+      __$$_FetchFailureCopyWithImpl<$Res>;
   $Res call({DMChannelFailure channelFailure});
 
   $DMChannelFailureCopyWith<$Res> get channelFailure;
 }
 
 /// @nodoc
-class __$FetchFailureCopyWithImpl<$Res> extends _$StartDMStateCopyWithImpl<$Res>
-    implements _$FetchFailureCopyWith<$Res> {
-  __$FetchFailureCopyWithImpl(
-      _FetchFailure _value, $Res Function(_FetchFailure) _then)
-      : super(_value, (v) => _then(v as _FetchFailure));
+class __$$_FetchFailureCopyWithImpl<$Res>
+    extends _$StartDMStateCopyWithImpl<$Res>
+    implements _$$_FetchFailureCopyWith<$Res> {
+  __$$_FetchFailureCopyWithImpl(
+      _$_FetchFailure _value, $Res Function(_$_FetchFailure) _then)
+      : super(_value, (v) => _then(v as _$_FetchFailure));
 
   @override
-  _FetchFailure get _value => super._value as _FetchFailure;
+  _$_FetchFailure get _value => super._value as _$_FetchFailure;
 
   @override
   $Res call({
     Object? channelFailure = freezed,
   }) {
-    return _then(_FetchFailure(
+    return _then(_$_FetchFailure(
       channelFailure == freezed
           ? _value.channelFailure
           : channelFailure // ignore: cast_nullable_to_non_nullable
@@ -553,7 +529,7 @@ class _$_FetchFailure implements _FetchFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FetchFailure &&
+            other is _$_FetchFailure &&
             const DeepCollectionEquality()
                 .equals(other.channelFailure, channelFailure));
   }
@@ -564,8 +540,8 @@ class _$_FetchFailure implements _FetchFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$FetchFailureCopyWith<_FetchFailure> get copyWith =>
-      __$FetchFailureCopyWithImpl<_FetchFailure>(this, _$identity);
+  _$$_FetchFailureCopyWith<_$_FetchFailure> get copyWith =>
+      __$$_FetchFailureCopyWithImpl<_$_FetchFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -643,11 +619,11 @@ class _$_FetchFailure implements _FetchFailure {
 }
 
 abstract class _FetchFailure implements StartDMState {
-  const factory _FetchFailure(DMChannelFailure channelFailure) =
+  const factory _FetchFailure(final DMChannelFailure channelFailure) =
       _$_FetchFailure;
 
-  DMChannelFailure get channelFailure;
+  DMChannelFailure get channelFailure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$FetchFailureCopyWith<_FetchFailure> get copyWith =>
+  _$$_FetchFailureCopyWith<_$_FetchFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
