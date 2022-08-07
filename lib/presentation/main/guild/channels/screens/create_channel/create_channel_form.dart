@@ -12,7 +12,7 @@ import 'package:valkyrie_app/presentation/main/guild/channels/screens/create_cha
 
 class CreateChannelForm extends StatelessWidget {
   final Guild guild;
-  const CreateChannelForm({Key? key, required this.guild}) : super(key: key);
+  const CreateChannelForm({super.key, required this.guild});
 
   @override
   Widget build(BuildContext context) {

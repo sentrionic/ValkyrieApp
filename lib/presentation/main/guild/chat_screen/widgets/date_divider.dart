@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 class DateDivider extends StatelessWidget {
   final DateTime date;
-  const DateDivider({Key? key, required this.date}) : super(key: key);
+  const DateDivider({super.key, required this.date});
 
   @override
   Widget build(BuildContext context) {

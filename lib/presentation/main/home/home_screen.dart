@@ -19,8 +19,8 @@ class HomeScreen extends HookWidget {
   Widget build(BuildContext context) {
     use(GuildSocketHook(context));
 
-    final _currentTab = useState(0);
-    final _navigationQueue = useState(ListQueue<int>());
+    final currentTab = useState(0);
+    final navigationQueue = useState(ListQueue<int>());
     final List<Widget> children = [
       HomeBody(),
       FriendListScreen(),
@@ -28,10 +28,10 @@ class HomeScreen extends HookWidget {
     ];
 
     void _selectTab(int index) {
-      if (_currentTab.value != index) {
-        _navigationQueue.value.removeWhere((element) => element == index);
-        _navigationQueue.value.addLast(index);
-        _currentTab.value = index;
+      if (currentTab.value != index) {
+        navigationQueue.value.removeWhere((element) => element == index);
+        navigationQueue.value.addLast(index);
+        currentTab.value = index;
       }
     }
 
@@ -55,19 +55,18 @@ class HomeScreen extends HookWidget {
         ],
         child: WillPopScope(
           onWillPop: () async {
-            if (_navigationQueue.value.isEmpty) return true;
-            _navigationQueue.value.removeLast();
-            _currentTab.value = _navigationQueue.value.isEmpty
-                ? 0
-                : _navigationQueue.value.last;
+            if (navigationQueue.value.isEmpty) return true;
+            navigationQueue.value.removeLast();
+            currentTab.value =
+                navigationQueue.value.isEmpty ? 0 : navigationQueue.value.last;
 
             return false;
           },
           child: Scaffold(
-            body: children[_currentTab.value],
+            body: children[currentTab.value],
             bottomNavigationBar: HomeNavigationBar(
               onSelectTab: _selectTab,
-              currentTab: _currentTab.value,
+              currentTab: currentTab.value,
             ),
           ),
         ),

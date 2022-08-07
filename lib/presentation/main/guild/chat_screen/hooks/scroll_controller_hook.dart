@@ -6,12 +6,12 @@ ScrollController useScrollControllerForLoading(
   BuildContext context,
   String channelId,
 ) {
-  const _scrollThreshold = 200.0;
+  const scrollThreshold = 200.0;
   final ScrollController scrollController = ScrollController();
   scrollController.addListener(() {
     final maxScroll = scrollController.position.maxScrollExtent;
     final currentScroll = scrollController.position.pixels;
-    if (maxScroll - currentScroll <= _scrollThreshold) {
+    if (maxScroll - currentScroll <= scrollThreshold) {
       context.read<MessagesCubit>().fetchMoreMessages(channelId);
     }
   });

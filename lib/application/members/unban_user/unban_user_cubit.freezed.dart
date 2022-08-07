@@ -466,7 +466,7 @@ class _$_UnbanFailure implements _UnbanFailure {
 abstract class _UnbanFailure implements UnbanUserState {
   const factory _UnbanFailure(final MemberFailure failure) = _$_UnbanFailure;
 
-  MemberFailure get failure => throw _privateConstructorUsedError;
+  MemberFailure get failure;
   @JsonKey(ignore: true)
   _$$_UnbanFailureCopyWith<_$_UnbanFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -612,7 +612,7 @@ class _$_UnbanSuccess implements _UnbanSuccess {
 abstract class _UnbanSuccess implements UnbanUserState {
   const factory _UnbanSuccess(final String memberId) = _$_UnbanSuccess;
 
-  String get memberId => throw _privateConstructorUsedError;
+  String get memberId;
   @JsonKey(ignore: true)
   _$$_UnbanSuccessCopyWith<_$_UnbanSuccess> get copyWith =>
       throw _privateConstructorUsedError;

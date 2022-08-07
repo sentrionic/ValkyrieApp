@@ -12,10 +12,10 @@ class GuildActionsContainer extends StatelessWidget {
   final Guild guild;
   final bool isOwner;
   const GuildActionsContainer({
-    Key? key,
+    super.key,
     required this.guild,
     required this.isOwner,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

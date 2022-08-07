@@ -14,9 +14,9 @@ import 'package:valkyrie_app/presentation/main/home/direct_messages/dm_screen.da
 class DMNotificationItem extends StatelessWidget {
   final DMNotification notification;
   const DMNotificationItem({
-    Key? key,
+    super.key,
     required this.notification,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

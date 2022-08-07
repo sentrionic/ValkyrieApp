@@ -9,7 +9,7 @@ class MemberHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final channelId = context.watch<CurrentChannelCubit>().state;
-    return Container(
+    return ColoredBox(
       color: ThemeColors.dmBackground,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

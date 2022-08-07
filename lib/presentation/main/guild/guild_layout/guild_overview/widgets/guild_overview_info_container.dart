@@ -6,9 +6,9 @@ import 'package:valkyrie_app/presentation/core/colors.dart';
 class GuildOverviewInfoContainer extends StatelessWidget {
   final Guild guild;
   const GuildOverviewInfoContainer({
-    Key? key,
+    super.key,
     required this.guild,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class GuildOverviewInfoContainer extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Expanded(
-          child: Container(
+          child: ColoredBox(
             color: ThemeColors.dmBackground,
             child: Column(
               children: [

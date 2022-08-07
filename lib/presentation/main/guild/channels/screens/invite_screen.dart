@@ -11,7 +11,7 @@ class InviteScreen extends StatelessWidget {
   static const routeName = '/invite-members';
   final Guild guild;
 
-  const InviteScreen({Key? key, required this.guild}) : super(key: key);
+  const InviteScreen({super.key, required this.guild});
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +32,12 @@ class InviteScreen extends StatelessWidget {
 class _InviteScreenForm extends HookWidget {
   final String guildId;
 
-  const _InviteScreenForm({Key? key, required this.guildId}) : super(key: key);
+  const _InviteScreenForm({required this.guildId});
 
   @override
   Widget build(BuildContext context) {
     final switchState = useState(false);
-    return Container(
+    return ColoredBox(
       color: ThemeColors.appBackground,
       child: Column(
         children: [

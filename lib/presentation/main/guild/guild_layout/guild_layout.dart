@@ -16,23 +16,23 @@ import 'package:valkyrie_app/presentation/main/shared/hooks/guild_socket_hook.da
 class GuildLayout extends HookWidget {
   final Guild guild;
 
-  const GuildLayout({Key? key, required this.guild}) : super(key: key);
+  const GuildLayout({super.key, required this.guild});
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
+    final GlobalKey<ScaffoldState> drawerKey = GlobalKey();
     final channelId = context.watch<CurrentChannelCubit>().state;
 
     use(ChannelSocketHook(context, guild.id));
     use(GuildSocketHook(context));
 
     return Scaffold(
-      key: _drawerKey,
+      key: drawerKey,
       appBar: AppBar(
         title: ChannelHeader(),
         leading: IconButton(
           icon: DrawerMenuIcon(),
-          onPressed: () => _drawerKey.currentState!.openDrawer(),
+          onPressed: () => drawerKey.currentState!.openDrawer(),
         ),
         actions: [
           IconButton(
@@ -41,7 +41,7 @@ class GuildLayout extends HookWidget {
               size: 25,
               color: Colors.white60,
             ),
-            onPressed: () => _drawerKey.currentState!.openEndDrawer(),
+            onPressed: () => drawerKey.currentState!.openEndDrawer(),
           ),
         ],
       ),

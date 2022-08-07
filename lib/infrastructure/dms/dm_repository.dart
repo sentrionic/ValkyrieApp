@@ -23,7 +23,7 @@ class DMRepository extends IDMRepository {
 
       final results = jsonDecode(response.data);
       final List<DMChannel> list = [];
-      results.forEach((c) => list.add(DMChannelDto.fromMap(c).toDomain()));
+      results.forEach((c) => list.add(DMChannelDto.fromJson(c).toDomain()));
       return right(list);
     } on DioError catch (err) {
       print(err);
@@ -41,7 +41,7 @@ class DMRepository extends IDMRepository {
     try {
       final response = await _dio.post('/channels/$userId/dm');
       final results = jsonDecode(response.data);
-      final channel = DMChannelDto.fromMap(results).toDomain();
+      final channel = DMChannelDto.fromJson(results).toDomain();
       return right(channel);
     } on DioError catch (err) {
       print(err);

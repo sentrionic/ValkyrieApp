@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:valkyrie_app/domain/friends/friend_request.dart';
 
 part 'friend_request_dto.freezed.dart';
+part 'friend_request_dto.g.dart';
 
 @freezed
 class FriendRequestDto with _$FriendRequestDto {
@@ -23,12 +24,6 @@ class FriendRequestDto with _$FriendRequestDto {
     );
   }
 
-  factory FriendRequestDto.fromMap(Map<String, dynamic> map) {
-    return FriendRequestDto(
-      id: map['id'],
-      username: map['username'],
-      image: map['image'],
-      type: map['type'],
-    );
-  }
+  factory FriendRequestDto.fromJson(Map<String, dynamic> json) =>
+      _$FriendRequestDtoFromJson(json);
 }

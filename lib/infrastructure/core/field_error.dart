@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'field_error.freezed.dart';
+part 'field_error.g.dart';
 
 @freezed
 class FieldError with _$FieldError {
@@ -14,18 +15,14 @@ class FieldError with _$FieldError {
     required String message,
   }) = _FieldError;
 
-  factory FieldError.fromMap(Map<String, dynamic> map) {
-    return FieldError(
-      field: map['field'] ?? '',
-      message: map['message'] ?? '',
-    );
-  }
+  factory FieldError.fromJson(Map<String, dynamic> json) =>
+      _$FieldErrorFromJson(json);
 
   static List<FieldError> getErrors(Response<dynamic> response) {
     final results = List<Map<String, dynamic>>.from(
       jsonDecode(response.toString())['errors'],
     );
-    return results.map((e) => FieldError.fromMap(e)).toList();
+    return results.map((e) => FieldError.fromJson(e)).toList();
   }
 
   // ignore: prefer_constructors_over_static_methods
@@ -33,6 +30,6 @@ class FieldError with _$FieldError {
     final result = Map<String, dynamic>.from(
       jsonDecode(response.toString())['error'],
     );
-    return FieldError.fromMap(result);
+    return FieldError.fromJson(result);
   }
 }

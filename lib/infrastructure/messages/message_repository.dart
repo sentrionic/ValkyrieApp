@@ -29,7 +29,7 @@ class MessageRepository extends IMessageRepository {
 
       final results = jsonDecode(response.data);
       final List<Message> list = [];
-      results.forEach((c) => list.add(MessageDto.fromMap(c).toDomain()));
+      results.forEach((c) => list.add(MessageDto.fromJson(c).toDomain()));
       return right(list);
     } on DioError catch (err) {
       print(err);

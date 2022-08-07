@@ -29,7 +29,7 @@ class MemberRepository extends IMemberRepository {
       final response = await _dio.get('/guilds/$guildId/members');
       final results = jsonDecode(response.data);
       final List<Member> list = [];
-      results.forEach((c) => list.add(MemberDto.fromMap(c).toDomain()));
+      results.forEach((c) => list.add(MemberDto.fromJson(c).toDomain()));
       return right(list);
     } on DioError catch (err) {
       print(err);
@@ -48,7 +48,7 @@ class MemberRepository extends IMemberRepository {
       final response = await _dio.get('/guilds/$guildId/member');
 
       final results = jsonDecode(response.data);
-      final settings = GuildAppearanceDto.fromMap(results).toDomain();
+      final settings = GuildAppearanceDto.fromJson(results).toDomain();
       return right(settings);
     } on DioError catch (err) {
       print(err);
@@ -142,7 +142,7 @@ class MemberRepository extends IMemberRepository {
       final response = await _dio.get('/guilds/$guildId/bans');
       final results = jsonDecode(response.data);
       final List<BannedMember> list = [];
-      results.forEach((m) => list.add(BannedMemberDto.fromMap(m).toDomain()));
+      results.forEach((m) => list.add(BannedMemberDto.fromJson(m).toDomain()));
       return right(list);
     } on DioError catch (err) {
       print(err);

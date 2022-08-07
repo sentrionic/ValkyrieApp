@@ -44,7 +44,7 @@ class _MemberSocketHookState extends HookState<void, MemberSocketHook> {
           //Member events
           case "add_member":
             {
-              final member = MemberDto.fromMap(response["data"]).toDomain();
+              final member = MemberDto.fromJson(response["data"]).toDomain();
               hook.context.read<MemberListCubit>().addNewMember(member);
               break;
             }

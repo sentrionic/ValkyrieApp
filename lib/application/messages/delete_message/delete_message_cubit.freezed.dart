@@ -469,7 +469,7 @@ abstract class _DeleteFailure implements DeleteMessageState {
   const factory _DeleteFailure(final MessageFailure messageFailure) =
       _$_DeleteFailure;
 
-  MessageFailure get messageFailure => throw _privateConstructorUsedError;
+  MessageFailure get messageFailure;
   @JsonKey(ignore: true)
   _$$_DeleteFailureCopyWith<_$_DeleteFailure> get copyWith =>
       throw _privateConstructorUsedError;

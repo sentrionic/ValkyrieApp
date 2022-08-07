@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+MemberDto _$MemberDtoFromJson(Map<String, dynamic> json) {
+  return _MemberDto.fromJson(json);
+}
+
 /// @nodoc
 mixin _$MemberDto {
   String get id => throw _privateConstructorUsedError;
@@ -24,6 +28,7 @@ mixin _$MemberDto {
   String? get nickname => throw _privateConstructorUsedError;
   String? get color => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MemberDtoCopyWith<MemberDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -164,7 +169,7 @@ class __$$_MemberDtoCopyWithImpl<$Res> extends _$MemberDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_MemberDto extends _MemberDto {
   const _$_MemberDto(
       {required this.id,
@@ -175,6 +180,9 @@ class _$_MemberDto extends _MemberDto {
       this.nickname,
       this.color})
       : super._();
+
+  factory _$_MemberDto.fromJson(Map<String, dynamic> json) =>
+      _$$_MemberDtoFromJson(json);
 
   @override
   final String id;
@@ -210,6 +218,7 @@ class _$_MemberDto extends _MemberDto {
             const DeepCollectionEquality().equals(other.color, color));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -225,6 +234,13 @@ class _$_MemberDto extends _MemberDto {
   @override
   _$$_MemberDtoCopyWith<_$_MemberDto> get copyWith =>
       __$$_MemberDtoCopyWithImpl<_$_MemberDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_MemberDtoToJson(
+      this,
+    );
+  }
 }
 
 abstract class _MemberDto extends MemberDto {
@@ -238,20 +254,23 @@ abstract class _MemberDto extends MemberDto {
       final String? color}) = _$_MemberDto;
   const _MemberDto._() : super._();
 
+  factory _MemberDto.fromJson(Map<String, dynamic> json) =
+      _$_MemberDto.fromJson;
+
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
-  bool get isOnline => throw _privateConstructorUsedError;
+  bool get isOnline;
   @override
-  bool get isFriend => throw _privateConstructorUsedError;
+  bool get isFriend;
   @override
-  String? get nickname => throw _privateConstructorUsedError;
+  String? get nickname;
   @override
-  String? get color => throw _privateConstructorUsedError;
+  String? get color;
   @override
   @JsonKey(ignore: true)
   _$$_MemberDtoCopyWith<_$_MemberDto> get copyWith =>

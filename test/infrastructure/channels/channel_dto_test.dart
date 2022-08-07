@@ -22,7 +22,7 @@ void main() {
     hasNotification: false,
   );
 
-  group('ChannelDto.fromMap', () {
+  group('ChannelDto.fromJson', () {
     test(
       'should return a valid DTO when the JSON is valid',
       () async {
@@ -30,7 +30,7 @@ void main() {
         final jsonMap = json.decode(fixture('channel.json'));
 
         // act
-        final result = ChannelDto.fromMap(jsonMap);
+        final result = ChannelDto.fromJson(jsonMap);
 
         // assert
         expect(result, tChannelDto);
@@ -44,7 +44,7 @@ void main() {
         final jsonMap = json.decode(fixture('channel.json'));
 
         // act
-        final result = ChannelDto.fromMap(jsonMap);
+        final result = ChannelDto.fromJson(jsonMap);
 
         // assert
         expect(result.toDomain(), tChannel);

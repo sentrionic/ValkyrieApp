@@ -171,12 +171,11 @@ abstract class _UploadImageState implements UploadImageState {
           messageFailureOrSuccessOption}) = _$_UploadImageState;
 
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<MessageFailure, Unit>> get messageFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<MessageFailure, Unit>> get messageFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_UploadImageStateCopyWith<_$_UploadImageState> get copyWith =>

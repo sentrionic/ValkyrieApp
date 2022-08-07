@@ -14,7 +14,7 @@ import 'package:valkyrie_app/presentation/main/guild/guild_layout/guild_layout.d
 class GuildScreen extends HookWidget {
   static const routeName = '/guild';
   final Guild guild;
-  const GuildScreen({Key? key, required this.guild}) : super(key: key);
+  const GuildScreen({super.key, required this.guild});
 
   @override
   Widget build(BuildContext context) {

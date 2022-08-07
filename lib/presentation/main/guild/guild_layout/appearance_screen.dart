@@ -16,7 +16,7 @@ class AppearanceScreen extends StatelessWidget {
   static const routeName = '/change-appearance';
   final Guild guild;
 
-  const AppearanceScreen({Key? key, required this.guild}) : super(key: key);
+  const AppearanceScreen({super.key, required this.guild});
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +38,7 @@ class AppearanceScreen extends StatelessWidget {
 class _AppearanceScreenFormProvider extends StatelessWidget {
   final Guild guild;
 
-  const _AppearanceScreenFormProvider({Key? key, required this.guild})
-      : super(key: key);
+  const _AppearanceScreenFormProvider({required this.guild});
 
   @override
   Widget build(BuildContext context) {
@@ -62,17 +61,16 @@ class _AppearanceScreenForm extends HookWidget {
   final GuildAppearance appearance;
 
   const _AppearanceScreenForm({
-    Key? key,
     required this.guild,
     required this.appearance,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    final _key = GlobalKey<FormState>();
-    final _controller = useTextEditingController();
-    if (appearance.nickname != null && _controller.text.isEmpty) {
-      _controller.text = appearance.nickname!.getOrCrash();
+    final key = GlobalKey<FormState>();
+    final controller = useTextEditingController();
+    if (appearance.nickname != null && controller.text.isEmpty) {
+      controller.text = appearance.nickname!.getOrCrash();
       context
           .read<ChangeAppearanceCubit>()
           .nicknameChanged(appearance.nickname!.getOrCrash());
@@ -109,8 +107,8 @@ class _AppearanceScreenForm extends HookWidget {
             IconButton(
               icon: const Icon(Icons.save),
               onPressed: () {
-                if (_key.currentState!.validate()) {
-                  _key.currentState?.save();
+                if (key.currentState!.validate()) {
+                  key.currentState?.save();
                   FocusScope.of(context).unfocus();
                   context.read<ChangeAppearanceCubit>().submitChanges(guild.id);
                 }
@@ -121,10 +119,10 @@ class _AppearanceScreenForm extends HookWidget {
         body: BlocBuilder<ChangeAppearanceCubit, ChangeAppearanceState>(
           builder: (context, state) {
             final color = state.hexColor?.getOrCrash();
-            return Container(
+            return ColoredBox(
               color: ThemeColors.appBackground,
               child: Form(
-                key: _key,
+                key: key,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -140,7 +138,7 @@ class _AppearanceScreenForm extends HookWidget {
                       ),
                     ),
                     TextFormField(
-                      controller: _controller,
+                      controller: controller,
                       onChanged: (value) {
                         if (value.isNotEmpty) {
                           context
@@ -208,7 +206,7 @@ class _AppearanceScreenForm extends HookWidget {
                         children: [
                           OutlinedButton(
                             onPressed: () {
-                              _controller.text = "";
+                              controller.text = "";
                               context
                                   .read<ChangeAppearanceCubit>()
                                   .resetNickname();

@@ -13,7 +13,7 @@ import 'package:valkyrie_app/presentation/main/guild/channels/widgets/channel_no
 
 class ChannelItem extends StatelessWidget {
   final Channel channel;
-  const ChannelItem({Key? key, required this.channel}) : super(key: key);
+  const ChannelItem({super.key, required this.channel});
 
   @override
   Widget build(BuildContext context) {

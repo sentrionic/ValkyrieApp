@@ -461,7 +461,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements GuildListState {
   const factory _LoadSuccess(final List<Guild> guilds) = _$_LoadSuccess;
 
-  List<Guild> get guilds => throw _privateConstructorUsedError;
+  List<Guild> get guilds;
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -617,7 +617,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements GuildListState {
   const factory _LoadFailure(final GuildFailure guildFailure) = _$_LoadFailure;
 
-  GuildFailure get guildFailure => throw _privateConstructorUsedError;
+  GuildFailure get guildFailure;
   @JsonKey(ignore: true)
   _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

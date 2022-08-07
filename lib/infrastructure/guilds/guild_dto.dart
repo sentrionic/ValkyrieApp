@@ -3,6 +3,7 @@ import 'package:valkyrie_app/domain/guilds/guild.dart';
 import 'package:valkyrie_app/domain/guilds/value_objects.dart';
 
 part 'guild_dto.freezed.dart';
+part 'guild_dto.g.dart';
 
 @freezed
 class GuildDto with _$GuildDto {
@@ -11,7 +12,8 @@ class GuildDto with _$GuildDto {
   const factory GuildDto({
     required String id,
     required String name,
-    required String defaultChannelId,
+    // ignore: invalid_annotation_target
+    @JsonKey(name: "default_channel_id") required String defaultChannelId,
     required String ownerId,
     required bool hasNotification,
     String? icon,
@@ -28,14 +30,6 @@ class GuildDto with _$GuildDto {
     );
   }
 
-  factory GuildDto.fromMap(Map<String, dynamic> map) {
-    return GuildDto(
-      id: map['id'],
-      name: map['name'],
-      defaultChannelId: map['default_channel_id'],
-      ownerId: map['ownerId'],
-      hasNotification: map['hasNotification'],
-      icon: map['icon'],
-    );
-  }
+  factory GuildDto.fromJson(Map<String, dynamic> json) =>
+      _$GuildDtoFromJson(json);
 }

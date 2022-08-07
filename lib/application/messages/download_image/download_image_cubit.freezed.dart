@@ -191,14 +191,13 @@ abstract class _DownloadImageState implements DownloadImageState {
           downloadFailureOrSuccessOption}) = _$_DownloadImageState;
 
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isDownloading => throw _privateConstructorUsedError;
+  bool get isDownloading;
   @override
-  int get progress => throw _privateConstructorUsedError;
+  int get progress;
   @override
-  Option<Either<MessageFailure, Unit>> get downloadFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<MessageFailure, Unit>> get downloadFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_DownloadImageStateCopyWith<_$_DownloadImageState> get copyWith =>

@@ -234,18 +234,17 @@ abstract class _EditChannelState implements EditChannelState {
           channelFailureOrSuccessOption}) = _$_EditChannelState;
 
   @override
-  ChannelName get name => throw _privateConstructorUsedError;
+  ChannelName get name;
   @override
-  bool get isPublic => throw _privateConstructorUsedError;
+  bool get isPublic;
   @override
-  List<Member> get members => throw _privateConstructorUsedError;
+  List<Member> get members;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<ChannelFailure, Unit>> get channelFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<ChannelFailure, Unit>> get channelFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_EditChannelStateCopyWith<_$_EditChannelState> get copyWith =>

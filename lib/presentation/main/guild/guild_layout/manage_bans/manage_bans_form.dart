@@ -12,9 +12,9 @@ import 'package:valkyrie_app/presentation/core/colors.dart';
 class ManageBansForm extends StatelessWidget {
   final Guild guild;
   const ManageBansForm({
-    Key? key,
+    super.key,
     required this.guild,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class ManageBansForm extends StatelessWidget {
             ],
           ),
         ),
-        body: Container(
+        body: ColoredBox(
           color: ThemeColors.appBackground,
           child: Column(
             children: [

@@ -23,7 +23,7 @@ void main() {
     type: RequestType.outgoing,
   );
 
-  group('FriendRequestDto.fromMap', () {
+  group('FriendRequestDto.fromJson', () {
     test(
       'should return a valid DTO when the JSON is valid',
       () async {
@@ -31,7 +31,7 @@ void main() {
         final jsonMap = json.decode(fixture('request.json'));
 
         // act
-        final result = FriendRequestDto.fromMap(jsonMap);
+        final result = FriendRequestDto.fromJson(jsonMap);
 
         // assert
         expect(result, tFriendRequestDto);
@@ -45,7 +45,7 @@ void main() {
         final jsonMap = json.decode(fixture('request.json'));
 
         // act
-        final result = FriendRequestDto.fromMap(jsonMap);
+        final result = FriendRequestDto.fromJson(jsonMap);
 
         // assert
         expect(result.toDomain(), tFriendRequest);

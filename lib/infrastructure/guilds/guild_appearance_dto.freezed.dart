@@ -14,11 +14,16 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+GuildAppearanceDto _$GuildAppearanceDtoFromJson(Map<String, dynamic> json) {
+  return _GuildAppearanceDto.fromJson(json);
+}
+
 /// @nodoc
 mixin _$GuildAppearanceDto {
   String? get nickname => throw _privateConstructorUsedError;
   String? get color => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GuildAppearanceDtoCopyWith<GuildAppearanceDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -99,9 +104,12 @@ class __$$_GuildAppearanceDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_GuildAppearanceDto extends _GuildAppearanceDto {
   const _$_GuildAppearanceDto({this.nickname, this.color}) : super._();
+
+  factory _$_GuildAppearanceDto.fromJson(Map<String, dynamic> json) =>
+      _$$_GuildAppearanceDtoFromJson(json);
 
   @override
   final String? nickname;
@@ -122,6 +130,7 @@ class _$_GuildAppearanceDto extends _GuildAppearanceDto {
             const DeepCollectionEquality().equals(other.color, color));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -133,6 +142,13 @@ class _$_GuildAppearanceDto extends _GuildAppearanceDto {
   _$$_GuildAppearanceDtoCopyWith<_$_GuildAppearanceDto> get copyWith =>
       __$$_GuildAppearanceDtoCopyWithImpl<_$_GuildAppearanceDto>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_GuildAppearanceDtoToJson(
+      this,
+    );
+  }
 }
 
 abstract class _GuildAppearanceDto extends GuildAppearanceDto {
@@ -140,10 +156,13 @@ abstract class _GuildAppearanceDto extends GuildAppearanceDto {
       {final String? nickname, final String? color}) = _$_GuildAppearanceDto;
   const _GuildAppearanceDto._() : super._();
 
+  factory _GuildAppearanceDto.fromJson(Map<String, dynamic> json) =
+      _$_GuildAppearanceDto.fromJson;
+
   @override
-  String? get nickname => throw _privateConstructorUsedError;
+  String? get nickname;
   @override
-  String? get color => throw _privateConstructorUsedError;
+  String? get color;
   @override
   @JsonKey(ignore: true)
   _$$_GuildAppearanceDtoCopyWith<_$_GuildAppearanceDto> get copyWith =>

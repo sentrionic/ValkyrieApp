@@ -13,9 +13,9 @@ import 'package:valkyrie_app/presentation/main/shared/current_guild_pill.dart';
 class GuildItem extends StatelessWidget {
   final Guild guild;
   const GuildItem({
-    Key? key,
+    super.key,
     required this.guild,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

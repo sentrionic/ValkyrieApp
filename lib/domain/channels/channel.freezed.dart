@@ -173,13 +173,13 @@ abstract class _Channel extends Channel {
   const _Channel._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  ChannelName get name => throw _privateConstructorUsedError;
+  ChannelName get name;
   @override
-  bool get isPublic => throw _privateConstructorUsedError;
+  bool get isPublic;
   @override
-  bool get hasNotification => throw _privateConstructorUsedError;
+  bool get hasNotification;
   @override
   @JsonKey(ignore: true)
   _$$_ChannelCopyWith<_$_Channel> get copyWith =>

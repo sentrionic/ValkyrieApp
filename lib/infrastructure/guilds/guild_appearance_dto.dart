@@ -3,6 +3,7 @@ import 'package:valkyrie_app/domain/guilds/guild_appearance.dart';
 import 'package:valkyrie_app/domain/guilds/value_objects.dart';
 
 part 'guild_appearance_dto.freezed.dart';
+part 'guild_appearance_dto.g.dart';
 
 @freezed
 class GuildAppearanceDto with _$GuildAppearanceDto {
@@ -20,10 +21,6 @@ class GuildAppearanceDto with _$GuildAppearanceDto {
     );
   }
 
-  factory GuildAppearanceDto.fromMap(Map<String, dynamic> map) {
-    return GuildAppearanceDto(
-      nickname: map['nickname'],
-      color: map['color'],
-    );
-  }
+  factory GuildAppearanceDto.fromJson(Map<String, dynamic> json) =>
+      _$GuildAppearanceDtoFromJson(json);
 }

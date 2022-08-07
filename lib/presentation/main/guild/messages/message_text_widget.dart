@@ -8,9 +8,9 @@ class MessageTextWidget extends StatelessWidget {
 
   const MessageTextWidget(
     this.message, {
-    Key? key,
+    super.key,
     this.isCompact = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:valkyrie_app/domain/member/member.dart';
 
 part 'member_dto.freezed.dart';
+part 'member_dto.g.dart';
 
 @freezed
 class MemberDto with _$MemberDto {
@@ -29,15 +30,6 @@ class MemberDto with _$MemberDto {
     );
   }
 
-  factory MemberDto.fromMap(Map<String, dynamic> map) {
-    return MemberDto(
-      id: map['id'],
-      username: map['username'],
-      image: map['image'],
-      isOnline: map['isOnline'],
-      isFriend: map['isFriend'],
-      nickname: map['nickname'],
-      color: map['color'],
-    );
-  }
+  factory MemberDto.fromJson(Map<String, dynamic> json) =>
+      _$MemberDtoFromJson(json);
 }

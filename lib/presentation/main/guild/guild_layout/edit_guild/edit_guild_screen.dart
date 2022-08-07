@@ -8,7 +8,7 @@ import 'package:valkyrie_app/presentation/main/guild/guild_layout/edit_guild/edi
 class EditGuildScreen extends StatelessWidget {
   static const routeName = "/edit-guild";
   final Guild guild;
-  const EditGuildScreen({Key? key, required this.guild}) : super(key: key);
+  const EditGuildScreen({super.key, required this.guild});
 
   @override
   Widget build(BuildContext context) {

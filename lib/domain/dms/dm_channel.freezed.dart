@@ -148,9 +148,9 @@ abstract class _DMChannel extends DMChannel {
   const _DMChannel._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  DMUser get user => throw _privateConstructorUsedError;
+  DMUser get user;
   @override
   @JsonKey(ignore: true)
   _$$_DMChannelCopyWith<_$_DMChannel> get copyWith =>
@@ -314,11 +314,11 @@ abstract class _DMNotification extends DMNotification {
   const _DMNotification._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  int get count => throw _privateConstructorUsedError;
+  int get count;
   @override
-  DMUser get user => throw _privateConstructorUsedError;
+  DMUser get user;
   @override
   @JsonKey(ignore: true)
   _$$_DMNotificationCopyWith<_$_DMNotification> get copyWith =>

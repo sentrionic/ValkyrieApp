@@ -12,9 +12,9 @@ import 'package:valkyrie_app/presentation/main/guild/guild_layout/manage_bans/ma
 class GuildOverviewActions extends StatelessWidget {
   final Guild guild;
   const GuildOverviewActions({
-    Key? key,
+    super.key,
     required this.guild,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

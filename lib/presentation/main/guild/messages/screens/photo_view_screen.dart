@@ -12,10 +12,10 @@ class PhotoViewScreen extends StatelessWidget {
   final String filename;
 
   const PhotoViewScreen({
-    Key? key,
+    super.key,
     required this.url,
     required this.filename,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +34,9 @@ class _PhotoViewContent extends StatelessWidget {
   final String filename;
 
   const _PhotoViewContent({
-    Key? key,
     required this.url,
     required this.filename,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -8,7 +8,7 @@ class StartUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: ColoredBox(
         color: ThemeColors.appBackground,
         child: Container(
           margin: const EdgeInsets.all(20),

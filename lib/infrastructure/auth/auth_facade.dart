@@ -38,7 +38,7 @@ class AuthFacade implements IAuthFacade {
       final cookies = response.headers['set-cookie'];
       _setCookie(cookies!);
       final results = jsonDecode(response.data);
-      final account = AccountDto.fromMap(results).toDomain();
+      final account = AccountDto.fromJson(results).toDomain();
       _setUserData(account);
       return right(unit);
     } on DioError catch (err) {
@@ -74,7 +74,7 @@ class AuthFacade implements IAuthFacade {
       final cookies = response.headers['set-cookie'];
       _setCookie(cookies!);
       final results = jsonDecode(response.data);
-      final account = AccountDto.fromMap(results).toDomain();
+      final account = AccountDto.fromJson(results).toDomain();
       _setUserData(account);
       return right(unit);
     } on DioError catch (err) {

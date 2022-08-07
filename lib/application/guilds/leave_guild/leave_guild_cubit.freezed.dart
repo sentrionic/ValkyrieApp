@@ -466,7 +466,7 @@ class _$_LeaveFailure implements _LeaveFailure {
 abstract class _LeaveFailure implements LeaveGuildState {
   const factory _LeaveFailure(final GuildFailure failure) = _$_LeaveFailure;
 
-  GuildFailure get failure => throw _privateConstructorUsedError;
+  GuildFailure get failure;
   @JsonKey(ignore: true)
   _$$_LeaveFailureCopyWith<_$_LeaveFailure> get copyWith =>
       throw _privateConstructorUsedError;

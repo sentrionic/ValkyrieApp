@@ -474,8 +474,8 @@ abstract class _LoadSuccess implements MessagesState {
   const factory _LoadSuccess(final List<Message> messages,
       {required final bool hasMore}) = _$_LoadSuccess;
 
-  List<Message> get messages => throw _privateConstructorUsedError;
-  bool get hasMore => throw _privateConstructorUsedError;
+  List<Message> get messages;
+  bool get hasMore;
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -632,7 +632,7 @@ abstract class _LoadFailure implements MessagesState {
   const factory _LoadFailure(final MessageFailure messageFailure) =
       _$_LoadFailure;
 
-  MessageFailure get messageFailure => throw _privateConstructorUsedError;
+  MessageFailure get messageFailure;
   @JsonKey(ignore: true)
   _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

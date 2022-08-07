@@ -12,7 +12,7 @@ class HomeBody extends StatelessWidget {
       children: [
         Expanded(
           flex: 3,
-          child: Container(
+          child: ColoredBox(
             color: ThemeColors.guildList,
             child: Column(
               children: [

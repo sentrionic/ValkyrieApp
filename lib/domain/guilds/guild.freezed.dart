@@ -219,17 +219,17 @@ abstract class _Guild extends Guild {
   const _Guild._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  GuildName get name => throw _privateConstructorUsedError;
+  GuildName get name;
   @override
-  String get defaultChannel => throw _privateConstructorUsedError;
+  String get defaultChannel;
   @override
-  String get ownerId => throw _privateConstructorUsedError;
+  String get ownerId;
   @override
-  bool get hasNotification => throw _privateConstructorUsedError;
+  bool get hasNotification;
   @override
-  String? get icon => throw _privateConstructorUsedError;
+  String? get icon;
   @override
   @JsonKey(ignore: true)
   _$$_GuildCopyWith<_$_Guild> get copyWith =>

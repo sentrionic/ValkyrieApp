@@ -12,7 +12,7 @@ import 'package:valkyrie_app/presentation/main/shared/current_guild_pill.dart';
 
 class HomeIconWidget extends StatelessWidget {
   final bool isHome;
-  const HomeIconWidget({Key? key, this.isHome = false}) : super(key: key);
+  const HomeIconWidget({super.key, this.isHome = false});
 
   @override
   Widget build(BuildContext context) {

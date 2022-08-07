@@ -190,14 +190,13 @@ abstract class _CreateGuildState implements CreateGuildState {
           guildFailureOrSuccessOption}) = _$_CreateGuildState;
 
   @override
-  GuildName get name => throw _privateConstructorUsedError;
+  GuildName get name;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<GuildFailure, Guild>> get guildFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<GuildFailure, Guild>> get guildFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_CreateGuildStateCopyWith<_$_CreateGuildState> get copyWith =>

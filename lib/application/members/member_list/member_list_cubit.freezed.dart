@@ -461,7 +461,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements MemberListState {
   const factory _LoadSuccess(final List<Member> members) = _$_LoadSuccess;
 
-  List<Member> get members => throw _privateConstructorUsedError;
+  List<Member> get members;
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -618,7 +618,7 @@ abstract class _LoadFailure implements MemberListState {
   const factory _LoadFailure(final MemberFailure memberFailure) =
       _$_LoadFailure;
 
-  MemberFailure get memberFailure => throw _privateConstructorUsedError;
+  MemberFailure get memberFailure;
   @JsonKey(ignore: true)
   _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

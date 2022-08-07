@@ -17,10 +17,10 @@ class ProfileBottomSheet extends StatelessWidget {
   final Guild? guild;
 
   ProfileBottomSheet({
-    Key? key,
+    super.key,
     required this.member,
     required this.guild,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,7 @@ import 'package:valkyrie_app/presentation/core/colors.dart';
 
 class DMChatHeader extends StatelessWidget {
   final DMChannel channel;
-  const DMChatHeader({Key? key, required this.channel}) : super(key: key);
+  const DMChatHeader({super.key, required this.channel});
 
   @override
   Widget build(BuildContext context) {

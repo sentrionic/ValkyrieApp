@@ -7,7 +7,7 @@ import 'package:valkyrie_app/presentation/main/guild/sheets/guild/guild_settings
 class ChannelDrawerHeader extends StatelessWidget {
   final Guild guild;
 
-  const ChannelDrawerHeader({Key? key, required this.guild}) : super(key: key);
+  const ChannelDrawerHeader({super.key, required this.guild});
 
   @override
   Widget build(BuildContext context) {

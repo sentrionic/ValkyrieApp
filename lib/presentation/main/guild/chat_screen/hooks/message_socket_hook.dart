@@ -49,14 +49,14 @@ class _MessageSocketHookState extends HookState<void, MessageSocketHook> {
         //Message events
         case "new_message":
           {
-            final message = MessageDto.fromMap(response["data"]).toDomain();
+            final message = MessageDto.fromJson(response["data"]).toDomain();
             hook.context.read<MessagesCubit>().addNewMessage(message);
             break;
           }
 
         case "edit_message":
           {
-            final message = MessageDto.fromMap(response["data"]).toDomain();
+            final message = MessageDto.fromJson(response["data"]).toDomain();
             hook.context.read<MessagesCubit>().updateMessage(message);
             break;
           }

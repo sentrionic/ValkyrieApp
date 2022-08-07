@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+ChannelDto _$ChannelDtoFromJson(Map<String, dynamic> json) {
+  return _ChannelDto.fromJson(json);
+}
+
 /// @nodoc
 mixin _$ChannelDto {
   String get id => throw _privateConstructorUsedError;
@@ -21,6 +25,7 @@ mixin _$ChannelDto {
   bool get isPublic => throw _privateConstructorUsedError;
   bool get hasNotification => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ChannelDtoCopyWith<ChannelDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -119,7 +124,7 @@ class __$$_ChannelDtoCopyWithImpl<$Res> extends _$ChannelDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_ChannelDto extends _ChannelDto {
   const _$_ChannelDto(
       {required this.id,
@@ -127,6 +132,9 @@ class _$_ChannelDto extends _ChannelDto {
       required this.isPublic,
       required this.hasNotification})
       : super._();
+
+  factory _$_ChannelDto.fromJson(Map<String, dynamic> json) =>
+      _$$_ChannelDtoFromJson(json);
 
   @override
   final String id;
@@ -154,6 +162,7 @@ class _$_ChannelDto extends _ChannelDto {
                 .equals(other.hasNotification, hasNotification));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -166,6 +175,13 @@ class _$_ChannelDto extends _ChannelDto {
   @override
   _$$_ChannelDtoCopyWith<_$_ChannelDto> get copyWith =>
       __$$_ChannelDtoCopyWithImpl<_$_ChannelDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ChannelDtoToJson(
+      this,
+    );
+  }
 }
 
 abstract class _ChannelDto extends ChannelDto {
@@ -176,14 +192,17 @@ abstract class _ChannelDto extends ChannelDto {
       required final bool hasNotification}) = _$_ChannelDto;
   const _ChannelDto._() : super._();
 
+  factory _ChannelDto.fromJson(Map<String, dynamic> json) =
+      _$_ChannelDto.fromJson;
+
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  bool get isPublic => throw _privateConstructorUsedError;
+  bool get isPublic;
   @override
-  bool get hasNotification => throw _privateConstructorUsedError;
+  bool get hasNotification;
   @override
   @JsonKey(ignore: true)
   _$$_ChannelDtoCopyWith<_$_ChannelDto> get copyWith =>

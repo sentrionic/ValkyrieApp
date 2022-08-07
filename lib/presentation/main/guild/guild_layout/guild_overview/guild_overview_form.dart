@@ -15,7 +15,7 @@ enum _PopupActions { delete }
 
 class GuildOverviewForm extends StatelessWidget {
   final Guild guild;
-  const GuildOverviewForm({Key? key, required this.guild}) : super(key: key);
+  const GuildOverviewForm({super.key, required this.guild});
 
   @override
   Widget build(BuildContext context) {

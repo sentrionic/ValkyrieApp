@@ -27,7 +27,7 @@ void main() {
   group('GetAccount', () {
     final data = fixture('account.json');
     final result = json.decode(data);
-    final account = AccountDto.fromMap(result);
+    final account = AccountDto.fromJson(result);
 
     void setUpHttpSuccess() {
       when(() => client.get(any())).thenAnswer(
@@ -168,7 +168,7 @@ void main() {
   group("UpdateAccount", () {
     final data = fixture('account.json');
     final result = json.decode(data);
-    final account = AccountDto.fromMap(result);
+    final account = AccountDto.fromJson(result);
 
     final errorData = fixture('field_errors.json');
 

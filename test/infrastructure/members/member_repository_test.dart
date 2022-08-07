@@ -32,7 +32,7 @@ void main() {
     final data = fixture('member_list.json');
     final results = json.decode(data);
     final List<Member> memberList = [];
-    results.forEach((m) => memberList.add(MemberDto.fromMap(m).toDomain()));
+    results.forEach((m) => memberList.add(MemberDto.fromJson(m).toDomain()));
     final guildId = getRandomId();
 
     void setUpHttpSuccessList() {
@@ -139,7 +139,7 @@ void main() {
   group('GetGuildAppearance', () {
     final data = fixture('appearance.json');
     final result = json.decode(data);
-    final appearance = GuildAppearanceDto.fromMap(result).toDomain();
+    final appearance = GuildAppearanceDto.fromJson(result).toDomain();
     final guildId = getRandomId();
 
     void setUpHttpSuccessList() {
@@ -848,7 +848,7 @@ void main() {
     final results = json.decode(data);
     final List<BannedMember> memberList = [];
     results
-        .forEach((m) => memberList.add(BannedMemberDto.fromMap(m).toDomain()));
+        .forEach((m) => memberList.add(BannedMemberDto.fromJson(m).toDomain()));
     final guildId = getRandomId();
 
     void setUpHttpSuccessList() {

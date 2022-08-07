@@ -15,10 +15,10 @@ class GuildSettingsSheet extends StatelessWidget {
   final Guild guild;
   final GuildListCubit cubit;
   const GuildSettingsSheet({
-    Key? key,
+    super.key,
     required this.guild,
     required this.cubit,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +37,9 @@ class _GuildSettingsSheet extends StatelessWidget {
   final Guild guild;
   final GuildListCubit cubit;
   _GuildSettingsSheet({
-    Key? key,
     required this.guild,
     required this.cubit,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

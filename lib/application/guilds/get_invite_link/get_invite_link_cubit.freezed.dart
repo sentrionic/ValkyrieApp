@@ -459,7 +459,7 @@ class _$_FetchSuccess implements _FetchSuccess {
 abstract class _FetchSuccess implements GetInviteLinkState {
   const factory _FetchSuccess(final String inviteLink) = _$_FetchSuccess;
 
-  String get inviteLink => throw _privateConstructorUsedError;
+  String get inviteLink;
   @JsonKey(ignore: true)
   _$$_FetchSuccessCopyWith<_$_FetchSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -614,7 +614,7 @@ class _$_FetchFailure implements _FetchFailure {
 abstract class _FetchFailure implements GetInviteLinkState {
   const factory _FetchFailure(final GuildFailure failure) = _$_FetchFailure;
 
-  GuildFailure get failure => throw _privateConstructorUsedError;
+  GuildFailure get failure;
   @JsonKey(ignore: true)
   _$$_FetchFailureCopyWith<_$_FetchFailure> get copyWith =>
       throw _privateConstructorUsedError;

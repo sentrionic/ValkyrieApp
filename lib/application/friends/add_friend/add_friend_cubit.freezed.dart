@@ -189,14 +189,13 @@ abstract class _AddFriendState implements AddFriendState {
           failureOrSuccessOption}) = _$_AddFriendState;
 
   @override
-  UID get uid => throw _privateConstructorUsedError;
+  UID get uid;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<FriendFailure, Unit>> get failureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<FriendFailure, Unit>> get failureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_AddFriendStateCopyWith<_$_AddFriendState> get copyWith =>

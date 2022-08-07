@@ -190,15 +190,15 @@ abstract class _DMUser extends DMUser {
   const _DMUser._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
-  bool get isOnline => throw _privateConstructorUsedError;
+  bool get isOnline;
   @override
-  bool get isFriend => throw _privateConstructorUsedError;
+  bool get isFriend;
   @override
   @JsonKey(ignore: true)
   _$$_DMUserCopyWith<_$_DMUser> get copyWith =>

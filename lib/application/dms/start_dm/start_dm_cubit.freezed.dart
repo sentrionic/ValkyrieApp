@@ -465,7 +465,7 @@ class _$_FetchSuccess implements _FetchSuccess {
 abstract class _FetchSuccess implements StartDMState {
   const factory _FetchSuccess(final DMChannel channel) = _$_FetchSuccess;
 
-  DMChannel get channel => throw _privateConstructorUsedError;
+  DMChannel get channel;
   @JsonKey(ignore: true)
   _$$_FetchSuccessCopyWith<_$_FetchSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -622,7 +622,7 @@ abstract class _FetchFailure implements StartDMState {
   const factory _FetchFailure(final DMChannelFailure channelFailure) =
       _$_FetchFailure;
 
-  DMChannelFailure get channelFailure => throw _privateConstructorUsedError;
+  DMChannelFailure get channelFailure;
   @JsonKey(ignore: true)
   _$$_FetchFailureCopyWith<_$_FetchFailure> get copyWith =>
       throw _privateConstructorUsedError;

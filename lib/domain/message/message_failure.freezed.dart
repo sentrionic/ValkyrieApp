@@ -435,7 +435,7 @@ class _$_BadRequest implements _BadRequest {
 abstract class _BadRequest implements MessageFailure {
   const factory _BadRequest(final String message) = _$_BadRequest;
 
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @JsonKey(ignore: true)
   _$$_BadRequestCopyWith<_$_BadRequest> get copyWith =>
       throw _privateConstructorUsedError;

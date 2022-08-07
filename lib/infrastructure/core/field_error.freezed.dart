@@ -14,11 +14,16 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+FieldError _$FieldErrorFromJson(Map<String, dynamic> json) {
+  return _FieldError.fromJson(json);
+}
+
 /// @nodoc
 mixin _$FieldError {
   String get field => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $FieldErrorCopyWith<FieldError> get copyWith =>
       throw _privateConstructorUsedError;
@@ -97,9 +102,12 @@ class __$$_FieldErrorCopyWithImpl<$Res> extends _$FieldErrorCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_FieldError extends _FieldError {
   const _$_FieldError({required this.field, required this.message}) : super._();
+
+  factory _$_FieldError.fromJson(Map<String, dynamic> json) =>
+      _$$_FieldErrorFromJson(json);
 
   @override
   final String field;
@@ -120,6 +128,7 @@ class _$_FieldError extends _FieldError {
             const DeepCollectionEquality().equals(other.message, message));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -130,6 +139,13 @@ class _$_FieldError extends _FieldError {
   @override
   _$$_FieldErrorCopyWith<_$_FieldError> get copyWith =>
       __$$_FieldErrorCopyWithImpl<_$_FieldError>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_FieldErrorToJson(
+      this,
+    );
+  }
 }
 
 abstract class _FieldError extends FieldError {
@@ -138,10 +154,13 @@ abstract class _FieldError extends FieldError {
       required final String message}) = _$_FieldError;
   const _FieldError._() : super._();
 
+  factory _FieldError.fromJson(Map<String, dynamic> json) =
+      _$_FieldError.fromJson;
+
   @override
-  String get field => throw _privateConstructorUsedError;
+  String get field;
   @override
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @override
   @JsonKey(ignore: true)
   _$$_FieldErrorCopyWith<_$_FieldError> get copyWith =>

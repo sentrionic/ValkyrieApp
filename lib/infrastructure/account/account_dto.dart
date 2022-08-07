@@ -3,6 +3,7 @@ import 'package:valkyrie_app/domain/account/account.dart';
 import 'package:valkyrie_app/domain/auth/auth_value_objects.dart';
 
 part 'account_dto.freezed.dart';
+part 'account_dto.g.dart';
 
 @freezed
 class AccountDto with _$AccountDto {
@@ -33,12 +34,6 @@ class AccountDto with _$AccountDto {
     );
   }
 
-  factory AccountDto.fromMap(Map<String, dynamic> map) {
-    return AccountDto(
-      id: map['id'],
-      username: map['username'],
-      email: map['email'],
-      image: map['image'],
-    );
-  }
+  factory AccountDto.fromJson(Map<String, dynamic> json) =>
+      _$AccountDtoFromJson(json);
 }

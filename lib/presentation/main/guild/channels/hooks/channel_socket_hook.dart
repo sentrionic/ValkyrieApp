@@ -50,21 +50,21 @@ class _ChannelSocketHookState extends HookState<void, ChannelSocketHook> {
         //Channel events
         case "add_channel":
           {
-            final channel = ChannelDto.fromMap(response["data"]).toDomain();
+            final channel = ChannelDto.fromJson(response["data"]).toDomain();
             hook.context.read<ChannelListCubit>().addNewChannel(channel);
             break;
           }
 
         case "add_private_channel":
           {
-            final channel = ChannelDto.fromMap(response["data"]).toDomain();
+            final channel = ChannelDto.fromJson(response["data"]).toDomain();
             hook.context.read<ChannelListCubit>().addNewChannel(channel);
             break;
           }
 
         case "edit_channel":
           {
-            final channel = ChannelDto.fromMap(response["data"]).toDomain();
+            final channel = ChannelDto.fromJson(response["data"]).toDomain();
             hook.context.read<ChannelListCubit>().editChannel(channel);
             break;
           }

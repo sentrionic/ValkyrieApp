@@ -14,9 +14,9 @@ import 'package:valkyrie_app/presentation/main/home/direct_messages/dm_screen.da
 class FriendBottomSheetForm extends StatelessWidget {
   final Friend friend;
   const FriendBottomSheetForm({
-    Key? key,
+    super.key,
     required this.friend,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

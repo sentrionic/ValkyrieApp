@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+AccountDto _$AccountDtoFromJson(Map<String, dynamic> json) {
+  return _AccountDto.fromJson(json);
+}
+
 /// @nodoc
 mixin _$AccountDto {
   String get id => throw _privateConstructorUsedError;
@@ -21,6 +25,7 @@ mixin _$AccountDto {
   String get email => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AccountDtoCopyWith<AccountDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -119,7 +124,7 @@ class __$$_AccountDtoCopyWithImpl<$Res> extends _$AccountDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_AccountDto extends _AccountDto {
   const _$_AccountDto(
       {required this.id,
@@ -127,6 +132,9 @@ class _$_AccountDto extends _AccountDto {
       required this.email,
       required this.image})
       : super._();
+
+  factory _$_AccountDto.fromJson(Map<String, dynamic> json) =>
+      _$$_AccountDtoFromJson(json);
 
   @override
   final String id;
@@ -153,6 +161,7 @@ class _$_AccountDto extends _AccountDto {
             const DeepCollectionEquality().equals(other.image, image));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -165,6 +174,13 @@ class _$_AccountDto extends _AccountDto {
   @override
   _$$_AccountDtoCopyWith<_$_AccountDto> get copyWith =>
       __$$_AccountDtoCopyWithImpl<_$_AccountDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_AccountDtoToJson(
+      this,
+    );
+  }
 }
 
 abstract class _AccountDto extends AccountDto {
@@ -175,14 +191,17 @@ abstract class _AccountDto extends AccountDto {
       required final String image}) = _$_AccountDto;
   const _AccountDto._() : super._();
 
+  factory _AccountDto.fromJson(Map<String, dynamic> json) =
+      _$_AccountDto.fromJson;
+
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
   @JsonKey(ignore: true)
   _$$_AccountDtoCopyWith<_$_AccountDto> get copyWith =>

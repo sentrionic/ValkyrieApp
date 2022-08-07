@@ -52,7 +52,7 @@ class _UserSocketHookState extends HookState<void, UserSocketHook>
           case "new_dm_notification":
             {
               final notification =
-                  DMNotificationDto.fromMap(response["data"]).toDomain();
+                  DMNotificationDto.fromJson(response["data"]).toDomain();
               if (context.read<CurrentDMCubit>().state != notification.id) {
                 hook.context
                     .read<DMNotificationsCubit>()

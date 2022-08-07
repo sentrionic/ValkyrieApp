@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+MessageDto _$MessageDtoFromJson(Map<String, dynamic> json) {
+  return _MessageDto.fromJson(json);
+}
+
 /// @nodoc
 mixin _$MessageDto {
   String get id => throw _privateConstructorUsedError;
@@ -23,6 +27,7 @@ mixin _$MessageDto {
   String get updatedAt => throw _privateConstructorUsedError;
   MemberDto get user => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MessageDtoCopyWith<MessageDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -179,7 +184,7 @@ class __$$_MessageDtoCopyWithImpl<$Res> extends _$MessageDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_MessageDto extends _MessageDto {
   const _$_MessageDto(
       {required this.id,
@@ -189,6 +194,9 @@ class _$_MessageDto extends _MessageDto {
       required this.updatedAt,
       required this.user})
       : super._();
+
+  factory _$_MessageDto.fromJson(Map<String, dynamic> json) =>
+      _$$_MessageDtoFromJson(json);
 
   @override
   final String id;
@@ -222,6 +230,7 @@ class _$_MessageDto extends _MessageDto {
             const DeepCollectionEquality().equals(other.user, user));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -236,6 +245,13 @@ class _$_MessageDto extends _MessageDto {
   @override
   _$$_MessageDtoCopyWith<_$_MessageDto> get copyWith =>
       __$$_MessageDtoCopyWithImpl<_$_MessageDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_MessageDtoToJson(
+      this,
+    );
+  }
 }
 
 abstract class _MessageDto extends MessageDto {
@@ -248,22 +264,29 @@ abstract class _MessageDto extends MessageDto {
       required final MemberDto user}) = _$_MessageDto;
   const _MessageDto._() : super._();
 
+  factory _MessageDto.fromJson(Map<String, dynamic> json) =
+      _$_MessageDto.fromJson;
+
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String? get text => throw _privateConstructorUsedError;
+  String? get text;
   @override
-  AttachmentDto? get attachment => throw _privateConstructorUsedError;
+  AttachmentDto? get attachment;
   @override
-  String get createdAt => throw _privateConstructorUsedError;
+  String get createdAt;
   @override
-  String get updatedAt => throw _privateConstructorUsedError;
+  String get updatedAt;
   @override
-  MemberDto get user => throw _privateConstructorUsedError;
+  MemberDto get user;
   @override
   @JsonKey(ignore: true)
   _$$_MessageDtoCopyWith<_$_MessageDto> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+AttachmentDto _$AttachmentDtoFromJson(Map<String, dynamic> json) {
+  return _AttachmentDto.fromJson(json);
 }
 
 /// @nodoc
@@ -272,6 +295,7 @@ mixin _$AttachmentDto {
   String get url => throw _privateConstructorUsedError;
   String get filetype => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AttachmentDtoCopyWith<AttachmentDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -362,11 +386,14 @@ class __$$_AttachmentDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_AttachmentDto extends _AttachmentDto {
   const _$_AttachmentDto(
       {required this.filename, required this.url, required this.filetype})
       : super._();
+
+  factory _$_AttachmentDto.fromJson(Map<String, dynamic> json) =>
+      _$$_AttachmentDtoFromJson(json);
 
   @override
   final String filename;
@@ -390,6 +417,7 @@ class _$_AttachmentDto extends _AttachmentDto {
             const DeepCollectionEquality().equals(other.filetype, filetype));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -401,6 +429,13 @@ class _$_AttachmentDto extends _AttachmentDto {
   @override
   _$$_AttachmentDtoCopyWith<_$_AttachmentDto> get copyWith =>
       __$$_AttachmentDtoCopyWithImpl<_$_AttachmentDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_AttachmentDtoToJson(
+      this,
+    );
+  }
 }
 
 abstract class _AttachmentDto extends AttachmentDto {
@@ -410,12 +445,15 @@ abstract class _AttachmentDto extends AttachmentDto {
       required final String filetype}) = _$_AttachmentDto;
   const _AttachmentDto._() : super._();
 
+  factory _AttachmentDto.fromJson(Map<String, dynamic> json) =
+      _$_AttachmentDto.fromJson;
+
   @override
-  String get filename => throw _privateConstructorUsedError;
+  String get filename;
   @override
-  String get url => throw _privateConstructorUsedError;
+  String get url;
   @override
-  String get filetype => throw _privateConstructorUsedError;
+  String get filetype;
   @override
   @JsonKey(ignore: true)
   _$$_AttachmentDtoCopyWith<_$_AttachmentDto> get copyWith =>

@@ -30,7 +30,7 @@ void main() {
     final data = fixture('friend_list.json');
     final results = json.decode(data);
     final List<Friend> friendList = [];
-    results.forEach((c) => friendList.add(FriendDto.fromMap(c).toDomain()));
+    results.forEach((c) => friendList.add(FriendDto.fromJson(c).toDomain()));
 
     void setUpHttpSuccess() {
       when(() => client.get(any())).thenAnswer(
@@ -850,7 +850,7 @@ void main() {
     final List<FriendRequest> requestList = [];
     results.forEach(
       (c) => requestList.add(
-        FriendRequestDto.fromMap(c).toDomain(),
+        FriendRequestDto.fromJson(c).toDomain(),
       ),
     );
 

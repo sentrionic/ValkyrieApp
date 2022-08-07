@@ -29,7 +29,7 @@ void main() {
     final data = fixture('channel_list.json');
     final results = json.decode(data);
     final List<Channel> channelList = [];
-    results.forEach((c) => channelList.add(ChannelDto.fromMap(c).toDomain()));
+    results.forEach((c) => channelList.add(ChannelDto.fromJson(c).toDomain()));
 
     void setUpHttpSuccess() {
       when(() => client.get(any())).thenAnswer(
@@ -172,7 +172,7 @@ void main() {
     final name = getRandomName();
     final data = fixture('channel.json');
     final result = json.decode(data);
-    final tMockChannel = ChannelDto.fromMap(result).toDomain();
+    final tMockChannel = ChannelDto.fromJson(result).toDomain();
 
     final errorsData = fixture('field_errors.json');
     final errorData = fixture('field_error.json');

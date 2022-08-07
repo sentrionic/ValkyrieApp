@@ -14,12 +14,17 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+BannedMemberDto _$BannedMemberDtoFromJson(Map<String, dynamic> json) {
+  return _BannedMemberDto.fromJson(json);
+}
+
 /// @nodoc
 mixin _$BannedMemberDto {
   String get id => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $BannedMemberDtoCopyWith<BannedMemberDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -110,11 +115,14 @@ class __$$_BannedMemberDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_BannedMemberDto extends _BannedMemberDto {
   const _$_BannedMemberDto(
       {required this.id, required this.username, required this.image})
       : super._();
+
+  factory _$_BannedMemberDto.fromJson(Map<String, dynamic> json) =>
+      _$$_BannedMemberDtoFromJson(json);
 
   @override
   final String id;
@@ -138,6 +146,7 @@ class _$_BannedMemberDto extends _BannedMemberDto {
             const DeepCollectionEquality().equals(other.image, image));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -149,6 +158,13 @@ class _$_BannedMemberDto extends _BannedMemberDto {
   @override
   _$$_BannedMemberDtoCopyWith<_$_BannedMemberDto> get copyWith =>
       __$$_BannedMemberDtoCopyWithImpl<_$_BannedMemberDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_BannedMemberDtoToJson(
+      this,
+    );
+  }
 }
 
 abstract class _BannedMemberDto extends BannedMemberDto {
@@ -158,12 +174,15 @@ abstract class _BannedMemberDto extends BannedMemberDto {
       required final String image}) = _$_BannedMemberDto;
   const _BannedMemberDto._() : super._();
 
+  factory _BannedMemberDto.fromJson(Map<String, dynamic> json) =
+      _$_BannedMemberDto.fromJson;
+
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
   @JsonKey(ignore: true)
   _$$_BannedMemberDtoCopyWith<_$_BannedMemberDto> get copyWith =>

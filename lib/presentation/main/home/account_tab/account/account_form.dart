@@ -10,7 +10,7 @@ import 'package:valkyrie_app/presentation/main/home/account_tab/change_password/
 class AccountForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _key = GlobalKey<FormState>();
+    final key = GlobalKey<FormState>();
     return BlocBuilder<AccountCubit, AccountState>(
       builder: (context, state) {
         return state.maybeWhen(
@@ -20,7 +20,7 @@ class AccountForm extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
-                    child: Container(
+                    child: ColoredBox(
                       color: ThemeColors.dmBackground,
                       child: Column(
                         children: [
@@ -55,7 +55,7 @@ class AccountForm extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: SingleChildScrollView(
                       child: Form(
-                        key: _key,
+                        key: key,
                         autovalidateMode: context
                                 .watch<UpdateAccountBloc>()
                                 .state
@@ -148,7 +148,7 @@ class AccountForm extends StatelessWidget {
                                     ),
                                     onPressed: () {
                                       FocusScope.of(context).unfocus();
-                                      _key.currentState?.save();
+                                      key.currentState?.save();
                                       context.read<UpdateAccountBloc>().add(
                                             const UpdateAccountEvent.saved(),
                                           );

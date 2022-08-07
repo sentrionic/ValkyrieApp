@@ -191,14 +191,13 @@ abstract class _JoinGuildState implements JoinGuildState {
           guildFailureOrSuccessOption}) = _$_JoinGuildState;
 
   @override
-  InviteLink get inviteLink => throw _privateConstructorUsedError;
+  InviteLink get inviteLink;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<GuildFailure, Guild>> get guildFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<GuildFailure, Guild>> get guildFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_JoinGuildStateCopyWith<_$_JoinGuildState> get copyWith =>

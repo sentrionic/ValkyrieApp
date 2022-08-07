@@ -4,9 +4,9 @@ import 'package:valkyrie_app/presentation/core/colors.dart';
 class NotificationIcon extends StatelessWidget {
   final int count;
   const NotificationIcon({
-    Key? key,
+    super.key,
     required this.count,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

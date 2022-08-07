@@ -17,10 +17,10 @@ class MessageBottomSheet extends StatelessWidget {
   final Message message;
   final Guild? guild;
   const MessageBottomSheet({
-    Key? key,
+    super.key,
     required this.message,
     required this.guild,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -43,10 +43,9 @@ class _MessageBottomSheetActions extends StatelessWidget {
   final Message message;
   final Guild? guild;
   _MessageBottomSheetActions({
-    Key? key,
     required this.message,
     required this.guild,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +71,7 @@ class _MessageBottomSheetActions extends StatelessWidget {
           ),
         );
       },
-      child: Container(
+      child: ColoredBox(
         color: ThemeColors.appBackground,
         child: ListView(
           children: [
@@ -126,12 +125,12 @@ class _MessageBottomSheetActions extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) {
-        final _key = GlobalKey<FormState>();
+        final key = GlobalKey<FormState>();
         return AlertDialog(
           title: const Text('Edit Message'),
           content: Form(
             autovalidateMode: AutovalidateMode.onUserInteraction,
-            key: _key,
+            key: key,
             child: TextFormField(
               autocorrect: false,
               initialValue: message.text!.getOrCrash(),
@@ -166,7 +165,7 @@ class _MessageBottomSheetActions extends StatelessWidget {
                 elevation: 0,
               ),
               onPressed: () {
-                _key.currentState?.save();
+                key.currentState?.save();
                 FocusScope.of(context).unfocus();
                 cubit.submitEdit(message.id);
               },

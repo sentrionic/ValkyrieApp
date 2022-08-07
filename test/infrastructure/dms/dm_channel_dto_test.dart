@@ -33,7 +33,7 @@ void main() {
     ),
   );
 
-  group('DMChannelDto.fromMap', () {
+  group('DMChannelDto.fromJson', () {
     test(
       'should return a valid DTO when the JSON is valid',
       () async {
@@ -41,7 +41,7 @@ void main() {
         final jsonMap = json.decode(fixture('dm.json'));
 
         // act
-        final result = DMChannelDto.fromMap(jsonMap);
+        final result = DMChannelDto.fromJson(jsonMap);
 
         // assert
         expect(result, tDMChannelDto);
@@ -55,7 +55,7 @@ void main() {
         final jsonMap = json.decode(fixture('dm.json'));
 
         // act
-        final result = DMChannelDto.fromMap(jsonMap);
+        final result = DMChannelDto.fromJson(jsonMap);
 
         // assert
         expect(result.toDomain(), tDMChannel);
@@ -88,7 +88,7 @@ void main() {
     ),
   );
 
-  group('DMNotificationDto.fromMap', () {
+  group('DMNotificationDto.fromJson', () {
     test(
       'should return a valid DTO when the JSON is valid',
       () async {
@@ -96,7 +96,7 @@ void main() {
         final jsonMap = json.decode(fixture('dm.json'));
 
         // act
-        final result = DMNotificationDto.fromMap(jsonMap);
+        final result = DMNotificationDto.fromJson(jsonMap);
 
         // assert
         expect(result, tDMNotificationDto);
@@ -110,7 +110,7 @@ void main() {
         final jsonMap = json.decode(fixture('dm.json'));
 
         // act
-        final result = DMNotificationDto.fromMap(jsonMap);
+        final result = DMNotificationDto.fromJson(jsonMap);
 
         // assert
         expect(result.toDomain(), tDMNotification);

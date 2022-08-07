@@ -231,18 +231,17 @@ abstract class _ChangePasswordState implements ChangePasswordState {
           authFailureOrSuccessOption}) = _$_ChangePasswordState;
 
   @override
-  Password get oldPassword => throw _privateConstructorUsedError;
+  Password get oldPassword;
   @override
-  Password get newPassword => throw _privateConstructorUsedError;
+  Password get newPassword;
   @override
-  Password get confirmNewPassword => throw _privateConstructorUsedError;
+  Password get confirmNewPassword;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_ChangePasswordStateCopyWith<_$_ChangePasswordState> get copyWith =>

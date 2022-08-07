@@ -460,7 +460,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements BanListState {
   const factory _LoadSuccess(final List<BannedMember> members) = _$_LoadSuccess;
 
-  List<BannedMember> get members => throw _privateConstructorUsedError;
+  List<BannedMember> get members;
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -617,7 +617,7 @@ abstract class _LoadFailure implements BanListState {
   const factory _LoadFailure(final MemberFailure memberFailure) =
       _$_LoadFailure;
 
-  MemberFailure get memberFailure => throw _privateConstructorUsedError;
+  MemberFailure get memberFailure;
   @JsonKey(ignore: true)
   _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

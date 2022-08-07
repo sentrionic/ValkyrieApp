@@ -465,7 +465,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements AccountState {
   const factory _LoadSuccess(final Account account) = _$_LoadSuccess;
 
-  Account get account => throw _privateConstructorUsedError;
+  Account get account;
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -620,7 +620,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements AccountState {
   const factory _LoadFailure(final AccountFailure failure) = _$_LoadFailure;
 
-  AccountFailure get failure => throw _privateConstructorUsedError;
+  AccountFailure get failure;
   @JsonKey(ignore: true)
   _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+DMUserDto _$DMUserDtoFromJson(Map<String, dynamic> json) {
+  return _DMUserDto.fromJson(json);
+}
+
 /// @nodoc
 mixin _$DMUserDto {
   String get id => throw _privateConstructorUsedError;
@@ -22,6 +26,7 @@ mixin _$DMUserDto {
   bool get isOnline => throw _privateConstructorUsedError;
   bool get isFriend => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DMUserDtoCopyWith<DMUserDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -130,7 +135,7 @@ class __$$_DMUserDtoCopyWithImpl<$Res> extends _$DMUserDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_DMUserDto extends _DMUserDto {
   const _$_DMUserDto(
       {required this.id,
@@ -139,6 +144,9 @@ class _$_DMUserDto extends _DMUserDto {
       required this.isOnline,
       required this.isFriend})
       : super._();
+
+  factory _$_DMUserDto.fromJson(Map<String, dynamic> json) =>
+      _$$_DMUserDtoFromJson(json);
 
   @override
   final String id;
@@ -168,6 +176,7 @@ class _$_DMUserDto extends _DMUserDto {
             const DeepCollectionEquality().equals(other.isFriend, isFriend));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -181,6 +190,13 @@ class _$_DMUserDto extends _DMUserDto {
   @override
   _$$_DMUserDtoCopyWith<_$_DMUserDto> get copyWith =>
       __$$_DMUserDtoCopyWithImpl<_$_DMUserDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_DMUserDtoToJson(
+      this,
+    );
+  }
 }
 
 abstract class _DMUserDto extends DMUserDto {
@@ -192,16 +208,19 @@ abstract class _DMUserDto extends DMUserDto {
       required final bool isFriend}) = _$_DMUserDto;
   const _DMUserDto._() : super._();
 
+  factory _DMUserDto.fromJson(Map<String, dynamic> json) =
+      _$_DMUserDto.fromJson;
+
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
-  bool get isOnline => throw _privateConstructorUsedError;
+  bool get isOnline;
   @override
-  bool get isFriend => throw _privateConstructorUsedError;
+  bool get isFriend;
   @override
   @JsonKey(ignore: true)
   _$$_DMUserDtoCopyWith<_$_DMUserDto> get copyWith =>

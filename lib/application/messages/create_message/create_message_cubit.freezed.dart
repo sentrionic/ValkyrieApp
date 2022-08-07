@@ -191,14 +191,13 @@ abstract class _CreateMessageState implements CreateMessageState {
           messageFailureOrSuccessOption}) = _$_CreateMessageState;
 
   @override
-  MessageText get text => throw _privateConstructorUsedError;
+  MessageText get text;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<MessageFailure, Unit>> get messageFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<MessageFailure, Unit>> get messageFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_CreateMessageStateCopyWith<_$_CreateMessageState> get copyWith =>

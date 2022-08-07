@@ -14,7 +14,7 @@ import 'package:valkyrie_app/presentation/main/guild/members/widgets/role_label.
 class MemberDrawer extends StatelessWidget {
   final Guild guild;
 
-  const MemberDrawer({Key? key, required this.guild}) : super(key: key);
+  const MemberDrawer({super.key, required this.guild});
 
   @override
   Widget build(BuildContext context) {

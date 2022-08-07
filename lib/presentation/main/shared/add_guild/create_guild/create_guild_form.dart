@@ -15,7 +15,7 @@ class CreateGuildForm extends StatelessWidget {
   final current = getCurrentUser();
   @override
   Widget build(BuildContext context) {
-    final _key = GlobalKey<FormState>();
+    final key = GlobalKey<FormState>();
     return BlocListener<CreateGuildCubit, CreateGuildState>(
       listener: (context, state) {
         state.guildFailureOrSuccessOption.fold(
@@ -57,7 +57,7 @@ class CreateGuildForm extends StatelessWidget {
             color: ThemeColors.appBackground,
             height: double.infinity,
             child: Form(
-              key: _key,
+              key: key,
               autovalidateMode: state.showErrorMessages
                   ? AutovalidateMode.always
                   : AutovalidateMode.disabled,
@@ -131,7 +131,7 @@ class CreateGuildForm extends StatelessWidget {
                             ),
                             onPressed: () {
                               FocusScope.of(context).unfocus();
-                              _key.currentState?.save();
+                              key.currentState?.save();
                               context
                                   .read<CreateGuildCubit>()
                                   .submitCreateGuild();

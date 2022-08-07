@@ -230,18 +230,17 @@ abstract class _EditGuildState implements EditGuildState {
           guildFailureOrSuccessOption}) = _$_EditGuildState;
 
   @override
-  GuildName get name => throw _privateConstructorUsedError;
+  GuildName get name;
   @override
-  File? get icon => throw _privateConstructorUsedError;
+  File? get icon;
   @override
-  String? get iconUrl => throw _privateConstructorUsedError;
+  String? get iconUrl;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<GuildFailure, Unit>> get guildFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<GuildFailure, Unit>> get guildFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_EditGuildStateCopyWith<_$_EditGuildState> get copyWith =>

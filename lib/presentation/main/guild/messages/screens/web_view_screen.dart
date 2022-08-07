@@ -7,10 +7,10 @@ class WebViewScreen extends StatelessWidget {
   final String filename;
 
   const WebViewScreen({
-    Key? key,
+    super.key,
     required this.url,
     required this.filename,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

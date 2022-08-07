@@ -47,7 +47,7 @@ class _GuildSocketHookState extends HookState<void, GuildSocketHook> {
           //Guild events
           case "edit_guild":
             {
-              final guild = GuildDto.fromMap(response["data"]).toDomain();
+              final guild = GuildDto.fromJson(response["data"]).toDomain();
               hook.context.read<GuildListCubit>().editGuild(guild);
               break;
             }

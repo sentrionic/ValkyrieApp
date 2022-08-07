@@ -9,7 +9,7 @@ import 'package:valkyrie_app/presentation/main/guild/guild_layout/manage_bans/ma
 class ManageBansScreen extends StatelessWidget {
   static const routeName = "/manage-bans";
   final Guild guild;
-  const ManageBansScreen({Key? key, required this.guild}) : super(key: key);
+  const ManageBansScreen({super.key, required this.guild});
 
   @override
   Widget build(BuildContext context) {

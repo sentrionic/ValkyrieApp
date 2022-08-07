@@ -462,7 +462,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements ChannelListState {
   const factory _LoadSuccess(final List<Channel> channels) = _$_LoadSuccess;
 
-  List<Channel> get channels => throw _privateConstructorUsedError;
+  List<Channel> get channels;
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -619,7 +619,7 @@ abstract class _LoadFailure implements ChannelListState {
   const factory _LoadFailure(final ChannelFailure channelFailure) =
       _$_LoadFailure;
 
-  ChannelFailure get channelFailure => throw _privateConstructorUsedError;
+  ChannelFailure get channelFailure;
   @JsonKey(ignore: true)
   _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

@@ -40,7 +40,7 @@ void main() {
     ),
   );
 
-  group('MessageDto.fromMap', () {
+  group('MessageDto.fromJson', () {
     test(
       'should return a valid DTO when the JSON is valid',
       () async {
@@ -48,7 +48,7 @@ void main() {
         final jsonMap = json.decode(fixture('message.json'));
 
         // act
-        final result = MessageDto.fromMap(jsonMap);
+        final result = MessageDto.fromJson(jsonMap);
 
         // assert
         expect(result, tMessageDto);
@@ -62,7 +62,7 @@ void main() {
         final jsonMap = json.decode(fixture('message.json'));
 
         // act
-        final result = MessageDto.fromMap(jsonMap);
+        final result = MessageDto.fromJson(jsonMap);
 
         // assert
         expect(result.toDomain(), tMessage);
@@ -82,7 +82,7 @@ void main() {
     filetype: "image/png",
   );
 
-  group('AttachmentDto.fromMap', () {
+  group('AttachmentDto.fromJson', () {
     test(
       'should return a valid DTO when the JSON is valid',
       () async {
@@ -90,7 +90,7 @@ void main() {
         final jsonMap = json.decode(fixture('attachment.json'));
 
         // act
-        final result = AttachmentDto.fromMap(jsonMap);
+        final result = AttachmentDto.fromJson(jsonMap);
 
         // assert
         expect(result, attachmentDto);
@@ -104,7 +104,7 @@ void main() {
         final jsonMap = json.decode(fixture('attachment.json'));
 
         // act
-        final result = AttachmentDto.fromMap(jsonMap);
+        final result = AttachmentDto.fromJson(jsonMap);
 
         // assert
         expect(result.toDomain(), attachment);

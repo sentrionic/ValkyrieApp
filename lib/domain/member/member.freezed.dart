@@ -236,19 +236,19 @@ abstract class _Member extends Member {
   const _Member._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
-  bool get isOnline => throw _privateConstructorUsedError;
+  bool get isOnline;
   @override
-  bool get isFriend => throw _privateConstructorUsedError;
+  bool get isFriend;
   @override
-  String? get nickname => throw _privateConstructorUsedError;
+  String? get nickname;
   @override
-  String? get color => throw _privateConstructorUsedError;
+  String? get color;
   @override
   @JsonKey(ignore: true)
   _$$_MemberCopyWith<_$_Member> get copyWith =>

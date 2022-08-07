@@ -21,7 +21,7 @@ void main() {
     color: HexColor(color),
   );
 
-  group('GuildAppearanceDto.fromMap', () {
+  group('GuildAppearanceDto.fromJson', () {
     test(
       'should return a valid DTO when the JSON is valid',
       () async {
@@ -29,7 +29,7 @@ void main() {
         final jsonMap = json.decode(fixture('appearance.json'));
 
         // act
-        final result = GuildAppearanceDto.fromMap(jsonMap);
+        final result = GuildAppearanceDto.fromJson(jsonMap);
 
         // assert
         expect(result, tGuildAppearanceDto);
@@ -43,7 +43,7 @@ void main() {
         final jsonMap = json.decode(fixture('appearance.json'));
 
         // act
-        final result = GuildAppearanceDto.fromMap(jsonMap);
+        final result = GuildAppearanceDto.fromJson(jsonMap);
 
         // assert
         expect(result.toDomain(), tGuildAppearance);

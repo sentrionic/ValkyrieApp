@@ -465,7 +465,7 @@ class _$_CloseFailure implements _CloseFailure {
 abstract class _CloseFailure implements CloseDMState {
   const factory _CloseFailure(final DMChannelFailure failure) = _$_CloseFailure;
 
-  DMChannelFailure get failure => throw _privateConstructorUsedError;
+  DMChannelFailure get failure;
   @JsonKey(ignore: true)
   _$$_CloseFailureCopyWith<_$_CloseFailure> get copyWith =>
       throw _privateConstructorUsedError;

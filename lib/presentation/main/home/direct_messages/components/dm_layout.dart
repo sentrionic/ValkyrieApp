@@ -16,16 +16,16 @@ enum _PopupActions { close }
 class DMLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
+    final GlobalKey<ScaffoldState> drawerKey = GlobalKey();
     final dmChannelId = context.read<CurrentDMCubit>().state;
     final dmChannel = context.read<DMListCubit>().getCurrentDM(dmChannelId);
     return Scaffold(
-      key: _drawerKey,
+      key: drawerKey,
       appBar: AppBar(
         title: dmChannel != null ? DMChatHeader(channel: dmChannel) : null,
         leading: IconButton(
           icon: DrawerMenuIcon(),
-          onPressed: () => _drawerKey.currentState!.openDrawer(),
+          onPressed: () => drawerKey.currentState!.openDrawer(),
         ),
         actions: [
           PopupMenuButton(

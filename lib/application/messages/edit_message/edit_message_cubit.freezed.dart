@@ -189,14 +189,13 @@ abstract class _EditMessageState implements EditMessageState {
           saveFailureOrSuccessOption}) = _$_EditMessageState;
 
   @override
-  MessageText get text => throw _privateConstructorUsedError;
+  MessageText get text;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<MessageFailure, Unit>> get saveFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<MessageFailure, Unit>> get saveFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_EditMessageStateCopyWith<_$_EditMessageState> get copyWith =>

@@ -467,7 +467,7 @@ class _$_DeleteFailure implements _DeleteFailure {
 abstract class _DeleteFailure implements DeleteGuildState {
   const factory _DeleteFailure(final GuildFailure failure) = _$_DeleteFailure;
 
-  GuildFailure get failure => throw _privateConstructorUsedError;
+  GuildFailure get failure;
   @JsonKey(ignore: true)
   _$$_DeleteFailureCopyWith<_$_DeleteFailure> get copyWith =>
       throw _privateConstructorUsedError;

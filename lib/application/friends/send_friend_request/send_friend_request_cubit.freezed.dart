@@ -469,7 +469,7 @@ abstract class _ActionFailure implements SendFriendRequestState {
   const factory _ActionFailure(final FriendFailure friendFailure) =
       _$_ActionFailure;
 
-  FriendFailure get friendFailure => throw _privateConstructorUsedError;
+  FriendFailure get friendFailure;
   @JsonKey(ignore: true)
   _$$_ActionFailureCopyWith<_$_ActionFailure> get copyWith =>
       throw _privateConstructorUsedError;

@@ -9,9 +9,9 @@ class RequestItem extends StatelessWidget {
   final FriendRequest request;
 
   const RequestItem({
-    Key? key,
+    super.key,
     required this.request,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

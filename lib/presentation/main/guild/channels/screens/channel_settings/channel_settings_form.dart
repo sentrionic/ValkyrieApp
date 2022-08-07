@@ -19,14 +19,14 @@ class ChannelSettingsForm extends StatelessWidget {
   final String guildId;
 
   const ChannelSettingsForm({
-    Key? key,
+    super.key,
     required this.channel,
     required this.guildId,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    final _key = GlobalKey<FormState>();
+    final key = GlobalKey<FormState>();
     return MultiBlocListener(
       listeners: [
         BlocListener<EditChannelCubit, EditChannelState>(
@@ -116,7 +116,7 @@ class ChannelSettingsForm extends StatelessWidget {
           height: double.infinity,
           child: BlocBuilder<EditChannelCubit, EditChannelState>(
             builder: (context, state) => Form(
-              key: _key,
+              key: key,
               autovalidateMode: state.showErrorMessages
                   ? AutovalidateMode.always
                   : AutovalidateMode.disabled,

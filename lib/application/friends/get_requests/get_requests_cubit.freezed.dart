@@ -464,7 +464,7 @@ abstract class _LoadSuccess implements GetRequestsState {
   const factory _LoadSuccess(final List<FriendRequest> requests) =
       _$_LoadSuccess;
 
-  List<FriendRequest> get requests => throw _privateConstructorUsedError;
+  List<FriendRequest> get requests;
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -619,7 +619,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements GetRequestsState {
   const factory _LoadFailure(final FriendFailure failure) = _$_LoadFailure;
 
-  FriendFailure get failure => throw _privateConstructorUsedError;
+  FriendFailure get failure;
   @JsonKey(ignore: true)
   _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

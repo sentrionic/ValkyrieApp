@@ -11,7 +11,7 @@ import 'package:valkyrie_app/presentation/main/guild/sheets/profile/profile_bott
 class MemberItem extends StatelessWidget {
   final Member member;
 
-  const MemberItem({Key? key, required this.member}) : super(key: key);
+  const MemberItem({super.key, required this.member});
 
   @override
   Widget build(BuildContext context) {

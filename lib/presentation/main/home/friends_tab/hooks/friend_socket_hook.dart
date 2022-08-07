@@ -46,7 +46,7 @@ class _FriendSocketHookState extends HookState<void, FriendSocketHook> {
         switch (response["action"]) {
           case "add_friend":
             {
-              final friend = FriendDto.fromMap(response["data"]).toDomain();
+              final friend = FriendDto.fromJson(response["data"]).toDomain();
               hook.context.read<GetFriendsCubit>().addFriend(friend);
               hook.context.read<GetRequestsCubit>().removeRequest(friend.id);
               break;
@@ -81,7 +81,7 @@ class _FriendSocketHookState extends HookState<void, FriendSocketHook> {
           case "add_request":
             {
               final request =
-                  FriendRequestDto.fromMap(response["data"]).toDomain();
+                  FriendRequestDto.fromJson(response["data"]).toDomain();
               hook.context.read<GetRequestsCubit>().addRequest(request);
               break;
             }

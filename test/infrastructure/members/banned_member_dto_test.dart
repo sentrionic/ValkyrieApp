@@ -21,7 +21,7 @@ void main() {
         "https://gravatar.com/avatar/6bf919361414694081de8f80cedba005?d=identicon",
   );
 
-  group('BannedMemberDto.fromMap', () {
+  group('BannedMemberDto.fromJson', () {
     test(
       'should return a valid DTO when the JSON is valid',
       () async {
@@ -29,7 +29,7 @@ void main() {
         final jsonMap = json.decode(fixture('ban.json'));
 
         // act
-        final result = BannedMemberDto.fromMap(jsonMap);
+        final result = BannedMemberDto.fromJson(jsonMap);
 
         // assert
         expect(result, tBannedMemberDto);
@@ -43,7 +43,7 @@ void main() {
         final jsonMap = json.decode(fixture('ban.json'));
 
         // act
-        final result = BannedMemberDto.fromMap(jsonMap);
+        final result = BannedMemberDto.fromJson(jsonMap);
 
         // assert
         expect(result.toDomain(), tBannedMember);

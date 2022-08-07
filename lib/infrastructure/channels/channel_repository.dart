@@ -25,7 +25,7 @@ class ChannelRepository extends IChannelRepository {
 
       final results = jsonDecode(response.data);
       final List<Channel> list = [];
-      results.forEach((c) => list.add(ChannelDto.fromMap(c).toDomain()));
+      results.forEach((c) => list.add(ChannelDto.fromJson(c).toDomain()));
       return right(list);
     } on DioError catch (err) {
       print(err);
@@ -56,7 +56,7 @@ class ChannelRepository extends IChannelRepository {
         },
       );
       final result = jsonDecode(response.data);
-      return right(ChannelDto.fromMap(result).toDomain());
+      return right(ChannelDto.fromJson(result).toDomain());
     } on DioError catch (err) {
       print(err);
       if (err.response?.statusCode == 400) {
@@ -66,7 +66,7 @@ class ChannelRepository extends IChannelRepository {
 
         if (result["errors"] != null) {
           final list = List<Map<String, dynamic>>.from(result["errors"]);
-          final errors = list.map((e) => FieldError.fromMap(e)).toList();
+          final errors = list.map((e) => FieldError.fromJson(e)).toList();
           if (errors.isNotEmpty) {
             return left(ChannelFailure.badRequest(errors[0].message));
           }
@@ -74,7 +74,7 @@ class ChannelRepository extends IChannelRepository {
 
         if (result["error"] != null) {
           final error = Map<String, dynamic>.from(result["error"]);
-          final fieldError = FieldError.fromMap(error);
+          final fieldError = FieldError.fromJson(error);
           return left(ChannelFailure.badRequest(fieldError.message));
         }
       }

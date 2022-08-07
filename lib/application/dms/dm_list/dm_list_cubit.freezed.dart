@@ -459,7 +459,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements DMListState {
   const factory _LoadSuccess(final List<DMChannel> channels) = _$_LoadSuccess;
 
-  List<DMChannel> get channels => throw _privateConstructorUsedError;
+  List<DMChannel> get channels;
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -613,7 +613,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements DMListState {
   const factory _LoadFailure(final DMChannelFailure failure) = _$_LoadFailure;
 
-  DMChannelFailure get failure => throw _privateConstructorUsedError;
+  DMChannelFailure get failure;
   @JsonKey(ignore: true)
   _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

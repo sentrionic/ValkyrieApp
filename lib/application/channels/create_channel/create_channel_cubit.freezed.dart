@@ -235,18 +235,17 @@ abstract class _CreateChannelState implements CreateChannelState {
           channelFailureOrSuccessOption}) = _$_CreateChannelState;
 
   @override
-  ChannelName get name => throw _privateConstructorUsedError;
+  ChannelName get name;
   @override
-  bool get isPublic => throw _privateConstructorUsedError;
+  bool get isPublic;
   @override
-  List<Member> get members => throw _privateConstructorUsedError;
+  List<Member> get members;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<ChannelFailure, Channel>> get channelFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<ChannelFailure, Channel>> get channelFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_CreateChannelStateCopyWith<_$_CreateChannelState> get copyWith =>

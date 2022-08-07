@@ -8,7 +8,7 @@ import 'package:valkyrie_app/application/account/update_account/update_account_b
 
 class AccountAvatar extends StatefulWidget {
   final String image;
-  const AccountAvatar({Key? key, required this.image}) : super(key: key);
+  const AccountAvatar({super.key, required this.image});
 
   @override
   State<AccountAvatar> createState() => _AccountAvatarState();

@@ -28,7 +28,7 @@ void main() {
     final data = fixture('guild_list.json');
     final results = json.decode(data);
     final List<Guild> guildList = [];
-    results.forEach((g) => guildList.add(GuildDto.fromMap(g).toDomain()));
+    results.forEach((g) => guildList.add(GuildDto.fromJson(g).toDomain()));
 
     void setUpHttpSuccessList(String data) {
       when(() => client.get(any())).thenAnswer(
@@ -134,7 +134,7 @@ void main() {
     const name = "Test Server";
     final data = fixture('guild.json');
     final result = json.decode(data);
-    final tMockGuild = GuildDto.fromMap(result).toDomain();
+    final tMockGuild = GuildDto.fromJson(result).toDomain();
 
     final errorsData = fixture('field_errors.json');
     final errorData = fixture('field_error.json');
@@ -803,7 +803,7 @@ void main() {
     final link = getRandomString(12);
     final data = fixture('guild.json');
     final result = json.decode(data);
-    final tMockGuild = GuildDto.fromMap(result).toDomain();
+    final tMockGuild = GuildDto.fromJson(result).toDomain();
 
     void setUpHttpSuccess() {
       when(

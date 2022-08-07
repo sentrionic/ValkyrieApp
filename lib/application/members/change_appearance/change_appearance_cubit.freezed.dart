@@ -211,16 +211,15 @@ abstract class _ChangeAppearanceState implements ChangeAppearanceState {
           saveFailureOrSuccessOption}) = _$_ChangeAppearanceState;
 
   @override
-  Nickname? get nickname => throw _privateConstructorUsedError;
+  Nickname? get nickname;
   @override
-  HexColor? get hexColor => throw _privateConstructorUsedError;
+  HexColor? get hexColor;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSaving => throw _privateConstructorUsedError;
+  bool get isSaving;
   @override
-  Option<Either<MemberFailure, Unit>> get saveFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<MemberFailure, Unit>> get saveFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_ChangeAppearanceStateCopyWith<_$_ChangeAppearanceState> get copyWith =>

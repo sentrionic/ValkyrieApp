@@ -344,8 +344,8 @@ abstract class ExceedingLength<T> implements ValueFailure<T> {
       required final int max}) = _$ExceedingLength<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
-  int get max => throw _privateConstructorUsedError;
+  T get failedValue;
+  int get max;
   @override
   @JsonKey(ignore: true)
   _$$ExceedingLengthCopyWith<T, _$ExceedingLength<T>> get copyWith =>
@@ -535,7 +535,7 @@ abstract class Empty<T> implements ValueFailure<T> {
   const factory Empty({required final T failedValue}) = _$Empty<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   _$$EmptyCopyWith<T, _$Empty<T>> get copyWith =>
@@ -740,8 +740,8 @@ abstract class TooManyGuilds<T> implements ValueFailure<T> {
       required final int max}) = _$TooManyGuilds<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
-  int get max => throw _privateConstructorUsedError;
+  T get failedValue;
+  int get max;
   @override
   @JsonKey(ignore: true)
   _$$TooManyGuildsCopyWith<T, _$TooManyGuilds<T>> get copyWith =>
@@ -935,7 +935,7 @@ abstract class InvalidEmail<T> implements ValueFailure<T> {
       _$InvalidEmail<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   _$$InvalidEmailCopyWith<T, _$InvalidEmail<T>> get copyWith =>
@@ -1130,7 +1130,7 @@ abstract class InvalidUsername<T> implements ValueFailure<T> {
       _$InvalidUsername<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   _$$InvalidUsernameCopyWith<T, _$InvalidUsername<T>> get copyWith =>
@@ -1325,7 +1325,7 @@ abstract class InvalidChannelName<T> implements ValueFailure<T> {
       _$InvalidChannelName<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   _$$InvalidChannelNameCopyWith<T, _$InvalidChannelName<T>> get copyWith =>
@@ -1519,7 +1519,7 @@ abstract class ShortPassword<T> implements ValueFailure<T> {
       _$ShortPassword<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   _$$ShortPasswordCopyWith<T, _$ShortPassword<T>> get copyWith =>
@@ -1714,7 +1714,7 @@ abstract class PasswordsDontMatch<T> implements ValueFailure<T> {
       _$PasswordsDontMatch<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   _$$PasswordsDontMatchCopyWith<T, _$PasswordsDontMatch<T>> get copyWith =>
@@ -1919,8 +1919,8 @@ abstract class ExceedingSize<T> implements ValueFailure<T> {
       required final int max}) = _$ExceedingSize<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
-  int get max => throw _privateConstructorUsedError;
+  T get failedValue;
+  int get max;
   @override
   @JsonKey(ignore: true)
   _$$ExceedingSizeCopyWith<T, _$ExceedingSize<T>> get copyWith =>
@@ -2114,7 +2114,7 @@ abstract class InvalidColor<T> implements ValueFailure<T> {
       _$InvalidColor<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   _$$InvalidColorCopyWith<T, _$InvalidColor<T>> get copyWith =>
@@ -2307,7 +2307,7 @@ abstract class InvalidUID<T> implements ValueFailure<T> {
   const factory InvalidUID({required final T failedValue}) = _$InvalidUID<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   _$$InvalidUIDCopyWith<T, _$InvalidUID<T>> get copyWith =>

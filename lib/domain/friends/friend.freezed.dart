@@ -171,13 +171,13 @@ abstract class _Friend extends Friend {
   const _Friend._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
-  bool get isOnline => throw _privateConstructorUsedError;
+  bool get isOnline;
   @override
   @JsonKey(ignore: true)
   _$$_FriendCopyWith<_$_Friend> get copyWith =>

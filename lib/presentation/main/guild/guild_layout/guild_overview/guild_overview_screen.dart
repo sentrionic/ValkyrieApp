@@ -9,7 +9,7 @@ import 'package:valkyrie_app/presentation/main/guild/guild_layout/guild_overview
 class GuildOverviewScreen extends StatelessWidget {
   static const routeName = "/guild-overview";
   final Guild guild;
-  const GuildOverviewScreen({Key? key, required this.guild}) : super(key: key);
+  const GuildOverviewScreen({super.key, required this.guild});
 
   @override
   Widget build(BuildContext context) {

@@ -26,7 +26,7 @@ class AccountRepository extends IAccountRepository {
     try {
       final response = await _dio.get('/account');
       final results = jsonDecode(response.data);
-      final account = AccountDto.fromMap(results).toDomain();
+      final account = AccountDto.fromJson(results).toDomain();
       _setUserData(account);
       return right(account);
     } on DioError catch (err) {
@@ -67,7 +67,7 @@ class AccountRepository extends IAccountRepository {
       final response = await _dio.put('/account', data: formData);
 
       final results = jsonDecode(response.data);
-      final account = AccountDto.fromMap(results).toDomain();
+      final account = AccountDto.fromJson(results).toDomain();
       _setUserData(account);
       return right(account);
     } on DioError catch (err) {

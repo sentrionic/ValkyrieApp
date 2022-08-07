@@ -9,10 +9,10 @@ class GuildInfoContainer extends StatelessWidget {
   final Guild guild;
   final bool isOwner;
   const GuildInfoContainer({
-    Key? key,
+    super.key,
     required this.guild,
     required this.isOwner,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class GuildInfoContainer extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
-          child: Container(
+          child: ColoredBox(
             color: ThemeColors.infoBackground,
             child: Column(
               children: [

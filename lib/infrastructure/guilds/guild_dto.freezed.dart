@@ -14,15 +14,22 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+GuildDto _$GuildDtoFromJson(Map<String, dynamic> json) {
+  return _GuildDto.fromJson(json);
+}
+
 /// @nodoc
 mixin _$GuildDto {
   String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String get name =>
+      throw _privateConstructorUsedError; // ignore: invalid_annotation_target
+  @JsonKey(name: "default_channel_id")
   String get defaultChannelId => throw _privateConstructorUsedError;
   String get ownerId => throw _privateConstructorUsedError;
   bool get hasNotification => throw _privateConstructorUsedError;
   String? get icon => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GuildDtoCopyWith<GuildDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,7 +42,7 @@ abstract class $GuildDtoCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      String defaultChannelId,
+      @JsonKey(name: "default_channel_id") String defaultChannelId,
       String ownerId,
       bool hasNotification,
       String? icon});
@@ -96,7 +103,7 @@ abstract class _$$_GuildDtoCopyWith<$Res> implements $GuildDtoCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      String defaultChannelId,
+      @JsonKey(name: "default_channel_id") String defaultChannelId,
       String ownerId,
       bool hasNotification,
       String? icon});
@@ -151,22 +158,27 @@ class __$$_GuildDtoCopyWithImpl<$Res> extends _$GuildDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_GuildDto extends _GuildDto {
   const _$_GuildDto(
       {required this.id,
       required this.name,
-      required this.defaultChannelId,
+      @JsonKey(name: "default_channel_id") required this.defaultChannelId,
       required this.ownerId,
       required this.hasNotification,
       this.icon})
       : super._();
 
+  factory _$_GuildDto.fromJson(Map<String, dynamic> json) =>
+      _$$_GuildDtoFromJson(json);
+
   @override
   final String id;
   @override
   final String name;
+// ignore: invalid_annotation_target
   @override
+  @JsonKey(name: "default_channel_id")
   final String defaultChannelId;
   @override
   final String ownerId;
@@ -195,6 +207,7 @@ class _$_GuildDto extends _GuildDto {
             const DeepCollectionEquality().equals(other.icon, icon));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -209,30 +222,41 @@ class _$_GuildDto extends _GuildDto {
   @override
   _$$_GuildDtoCopyWith<_$_GuildDto> get copyWith =>
       __$$_GuildDtoCopyWithImpl<_$_GuildDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_GuildDtoToJson(
+      this,
+    );
+  }
 }
 
 abstract class _GuildDto extends GuildDto {
   const factory _GuildDto(
       {required final String id,
       required final String name,
-      required final String defaultChannelId,
+      @JsonKey(name: "default_channel_id")
+          required final String defaultChannelId,
       required final String ownerId,
       required final bool hasNotification,
       final String? icon}) = _$_GuildDto;
   const _GuildDto._() : super._();
 
+  factory _GuildDto.fromJson(Map<String, dynamic> json) = _$_GuildDto.fromJson;
+
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
+  @override // ignore: invalid_annotation_target
+  @JsonKey(name: "default_channel_id")
+  String get defaultChannelId;
   @override
-  String get defaultChannelId => throw _privateConstructorUsedError;
+  String get ownerId;
   @override
-  String get ownerId => throw _privateConstructorUsedError;
+  bool get hasNotification;
   @override
-  bool get hasNotification => throw _privateConstructorUsedError;
-  @override
-  String? get icon => throw _privateConstructorUsedError;
+  String? get icon;
   @override
   @JsonKey(ignore: true)
   _$$_GuildDtoCopyWith<_$_GuildDto> get copyWith =>

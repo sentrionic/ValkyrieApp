@@ -225,7 +225,7 @@ class _$_EmailChanged implements _EmailChanged {
 abstract class _EmailChanged implements UpdateAccountEvent {
   const factory _EmailChanged(final String email) = _$_EmailChanged;
 
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @JsonKey(ignore: true)
   _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -371,7 +371,7 @@ class _$_UsernameChanged implements _UsernameChanged {
 abstract class _UsernameChanged implements UpdateAccountEvent {
   const factory _UsernameChanged(final String username) = _$_UsernameChanged;
 
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @JsonKey(ignore: true)
   _$$_UsernameChangedCopyWith<_$_UsernameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -517,7 +517,7 @@ class _$_ImageChanged implements _ImageChanged {
 abstract class _ImageChanged implements UpdateAccountEvent {
   const factory _ImageChanged(final File image) = _$_ImageChanged;
 
-  File get image => throw _privateConstructorUsedError;
+  File get image;
   @JsonKey(ignore: true)
   _$$_ImageChangedCopyWith<_$_ImageChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -853,18 +853,17 @@ abstract class _UpdateAccountState implements UpdateAccountState {
           saveFailureOrSuccessOption}) = _$_UpdateAccountState;
 
   @override
-  Username get username => throw _privateConstructorUsedError;
+  Username get username;
   @override
-  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  EmailAddress get emailAddress;
   @override
-  File? get image => throw _privateConstructorUsedError;
+  File? get image;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSaving => throw _privateConstructorUsedError;
+  bool get isSaving;
   @override
-  Option<Either<AccountFailure, Account>> get saveFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<AccountFailure, Account>> get saveFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_UpdateAccountStateCopyWith<_$_UpdateAccountState> get copyWith =>

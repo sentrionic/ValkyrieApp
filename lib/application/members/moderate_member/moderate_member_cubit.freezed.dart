@@ -469,7 +469,7 @@ abstract class _ActionFailure implements ModerateMemberState {
   const factory _ActionFailure(final MemberFailure actionFailure) =
       _$_ActionFailure;
 
-  MemberFailure get actionFailure => throw _privateConstructorUsedError;
+  MemberFailure get actionFailure;
   @JsonKey(ignore: true)
   _$$_ActionFailureCopyWith<_$_ActionFailure> get copyWith =>
       throw _privateConstructorUsedError;

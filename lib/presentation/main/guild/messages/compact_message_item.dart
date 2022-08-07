@@ -10,7 +10,7 @@ import 'package:valkyrie_app/presentation/main/guild/sheets/message/message_bott
 class CompactMessageItem extends StatelessWidget {
   final Message message;
 
-  const CompactMessageItem({Key? key, required this.message}) : super(key: key);
+  const CompactMessageItem({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {

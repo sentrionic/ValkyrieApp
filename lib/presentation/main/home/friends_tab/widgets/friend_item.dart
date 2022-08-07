@@ -11,9 +11,9 @@ class FriendItem extends StatelessWidget {
   final Friend friend;
 
   const FriendItem({
-    Key? key,
+    super.key,
     required this.friend,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

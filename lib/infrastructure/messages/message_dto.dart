@@ -4,6 +4,7 @@ import 'package:valkyrie_app/domain/message/message_value_objects.dart';
 import 'package:valkyrie_app/infrastructure/members/member_dto.dart';
 
 part 'message_dto.freezed.dart';
+part 'message_dto.g.dart';
 
 @freezed
 class MessageDto with _$MessageDto {
@@ -29,18 +30,8 @@ class MessageDto with _$MessageDto {
     );
   }
 
-  factory MessageDto.fromMap(Map<String, dynamic> map) {
-    return MessageDto(
-      id: map['id'],
-      text: map['text'],
-      attachment: map['attachment'] != null
-          ? AttachmentDto.fromMap(map['attachment'])
-          : null,
-      createdAt: map['createdAt'],
-      updatedAt: map['updatedAt'],
-      user: MemberDto.fromMap(map['user']),
-    );
-  }
+  factory MessageDto.fromJson(Map<String, dynamic> json) =>
+      _$MessageDtoFromJson(json);
 }
 
 @freezed
@@ -61,11 +52,6 @@ class AttachmentDto with _$AttachmentDto {
     );
   }
 
-  factory AttachmentDto.fromMap(Map<String, dynamic> map) {
-    return AttachmentDto(
-      filename: map['filename'],
-      url: map['url'],
-      filetype: map['filetype'],
-    );
-  }
+  factory AttachmentDto.fromJson(Map<String, dynamic> json) =>
+      _$AttachmentDtoFromJson(json);
 }

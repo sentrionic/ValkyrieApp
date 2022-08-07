@@ -29,7 +29,7 @@ void main() {
     final data = fixture('message_list.json');
     final results = json.decode(data);
     final List<Message> messageList = [];
-    results.forEach((m) => messageList.add(MessageDto.fromMap(m).toDomain()));
+    results.forEach((m) => messageList.add(MessageDto.fromJson(m).toDomain()));
     final channelId = getRandomId();
 
     void setUpHttpSuccessList() {

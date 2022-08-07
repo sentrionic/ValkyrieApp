@@ -178,13 +178,13 @@ abstract class _FriendRequest extends FriendRequest {
   const _FriendRequest._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
-  RequestType get type => throw _privateConstructorUsedError;
+  RequestType get type;
   @override
   @JsonKey(ignore: true)
   _$$_FriendRequestCopyWith<_$_FriendRequest> get copyWith =>

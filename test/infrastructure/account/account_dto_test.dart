@@ -24,7 +24,7 @@ void main() {
         "https://harmony-cdn.s3.eu-central-1.amazonaws.com/files/valkyrie/users/1440949629427388416/1440950088254885888.jpeg",
   );
 
-  group('AccountDto.fromMap', () {
+  group('AccountDto.fromJson', () {
     test(
       'should return a valid DTO when the JSON is valid',
       () async {
@@ -32,7 +32,7 @@ void main() {
         final jsonMap = json.decode(fixture('account.json'));
 
         // act
-        final result = AccountDto.fromMap(jsonMap);
+        final result = AccountDto.fromJson(jsonMap);
 
         // assert
         expect(result, tAccountDto);
@@ -46,7 +46,7 @@ void main() {
         final jsonMap = json.decode(fixture('account.json'));
 
         // act
-        final result = AccountDto.fromMap(jsonMap);
+        final result = AccountDto.fromJson(jsonMap);
 
         // assert
         expect(result.toDomain(), tAccount);

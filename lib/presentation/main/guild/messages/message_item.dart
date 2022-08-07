@@ -13,7 +13,7 @@ import 'package:valkyrie_app/presentation/main/guild/sheets/profile/profile_bott
 class MessageItem extends StatelessWidget {
   final Message message;
 
-  const MessageItem({Key? key, required this.message}) : super(key: key);
+  const MessageItem({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {

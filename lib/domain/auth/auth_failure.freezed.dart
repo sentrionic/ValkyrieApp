@@ -573,7 +573,7 @@ class _$_BadRequest implements _BadRequest {
 abstract class _BadRequest implements AuthFailure {
   const factory _BadRequest(final String error) = _$_BadRequest;
 
-  String get error => throw _privateConstructorUsedError;
+  String get error;
   @JsonKey(ignore: true)
   _$$_BadRequestCopyWith<_$_BadRequest> get copyWith =>
       throw _privateConstructorUsedError;

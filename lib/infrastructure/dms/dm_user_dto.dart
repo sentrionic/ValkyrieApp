@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:valkyrie_app/domain/dms/dm_user.dart';
 
 part 'dm_user_dto.freezed.dart';
+part 'dm_user_dto.g.dart';
 
 @freezed
 class DMUserDto with _$DMUserDto {
@@ -25,13 +26,6 @@ class DMUserDto with _$DMUserDto {
     );
   }
 
-  factory DMUserDto.fromMap(Map<String, dynamic> map) {
-    return DMUserDto(
-      id: map['id'],
-      username: map['username'],
-      image: map['image'],
-      isOnline: map['isOnline'],
-      isFriend: map['isFriend'],
-    );
-  }
+  factory DMUserDto.fromJson(Map<String, dynamic> json) =>
+      _$DMUserDtoFromJson(json);
 }

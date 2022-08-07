@@ -9,7 +9,7 @@ import 'package:valkyrie_app/presentation/main/guild/channels/widgets/invite_but
 class ChannelDrawer extends StatelessWidget {
   final Guild guild;
 
-  const ChannelDrawer({Key? key, required this.guild}) : super(key: key);
+  const ChannelDrawer({super.key, required this.guild});
 
   @override
   Widget build(BuildContext context) {

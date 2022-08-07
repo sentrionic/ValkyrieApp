@@ -225,7 +225,7 @@ class _$EmailChanged implements EmailChanged {
 abstract class EmailChanged implements RegisterFormEvent {
   const factory EmailChanged(final String email) = _$EmailChanged;
 
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @JsonKey(ignore: true)
   _$$EmailChangedCopyWith<_$EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -371,7 +371,7 @@ class _$PasswordChanged implements PasswordChanged {
 abstract class PasswordChanged implements RegisterFormEvent {
   const factory PasswordChanged(final String password) = _$PasswordChanged;
 
-  String get password => throw _privateConstructorUsedError;
+  String get password;
   @JsonKey(ignore: true)
   _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -517,7 +517,7 @@ class _$UsernameChanged implements UsernameChanged {
 abstract class UsernameChanged implements RegisterFormEvent {
   const factory UsernameChanged(final String username) = _$UsernameChanged;
 
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @JsonKey(ignore: true)
   _$$UsernameChangedCopyWith<_$UsernameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -855,18 +855,17 @@ abstract class _RegisterFormState implements RegisterFormState {
           authFailureOrSuccessOption}) = _$_RegisterFormState;
 
   @override
-  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  EmailAddress get emailAddress;
   @override
-  Username get username => throw _privateConstructorUsedError;
+  Username get username;
   @override
-  Password get password => throw _privateConstructorUsedError;
+  Password get password;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_RegisterFormStateCopyWith<_$_RegisterFormState> get copyWith =>

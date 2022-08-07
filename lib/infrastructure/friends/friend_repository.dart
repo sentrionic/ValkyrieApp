@@ -25,7 +25,7 @@ class FriendRepository extends IFriendRepository {
 
       final results = jsonDecode(response.data);
       final List<Friend> list = [];
-      results.forEach((f) => list.add(FriendDto.fromMap(f).toDomain()));
+      results.forEach((f) => list.add(FriendDto.fromJson(f).toDomain()));
       return right(list);
     } on DioError catch (err) {
       print(err);
@@ -121,7 +121,7 @@ class FriendRepository extends IFriendRepository {
 
       final results = jsonDecode(response.data);
       final List<FriendRequest> list = [];
-      results.forEach((f) => list.add(FriendRequestDto.fromMap(f).toDomain()));
+      results.forEach((f) => list.add(FriendRequestDto.fromJson(f).toDomain()));
       return right(list);
     } on DioError catch (err) {
       print(err);

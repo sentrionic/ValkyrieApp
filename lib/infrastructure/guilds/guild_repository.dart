@@ -24,7 +24,7 @@ class GuildRepository extends IGuildRepository {
 
       final results = jsonDecode(response.data);
       final List<Guild> list = [];
-      results.forEach((g) => list.add(GuildDto.fromMap(g).toDomain()));
+      results.forEach((g) => list.add(GuildDto.fromJson(g).toDomain()));
       return right(list);
     } on DioError catch (err) {
       print(err);
@@ -45,7 +45,7 @@ class GuildRepository extends IGuildRepository {
         },
       );
       final result = jsonDecode(response.data);
-      return right(GuildDto.fromMap(result).toDomain());
+      return right(GuildDto.fromJson(result).toDomain());
     } on DioError catch (err) {
       print(err);
       if (err.response?.statusCode == 400) {
@@ -55,7 +55,7 @@ class GuildRepository extends IGuildRepository {
 
         if (result["errors"] != null) {
           final list = List<Map<String, dynamic>>.from(result["errors"]);
-          final errors = list.map((e) => FieldError.fromMap(e)).toList();
+          final errors = list.map((e) => FieldError.fromJson(e)).toList();
           if (errors.isNotEmpty) {
             return left(GuildFailure.badRequest(errors[0].message));
           }
@@ -63,7 +63,7 @@ class GuildRepository extends IGuildRepository {
 
         if (result["error"] != null) {
           final error = Map<String, dynamic>.from(result["error"]);
-          final fieldError = FieldError.fromMap(error);
+          final fieldError = FieldError.fromJson(error);
           return left(GuildFailure.badRequest(fieldError.message));
         }
       }
@@ -183,7 +183,7 @@ class GuildRepository extends IGuildRepository {
       );
 
       final result = jsonDecode(response.data);
-      return right(GuildDto.fromMap(result).toDomain());
+      return right(GuildDto.fromJson(result).toDomain());
     } on DioError catch (err) {
       if (err.response?.statusCode == 400) {
         final error = FieldError.getError(err.response!);

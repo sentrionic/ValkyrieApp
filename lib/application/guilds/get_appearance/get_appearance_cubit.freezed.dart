@@ -468,7 +468,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements GetAppearanceState {
   const factory _LoadSuccess(final GuildAppearance appearance) = _$_LoadSuccess;
 
-  GuildAppearance get appearance => throw _privateConstructorUsedError;
+  GuildAppearance get appearance;
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -623,7 +623,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements GetAppearanceState {
   const factory _LoadFailure(final MemberFailure failure) = _$_LoadFailure;
 
-  MemberFailure get failure => throw _privateConstructorUsedError;
+  MemberFailure get failure;
   @JsonKey(ignore: true)
   _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

@@ -245,17 +245,17 @@ abstract class _Message extends Message {
   const _Message._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  MessageText? get text => throw _privateConstructorUsedError;
+  MessageText? get text;
   @override
-  Attachment? get attachment => throw _privateConstructorUsedError;
+  Attachment? get attachment;
   @override
-  String get createdAt => throw _privateConstructorUsedError;
+  String get createdAt;
   @override
-  String get updatedAt => throw _privateConstructorUsedError;
+  String get updatedAt;
   @override
-  Member get user => throw _privateConstructorUsedError;
+  Member get user;
   @override
   @JsonKey(ignore: true)
   _$$_MessageCopyWith<_$_Message> get copyWith =>
@@ -403,11 +403,11 @@ abstract class _Attachment extends Attachment {
   const _Attachment._() : super._();
 
   @override
-  String? get filename => throw _privateConstructorUsedError;
+  String? get filename;
   @override
-  String? get url => throw _privateConstructorUsedError;
+  String? get url;
   @override
-  String? get filetype => throw _privateConstructorUsedError;
+  String? get filetype;
   @override
   @JsonKey(ignore: true)
   _$$_AttachmentCopyWith<_$_Attachment> get copyWith =>

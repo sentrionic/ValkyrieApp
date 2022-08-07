@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:valkyrie_app/domain/member/banned_member.dart';
 
 part 'banned_member_dto.freezed.dart';
+part 'banned_member_dto.g.dart';
 
 @freezed
 class BannedMemberDto with _$BannedMemberDto {
@@ -21,11 +22,6 @@ class BannedMemberDto with _$BannedMemberDto {
     );
   }
 
-  factory BannedMemberDto.fromMap(Map<String, dynamic> map) {
-    return BannedMemberDto(
-      id: map['id'],
-      username: map['username'],
-      image: map['image'],
-    );
-  }
+  factory BannedMemberDto.fromJson(Map<String, dynamic> json) =>
+      _$BannedMemberDtoFromJson(json);
 }

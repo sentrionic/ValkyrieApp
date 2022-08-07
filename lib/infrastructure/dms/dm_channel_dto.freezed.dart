@@ -14,11 +14,16 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+DMChannelDto _$DMChannelDtoFromJson(Map<String, dynamic> json) {
+  return _DMChannelDto.fromJson(json);
+}
+
 /// @nodoc
 mixin _$DMChannelDto {
   String get id => throw _privateConstructorUsedError;
   DMUserDto get user => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DMChannelDtoCopyWith<DMChannelDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -110,9 +115,12 @@ class __$$_DMChannelDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_DMChannelDto extends _DMChannelDto {
   const _$_DMChannelDto({required this.id, required this.user}) : super._();
+
+  factory _$_DMChannelDto.fromJson(Map<String, dynamic> json) =>
+      _$$_DMChannelDtoFromJson(json);
 
   @override
   final String id;
@@ -133,6 +141,7 @@ class _$_DMChannelDto extends _DMChannelDto {
             const DeepCollectionEquality().equals(other.user, user));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -143,6 +152,13 @@ class _$_DMChannelDto extends _DMChannelDto {
   @override
   _$$_DMChannelDtoCopyWith<_$_DMChannelDto> get copyWith =>
       __$$_DMChannelDtoCopyWithImpl<_$_DMChannelDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_DMChannelDtoToJson(
+      this,
+    );
+  }
 }
 
 abstract class _DMChannelDto extends DMChannelDto {
@@ -151,14 +167,21 @@ abstract class _DMChannelDto extends DMChannelDto {
       required final DMUserDto user}) = _$_DMChannelDto;
   const _DMChannelDto._() : super._();
 
+  factory _DMChannelDto.fromJson(Map<String, dynamic> json) =
+      _$_DMChannelDto.fromJson;
+
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  DMUserDto get user => throw _privateConstructorUsedError;
+  DMUserDto get user;
   @override
   @JsonKey(ignore: true)
   _$$_DMChannelDtoCopyWith<_$_DMChannelDto> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+DMNotificationDto _$DMNotificationDtoFromJson(Map<String, dynamic> json) {
+  return _DMNotificationDto.fromJson(json);
 }
 
 /// @nodoc
@@ -166,6 +189,7 @@ mixin _$DMNotificationDto {
   String get id => throw _privateConstructorUsedError;
   DMUserDto get user => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DMNotificationDtoCopyWith<DMNotificationDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -258,10 +282,13 @@ class __$$_DMNotificationDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_DMNotificationDto extends _DMNotificationDto {
   const _$_DMNotificationDto({required this.id, required this.user})
       : super._();
+
+  factory _$_DMNotificationDto.fromJson(Map<String, dynamic> json) =>
+      _$$_DMNotificationDtoFromJson(json);
 
   @override
   final String id;
@@ -282,6 +309,7 @@ class _$_DMNotificationDto extends _DMNotificationDto {
             const DeepCollectionEquality().equals(other.user, user));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -293,6 +321,13 @@ class _$_DMNotificationDto extends _DMNotificationDto {
   _$$_DMNotificationDtoCopyWith<_$_DMNotificationDto> get copyWith =>
       __$$_DMNotificationDtoCopyWithImpl<_$_DMNotificationDto>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_DMNotificationDtoToJson(
+      this,
+    );
+  }
 }
 
 abstract class _DMNotificationDto extends DMNotificationDto {
@@ -301,10 +336,13 @@ abstract class _DMNotificationDto extends DMNotificationDto {
       required final DMUserDto user}) = _$_DMNotificationDto;
   const _DMNotificationDto._() : super._();
 
+  factory _DMNotificationDto.fromJson(Map<String, dynamic> json) =
+      _$_DMNotificationDto.fromJson;
+
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  DMUserDto get user => throw _privateConstructorUsedError;
+  DMUserDto get user;
   @override
   @JsonKey(ignore: true)
   _$$_DMNotificationDtoCopyWith<_$_DMNotificationDto> get copyWith =>

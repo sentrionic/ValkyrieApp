@@ -464,7 +464,7 @@ class _$_FetchSuccess implements _FetchSuccess {
 abstract class _FetchSuccess implements GetPrivateChannelMembersState {
   const factory _FetchSuccess(final List<String> memberIds) = _$_FetchSuccess;
 
-  List<String> get memberIds => throw _privateConstructorUsedError;
+  List<String> get memberIds;
   @JsonKey(ignore: true)
   _$$_FetchSuccessCopyWith<_$_FetchSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -619,7 +619,7 @@ class _$_FetchFailure implements _FetchFailure {
 abstract class _FetchFailure implements GetPrivateChannelMembersState {
   const factory _FetchFailure(final ChannelFailure failure) = _$_FetchFailure;
 
-  ChannelFailure get failure => throw _privateConstructorUsedError;
+  ChannelFailure get failure;
   @JsonKey(ignore: true)
   _$$_FetchFailureCopyWith<_$_FetchFailure> get copyWith =>
       throw _privateConstructorUsedError;

@@ -10,9 +10,9 @@ class MessageFileWidget extends StatelessWidget {
 
   const MessageFileWidget(
     this.message, {
-    Key? key,
+    super.key,
     this.isCompact = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

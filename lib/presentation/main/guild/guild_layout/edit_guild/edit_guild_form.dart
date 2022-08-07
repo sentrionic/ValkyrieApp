@@ -16,9 +16,9 @@ import 'package:valkyrie_app/presentation/main/guild/guild_screen.dart';
 class EditGuildForm extends StatefulWidget {
   final Guild guild;
   const EditGuildForm({
-    Key? key,
+    super.key,
     required this.guild,
-  }) : super(key: key);
+  });
 
   @override
   State<EditGuildForm> createState() => _EditGuildFormState();

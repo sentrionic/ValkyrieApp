@@ -469,7 +469,7 @@ abstract class _ActionFailure implements DeclineRequestState {
   const factory _ActionFailure(final FriendFailure friendFailure) =
       _$_ActionFailure;
 
-  FriendFailure get friendFailure => throw _privateConstructorUsedError;
+  FriendFailure get friendFailure;
   @JsonKey(ignore: true)
   _$$_ActionFailureCopyWith<_$_ActionFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -615,7 +615,7 @@ class _$_ActionSuccess implements _ActionSuccess {
 abstract class _ActionSuccess implements DeclineRequestState {
   const factory _ActionSuccess(final String requestId) = _$_ActionSuccess;
 
-  String get requestId => throw _privateConstructorUsedError;
+  String get requestId;
   @JsonKey(ignore: true)
   _$$_ActionSuccessCopyWith<_$_ActionSuccess> get copyWith =>
       throw _privateConstructorUsedError;

@@ -3,6 +3,7 @@ import 'package:valkyrie_app/domain/channels/channel.dart';
 import 'package:valkyrie_app/domain/channels/channel_value_objects.dart';
 
 part 'channel_dto.freezed.dart';
+part 'channel_dto.g.dart';
 
 @freezed
 class ChannelDto with _$ChannelDto {
@@ -24,12 +25,6 @@ class ChannelDto with _$ChannelDto {
     );
   }
 
-  factory ChannelDto.fromMap(Map<String, dynamic> map) {
-    return ChannelDto(
-      id: map['id'],
-      name: map['name'],
-      isPublic: map['isPublic'],
-      hasNotification: map['hasNotification'] ?? false,
-    );
-  }
+  factory ChannelDto.fromJson(Map<String, dynamic> json) =>
+      _$ChannelDtoFromJson(json);
 }

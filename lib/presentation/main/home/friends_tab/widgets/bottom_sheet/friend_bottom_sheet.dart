@@ -12,10 +12,10 @@ class FriendBottomSheet extends StatelessWidget {
   final Friend friend;
   final BuildContext ctx;
   const FriendBottomSheet({
-    Key? key,
+    super.key,
     required this.friend,
     required this.ctx,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

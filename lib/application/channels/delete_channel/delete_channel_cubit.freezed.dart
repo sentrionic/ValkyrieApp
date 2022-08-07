@@ -467,7 +467,7 @@ class _$_DeleteFailure implements _DeleteFailure {
 abstract class _DeleteFailure implements DeleteChannelState {
   const factory _DeleteFailure(final ChannelFailure failure) = _$_DeleteFailure;
 
-  ChannelFailure get failure => throw _privateConstructorUsedError;
+  ChannelFailure get failure;
   @JsonKey(ignore: true)
   _$$_DeleteFailureCopyWith<_$_DeleteFailure> get copyWith =>
       throw _privateConstructorUsedError;

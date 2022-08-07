@@ -12,10 +12,10 @@ class ChannelSettingsScreen extends StatelessWidget {
   final String guildId;
 
   const ChannelSettingsScreen({
-    Key? key,
+    super.key,
     required this.channel,
     required this.guildId,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

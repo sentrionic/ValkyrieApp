@@ -140,9 +140,9 @@ abstract class _GuildAppearance extends GuildAppearance {
   const _GuildAppearance._() : super._();
 
   @override
-  Nickname? get nickname => throw _privateConstructorUsedError;
+  Nickname? get nickname;
   @override
-  HexColor? get color => throw _privateConstructorUsedError;
+  HexColor? get color;
   @override
   @JsonKey(ignore: true)
   _$$_GuildAppearanceCopyWith<_$_GuildAppearance> get copyWith =>

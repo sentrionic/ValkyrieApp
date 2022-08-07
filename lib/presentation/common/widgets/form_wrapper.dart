@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class FormWrapper extends StatelessWidget {
   final List<Widget> children;
 
-  const FormWrapper({Key? key, required this.children}) : super(key: key);
+  const FormWrapper({super.key, required this.children});
 
   @override
   Widget build(BuildContext context) {

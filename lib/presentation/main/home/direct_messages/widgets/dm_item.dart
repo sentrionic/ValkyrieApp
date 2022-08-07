@@ -10,9 +10,9 @@ class DMChannelItem extends StatelessWidget {
   final DMChannel channel;
 
   const DMChannelItem({
-    Key? key,
+    super.key,
     required this.channel,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

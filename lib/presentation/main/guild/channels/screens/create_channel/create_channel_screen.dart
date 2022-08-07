@@ -11,9 +11,9 @@ class CreateChannelScreen extends StatelessWidget {
   final Guild guild;
 
   const CreateChannelScreen({
-    Key? key,
+    super.key,
     required this.guild,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

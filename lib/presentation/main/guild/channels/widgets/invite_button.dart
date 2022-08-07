@@ -6,7 +6,7 @@ import 'package:valkyrie_app/presentation/main/guild/channels/screens/invite_scr
 
 class InviteButton extends StatelessWidget {
   final Guild guild;
-  const InviteButton({Key? key, required this.guild}) : super(key: key);
+  const InviteButton({super.key, required this.guild});
 
   @override
   Widget build(BuildContext context) {

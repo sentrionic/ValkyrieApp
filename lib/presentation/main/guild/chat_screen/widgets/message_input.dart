@@ -14,7 +14,7 @@ class MessageInput extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _controller = useTextEditingController();
+    final controller = useTextEditingController();
     return BlocListener<CreateMessageCubit, CreateMessageState>(
       listener: (context, state) {
         state.messageFailureOrSuccessOption.fold(
@@ -23,7 +23,7 @@ class MessageInput extends HookWidget {
             (_) => {},
             (_) {
               context.read<CreateMessageCubit>().resetMessageText();
-              _controller.clear();
+              controller.clear();
             },
           ),
         );
@@ -60,7 +60,7 @@ class MessageInput extends HookWidget {
                   context.read<CreateMessageCubit>().messageTextChanged(value);
                 },
                 keyboardType: TextInputType.multiline,
-                controller: _controller,
+                controller: controller,
                 style: const TextStyle(
                   fontSize: 14,
                 ),

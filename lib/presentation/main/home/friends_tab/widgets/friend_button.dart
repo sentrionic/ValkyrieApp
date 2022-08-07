@@ -6,11 +6,11 @@ class FriendButton extends StatelessWidget {
   final Color iconColor;
 
   const FriendButton({
-    Key? key,
+    super.key,
     required this.onClick,
     required this.icon,
     required this.iconColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

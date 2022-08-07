@@ -25,7 +25,7 @@ void main() {
     isFriend: false,
   );
 
-  group('MemberDto.fromMap', () {
+  group('MemberDto.fromJson', () {
     test(
       'should return a valid DTO when the JSON is valid',
       () async {
@@ -33,7 +33,7 @@ void main() {
         final jsonMap = json.decode(fixture('member.json'));
 
         // act
-        final result = MemberDto.fromMap(jsonMap);
+        final result = MemberDto.fromJson(jsonMap);
 
         // assert
         expect(result, tMemberDto);
@@ -47,7 +47,7 @@ void main() {
         final jsonMap = json.decode(fixture('member.json'));
 
         // act
-        final result = MemberDto.fromMap(jsonMap);
+        final result = MemberDto.fromJson(jsonMap);
 
         // assert
         expect(result.toDomain(), tMember);

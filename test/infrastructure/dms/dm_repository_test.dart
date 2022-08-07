@@ -28,7 +28,8 @@ void main() {
     final data = fixture('dm_list.json');
     final results = json.decode(data);
     final List<DMChannel> channelList = [];
-    results.forEach((c) => channelList.add(DMChannelDto.fromMap(c).toDomain()));
+    results
+        .forEach((c) => channelList.add(DMChannelDto.fromJson(c).toDomain()));
 
     void setUpHttpSuccess() {
       when(() => client.get(any())).thenAnswer(
@@ -134,7 +135,7 @@ void main() {
   group("GetOrCreateDirectMessage", () {
     final data = fixture('dm.json');
     final result = json.decode(data);
-    final tMockChannel = DMChannelDto.fromMap(result).toDomain();
+    final tMockChannel = DMChannelDto.fromJson(result).toDomain();
 
     void setUpHttpSuccess() {
       when(

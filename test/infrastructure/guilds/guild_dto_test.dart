@@ -24,7 +24,7 @@ void main() {
     hasNotification: false,
   );
 
-  group('GuildDto.fromMap', () {
+  group('GuildDto.fromJson', () {
     test(
       'should return a valid DTO when the JSON is valid',
       () async {
@@ -32,7 +32,7 @@ void main() {
         final jsonMap = json.decode(fixture('guild.json'));
 
         // act
-        final result = GuildDto.fromMap(jsonMap);
+        final result = GuildDto.fromJson(jsonMap);
 
         // assert
         expect(result, tGuildDto);
@@ -46,7 +46,7 @@ void main() {
         final jsonMap = json.decode(fixture('guild.json'));
 
         // act
-        final result = GuildDto.fromMap(jsonMap);
+        final result = GuildDto.fromJson(jsonMap);
 
         // assert
         expect(result.toDomain(), tGuild);

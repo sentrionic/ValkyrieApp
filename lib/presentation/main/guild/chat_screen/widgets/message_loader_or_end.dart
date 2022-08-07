@@ -8,10 +8,10 @@ class MessageLoaderOrEndIndicator extends StatelessWidget {
   final String channelId;
   final bool isDM;
   const MessageLoaderOrEndIndicator({
-    Key? key,
+    super.key,
     required this.channelId,
     this.isDM = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

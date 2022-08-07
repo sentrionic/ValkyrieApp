@@ -44,7 +44,7 @@ class _ChatLayout extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _controller = useScrollControllerForLoading(context, channelId);
+    final controller = useScrollControllerForLoading(context, channelId);
 
     use(MessageSocketHook(context, channelId));
 
@@ -75,7 +75,7 @@ class _ChatLayout extends HookWidget {
                               : _getMessage(state.messages, index);
                         },
                         itemCount: state.messages.length + 1,
-                        controller: _controller,
+                        controller: controller,
                       ),
                     ),
                     BlocBuilder<UploadImageCubit, UploadImageState>(

@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+FriendRequestDto _$FriendRequestDtoFromJson(Map<String, dynamic> json) {
+  return _FriendRequestDto.fromJson(json);
+}
+
 /// @nodoc
 mixin _$FriendRequestDto {
   String get id => throw _privateConstructorUsedError;
@@ -21,6 +25,7 @@ mixin _$FriendRequestDto {
   String get image => throw _privateConstructorUsedError;
   int get type => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $FriendRequestDtoCopyWith<FriendRequestDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -121,7 +126,7 @@ class __$$_FriendRequestDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_FriendRequestDto extends _FriendRequestDto {
   const _$_FriendRequestDto(
       {required this.id,
@@ -129,6 +134,9 @@ class _$_FriendRequestDto extends _FriendRequestDto {
       required this.image,
       required this.type})
       : super._();
+
+  factory _$_FriendRequestDto.fromJson(Map<String, dynamic> json) =>
+      _$$_FriendRequestDtoFromJson(json);
 
   @override
   final String id;
@@ -155,6 +163,7 @@ class _$_FriendRequestDto extends _FriendRequestDto {
             const DeepCollectionEquality().equals(other.type, type));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -167,6 +176,13 @@ class _$_FriendRequestDto extends _FriendRequestDto {
   @override
   _$$_FriendRequestDtoCopyWith<_$_FriendRequestDto> get copyWith =>
       __$$_FriendRequestDtoCopyWithImpl<_$_FriendRequestDto>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_FriendRequestDtoToJson(
+      this,
+    );
+  }
 }
 
 abstract class _FriendRequestDto extends FriendRequestDto {
@@ -177,14 +193,17 @@ abstract class _FriendRequestDto extends FriendRequestDto {
       required final int type}) = _$_FriendRequestDto;
   const _FriendRequestDto._() : super._();
 
+  factory _FriendRequestDto.fromJson(Map<String, dynamic> json) =
+      _$_FriendRequestDto.fromJson;
+
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
-  int get type => throw _privateConstructorUsedError;
+  int get type;
   @override
   @JsonKey(ignore: true)
   _$$_FriendRequestDtoCopyWith<_$_FriendRequestDto> get copyWith =>

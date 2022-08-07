@@ -158,11 +158,11 @@ abstract class _BannedMember extends BannedMember {
   const _BannedMember._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
   @JsonKey(ignore: true)
   _$$_BannedMemberCopyWith<_$_BannedMember> get copyWith =>

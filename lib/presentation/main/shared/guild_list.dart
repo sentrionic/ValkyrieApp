@@ -13,7 +13,7 @@ class GuildListWidget extends HookWidget {
   Widget build(BuildContext context) {
     final guildId = context.read<CurrentGuildCubit>().state;
     final index = context.read<GuildListCubit>().getCurrentIndex(guildId);
-    final _controller = useScrollController(
+    final controller = useScrollController(
       initialScrollOffset:
           index.toDouble() * WidgetConstants.avatarContainerBorderRadius,
     );
@@ -23,7 +23,7 @@ class GuildListWidget extends HookWidget {
         return state.maybeMap(
           loadSuccess: (state) {
             return ListView.builder(
-              controller: _controller,
+              controller: controller,
               padding: const EdgeInsets.only(top: 5),
               itemBuilder: (context, index) {
                 if (index == state.guilds.length) {

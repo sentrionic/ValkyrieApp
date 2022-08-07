@@ -7,7 +7,7 @@ import 'package:valkyrie_app/presentation/main/shared/home_icon.dart';
 class DrawerGuildList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ColoredBox(
       color: ThemeColors.guildList,
       child: Column(
         children: [
