@@ -161,7 +161,7 @@ class _MessageBottomSheetActions extends StatelessWidget {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: ThemeColors.themeBlue,
+                backgroundColor: ThemeColors.themeBlue,
                 elevation: 0,
               ),
               onPressed: () {

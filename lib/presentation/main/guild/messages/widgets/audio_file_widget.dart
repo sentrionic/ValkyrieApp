@@ -22,7 +22,7 @@ class AudioFileWidget extends StatelessWidget {
         );
       },
       style: ElevatedButton.styleFrom(
-        primary: ThemeColors.dmBackground,
+        backgroundColor: ThemeColors.dmBackground,
         elevation: 0,
         side: const BorderSide(width: 0.5),
       ),

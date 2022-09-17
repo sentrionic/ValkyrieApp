@@ -17,7 +17,7 @@ class InviteButton extends StatelessWidget {
             padding: const EdgeInsets.all(15),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: ThemeColors.inviteGrey,
+                backgroundColor: ThemeColors.inviteGrey,
               ),
               onPressed: () {
                 Navigator.of(context).pushNamed(

@@ -22,7 +22,7 @@ void main() {
     listCubit = ChannelListCubit(mockChannelRepository);
   });
 
-  void _setUpGetUserChannelsSuccess(List<Channel> list, String id) {
+  void setUpGetUserChannelsSuccess(List<Channel> list, String id) {
     when(() => mockChannelRepository.getGuildChannels(id)).thenAnswer(
       (_) => Future.delayed(
         const Duration(milliseconds: 1),
@@ -43,7 +43,7 @@ void main() {
     blocTest<ChannelListCubit, ChannelListState>(
       'emits [loadInProgress, loadSuccess] states for successful channel list fetch',
       build: () {
-        _setUpGetUserChannelsSuccess(channelList, channelId);
+        setUpGetUserChannelsSuccess(channelList, channelId);
         return listCubit;
       },
       act: (cubit) => cubit.getGuildChannels(channelId),
@@ -87,7 +87,7 @@ void main() {
 
     test('successfully returns the channel for the given channelId', () async {
       // arrange
-      _setUpGetUserChannelsSuccess(channelList, channelId);
+      setUpGetUserChannelsSuccess(channelList, channelId);
       await listCubit.getGuildChannels(channelId);
 
       // act
@@ -101,7 +101,7 @@ void main() {
 
     test('returns null if it cannot find the channel', () async {
       // arrange
-      _setUpGetUserChannelsSuccess(channelList, channelId);
+      setUpGetUserChannelsSuccess(channelList, channelId);
       await listCubit.getGuildChannels(channelId);
 
       // act
@@ -134,7 +134,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserChannelsSuccess(channelList, "");
+        setUpGetUserChannelsSuccess(channelList, "");
         await listCubit.getGuildChannels("");
         listCubit.addNewChannel(mockChannel);
       },
@@ -147,7 +147,7 @@ void main() {
 
     test('adds the new channel at the end of the list', () async {
       // arrange
-      _setUpGetUserChannelsSuccess(channelList, "");
+      setUpGetUserChannelsSuccess(channelList, "");
       await listCubit.getGuildChannels("");
 
       // act
@@ -192,7 +192,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
+        setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
         await listCubit.getGuildChannels("");
         listCubit.removeChannel(mockChannel.id);
       },
@@ -205,7 +205,7 @@ void main() {
 
     test('removes the channel from the list', () async {
       // arrange
-      _setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
+      setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
       await listCubit.getGuildChannels("");
 
       // act
@@ -242,7 +242,7 @@ void main() {
     test('does not remove a channel if it cannot find a channel for the id',
         () async {
       // arrange
-      _setUpGetUserChannelsSuccess(channelList, "");
+      setUpGetUserChannelsSuccess(channelList, "");
       await listCubit.getGuildChannels("");
 
       // act
@@ -276,7 +276,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
+        setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
         await listCubit.getGuildChannels("");
         listCubit.editChannel(editedChannel);
       },
@@ -289,7 +289,7 @@ void main() {
 
     test('successfully edits the channel', () async {
       // arrange
-      _setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
+      setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
       await listCubit.getGuildChannels("");
 
       // act
@@ -325,7 +325,7 @@ void main() {
 
     test('does not edit a channel if it cannot find the channel', () async {
       // arrange
-      _setUpGetUserChannelsSuccess(channelList, "");
+      setUpGetUserChannelsSuccess(channelList, "");
       await listCubit.getGuildChannels("");
 
       // act
@@ -357,7 +357,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
+        setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
         await listCubit.getGuildChannels("");
         listCubit.addNotification(mockChannel.id);
       },
@@ -372,7 +372,7 @@ void main() {
 
     test('successfully sets "hasNotification" to true', () async {
       // arrange
-      _setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
+      setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
       await listCubit.getGuildChannels("");
 
       // act
@@ -415,7 +415,7 @@ void main() {
         'does not change the notification of a channel if it cannot find the channel',
         () async {
       // arrange
-      _setUpGetUserChannelsSuccess(channelList, "");
+      setUpGetUserChannelsSuccess(channelList, "");
       await listCubit.getGuildChannels("");
 
       // act
@@ -447,7 +447,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
+        setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
         await listCubit.getGuildChannels("");
         listCubit.clearNotification(mockChannel.id);
       },
@@ -462,7 +462,7 @@ void main() {
 
     test('successfully sets "hasNotification" to false', () async {
       // arrange
-      _setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
+      setUpGetUserChannelsSuccess([...channelList, mockChannel], "");
       await listCubit.getGuildChannels("");
 
       // act
@@ -505,7 +505,7 @@ void main() {
         'does not change the notification of a channel if it cannot find the channel',
         () async {
       // arrange
-      _setUpGetUserChannelsSuccess(channelList, "");
+      setUpGetUserChannelsSuccess(channelList, "");
       await listCubit.getGuildChannels("");
 
       // act

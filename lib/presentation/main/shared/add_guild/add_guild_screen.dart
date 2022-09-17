@@ -48,7 +48,7 @@ class AddGuildScreen extends StatelessWidget {
                     height: 50,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: ThemeColors.messageInput,
+                        backgroundColor: ThemeColors.messageInput,
                       ),
                       onPressed: () => Navigator.of(context).pushNamed(
                         CreateGuildScreen.routeName,
@@ -90,7 +90,7 @@ class AddGuildScreen extends StatelessWidget {
                 Expanded(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: ThemeColors.buttonGray,
+                      backgroundColor: ThemeColors.buttonGray,
                     ),
                     onPressed: () => Navigator.of(context).pushNamed(
                       JoinGuildScreen.routeName,

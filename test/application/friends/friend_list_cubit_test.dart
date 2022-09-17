@@ -20,7 +20,7 @@ void main() {
     listCubit = GetFriendsCubit(repository);
   });
 
-  void _setUpGetUserFriendsSuccess(List<Friend> list) {
+  void setUpGetUserFriendsSuccess(List<Friend> list) {
     when(() => repository.getFriends()).thenAnswer(
       (_) => Future.delayed(
         const Duration(milliseconds: 1),
@@ -40,7 +40,7 @@ void main() {
     blocTest<GetFriendsCubit, GetFriendsState>(
       'emits [loadInProgress, loadSuccess] states for successful friend list fetch',
       build: () {
-        _setUpGetUserFriendsSuccess(friendsList);
+        setUpGetUserFriendsSuccess(friendsList);
         return listCubit;
       },
       act: (cubit) => cubit.getFriends(),
@@ -87,7 +87,7 @@ void main() {
 
     test('successfully returns friends that are online', () async {
       // arrange
-      _setUpGetUserFriendsSuccess([...friendsList, ...offlineList]);
+      setUpGetUserFriendsSuccess([...friendsList, ...offlineList]);
       await listCubit.getFriends();
 
       // act
@@ -124,7 +124,7 @@ void main() {
 
     test('successfully returns friends that are offline', () async {
       // arrange
-      _setUpGetUserFriendsSuccess([...friendsList, ...offlineList]);
+      setUpGetUserFriendsSuccess([...friendsList, ...offlineList]);
       await listCubit.getFriends();
 
       // act
@@ -162,7 +162,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserFriendsSuccess([friend1, friend2, friend3]);
+        setUpGetUserFriendsSuccess([friend1, friend2, friend3]);
         await listCubit.getFriends();
         listCubit.addFriend(newFriend);
       },
@@ -175,7 +175,7 @@ void main() {
 
     test('adds the new friend and sorts the list', () async {
       // arrange
-      _setUpGetUserFriendsSuccess([friend1, friend2, friend3]);
+      setUpGetUserFriendsSuccess([friend1, friend2, friend3]);
       await listCubit.getFriends();
 
       // act
@@ -223,7 +223,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserFriendsSuccess([...friendList, mockFriend]);
+        setUpGetUserFriendsSuccess([...friendList, mockFriend]);
         await listCubit.getFriends();
         listCubit.removeFriend(mockFriend.id);
       },
@@ -236,7 +236,7 @@ void main() {
 
     test('removes the friend from the list', () async {
       // arrange
-      _setUpGetUserFriendsSuccess([...friendList, mockFriend]);
+      setUpGetUserFriendsSuccess([...friendList, mockFriend]);
       await listCubit.getFriends();
 
       // act
@@ -273,7 +273,7 @@ void main() {
     test('does not remove a friend if it cannot find a friend for the id',
         () async {
       // arrange
-      _setUpGetUserFriendsSuccess(friendList);
+      setUpGetUserFriendsSuccess(friendList);
       await listCubit.getFriends();
 
       // act
@@ -306,7 +306,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserFriendsSuccess([...friendList, mockFriend]);
+        setUpGetUserFriendsSuccess([...friendList, mockFriend]);
         await listCubit.getFriends();
         listCubit.toggleOnlineStatus(mockFriend.id, isOnline: false);
       },
@@ -319,7 +319,7 @@ void main() {
 
     test('successfully sets the new online status of the friend', () async {
       // arrange
-      _setUpGetUserFriendsSuccess([...friendList, mockFriend]);
+      setUpGetUserFriendsSuccess([...friendList, mockFriend]);
       await listCubit.getFriends();
 
       // act

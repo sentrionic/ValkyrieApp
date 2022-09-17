@@ -106,7 +106,7 @@ class LoginForm extends StatelessWidget {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: ThemeColors.appBackground,
+                    backgroundColor: ThemeColors.appBackground,
                     elevation: 0,
                   ),
                   onPressed: () {
@@ -130,7 +130,7 @@ class LoginForm extends StatelessWidget {
                     Expanded(
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: ThemeColors.themeBlue,
+                          backgroundColor: ThemeColors.themeBlue,
                         ),
                         onPressed: () {
                           FocusScope.of(context).unfocus();

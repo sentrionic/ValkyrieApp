@@ -145,7 +145,7 @@ class AddFriendForm extends StatelessWidget {
                           height: 45,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              primary: ThemeColors.themeBlue,
+                              backgroundColor: ThemeColors.themeBlue,
                             ),
                             onPressed: () {
                               FocusScope.of(context).unfocus();

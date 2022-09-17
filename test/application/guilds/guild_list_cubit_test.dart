@@ -22,7 +22,7 @@ void main() {
     listCubit = GuildListCubit(mockGuildRepository);
   });
 
-  void _setUpGetUserGuildsSuccess(List<Guild> list) {
+  void setUpGetUserGuildsSuccess(List<Guild> list) {
     when(() => mockGuildRepository.getUserGuilds()).thenAnswer(
       (_) => Future.delayed(
         const Duration(milliseconds: 1),
@@ -42,7 +42,7 @@ void main() {
     blocTest<GuildListCubit, GuildListState>(
       'emits [loadInProgress, loadSuccess] states for successful guild list fetch',
       build: () {
-        _setUpGetUserGuildsSuccess(guildList);
+        setUpGetUserGuildsSuccess(guildList);
         return listCubit;
       },
       act: (cubit) => cubit.getGuilds(),
@@ -82,7 +82,7 @@ void main() {
 
     test('successfully returns the guild for the given guildId', () async {
       // arrange
-      _setUpGetUserGuildsSuccess(guildList);
+      setUpGetUserGuildsSuccess(guildList);
       await listCubit.getGuilds();
 
       // act
@@ -96,7 +96,7 @@ void main() {
 
     test('returns null if it cannot find the guild', () async {
       // arrange
-      _setUpGetUserGuildsSuccess(guildList);
+      setUpGetUserGuildsSuccess(guildList);
       await listCubit.getGuilds();
 
       // act
@@ -126,7 +126,7 @@ void main() {
         'successfully returns the index in the GuildListState for the given guildId',
         () async {
       // arrange
-      _setUpGetUserGuildsSuccess(guildList);
+      setUpGetUserGuildsSuccess(guildList);
       await listCubit.getGuilds();
 
       // act
@@ -141,7 +141,7 @@ void main() {
 
     test('returns null if it cannot find the guild', () async {
       // arrange
-      _setUpGetUserGuildsSuccess(guildList);
+      setUpGetUserGuildsSuccess(guildList);
       await listCubit.getGuilds();
 
       // act
@@ -174,7 +174,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserGuildsSuccess(guildList);
+        setUpGetUserGuildsSuccess(guildList);
         await listCubit.getGuilds();
         listCubit.addNewGuild(mockGuild);
       },
@@ -187,7 +187,7 @@ void main() {
 
     test('adds the new guild at the end of the list', () async {
       // arrange
-      _setUpGetUserGuildsSuccess(guildList);
+      setUpGetUserGuildsSuccess(guildList);
       await listCubit.getGuilds();
 
       // act
@@ -232,7 +232,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserGuildsSuccess([...guildList, mockGuild]);
+        setUpGetUserGuildsSuccess([...guildList, mockGuild]);
         await listCubit.getGuilds();
         listCubit.removeGuild(mockGuild.id);
       },
@@ -245,7 +245,7 @@ void main() {
 
     test('removes the guild from the list', () async {
       // arrange
-      _setUpGetUserGuildsSuccess([...guildList, mockGuild]);
+      setUpGetUserGuildsSuccess([...guildList, mockGuild]);
       await listCubit.getGuilds();
 
       // act
@@ -282,7 +282,7 @@ void main() {
     test('does not remove a guild if it cannot find a guild for the id',
         () async {
       // arrange
-      _setUpGetUserGuildsSuccess(guildList);
+      setUpGetUserGuildsSuccess(guildList);
       await listCubit.getGuilds();
 
       // act
@@ -315,7 +315,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserGuildsSuccess([...guildList, mockGuild]);
+        setUpGetUserGuildsSuccess([...guildList, mockGuild]);
         await listCubit.getGuilds();
         listCubit.editGuild(editedGuild);
       },
@@ -328,7 +328,7 @@ void main() {
 
     test('successfully edits the guild', () async {
       // arrange
-      _setUpGetUserGuildsSuccess([...guildList, mockGuild]);
+      setUpGetUserGuildsSuccess([...guildList, mockGuild]);
       await listCubit.getGuilds();
 
       // act
@@ -364,7 +364,7 @@ void main() {
 
     test('does not edit a guild if it cannot find the guild', () async {
       // arrange
-      _setUpGetUserGuildsSuccess(guildList);
+      setUpGetUserGuildsSuccess(guildList);
       await listCubit.getGuilds();
 
       // act
@@ -396,7 +396,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserGuildsSuccess([...guildList, mockGuild]);
+        setUpGetUserGuildsSuccess([...guildList, mockGuild]);
         await listCubit.getGuilds();
         listCubit.addNotification(mockGuild.id);
       },
@@ -411,7 +411,7 @@ void main() {
 
     test('successfully sets "hasNotification" to true', () async {
       // arrange
-      _setUpGetUserGuildsSuccess([...guildList, mockGuild]);
+      setUpGetUserGuildsSuccess([...guildList, mockGuild]);
       await listCubit.getGuilds();
 
       // act
@@ -454,7 +454,7 @@ void main() {
         'does not change the notification of a guild if it cannot find the guild',
         () async {
       // arrange
-      _setUpGetUserGuildsSuccess(guildList);
+      setUpGetUserGuildsSuccess(guildList);
       await listCubit.getGuilds();
 
       // act
@@ -486,7 +486,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserGuildsSuccess([...guildList, mockGuild]);
+        setUpGetUserGuildsSuccess([...guildList, mockGuild]);
         await listCubit.getGuilds();
         listCubit.clearNotification(mockGuild.id);
       },
@@ -501,7 +501,7 @@ void main() {
 
     test('successfully sets "hasNotification" to false', () async {
       // arrange
-      _setUpGetUserGuildsSuccess([...guildList, mockGuild]);
+      setUpGetUserGuildsSuccess([...guildList, mockGuild]);
       await listCubit.getGuilds();
 
       // act
@@ -544,7 +544,7 @@ void main() {
         'does not change the notification of a guild if it cannot find the guild',
         () async {
       // arrange
-      _setUpGetUserGuildsSuccess(guildList);
+      setUpGetUserGuildsSuccess(guildList);
       await listCubit.getGuilds();
 
       // act

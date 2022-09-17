@@ -11,7 +11,7 @@ Widget getModalButton(
     child: TextButton(
       onPressed: () => onClick(),
       style: TextButton.styleFrom(
-        primary: Colors.white70,
+        backgroundColor: Colors.white70,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),

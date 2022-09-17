@@ -27,7 +27,7 @@ class HomeScreen extends HookWidget {
       AccountScreen(),
     ];
 
-    void _selectTab(int index) {
+    void selectTab(int index) {
       if (currentTab.value != index) {
         navigationQueue.value.removeWhere((element) => element == index);
         navigationQueue.value.addLast(index);
@@ -65,7 +65,7 @@ class HomeScreen extends HookWidget {
           child: Scaffold(
             body: children[currentTab.value],
             bottomNavigationBar: HomeNavigationBar(
-              onSelectTab: _selectTab,
+              onSelectTab: selectTab,
               currentTab: currentTab.value,
             ),
           ),

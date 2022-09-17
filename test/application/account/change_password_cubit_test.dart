@@ -20,7 +20,7 @@ void main() {
     changePasswordCubit = ChangePasswordCubit(mockAuthRepository);
   });
 
-  void _verifyNeverChangePasswordRepositoryCall(
+  void verifyNeverChangePasswordRepositoryCall(
     String oldPassword,
     String newPassword,
     String confirmPassword,
@@ -210,7 +210,7 @@ void main() {
         ),
       ],
       verify: (_) {
-        _verifyNeverChangePasswordRepositoryCall("", newPassword, newPassword);
+        verifyNeverChangePasswordRepositoryCall("", newPassword, newPassword);
       },
     );
 
@@ -234,7 +234,7 @@ void main() {
         ),
       ],
       verify: (_) {
-        _verifyNeverChangePasswordRepositoryCall(oldPassword, "", newPassword);
+        verifyNeverChangePasswordRepositoryCall(oldPassword, "", newPassword);
       },
     );
 
@@ -258,7 +258,7 @@ void main() {
         ),
       ],
       verify: (_) {
-        _verifyNeverChangePasswordRepositoryCall(oldPassword, newPassword, "");
+        verifyNeverChangePasswordRepositoryCall(oldPassword, newPassword, "");
       },
     );
 
@@ -283,7 +283,7 @@ void main() {
         ),
       ],
       verify: (_) {
-        _verifyNeverChangePasswordRepositoryCall(
+        verifyNeverChangePasswordRepositoryCall(
           oldPassword,
           newPassword,
           invalidConfirmPassword,

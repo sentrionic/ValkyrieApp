@@ -21,7 +21,7 @@ void main() {
     listCubit = MemberListCubit(repository);
   });
 
-  void _setUpGetUserMembersSuccess(List<Member> list, String guildId) {
+  void setUpGetUserMembersSuccess(List<Member> list, String guildId) {
     when(() => repository.getGuildMembers(guildId)).thenAnswer(
       (_) => Future.delayed(
         const Duration(milliseconds: 1),
@@ -42,7 +42,7 @@ void main() {
     blocTest<MemberListCubit, MemberListState>(
       'emits [loadInProgress, loadSuccess] states for successful member list fetch',
       build: () {
-        _setUpGetUserMembersSuccess(membersList, guildId);
+        setUpGetUserMembersSuccess(membersList, guildId);
         return listCubit;
       },
       act: (cubit) => cubit.getGuildMembers(guildId),
@@ -91,7 +91,7 @@ void main() {
 
     test('successfully returns members that are online', () async {
       // arrange
-      _setUpGetUserMembersSuccess([...membersList, ...offlineList], guildId);
+      setUpGetUserMembersSuccess([...membersList, ...offlineList], guildId);
       await listCubit.getGuildMembers(guildId);
 
       // act
@@ -130,7 +130,7 @@ void main() {
 
     test('successfully returns members that are offline', () async {
       // arrange
-      _setUpGetUserMembersSuccess([...membersList, ...offlineList], guildId);
+      setUpGetUserMembersSuccess([...membersList, ...offlineList], guildId);
       await listCubit.getGuildMembers(guildId);
 
       // act
@@ -169,7 +169,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserMembersSuccess([member1, member2, member3], guildId);
+        setUpGetUserMembersSuccess([member1, member2, member3], guildId);
         await listCubit.getGuildMembers(guildId);
         listCubit.addNewMember(newMember);
       },
@@ -182,7 +182,7 @@ void main() {
 
     test('adds the new member and sorts the list', () async {
       // arrange
-      _setUpGetUserMembersSuccess([member1, member2, member3], guildId);
+      setUpGetUserMembersSuccess([member1, member2, member3], guildId);
       await listCubit.getGuildMembers(guildId);
 
       // act
@@ -231,7 +231,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserMembersSuccess([...memberList, mockMember], guildId);
+        setUpGetUserMembersSuccess([...memberList, mockMember], guildId);
         await listCubit.getGuildMembers(guildId);
         listCubit.removeMember(mockMember.id);
       },
@@ -244,7 +244,7 @@ void main() {
 
     test('removes the member from the list', () async {
       // arrange
-      _setUpGetUserMembersSuccess([...memberList, mockMember], guildId);
+      setUpGetUserMembersSuccess([...memberList, mockMember], guildId);
       await listCubit.getGuildMembers(guildId);
 
       // act
@@ -281,7 +281,7 @@ void main() {
     test('does not remove a member if it cannot find a member for the id',
         () async {
       // arrange
-      _setUpGetUserMembersSuccess(memberList, guildId);
+      setUpGetUserMembersSuccess(memberList, guildId);
       await listCubit.getGuildMembers(guildId);
 
       // act
@@ -315,7 +315,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserMembersSuccess([...memberList, mockMember], guildId);
+        setUpGetUserMembersSuccess([...memberList, mockMember], guildId);
         await listCubit.getGuildMembers(guildId);
         listCubit.toggleOnlineStatus(mockMember.id, isOnline: false);
       },
@@ -328,7 +328,7 @@ void main() {
 
     test('successfully sets the new online status of the member', () async {
       // arrange
-      _setUpGetUserMembersSuccess([...memberList, mockMember], guildId);
+      setUpGetUserMembersSuccess([...memberList, mockMember], guildId);
       await listCubit.getGuildMembers(guildId);
 
       // act

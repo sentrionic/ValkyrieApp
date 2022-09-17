@@ -126,7 +126,7 @@ class ChangePasswordForm extends StatelessWidget {
                     Expanded(
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: ThemeColors.themeBlue,
+                          backgroundColor: ThemeColors.themeBlue,
                         ),
                         onPressed: () {
                           FocusScope.of(context).unfocus();

@@ -21,7 +21,7 @@ void main() {
     listCubit = DMListCubit(repository);
   });
 
-  void _setUpGetUserDMsSuccess(List<DMChannel> list) {
+  void setUpGetUserDMsSuccess(List<DMChannel> list) {
     when(() => repository.getUserDMs()).thenAnswer(
       (_) => Future.delayed(
         const Duration(milliseconds: 1),
@@ -41,7 +41,7 @@ void main() {
     blocTest<DMListCubit, DMListState>(
       'emits [loadInProgress, loadSuccess] states for successful dm list fetch',
       build: () {
-        _setUpGetUserDMsSuccess(channelList);
+        setUpGetUserDMsSuccess(channelList);
         return listCubit;
       },
       act: (cubit) => cubit.getUserDMs(),
@@ -81,7 +81,7 @@ void main() {
 
     test('successfully returns the dm for the given channelId', () async {
       // arrange
-      _setUpGetUserDMsSuccess(channelList);
+      setUpGetUserDMsSuccess(channelList);
       await listCubit.getUserDMs();
 
       // act
@@ -95,7 +95,7 @@ void main() {
 
     test('returns null if it cannot find the dm', () async {
       // arrange
-      _setUpGetUserDMsSuccess(channelList);
+      setUpGetUserDMsSuccess(channelList);
       await listCubit.getUserDMs();
 
       // act
@@ -128,7 +128,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserDMsSuccess(channelList);
+        setUpGetUserDMsSuccess(channelList);
         await listCubit.getUserDMs();
         listCubit.addNewDM(mockChannel);
       },
@@ -141,7 +141,7 @@ void main() {
 
     test('adds the new dm at the beginning of the list', () async {
       // arrange
-      _setUpGetUserDMsSuccess(channelList);
+      setUpGetUserDMsSuccess(channelList);
       await listCubit.getUserDMs();
 
       // act
@@ -166,7 +166,7 @@ void main() {
     test('moves the dm to the beginning of the list if it already exists',
         () async {
       // arrange
-      _setUpGetUserDMsSuccess([...channelList, mockChannel]);
+      setUpGetUserDMsSuccess([...channelList, mockChannel]);
       await listCubit.getUserDMs();
 
       // act
@@ -210,7 +210,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserDMsSuccess([...channelList, mockChannel]);
+        setUpGetUserDMsSuccess([...channelList, mockChannel]);
         await listCubit.getUserDMs();
         listCubit.removeDM(mockChannel.id);
       },
@@ -223,7 +223,7 @@ void main() {
 
     test('removes the dm from the list', () async {
       // arrange
-      _setUpGetUserDMsSuccess([...channelList, mockChannel]);
+      setUpGetUserDMsSuccess([...channelList, mockChannel]);
       await listCubit.getUserDMs();
 
       // act
@@ -260,7 +260,7 @@ void main() {
     test('does not remove a channel if it cannot find a channel for the id',
         () async {
       // arrange
-      _setUpGetUserDMsSuccess(channelList);
+      setUpGetUserDMsSuccess(channelList);
       await listCubit.getUserDMs();
 
       // act
@@ -290,7 +290,7 @@ void main() {
       'successfully pushes the dm to the top for the given channelId',
       build: () => listCubit,
       act: (cubit) async {
-        _setUpGetUserDMsSuccess([...channelList, mockChannel]);
+        setUpGetUserDMsSuccess([...channelList, mockChannel]);
         await listCubit.getUserDMs();
         listCubit.pushToTop(mockChannel.id);
       },
@@ -305,7 +305,7 @@ void main() {
 
     test('successfully sets pushes the right channel to the top', () async {
       // arrange
-      _setUpGetUserDMsSuccess([...channelList, mockChannel]);
+      setUpGetUserDMsSuccess([...channelList, mockChannel]);
       await listCubit.getUserDMs();
 
       // act
@@ -348,7 +348,7 @@ void main() {
         'does not change the position of a channel if it cannot find the channel',
         () async {
       // arrange
-      _setUpGetUserDMsSuccess(channelList);
+      setUpGetUserDMsSuccess(channelList);
       await listCubit.getUserDMs();
 
       // act

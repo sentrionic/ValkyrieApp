@@ -21,7 +21,7 @@ void main() {
     listCubit = BanListCubit(repository);
   });
 
-  void _setUpGetGuildBansSuccess(List<BannedMember> list, String guildId) {
+  void setUpGetGuildBansSuccess(List<BannedMember> list, String guildId) {
     when(() => repository.getBanList(guildId)).thenAnswer(
       (_) => Future.delayed(
         const Duration(milliseconds: 1),
@@ -42,7 +42,7 @@ void main() {
     blocTest<BanListCubit, BanListState>(
       'emits [loadInProgress, loadSuccess] states for successful ban list fetch',
       build: () {
-        _setUpGetGuildBansSuccess(banList, guildId);
+        setUpGetGuildBansSuccess(banList, guildId);
         return listCubit;
       },
       act: (cubit) => cubit.getGuildBanList(guildId),
@@ -89,7 +89,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetGuildBansSuccess([...banList, mockBan], guildId);
+        setUpGetGuildBansSuccess([...banList, mockBan], guildId);
         await listCubit.getGuildBanList(guildId);
         listCubit.removeBan(mockBan.id);
       },
@@ -102,7 +102,7 @@ void main() {
 
     test('removes the ban from the list', () async {
       // arrange
-      _setUpGetGuildBansSuccess([...banList, mockBan], guildId);
+      setUpGetGuildBansSuccess([...banList, mockBan], guildId);
       await listCubit.getGuildBanList(guildId);
 
       // act
@@ -138,7 +138,7 @@ void main() {
 
     test('does not remove a ban if it cannot find a ban for the id', () async {
       // arrange
-      _setUpGetGuildBansSuccess([...banList, mockBan], guildId);
+      setUpGetGuildBansSuccess([...banList, mockBan], guildId);
       await listCubit.getGuildBanList(guildId);
 
       // act

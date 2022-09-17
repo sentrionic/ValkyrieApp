@@ -20,7 +20,7 @@ void main() {
     listCubit = GetRequestsCubit(repository);
   });
 
-  void _setUpGetUserRequestsSuccess(List<FriendRequest> list) {
+  void setUpGetUserRequestsSuccess(List<FriendRequest> list) {
     when(() => repository.getPendingRequests()).thenAnswer(
       (_) => Future.delayed(
         const Duration(milliseconds: 1),
@@ -40,7 +40,7 @@ void main() {
     blocTest<GetRequestsCubit, GetRequestsState>(
       'emits [loadInProgress, loadSuccess] states for successful request list fetch',
       build: () {
-        _setUpGetUserRequestsSuccess(requestList);
+        setUpGetUserRequestsSuccess(requestList);
         return listCubit;
       },
       act: (cubit) => cubit.getFriendRequests(),
@@ -88,7 +88,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserRequestsSuccess([request1, request2, request3]);
+        setUpGetUserRequestsSuccess([request1, request2, request3]);
         await listCubit.getFriendRequests();
         listCubit.addRequest(newRequest);
       },
@@ -103,7 +103,7 @@ void main() {
 
     test('adds the new request and sorts the list', () async {
       // arrange
-      _setUpGetUserRequestsSuccess([request1, request2, request3]);
+      setUpGetUserRequestsSuccess([request1, request2, request3]);
       await listCubit.getFriendRequests();
 
       // act
@@ -153,7 +153,7 @@ void main() {
         return listCubit;
       },
       act: (cubit) async {
-        _setUpGetUserRequestsSuccess([...requestList, mockRequest]);
+        setUpGetUserRequestsSuccess([...requestList, mockRequest]);
         await listCubit.getFriendRequests();
         listCubit.removeRequest(mockRequest.id);
       },
@@ -166,7 +166,7 @@ void main() {
 
     test('removes the request from the list', () async {
       // arrange
-      _setUpGetUserRequestsSuccess([...requestList, mockRequest]);
+      setUpGetUserRequestsSuccess([...requestList, mockRequest]);
       await listCubit.getFriendRequests();
 
       // act
@@ -203,7 +203,7 @@ void main() {
     test('does not remove a request if it cannot find a request for the id',
         () async {
       // arrange
-      _setUpGetUserRequestsSuccess(requestList);
+      setUpGetUserRequestsSuccess(requestList);
       await listCubit.getFriendRequests();
 
       // act

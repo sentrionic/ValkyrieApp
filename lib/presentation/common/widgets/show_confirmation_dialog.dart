@@ -41,7 +41,7 @@ void showConfirmationDialog(
           ElevatedButton(
             onPressed: () => onSubmit(),
             style: ElevatedButton.styleFrom(
-              primary: buttonColor,
+              backgroundColor: buttonColor,
             ),
             child: Text(buttonPrompt),
           ),

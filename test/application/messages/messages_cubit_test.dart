@@ -20,7 +20,7 @@ void main() {
     repository = MockMessageRepository();
   });
 
-  void _setUpGetChannelMessagesSuccess(List<Message> list, String channelId) {
+  void setUpGetChannelMessagesSuccess(List<Message> list, String channelId) {
     when(() => repository.getChannelMessages(channelId)).thenAnswer(
       (_) => Future.delayed(
         const Duration(milliseconds: 1),
@@ -44,7 +44,7 @@ void main() {
     blocTest<MessagesCubit, MessagesState>(
       'emits [loadInProgress, loadSuccess] states for successful message list fetch',
       build: () {
-        _setUpGetChannelMessagesSuccess(messageList, channelId);
+        setUpGetChannelMessagesSuccess(messageList, channelId);
         return MessagesCubit(repository);
       },
       act: (cubit) => cubit.getChannelMessages(channelId),
@@ -204,7 +204,7 @@ void main() {
       'successfully adds the new message',
       build: () => MessagesCubit(repository),
       act: (cubit) async {
-        _setUpGetChannelMessagesSuccess(messageList, channelId);
+        setUpGetChannelMessagesSuccess(messageList, channelId);
         await cubit.getChannelMessages(channelId);
         cubit.addNewMessage(mockMessage);
       },
@@ -221,7 +221,7 @@ void main() {
     test('adds the new message at the beginning of the list', () async {
       // arrange
       final cubit = MessagesCubit(repository);
-      _setUpGetChannelMessagesSuccess(messageList, channelId);
+      setUpGetChannelMessagesSuccess(messageList, channelId);
       await cubit.getChannelMessages(channelId);
 
       // act
@@ -272,7 +272,7 @@ void main() {
       'successfully removes the message for the given messageId',
       build: () => MessagesCubit(repository),
       act: (cubit) async {
-        _setUpGetChannelMessagesSuccess(
+        setUpGetChannelMessagesSuccess(
           [...messageList, mockMessage],
           channelId,
         );
@@ -292,7 +292,7 @@ void main() {
     test('removes the message from the list', () async {
       // arrange
       final cubit = MessagesCubit(repository);
-      _setUpGetChannelMessagesSuccess([...messageList, mockMessage], channelId);
+      setUpGetChannelMessagesSuccess([...messageList, mockMessage], channelId);
       await cubit.getChannelMessages(channelId);
 
       // act
@@ -331,7 +331,7 @@ void main() {
         () async {
       // arrange
       final cubit = MessagesCubit(repository);
-      _setUpGetChannelMessagesSuccess(messageList, channelId);
+      setUpGetChannelMessagesSuccess(messageList, channelId);
       await cubit.getChannelMessages(channelId);
 
       // act
@@ -364,7 +364,7 @@ void main() {
       'successfully edits the message for the given message',
       build: () => MessagesCubit(repository),
       act: (cubit) async {
-        _setUpGetChannelMessagesSuccess(
+        setUpGetChannelMessagesSuccess(
           [...messageList, mockMessage],
           channelId,
         );
@@ -387,7 +387,7 @@ void main() {
     test('successfully edits the message', () async {
       // arrange
       final cubit = MessagesCubit(repository);
-      _setUpGetChannelMessagesSuccess(
+      setUpGetChannelMessagesSuccess(
         [...messageList, mockMessage],
         channelId,
       );
@@ -433,7 +433,7 @@ void main() {
     test('does not edit a message if it cannot find the message', () async {
       // arrange
       final cubit = MessagesCubit(repository);
-      _setUpGetChannelMessagesSuccess(messageList, channelId);
+      setUpGetChannelMessagesSuccess(messageList, channelId);
       await cubit.getChannelMessages(channelId);
 
       // act
