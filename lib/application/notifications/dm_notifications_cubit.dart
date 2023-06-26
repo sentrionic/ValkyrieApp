@@ -15,7 +15,7 @@ class DMNotificationsCubit extends Cubit<List<DMNotification>> {
       final notification = state[index];
       emit([
         notification.copyWith(count: notification.count + 1),
-        ...state.where((e) => e.id != notification.id).toList()
+        ...state.where((e) => e.id != notification.id),
       ]);
     } else {
       emit([newNotification, ...state]);
@@ -24,6 +24,6 @@ class DMNotificationsCubit extends Cubit<List<DMNotification>> {
 
   /// Removes the given id from the list and emits the new list.
   void removeNotification(String id) {
-    emit([...state.where((e) => e.id != id).toList()]);
+    emit([...state.where((e) => e.id != id)]);
   }
 }

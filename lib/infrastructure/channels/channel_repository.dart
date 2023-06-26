@@ -27,7 +27,7 @@ class ChannelRepository extends IChannelRepository {
       final List<Channel> list = [];
       results.forEach((c) => list.add(ChannelDto.fromJson(c).toDomain()));
       return right(list);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       if (err.response?.statusCode == 404) {
         return left(const ChannelFailure.notFound());
@@ -57,7 +57,7 @@ class ChannelRepository extends IChannelRepository {
       );
       final result = jsonDecode(response.data);
       return right(ChannelDto.fromJson(result).toDomain());
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       if (err.response?.statusCode == 400) {
         final result = Map<String, dynamic>.from(
@@ -103,7 +103,7 @@ class ChannelRepository extends IChannelRepository {
       );
 
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       if (err.response?.statusCode == 400) {
         final errors = FieldError.getErrors(err.response!);
@@ -128,7 +128,7 @@ class ChannelRepository extends IChannelRepository {
       );
 
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       if (err.response?.statusCode == 400) {
         final error = FieldError.getError(err.response!);
@@ -154,7 +154,7 @@ class ChannelRepository extends IChannelRepository {
       final List<String> list = [];
       results.forEach((m) => list.add(m));
       return right(list);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const ChannelFailure.unexpected());
     } on SocketException catch (err) {

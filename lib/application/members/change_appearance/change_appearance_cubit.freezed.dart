@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'change_appearance_cubit.dart';
 
@@ -32,7 +32,8 @@ mixin _$ChangeAppearanceState {
 abstract class $ChangeAppearanceStateCopyWith<$Res> {
   factory $ChangeAppearanceStateCopyWith(ChangeAppearanceState value,
           $Res Function(ChangeAppearanceState) then) =
-      _$ChangeAppearanceStateCopyWithImpl<$Res>;
+      _$ChangeAppearanceStateCopyWithImpl<$Res, ChangeAppearanceState>;
+  @useResult
   $Res call(
       {Nickname? nickname,
       HexColor? hexColor,
@@ -42,44 +43,47 @@ abstract class $ChangeAppearanceStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ChangeAppearanceStateCopyWithImpl<$Res>
+class _$ChangeAppearanceStateCopyWithImpl<$Res,
+        $Val extends ChangeAppearanceState>
     implements $ChangeAppearanceStateCopyWith<$Res> {
   _$ChangeAppearanceStateCopyWithImpl(this._value, this._then);
 
-  final ChangeAppearanceState _value;
   // ignore: unused_field
-  final $Res Function(ChangeAppearanceState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? nickname = freezed,
     Object? hexColor = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSaving = freezed,
-    Object? saveFailureOrSuccessOption = freezed,
+    Object? showErrorMessages = null,
+    Object? isSaving = null,
+    Object? saveFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      nickname: nickname == freezed
+      nickname: freezed == nickname
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
               as Nickname?,
-      hexColor: hexColor == freezed
+      hexColor: freezed == hexColor
           ? _value.hexColor
           : hexColor // ignore: cast_nullable_to_non_nullable
               as HexColor?,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSaving: isSaving == freezed
+      isSaving: null == isSaving
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
               as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+      saveFailureOrSuccessOption: null == saveFailureOrSuccessOption
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<MemberFailure, Unit>>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -90,6 +94,7 @@ abstract class _$$_ChangeAppearanceStateCopyWith<$Res>
           $Res Function(_$_ChangeAppearanceState) then) =
       __$$_ChangeAppearanceStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {Nickname? nickname,
       HexColor? hexColor,
@@ -100,42 +105,39 @@ abstract class _$$_ChangeAppearanceStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_ChangeAppearanceStateCopyWithImpl<$Res>
-    extends _$ChangeAppearanceStateCopyWithImpl<$Res>
+    extends _$ChangeAppearanceStateCopyWithImpl<$Res, _$_ChangeAppearanceState>
     implements _$$_ChangeAppearanceStateCopyWith<$Res> {
   __$$_ChangeAppearanceStateCopyWithImpl(_$_ChangeAppearanceState _value,
       $Res Function(_$_ChangeAppearanceState) _then)
-      : super(_value, (v) => _then(v as _$_ChangeAppearanceState));
+      : super(_value, _then);
 
-  @override
-  _$_ChangeAppearanceState get _value =>
-      super._value as _$_ChangeAppearanceState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? nickname = freezed,
     Object? hexColor = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSaving = freezed,
-    Object? saveFailureOrSuccessOption = freezed,
+    Object? showErrorMessages = null,
+    Object? isSaving = null,
+    Object? saveFailureOrSuccessOption = null,
   }) {
     return _then(_$_ChangeAppearanceState(
-      nickname: nickname == freezed
+      nickname: freezed == nickname
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
               as Nickname?,
-      hexColor: hexColor == freezed
+      hexColor: freezed == hexColor
           ? _value.hexColor
           : hexColor // ignore: cast_nullable_to_non_nullable
               as HexColor?,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSaving: isSaving == freezed
+      isSaving: null == isSaving
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
               as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+      saveFailureOrSuccessOption: null == saveFailureOrSuccessOption
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<MemberFailure, Unit>>,
@@ -176,26 +178,27 @@ class _$_ChangeAppearanceState implements _ChangeAppearanceState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ChangeAppearanceState &&
-            const DeepCollectionEquality().equals(other.nickname, nickname) &&
-            const DeepCollectionEquality().equals(other.hexColor, hexColor) &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality().equals(other.isSaving, isSaving) &&
-            const DeepCollectionEquality().equals(
-                other.saveFailureOrSuccessOption, saveFailureOrSuccessOption));
+            (identical(other.nickname, nickname) ||
+                other.nickname == nickname) &&
+            (identical(other.hexColor, hexColor) ||
+                other.hexColor == hexColor) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.isSaving, isSaving) ||
+                other.isSaving == isSaving) &&
+            (identical(other.saveFailureOrSuccessOption,
+                    saveFailureOrSuccessOption) ||
+                other.saveFailureOrSuccessOption ==
+                    saveFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(nickname),
-      const DeepCollectionEquality().hash(hexColor),
-      const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(isSaving),
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption));
+  int get hashCode => Object.hash(runtimeType, nickname, hexColor,
+      showErrorMessages, isSaving, saveFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ChangeAppearanceStateCopyWith<_$_ChangeAppearanceState> get copyWith =>
       __$$_ChangeAppearanceStateCopyWithImpl<_$_ChangeAppearanceState>(
           this, _$identity);

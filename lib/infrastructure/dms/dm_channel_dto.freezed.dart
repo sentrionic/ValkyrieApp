@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'dm_channel_dto.dart';
 
@@ -33,41 +33,46 @@ mixin _$DMChannelDto {
 abstract class $DMChannelDtoCopyWith<$Res> {
   factory $DMChannelDtoCopyWith(
           DMChannelDto value, $Res Function(DMChannelDto) then) =
-      _$DMChannelDtoCopyWithImpl<$Res>;
+      _$DMChannelDtoCopyWithImpl<$Res, DMChannelDto>;
+  @useResult
   $Res call({String id, DMUserDto user});
 
   $DMUserDtoCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$DMChannelDtoCopyWithImpl<$Res> implements $DMChannelDtoCopyWith<$Res> {
+class _$DMChannelDtoCopyWithImpl<$Res, $Val extends DMChannelDto>
+    implements $DMChannelDtoCopyWith<$Res> {
   _$DMChannelDtoCopyWithImpl(this._value, this._then);
 
-  final DMChannelDto _value;
   // ignore: unused_field
-  final $Res Function(DMChannelDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? user = freezed,
+    Object? id = null,
+    Object? user = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      user: user == freezed
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as DMUserDto,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $DMUserDtoCopyWith<$Res> get user {
     return $DMUserDtoCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
+      return _then(_value.copyWith(user: value) as $Val);
     });
   }
 }
@@ -79,6 +84,7 @@ abstract class _$$_DMChannelDtoCopyWith<$Res>
           _$_DMChannelDto value, $Res Function(_$_DMChannelDto) then) =
       __$$_DMChannelDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, DMUserDto user});
 
   @override
@@ -87,26 +93,24 @@ abstract class _$$_DMChannelDtoCopyWith<$Res>
 
 /// @nodoc
 class __$$_DMChannelDtoCopyWithImpl<$Res>
-    extends _$DMChannelDtoCopyWithImpl<$Res>
+    extends _$DMChannelDtoCopyWithImpl<$Res, _$_DMChannelDto>
     implements _$$_DMChannelDtoCopyWith<$Res> {
   __$$_DMChannelDtoCopyWithImpl(
       _$_DMChannelDto _value, $Res Function(_$_DMChannelDto) _then)
-      : super(_value, (v) => _then(v as _$_DMChannelDto));
+      : super(_value, _then);
 
-  @override
-  _$_DMChannelDto get _value => super._value as _$_DMChannelDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? user = freezed,
+    Object? id = null,
+    Object? user = null,
   }) {
     return _then(_$_DMChannelDto(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      user: user == freezed
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as DMUserDto,
@@ -137,19 +141,17 @@ class _$_DMChannelDto extends _DMChannelDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DMChannelDto &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.user, user));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, id, user);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DMChannelDtoCopyWith<_$_DMChannelDto> get copyWith =>
       __$$_DMChannelDtoCopyWithImpl<_$_DMChannelDto>(this, _$identity);
 
@@ -199,42 +201,46 @@ mixin _$DMNotificationDto {
 abstract class $DMNotificationDtoCopyWith<$Res> {
   factory $DMNotificationDtoCopyWith(
           DMNotificationDto value, $Res Function(DMNotificationDto) then) =
-      _$DMNotificationDtoCopyWithImpl<$Res>;
+      _$DMNotificationDtoCopyWithImpl<$Res, DMNotificationDto>;
+  @useResult
   $Res call({String id, DMUserDto user});
 
   $DMUserDtoCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class _$DMNotificationDtoCopyWithImpl<$Res>
+class _$DMNotificationDtoCopyWithImpl<$Res, $Val extends DMNotificationDto>
     implements $DMNotificationDtoCopyWith<$Res> {
   _$DMNotificationDtoCopyWithImpl(this._value, this._then);
 
-  final DMNotificationDto _value;
   // ignore: unused_field
-  final $Res Function(DMNotificationDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? user = freezed,
+    Object? id = null,
+    Object? user = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      user: user == freezed
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as DMUserDto,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $DMUserDtoCopyWith<$Res> get user {
     return $DMUserDtoCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
+      return _then(_value.copyWith(user: value) as $Val);
     });
   }
 }
@@ -246,6 +252,7 @@ abstract class _$$_DMNotificationDtoCopyWith<$Res>
           $Res Function(_$_DMNotificationDto) then) =
       __$$_DMNotificationDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, DMUserDto user});
 
   @override
@@ -254,26 +261,24 @@ abstract class _$$_DMNotificationDtoCopyWith<$Res>
 
 /// @nodoc
 class __$$_DMNotificationDtoCopyWithImpl<$Res>
-    extends _$DMNotificationDtoCopyWithImpl<$Res>
+    extends _$DMNotificationDtoCopyWithImpl<$Res, _$_DMNotificationDto>
     implements _$$_DMNotificationDtoCopyWith<$Res> {
   __$$_DMNotificationDtoCopyWithImpl(
       _$_DMNotificationDto _value, $Res Function(_$_DMNotificationDto) _then)
-      : super(_value, (v) => _then(v as _$_DMNotificationDto));
+      : super(_value, _then);
 
-  @override
-  _$_DMNotificationDto get _value => super._value as _$_DMNotificationDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? user = freezed,
+    Object? id = null,
+    Object? user = null,
   }) {
     return _then(_$_DMNotificationDto(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      user: user == freezed
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as DMUserDto,
@@ -305,19 +310,17 @@ class _$_DMNotificationDto extends _DMNotificationDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DMNotificationDto &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.user, user));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, id, user);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DMNotificationDtoCopyWith<_$_DMNotificationDto> get copyWith =>
       __$$_DMNotificationDtoCopyWithImpl<_$_DMNotificationDto>(
           this, _$identity);

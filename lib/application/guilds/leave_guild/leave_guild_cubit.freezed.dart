@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'leave_guild_cubit.dart';
 
@@ -26,10 +26,10 @@ mixin _$LeaveGuildState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(GuildFailure failure)? leaveFailure,
-    TResult Function()? leaveSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(GuildFailure failure)? leaveFailure,
+    TResult? Function()? leaveSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$LeaveGuildState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_LeaveFailure value)? leaveFailure,
-    TResult Function(_LeaveSuccess value)? leaveSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_LeaveFailure value)? leaveFailure,
+    TResult? Function(_LeaveSuccess value)? leaveSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,17 +72,18 @@ mixin _$LeaveGuildState {
 abstract class $LeaveGuildStateCopyWith<$Res> {
   factory $LeaveGuildStateCopyWith(
           LeaveGuildState value, $Res Function(LeaveGuildState) then) =
-      _$LeaveGuildStateCopyWithImpl<$Res>;
+      _$LeaveGuildStateCopyWithImpl<$Res, LeaveGuildState>;
 }
 
 /// @nodoc
-class _$LeaveGuildStateCopyWithImpl<$Res>
+class _$LeaveGuildStateCopyWithImpl<$Res, $Val extends LeaveGuildState>
     implements $LeaveGuildStateCopyWith<$Res> {
   _$LeaveGuildStateCopyWithImpl(this._value, this._then);
 
-  final LeaveGuildState _value;
   // ignore: unused_field
-  final $Res Function(LeaveGuildState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -93,13 +94,11 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$LeaveGuildStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$LeaveGuildStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -135,10 +134,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(GuildFailure failure)? leaveFailure,
-    TResult Function()? leaveSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(GuildFailure failure)? leaveFailure,
+    TResult? Function()? leaveSuccess,
   }) {
     return initial?.call();
   }
@@ -172,10 +171,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_LeaveFailure value)? leaveFailure,
-    TResult Function(_LeaveSuccess value)? leaveSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_LeaveFailure value)? leaveFailure,
+    TResult? Function(_LeaveSuccess value)? leaveSuccess,
   }) {
     return initial?.call(this);
   }
@@ -209,14 +208,11 @@ abstract class _$$_ActionInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ActionInProgressCopyWithImpl<$Res>
-    extends _$LeaveGuildStateCopyWithImpl<$Res>
+    extends _$LeaveGuildStateCopyWithImpl<$Res, _$_ActionInProgress>
     implements _$$_ActionInProgressCopyWith<$Res> {
   __$$_ActionInProgressCopyWithImpl(
       _$_ActionInProgress _value, $Res Function(_$_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _$_ActionInProgress));
-
-  @override
-  _$_ActionInProgress get _value => super._value as _$_ActionInProgress;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -252,10 +248,10 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(GuildFailure failure)? leaveFailure,
-    TResult Function()? leaveSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(GuildFailure failure)? leaveFailure,
+    TResult? Function()? leaveSuccess,
   }) {
     return actionInProgress?.call();
   }
@@ -289,10 +285,10 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_LeaveFailure value)? leaveFailure,
-    TResult Function(_LeaveSuccess value)? leaveSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_LeaveFailure value)? leaveFailure,
+    TResult? Function(_LeaveSuccess value)? leaveSuccess,
   }) {
     return actionInProgress?.call(this);
   }
@@ -322,6 +318,7 @@ abstract class _$$_LeaveFailureCopyWith<$Res> {
   factory _$$_LeaveFailureCopyWith(
           _$_LeaveFailure value, $Res Function(_$_LeaveFailure) then) =
       __$$_LeaveFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({GuildFailure failure});
 
   $GuildFailureCopyWith<$Res> get failure;
@@ -329,21 +326,19 @@ abstract class _$$_LeaveFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LeaveFailureCopyWithImpl<$Res>
-    extends _$LeaveGuildStateCopyWithImpl<$Res>
+    extends _$LeaveGuildStateCopyWithImpl<$Res, _$_LeaveFailure>
     implements _$$_LeaveFailureCopyWith<$Res> {
   __$$_LeaveFailureCopyWithImpl(
       _$_LeaveFailure _value, $Res Function(_$_LeaveFailure) _then)
-      : super(_value, (v) => _then(v as _$_LeaveFailure));
+      : super(_value, _then);
 
-  @override
-  _$_LeaveFailure get _value => super._value as _$_LeaveFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failure = freezed,
+    Object? failure = null,
   }) {
     return _then(_$_LeaveFailure(
-      failure == freezed
+      null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as GuildFailure,
@@ -351,6 +346,7 @@ class __$$_LeaveFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $GuildFailureCopyWith<$Res> get failure {
     return $GuildFailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
@@ -376,15 +372,15 @@ class _$_LeaveFailure implements _LeaveFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LeaveFailure &&
-            const DeepCollectionEquality().equals(other.failure, failure));
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_LeaveFailureCopyWith<_$_LeaveFailure> get copyWith =>
       __$$_LeaveFailureCopyWithImpl<_$_LeaveFailure>(this, _$identity);
 
@@ -402,10 +398,10 @@ class _$_LeaveFailure implements _LeaveFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(GuildFailure failure)? leaveFailure,
-    TResult Function()? leaveSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(GuildFailure failure)? leaveFailure,
+    TResult? Function()? leaveSuccess,
   }) {
     return leaveFailure?.call(failure);
   }
@@ -439,10 +435,10 @@ class _$_LeaveFailure implements _LeaveFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_LeaveFailure value)? leaveFailure,
-    TResult Function(_LeaveSuccess value)? leaveSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_LeaveFailure value)? leaveFailure,
+    TResult? Function(_LeaveSuccess value)? leaveSuccess,
   }) {
     return leaveFailure?.call(this);
   }
@@ -481,14 +477,11 @@ abstract class _$$_LeaveSuccessCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LeaveSuccessCopyWithImpl<$Res>
-    extends _$LeaveGuildStateCopyWithImpl<$Res>
+    extends _$LeaveGuildStateCopyWithImpl<$Res, _$_LeaveSuccess>
     implements _$$_LeaveSuccessCopyWith<$Res> {
   __$$_LeaveSuccessCopyWithImpl(
       _$_LeaveSuccess _value, $Res Function(_$_LeaveSuccess) _then)
-      : super(_value, (v) => _then(v as _$_LeaveSuccess));
-
-  @override
-  _$_LeaveSuccess get _value => super._value as _$_LeaveSuccess;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -524,10 +517,10 @@ class _$_LeaveSuccess implements _LeaveSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(GuildFailure failure)? leaveFailure,
-    TResult Function()? leaveSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(GuildFailure failure)? leaveFailure,
+    TResult? Function()? leaveSuccess,
   }) {
     return leaveSuccess?.call();
   }
@@ -561,10 +554,10 @@ class _$_LeaveSuccess implements _LeaveSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_LeaveFailure value)? leaveFailure,
-    TResult Function(_LeaveSuccess value)? leaveSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_LeaveFailure value)? leaveFailure,
+    TResult? Function(_LeaveSuccess value)? leaveSuccess,
   }) {
     return leaveSuccess?.call(this);
   }

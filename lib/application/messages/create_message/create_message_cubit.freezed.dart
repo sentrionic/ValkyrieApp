@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'create_message_cubit.dart';
 
@@ -31,7 +31,8 @@ mixin _$CreateMessageState {
 abstract class $CreateMessageStateCopyWith<$Res> {
   factory $CreateMessageStateCopyWith(
           CreateMessageState value, $Res Function(CreateMessageState) then) =
-      _$CreateMessageStateCopyWithImpl<$Res>;
+      _$CreateMessageStateCopyWithImpl<$Res, CreateMessageState>;
+  @useResult
   $Res call(
       {MessageText text,
       bool showErrorMessages,
@@ -40,39 +41,41 @@ abstract class $CreateMessageStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CreateMessageStateCopyWithImpl<$Res>
+class _$CreateMessageStateCopyWithImpl<$Res, $Val extends CreateMessageState>
     implements $CreateMessageStateCopyWith<$Res> {
   _$CreateMessageStateCopyWithImpl(this._value, this._then);
 
-  final CreateMessageState _value;
   // ignore: unused_field
-  final $Res Function(CreateMessageState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? text = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? messageFailureOrSuccessOption = freezed,
+    Object? text = null,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? messageFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as MessageText,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      messageFailureOrSuccessOption: messageFailureOrSuccessOption == freezed
+      messageFailureOrSuccessOption: null == messageFailureOrSuccessOption
           ? _value.messageFailureOrSuccessOption
           : messageFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<MessageFailure, Unit>>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -83,6 +86,7 @@ abstract class _$$_CreateMessageStateCopyWith<$Res>
           $Res Function(_$_CreateMessageState) then) =
       __$$_CreateMessageStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {MessageText text,
       bool showErrorMessages,
@@ -92,36 +96,34 @@ abstract class _$$_CreateMessageStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_CreateMessageStateCopyWithImpl<$Res>
-    extends _$CreateMessageStateCopyWithImpl<$Res>
+    extends _$CreateMessageStateCopyWithImpl<$Res, _$_CreateMessageState>
     implements _$$_CreateMessageStateCopyWith<$Res> {
   __$$_CreateMessageStateCopyWithImpl(
       _$_CreateMessageState _value, $Res Function(_$_CreateMessageState) _then)
-      : super(_value, (v) => _then(v as _$_CreateMessageState));
+      : super(_value, _then);
 
-  @override
-  _$_CreateMessageState get _value => super._value as _$_CreateMessageState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? text = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? messageFailureOrSuccessOption = freezed,
+    Object? text = null,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? messageFailureOrSuccessOption = null,
   }) {
     return _then(_$_CreateMessageState(
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as MessageText,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      messageFailureOrSuccessOption: messageFailureOrSuccessOption == freezed
+      messageFailureOrSuccessOption: null == messageFailureOrSuccessOption
           ? _value.messageFailureOrSuccessOption
           : messageFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<MessageFailure, Unit>>,
@@ -157,26 +159,24 @@ class _$_CreateMessageState implements _CreateMessageState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CreateMessageState &&
-            const DeepCollectionEquality().equals(other.text, text) &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality()
-                .equals(other.isSubmitting, isSubmitting) &&
-            const DeepCollectionEquality().equals(
-                other.messageFailureOrSuccessOption,
-                messageFailureOrSuccessOption));
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                other.isSubmitting == isSubmitting) &&
+            (identical(other.messageFailureOrSuccessOption,
+                    messageFailureOrSuccessOption) ||
+                other.messageFailureOrSuccessOption ==
+                    messageFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(text),
-      const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(isSubmitting),
-      const DeepCollectionEquality().hash(messageFailureOrSuccessOption));
+  int get hashCode => Object.hash(runtimeType, text, showErrorMessages,
+      isSubmitting, messageFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_CreateMessageStateCopyWith<_$_CreateMessageState> get copyWith =>
       __$$_CreateMessageStateCopyWithImpl<_$_CreateMessageState>(
           this, _$identity);

@@ -31,7 +31,7 @@ class MemberRepository extends IMemberRepository {
       final List<Member> list = [];
       results.forEach((c) => list.add(MemberDto.fromJson(c).toDomain()));
       return right(list);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const MemberFailure.unexpected());
     } on SocketException catch (err) {
@@ -50,7 +50,7 @@ class MemberRepository extends IMemberRepository {
       final results = jsonDecode(response.data);
       final settings = GuildAppearanceDto.fromJson(results).toDomain();
       return right(settings);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const MemberFailure.unexpected());
     } on SocketException catch (err) {
@@ -75,7 +75,7 @@ class MemberRepository extends IMemberRepository {
       );
 
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       if (err.response?.statusCode == 400) {
         final error = FieldError.getError(err.response!);
@@ -102,7 +102,7 @@ class MemberRepository extends IMemberRepository {
       );
 
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const MemberFailure.unexpected());
     } on SocketException catch (err) {
@@ -125,7 +125,7 @@ class MemberRepository extends IMemberRepository {
       );
 
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const MemberFailure.unexpected());
     } on SocketException catch (err) {
@@ -144,7 +144,7 @@ class MemberRepository extends IMemberRepository {
       final List<BannedMember> list = [];
       results.forEach((m) => list.add(BannedMemberDto.fromJson(m).toDomain()));
       return right(list);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const MemberFailure.unexpected());
     } on SocketException catch (err) {
@@ -167,7 +167,7 @@ class MemberRepository extends IMemberRepository {
       );
 
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const MemberFailure.unexpected());
     } on SocketException catch (err) {

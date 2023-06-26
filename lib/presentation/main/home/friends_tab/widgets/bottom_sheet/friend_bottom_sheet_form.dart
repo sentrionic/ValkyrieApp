@@ -105,8 +105,8 @@ class FriendBottomSheetForm extends StatelessWidget {
                                 .read<StartDMCubit>()
                                 .getOrCreateDM(friend.id);
                           },
-                          child: Column(
-                            children: const [
+                          child: const Column(
+                            children: [
                               Icon(
                                 AppIcons.commentalt,
                                 size: 22,
@@ -132,8 +132,8 @@ class FriendBottomSheetForm extends StatelessWidget {
                           onTap: () => context
                               .read<RemoveFriendCubit>()
                               .removeFriend(friend.id),
-                          child: Column(
-                            children: const [
+                          child: const Column(
+                            children: [
                               Icon(
                                 Icons.person_remove_alt_1,
                                 color: ThemeColors.brandRed,

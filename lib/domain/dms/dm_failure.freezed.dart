@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'dm_failure.dart';
 
@@ -24,8 +24,8 @@ mixin _$DMChannelFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? notFound,
+    TResult? Function()? unexpected,
+    TResult? Function()? notFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,8 +43,8 @@ mixin _$DMChannelFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_NotFound value)? notFound,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_NotFound value)? notFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,17 +60,18 @@ mixin _$DMChannelFailure {
 abstract class $DMChannelFailureCopyWith<$Res> {
   factory $DMChannelFailureCopyWith(
           DMChannelFailure value, $Res Function(DMChannelFailure) then) =
-      _$DMChannelFailureCopyWithImpl<$Res>;
+      _$DMChannelFailureCopyWithImpl<$Res, DMChannelFailure>;
 }
 
 /// @nodoc
-class _$DMChannelFailureCopyWithImpl<$Res>
+class _$DMChannelFailureCopyWithImpl<$Res, $Val extends DMChannelFailure>
     implements $DMChannelFailureCopyWith<$Res> {
   _$DMChannelFailureCopyWithImpl(this._value, this._then);
 
-  final DMChannelFailure _value;
   // ignore: unused_field
-  final $Res Function(DMChannelFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -82,14 +83,11 @@ abstract class _$$_UnexpectedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_UnexpectedCopyWithImpl<$Res>
-    extends _$DMChannelFailureCopyWithImpl<$Res>
+    extends _$DMChannelFailureCopyWithImpl<$Res, _$_Unexpected>
     implements _$$_UnexpectedCopyWith<$Res> {
   __$$_UnexpectedCopyWithImpl(
       _$_Unexpected _value, $Res Function(_$_Unexpected) _then)
-      : super(_value, (v) => _then(v as _$_Unexpected));
-
-  @override
-  _$_Unexpected get _value => super._value as _$_Unexpected;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -123,8 +121,8 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? notFound,
+    TResult? Function()? unexpected,
+    TResult? Function()? notFound,
   }) {
     return unexpected?.call();
   }
@@ -154,8 +152,8 @@ class _$_Unexpected implements _Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_NotFound value)? notFound,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_NotFound value)? notFound,
   }) {
     return unexpected?.call(this);
   }
@@ -187,14 +185,11 @@ abstract class _$$_NotFoundCopyWith<$Res> {
 
 /// @nodoc
 class __$$_NotFoundCopyWithImpl<$Res>
-    extends _$DMChannelFailureCopyWithImpl<$Res>
+    extends _$DMChannelFailureCopyWithImpl<$Res, _$_NotFound>
     implements _$$_NotFoundCopyWith<$Res> {
   __$$_NotFoundCopyWithImpl(
       _$_NotFound _value, $Res Function(_$_NotFound) _then)
-      : super(_value, (v) => _then(v as _$_NotFound));
-
-  @override
-  _$_NotFound get _value => super._value as _$_NotFound;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -228,8 +223,8 @@ class _$_NotFound implements _NotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? notFound,
+    TResult? Function()? unexpected,
+    TResult? Function()? notFound,
   }) {
     return notFound?.call();
   }
@@ -259,8 +254,8 @@ class _$_NotFound implements _NotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Unexpected value)? unexpected,
-    TResult Function(_NotFound value)? notFound,
+    TResult? Function(_Unexpected value)? unexpected,
+    TResult? Function(_NotFound value)? notFound,
   }) {
     return notFound?.call(this);
   }

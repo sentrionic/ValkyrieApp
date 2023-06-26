@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'channel_dto.dart';
 
@@ -35,43 +35,47 @@ mixin _$ChannelDto {
 abstract class $ChannelDtoCopyWith<$Res> {
   factory $ChannelDtoCopyWith(
           ChannelDto value, $Res Function(ChannelDto) then) =
-      _$ChannelDtoCopyWithImpl<$Res>;
+      _$ChannelDtoCopyWithImpl<$Res, ChannelDto>;
+  @useResult
   $Res call({String id, String name, bool isPublic, bool hasNotification});
 }
 
 /// @nodoc
-class _$ChannelDtoCopyWithImpl<$Res> implements $ChannelDtoCopyWith<$Res> {
+class _$ChannelDtoCopyWithImpl<$Res, $Val extends ChannelDto>
+    implements $ChannelDtoCopyWith<$Res> {
   _$ChannelDtoCopyWithImpl(this._value, this._then);
 
-  final ChannelDto _value;
   // ignore: unused_field
-  final $Res Function(ChannelDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? isPublic = freezed,
-    Object? hasNotification = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? isPublic = null,
+    Object? hasNotification = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      isPublic: isPublic == freezed
+      isPublic: null == isPublic
           ? _value.isPublic
           : isPublic // ignore: cast_nullable_to_non_nullable
               as bool,
-      hasNotification: hasNotification == freezed
+      hasNotification: null == hasNotification
           ? _value.hasNotification
           : hasNotification // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -82,40 +86,40 @@ abstract class _$$_ChannelDtoCopyWith<$Res>
           _$_ChannelDto value, $Res Function(_$_ChannelDto) then) =
       __$$_ChannelDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, String name, bool isPublic, bool hasNotification});
 }
 
 /// @nodoc
-class __$$_ChannelDtoCopyWithImpl<$Res> extends _$ChannelDtoCopyWithImpl<$Res>
+class __$$_ChannelDtoCopyWithImpl<$Res>
+    extends _$ChannelDtoCopyWithImpl<$Res, _$_ChannelDto>
     implements _$$_ChannelDtoCopyWith<$Res> {
   __$$_ChannelDtoCopyWithImpl(
       _$_ChannelDto _value, $Res Function(_$_ChannelDto) _then)
-      : super(_value, (v) => _then(v as _$_ChannelDto));
+      : super(_value, _then);
 
-  @override
-  _$_ChannelDto get _value => super._value as _$_ChannelDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? isPublic = freezed,
-    Object? hasNotification = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? isPublic = null,
+    Object? hasNotification = null,
   }) {
     return _then(_$_ChannelDto(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      isPublic: isPublic == freezed
+      isPublic: null == isPublic
           ? _value.isPublic
           : isPublic // ignore: cast_nullable_to_non_nullable
               as bool,
-      hasNotification: hasNotification == freezed
+      hasNotification: null == hasNotification
           ? _value.hasNotification
           : hasNotification // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -155,24 +159,22 @@ class _$_ChannelDto extends _ChannelDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ChannelDto &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.isPublic, isPublic) &&
-            const DeepCollectionEquality()
-                .equals(other.hasNotification, hasNotification));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.isPublic, isPublic) ||
+                other.isPublic == isPublic) &&
+            (identical(other.hasNotification, hasNotification) ||
+                other.hasNotification == hasNotification));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(isPublic),
-      const DeepCollectionEquality().hash(hasNotification));
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, isPublic, hasNotification);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ChannelDtoCopyWith<_$_ChannelDto> get copyWith =>
       __$$_ChannelDtoCopyWithImpl<_$_ChannelDto>(this, _$identity);
 

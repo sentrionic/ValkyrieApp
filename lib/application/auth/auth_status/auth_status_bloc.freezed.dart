@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'auth_status_bloc.dart';
 
@@ -24,8 +24,8 @@ mixin _$AuthStatusEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authCheckRequested,
-    TResult Function()? signedOut,
+    TResult? Function()? authCheckRequested,
+    TResult? Function()? signedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,8 +43,8 @@ mixin _$AuthStatusEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthCheckRequested value)? authCheckRequested,
-    TResult Function(SignedOut value)? signedOut,
+    TResult? Function(AuthCheckRequested value)? authCheckRequested,
+    TResult? Function(SignedOut value)? signedOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,17 +60,18 @@ mixin _$AuthStatusEvent {
 abstract class $AuthStatusEventCopyWith<$Res> {
   factory $AuthStatusEventCopyWith(
           AuthStatusEvent value, $Res Function(AuthStatusEvent) then) =
-      _$AuthStatusEventCopyWithImpl<$Res>;
+      _$AuthStatusEventCopyWithImpl<$Res, AuthStatusEvent>;
 }
 
 /// @nodoc
-class _$AuthStatusEventCopyWithImpl<$Res>
+class _$AuthStatusEventCopyWithImpl<$Res, $Val extends AuthStatusEvent>
     implements $AuthStatusEventCopyWith<$Res> {
   _$AuthStatusEventCopyWithImpl(this._value, this._then);
 
-  final AuthStatusEvent _value;
   // ignore: unused_field
-  final $Res Function(AuthStatusEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -82,14 +83,11 @@ abstract class _$$AuthCheckRequestedCopyWith<$Res> {
 
 /// @nodoc
 class __$$AuthCheckRequestedCopyWithImpl<$Res>
-    extends _$AuthStatusEventCopyWithImpl<$Res>
+    extends _$AuthStatusEventCopyWithImpl<$Res, _$AuthCheckRequested>
     implements _$$AuthCheckRequestedCopyWith<$Res> {
   __$$AuthCheckRequestedCopyWithImpl(
       _$AuthCheckRequested _value, $Res Function(_$AuthCheckRequested) _then)
-      : super(_value, (v) => _then(v as _$AuthCheckRequested));
-
-  @override
-  _$AuthCheckRequested get _value => super._value as _$AuthCheckRequested;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -123,8 +121,8 @@ class _$AuthCheckRequested implements AuthCheckRequested {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authCheckRequested,
-    TResult Function()? signedOut,
+    TResult? Function()? authCheckRequested,
+    TResult? Function()? signedOut,
   }) {
     return authCheckRequested?.call();
   }
@@ -154,8 +152,8 @@ class _$AuthCheckRequested implements AuthCheckRequested {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthCheckRequested value)? authCheckRequested,
-    TResult Function(SignedOut value)? signedOut,
+    TResult? Function(AuthCheckRequested value)? authCheckRequested,
+    TResult? Function(SignedOut value)? signedOut,
   }) {
     return authCheckRequested?.call(this);
   }
@@ -187,14 +185,11 @@ abstract class _$$SignedOutCopyWith<$Res> {
 
 /// @nodoc
 class __$$SignedOutCopyWithImpl<$Res>
-    extends _$AuthStatusEventCopyWithImpl<$Res>
+    extends _$AuthStatusEventCopyWithImpl<$Res, _$SignedOut>
     implements _$$SignedOutCopyWith<$Res> {
   __$$SignedOutCopyWithImpl(
       _$SignedOut _value, $Res Function(_$SignedOut) _then)
-      : super(_value, (v) => _then(v as _$SignedOut));
-
-  @override
-  _$SignedOut get _value => super._value as _$SignedOut;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -228,8 +223,8 @@ class _$SignedOut implements SignedOut {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authCheckRequested,
-    TResult Function()? signedOut,
+    TResult? Function()? authCheckRequested,
+    TResult? Function()? signedOut,
   }) {
     return signedOut?.call();
   }
@@ -259,8 +254,8 @@ class _$SignedOut implements SignedOut {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthCheckRequested value)? authCheckRequested,
-    TResult Function(SignedOut value)? signedOut,
+    TResult? Function(AuthCheckRequested value)? authCheckRequested,
+    TResult? Function(SignedOut value)? signedOut,
   }) {
     return signedOut?.call(this);
   }
@@ -294,9 +289,9 @@ mixin _$AuthStatusState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? unauthenticated,
+    TResult? Function()? initial,
+    TResult? Function()? authenticated,
+    TResult? Function()? unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -316,9 +311,9 @@ mixin _$AuthStatusState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(Unauthenticated value)? unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -335,17 +330,18 @@ mixin _$AuthStatusState {
 abstract class $AuthStatusStateCopyWith<$Res> {
   factory $AuthStatusStateCopyWith(
           AuthStatusState value, $Res Function(AuthStatusState) then) =
-      _$AuthStatusStateCopyWithImpl<$Res>;
+      _$AuthStatusStateCopyWithImpl<$Res, AuthStatusState>;
 }
 
 /// @nodoc
-class _$AuthStatusStateCopyWithImpl<$Res>
+class _$AuthStatusStateCopyWithImpl<$Res, $Val extends AuthStatusState>
     implements $AuthStatusStateCopyWith<$Res> {
   _$AuthStatusStateCopyWithImpl(this._value, this._then);
 
-  final AuthStatusState _value;
   // ignore: unused_field
-  final $Res Function(AuthStatusState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -355,13 +351,11 @@ abstract class _$$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$InitialCopyWithImpl<$Res> extends _$AuthStatusStateCopyWithImpl<$Res>
+class __$$InitialCopyWithImpl<$Res>
+    extends _$AuthStatusStateCopyWithImpl<$Res, _$Initial>
     implements _$$InitialCopyWith<$Res> {
   __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
-      : super(_value, (v) => _then(v as _$Initial));
-
-  @override
-  _$Initial get _value => super._value as _$Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -396,9 +390,9 @@ class _$Initial implements Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? unauthenticated,
+    TResult? Function()? initial,
+    TResult? Function()? authenticated,
+    TResult? Function()? unauthenticated,
   }) {
     return initial?.call();
   }
@@ -430,9 +424,9 @@ class _$Initial implements Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(Unauthenticated value)? unauthenticated,
   }) {
     return initial?.call(this);
   }
@@ -465,14 +459,11 @@ abstract class _$$AuthenticatedCopyWith<$Res> {
 
 /// @nodoc
 class __$$AuthenticatedCopyWithImpl<$Res>
-    extends _$AuthStatusStateCopyWithImpl<$Res>
+    extends _$AuthStatusStateCopyWithImpl<$Res, _$Authenticated>
     implements _$$AuthenticatedCopyWith<$Res> {
   __$$AuthenticatedCopyWithImpl(
       _$Authenticated _value, $Res Function(_$Authenticated) _then)
-      : super(_value, (v) => _then(v as _$Authenticated));
-
-  @override
-  _$Authenticated get _value => super._value as _$Authenticated;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -507,9 +498,9 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? unauthenticated,
+    TResult? Function()? initial,
+    TResult? Function()? authenticated,
+    TResult? Function()? unauthenticated,
   }) {
     return authenticated?.call();
   }
@@ -541,9 +532,9 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(Unauthenticated value)? unauthenticated,
   }) {
     return authenticated?.call(this);
   }
@@ -576,14 +567,11 @@ abstract class _$$UnauthenticatedCopyWith<$Res> {
 
 /// @nodoc
 class __$$UnauthenticatedCopyWithImpl<$Res>
-    extends _$AuthStatusStateCopyWithImpl<$Res>
+    extends _$AuthStatusStateCopyWithImpl<$Res, _$Unauthenticated>
     implements _$$UnauthenticatedCopyWith<$Res> {
   __$$UnauthenticatedCopyWithImpl(
       _$Unauthenticated _value, $Res Function(_$Unauthenticated) _then)
-      : super(_value, (v) => _then(v as _$Unauthenticated));
-
-  @override
-  _$Unauthenticated get _value => super._value as _$Unauthenticated;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -618,9 +606,9 @@ class _$Unauthenticated implements Unauthenticated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? unauthenticated,
+    TResult? Function()? initial,
+    TResult? Function()? authenticated,
+    TResult? Function()? unauthenticated,
   }) {
     return unauthenticated?.call();
   }
@@ -652,9 +640,9 @@ class _$Unauthenticated implements Unauthenticated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Authenticated value)? authenticated,
+    TResult? Function(Unauthenticated value)? unauthenticated,
   }) {
     return unauthenticated?.call(this);
   }

@@ -44,7 +44,7 @@ void main() {
 
     void setUpHttpFailure() {
       when(() => client.get(any())).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/account/me/friends', method: "GET"),
         ),
@@ -91,7 +91,7 @@ void main() {
     );
 
     test(
-      'should return a FriendFailure when DioError is thrown',
+      'should return a FriendFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -156,7 +156,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(
             path: '/account/$id/friend',
             method: "POST",
@@ -171,7 +171,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             statusCode: 400,
             data: data,
@@ -194,7 +194,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             statusCode: 404,
             requestOptions: RequestOptions(
@@ -259,7 +259,7 @@ void main() {
     );
 
     test(
-      'should return a FriendFailure when DioError is thrown',
+      'should return a FriendFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -280,7 +280,7 @@ void main() {
     );
 
     test(
-      'should return a FriendFailure.badRequest when DioError is thrown with status 400',
+      'should return a FriendFailure.badRequest when DioException is thrown with status 400',
       () async {
         // arrange
         setUpHttp400Failure();
@@ -301,7 +301,7 @@ void main() {
     );
 
     test(
-      'should return a FriendFailure.badRequest when DioError is thrown with status 404',
+      'should return a FriendFailure.badRequest when DioException is thrown with status 404',
       () async {
         // arrange
         setUpHttp404Failure();
@@ -366,7 +366,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(
             path: '/account/$id/friend',
             method: "DELETE",
@@ -381,7 +381,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             statusCode: 400,
             data: data,
@@ -447,7 +447,7 @@ void main() {
     );
 
     test(
-      'should return a FriendFailure when DioError is thrown',
+      'should return a FriendFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -468,7 +468,7 @@ void main() {
     );
 
     test(
-      'should return a FriendFailure.badRequest when DioError is thrown with status 400',
+      'should return a FriendFailure.badRequest when DioException is thrown with status 400',
       () async {
         // arrange
         setUpHttp400Failure();
@@ -533,7 +533,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(
             path: '/account/$id/friend/accept',
             method: "POST",
@@ -548,7 +548,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             statusCode: 400,
             data: data,
@@ -614,7 +614,7 @@ void main() {
     );
 
     test(
-      'should return a FriendFailure when DioError is thrown',
+      'should return a FriendFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -635,7 +635,7 @@ void main() {
     );
 
     test(
-      'should return a FriendFailure.badRequest when DioError is thrown with status 400',
+      'should return a FriendFailure.badRequest when DioException is thrown with status 400',
       () async {
         // arrange
         setUpHttp400Failure();
@@ -700,7 +700,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(
             path: '/account/$id/friend/cancel',
             method: "POST",
@@ -715,7 +715,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             statusCode: 400,
             data: data,
@@ -781,7 +781,7 @@ void main() {
     );
 
     test(
-      'should return a FriendFailure when DioError is thrown',
+      'should return a FriendFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -802,7 +802,7 @@ void main() {
     );
 
     test(
-      'should return a FriendFailure.badRequest when DioError is thrown with status 400',
+      'should return a FriendFailure.badRequest when DioException is thrown with status 400',
       () async {
         // arrange
         setUpHttp400Failure();
@@ -866,7 +866,7 @@ void main() {
 
     void setUpHttpFailure() {
       when(() => client.get(any())).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/account/me/pending', method: "GET"),
         ),
@@ -913,7 +913,7 @@ void main() {
     );
 
     test(
-      'should return a FriendFailure when DioError is thrown',
+      'should return a FriendFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();

@@ -41,7 +41,7 @@ void main() {
 
     void setUpHttp404Failure() {
       when(() => client.get(any())).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             statusCode: 404,
             requestOptions: RequestOptions(path: '/account', method: "GET"),
@@ -53,7 +53,7 @@ void main() {
 
     void setUpHttpFailure() {
       when(() => client.get(any())).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: '/account', method: "GET"),
         ),
       );
@@ -102,7 +102,7 @@ void main() {
     );
 
     test(
-      'should return an AccountFailure when DioError is thrown',
+      'should return an AccountFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -123,7 +123,7 @@ void main() {
     );
 
     test(
-      'should return an AccountFailure.unauthenticated when DioError is thrown with code 404',
+      'should return an AccountFailure.unauthenticated when DioException is thrown with code 404',
       () async {
         // arrange
         setUpHttp404Failure();
@@ -194,7 +194,7 @@ void main() {
           data: any(named: "data"),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: '/account'),
         ),
       );
@@ -207,7 +207,7 @@ void main() {
           data: any(named: "data"),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             data: errorData,
             statusCode: 400,
@@ -273,7 +273,7 @@ void main() {
     );
 
     test(
-      'should return an AccountFailure when DioError is thrown',
+      'should return an AccountFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -297,7 +297,7 @@ void main() {
     );
 
     test(
-      'should return an AccountFailure.badRequest when DioError is thrown',
+      'should return an AccountFailure.badRequest when DioException is thrown',
       () async {
         // arrange
         setUpHttp400Failure();

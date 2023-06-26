@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'add_friend_cubit.dart';
 
@@ -31,7 +31,8 @@ mixin _$AddFriendState {
 abstract class $AddFriendStateCopyWith<$Res> {
   factory $AddFriendStateCopyWith(
           AddFriendState value, $Res Function(AddFriendState) then) =
-      _$AddFriendStateCopyWithImpl<$Res>;
+      _$AddFriendStateCopyWithImpl<$Res, AddFriendState>;
+  @useResult
   $Res call(
       {UID uid,
       bool showErrorMessages,
@@ -40,39 +41,41 @@ abstract class $AddFriendStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AddFriendStateCopyWithImpl<$Res>
+class _$AddFriendStateCopyWithImpl<$Res, $Val extends AddFriendState>
     implements $AddFriendStateCopyWith<$Res> {
   _$AddFriendStateCopyWithImpl(this._value, this._then);
 
-  final AddFriendState _value;
   // ignore: unused_field
-  final $Res Function(AddFriendState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? failureOrSuccessOption = freezed,
+    Object? uid = null,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? failureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as UID,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed
+      failureOrSuccessOption: null == failureOrSuccessOption
           ? _value.failureOrSuccessOption
           : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<FriendFailure, Unit>>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -83,6 +86,7 @@ abstract class _$$_AddFriendStateCopyWith<$Res>
           _$_AddFriendState value, $Res Function(_$_AddFriendState) then) =
       __$$_AddFriendStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {UID uid,
       bool showErrorMessages,
@@ -92,36 +96,34 @@ abstract class _$$_AddFriendStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_AddFriendStateCopyWithImpl<$Res>
-    extends _$AddFriendStateCopyWithImpl<$Res>
+    extends _$AddFriendStateCopyWithImpl<$Res, _$_AddFriendState>
     implements _$$_AddFriendStateCopyWith<$Res> {
   __$$_AddFriendStateCopyWithImpl(
       _$_AddFriendState _value, $Res Function(_$_AddFriendState) _then)
-      : super(_value, (v) => _then(v as _$_AddFriendState));
+      : super(_value, _then);
 
-  @override
-  _$_AddFriendState get _value => super._value as _$_AddFriendState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? failureOrSuccessOption = freezed,
+    Object? uid = null,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? failureOrSuccessOption = null,
   }) {
     return _then(_$_AddFriendState(
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as UID,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed
+      failureOrSuccessOption: null == failureOrSuccessOption
           ? _value.failureOrSuccessOption
           : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<FriendFailure, Unit>>,
@@ -157,25 +159,22 @@ class _$_AddFriendState implements _AddFriendState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AddFriendState &&
-            const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality()
-                .equals(other.isSubmitting, isSubmitting) &&
-            const DeepCollectionEquality()
-                .equals(other.failureOrSuccessOption, failureOrSuccessOption));
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                other.isSubmitting == isSubmitting) &&
+            (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+                other.failureOrSuccessOption == failureOrSuccessOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(isSubmitting),
-      const DeepCollectionEquality().hash(failureOrSuccessOption));
+  int get hashCode => Object.hash(runtimeType, uid, showErrorMessages,
+      isSubmitting, failureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AddFriendStateCopyWith<_$_AddFriendState> get copyWith =>
       __$$_AddFriendStateCopyWithImpl<_$_AddFriendState>(this, _$identity);
 }

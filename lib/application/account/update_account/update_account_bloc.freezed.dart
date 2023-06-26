@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'update_account_bloc.dart';
 
@@ -26,10 +26,10 @@ mixin _$UpdateAccountEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function(String username)? usernameChanged,
-    TResult Function(File image)? imageChanged,
-    TResult Function()? saved,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String username)? usernameChanged,
+    TResult? Function(File image)? imageChanged,
+    TResult? Function()? saved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$UpdateAccountEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_UsernameChanged value)? usernameChanged,
-    TResult Function(_ImageChanged value)? imageChanged,
-    TResult Function(_Saved value)? saved,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_UsernameChanged value)? usernameChanged,
+    TResult? Function(_ImageChanged value)? imageChanged,
+    TResult? Function(_Saved value)? saved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,17 +72,18 @@ mixin _$UpdateAccountEvent {
 abstract class $UpdateAccountEventCopyWith<$Res> {
   factory $UpdateAccountEventCopyWith(
           UpdateAccountEvent value, $Res Function(UpdateAccountEvent) then) =
-      _$UpdateAccountEventCopyWithImpl<$Res>;
+      _$UpdateAccountEventCopyWithImpl<$Res, UpdateAccountEvent>;
 }
 
 /// @nodoc
-class _$UpdateAccountEventCopyWithImpl<$Res>
+class _$UpdateAccountEventCopyWithImpl<$Res, $Val extends UpdateAccountEvent>
     implements $UpdateAccountEventCopyWith<$Res> {
   _$UpdateAccountEventCopyWithImpl(this._value, this._then);
 
-  final UpdateAccountEvent _value;
   // ignore: unused_field
-  final $Res Function(UpdateAccountEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -90,26 +91,25 @@ abstract class _$$_EmailChangedCopyWith<$Res> {
   factory _$$_EmailChangedCopyWith(
           _$_EmailChanged value, $Res Function(_$_EmailChanged) then) =
       __$$_EmailChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String email});
 }
 
 /// @nodoc
 class __$$_EmailChangedCopyWithImpl<$Res>
-    extends _$UpdateAccountEventCopyWithImpl<$Res>
+    extends _$UpdateAccountEventCopyWithImpl<$Res, _$_EmailChanged>
     implements _$$_EmailChangedCopyWith<$Res> {
   __$$_EmailChangedCopyWithImpl(
       _$_EmailChanged _value, $Res Function(_$_EmailChanged) _then)
-      : super(_value, (v) => _then(v as _$_EmailChanged));
+      : super(_value, _then);
 
-  @override
-  _$_EmailChanged get _value => super._value as _$_EmailChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
+    Object? email = null,
   }) {
     return _then(_$_EmailChanged(
-      email == freezed
+      null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
@@ -135,15 +135,15 @@ class _$_EmailChanged implements _EmailChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_EmailChanged &&
-            const DeepCollectionEquality().equals(other.email, email));
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
+  int get hashCode => Object.hash(runtimeType, email);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
       __$$_EmailChangedCopyWithImpl<_$_EmailChanged>(this, _$identity);
 
@@ -161,10 +161,10 @@ class _$_EmailChanged implements _EmailChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function(String username)? usernameChanged,
-    TResult Function(File image)? imageChanged,
-    TResult Function()? saved,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String username)? usernameChanged,
+    TResult? Function(File image)? imageChanged,
+    TResult? Function()? saved,
   }) {
     return emailChanged?.call(email);
   }
@@ -198,10 +198,10 @@ class _$_EmailChanged implements _EmailChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_UsernameChanged value)? usernameChanged,
-    TResult Function(_ImageChanged value)? imageChanged,
-    TResult Function(_Saved value)? saved,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_UsernameChanged value)? usernameChanged,
+    TResult? Function(_ImageChanged value)? imageChanged,
+    TResult? Function(_Saved value)? saved,
   }) {
     return emailChanged?.call(this);
   }
@@ -236,26 +236,25 @@ abstract class _$$_UsernameChangedCopyWith<$Res> {
   factory _$$_UsernameChangedCopyWith(
           _$_UsernameChanged value, $Res Function(_$_UsernameChanged) then) =
       __$$_UsernameChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String username});
 }
 
 /// @nodoc
 class __$$_UsernameChangedCopyWithImpl<$Res>
-    extends _$UpdateAccountEventCopyWithImpl<$Res>
+    extends _$UpdateAccountEventCopyWithImpl<$Res, _$_UsernameChanged>
     implements _$$_UsernameChangedCopyWith<$Res> {
   __$$_UsernameChangedCopyWithImpl(
       _$_UsernameChanged _value, $Res Function(_$_UsernameChanged) _then)
-      : super(_value, (v) => _then(v as _$_UsernameChanged));
+      : super(_value, _then);
 
-  @override
-  _$_UsernameChanged get _value => super._value as _$_UsernameChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? username = freezed,
+    Object? username = null,
   }) {
     return _then(_$_UsernameChanged(
-      username == freezed
+      null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
@@ -281,15 +280,16 @@ class _$_UsernameChanged implements _UsernameChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UsernameChanged &&
-            const DeepCollectionEquality().equals(other.username, username));
+            (identical(other.username, username) ||
+                other.username == username));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(username));
+  int get hashCode => Object.hash(runtimeType, username);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UsernameChangedCopyWith<_$_UsernameChanged> get copyWith =>
       __$$_UsernameChangedCopyWithImpl<_$_UsernameChanged>(this, _$identity);
 
@@ -307,10 +307,10 @@ class _$_UsernameChanged implements _UsernameChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function(String username)? usernameChanged,
-    TResult Function(File image)? imageChanged,
-    TResult Function()? saved,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String username)? usernameChanged,
+    TResult? Function(File image)? imageChanged,
+    TResult? Function()? saved,
   }) {
     return usernameChanged?.call(username);
   }
@@ -344,10 +344,10 @@ class _$_UsernameChanged implements _UsernameChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_UsernameChanged value)? usernameChanged,
-    TResult Function(_ImageChanged value)? imageChanged,
-    TResult Function(_Saved value)? saved,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_UsernameChanged value)? usernameChanged,
+    TResult? Function(_ImageChanged value)? imageChanged,
+    TResult? Function(_Saved value)? saved,
   }) {
     return usernameChanged?.call(this);
   }
@@ -382,26 +382,25 @@ abstract class _$$_ImageChangedCopyWith<$Res> {
   factory _$$_ImageChangedCopyWith(
           _$_ImageChanged value, $Res Function(_$_ImageChanged) then) =
       __$$_ImageChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({File image});
 }
 
 /// @nodoc
 class __$$_ImageChangedCopyWithImpl<$Res>
-    extends _$UpdateAccountEventCopyWithImpl<$Res>
+    extends _$UpdateAccountEventCopyWithImpl<$Res, _$_ImageChanged>
     implements _$$_ImageChangedCopyWith<$Res> {
   __$$_ImageChangedCopyWithImpl(
       _$_ImageChanged _value, $Res Function(_$_ImageChanged) _then)
-      : super(_value, (v) => _then(v as _$_ImageChanged));
+      : super(_value, _then);
 
-  @override
-  _$_ImageChanged get _value => super._value as _$_ImageChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? image = freezed,
+    Object? image = null,
   }) {
     return _then(_$_ImageChanged(
-      image == freezed
+      null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as File,
@@ -427,15 +426,15 @@ class _$_ImageChanged implements _ImageChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ImageChanged &&
-            const DeepCollectionEquality().equals(other.image, image));
+            (identical(other.image, image) || other.image == image));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(image));
+  int get hashCode => Object.hash(runtimeType, image);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ImageChangedCopyWith<_$_ImageChanged> get copyWith =>
       __$$_ImageChangedCopyWithImpl<_$_ImageChanged>(this, _$identity);
 
@@ -453,10 +452,10 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function(String username)? usernameChanged,
-    TResult Function(File image)? imageChanged,
-    TResult Function()? saved,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String username)? usernameChanged,
+    TResult? Function(File image)? imageChanged,
+    TResult? Function()? saved,
   }) {
     return imageChanged?.call(image);
   }
@@ -490,10 +489,10 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_UsernameChanged value)? usernameChanged,
-    TResult Function(_ImageChanged value)? imageChanged,
-    TResult Function(_Saved value)? saved,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_UsernameChanged value)? usernameChanged,
+    TResult? Function(_ImageChanged value)? imageChanged,
+    TResult? Function(_Saved value)? saved,
   }) {
     return imageChanged?.call(this);
   }
@@ -531,13 +530,10 @@ abstract class _$$_SavedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_SavedCopyWithImpl<$Res>
-    extends _$UpdateAccountEventCopyWithImpl<$Res>
+    extends _$UpdateAccountEventCopyWithImpl<$Res, _$_Saved>
     implements _$$_SavedCopyWith<$Res> {
   __$$_SavedCopyWithImpl(_$_Saved _value, $Res Function(_$_Saved) _then)
-      : super(_value, (v) => _then(v as _$_Saved));
-
-  @override
-  _$_Saved get _value => super._value as _$_Saved;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -573,10 +569,10 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function(String username)? usernameChanged,
-    TResult Function(File image)? imageChanged,
-    TResult Function()? saved,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String username)? usernameChanged,
+    TResult? Function(File image)? imageChanged,
+    TResult? Function()? saved,
   }) {
     return saved?.call();
   }
@@ -610,10 +606,10 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_UsernameChanged value)? usernameChanged,
-    TResult Function(_ImageChanged value)? imageChanged,
-    TResult Function(_Saved value)? saved,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_UsernameChanged value)? usernameChanged,
+    TResult? Function(_ImageChanged value)? imageChanged,
+    TResult? Function(_Saved value)? saved,
   }) {
     return saved?.call(this);
   }
@@ -657,7 +653,8 @@ mixin _$UpdateAccountState {
 abstract class $UpdateAccountStateCopyWith<$Res> {
   factory $UpdateAccountStateCopyWith(
           UpdateAccountState value, $Res Function(UpdateAccountState) then) =
-      _$UpdateAccountStateCopyWithImpl<$Res>;
+      _$UpdateAccountStateCopyWithImpl<$Res, UpdateAccountState>;
+  @useResult
   $Res call(
       {Username username,
       EmailAddress emailAddress,
@@ -668,49 +665,51 @@ abstract class $UpdateAccountStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UpdateAccountStateCopyWithImpl<$Res>
+class _$UpdateAccountStateCopyWithImpl<$Res, $Val extends UpdateAccountState>
     implements $UpdateAccountStateCopyWith<$Res> {
   _$UpdateAccountStateCopyWithImpl(this._value, this._then);
 
-  final UpdateAccountState _value;
   // ignore: unused_field
-  final $Res Function(UpdateAccountState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? username = freezed,
-    Object? emailAddress = freezed,
+    Object? username = null,
+    Object? emailAddress = null,
     Object? image = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSaving = freezed,
-    Object? saveFailureOrSuccessOption = freezed,
+    Object? showErrorMessages = null,
+    Object? isSaving = null,
+    Object? saveFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as Username,
-      emailAddress: emailAddress == freezed
+      emailAddress: null == emailAddress
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
               as EmailAddress,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as File?,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSaving: isSaving == freezed
+      isSaving: null == isSaving
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
               as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+      saveFailureOrSuccessOption: null == saveFailureOrSuccessOption
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AccountFailure, Account>>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -721,6 +720,7 @@ abstract class _$$_UpdateAccountStateCopyWith<$Res>
           $Res Function(_$_UpdateAccountState) then) =
       __$$_UpdateAccountStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {Username username,
       EmailAddress emailAddress,
@@ -732,46 +732,44 @@ abstract class _$$_UpdateAccountStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_UpdateAccountStateCopyWithImpl<$Res>
-    extends _$UpdateAccountStateCopyWithImpl<$Res>
+    extends _$UpdateAccountStateCopyWithImpl<$Res, _$_UpdateAccountState>
     implements _$$_UpdateAccountStateCopyWith<$Res> {
   __$$_UpdateAccountStateCopyWithImpl(
       _$_UpdateAccountState _value, $Res Function(_$_UpdateAccountState) _then)
-      : super(_value, (v) => _then(v as _$_UpdateAccountState));
+      : super(_value, _then);
 
-  @override
-  _$_UpdateAccountState get _value => super._value as _$_UpdateAccountState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? username = freezed,
-    Object? emailAddress = freezed,
+    Object? username = null,
+    Object? emailAddress = null,
     Object? image = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSaving = freezed,
-    Object? saveFailureOrSuccessOption = freezed,
+    Object? showErrorMessages = null,
+    Object? isSaving = null,
+    Object? saveFailureOrSuccessOption = null,
   }) {
     return _then(_$_UpdateAccountState(
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as Username,
-      emailAddress: emailAddress == freezed
+      emailAddress: null == emailAddress
           ? _value.emailAddress
           : emailAddress // ignore: cast_nullable_to_non_nullable
               as EmailAddress,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as File?,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSaving: isSaving == freezed
+      isSaving: null == isSaving
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
               as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+      saveFailureOrSuccessOption: null == saveFailureOrSuccessOption
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AccountFailure, Account>>,
@@ -814,29 +812,28 @@ class _$_UpdateAccountState implements _UpdateAccountState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UpdateAccountState &&
-            const DeepCollectionEquality().equals(other.username, username) &&
-            const DeepCollectionEquality()
-                .equals(other.emailAddress, emailAddress) &&
-            const DeepCollectionEquality().equals(other.image, image) &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality().equals(other.isSaving, isSaving) &&
-            const DeepCollectionEquality().equals(
-                other.saveFailureOrSuccessOption, saveFailureOrSuccessOption));
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.emailAddress, emailAddress) ||
+                other.emailAddress == emailAddress) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.isSaving, isSaving) ||
+                other.isSaving == isSaving) &&
+            (identical(other.saveFailureOrSuccessOption,
+                    saveFailureOrSuccessOption) ||
+                other.saveFailureOrSuccessOption ==
+                    saveFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(username),
-      const DeepCollectionEquality().hash(emailAddress),
-      const DeepCollectionEquality().hash(image),
-      const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(isSaving),
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption));
+  int get hashCode => Object.hash(runtimeType, username, emailAddress, image,
+      showErrorMessages, isSaving, saveFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UpdateAccountStateCopyWith<_$_UpdateAccountState> get copyWith =>
       __$$_UpdateAccountStateCopyWithImpl<_$_UpdateAccountState>(
           this, _$identity);

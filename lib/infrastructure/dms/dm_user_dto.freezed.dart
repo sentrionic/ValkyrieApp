@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'dm_user_dto.dart';
 
@@ -35,49 +35,53 @@ mixin _$DMUserDto {
 /// @nodoc
 abstract class $DMUserDtoCopyWith<$Res> {
   factory $DMUserDtoCopyWith(DMUserDto value, $Res Function(DMUserDto) then) =
-      _$DMUserDtoCopyWithImpl<$Res>;
+      _$DMUserDtoCopyWithImpl<$Res, DMUserDto>;
+  @useResult
   $Res call(
       {String id, String username, String image, bool isOnline, bool isFriend});
 }
 
 /// @nodoc
-class _$DMUserDtoCopyWithImpl<$Res> implements $DMUserDtoCopyWith<$Res> {
+class _$DMUserDtoCopyWithImpl<$Res, $Val extends DMUserDto>
+    implements $DMUserDtoCopyWith<$Res> {
   _$DMUserDtoCopyWithImpl(this._value, this._then);
 
-  final DMUserDto _value;
   // ignore: unused_field
-  final $Res Function(DMUserDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? username = freezed,
-    Object? image = freezed,
-    Object? isOnline = freezed,
-    Object? isFriend = freezed,
+    Object? id = null,
+    Object? username = null,
+    Object? image = null,
+    Object? isOnline = null,
+    Object? isFriend = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      image: image == freezed
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      isOnline: isOnline == freezed
+      isOnline: null == isOnline
           ? _value.isOnline
           : isOnline // ignore: cast_nullable_to_non_nullable
               as bool,
-      isFriend: isFriend == freezed
+      isFriend: null == isFriend
           ? _value.isFriend
           : isFriend // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -87,46 +91,46 @@ abstract class _$$_DMUserDtoCopyWith<$Res> implements $DMUserDtoCopyWith<$Res> {
           _$_DMUserDto value, $Res Function(_$_DMUserDto) then) =
       __$$_DMUserDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String id, String username, String image, bool isOnline, bool isFriend});
 }
 
 /// @nodoc
-class __$$_DMUserDtoCopyWithImpl<$Res> extends _$DMUserDtoCopyWithImpl<$Res>
+class __$$_DMUserDtoCopyWithImpl<$Res>
+    extends _$DMUserDtoCopyWithImpl<$Res, _$_DMUserDto>
     implements _$$_DMUserDtoCopyWith<$Res> {
   __$$_DMUserDtoCopyWithImpl(
       _$_DMUserDto _value, $Res Function(_$_DMUserDto) _then)
-      : super(_value, (v) => _then(v as _$_DMUserDto));
+      : super(_value, _then);
 
-  @override
-  _$_DMUserDto get _value => super._value as _$_DMUserDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? username = freezed,
-    Object? image = freezed,
-    Object? isOnline = freezed,
-    Object? isFriend = freezed,
+    Object? id = null,
+    Object? username = null,
+    Object? image = null,
+    Object? isOnline = null,
+    Object? isFriend = null,
   }) {
     return _then(_$_DMUserDto(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      image: image == freezed
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      isOnline: isOnline == freezed
+      isOnline: null == isOnline
           ? _value.isOnline
           : isOnline // ignore: cast_nullable_to_non_nullable
               as bool,
-      isFriend: isFriend == freezed
+      isFriend: null == isFriend
           ? _value.isFriend
           : isFriend // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -169,25 +173,24 @@ class _$_DMUserDto extends _DMUserDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DMUserDto &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.username, username) &&
-            const DeepCollectionEquality().equals(other.image, image) &&
-            const DeepCollectionEquality().equals(other.isOnline, isOnline) &&
-            const DeepCollectionEquality().equals(other.isFriend, isFriend));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.isOnline, isOnline) ||
+                other.isOnline == isOnline) &&
+            (identical(other.isFriend, isFriend) ||
+                other.isFriend == isFriend));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(username),
-      const DeepCollectionEquality().hash(image),
-      const DeepCollectionEquality().hash(isOnline),
-      const DeepCollectionEquality().hash(isFriend));
+  int get hashCode =>
+      Object.hash(runtimeType, id, username, image, isOnline, isFriend);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DMUserDtoCopyWith<_$_DMUserDto> get copyWith =>
       __$$_DMUserDtoCopyWithImpl<_$_DMUserDto>(this, _$identity);
 

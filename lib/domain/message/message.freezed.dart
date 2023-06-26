@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'message.dart';
 
@@ -30,7 +30,8 @@ mixin _$Message {
 /// @nodoc
 abstract class $MessageCopyWith<$Res> {
   factory $MessageCopyWith(Message value, $Res Function(Message) then) =
-      _$MessageCopyWithImpl<$Res>;
+      _$MessageCopyWithImpl<$Res, Message>;
+  @useResult
   $Res call(
       {String id,
       MessageText? text,
@@ -44,65 +45,70 @@ abstract class $MessageCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
+class _$MessageCopyWithImpl<$Res, $Val extends Message>
+    implements $MessageCopyWith<$Res> {
   _$MessageCopyWithImpl(this._value, this._then);
 
-  final Message _value;
   // ignore: unused_field
-  final $Res Function(Message) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
     Object? text = freezed,
     Object? attachment = freezed,
-    Object? createdAt = freezed,
-    Object? updatedAt = freezed,
-    Object? user = freezed,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? user = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      text: text == freezed
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as MessageText?,
-      attachment: attachment == freezed
+      attachment: freezed == attachment
           ? _value.attachment
           : attachment // ignore: cast_nullable_to_non_nullable
               as Attachment?,
-      createdAt: createdAt == freezed
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: updatedAt == freezed
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as String,
-      user: user == freezed
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as Member,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $AttachmentCopyWith<$Res>? get attachment {
     if (_value.attachment == null) {
       return null;
     }
 
     return $AttachmentCopyWith<$Res>(_value.attachment!, (value) {
-      return _then(_value.copyWith(attachment: value));
+      return _then(_value.copyWith(attachment: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $MemberCopyWith<$Res> get user {
     return $MemberCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
+      return _then(_value.copyWith(user: value) as $Val);
     });
   }
 }
@@ -113,6 +119,7 @@ abstract class _$$_MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
           _$_Message value, $Res Function(_$_Message) then) =
       __$$_MessageCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String id,
       MessageText? text,
@@ -128,45 +135,44 @@ abstract class _$$_MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
+class __$$_MessageCopyWithImpl<$Res>
+    extends _$MessageCopyWithImpl<$Res, _$_Message>
     implements _$$_MessageCopyWith<$Res> {
   __$$_MessageCopyWithImpl(_$_Message _value, $Res Function(_$_Message) _then)
-      : super(_value, (v) => _then(v as _$_Message));
+      : super(_value, _then);
 
-  @override
-  _$_Message get _value => super._value as _$_Message;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
     Object? text = freezed,
     Object? attachment = freezed,
-    Object? createdAt = freezed,
-    Object? updatedAt = freezed,
-    Object? user = freezed,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? user = null,
   }) {
     return _then(_$_Message(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      text: text == freezed
+      text: freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as MessageText?,
-      attachment: attachment == freezed
+      attachment: freezed == attachment
           ? _value.attachment
           : attachment // ignore: cast_nullable_to_non_nullable
               as Attachment?,
-      createdAt: createdAt == freezed
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as String,
-      updatedAt: updatedAt == freezed
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as String,
-      user: user == freezed
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as Member,
@@ -209,27 +215,24 @@ class _$_Message extends _Message {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Message &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.text, text) &&
-            const DeepCollectionEquality()
-                .equals(other.attachment, attachment) &&
-            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
-            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
-            const DeepCollectionEquality().equals(other.user, user));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.attachment, attachment) ||
+                other.attachment == attachment) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(text),
-      const DeepCollectionEquality().hash(attachment),
-      const DeepCollectionEquality().hash(createdAt),
-      const DeepCollectionEquality().hash(updatedAt),
-      const DeepCollectionEquality().hash(user));
+      runtimeType, id, text, attachment, createdAt, updatedAt, user);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_MessageCopyWith<_$_Message> get copyWith =>
       __$$_MessageCopyWithImpl<_$_Message>(this, _$identity);
 }
@@ -277,18 +280,22 @@ mixin _$Attachment {
 abstract class $AttachmentCopyWith<$Res> {
   factory $AttachmentCopyWith(
           Attachment value, $Res Function(Attachment) then) =
-      _$AttachmentCopyWithImpl<$Res>;
+      _$AttachmentCopyWithImpl<$Res, Attachment>;
+  @useResult
   $Res call({String? filename, String? url, String? filetype});
 }
 
 /// @nodoc
-class _$AttachmentCopyWithImpl<$Res> implements $AttachmentCopyWith<$Res> {
+class _$AttachmentCopyWithImpl<$Res, $Val extends Attachment>
+    implements $AttachmentCopyWith<$Res> {
   _$AttachmentCopyWithImpl(this._value, this._then);
 
-  final Attachment _value;
   // ignore: unused_field
-  final $Res Function(Attachment) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? filename = freezed,
@@ -296,19 +303,19 @@ class _$AttachmentCopyWithImpl<$Res> implements $AttachmentCopyWith<$Res> {
     Object? filetype = freezed,
   }) {
     return _then(_value.copyWith(
-      filename: filename == freezed
+      filename: freezed == filename
           ? _value.filename
           : filename // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      filetype: filetype == freezed
+      filetype: freezed == filetype
           ? _value.filetype
           : filetype // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -319,19 +326,19 @@ abstract class _$$_AttachmentCopyWith<$Res>
           _$_Attachment value, $Res Function(_$_Attachment) then) =
       __$$_AttachmentCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String? filename, String? url, String? filetype});
 }
 
 /// @nodoc
-class __$$_AttachmentCopyWithImpl<$Res> extends _$AttachmentCopyWithImpl<$Res>
+class __$$_AttachmentCopyWithImpl<$Res>
+    extends _$AttachmentCopyWithImpl<$Res, _$_Attachment>
     implements _$$_AttachmentCopyWith<$Res> {
   __$$_AttachmentCopyWithImpl(
       _$_Attachment _value, $Res Function(_$_Attachment) _then)
-      : super(_value, (v) => _then(v as _$_Attachment));
+      : super(_value, _then);
 
-  @override
-  _$_Attachment get _value => super._value as _$_Attachment;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? filename = freezed,
@@ -339,15 +346,15 @@ class __$$_AttachmentCopyWithImpl<$Res> extends _$AttachmentCopyWithImpl<$Res>
     Object? filetype = freezed,
   }) {
     return _then(_$_Attachment(
-      filename: filename == freezed
+      filename: freezed == filename
           ? _value.filename
           : filename // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: url == freezed
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      filetype: filetype == freezed
+      filetype: freezed == filetype
           ? _value.filetype
           : filetype // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -377,20 +384,19 @@ class _$_Attachment extends _Attachment {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Attachment &&
-            const DeepCollectionEquality().equals(other.filename, filename) &&
-            const DeepCollectionEquality().equals(other.url, url) &&
-            const DeepCollectionEquality().equals(other.filetype, filetype));
+            (identical(other.filename, filename) ||
+                other.filename == filename) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.filetype, filetype) ||
+                other.filetype == filetype));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(filename),
-      const DeepCollectionEquality().hash(url),
-      const DeepCollectionEquality().hash(filetype));
+  int get hashCode => Object.hash(runtimeType, filename, url, filetype);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AttachmentCopyWith<_$_Attachment> get copyWith =>
       __$$_AttachmentCopyWithImpl<_$_Attachment>(this, _$identity);
 }

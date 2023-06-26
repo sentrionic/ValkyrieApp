@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'start_dm_cubit.dart';
 
@@ -26,10 +26,10 @@ mixin _$StartDMState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? fetchInProgress,
-    TResult Function(DMChannel channel)? fetchSuccess,
-    TResult Function(DMChannelFailure channelFailure)? fetchFailure,
+    TResult? Function()? initial,
+    TResult? Function()? fetchInProgress,
+    TResult? Function(DMChannel channel)? fetchSuccess,
+    TResult? Function(DMChannelFailure channelFailure)? fetchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$StartDMState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_FetchInProgress value)? fetchInProgress,
-    TResult Function(_FetchSuccess value)? fetchSuccess,
-    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_FetchInProgress value)? fetchInProgress,
+    TResult? Function(_FetchSuccess value)? fetchSuccess,
+    TResult? Function(_FetchFailure value)? fetchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,16 +72,18 @@ mixin _$StartDMState {
 abstract class $StartDMStateCopyWith<$Res> {
   factory $StartDMStateCopyWith(
           StartDMState value, $Res Function(StartDMState) then) =
-      _$StartDMStateCopyWithImpl<$Res>;
+      _$StartDMStateCopyWithImpl<$Res, StartDMState>;
 }
 
 /// @nodoc
-class _$StartDMStateCopyWithImpl<$Res> implements $StartDMStateCopyWith<$Res> {
+class _$StartDMStateCopyWithImpl<$Res, $Val extends StartDMState>
+    implements $StartDMStateCopyWith<$Res> {
   _$StartDMStateCopyWithImpl(this._value, this._then);
 
-  final StartDMState _value;
   // ignore: unused_field
-  final $Res Function(StartDMState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -92,13 +94,11 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$StartDMStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$StartDMStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -134,10 +134,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? fetchInProgress,
-    TResult Function(DMChannel channel)? fetchSuccess,
-    TResult Function(DMChannelFailure channelFailure)? fetchFailure,
+    TResult? Function()? initial,
+    TResult? Function()? fetchInProgress,
+    TResult? Function(DMChannel channel)? fetchSuccess,
+    TResult? Function(DMChannelFailure channelFailure)? fetchFailure,
   }) {
     return initial?.call();
   }
@@ -171,10 +171,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_FetchInProgress value)? fetchInProgress,
-    TResult Function(_FetchSuccess value)? fetchSuccess,
-    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_FetchInProgress value)? fetchInProgress,
+    TResult? Function(_FetchSuccess value)? fetchSuccess,
+    TResult? Function(_FetchFailure value)? fetchFailure,
   }) {
     return initial?.call(this);
   }
@@ -208,14 +208,11 @@ abstract class _$$_FetchInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$$_FetchInProgressCopyWithImpl<$Res>
-    extends _$StartDMStateCopyWithImpl<$Res>
+    extends _$StartDMStateCopyWithImpl<$Res, _$_FetchInProgress>
     implements _$$_FetchInProgressCopyWith<$Res> {
   __$$_FetchInProgressCopyWithImpl(
       _$_FetchInProgress _value, $Res Function(_$_FetchInProgress) _then)
-      : super(_value, (v) => _then(v as _$_FetchInProgress));
-
-  @override
-  _$_FetchInProgress get _value => super._value as _$_FetchInProgress;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -251,10 +248,10 @@ class _$_FetchInProgress implements _FetchInProgress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? fetchInProgress,
-    TResult Function(DMChannel channel)? fetchSuccess,
-    TResult Function(DMChannelFailure channelFailure)? fetchFailure,
+    TResult? Function()? initial,
+    TResult? Function()? fetchInProgress,
+    TResult? Function(DMChannel channel)? fetchSuccess,
+    TResult? Function(DMChannelFailure channelFailure)? fetchFailure,
   }) {
     return fetchInProgress?.call();
   }
@@ -288,10 +285,10 @@ class _$_FetchInProgress implements _FetchInProgress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_FetchInProgress value)? fetchInProgress,
-    TResult Function(_FetchSuccess value)? fetchSuccess,
-    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_FetchInProgress value)? fetchInProgress,
+    TResult? Function(_FetchSuccess value)? fetchSuccess,
+    TResult? Function(_FetchFailure value)? fetchFailure,
   }) {
     return fetchInProgress?.call(this);
   }
@@ -321,6 +318,7 @@ abstract class _$$_FetchSuccessCopyWith<$Res> {
   factory _$$_FetchSuccessCopyWith(
           _$_FetchSuccess value, $Res Function(_$_FetchSuccess) then) =
       __$$_FetchSuccessCopyWithImpl<$Res>;
+  @useResult
   $Res call({DMChannel channel});
 
   $DMChannelCopyWith<$Res> get channel;
@@ -328,21 +326,19 @@ abstract class _$$_FetchSuccessCopyWith<$Res> {
 
 /// @nodoc
 class __$$_FetchSuccessCopyWithImpl<$Res>
-    extends _$StartDMStateCopyWithImpl<$Res>
+    extends _$StartDMStateCopyWithImpl<$Res, _$_FetchSuccess>
     implements _$$_FetchSuccessCopyWith<$Res> {
   __$$_FetchSuccessCopyWithImpl(
       _$_FetchSuccess _value, $Res Function(_$_FetchSuccess) _then)
-      : super(_value, (v) => _then(v as _$_FetchSuccess));
+      : super(_value, _then);
 
-  @override
-  _$_FetchSuccess get _value => super._value as _$_FetchSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? channel = freezed,
+    Object? channel = null,
   }) {
     return _then(_$_FetchSuccess(
-      channel == freezed
+      null == channel
           ? _value.channel
           : channel // ignore: cast_nullable_to_non_nullable
               as DMChannel,
@@ -350,6 +346,7 @@ class __$$_FetchSuccessCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $DMChannelCopyWith<$Res> get channel {
     return $DMChannelCopyWith<$Res>(_value.channel, (value) {
       return _then(_value.copyWith(channel: value));
@@ -375,15 +372,15 @@ class _$_FetchSuccess implements _FetchSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_FetchSuccess &&
-            const DeepCollectionEquality().equals(other.channel, channel));
+            (identical(other.channel, channel) || other.channel == channel));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(channel));
+  int get hashCode => Object.hash(runtimeType, channel);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_FetchSuccessCopyWith<_$_FetchSuccess> get copyWith =>
       __$$_FetchSuccessCopyWithImpl<_$_FetchSuccess>(this, _$identity);
 
@@ -401,10 +398,10 @@ class _$_FetchSuccess implements _FetchSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? fetchInProgress,
-    TResult Function(DMChannel channel)? fetchSuccess,
-    TResult Function(DMChannelFailure channelFailure)? fetchFailure,
+    TResult? Function()? initial,
+    TResult? Function()? fetchInProgress,
+    TResult? Function(DMChannel channel)? fetchSuccess,
+    TResult? Function(DMChannelFailure channelFailure)? fetchFailure,
   }) {
     return fetchSuccess?.call(channel);
   }
@@ -438,10 +435,10 @@ class _$_FetchSuccess implements _FetchSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_FetchInProgress value)? fetchInProgress,
-    TResult Function(_FetchSuccess value)? fetchSuccess,
-    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_FetchInProgress value)? fetchInProgress,
+    TResult? Function(_FetchSuccess value)? fetchSuccess,
+    TResult? Function(_FetchFailure value)? fetchFailure,
   }) {
     return fetchSuccess?.call(this);
   }
@@ -476,6 +473,7 @@ abstract class _$$_FetchFailureCopyWith<$Res> {
   factory _$$_FetchFailureCopyWith(
           _$_FetchFailure value, $Res Function(_$_FetchFailure) then) =
       __$$_FetchFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({DMChannelFailure channelFailure});
 
   $DMChannelFailureCopyWith<$Res> get channelFailure;
@@ -483,21 +481,19 @@ abstract class _$$_FetchFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_FetchFailureCopyWithImpl<$Res>
-    extends _$StartDMStateCopyWithImpl<$Res>
+    extends _$StartDMStateCopyWithImpl<$Res, _$_FetchFailure>
     implements _$$_FetchFailureCopyWith<$Res> {
   __$$_FetchFailureCopyWithImpl(
       _$_FetchFailure _value, $Res Function(_$_FetchFailure) _then)
-      : super(_value, (v) => _then(v as _$_FetchFailure));
+      : super(_value, _then);
 
-  @override
-  _$_FetchFailure get _value => super._value as _$_FetchFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? channelFailure = freezed,
+    Object? channelFailure = null,
   }) {
     return _then(_$_FetchFailure(
-      channelFailure == freezed
+      null == channelFailure
           ? _value.channelFailure
           : channelFailure // ignore: cast_nullable_to_non_nullable
               as DMChannelFailure,
@@ -505,6 +501,7 @@ class __$$_FetchFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $DMChannelFailureCopyWith<$Res> get channelFailure {
     return $DMChannelFailureCopyWith<$Res>(_value.channelFailure, (value) {
       return _then(_value.copyWith(channelFailure: value));
@@ -530,16 +527,16 @@ class _$_FetchFailure implements _FetchFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_FetchFailure &&
-            const DeepCollectionEquality()
-                .equals(other.channelFailure, channelFailure));
+            (identical(other.channelFailure, channelFailure) ||
+                other.channelFailure == channelFailure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(channelFailure));
+  int get hashCode => Object.hash(runtimeType, channelFailure);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_FetchFailureCopyWith<_$_FetchFailure> get copyWith =>
       __$$_FetchFailureCopyWithImpl<_$_FetchFailure>(this, _$identity);
 
@@ -557,10 +554,10 @@ class _$_FetchFailure implements _FetchFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? fetchInProgress,
-    TResult Function(DMChannel channel)? fetchSuccess,
-    TResult Function(DMChannelFailure channelFailure)? fetchFailure,
+    TResult? Function()? initial,
+    TResult? Function()? fetchInProgress,
+    TResult? Function(DMChannel channel)? fetchSuccess,
+    TResult? Function(DMChannelFailure channelFailure)? fetchFailure,
   }) {
     return fetchFailure?.call(channelFailure);
   }
@@ -594,10 +591,10 @@ class _$_FetchFailure implements _FetchFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_FetchInProgress value)? fetchInProgress,
-    TResult Function(_FetchSuccess value)? fetchSuccess,
-    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_FetchInProgress value)? fetchInProgress,
+    TResult? Function(_FetchSuccess value)? fetchSuccess,
+    TResult? Function(_FetchFailure value)? fetchFailure,
   }) {
     return fetchFailure?.call(this);
   }

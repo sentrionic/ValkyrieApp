@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'friend.dart';
 
@@ -28,43 +28,47 @@ mixin _$Friend {
 /// @nodoc
 abstract class $FriendCopyWith<$Res> {
   factory $FriendCopyWith(Friend value, $Res Function(Friend) then) =
-      _$FriendCopyWithImpl<$Res>;
+      _$FriendCopyWithImpl<$Res, Friend>;
+  @useResult
   $Res call({String id, String username, String image, bool isOnline});
 }
 
 /// @nodoc
-class _$FriendCopyWithImpl<$Res> implements $FriendCopyWith<$Res> {
+class _$FriendCopyWithImpl<$Res, $Val extends Friend>
+    implements $FriendCopyWith<$Res> {
   _$FriendCopyWithImpl(this._value, this._then);
 
-  final Friend _value;
   // ignore: unused_field
-  final $Res Function(Friend) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? username = freezed,
-    Object? image = freezed,
-    Object? isOnline = freezed,
+    Object? id = null,
+    Object? username = null,
+    Object? image = null,
+    Object? isOnline = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      image: image == freezed
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      isOnline: isOnline == freezed
+      isOnline: null == isOnline
           ? _value.isOnline
           : isOnline // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -73,39 +77,39 @@ abstract class _$$_FriendCopyWith<$Res> implements $FriendCopyWith<$Res> {
   factory _$$_FriendCopyWith(_$_Friend value, $Res Function(_$_Friend) then) =
       __$$_FriendCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, String username, String image, bool isOnline});
 }
 
 /// @nodoc
-class __$$_FriendCopyWithImpl<$Res> extends _$FriendCopyWithImpl<$Res>
+class __$$_FriendCopyWithImpl<$Res>
+    extends _$FriendCopyWithImpl<$Res, _$_Friend>
     implements _$$_FriendCopyWith<$Res> {
   __$$_FriendCopyWithImpl(_$_Friend _value, $Res Function(_$_Friend) _then)
-      : super(_value, (v) => _then(v as _$_Friend));
+      : super(_value, _then);
 
-  @override
-  _$_Friend get _value => super._value as _$_Friend;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? username = freezed,
-    Object? image = freezed,
-    Object? isOnline = freezed,
+    Object? id = null,
+    Object? username = null,
+    Object? image = null,
+    Object? isOnline = null,
   }) {
     return _then(_$_Friend(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      image: image == freezed
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      isOnline: isOnline == freezed
+      isOnline: null == isOnline
           ? _value.isOnline
           : isOnline // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -142,22 +146,20 @@ class _$_Friend extends _Friend {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Friend &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.username, username) &&
-            const DeepCollectionEquality().equals(other.image, image) &&
-            const DeepCollectionEquality().equals(other.isOnline, isOnline));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.isOnline, isOnline) ||
+                other.isOnline == isOnline));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(username),
-      const DeepCollectionEquality().hash(image),
-      const DeepCollectionEquality().hash(isOnline));
+  int get hashCode => Object.hash(runtimeType, id, username, image, isOnline);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_FriendCopyWith<_$_Friend> get copyWith =>
       __$$_FriendCopyWithImpl<_$_Friend>(this, _$identity);
 }

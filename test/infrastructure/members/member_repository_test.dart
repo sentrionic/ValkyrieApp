@@ -47,7 +47,7 @@ void main() {
 
     void setUpHttpGetFailure() {
       when(() => client.get(any())).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/guilds/$guildId/members', method: "GET"),
         ),
@@ -94,7 +94,7 @@ void main() {
     );
 
     test(
-      'should return a MemberFailure when DioError is thrown',
+      'should return a MemberFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpGetFailure();
@@ -154,7 +154,7 @@ void main() {
 
     void setUpHttpGetFailure() {
       when(() => client.get(any())).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/guilds/$guildId/member', method: "GET"),
         ),
@@ -204,7 +204,7 @@ void main() {
     );
 
     test(
-      'should return a MemberFailure when DioError is thrown',
+      'should return a MemberFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpGetFailure();
@@ -278,7 +278,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/guilds/$guildId/member', method: "GET"),
         ),
@@ -295,7 +295,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             statusCode: 400,
             data: fixture("field_error.json"),
@@ -372,7 +372,7 @@ void main() {
     );
 
     test(
-      'should return a MemberFailure when DioError is thrown',
+      'should return a MemberFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -397,7 +397,7 @@ void main() {
     );
 
     test(
-      'should return a MemberFailure.badRequest when DioError is thrown with status 400',
+      'should return a MemberFailure.badRequest when DioException is thrown with status 400',
       () async {
         // arrange
         setUpHttp400Failure();
@@ -476,7 +476,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/guilds/$guildId/kick', method: "POST"),
         ),
@@ -537,7 +537,7 @@ void main() {
     );
 
     test(
-      'should return a MemberFailure when DioError is thrown',
+      'should return a MemberFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -608,7 +608,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/guilds/$guildId/bans', method: "POST"),
         ),
@@ -669,7 +669,7 @@ void main() {
     );
 
     test(
-      'should return a MemberFailure when DioError is thrown',
+      'should return a MemberFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -740,7 +740,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/guilds/$guildId/bans', method: "DELETE"),
         ),
@@ -801,7 +801,7 @@ void main() {
     );
 
     test(
-      'should return a MemberFailure when DioError is thrown',
+      'should return a MemberFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -863,7 +863,7 @@ void main() {
 
     void setUpHttpGetFailure() {
       when(() => client.get(any())).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/guilds/$guildId/bans', method: "GET"),
         ),
@@ -910,7 +910,7 @@ void main() {
     );
 
     test(
-      'should return a MemberFailure when DioError is thrown',
+      'should return a MemberFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpGetFailure();

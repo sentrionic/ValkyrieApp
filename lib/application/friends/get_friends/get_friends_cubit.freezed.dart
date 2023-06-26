@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_friends_cubit.dart';
 
@@ -26,10 +26,10 @@ mixin _$GetFriendsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(List<Friend> friends)? loadSuccess,
-    TResult Function(FriendFailure failure)? loadFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Friend> friends)? loadSuccess,
+    TResult? Function(FriendFailure failure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$GetFriendsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,17 +72,18 @@ mixin _$GetFriendsState {
 abstract class $GetFriendsStateCopyWith<$Res> {
   factory $GetFriendsStateCopyWith(
           GetFriendsState value, $Res Function(GetFriendsState) then) =
-      _$GetFriendsStateCopyWithImpl<$Res>;
+      _$GetFriendsStateCopyWithImpl<$Res, GetFriendsState>;
 }
 
 /// @nodoc
-class _$GetFriendsStateCopyWithImpl<$Res>
+class _$GetFriendsStateCopyWithImpl<$Res, $Val extends GetFriendsState>
     implements $GetFriendsStateCopyWith<$Res> {
   _$GetFriendsStateCopyWithImpl(this._value, this._then);
 
-  final GetFriendsState _value;
   // ignore: unused_field
-  final $Res Function(GetFriendsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -93,13 +94,11 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$GetFriendsStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$GetFriendsStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -135,10 +134,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(List<Friend> friends)? loadSuccess,
-    TResult Function(FriendFailure failure)? loadFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Friend> friends)? loadSuccess,
+    TResult? Function(FriendFailure failure)? loadFailure,
   }) {
     return initial?.call();
   }
@@ -172,10 +171,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
   }) {
     return initial?.call(this);
   }
@@ -209,14 +208,11 @@ abstract class _$$_LoadInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LoadInProgressCopyWithImpl<$Res>
-    extends _$GetFriendsStateCopyWithImpl<$Res>
+    extends _$GetFriendsStateCopyWithImpl<$Res, _$_LoadInProgress>
     implements _$$_LoadInProgressCopyWith<$Res> {
   __$$_LoadInProgressCopyWithImpl(
       _$_LoadInProgress _value, $Res Function(_$_LoadInProgress) _then)
-      : super(_value, (v) => _then(v as _$_LoadInProgress));
-
-  @override
-  _$_LoadInProgress get _value => super._value as _$_LoadInProgress;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -252,10 +248,10 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(List<Friend> friends)? loadSuccess,
-    TResult Function(FriendFailure failure)? loadFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Friend> friends)? loadSuccess,
+    TResult? Function(FriendFailure failure)? loadFailure,
   }) {
     return loadInProgress?.call();
   }
@@ -289,10 +285,10 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
   }) {
     return loadInProgress?.call(this);
   }
@@ -322,26 +318,25 @@ abstract class _$$_LoadSuccessCopyWith<$Res> {
   factory _$$_LoadSuccessCopyWith(
           _$_LoadSuccess value, $Res Function(_$_LoadSuccess) then) =
       __$$_LoadSuccessCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Friend> friends});
 }
 
 /// @nodoc
 class __$$_LoadSuccessCopyWithImpl<$Res>
-    extends _$GetFriendsStateCopyWithImpl<$Res>
+    extends _$GetFriendsStateCopyWithImpl<$Res, _$_LoadSuccess>
     implements _$$_LoadSuccessCopyWith<$Res> {
   __$$_LoadSuccessCopyWithImpl(
       _$_LoadSuccess _value, $Res Function(_$_LoadSuccess) _then)
-      : super(_value, (v) => _then(v as _$_LoadSuccess));
+      : super(_value, _then);
 
-  @override
-  _$_LoadSuccess get _value => super._value as _$_LoadSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? friends = freezed,
+    Object? friends = null,
   }) {
     return _then(_$_LoadSuccess(
-      friends == freezed
+      null == friends
           ? _value._friends
           : friends // ignore: cast_nullable_to_non_nullable
               as List<Friend>,
@@ -357,6 +352,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   final List<Friend> _friends;
   @override
   List<Friend> get friends {
+    if (_friends is EqualUnmodifiableListView) return _friends;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_friends);
   }
@@ -380,6 +376,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       __$$_LoadSuccessCopyWithImpl<_$_LoadSuccess>(this, _$identity);
 
@@ -397,10 +394,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(List<Friend> friends)? loadSuccess,
-    TResult Function(FriendFailure failure)? loadFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Friend> friends)? loadSuccess,
+    TResult? Function(FriendFailure failure)? loadFailure,
   }) {
     return loadSuccess?.call(friends);
   }
@@ -434,10 +431,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
   }) {
     return loadSuccess?.call(this);
   }
@@ -472,6 +469,7 @@ abstract class _$$_LoadFailureCopyWith<$Res> {
   factory _$$_LoadFailureCopyWith(
           _$_LoadFailure value, $Res Function(_$_LoadFailure) then) =
       __$$_LoadFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({FriendFailure failure});
 
   $FriendFailureCopyWith<$Res> get failure;
@@ -479,21 +477,19 @@ abstract class _$$_LoadFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LoadFailureCopyWithImpl<$Res>
-    extends _$GetFriendsStateCopyWithImpl<$Res>
+    extends _$GetFriendsStateCopyWithImpl<$Res, _$_LoadFailure>
     implements _$$_LoadFailureCopyWith<$Res> {
   __$$_LoadFailureCopyWithImpl(
       _$_LoadFailure _value, $Res Function(_$_LoadFailure) _then)
-      : super(_value, (v) => _then(v as _$_LoadFailure));
+      : super(_value, _then);
 
-  @override
-  _$_LoadFailure get _value => super._value as _$_LoadFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failure = freezed,
+    Object? failure = null,
   }) {
     return _then(_$_LoadFailure(
-      failure == freezed
+      null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as FriendFailure,
@@ -501,6 +497,7 @@ class __$$_LoadFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $FriendFailureCopyWith<$Res> get failure {
     return $FriendFailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
@@ -526,15 +523,15 @@ class _$_LoadFailure implements _LoadFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LoadFailure &&
-            const DeepCollectionEquality().equals(other.failure, failure));
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       __$$_LoadFailureCopyWithImpl<_$_LoadFailure>(this, _$identity);
 
@@ -552,10 +549,10 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(List<Friend> friends)? loadSuccess,
-    TResult Function(FriendFailure failure)? loadFailure,
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Friend> friends)? loadSuccess,
+    TResult? Function(FriendFailure failure)? loadFailure,
   }) {
     return loadFailure?.call(failure);
   }
@@ -589,10 +586,10 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSuccess value)? loadSuccess,
-    TResult Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
   }) {
     return loadFailure?.call(this);
   }

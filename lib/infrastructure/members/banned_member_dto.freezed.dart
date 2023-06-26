@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'banned_member_dto.dart';
 
@@ -34,39 +34,42 @@ mixin _$BannedMemberDto {
 abstract class $BannedMemberDtoCopyWith<$Res> {
   factory $BannedMemberDtoCopyWith(
           BannedMemberDto value, $Res Function(BannedMemberDto) then) =
-      _$BannedMemberDtoCopyWithImpl<$Res>;
+      _$BannedMemberDtoCopyWithImpl<$Res, BannedMemberDto>;
+  @useResult
   $Res call({String id, String username, String image});
 }
 
 /// @nodoc
-class _$BannedMemberDtoCopyWithImpl<$Res>
+class _$BannedMemberDtoCopyWithImpl<$Res, $Val extends BannedMemberDto>
     implements $BannedMemberDtoCopyWith<$Res> {
   _$BannedMemberDtoCopyWithImpl(this._value, this._then);
 
-  final BannedMemberDto _value;
   // ignore: unused_field
-  final $Res Function(BannedMemberDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? username = freezed,
-    Object? image = freezed,
+    Object? id = null,
+    Object? username = null,
+    Object? image = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      image: image == freezed
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -77,36 +80,35 @@ abstract class _$$_BannedMemberDtoCopyWith<$Res>
           _$_BannedMemberDto value, $Res Function(_$_BannedMemberDto) then) =
       __$$_BannedMemberDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, String username, String image});
 }
 
 /// @nodoc
 class __$$_BannedMemberDtoCopyWithImpl<$Res>
-    extends _$BannedMemberDtoCopyWithImpl<$Res>
+    extends _$BannedMemberDtoCopyWithImpl<$Res, _$_BannedMemberDto>
     implements _$$_BannedMemberDtoCopyWith<$Res> {
   __$$_BannedMemberDtoCopyWithImpl(
       _$_BannedMemberDto _value, $Res Function(_$_BannedMemberDto) _then)
-      : super(_value, (v) => _then(v as _$_BannedMemberDto));
+      : super(_value, _then);
 
-  @override
-  _$_BannedMemberDto get _value => super._value as _$_BannedMemberDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? username = freezed,
-    Object? image = freezed,
+    Object? id = null,
+    Object? username = null,
+    Object? image = null,
   }) {
     return _then(_$_BannedMemberDto(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      image: image == freezed
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
@@ -141,21 +143,19 @@ class _$_BannedMemberDto extends _BannedMemberDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_BannedMemberDto &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.username, username) &&
-            const DeepCollectionEquality().equals(other.image, image));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.image, image) || other.image == image));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(username),
-      const DeepCollectionEquality().hash(image));
+  int get hashCode => Object.hash(runtimeType, id, username, image);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_BannedMemberDtoCopyWith<_$_BannedMemberDto> get copyWith =>
       __$$_BannedMemberDtoCopyWithImpl<_$_BannedMemberDto>(this, _$identity);
 

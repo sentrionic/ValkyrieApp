@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'friend_request.dart';
 
@@ -30,44 +30,47 @@ mixin _$FriendRequest {
 abstract class $FriendRequestCopyWith<$Res> {
   factory $FriendRequestCopyWith(
           FriendRequest value, $Res Function(FriendRequest) then) =
-      _$FriendRequestCopyWithImpl<$Res>;
+      _$FriendRequestCopyWithImpl<$Res, FriendRequest>;
+  @useResult
   $Res call({String id, String username, String image, RequestType type});
 }
 
 /// @nodoc
-class _$FriendRequestCopyWithImpl<$Res>
+class _$FriendRequestCopyWithImpl<$Res, $Val extends FriendRequest>
     implements $FriendRequestCopyWith<$Res> {
   _$FriendRequestCopyWithImpl(this._value, this._then);
 
-  final FriendRequest _value;
   // ignore: unused_field
-  final $Res Function(FriendRequest) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? username = freezed,
-    Object? image = freezed,
-    Object? type = freezed,
+    Object? id = null,
+    Object? username = null,
+    Object? image = null,
+    Object? type = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      image: image == freezed
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as RequestType,
-    ));
+    ) as $Val);
   }
 }
 
@@ -78,41 +81,40 @@ abstract class _$$_FriendRequestCopyWith<$Res>
           _$_FriendRequest value, $Res Function(_$_FriendRequest) then) =
       __$$_FriendRequestCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, String username, String image, RequestType type});
 }
 
 /// @nodoc
 class __$$_FriendRequestCopyWithImpl<$Res>
-    extends _$FriendRequestCopyWithImpl<$Res>
+    extends _$FriendRequestCopyWithImpl<$Res, _$_FriendRequest>
     implements _$$_FriendRequestCopyWith<$Res> {
   __$$_FriendRequestCopyWithImpl(
       _$_FriendRequest _value, $Res Function(_$_FriendRequest) _then)
-      : super(_value, (v) => _then(v as _$_FriendRequest));
+      : super(_value, _then);
 
-  @override
-  _$_FriendRequest get _value => super._value as _$_FriendRequest;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? username = freezed,
-    Object? image = freezed,
-    Object? type = freezed,
+    Object? id = null,
+    Object? username = null,
+    Object? image = null,
+    Object? type = null,
   }) {
     return _then(_$_FriendRequest(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      image: image == freezed
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as RequestType,
@@ -149,22 +151,19 @@ class _$_FriendRequest extends _FriendRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_FriendRequest &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.username, username) &&
-            const DeepCollectionEquality().equals(other.image, image) &&
-            const DeepCollectionEquality().equals(other.type, type));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(username),
-      const DeepCollectionEquality().hash(image),
-      const DeepCollectionEquality().hash(type));
+  int get hashCode => Object.hash(runtimeType, id, username, image, type);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_FriendRequestCopyWith<_$_FriendRequest> get copyWith =>
       __$$_FriendRequestCopyWithImpl<_$_FriendRequest>(this, _$identity);
 }

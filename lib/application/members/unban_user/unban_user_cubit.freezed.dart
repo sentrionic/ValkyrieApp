@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'unban_user_cubit.dart';
 
@@ -26,10 +26,10 @@ mixin _$UnbanUserState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(MemberFailure failure)? unbanFailure,
-    TResult Function(String memberId)? unbanSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(MemberFailure failure)? unbanFailure,
+    TResult? Function(String memberId)? unbanSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$UnbanUserState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_UnbanFailure value)? unbanFailure,
-    TResult Function(_UnbanSuccess value)? unbanSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_UnbanFailure value)? unbanFailure,
+    TResult? Function(_UnbanSuccess value)? unbanSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,17 +72,18 @@ mixin _$UnbanUserState {
 abstract class $UnbanUserStateCopyWith<$Res> {
   factory $UnbanUserStateCopyWith(
           UnbanUserState value, $Res Function(UnbanUserState) then) =
-      _$UnbanUserStateCopyWithImpl<$Res>;
+      _$UnbanUserStateCopyWithImpl<$Res, UnbanUserState>;
 }
 
 /// @nodoc
-class _$UnbanUserStateCopyWithImpl<$Res>
+class _$UnbanUserStateCopyWithImpl<$Res, $Val extends UnbanUserState>
     implements $UnbanUserStateCopyWith<$Res> {
   _$UnbanUserStateCopyWithImpl(this._value, this._then);
 
-  final UnbanUserState _value;
   // ignore: unused_field
-  final $Res Function(UnbanUserState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -93,13 +94,11 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$UnbanUserStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$UnbanUserStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -135,10 +134,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(MemberFailure failure)? unbanFailure,
-    TResult Function(String memberId)? unbanSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(MemberFailure failure)? unbanFailure,
+    TResult? Function(String memberId)? unbanSuccess,
   }) {
     return initial?.call();
   }
@@ -172,10 +171,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_UnbanFailure value)? unbanFailure,
-    TResult Function(_UnbanSuccess value)? unbanSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_UnbanFailure value)? unbanFailure,
+    TResult? Function(_UnbanSuccess value)? unbanSuccess,
   }) {
     return initial?.call(this);
   }
@@ -209,14 +208,11 @@ abstract class _$$_ActionInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ActionInProgressCopyWithImpl<$Res>
-    extends _$UnbanUserStateCopyWithImpl<$Res>
+    extends _$UnbanUserStateCopyWithImpl<$Res, _$_ActionInProgress>
     implements _$$_ActionInProgressCopyWith<$Res> {
   __$$_ActionInProgressCopyWithImpl(
       _$_ActionInProgress _value, $Res Function(_$_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _$_ActionInProgress));
-
-  @override
-  _$_ActionInProgress get _value => super._value as _$_ActionInProgress;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -252,10 +248,10 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(MemberFailure failure)? unbanFailure,
-    TResult Function(String memberId)? unbanSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(MemberFailure failure)? unbanFailure,
+    TResult? Function(String memberId)? unbanSuccess,
   }) {
     return actionInProgress?.call();
   }
@@ -289,10 +285,10 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_UnbanFailure value)? unbanFailure,
-    TResult Function(_UnbanSuccess value)? unbanSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_UnbanFailure value)? unbanFailure,
+    TResult? Function(_UnbanSuccess value)? unbanSuccess,
   }) {
     return actionInProgress?.call(this);
   }
@@ -322,6 +318,7 @@ abstract class _$$_UnbanFailureCopyWith<$Res> {
   factory _$$_UnbanFailureCopyWith(
           _$_UnbanFailure value, $Res Function(_$_UnbanFailure) then) =
       __$$_UnbanFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({MemberFailure failure});
 
   $MemberFailureCopyWith<$Res> get failure;
@@ -329,21 +326,19 @@ abstract class _$$_UnbanFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_UnbanFailureCopyWithImpl<$Res>
-    extends _$UnbanUserStateCopyWithImpl<$Res>
+    extends _$UnbanUserStateCopyWithImpl<$Res, _$_UnbanFailure>
     implements _$$_UnbanFailureCopyWith<$Res> {
   __$$_UnbanFailureCopyWithImpl(
       _$_UnbanFailure _value, $Res Function(_$_UnbanFailure) _then)
-      : super(_value, (v) => _then(v as _$_UnbanFailure));
+      : super(_value, _then);
 
-  @override
-  _$_UnbanFailure get _value => super._value as _$_UnbanFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failure = freezed,
+    Object? failure = null,
   }) {
     return _then(_$_UnbanFailure(
-      failure == freezed
+      null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as MemberFailure,
@@ -351,6 +346,7 @@ class __$$_UnbanFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $MemberFailureCopyWith<$Res> get failure {
     return $MemberFailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
@@ -376,15 +372,15 @@ class _$_UnbanFailure implements _UnbanFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UnbanFailure &&
-            const DeepCollectionEquality().equals(other.failure, failure));
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UnbanFailureCopyWith<_$_UnbanFailure> get copyWith =>
       __$$_UnbanFailureCopyWithImpl<_$_UnbanFailure>(this, _$identity);
 
@@ -402,10 +398,10 @@ class _$_UnbanFailure implements _UnbanFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(MemberFailure failure)? unbanFailure,
-    TResult Function(String memberId)? unbanSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(MemberFailure failure)? unbanFailure,
+    TResult? Function(String memberId)? unbanSuccess,
   }) {
     return unbanFailure?.call(failure);
   }
@@ -439,10 +435,10 @@ class _$_UnbanFailure implements _UnbanFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_UnbanFailure value)? unbanFailure,
-    TResult Function(_UnbanSuccess value)? unbanSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_UnbanFailure value)? unbanFailure,
+    TResult? Function(_UnbanSuccess value)? unbanSuccess,
   }) {
     return unbanFailure?.call(this);
   }
@@ -477,26 +473,25 @@ abstract class _$$_UnbanSuccessCopyWith<$Res> {
   factory _$$_UnbanSuccessCopyWith(
           _$_UnbanSuccess value, $Res Function(_$_UnbanSuccess) then) =
       __$$_UnbanSuccessCopyWithImpl<$Res>;
+  @useResult
   $Res call({String memberId});
 }
 
 /// @nodoc
 class __$$_UnbanSuccessCopyWithImpl<$Res>
-    extends _$UnbanUserStateCopyWithImpl<$Res>
+    extends _$UnbanUserStateCopyWithImpl<$Res, _$_UnbanSuccess>
     implements _$$_UnbanSuccessCopyWith<$Res> {
   __$$_UnbanSuccessCopyWithImpl(
       _$_UnbanSuccess _value, $Res Function(_$_UnbanSuccess) _then)
-      : super(_value, (v) => _then(v as _$_UnbanSuccess));
+      : super(_value, _then);
 
-  @override
-  _$_UnbanSuccess get _value => super._value as _$_UnbanSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? memberId = freezed,
+    Object? memberId = null,
   }) {
     return _then(_$_UnbanSuccess(
-      memberId == freezed
+      null == memberId
           ? _value.memberId
           : memberId // ignore: cast_nullable_to_non_nullable
               as String,
@@ -522,15 +517,16 @@ class _$_UnbanSuccess implements _UnbanSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UnbanSuccess &&
-            const DeepCollectionEquality().equals(other.memberId, memberId));
+            (identical(other.memberId, memberId) ||
+                other.memberId == memberId));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(memberId));
+  int get hashCode => Object.hash(runtimeType, memberId);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UnbanSuccessCopyWith<_$_UnbanSuccess> get copyWith =>
       __$$_UnbanSuccessCopyWithImpl<_$_UnbanSuccess>(this, _$identity);
 
@@ -548,10 +544,10 @@ class _$_UnbanSuccess implements _UnbanSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(MemberFailure failure)? unbanFailure,
-    TResult Function(String memberId)? unbanSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(MemberFailure failure)? unbanFailure,
+    TResult? Function(String memberId)? unbanSuccess,
   }) {
     return unbanSuccess?.call(memberId);
   }
@@ -585,10 +581,10 @@ class _$_UnbanSuccess implements _UnbanSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_UnbanFailure value)? unbanFailure,
-    TResult Function(_UnbanSuccess value)? unbanSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_UnbanFailure value)? unbanFailure,
+    TResult? Function(_UnbanSuccess value)? unbanSuccess,
   }) {
     return unbanSuccess?.call(this);
   }

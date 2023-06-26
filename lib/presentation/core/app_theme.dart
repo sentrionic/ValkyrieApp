@@ -4,8 +4,10 @@ import 'package:valkyrie_app/presentation/core/colors.dart';
 
 final ThemeData theme = ThemeData.dark();
 final appTheme = theme.copyWith(
-  colorScheme: theme.colorScheme.copyWith(secondary: ThemeColors.themeBlue),
-  backgroundColor: ThemeColors.appBackground,
+  colorScheme: theme.colorScheme.copyWith(
+    secondary: ThemeColors.themeBlue,
+    background: ThemeColors.appBackground,
+  ),
   appBarTheme: const AppBarTheme(
     backgroundColor: ThemeColors.appBarBackground,
     elevation: 0,

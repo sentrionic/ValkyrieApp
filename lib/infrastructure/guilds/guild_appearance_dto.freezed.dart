@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'guild_appearance_dto.dart';
 
@@ -33,34 +33,37 @@ mixin _$GuildAppearanceDto {
 abstract class $GuildAppearanceDtoCopyWith<$Res> {
   factory $GuildAppearanceDtoCopyWith(
           GuildAppearanceDto value, $Res Function(GuildAppearanceDto) then) =
-      _$GuildAppearanceDtoCopyWithImpl<$Res>;
+      _$GuildAppearanceDtoCopyWithImpl<$Res, GuildAppearanceDto>;
+  @useResult
   $Res call({String? nickname, String? color});
 }
 
 /// @nodoc
-class _$GuildAppearanceDtoCopyWithImpl<$Res>
+class _$GuildAppearanceDtoCopyWithImpl<$Res, $Val extends GuildAppearanceDto>
     implements $GuildAppearanceDtoCopyWith<$Res> {
   _$GuildAppearanceDtoCopyWithImpl(this._value, this._then);
 
-  final GuildAppearanceDto _value;
   // ignore: unused_field
-  final $Res Function(GuildAppearanceDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? nickname = freezed,
     Object? color = freezed,
   }) {
     return _then(_value.copyWith(
-      nickname: nickname == freezed
+      nickname: freezed == nickname
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
               as String?,
-      color: color == freezed
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -71,31 +74,30 @@ abstract class _$$_GuildAppearanceDtoCopyWith<$Res>
           $Res Function(_$_GuildAppearanceDto) then) =
       __$$_GuildAppearanceDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String? nickname, String? color});
 }
 
 /// @nodoc
 class __$$_GuildAppearanceDtoCopyWithImpl<$Res>
-    extends _$GuildAppearanceDtoCopyWithImpl<$Res>
+    extends _$GuildAppearanceDtoCopyWithImpl<$Res, _$_GuildAppearanceDto>
     implements _$$_GuildAppearanceDtoCopyWith<$Res> {
   __$$_GuildAppearanceDtoCopyWithImpl(
       _$_GuildAppearanceDto _value, $Res Function(_$_GuildAppearanceDto) _then)
-      : super(_value, (v) => _then(v as _$_GuildAppearanceDto));
+      : super(_value, _then);
 
-  @override
-  _$_GuildAppearanceDto get _value => super._value as _$_GuildAppearanceDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? nickname = freezed,
     Object? color = freezed,
   }) {
     return _then(_$_GuildAppearanceDto(
-      nickname: nickname == freezed
+      nickname: freezed == nickname
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
               as String?,
-      color: color == freezed
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -126,19 +128,18 @@ class _$_GuildAppearanceDto extends _GuildAppearanceDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GuildAppearanceDto &&
-            const DeepCollectionEquality().equals(other.nickname, nickname) &&
-            const DeepCollectionEquality().equals(other.color, color));
+            (identical(other.nickname, nickname) ||
+                other.nickname == nickname) &&
+            (identical(other.color, color) || other.color == color));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(nickname),
-      const DeepCollectionEquality().hash(color));
+  int get hashCode => Object.hash(runtimeType, nickname, color);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GuildAppearanceDtoCopyWith<_$_GuildAppearanceDto> get copyWith =>
       __$$_GuildAppearanceDtoCopyWithImpl<_$_GuildAppearanceDto>(
           this, _$identity);

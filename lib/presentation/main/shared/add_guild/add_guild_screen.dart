@@ -53,9 +53,9 @@ class AddGuildScreen extends StatelessWidget {
                       onPressed: () => Navigator.of(context).pushNamed(
                         CreateGuildScreen.routeName,
                       ),
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
+                        children: [
                           SizedBox(),
                           Text(
                             "Create My Own",

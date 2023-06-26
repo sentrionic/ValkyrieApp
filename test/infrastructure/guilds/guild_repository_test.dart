@@ -42,7 +42,7 @@ void main() {
 
     void setUpHttpGetFailure(String path) {
       when(() => client.get(any())).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: path, method: "GET"),
         ),
       );
@@ -88,7 +88,7 @@ void main() {
     );
 
     test(
-      'should return a GuildFailure when DioError is thrown',
+      'should return a GuildFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpGetFailure('/guilds');
@@ -165,7 +165,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: path, method: "POST"),
         ),
       );
@@ -180,7 +180,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             data: data,
             statusCode: 400,
@@ -236,7 +236,7 @@ void main() {
     );
 
     test(
-      'should return a GuildFailure when DioError is thrown',
+      'should return a GuildFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpPostFailure('/guilds/create', name);
@@ -257,7 +257,7 @@ void main() {
     );
 
     test(
-      'should return a GuildFailure.badRequest when DioError is thrown with status 400 and a single error',
+      'should return a GuildFailure.badRequest when DioException is thrown with status 400 and a single error',
       () async {
         // arrange
         setUpHttp400Failure(errorData);
@@ -278,7 +278,7 @@ void main() {
     );
 
     test(
-      'should return a GuildFailure.badRequest when DioError is thrown with status 400 and multiple errors',
+      'should return a GuildFailure.badRequest when DioException is thrown with status 400 and multiple errors',
       () async {
         // arrange
         setUpHttp400Failure(errorsData);
@@ -342,7 +342,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: '/guilds/$id/delete'),
         ),
       );
@@ -387,7 +387,7 @@ void main() {
     );
 
     test(
-      'should return a GuildFailure when DioError is thrown',
+      'should return a GuildFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpDeleteFailure();
@@ -451,7 +451,7 @@ void main() {
           data: any(named: "data"),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: '/guilds/$id'),
         ),
       );
@@ -464,7 +464,7 @@ void main() {
           data: any(named: "data"),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             statusCode: 400,
             data: fixture('field_errors.json'),
@@ -522,7 +522,7 @@ void main() {
     );
 
     test(
-      'should return a GuildFailure when DioError is thrown',
+      'should return a GuildFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpPutFailure();
@@ -543,7 +543,7 @@ void main() {
     );
 
     test(
-      'should return a GuildFailure.badRequest when DioError is thrown with status 400',
+      'should return a GuildFailure.badRequest when DioException is thrown with status 400',
       () async {
         // arrange
         setUpHttp400Failure();
@@ -601,7 +601,7 @@ void main() {
 
     void setUpHttpGetFailure() {
       when(() => client.get(any())).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/guilds/$id/invite', method: "GET"),
         ),
@@ -648,7 +648,7 @@ void main() {
     );
 
     test(
-      'should return a GuildFailure when DioError is thrown',
+      'should return a GuildFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpGetFailure();
@@ -712,7 +712,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: '/guilds/$id/invite'),
         ),
       );
@@ -757,7 +757,7 @@ void main() {
     );
 
     test(
-      'should return a GuildFailure when DioError is thrown',
+      'should return a GuildFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpDeleteFailure();
@@ -831,7 +831,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: '/guilds/join', method: "POST"),
         ),
       );
@@ -846,7 +846,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             data: fixture('field_error.json'),
             statusCode: 400,
@@ -901,7 +901,7 @@ void main() {
     );
 
     test(
-      'should return a GuildFailure when DioError is thrown',
+      'should return a GuildFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -922,7 +922,7 @@ void main() {
     );
 
     test(
-      'should return a GuildFailure.badRequest when DioError is thrown',
+      'should return a GuildFailure.badRequest when DioException is thrown',
       () async {
         // arrange
         setUpHttp400Failure();
@@ -986,7 +986,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: '/guilds/$id'),
         ),
       );
@@ -1031,7 +1031,7 @@ void main() {
     );
 
     test(
-      'should return a GuildFailure when DioError is thrown',
+      'should return a GuildFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpDeleteFailure();

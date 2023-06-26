@@ -44,7 +44,7 @@ void main() {
 
     void setUpHttpGetFailure() {
       when(() => client.get(any())).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/messages/$channelId', method: "GET"),
         ),
@@ -91,7 +91,7 @@ void main() {
     );
 
     test(
-      'should return a MessageFailure when DioError is thrown',
+      'should return a MessageFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpGetFailure();
@@ -158,7 +158,7 @@ void main() {
           data: any(named: "data"),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/messages/$channelId', method: "POST"),
         ),
@@ -172,7 +172,7 @@ void main() {
           data: any(named: "data"),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             data: fixture('field_errors.json'),
             statusCode: 400,
@@ -236,7 +236,7 @@ void main() {
     );
 
     test(
-      'should return a MessageFailure when DioError is thrown',
+      'should return a MessageFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -257,7 +257,7 @@ void main() {
     );
 
     test(
-      'should return a MessageFailure.badRequest when DioError is thrown with status 400',
+      'should return a MessageFailure.badRequest when DioException is thrown with status 400',
       () async {
         // arrange
         setUpHttp400Failure();
@@ -324,7 +324,7 @@ void main() {
           data: any(named: "data"),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/messages/$channelId', method: "POST"),
         ),
@@ -338,7 +338,7 @@ void main() {
           data: any(named: "data"),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             data: fixture('field_errors.json'),
             statusCode: 400,
@@ -402,7 +402,7 @@ void main() {
     );
 
     test(
-      'should return a MessageFailure when DioError is thrown',
+      'should return a MessageFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -423,7 +423,7 @@ void main() {
     );
 
     test(
-      'should return a MessageFailure.badRequest when DioError is thrown with status 400',
+      'should return a MessageFailure.badRequest when DioException is thrown with status 400',
       () async {
         // arrange
         setUpHttp400Failure();
@@ -490,7 +490,7 @@ void main() {
           data: {"text": text},
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/messages/$messageId', method: "PUT"),
         ),
@@ -504,7 +504,7 @@ void main() {
           data: {"text": text},
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             statusCode: 400,
             data: fixture("field_errors.json"),
@@ -568,7 +568,7 @@ void main() {
     );
 
     test(
-      'should return a MessageFailure when DioError is thrown',
+      'should return a MessageFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -589,7 +589,7 @@ void main() {
     );
 
     test(
-      'should return a MessageFailure.badRequest when DioError is thrown',
+      'should return a MessageFailure.badRequest when DioException is thrown',
       () async {
         // arrange
         setUpHttp400Failure();
@@ -653,7 +653,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: '/messages/$id'),
         ),
       );
@@ -698,7 +698,7 @@ void main() {
     );
 
     test(
-      'should return a MessageFailure when DioError is thrown',
+      'should return a MessageFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpDeleteFailure();

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'auth_failure.dart';
 
@@ -26,10 +26,10 @@ mixin _$AuthFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? passwordsDontMatch,
-    TResult Function()? invalidCredentials,
-    TResult Function()? serverError,
-    TResult Function(String error)? badRequest,
+    TResult? Function()? passwordsDontMatch,
+    TResult? Function()? invalidCredentials,
+    TResult? Function()? serverError,
+    TResult? Function(String error)? badRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$AuthFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_PasswordsDontMatch value)? passwordsDontMatch,
-    TResult Function(_InvalidCredentials value)? invalidCredentials,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_BadRequest value)? badRequest,
+    TResult? Function(_PasswordsDontMatch value)? passwordsDontMatch,
+    TResult? Function(_InvalidCredentials value)? invalidCredentials,
+    TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_BadRequest value)? badRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,16 +72,18 @@ mixin _$AuthFailure {
 abstract class $AuthFailureCopyWith<$Res> {
   factory $AuthFailureCopyWith(
           AuthFailure value, $Res Function(AuthFailure) then) =
-      _$AuthFailureCopyWithImpl<$Res>;
+      _$AuthFailureCopyWithImpl<$Res, AuthFailure>;
 }
 
 /// @nodoc
-class _$AuthFailureCopyWithImpl<$Res> implements $AuthFailureCopyWith<$Res> {
+class _$AuthFailureCopyWithImpl<$Res, $Val extends AuthFailure>
+    implements $AuthFailureCopyWith<$Res> {
   _$AuthFailureCopyWithImpl(this._value, this._then);
 
-  final AuthFailure _value;
   // ignore: unused_field
-  final $Res Function(AuthFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -93,14 +95,11 @@ abstract class _$$_PasswordsDontMatchCopyWith<$Res> {
 
 /// @nodoc
 class __$$_PasswordsDontMatchCopyWithImpl<$Res>
-    extends _$AuthFailureCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$_PasswordsDontMatch>
     implements _$$_PasswordsDontMatchCopyWith<$Res> {
   __$$_PasswordsDontMatchCopyWithImpl(
       _$_PasswordsDontMatch _value, $Res Function(_$_PasswordsDontMatch) _then)
-      : super(_value, (v) => _then(v as _$_PasswordsDontMatch));
-
-  @override
-  _$_PasswordsDontMatch get _value => super._value as _$_PasswordsDontMatch;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -136,10 +135,10 @@ class _$_PasswordsDontMatch implements _PasswordsDontMatch {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? passwordsDontMatch,
-    TResult Function()? invalidCredentials,
-    TResult Function()? serverError,
-    TResult Function(String error)? badRequest,
+    TResult? Function()? passwordsDontMatch,
+    TResult? Function()? invalidCredentials,
+    TResult? Function()? serverError,
+    TResult? Function(String error)? badRequest,
   }) {
     return passwordsDontMatch?.call();
   }
@@ -173,10 +172,10 @@ class _$_PasswordsDontMatch implements _PasswordsDontMatch {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_PasswordsDontMatch value)? passwordsDontMatch,
-    TResult Function(_InvalidCredentials value)? invalidCredentials,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_BadRequest value)? badRequest,
+    TResult? Function(_PasswordsDontMatch value)? passwordsDontMatch,
+    TResult? Function(_InvalidCredentials value)? invalidCredentials,
+    TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_BadRequest value)? badRequest,
   }) {
     return passwordsDontMatch?.call(this);
   }
@@ -210,14 +209,11 @@ abstract class _$$_InvalidCredentialsCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InvalidCredentialsCopyWithImpl<$Res>
-    extends _$AuthFailureCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$_InvalidCredentials>
     implements _$$_InvalidCredentialsCopyWith<$Res> {
   __$$_InvalidCredentialsCopyWithImpl(
       _$_InvalidCredentials _value, $Res Function(_$_InvalidCredentials) _then)
-      : super(_value, (v) => _then(v as _$_InvalidCredentials));
-
-  @override
-  _$_InvalidCredentials get _value => super._value as _$_InvalidCredentials;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -253,10 +249,10 @@ class _$_InvalidCredentials implements _InvalidCredentials {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? passwordsDontMatch,
-    TResult Function()? invalidCredentials,
-    TResult Function()? serverError,
-    TResult Function(String error)? badRequest,
+    TResult? Function()? passwordsDontMatch,
+    TResult? Function()? invalidCredentials,
+    TResult? Function()? serverError,
+    TResult? Function(String error)? badRequest,
   }) {
     return invalidCredentials?.call();
   }
@@ -290,10 +286,10 @@ class _$_InvalidCredentials implements _InvalidCredentials {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_PasswordsDontMatch value)? passwordsDontMatch,
-    TResult Function(_InvalidCredentials value)? invalidCredentials,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_BadRequest value)? badRequest,
+    TResult? Function(_PasswordsDontMatch value)? passwordsDontMatch,
+    TResult? Function(_InvalidCredentials value)? invalidCredentials,
+    TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_BadRequest value)? badRequest,
   }) {
     return invalidCredentials?.call(this);
   }
@@ -326,14 +322,12 @@ abstract class _$$_ServerErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ServerErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+class __$$_ServerErrorCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$_ServerError>
     implements _$$_ServerErrorCopyWith<$Res> {
   __$$_ServerErrorCopyWithImpl(
       _$_ServerError _value, $Res Function(_$_ServerError) _then)
-      : super(_value, (v) => _then(v as _$_ServerError));
-
-  @override
-  _$_ServerError get _value => super._value as _$_ServerError;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -369,10 +363,10 @@ class _$_ServerError implements _ServerError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? passwordsDontMatch,
-    TResult Function()? invalidCredentials,
-    TResult Function()? serverError,
-    TResult Function(String error)? badRequest,
+    TResult? Function()? passwordsDontMatch,
+    TResult? Function()? invalidCredentials,
+    TResult? Function()? serverError,
+    TResult? Function(String error)? badRequest,
   }) {
     return serverError?.call();
   }
@@ -406,10 +400,10 @@ class _$_ServerError implements _ServerError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_PasswordsDontMatch value)? passwordsDontMatch,
-    TResult Function(_InvalidCredentials value)? invalidCredentials,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_BadRequest value)? badRequest,
+    TResult? Function(_PasswordsDontMatch value)? passwordsDontMatch,
+    TResult? Function(_InvalidCredentials value)? invalidCredentials,
+    TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_BadRequest value)? badRequest,
   }) {
     return serverError?.call(this);
   }
@@ -439,25 +433,25 @@ abstract class _$$_BadRequestCopyWith<$Res> {
   factory _$$_BadRequestCopyWith(
           _$_BadRequest value, $Res Function(_$_BadRequest) then) =
       __$$_BadRequestCopyWithImpl<$Res>;
+  @useResult
   $Res call({String error});
 }
 
 /// @nodoc
-class __$$_BadRequestCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+class __$$_BadRequestCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$_BadRequest>
     implements _$$_BadRequestCopyWith<$Res> {
   __$$_BadRequestCopyWithImpl(
       _$_BadRequest _value, $Res Function(_$_BadRequest) _then)
-      : super(_value, (v) => _then(v as _$_BadRequest));
+      : super(_value, _then);
 
-  @override
-  _$_BadRequest get _value => super._value as _$_BadRequest;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
+    Object? error = null,
   }) {
     return _then(_$_BadRequest(
-      error == freezed
+      null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
@@ -483,15 +477,15 @@ class _$_BadRequest implements _BadRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_BadRequest &&
-            const DeepCollectionEquality().equals(other.error, error));
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_BadRequestCopyWith<_$_BadRequest> get copyWith =>
       __$$_BadRequestCopyWithImpl<_$_BadRequest>(this, _$identity);
 
@@ -509,10 +503,10 @@ class _$_BadRequest implements _BadRequest {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? passwordsDontMatch,
-    TResult Function()? invalidCredentials,
-    TResult Function()? serverError,
-    TResult Function(String error)? badRequest,
+    TResult? Function()? passwordsDontMatch,
+    TResult? Function()? invalidCredentials,
+    TResult? Function()? serverError,
+    TResult? Function(String error)? badRequest,
   }) {
     return badRequest?.call(error);
   }
@@ -546,10 +540,10 @@ class _$_BadRequest implements _BadRequest {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_PasswordsDontMatch value)? passwordsDontMatch,
-    TResult Function(_InvalidCredentials value)? invalidCredentials,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_BadRequest value)? badRequest,
+    TResult? Function(_PasswordsDontMatch value)? passwordsDontMatch,
+    TResult? Function(_InvalidCredentials value)? invalidCredentials,
+    TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_BadRequest value)? badRequest,
   }) {
     return badRequest?.call(this);
   }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'guild.dart';
 
@@ -30,7 +30,8 @@ mixin _$Guild {
 /// @nodoc
 abstract class $GuildCopyWith<$Res> {
   factory $GuildCopyWith(Guild value, $Res Function(Guild) then) =
-      _$GuildCopyWithImpl<$Res>;
+      _$GuildCopyWithImpl<$Res, Guild>;
+  @useResult
   $Res call(
       {String id,
       GuildName name,
@@ -41,48 +42,51 @@ abstract class $GuildCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GuildCopyWithImpl<$Res> implements $GuildCopyWith<$Res> {
+class _$GuildCopyWithImpl<$Res, $Val extends Guild>
+    implements $GuildCopyWith<$Res> {
   _$GuildCopyWithImpl(this._value, this._then);
 
-  final Guild _value;
   // ignore: unused_field
-  final $Res Function(Guild) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? defaultChannel = freezed,
-    Object? ownerId = freezed,
-    Object? hasNotification = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? defaultChannel = null,
+    Object? ownerId = null,
+    Object? hasNotification = null,
     Object? icon = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as GuildName,
-      defaultChannel: defaultChannel == freezed
+      defaultChannel: null == defaultChannel
           ? _value.defaultChannel
           : defaultChannel // ignore: cast_nullable_to_non_nullable
               as String,
-      ownerId: ownerId == freezed
+      ownerId: null == ownerId
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
-      hasNotification: hasNotification == freezed
+      hasNotification: null == hasNotification
           ? _value.hasNotification
           : hasNotification // ignore: cast_nullable_to_non_nullable
               as bool,
-      icon: icon == freezed
+      icon: freezed == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -91,6 +95,7 @@ abstract class _$$_GuildCopyWith<$Res> implements $GuildCopyWith<$Res> {
   factory _$$_GuildCopyWith(_$_Guild value, $Res Function(_$_Guild) then) =
       __$$_GuildCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String id,
       GuildName name,
@@ -101,45 +106,43 @@ abstract class _$$_GuildCopyWith<$Res> implements $GuildCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_GuildCopyWithImpl<$Res> extends _$GuildCopyWithImpl<$Res>
+class __$$_GuildCopyWithImpl<$Res> extends _$GuildCopyWithImpl<$Res, _$_Guild>
     implements _$$_GuildCopyWith<$Res> {
   __$$_GuildCopyWithImpl(_$_Guild _value, $Res Function(_$_Guild) _then)
-      : super(_value, (v) => _then(v as _$_Guild));
+      : super(_value, _then);
 
-  @override
-  _$_Guild get _value => super._value as _$_Guild;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? defaultChannel = freezed,
-    Object? ownerId = freezed,
-    Object? hasNotification = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? defaultChannel = null,
+    Object? ownerId = null,
+    Object? hasNotification = null,
     Object? icon = freezed,
   }) {
     return _then(_$_Guild(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as GuildName,
-      defaultChannel: defaultChannel == freezed
+      defaultChannel: null == defaultChannel
           ? _value.defaultChannel
           : defaultChannel // ignore: cast_nullable_to_non_nullable
               as String,
-      ownerId: ownerId == freezed
+      ownerId: null == ownerId
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
-      hasNotification: hasNotification == freezed
+      hasNotification: null == hasNotification
           ? _value.hasNotification
           : hasNotification // ignore: cast_nullable_to_non_nullable
               as bool,
-      icon: icon == freezed
+      icon: freezed == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -182,28 +185,23 @@ class _$_Guild extends _Guild {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Guild &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality()
-                .equals(other.defaultChannel, defaultChannel) &&
-            const DeepCollectionEquality().equals(other.ownerId, ownerId) &&
-            const DeepCollectionEquality()
-                .equals(other.hasNotification, hasNotification) &&
-            const DeepCollectionEquality().equals(other.icon, icon));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.defaultChannel, defaultChannel) ||
+                other.defaultChannel == defaultChannel) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            (identical(other.hasNotification, hasNotification) ||
+                other.hasNotification == hasNotification) &&
+            (identical(other.icon, icon) || other.icon == icon));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(defaultChannel),
-      const DeepCollectionEquality().hash(ownerId),
-      const DeepCollectionEquality().hash(hasNotification),
-      const DeepCollectionEquality().hash(icon));
+      runtimeType, id, name, defaultChannel, ownerId, hasNotification, icon);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GuildCopyWith<_$_Guild> get copyWith =>
       __$$_GuildCopyWithImpl<_$_Guild>(this, _$identity);
 }

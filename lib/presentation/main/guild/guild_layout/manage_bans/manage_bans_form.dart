@@ -102,11 +102,11 @@ class ManageBansForm extends StatelessWidget {
                             itemCount: fetch.members.length,
                           );
                         } else {
-                          return Padding(
-                            padding: const EdgeInsets.all(40.0),
+                          return const Padding(
+                            padding: EdgeInsets.all(40.0),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
+                              children: [
                                 Icon(
                                   AppIcons.hammer,
                                   size: 50,

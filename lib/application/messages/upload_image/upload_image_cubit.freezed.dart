@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'upload_image_cubit.dart';
 
@@ -30,7 +30,8 @@ mixin _$UploadImageState {
 abstract class $UploadImageStateCopyWith<$Res> {
   factory $UploadImageStateCopyWith(
           UploadImageState value, $Res Function(UploadImageState) then) =
-      _$UploadImageStateCopyWithImpl<$Res>;
+      _$UploadImageStateCopyWithImpl<$Res, UploadImageState>;
+  @useResult
   $Res call(
       {bool showErrorMessages,
       bool isSubmitting,
@@ -38,34 +39,36 @@ abstract class $UploadImageStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UploadImageStateCopyWithImpl<$Res>
+class _$UploadImageStateCopyWithImpl<$Res, $Val extends UploadImageState>
     implements $UploadImageStateCopyWith<$Res> {
   _$UploadImageStateCopyWithImpl(this._value, this._then);
 
-  final UploadImageState _value;
   // ignore: unused_field
-  final $Res Function(UploadImageState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? messageFailureOrSuccessOption = freezed,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? messageFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      messageFailureOrSuccessOption: messageFailureOrSuccessOption == freezed
+      messageFailureOrSuccessOption: null == messageFailureOrSuccessOption
           ? _value.messageFailureOrSuccessOption
           : messageFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<MessageFailure, Unit>>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -76,6 +79,7 @@ abstract class _$$_UploadImageStateCopyWith<$Res>
           _$_UploadImageState value, $Res Function(_$_UploadImageState) then) =
       __$$_UploadImageStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool showErrorMessages,
       bool isSubmitting,
@@ -84,31 +88,29 @@ abstract class _$$_UploadImageStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_UploadImageStateCopyWithImpl<$Res>
-    extends _$UploadImageStateCopyWithImpl<$Res>
+    extends _$UploadImageStateCopyWithImpl<$Res, _$_UploadImageState>
     implements _$$_UploadImageStateCopyWith<$Res> {
   __$$_UploadImageStateCopyWithImpl(
       _$_UploadImageState _value, $Res Function(_$_UploadImageState) _then)
-      : super(_value, (v) => _then(v as _$_UploadImageState));
+      : super(_value, _then);
 
-  @override
-  _$_UploadImageState get _value => super._value as _$_UploadImageState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? messageFailureOrSuccessOption = freezed,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? messageFailureOrSuccessOption = null,
   }) {
     return _then(_$_UploadImageState(
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      messageFailureOrSuccessOption: messageFailureOrSuccessOption == freezed
+      messageFailureOrSuccessOption: null == messageFailureOrSuccessOption
           ? _value.messageFailureOrSuccessOption
           : messageFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<MessageFailure, Unit>>,
@@ -141,24 +143,23 @@ class _$_UploadImageState implements _UploadImageState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UploadImageState &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality()
-                .equals(other.isSubmitting, isSubmitting) &&
-            const DeepCollectionEquality().equals(
-                other.messageFailureOrSuccessOption,
-                messageFailureOrSuccessOption));
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                other.isSubmitting == isSubmitting) &&
+            (identical(other.messageFailureOrSuccessOption,
+                    messageFailureOrSuccessOption) ||
+                other.messageFailureOrSuccessOption ==
+                    messageFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(isSubmitting),
-      const DeepCollectionEquality().hash(messageFailureOrSuccessOption));
+  int get hashCode => Object.hash(runtimeType, showErrorMessages, isSubmitting,
+      messageFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UploadImageStateCopyWith<_$_UploadImageState> get copyWith =>
       __$$_UploadImageStateCopyWithImpl<_$_UploadImageState>(this, _$identity);
 }

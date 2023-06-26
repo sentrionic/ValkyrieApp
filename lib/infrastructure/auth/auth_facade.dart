@@ -41,7 +41,7 @@ class AuthFacade implements IAuthFacade {
       final account = AccountDto.fromJson(results).toDomain();
       _setUserData(account);
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       if (err.response?.statusCode == 401) {
         return left(const AuthFailure.invalidCredentials());
       }
@@ -77,7 +77,7 @@ class AuthFacade implements IAuthFacade {
       final account = AccountDto.fromJson(results).toDomain();
       _setUserData(account);
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       if (err.response?.statusCode == 400 && err.response != null) {
         final errors = FieldError.getErrors(err.response!);
         if (errors.isNotEmpty) {
@@ -106,7 +106,7 @@ class AuthFacade implements IAuthFacade {
         Hive.box<AccountEntity>(BoxNames.currentUser).clear(),
         _dio.post("/account/logout"),
       ]);
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(e);
     }
   }
@@ -132,7 +132,7 @@ class AuthFacade implements IAuthFacade {
       );
 
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       switch (err.response?.statusCode) {
         case 400:
           final errors = FieldError.getErrors(err.response!);
@@ -165,7 +165,7 @@ class AuthFacade implements IAuthFacade {
       );
 
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const AuthFailure.serverError());
     } on SocketException catch (_) {

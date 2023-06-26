@@ -27,7 +27,7 @@ class FriendRepository extends IFriendRepository {
       final List<Friend> list = [];
       results.forEach((f) => list.add(FriendDto.fromJson(f).toDomain()));
       return right(list);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const FriendFailure.unexpected());
     } on SocketException catch (err) {
@@ -41,7 +41,7 @@ class FriendRepository extends IFriendRepository {
     try {
       await _dio.post('/account/$userId/friend');
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       if (err.response?.statusCode == 400) {
         final error = FieldError.getError(err.response!);
@@ -64,7 +64,7 @@ class FriendRepository extends IFriendRepository {
     try {
       await _dio.delete('/account/$userId/friend');
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       if (err.response?.statusCode == 400) {
         final error = FieldError.getError(err.response!);
@@ -82,7 +82,7 @@ class FriendRepository extends IFriendRepository {
     try {
       await _dio.post('/account/$userId/friend/accept');
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       if (err.response?.statusCode == 400) {
         final error = FieldError.getError(err.response!);
@@ -100,7 +100,7 @@ class FriendRepository extends IFriendRepository {
     try {
       await _dio.post('/account/$userId/friend/cancel');
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       if (err.response?.statusCode == 400) {
         final error = FieldError.getError(err.response!);
@@ -123,7 +123,7 @@ class FriendRepository extends IFriendRepository {
       final List<FriendRequest> list = [];
       results.forEach((f) => list.add(FriendRequestDto.fromJson(f).toDomain()));
       return right(list);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const FriendFailure.unexpected());
     } on SocketException catch (err) {

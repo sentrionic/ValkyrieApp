@@ -29,7 +29,7 @@ class AccountRepository extends IAccountRepository {
       final account = AccountDto.fromJson(results).toDomain();
       _setUserData(account);
       return right(account);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       if (err.response?.statusCode == 404) {
         return left(const AccountFailure.unauthenticated());
       }
@@ -70,7 +70,7 @@ class AccountRepository extends IAccountRepository {
       final account = AccountDto.fromJson(results).toDomain();
       _setUserData(account);
       return right(account);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       if (err.response?.statusCode == 400) {
         final errors = FieldError.getErrors(err.response!);
         if (errors.isNotEmpty) {

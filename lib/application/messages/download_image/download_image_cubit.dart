@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:image_downloader/image_downloader.dart';
 import 'package:injectable/injectable.dart';
 import 'package:valkyrie_app/domain/message/message_failure.dart';
 
@@ -26,18 +25,18 @@ class DownloadImageCubit extends Cubit<DownloadImageState> {
       ),
     );
 
-    final imageId = await ImageDownloader.downloadImage(url);
-    ImageDownloader.callback(
-      onProgressUpdate: (String? _, int progress) {
-        emit(state.copyWith(progress: progress));
-      },
-    );
+    // final imageId = await ImageDownloader.downloadImage(url);
+    // ImageDownloader.callback(
+    //   onProgressUpdate: (String? _, int progress) {
+    //     emit(state.copyWith(progress: progress));
+    //   },
+    // );
 
-    if (imageId == null) {
-      failureOrSuccess = left(const MessageFailure.unexpected());
-    } else {
-      failureOrSuccess = right(unit);
-    }
+    // if (imageId == null) {
+    //   failureOrSuccess = left(const MessageFailure.unexpected());
+    // } else {
+    //   failureOrSuccess = right(unit);
+    // }
 
     emit(
       state.copyWith(

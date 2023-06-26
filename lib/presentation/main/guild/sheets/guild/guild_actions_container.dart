@@ -65,7 +65,7 @@ class GuildActionsContainer extends StatelessWidget {
       child: TextButton(
         onPressed: () => onClick(),
         style: TextButton.styleFrom(
-          backgroundColor: Colors.white70,
+          backgroundColor: Colors.white12,
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
@@ -112,12 +112,12 @@ class GuildActionsContainer extends StatelessWidget {
         style: TextButton.styleFrom(
           backgroundColor: ThemeColors.brandRed,
         ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
+        child: const Padding(
+          padding: EdgeInsets.symmetric(vertical: 10),
           child: Align(
             alignment: Alignment.centerLeft,
             child: Row(
-              children: const [
+              children: [
                 SizedBox(
                   width: 10,
                 ),

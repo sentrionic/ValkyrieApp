@@ -122,8 +122,8 @@ class UserInfoContainer extends StatelessWidget {
                             onTap: () => context
                                 .read<StartDMCubit>()
                                 .getOrCreateDM(member.id),
-                            child: Column(
-                              children: const [
+                            child: const Column(
+                              children: [
                                 Icon(
                                   AppIcons.commentalt,
                                   size: 22,
@@ -150,8 +150,8 @@ class UserInfoContainer extends StatelessWidget {
                               onTap: () => context
                                   .read<SendFriendRequestCubit>()
                                   .sendFriendRequest(member.id),
-                              child: Column(
-                                children: const [
+                              child: const Column(
+                                children: [
                                   Icon(
                                     Icons.person_add_alt_1,
                                     color: ThemeColors.brandGreen,

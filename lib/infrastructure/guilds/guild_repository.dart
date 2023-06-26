@@ -26,7 +26,7 @@ class GuildRepository extends IGuildRepository {
       final List<Guild> list = [];
       results.forEach((g) => list.add(GuildDto.fromJson(g).toDomain()));
       return right(list);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const GuildFailure.unexpected());
     } on SocketException catch (err) {
@@ -46,7 +46,7 @@ class GuildRepository extends IGuildRepository {
       );
       final result = jsonDecode(response.data);
       return right(GuildDto.fromJson(result).toDomain());
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       if (err.response?.statusCode == 400) {
         final result = Map<String, dynamic>.from(
@@ -82,7 +82,7 @@ class GuildRepository extends IGuildRepository {
       );
 
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const GuildFailure.unexpected());
     } on SocketException catch (err) {
@@ -123,7 +123,7 @@ class GuildRepository extends IGuildRepository {
 
       await _dio.put('/guilds/$guildId', data: formData);
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       if (err.response?.statusCode == 400) {
         final errors = FieldError.getErrors(err.response!);
@@ -147,7 +147,7 @@ class GuildRepository extends IGuildRepository {
       final query = isPermanent ? "?isPermanent=true" : "";
       final response = await _dio.get('/guilds/$guildId/invite$query');
       return right(response.toString());
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const GuildFailure.unexpected());
     } on SocketException catch (err) {
@@ -163,7 +163,7 @@ class GuildRepository extends IGuildRepository {
     try {
       await _dio.delete('/guilds/$guildId/invite');
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const GuildFailure.unexpected());
     } on SocketException catch (err) {
@@ -184,7 +184,7 @@ class GuildRepository extends IGuildRepository {
 
       final result = jsonDecode(response.data);
       return right(GuildDto.fromJson(result).toDomain());
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       if (err.response?.statusCode == 400) {
         final error = FieldError.getError(err.response!);
         return left(GuildFailure.badRequest(error.message));
@@ -201,7 +201,7 @@ class GuildRepository extends IGuildRepository {
     try {
       await _dio.delete('/guilds/$guildId');
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const GuildFailure.unexpected());
     } on SocketException catch (err) {

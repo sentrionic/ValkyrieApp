@@ -56,7 +56,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: '/account/login'),
         ),
       );
@@ -72,7 +72,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             statusCode: 401,
             requestOptions: RequestOptions(path: '/account/login'),
@@ -141,7 +141,7 @@ void main() {
     );
 
     test(
-      'should return an AuthFailure when DioError is thrown',
+      'should return an AuthFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -165,7 +165,7 @@ void main() {
     );
 
     test(
-      'should return an AuthFailure.invalidCredentials when DioError is thrown with status 401',
+      'should return an AuthFailure.invalidCredentials when DioException is thrown with status 401',
       () async {
         // arrange
         setUpHttp401Failure();
@@ -251,7 +251,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: '/account/register'),
         ),
       );
@@ -268,7 +268,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             data: errorData,
             statusCode: 400,
@@ -342,7 +342,7 @@ void main() {
     );
 
     test(
-      'should return an AuthFailure when DioError is thrown',
+      'should return an AuthFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -367,7 +367,7 @@ void main() {
     );
 
     test(
-      'should return an AuthFailure.badRequest when DioError is thrown with status 400',
+      'should return an AuthFailure.badRequest when DioException is thrown with status 400',
       () async {
         // arrange
         setUpHttp400Failure();
@@ -452,7 +452,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: '/account/change-password'),
         ),
       );
@@ -469,7 +469,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             data: errorData,
             statusCode: 401,
@@ -491,7 +491,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             data: errorsData,
             statusCode: 400,
@@ -565,7 +565,7 @@ void main() {
     );
 
     test(
-      'should return an AuthFailure when DioError is thrown',
+      'should return an AuthFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -590,7 +590,7 @@ void main() {
     );
 
     test(
-      'should return an AuthFailure.badRequest when the oldPassword is wrong and DioError is thrown',
+      'should return an AuthFailure.badRequest when the oldPassword is wrong and DioException is thrown',
       () async {
         // arrange
         setUpHttp401Failure();
@@ -615,7 +615,7 @@ void main() {
     );
 
     test(
-      'should return an AuthFailure.badRequest when DioError is thrown with status 400',
+      'should return an AuthFailure.badRequest when DioException is thrown with status 400',
       () async {
         // arrange
         setUpHttp400Failure();
@@ -693,7 +693,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: '/account/forgot-password'),
         ),
       );
@@ -754,7 +754,7 @@ void main() {
     );
 
     test(
-      'should return an AuthFailure when DioError is thrown',
+      'should return an AuthFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();

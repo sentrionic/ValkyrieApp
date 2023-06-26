@@ -8,8 +8,8 @@ class AddGuildIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Navigator.of(context).pushNamed(AddGuildScreen.routeName),
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           CircleAvatar(
             radius: WidgetConstants.avatarRadius,
             backgroundColor: ThemeColors.guildBackground,

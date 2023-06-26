@@ -96,8 +96,8 @@ class CreateChannelForm extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: const [
+                      const Row(
+                        children: [
                           Icon(Icons.lock_outline_rounded),
                           SizedBox(
                             width: 10,

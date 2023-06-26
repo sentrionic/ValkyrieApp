@@ -43,7 +43,7 @@ void main() {
 
     void setUpHttpFailure() {
       when(() => client.get(any())).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/channels/me/dm', method: "GET"),
         ),
@@ -90,7 +90,7 @@ void main() {
     );
 
     test(
-      'should return a DMChannelFailure when DioError is thrown',
+      'should return a DMChannelFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -158,7 +158,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(
             path: '/channels/${tMockChannel.user.id}/dm',
             method: "POST",
@@ -173,7 +173,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             statusCode: 404,
             requestOptions: RequestOptions(
@@ -239,7 +239,7 @@ void main() {
     );
 
     test(
-      'should return a DMChannelFailure when DioError is thrown',
+      'should return a DMChannelFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -261,7 +261,7 @@ void main() {
     );
 
     test(
-      'should return a DMChannelFailure.notFound when DioError is thrown with status 404',
+      'should return a DMChannelFailure.notFound when DioException is thrown with status 404',
       () async {
         // arrange
         setUpHttp404Failure();
@@ -327,7 +327,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: '/channels/$id/dm'),
         ),
       );
@@ -372,7 +372,7 @@ void main() {
     );
 
     test(
-      'should return a DMChannelFailure when DioError is thrown',
+      'should return a DMChannelFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpDeleteFailure();

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'edit_message_cubit.dart';
 
@@ -31,7 +31,8 @@ mixin _$EditMessageState {
 abstract class $EditMessageStateCopyWith<$Res> {
   factory $EditMessageStateCopyWith(
           EditMessageState value, $Res Function(EditMessageState) then) =
-      _$EditMessageStateCopyWithImpl<$Res>;
+      _$EditMessageStateCopyWithImpl<$Res, EditMessageState>;
+  @useResult
   $Res call(
       {MessageText text,
       bool showErrorMessages,
@@ -40,39 +41,41 @@ abstract class $EditMessageStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$EditMessageStateCopyWithImpl<$Res>
+class _$EditMessageStateCopyWithImpl<$Res, $Val extends EditMessageState>
     implements $EditMessageStateCopyWith<$Res> {
   _$EditMessageStateCopyWithImpl(this._value, this._then);
 
-  final EditMessageState _value;
   // ignore: unused_field
-  final $Res Function(EditMessageState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? text = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? saveFailureOrSuccessOption = freezed,
+    Object? text = null,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? saveFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as MessageText,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+      saveFailureOrSuccessOption: null == saveFailureOrSuccessOption
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<MessageFailure, Unit>>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -83,6 +86,7 @@ abstract class _$$_EditMessageStateCopyWith<$Res>
           _$_EditMessageState value, $Res Function(_$_EditMessageState) then) =
       __$$_EditMessageStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {MessageText text,
       bool showErrorMessages,
@@ -92,36 +96,34 @@ abstract class _$$_EditMessageStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_EditMessageStateCopyWithImpl<$Res>
-    extends _$EditMessageStateCopyWithImpl<$Res>
+    extends _$EditMessageStateCopyWithImpl<$Res, _$_EditMessageState>
     implements _$$_EditMessageStateCopyWith<$Res> {
   __$$_EditMessageStateCopyWithImpl(
       _$_EditMessageState _value, $Res Function(_$_EditMessageState) _then)
-      : super(_value, (v) => _then(v as _$_EditMessageState));
+      : super(_value, _then);
 
-  @override
-  _$_EditMessageState get _value => super._value as _$_EditMessageState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? text = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? saveFailureOrSuccessOption = freezed,
+    Object? text = null,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? saveFailureOrSuccessOption = null,
   }) {
     return _then(_$_EditMessageState(
-      text: text == freezed
+      text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as MessageText,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+      saveFailureOrSuccessOption: null == saveFailureOrSuccessOption
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<MessageFailure, Unit>>,
@@ -157,25 +159,24 @@ class _$_EditMessageState implements _EditMessageState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_EditMessageState &&
-            const DeepCollectionEquality().equals(other.text, text) &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality()
-                .equals(other.isSubmitting, isSubmitting) &&
-            const DeepCollectionEquality().equals(
-                other.saveFailureOrSuccessOption, saveFailureOrSuccessOption));
+            (identical(other.text, text) || other.text == text) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                other.isSubmitting == isSubmitting) &&
+            (identical(other.saveFailureOrSuccessOption,
+                    saveFailureOrSuccessOption) ||
+                other.saveFailureOrSuccessOption ==
+                    saveFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(text),
-      const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(isSubmitting),
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption));
+  int get hashCode => Object.hash(runtimeType, text, showErrorMessages,
+      isSubmitting, saveFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_EditMessageStateCopyWith<_$_EditMessageState> get copyWith =>
       __$$_EditMessageStateCopyWithImpl<_$_EditMessageState>(this, _$identity);
 }

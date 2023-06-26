@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'change_password_cubit.dart';
 
@@ -33,7 +33,8 @@ mixin _$ChangePasswordState {
 abstract class $ChangePasswordStateCopyWith<$Res> {
   factory $ChangePasswordStateCopyWith(
           ChangePasswordState value, $Res Function(ChangePasswordState) then) =
-      _$ChangePasswordStateCopyWithImpl<$Res>;
+      _$ChangePasswordStateCopyWithImpl<$Res, ChangePasswordState>;
+  @useResult
   $Res call(
       {Password oldPassword,
       Password newPassword,
@@ -44,49 +45,51 @@ abstract class $ChangePasswordStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ChangePasswordStateCopyWithImpl<$Res>
+class _$ChangePasswordStateCopyWithImpl<$Res, $Val extends ChangePasswordState>
     implements $ChangePasswordStateCopyWith<$Res> {
   _$ChangePasswordStateCopyWithImpl(this._value, this._then);
 
-  final ChangePasswordState _value;
   // ignore: unused_field
-  final $Res Function(ChangePasswordState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? oldPassword = freezed,
-    Object? newPassword = freezed,
-    Object? confirmNewPassword = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? authFailureOrSuccessOption = freezed,
+    Object? oldPassword = null,
+    Object? newPassword = null,
+    Object? confirmNewPassword = null,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? authFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      oldPassword: oldPassword == freezed
+      oldPassword: null == oldPassword
           ? _value.oldPassword
           : oldPassword // ignore: cast_nullable_to_non_nullable
               as Password,
-      newPassword: newPassword == freezed
+      newPassword: null == newPassword
           ? _value.newPassword
           : newPassword // ignore: cast_nullable_to_non_nullable
               as Password,
-      confirmNewPassword: confirmNewPassword == freezed
+      confirmNewPassword: null == confirmNewPassword
           ? _value.confirmNewPassword
           : confirmNewPassword // ignore: cast_nullable_to_non_nullable
               as Password,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
+      authFailureOrSuccessOption: null == authFailureOrSuccessOption
           ? _value.authFailureOrSuccessOption
           : authFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -97,6 +100,7 @@ abstract class _$$_ChangePasswordStateCopyWith<$Res>
           $Res Function(_$_ChangePasswordState) then) =
       __$$_ChangePasswordStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {Password oldPassword,
       Password newPassword,
@@ -108,46 +112,44 @@ abstract class _$$_ChangePasswordStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_ChangePasswordStateCopyWithImpl<$Res>
-    extends _$ChangePasswordStateCopyWithImpl<$Res>
+    extends _$ChangePasswordStateCopyWithImpl<$Res, _$_ChangePasswordState>
     implements _$$_ChangePasswordStateCopyWith<$Res> {
   __$$_ChangePasswordStateCopyWithImpl(_$_ChangePasswordState _value,
       $Res Function(_$_ChangePasswordState) _then)
-      : super(_value, (v) => _then(v as _$_ChangePasswordState));
+      : super(_value, _then);
 
-  @override
-  _$_ChangePasswordState get _value => super._value as _$_ChangePasswordState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? oldPassword = freezed,
-    Object? newPassword = freezed,
-    Object? confirmNewPassword = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? authFailureOrSuccessOption = freezed,
+    Object? oldPassword = null,
+    Object? newPassword = null,
+    Object? confirmNewPassword = null,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? authFailureOrSuccessOption = null,
   }) {
     return _then(_$_ChangePasswordState(
-      oldPassword: oldPassword == freezed
+      oldPassword: null == oldPassword
           ? _value.oldPassword
           : oldPassword // ignore: cast_nullable_to_non_nullable
               as Password,
-      newPassword: newPassword == freezed
+      newPassword: null == newPassword
           ? _value.newPassword
           : newPassword // ignore: cast_nullable_to_non_nullable
               as Password,
-      confirmNewPassword: confirmNewPassword == freezed
+      confirmNewPassword: null == confirmNewPassword
           ? _value.confirmNewPassword
           : confirmNewPassword // ignore: cast_nullable_to_non_nullable
               as Password,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
+      authFailureOrSuccessOption: null == authFailureOrSuccessOption
           ? _value.authFailureOrSuccessOption
           : authFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
@@ -189,32 +191,35 @@ class _$_ChangePasswordState implements _ChangePasswordState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ChangePasswordState &&
-            const DeepCollectionEquality()
-                .equals(other.oldPassword, oldPassword) &&
-            const DeepCollectionEquality()
-                .equals(other.newPassword, newPassword) &&
-            const DeepCollectionEquality()
-                .equals(other.confirmNewPassword, confirmNewPassword) &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality()
-                .equals(other.isSubmitting, isSubmitting) &&
-            const DeepCollectionEquality().equals(
-                other.authFailureOrSuccessOption, authFailureOrSuccessOption));
+            (identical(other.oldPassword, oldPassword) ||
+                other.oldPassword == oldPassword) &&
+            (identical(other.newPassword, newPassword) ||
+                other.newPassword == newPassword) &&
+            (identical(other.confirmNewPassword, confirmNewPassword) ||
+                other.confirmNewPassword == confirmNewPassword) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                other.isSubmitting == isSubmitting) &&
+            (identical(other.authFailureOrSuccessOption,
+                    authFailureOrSuccessOption) ||
+                other.authFailureOrSuccessOption ==
+                    authFailureOrSuccessOption));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(oldPassword),
-      const DeepCollectionEquality().hash(newPassword),
-      const DeepCollectionEquality().hash(confirmNewPassword),
-      const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(isSubmitting),
-      const DeepCollectionEquality().hash(authFailureOrSuccessOption));
+      oldPassword,
+      newPassword,
+      confirmNewPassword,
+      showErrorMessages,
+      isSubmitting,
+      authFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ChangePasswordStateCopyWith<_$_ChangePasswordState> get copyWith =>
       __$$_ChangePasswordStateCopyWithImpl<_$_ChangePasswordState>(
           this, _$identity);

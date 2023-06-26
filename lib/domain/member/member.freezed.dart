@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'member.dart';
 
@@ -31,7 +31,8 @@ mixin _$Member {
 /// @nodoc
 abstract class $MemberCopyWith<$Res> {
   factory $MemberCopyWith(Member value, $Res Function(Member) then) =
-      _$MemberCopyWithImpl<$Res>;
+      _$MemberCopyWithImpl<$Res, Member>;
+  @useResult
   $Res call(
       {String id,
       String username,
@@ -43,53 +44,56 @@ abstract class $MemberCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MemberCopyWithImpl<$Res> implements $MemberCopyWith<$Res> {
+class _$MemberCopyWithImpl<$Res, $Val extends Member>
+    implements $MemberCopyWith<$Res> {
   _$MemberCopyWithImpl(this._value, this._then);
 
-  final Member _value;
   // ignore: unused_field
-  final $Res Function(Member) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? username = freezed,
-    Object? image = freezed,
-    Object? isOnline = freezed,
-    Object? isFriend = freezed,
+    Object? id = null,
+    Object? username = null,
+    Object? image = null,
+    Object? isOnline = null,
+    Object? isFriend = null,
     Object? nickname = freezed,
     Object? color = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      image: image == freezed
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      isOnline: isOnline == freezed
+      isOnline: null == isOnline
           ? _value.isOnline
           : isOnline // ignore: cast_nullable_to_non_nullable
               as bool,
-      isFriend: isFriend == freezed
+      isFriend: null == isFriend
           ? _value.isFriend
           : isFriend // ignore: cast_nullable_to_non_nullable
               as bool,
-      nickname: nickname == freezed
+      nickname: freezed == nickname
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
               as String?,
-      color: color == freezed
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -98,6 +102,7 @@ abstract class _$$_MemberCopyWith<$Res> implements $MemberCopyWith<$Res> {
   factory _$$_MemberCopyWith(_$_Member value, $Res Function(_$_Member) then) =
       __$$_MemberCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String id,
       String username,
@@ -109,50 +114,49 @@ abstract class _$$_MemberCopyWith<$Res> implements $MemberCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_MemberCopyWithImpl<$Res> extends _$MemberCopyWithImpl<$Res>
+class __$$_MemberCopyWithImpl<$Res>
+    extends _$MemberCopyWithImpl<$Res, _$_Member>
     implements _$$_MemberCopyWith<$Res> {
   __$$_MemberCopyWithImpl(_$_Member _value, $Res Function(_$_Member) _then)
-      : super(_value, (v) => _then(v as _$_Member));
+      : super(_value, _then);
 
-  @override
-  _$_Member get _value => super._value as _$_Member;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? username = freezed,
-    Object? image = freezed,
-    Object? isOnline = freezed,
-    Object? isFriend = freezed,
+    Object? id = null,
+    Object? username = null,
+    Object? image = null,
+    Object? isOnline = null,
+    Object? isFriend = null,
     Object? nickname = freezed,
     Object? color = freezed,
   }) {
     return _then(_$_Member(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      image: image == freezed
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      isOnline: isOnline == freezed
+      isOnline: null == isOnline
           ? _value.isOnline
           : isOnline // ignore: cast_nullable_to_non_nullable
               as bool,
-      isFriend: isFriend == freezed
+      isFriend: null == isFriend
           ? _value.isFriend
           : isFriend // ignore: cast_nullable_to_non_nullable
               as bool,
-      nickname: nickname == freezed
+      nickname: freezed == nickname
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
               as String?,
-      color: color == freezed
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -198,28 +202,26 @@ class _$_Member extends _Member {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Member &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.username, username) &&
-            const DeepCollectionEquality().equals(other.image, image) &&
-            const DeepCollectionEquality().equals(other.isOnline, isOnline) &&
-            const DeepCollectionEquality().equals(other.isFriend, isFriend) &&
-            const DeepCollectionEquality().equals(other.nickname, nickname) &&
-            const DeepCollectionEquality().equals(other.color, color));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.isOnline, isOnline) ||
+                other.isOnline == isOnline) &&
+            (identical(other.isFriend, isFriend) ||
+                other.isFriend == isFriend) &&
+            (identical(other.nickname, nickname) ||
+                other.nickname == nickname) &&
+            (identical(other.color, color) || other.color == color));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(username),
-      const DeepCollectionEquality().hash(image),
-      const DeepCollectionEquality().hash(isOnline),
-      const DeepCollectionEquality().hash(isFriend),
-      const DeepCollectionEquality().hash(nickname),
-      const DeepCollectionEquality().hash(color));
+      runtimeType, id, username, image, isOnline, isFriend, nickname, color);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_MemberCopyWith<_$_Member> get copyWith =>
       __$$_MemberCopyWithImpl<_$_Member>(this, _$identity);
 }

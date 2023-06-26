@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_private_channel_members_cubit.dart';
 
@@ -26,10 +26,10 @@ mixin _$GetPrivateChannelMembersState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? fetchInProgress,
-    TResult Function(List<String> memberIds)? fetchSuccess,
-    TResult Function(ChannelFailure failure)? fetchFailure,
+    TResult? Function()? initial,
+    TResult? Function()? fetchInProgress,
+    TResult? Function(List<String> memberIds)? fetchSuccess,
+    TResult? Function(ChannelFailure failure)? fetchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$GetPrivateChannelMembersState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_FetchInProgress value)? fetchInProgress,
-    TResult Function(_FetchSuccess value)? fetchSuccess,
-    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_FetchInProgress value)? fetchInProgress,
+    TResult? Function(_FetchSuccess value)? fetchSuccess,
+    TResult? Function(_FetchFailure value)? fetchFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,17 +73,20 @@ abstract class $GetPrivateChannelMembersStateCopyWith<$Res> {
   factory $GetPrivateChannelMembersStateCopyWith(
           GetPrivateChannelMembersState value,
           $Res Function(GetPrivateChannelMembersState) then) =
-      _$GetPrivateChannelMembersStateCopyWithImpl<$Res>;
+      _$GetPrivateChannelMembersStateCopyWithImpl<$Res,
+          GetPrivateChannelMembersState>;
 }
 
 /// @nodoc
-class _$GetPrivateChannelMembersStateCopyWithImpl<$Res>
+class _$GetPrivateChannelMembersStateCopyWithImpl<$Res,
+        $Val extends GetPrivateChannelMembersState>
     implements $GetPrivateChannelMembersStateCopyWith<$Res> {
   _$GetPrivateChannelMembersStateCopyWithImpl(this._value, this._then);
 
-  final GetPrivateChannelMembersState _value;
   // ignore: unused_field
-  final $Res Function(GetPrivateChannelMembersState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -95,13 +98,10 @@ abstract class _$$_InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$GetPrivateChannelMembersStateCopyWithImpl<$Res>
+    extends _$GetPrivateChannelMembersStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -137,10 +137,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? fetchInProgress,
-    TResult Function(List<String> memberIds)? fetchSuccess,
-    TResult Function(ChannelFailure failure)? fetchFailure,
+    TResult? Function()? initial,
+    TResult? Function()? fetchInProgress,
+    TResult? Function(List<String> memberIds)? fetchSuccess,
+    TResult? Function(ChannelFailure failure)? fetchFailure,
   }) {
     return initial?.call();
   }
@@ -174,10 +174,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_FetchInProgress value)? fetchInProgress,
-    TResult Function(_FetchSuccess value)? fetchSuccess,
-    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_FetchInProgress value)? fetchInProgress,
+    TResult? Function(_FetchSuccess value)? fetchSuccess,
+    TResult? Function(_FetchFailure value)? fetchFailure,
   }) {
     return initial?.call(this);
   }
@@ -211,14 +211,11 @@ abstract class _$$_FetchInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$$_FetchInProgressCopyWithImpl<$Res>
-    extends _$GetPrivateChannelMembersStateCopyWithImpl<$Res>
-    implements _$$_FetchInProgressCopyWith<$Res> {
+    extends _$GetPrivateChannelMembersStateCopyWithImpl<$Res,
+        _$_FetchInProgress> implements _$$_FetchInProgressCopyWith<$Res> {
   __$$_FetchInProgressCopyWithImpl(
       _$_FetchInProgress _value, $Res Function(_$_FetchInProgress) _then)
-      : super(_value, (v) => _then(v as _$_FetchInProgress));
-
-  @override
-  _$_FetchInProgress get _value => super._value as _$_FetchInProgress;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -254,10 +251,10 @@ class _$_FetchInProgress implements _FetchInProgress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? fetchInProgress,
-    TResult Function(List<String> memberIds)? fetchSuccess,
-    TResult Function(ChannelFailure failure)? fetchFailure,
+    TResult? Function()? initial,
+    TResult? Function()? fetchInProgress,
+    TResult? Function(List<String> memberIds)? fetchSuccess,
+    TResult? Function(ChannelFailure failure)? fetchFailure,
   }) {
     return fetchInProgress?.call();
   }
@@ -291,10 +288,10 @@ class _$_FetchInProgress implements _FetchInProgress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_FetchInProgress value)? fetchInProgress,
-    TResult Function(_FetchSuccess value)? fetchSuccess,
-    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_FetchInProgress value)? fetchInProgress,
+    TResult? Function(_FetchSuccess value)? fetchSuccess,
+    TResult? Function(_FetchFailure value)? fetchFailure,
   }) {
     return fetchInProgress?.call(this);
   }
@@ -324,26 +321,25 @@ abstract class _$$_FetchSuccessCopyWith<$Res> {
   factory _$$_FetchSuccessCopyWith(
           _$_FetchSuccess value, $Res Function(_$_FetchSuccess) then) =
       __$$_FetchSuccessCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<String> memberIds});
 }
 
 /// @nodoc
 class __$$_FetchSuccessCopyWithImpl<$Res>
-    extends _$GetPrivateChannelMembersStateCopyWithImpl<$Res>
+    extends _$GetPrivateChannelMembersStateCopyWithImpl<$Res, _$_FetchSuccess>
     implements _$$_FetchSuccessCopyWith<$Res> {
   __$$_FetchSuccessCopyWithImpl(
       _$_FetchSuccess _value, $Res Function(_$_FetchSuccess) _then)
-      : super(_value, (v) => _then(v as _$_FetchSuccess));
+      : super(_value, _then);
 
-  @override
-  _$_FetchSuccess get _value => super._value as _$_FetchSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? memberIds = freezed,
+    Object? memberIds = null,
   }) {
     return _then(_$_FetchSuccess(
-      memberIds == freezed
+      null == memberIds
           ? _value._memberIds
           : memberIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
@@ -359,6 +355,7 @@ class _$_FetchSuccess implements _FetchSuccess {
   final List<String> _memberIds;
   @override
   List<String> get memberIds {
+    if (_memberIds is EqualUnmodifiableListView) return _memberIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_memberIds);
   }
@@ -383,6 +380,7 @@ class _$_FetchSuccess implements _FetchSuccess {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_FetchSuccessCopyWith<_$_FetchSuccess> get copyWith =>
       __$$_FetchSuccessCopyWithImpl<_$_FetchSuccess>(this, _$identity);
 
@@ -400,10 +398,10 @@ class _$_FetchSuccess implements _FetchSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? fetchInProgress,
-    TResult Function(List<String> memberIds)? fetchSuccess,
-    TResult Function(ChannelFailure failure)? fetchFailure,
+    TResult? Function()? initial,
+    TResult? Function()? fetchInProgress,
+    TResult? Function(List<String> memberIds)? fetchSuccess,
+    TResult? Function(ChannelFailure failure)? fetchFailure,
   }) {
     return fetchSuccess?.call(memberIds);
   }
@@ -437,10 +435,10 @@ class _$_FetchSuccess implements _FetchSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_FetchInProgress value)? fetchInProgress,
-    TResult Function(_FetchSuccess value)? fetchSuccess,
-    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_FetchInProgress value)? fetchInProgress,
+    TResult? Function(_FetchSuccess value)? fetchSuccess,
+    TResult? Function(_FetchFailure value)? fetchFailure,
   }) {
     return fetchSuccess?.call(this);
   }
@@ -475,6 +473,7 @@ abstract class _$$_FetchFailureCopyWith<$Res> {
   factory _$$_FetchFailureCopyWith(
           _$_FetchFailure value, $Res Function(_$_FetchFailure) then) =
       __$$_FetchFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({ChannelFailure failure});
 
   $ChannelFailureCopyWith<$Res> get failure;
@@ -482,21 +481,19 @@ abstract class _$$_FetchFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_FetchFailureCopyWithImpl<$Res>
-    extends _$GetPrivateChannelMembersStateCopyWithImpl<$Res>
+    extends _$GetPrivateChannelMembersStateCopyWithImpl<$Res, _$_FetchFailure>
     implements _$$_FetchFailureCopyWith<$Res> {
   __$$_FetchFailureCopyWithImpl(
       _$_FetchFailure _value, $Res Function(_$_FetchFailure) _then)
-      : super(_value, (v) => _then(v as _$_FetchFailure));
+      : super(_value, _then);
 
-  @override
-  _$_FetchFailure get _value => super._value as _$_FetchFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failure = freezed,
+    Object? failure = null,
   }) {
     return _then(_$_FetchFailure(
-      failure == freezed
+      null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as ChannelFailure,
@@ -504,6 +501,7 @@ class __$$_FetchFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ChannelFailureCopyWith<$Res> get failure {
     return $ChannelFailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
@@ -529,15 +527,15 @@ class _$_FetchFailure implements _FetchFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_FetchFailure &&
-            const DeepCollectionEquality().equals(other.failure, failure));
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_FetchFailureCopyWith<_$_FetchFailure> get copyWith =>
       __$$_FetchFailureCopyWithImpl<_$_FetchFailure>(this, _$identity);
 
@@ -555,10 +553,10 @@ class _$_FetchFailure implements _FetchFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? fetchInProgress,
-    TResult Function(List<String> memberIds)? fetchSuccess,
-    TResult Function(ChannelFailure failure)? fetchFailure,
+    TResult? Function()? initial,
+    TResult? Function()? fetchInProgress,
+    TResult? Function(List<String> memberIds)? fetchSuccess,
+    TResult? Function(ChannelFailure failure)? fetchFailure,
   }) {
     return fetchFailure?.call(failure);
   }
@@ -592,10 +590,10 @@ class _$_FetchFailure implements _FetchFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_FetchInProgress value)? fetchInProgress,
-    TResult Function(_FetchSuccess value)? fetchSuccess,
-    TResult Function(_FetchFailure value)? fetchFailure,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_FetchInProgress value)? fetchInProgress,
+    TResult? Function(_FetchSuccess value)? fetchSuccess,
+    TResult? Function(_FetchFailure value)? fetchFailure,
   }) {
     return fetchFailure?.call(this);
   }

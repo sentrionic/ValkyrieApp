@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'download_image_cubit.dart';
 
@@ -31,7 +31,8 @@ mixin _$DownloadImageState {
 abstract class $DownloadImageStateCopyWith<$Res> {
   factory $DownloadImageStateCopyWith(
           DownloadImageState value, $Res Function(DownloadImageState) then) =
-      _$DownloadImageStateCopyWithImpl<$Res>;
+      _$DownloadImageStateCopyWithImpl<$Res, DownloadImageState>;
+  @useResult
   $Res call(
       {bool showErrorMessages,
       bool isDownloading,
@@ -40,39 +41,41 @@ abstract class $DownloadImageStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DownloadImageStateCopyWithImpl<$Res>
+class _$DownloadImageStateCopyWithImpl<$Res, $Val extends DownloadImageState>
     implements $DownloadImageStateCopyWith<$Res> {
   _$DownloadImageStateCopyWithImpl(this._value, this._then);
 
-  final DownloadImageState _value;
   // ignore: unused_field
-  final $Res Function(DownloadImageState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? showErrorMessages = freezed,
-    Object? isDownloading = freezed,
-    Object? progress = freezed,
-    Object? downloadFailureOrSuccessOption = freezed,
+    Object? showErrorMessages = null,
+    Object? isDownloading = null,
+    Object? progress = null,
+    Object? downloadFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isDownloading: isDownloading == freezed
+      isDownloading: null == isDownloading
           ? _value.isDownloading
           : isDownloading // ignore: cast_nullable_to_non_nullable
               as bool,
-      progress: progress == freezed
+      progress: null == progress
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
               as int,
-      downloadFailureOrSuccessOption: downloadFailureOrSuccessOption == freezed
+      downloadFailureOrSuccessOption: null == downloadFailureOrSuccessOption
           ? _value.downloadFailureOrSuccessOption
           : downloadFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<MessageFailure, Unit>>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -83,6 +86,7 @@ abstract class _$$_DownloadImageStateCopyWith<$Res>
           $Res Function(_$_DownloadImageState) then) =
       __$$_DownloadImageStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool showErrorMessages,
       bool isDownloading,
@@ -92,36 +96,34 @@ abstract class _$$_DownloadImageStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_DownloadImageStateCopyWithImpl<$Res>
-    extends _$DownloadImageStateCopyWithImpl<$Res>
+    extends _$DownloadImageStateCopyWithImpl<$Res, _$_DownloadImageState>
     implements _$$_DownloadImageStateCopyWith<$Res> {
   __$$_DownloadImageStateCopyWithImpl(
       _$_DownloadImageState _value, $Res Function(_$_DownloadImageState) _then)
-      : super(_value, (v) => _then(v as _$_DownloadImageState));
+      : super(_value, _then);
 
-  @override
-  _$_DownloadImageState get _value => super._value as _$_DownloadImageState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? showErrorMessages = freezed,
-    Object? isDownloading = freezed,
-    Object? progress = freezed,
-    Object? downloadFailureOrSuccessOption = freezed,
+    Object? showErrorMessages = null,
+    Object? isDownloading = null,
+    Object? progress = null,
+    Object? downloadFailureOrSuccessOption = null,
   }) {
     return _then(_$_DownloadImageState(
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isDownloading: isDownloading == freezed
+      isDownloading: null == isDownloading
           ? _value.isDownloading
           : isDownloading // ignore: cast_nullable_to_non_nullable
               as bool,
-      progress: progress == freezed
+      progress: null == progress
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
               as int,
-      downloadFailureOrSuccessOption: downloadFailureOrSuccessOption == freezed
+      downloadFailureOrSuccessOption: null == downloadFailureOrSuccessOption
           ? _value.downloadFailureOrSuccessOption
           : downloadFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<MessageFailure, Unit>>,
@@ -157,26 +159,25 @@ class _$_DownloadImageState implements _DownloadImageState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DownloadImageState &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality()
-                .equals(other.isDownloading, isDownloading) &&
-            const DeepCollectionEquality().equals(other.progress, progress) &&
-            const DeepCollectionEquality().equals(
-                other.downloadFailureOrSuccessOption,
-                downloadFailureOrSuccessOption));
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.isDownloading, isDownloading) ||
+                other.isDownloading == isDownloading) &&
+            (identical(other.progress, progress) ||
+                other.progress == progress) &&
+            (identical(other.downloadFailureOrSuccessOption,
+                    downloadFailureOrSuccessOption) ||
+                other.downloadFailureOrSuccessOption ==
+                    downloadFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(isDownloading),
-      const DeepCollectionEquality().hash(progress),
-      const DeepCollectionEquality().hash(downloadFailureOrSuccessOption));
+  int get hashCode => Object.hash(runtimeType, showErrorMessages, isDownloading,
+      progress, downloadFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DownloadImageStateCopyWith<_$_DownloadImageState> get copyWith =>
       __$$_DownloadImageStateCopyWithImpl<_$_DownloadImageState>(
           this, _$identity);

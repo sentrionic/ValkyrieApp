@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'close_dm_cubit.dart';
 
@@ -26,10 +26,10 @@ mixin _$CloseDMState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(DMChannelFailure failure)? closeFailure,
-    TResult Function()? closeSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(DMChannelFailure failure)? closeFailure,
+    TResult? Function()? closeSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$CloseDMState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_CloseFailure value)? closeFailure,
-    TResult Function(_CloseSuccess value)? closeSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_CloseFailure value)? closeFailure,
+    TResult? Function(_CloseSuccess value)? closeSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,16 +72,18 @@ mixin _$CloseDMState {
 abstract class $CloseDMStateCopyWith<$Res> {
   factory $CloseDMStateCopyWith(
           CloseDMState value, $Res Function(CloseDMState) then) =
-      _$CloseDMStateCopyWithImpl<$Res>;
+      _$CloseDMStateCopyWithImpl<$Res, CloseDMState>;
 }
 
 /// @nodoc
-class _$CloseDMStateCopyWithImpl<$Res> implements $CloseDMStateCopyWith<$Res> {
+class _$CloseDMStateCopyWithImpl<$Res, $Val extends CloseDMState>
+    implements $CloseDMStateCopyWith<$Res> {
   _$CloseDMStateCopyWithImpl(this._value, this._then);
 
-  final CloseDMState _value;
   // ignore: unused_field
-  final $Res Function(CloseDMState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -92,13 +94,11 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$CloseDMStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$CloseDMStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -134,10 +134,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(DMChannelFailure failure)? closeFailure,
-    TResult Function()? closeSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(DMChannelFailure failure)? closeFailure,
+    TResult? Function()? closeSuccess,
   }) {
     return initial?.call();
   }
@@ -171,10 +171,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_CloseFailure value)? closeFailure,
-    TResult Function(_CloseSuccess value)? closeSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_CloseFailure value)? closeFailure,
+    TResult? Function(_CloseSuccess value)? closeSuccess,
   }) {
     return initial?.call(this);
   }
@@ -208,14 +208,11 @@ abstract class _$$_ActionInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ActionInProgressCopyWithImpl<$Res>
-    extends _$CloseDMStateCopyWithImpl<$Res>
+    extends _$CloseDMStateCopyWithImpl<$Res, _$_ActionInProgress>
     implements _$$_ActionInProgressCopyWith<$Res> {
   __$$_ActionInProgressCopyWithImpl(
       _$_ActionInProgress _value, $Res Function(_$_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _$_ActionInProgress));
-
-  @override
-  _$_ActionInProgress get _value => super._value as _$_ActionInProgress;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -251,10 +248,10 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(DMChannelFailure failure)? closeFailure,
-    TResult Function()? closeSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(DMChannelFailure failure)? closeFailure,
+    TResult? Function()? closeSuccess,
   }) {
     return actionInProgress?.call();
   }
@@ -288,10 +285,10 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_CloseFailure value)? closeFailure,
-    TResult Function(_CloseSuccess value)? closeSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_CloseFailure value)? closeFailure,
+    TResult? Function(_CloseSuccess value)? closeSuccess,
   }) {
     return actionInProgress?.call(this);
   }
@@ -321,6 +318,7 @@ abstract class _$$_CloseFailureCopyWith<$Res> {
   factory _$$_CloseFailureCopyWith(
           _$_CloseFailure value, $Res Function(_$_CloseFailure) then) =
       __$$_CloseFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({DMChannelFailure failure});
 
   $DMChannelFailureCopyWith<$Res> get failure;
@@ -328,21 +326,19 @@ abstract class _$$_CloseFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_CloseFailureCopyWithImpl<$Res>
-    extends _$CloseDMStateCopyWithImpl<$Res>
+    extends _$CloseDMStateCopyWithImpl<$Res, _$_CloseFailure>
     implements _$$_CloseFailureCopyWith<$Res> {
   __$$_CloseFailureCopyWithImpl(
       _$_CloseFailure _value, $Res Function(_$_CloseFailure) _then)
-      : super(_value, (v) => _then(v as _$_CloseFailure));
+      : super(_value, _then);
 
-  @override
-  _$_CloseFailure get _value => super._value as _$_CloseFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failure = freezed,
+    Object? failure = null,
   }) {
     return _then(_$_CloseFailure(
-      failure == freezed
+      null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as DMChannelFailure,
@@ -350,6 +346,7 @@ class __$$_CloseFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $DMChannelFailureCopyWith<$Res> get failure {
     return $DMChannelFailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
@@ -375,15 +372,15 @@ class _$_CloseFailure implements _CloseFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CloseFailure &&
-            const DeepCollectionEquality().equals(other.failure, failure));
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_CloseFailureCopyWith<_$_CloseFailure> get copyWith =>
       __$$_CloseFailureCopyWithImpl<_$_CloseFailure>(this, _$identity);
 
@@ -401,10 +398,10 @@ class _$_CloseFailure implements _CloseFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(DMChannelFailure failure)? closeFailure,
-    TResult Function()? closeSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(DMChannelFailure failure)? closeFailure,
+    TResult? Function()? closeSuccess,
   }) {
     return closeFailure?.call(failure);
   }
@@ -438,10 +435,10 @@ class _$_CloseFailure implements _CloseFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_CloseFailure value)? closeFailure,
-    TResult Function(_CloseSuccess value)? closeSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_CloseFailure value)? closeFailure,
+    TResult? Function(_CloseSuccess value)? closeSuccess,
   }) {
     return closeFailure?.call(this);
   }
@@ -480,14 +477,11 @@ abstract class _$$_CloseSuccessCopyWith<$Res> {
 
 /// @nodoc
 class __$$_CloseSuccessCopyWithImpl<$Res>
-    extends _$CloseDMStateCopyWithImpl<$Res>
+    extends _$CloseDMStateCopyWithImpl<$Res, _$_CloseSuccess>
     implements _$$_CloseSuccessCopyWith<$Res> {
   __$$_CloseSuccessCopyWithImpl(
       _$_CloseSuccess _value, $Res Function(_$_CloseSuccess) _then)
-      : super(_value, (v) => _then(v as _$_CloseSuccess));
-
-  @override
-  _$_CloseSuccess get _value => super._value as _$_CloseSuccess;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -523,10 +517,10 @@ class _$_CloseSuccess implements _CloseSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(DMChannelFailure failure)? closeFailure,
-    TResult Function()? closeSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(DMChannelFailure failure)? closeFailure,
+    TResult? Function()? closeSuccess,
   }) {
     return closeSuccess?.call();
   }
@@ -560,10 +554,10 @@ class _$_CloseSuccess implements _CloseSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_CloseFailure value)? closeFailure,
-    TResult Function(_CloseSuccess value)? closeSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_CloseFailure value)? closeFailure,
+    TResult? Function(_CloseSuccess value)? closeSuccess,
   }) {
     return closeSuccess?.call(this);
   }

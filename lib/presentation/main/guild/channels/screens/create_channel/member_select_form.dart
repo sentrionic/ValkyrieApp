@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:valkyrie_app/application/channels/create_channel/create_channel_cubit.dart';
 import 'package:valkyrie_app/application/members/member_list/member_list_cubit.dart';
-import 'package:valkyrie_app/domain/member/member.dart';
 
 class MemberSelectForm extends StatelessWidget {
   @override
@@ -26,21 +25,15 @@ class MemberSelectForm extends StatelessWidget {
                   );
                 },
                 itemBuilder: (context, suggestion) {
-                  if (suggestion == null) return Container();
-                  final member = suggestion as Member;
                   return ListTile(
                     leading: CircleAvatar(
-                      backgroundImage: NetworkImage(member.image),
+                      backgroundImage: NetworkImage(suggestion.image),
                     ),
-                    title: Text(member.username),
+                    title: Text(suggestion.username),
                   );
                 },
                 onSuggestionSelected: (suggestion) {
-                  if (suggestion != null) {
-                    context
-                        .read<CreateChannelCubit>()
-                        .addMember(suggestion as Member);
-                  }
+                  context.read<CreateChannelCubit>().addMember(suggestion);
                 },
               ),
               const SizedBox(

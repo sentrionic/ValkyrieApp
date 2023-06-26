@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'account_dto.dart';
 
@@ -35,43 +35,47 @@ mixin _$AccountDto {
 abstract class $AccountDtoCopyWith<$Res> {
   factory $AccountDtoCopyWith(
           AccountDto value, $Res Function(AccountDto) then) =
-      _$AccountDtoCopyWithImpl<$Res>;
+      _$AccountDtoCopyWithImpl<$Res, AccountDto>;
+  @useResult
   $Res call({String id, String username, String email, String image});
 }
 
 /// @nodoc
-class _$AccountDtoCopyWithImpl<$Res> implements $AccountDtoCopyWith<$Res> {
+class _$AccountDtoCopyWithImpl<$Res, $Val extends AccountDto>
+    implements $AccountDtoCopyWith<$Res> {
   _$AccountDtoCopyWithImpl(this._value, this._then);
 
-  final AccountDto _value;
   // ignore: unused_field
-  final $Res Function(AccountDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? username = freezed,
-    Object? email = freezed,
-    Object? image = freezed,
+    Object? id = null,
+    Object? username = null,
+    Object? email = null,
+    Object? image = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      email: email == freezed
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      image: image == freezed
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -82,40 +86,40 @@ abstract class _$$_AccountDtoCopyWith<$Res>
           _$_AccountDto value, $Res Function(_$_AccountDto) then) =
       __$$_AccountDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String id, String username, String email, String image});
 }
 
 /// @nodoc
-class __$$_AccountDtoCopyWithImpl<$Res> extends _$AccountDtoCopyWithImpl<$Res>
+class __$$_AccountDtoCopyWithImpl<$Res>
+    extends _$AccountDtoCopyWithImpl<$Res, _$_AccountDto>
     implements _$$_AccountDtoCopyWith<$Res> {
   __$$_AccountDtoCopyWithImpl(
       _$_AccountDto _value, $Res Function(_$_AccountDto) _then)
-      : super(_value, (v) => _then(v as _$_AccountDto));
+      : super(_value, _then);
 
-  @override
-  _$_AccountDto get _value => super._value as _$_AccountDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? username = freezed,
-    Object? email = freezed,
-    Object? image = freezed,
+    Object? id = null,
+    Object? username = null,
+    Object? email = null,
+    Object? image = null,
   }) {
     return _then(_$_AccountDto(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      username: username == freezed
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
-      email: email == freezed
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      image: image == freezed
+      image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
@@ -155,23 +159,20 @@ class _$_AccountDto extends _AccountDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AccountDto &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.username, username) &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.image, image));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.image, image) || other.image == image));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(username),
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(image));
+  int get hashCode => Object.hash(runtimeType, id, username, email, image);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AccountDtoCopyWith<_$_AccountDto> get copyWith =>
       __$$_AccountDtoCopyWithImpl<_$_AccountDto>(this, _$identity);
 

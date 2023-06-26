@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'edit_guild_cubit.dart';
 
@@ -33,7 +33,8 @@ mixin _$EditGuildState {
 abstract class $EditGuildStateCopyWith<$Res> {
   factory $EditGuildStateCopyWith(
           EditGuildState value, $Res Function(EditGuildState) then) =
-      _$EditGuildStateCopyWithImpl<$Res>;
+      _$EditGuildStateCopyWithImpl<$Res, EditGuildState>;
+  @useResult
   $Res call(
       {GuildName name,
       File? icon,
@@ -44,49 +45,51 @@ abstract class $EditGuildStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$EditGuildStateCopyWithImpl<$Res>
+class _$EditGuildStateCopyWithImpl<$Res, $Val extends EditGuildState>
     implements $EditGuildStateCopyWith<$Res> {
   _$EditGuildStateCopyWithImpl(this._value, this._then);
 
-  final EditGuildState _value;
   // ignore: unused_field
-  final $Res Function(EditGuildState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
+    Object? name = null,
     Object? icon = freezed,
     Object? iconUrl = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? guildFailureOrSuccessOption = freezed,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? guildFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as GuildName,
-      icon: icon == freezed
+      icon: freezed == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as File?,
-      iconUrl: iconUrl == freezed
+      iconUrl: freezed == iconUrl
           ? _value.iconUrl
           : iconUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      guildFailureOrSuccessOption: guildFailureOrSuccessOption == freezed
+      guildFailureOrSuccessOption: null == guildFailureOrSuccessOption
           ? _value.guildFailureOrSuccessOption
           : guildFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<GuildFailure, Unit>>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -97,6 +100,7 @@ abstract class _$$_EditGuildStateCopyWith<$Res>
           _$_EditGuildState value, $Res Function(_$_EditGuildState) then) =
       __$$_EditGuildStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {GuildName name,
       File? icon,
@@ -108,46 +112,44 @@ abstract class _$$_EditGuildStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_EditGuildStateCopyWithImpl<$Res>
-    extends _$EditGuildStateCopyWithImpl<$Res>
+    extends _$EditGuildStateCopyWithImpl<$Res, _$_EditGuildState>
     implements _$$_EditGuildStateCopyWith<$Res> {
   __$$_EditGuildStateCopyWithImpl(
       _$_EditGuildState _value, $Res Function(_$_EditGuildState) _then)
-      : super(_value, (v) => _then(v as _$_EditGuildState));
+      : super(_value, _then);
 
-  @override
-  _$_EditGuildState get _value => super._value as _$_EditGuildState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
+    Object? name = null,
     Object? icon = freezed,
     Object? iconUrl = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? guildFailureOrSuccessOption = freezed,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? guildFailureOrSuccessOption = null,
   }) {
     return _then(_$_EditGuildState(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as GuildName,
-      icon: icon == freezed
+      icon: freezed == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as File?,
-      iconUrl: iconUrl == freezed
+      iconUrl: freezed == iconUrl
           ? _value.iconUrl
           : iconUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      guildFailureOrSuccessOption: guildFailureOrSuccessOption == freezed
+      guildFailureOrSuccessOption: null == guildFailureOrSuccessOption
           ? _value.guildFailureOrSuccessOption
           : guildFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<GuildFailure, Unit>>,
@@ -191,30 +193,26 @@ class _$_EditGuildState implements _EditGuildState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_EditGuildState &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.icon, icon) &&
-            const DeepCollectionEquality().equals(other.iconUrl, iconUrl) &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality()
-                .equals(other.isSubmitting, isSubmitting) &&
-            const DeepCollectionEquality().equals(
-                other.guildFailureOrSuccessOption,
-                guildFailureOrSuccessOption));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.icon, icon) || other.icon == icon) &&
+            (identical(other.iconUrl, iconUrl) || other.iconUrl == iconUrl) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                other.isSubmitting == isSubmitting) &&
+            (identical(other.guildFailureOrSuccessOption,
+                    guildFailureOrSuccessOption) ||
+                other.guildFailureOrSuccessOption ==
+                    guildFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(icon),
-      const DeepCollectionEquality().hash(iconUrl),
-      const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(isSubmitting),
-      const DeepCollectionEquality().hash(guildFailureOrSuccessOption));
+  int get hashCode => Object.hash(runtimeType, name, icon, iconUrl,
+      showErrorMessages, isSubmitting, guildFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_EditGuildStateCopyWith<_$_EditGuildState> get copyWith =>
       __$$_EditGuildStateCopyWithImpl<_$_EditGuildState>(this, _$identity);
 }

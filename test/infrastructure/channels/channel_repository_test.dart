@@ -43,7 +43,7 @@ void main() {
 
     void setUpHttpFailure() {
       when(() => client.get(any())).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/channels/$guildId', method: "GET"),
         ),
@@ -52,7 +52,7 @@ void main() {
 
     void setUpHttp404Failure() {
       when(() => client.get(any())).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             statusCode: 404,
             requestOptions:
@@ -104,7 +104,7 @@ void main() {
     );
 
     test(
-      'should return a ChannelFailure when DioError is thrown',
+      'should return a ChannelFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -125,7 +125,7 @@ void main() {
     );
 
     test(
-      'should return a ChannelFailure.notFound when DioError is thrown',
+      'should return a ChannelFailure.notFound when DioException is thrown',
       () async {
         // arrange
         setUpHttp404Failure();
@@ -207,7 +207,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/channels/$guildId', method: "POST"),
         ),
@@ -225,7 +225,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             data: data,
             statusCode: 400,
@@ -292,7 +292,7 @@ void main() {
     );
 
     test(
-      'should return a ChannelFailure when DioError is thrown',
+      'should return a ChannelFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -313,7 +313,7 @@ void main() {
     );
 
     test(
-      'should return a ChannelFailure.badRequest when DioError is thrown with status 400 and multiple errors',
+      'should return a ChannelFailure.badRequest when DioException is thrown with status 400 and multiple errors',
       () async {
         // arrange
         setUpHttp400Failure(errorsData);
@@ -334,7 +334,7 @@ void main() {
     );
 
     test(
-      'should return a ChannelFailure.badRequest when DioError is thrown with status 400 and single error',
+      'should return a ChannelFailure.badRequest when DioException is thrown with status 400 and single error',
       () async {
         // arrange
         setUpHttp400Failure(errorData);
@@ -410,7 +410,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions:
               RequestOptions(path: '/channels/$channelId', method: "PUT"),
         ),
@@ -428,7 +428,7 @@ void main() {
           },
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             statusCode: 400,
             data: data,
@@ -500,7 +500,7 @@ void main() {
     );
 
     test(
-      'should return a ChannelFailure when DioError is thrown',
+      'should return a ChannelFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();
@@ -521,7 +521,7 @@ void main() {
     );
 
     test(
-      'should return a ChannelFailure.badRequest when DioError is thrown',
+      'should return a ChannelFailure.badRequest when DioException is thrown',
       () async {
         // arrange
         setUpHttp400Failure();
@@ -586,7 +586,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(path: '/channels/$id'),
         ),
       );
@@ -598,7 +598,7 @@ void main() {
           any(),
         ),
       ).thenThrow(
-        DioError(
+        DioException(
           response: Response(
             data: data,
             statusCode: 400,
@@ -648,7 +648,7 @@ void main() {
     );
 
     test(
-      'should return a ChannelFailure when DioError is thrown',
+      'should return a ChannelFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpDeleteFailure();
@@ -669,7 +669,7 @@ void main() {
     );
 
     test(
-      'should return a ChannelFailure.badRequest when DioError is thrown',
+      'should return a ChannelFailure.badRequest when DioException is thrown',
       () async {
         // arrange
         setUpHttp400Failure();
@@ -730,7 +730,7 @@ void main() {
 
     void setUpHttpFailure() {
       when(() => client.get(any())).thenThrow(
-        DioError(
+        DioException(
           requestOptions: RequestOptions(
             path: '/channels/$channelId/members',
             method: "GET",
@@ -779,7 +779,7 @@ void main() {
     );
 
     test(
-      'should return a ChannelFailure when DioError is thrown',
+      'should return a ChannelFailure when DioException is thrown',
       () async {
         // arrange
         setUpHttpFailure();

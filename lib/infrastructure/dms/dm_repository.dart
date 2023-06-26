@@ -25,7 +25,7 @@ class DMRepository extends IDMRepository {
       final List<DMChannel> list = [];
       results.forEach((c) => list.add(DMChannelDto.fromJson(c).toDomain()));
       return right(list);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const DMChannelFailure.unexpected());
     } on SocketException catch (err) {
@@ -43,7 +43,7 @@ class DMRepository extends IDMRepository {
       final results = jsonDecode(response.data);
       final channel = DMChannelDto.fromJson(results).toDomain();
       return right(channel);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       if (err.response?.statusCode == 404) {
         return left(const DMChannelFailure.notFound());
@@ -60,7 +60,7 @@ class DMRepository extends IDMRepository {
     try {
       await _dio.delete('/channels/$channelId/dm');
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const DMChannelFailure.unexpected());
     } on SocketException catch (err) {

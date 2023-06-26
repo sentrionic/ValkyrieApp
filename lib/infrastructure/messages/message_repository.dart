@@ -31,7 +31,7 @@ class MessageRepository extends IMessageRepository {
       final List<Message> list = [];
       results.forEach((c) => list.add(MessageDto.fromJson(c).toDomain()));
       return right(list);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const MessageFailure.unexpected());
     } on SocketException catch (err) {
@@ -52,7 +52,7 @@ class MessageRepository extends IMessageRepository {
         data: formData,
       );
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       if (err.response?.statusCode == 400) {
         final errors = FieldError.getErrors(err.response!);
@@ -88,7 +88,7 @@ class MessageRepository extends IMessageRepository {
         data: formData,
       );
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err.response);
       if (err.response?.statusCode == 400) {
         final errors = FieldError.getErrors(err.response!);
@@ -114,7 +114,7 @@ class MessageRepository extends IMessageRepository {
         data: {"text": text},
       );
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err.response);
       if (err.response?.statusCode == 400) {
         final errors = FieldError.getErrors(err.response!);
@@ -134,7 +134,7 @@ class MessageRepository extends IMessageRepository {
     try {
       await _dio.delete('/messages/$messageId');
       return right(unit);
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       print(err);
       return left(const MessageFailure.unexpected());
     } on SocketException catch (err) {

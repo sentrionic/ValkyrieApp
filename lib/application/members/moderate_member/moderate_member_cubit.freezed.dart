@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'moderate_member_cubit.dart';
 
@@ -26,10 +26,10 @@ mixin _$ModerateMemberState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(MemberFailure actionFailure)? actionFailure,
-    TResult Function()? actionSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(MemberFailure actionFailure)? actionFailure,
+    TResult? Function()? actionSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$ModerateMemberState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_ActionFailure value)? actionFailure,
-    TResult Function(_ActionSuccess value)? actionSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_ActionFailure value)? actionFailure,
+    TResult? Function(_ActionSuccess value)? actionSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,17 +72,18 @@ mixin _$ModerateMemberState {
 abstract class $ModerateMemberStateCopyWith<$Res> {
   factory $ModerateMemberStateCopyWith(
           ModerateMemberState value, $Res Function(ModerateMemberState) then) =
-      _$ModerateMemberStateCopyWithImpl<$Res>;
+      _$ModerateMemberStateCopyWithImpl<$Res, ModerateMemberState>;
 }
 
 /// @nodoc
-class _$ModerateMemberStateCopyWithImpl<$Res>
+class _$ModerateMemberStateCopyWithImpl<$Res, $Val extends ModerateMemberState>
     implements $ModerateMemberStateCopyWith<$Res> {
   _$ModerateMemberStateCopyWithImpl(this._value, this._then);
 
-  final ModerateMemberState _value;
   // ignore: unused_field
-  final $Res Function(ModerateMemberState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -94,13 +95,10 @@ abstract class _$$_InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$ModerateMemberStateCopyWithImpl<$Res>
+    extends _$ModerateMemberStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -136,10 +134,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(MemberFailure actionFailure)? actionFailure,
-    TResult Function()? actionSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(MemberFailure actionFailure)? actionFailure,
+    TResult? Function()? actionSuccess,
   }) {
     return initial?.call();
   }
@@ -173,10 +171,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_ActionFailure value)? actionFailure,
-    TResult Function(_ActionSuccess value)? actionSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_ActionFailure value)? actionFailure,
+    TResult? Function(_ActionSuccess value)? actionSuccess,
   }) {
     return initial?.call(this);
   }
@@ -210,14 +208,11 @@ abstract class _$$_ActionInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ActionInProgressCopyWithImpl<$Res>
-    extends _$ModerateMemberStateCopyWithImpl<$Res>
+    extends _$ModerateMemberStateCopyWithImpl<$Res, _$_ActionInProgress>
     implements _$$_ActionInProgressCopyWith<$Res> {
   __$$_ActionInProgressCopyWithImpl(
       _$_ActionInProgress _value, $Res Function(_$_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _$_ActionInProgress));
-
-  @override
-  _$_ActionInProgress get _value => super._value as _$_ActionInProgress;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -253,10 +248,10 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(MemberFailure actionFailure)? actionFailure,
-    TResult Function()? actionSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(MemberFailure actionFailure)? actionFailure,
+    TResult? Function()? actionSuccess,
   }) {
     return actionInProgress?.call();
   }
@@ -290,10 +285,10 @@ class _$_ActionInProgress implements _ActionInProgress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_ActionFailure value)? actionFailure,
-    TResult Function(_ActionSuccess value)? actionSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_ActionFailure value)? actionFailure,
+    TResult? Function(_ActionSuccess value)? actionSuccess,
   }) {
     return actionInProgress?.call(this);
   }
@@ -323,6 +318,7 @@ abstract class _$$_ActionFailureCopyWith<$Res> {
   factory _$$_ActionFailureCopyWith(
           _$_ActionFailure value, $Res Function(_$_ActionFailure) then) =
       __$$_ActionFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({MemberFailure actionFailure});
 
   $MemberFailureCopyWith<$Res> get actionFailure;
@@ -330,21 +326,19 @@ abstract class _$$_ActionFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ActionFailureCopyWithImpl<$Res>
-    extends _$ModerateMemberStateCopyWithImpl<$Res>
+    extends _$ModerateMemberStateCopyWithImpl<$Res, _$_ActionFailure>
     implements _$$_ActionFailureCopyWith<$Res> {
   __$$_ActionFailureCopyWithImpl(
       _$_ActionFailure _value, $Res Function(_$_ActionFailure) _then)
-      : super(_value, (v) => _then(v as _$_ActionFailure));
+      : super(_value, _then);
 
-  @override
-  _$_ActionFailure get _value => super._value as _$_ActionFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? actionFailure = freezed,
+    Object? actionFailure = null,
   }) {
     return _then(_$_ActionFailure(
-      actionFailure == freezed
+      null == actionFailure
           ? _value.actionFailure
           : actionFailure // ignore: cast_nullable_to_non_nullable
               as MemberFailure,
@@ -352,6 +346,7 @@ class __$$_ActionFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $MemberFailureCopyWith<$Res> get actionFailure {
     return $MemberFailureCopyWith<$Res>(_value.actionFailure, (value) {
       return _then(_value.copyWith(actionFailure: value));
@@ -377,16 +372,16 @@ class _$_ActionFailure implements _ActionFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ActionFailure &&
-            const DeepCollectionEquality()
-                .equals(other.actionFailure, actionFailure));
+            (identical(other.actionFailure, actionFailure) ||
+                other.actionFailure == actionFailure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(actionFailure));
+  int get hashCode => Object.hash(runtimeType, actionFailure);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ActionFailureCopyWith<_$_ActionFailure> get copyWith =>
       __$$_ActionFailureCopyWithImpl<_$_ActionFailure>(this, _$identity);
 
@@ -404,10 +399,10 @@ class _$_ActionFailure implements _ActionFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(MemberFailure actionFailure)? actionFailure,
-    TResult Function()? actionSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(MemberFailure actionFailure)? actionFailure,
+    TResult? Function()? actionSuccess,
   }) {
     return actionFailure?.call(this.actionFailure);
   }
@@ -441,10 +436,10 @@ class _$_ActionFailure implements _ActionFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_ActionFailure value)? actionFailure,
-    TResult Function(_ActionSuccess value)? actionSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_ActionFailure value)? actionFailure,
+    TResult? Function(_ActionSuccess value)? actionSuccess,
   }) {
     return actionFailure?.call(this);
   }
@@ -484,14 +479,11 @@ abstract class _$$_ActionSuccessCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ActionSuccessCopyWithImpl<$Res>
-    extends _$ModerateMemberStateCopyWithImpl<$Res>
+    extends _$ModerateMemberStateCopyWithImpl<$Res, _$_ActionSuccess>
     implements _$$_ActionSuccessCopyWith<$Res> {
   __$$_ActionSuccessCopyWithImpl(
       _$_ActionSuccess _value, $Res Function(_$_ActionSuccess) _then)
-      : super(_value, (v) => _then(v as _$_ActionSuccess));
-
-  @override
-  _$_ActionSuccess get _value => super._value as _$_ActionSuccess;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -527,10 +519,10 @@ class _$_ActionSuccess implements _ActionSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? actionInProgress,
-    TResult Function(MemberFailure actionFailure)? actionFailure,
-    TResult Function()? actionSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? actionInProgress,
+    TResult? Function(MemberFailure actionFailure)? actionFailure,
+    TResult? Function()? actionSuccess,
   }) {
     return actionSuccess?.call();
   }
@@ -564,10 +556,10 @@ class _$_ActionSuccess implements _ActionSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ActionInProgress value)? actionInProgress,
-    TResult Function(_ActionFailure value)? actionFailure,
-    TResult Function(_ActionSuccess value)? actionSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ActionInProgress value)? actionInProgress,
+    TResult? Function(_ActionFailure value)? actionFailure,
+    TResult? Function(_ActionSuccess value)? actionSuccess,
   }) {
     return actionSuccess?.call(this);
   }

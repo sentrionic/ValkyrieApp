@@ -82,8 +82,8 @@ class GuildInfoContainer extends StatelessWidget {
                               arguments: GuildScreenArguments(guild),
                             );
                           },
-                          child: Column(
-                            children: const [
+                          child: const Column(
+                            children: [
                               Icon(
                                 Icons.settings,
                                 color: Colors.white70,
@@ -112,8 +112,8 @@ class GuildInfoContainer extends StatelessWidget {
                             arguments: GuildScreenArguments(guild),
                           );
                         },
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             Icon(
                               Icons.person_add_alt_1,
                               color: Colors.white70,

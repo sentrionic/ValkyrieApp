@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'join_guild_cubit.dart';
 
@@ -31,7 +31,8 @@ mixin _$JoinGuildState {
 abstract class $JoinGuildStateCopyWith<$Res> {
   factory $JoinGuildStateCopyWith(
           JoinGuildState value, $Res Function(JoinGuildState) then) =
-      _$JoinGuildStateCopyWithImpl<$Res>;
+      _$JoinGuildStateCopyWithImpl<$Res, JoinGuildState>;
+  @useResult
   $Res call(
       {InviteLink inviteLink,
       bool showErrorMessages,
@@ -40,39 +41,41 @@ abstract class $JoinGuildStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$JoinGuildStateCopyWithImpl<$Res>
+class _$JoinGuildStateCopyWithImpl<$Res, $Val extends JoinGuildState>
     implements $JoinGuildStateCopyWith<$Res> {
   _$JoinGuildStateCopyWithImpl(this._value, this._then);
 
-  final JoinGuildState _value;
   // ignore: unused_field
-  final $Res Function(JoinGuildState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? inviteLink = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? guildFailureOrSuccessOption = freezed,
+    Object? inviteLink = null,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? guildFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      inviteLink: inviteLink == freezed
+      inviteLink: null == inviteLink
           ? _value.inviteLink
           : inviteLink // ignore: cast_nullable_to_non_nullable
               as InviteLink,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      guildFailureOrSuccessOption: guildFailureOrSuccessOption == freezed
+      guildFailureOrSuccessOption: null == guildFailureOrSuccessOption
           ? _value.guildFailureOrSuccessOption
           : guildFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<GuildFailure, Guild>>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -83,6 +86,7 @@ abstract class _$$_JoinGuildStateCopyWith<$Res>
           _$_JoinGuildState value, $Res Function(_$_JoinGuildState) then) =
       __$$_JoinGuildStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {InviteLink inviteLink,
       bool showErrorMessages,
@@ -92,36 +96,34 @@ abstract class _$$_JoinGuildStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_JoinGuildStateCopyWithImpl<$Res>
-    extends _$JoinGuildStateCopyWithImpl<$Res>
+    extends _$JoinGuildStateCopyWithImpl<$Res, _$_JoinGuildState>
     implements _$$_JoinGuildStateCopyWith<$Res> {
   __$$_JoinGuildStateCopyWithImpl(
       _$_JoinGuildState _value, $Res Function(_$_JoinGuildState) _then)
-      : super(_value, (v) => _then(v as _$_JoinGuildState));
+      : super(_value, _then);
 
-  @override
-  _$_JoinGuildState get _value => super._value as _$_JoinGuildState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? inviteLink = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? guildFailureOrSuccessOption = freezed,
+    Object? inviteLink = null,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? guildFailureOrSuccessOption = null,
   }) {
     return _then(_$_JoinGuildState(
-      inviteLink: inviteLink == freezed
+      inviteLink: null == inviteLink
           ? _value.inviteLink
           : inviteLink // ignore: cast_nullable_to_non_nullable
               as InviteLink,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      guildFailureOrSuccessOption: guildFailureOrSuccessOption == freezed
+      guildFailureOrSuccessOption: null == guildFailureOrSuccessOption
           ? _value.guildFailureOrSuccessOption
           : guildFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<GuildFailure, Guild>>,
@@ -157,27 +159,25 @@ class _$_JoinGuildState implements _JoinGuildState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_JoinGuildState &&
-            const DeepCollectionEquality()
-                .equals(other.inviteLink, inviteLink) &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality()
-                .equals(other.isSubmitting, isSubmitting) &&
-            const DeepCollectionEquality().equals(
-                other.guildFailureOrSuccessOption,
-                guildFailureOrSuccessOption));
+            (identical(other.inviteLink, inviteLink) ||
+                other.inviteLink == inviteLink) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                other.isSubmitting == isSubmitting) &&
+            (identical(other.guildFailureOrSuccessOption,
+                    guildFailureOrSuccessOption) ||
+                other.guildFailureOrSuccessOption ==
+                    guildFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(inviteLink),
-      const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(isSubmitting),
-      const DeepCollectionEquality().hash(guildFailureOrSuccessOption));
+  int get hashCode => Object.hash(runtimeType, inviteLink, showErrorMessages,
+      isSubmitting, guildFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_JoinGuildStateCopyWith<_$_JoinGuildState> get copyWith =>
       __$$_JoinGuildStateCopyWithImpl<_$_JoinGuildState>(this, _$identity);
 }

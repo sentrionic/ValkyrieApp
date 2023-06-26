@@ -4,14 +4,14 @@ Widget getModalButton(
   String label,
   IconData icon,
   Function onClick, [
-  Color? iconColor,
+  Color? iconColor = Colors.white,
 ]) {
   return SizedBox(
     width: double.infinity,
     child: TextButton(
       onPressed: () => onClick(),
       style: TextButton.styleFrom(
-        backgroundColor: Colors.white70,
+        backgroundColor: Colors.white10,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),

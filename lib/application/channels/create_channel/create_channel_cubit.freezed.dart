@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'create_channel_cubit.dart';
 
@@ -33,7 +33,8 @@ mixin _$CreateChannelState {
 abstract class $CreateChannelStateCopyWith<$Res> {
   factory $CreateChannelStateCopyWith(
           CreateChannelState value, $Res Function(CreateChannelState) then) =
-      _$CreateChannelStateCopyWithImpl<$Res>;
+      _$CreateChannelStateCopyWithImpl<$Res, CreateChannelState>;
+  @useResult
   $Res call(
       {ChannelName name,
       bool isPublic,
@@ -44,49 +45,51 @@ abstract class $CreateChannelStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CreateChannelStateCopyWithImpl<$Res>
+class _$CreateChannelStateCopyWithImpl<$Res, $Val extends CreateChannelState>
     implements $CreateChannelStateCopyWith<$Res> {
   _$CreateChannelStateCopyWithImpl(this._value, this._then);
 
-  final CreateChannelState _value;
   // ignore: unused_field
-  final $Res Function(CreateChannelState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? isPublic = freezed,
-    Object? members = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? channelFailureOrSuccessOption = freezed,
+    Object? name = null,
+    Object? isPublic = null,
+    Object? members = null,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? channelFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as ChannelName,
-      isPublic: isPublic == freezed
+      isPublic: null == isPublic
           ? _value.isPublic
           : isPublic // ignore: cast_nullable_to_non_nullable
               as bool,
-      members: members == freezed
+      members: null == members
           ? _value.members
           : members // ignore: cast_nullable_to_non_nullable
               as List<Member>,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      channelFailureOrSuccessOption: channelFailureOrSuccessOption == freezed
+      channelFailureOrSuccessOption: null == channelFailureOrSuccessOption
           ? _value.channelFailureOrSuccessOption
           : channelFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<ChannelFailure, Channel>>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -97,6 +100,7 @@ abstract class _$$_CreateChannelStateCopyWith<$Res>
           $Res Function(_$_CreateChannelState) then) =
       __$$_CreateChannelStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {ChannelName name,
       bool isPublic,
@@ -108,46 +112,44 @@ abstract class _$$_CreateChannelStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_CreateChannelStateCopyWithImpl<$Res>
-    extends _$CreateChannelStateCopyWithImpl<$Res>
+    extends _$CreateChannelStateCopyWithImpl<$Res, _$_CreateChannelState>
     implements _$$_CreateChannelStateCopyWith<$Res> {
   __$$_CreateChannelStateCopyWithImpl(
       _$_CreateChannelState _value, $Res Function(_$_CreateChannelState) _then)
-      : super(_value, (v) => _then(v as _$_CreateChannelState));
+      : super(_value, _then);
 
-  @override
-  _$_CreateChannelState get _value => super._value as _$_CreateChannelState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? isPublic = freezed,
-    Object? members = freezed,
-    Object? showErrorMessages = freezed,
-    Object? isSubmitting = freezed,
-    Object? channelFailureOrSuccessOption = freezed,
+    Object? name = null,
+    Object? isPublic = null,
+    Object? members = null,
+    Object? showErrorMessages = null,
+    Object? isSubmitting = null,
+    Object? channelFailureOrSuccessOption = null,
   }) {
     return _then(_$_CreateChannelState(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as ChannelName,
-      isPublic: isPublic == freezed
+      isPublic: null == isPublic
           ? _value.isPublic
           : isPublic // ignore: cast_nullable_to_non_nullable
               as bool,
-      members: members == freezed
+      members: null == members
           ? _value._members
           : members // ignore: cast_nullable_to_non_nullable
               as List<Member>,
-      showErrorMessages: showErrorMessages == freezed
+      showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSubmitting: isSubmitting == freezed
+      isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      channelFailureOrSuccessOption: channelFailureOrSuccessOption == freezed
+      channelFailureOrSuccessOption: null == channelFailureOrSuccessOption
           ? _value.channelFailureOrSuccessOption
           : channelFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<ChannelFailure, Channel>>,
@@ -174,6 +176,7 @@ class _$_CreateChannelState implements _CreateChannelState {
   final List<Member> _members;
   @override
   List<Member> get members {
+    if (_members is EqualUnmodifiableListView) return _members;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_members);
   }
@@ -195,30 +198,33 @@ class _$_CreateChannelState implements _CreateChannelState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CreateChannelState &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.isPublic, isPublic) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.isPublic, isPublic) ||
+                other.isPublic == isPublic) &&
             const DeepCollectionEquality().equals(other._members, _members) &&
-            const DeepCollectionEquality()
-                .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality()
-                .equals(other.isSubmitting, isSubmitting) &&
-            const DeepCollectionEquality().equals(
-                other.channelFailureOrSuccessOption,
-                channelFailureOrSuccessOption));
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                other.isSubmitting == isSubmitting) &&
+            (identical(other.channelFailureOrSuccessOption,
+                    channelFailureOrSuccessOption) ||
+                other.channelFailureOrSuccessOption ==
+                    channelFailureOrSuccessOption));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(isPublic),
+      name,
+      isPublic,
       const DeepCollectionEquality().hash(_members),
-      const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(isSubmitting),
-      const DeepCollectionEquality().hash(channelFailureOrSuccessOption));
+      showErrorMessages,
+      isSubmitting,
+      channelFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_CreateChannelStateCopyWith<_$_CreateChannelState> get copyWith =>
       __$$_CreateChannelStateCopyWithImpl<_$_CreateChannelState>(
           this, _$identity);
